@@ -2,4 +2,4 @@
 import PrivacyPage from "$lib/components/PrivacyPage.svelte";
 </script>
 
-<PrivacyPage locale="en" path="/en/privacy" alternatePath="/de/datenschutz" />
+<PrivacyPage locale="en" path="/en/privacy/" alternatePath="/de/datenschutz/" />

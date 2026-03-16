@@ -21,7 +21,7 @@ const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 	<link rel="canonical" href={pageUrl} />
 	<link rel="alternate" hreflang={locale} href={pageUrl} />
 	<link rel="alternate" hreflang={locale === "de" ? "en" : "de"} href={alternateUrl} />
-	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de/datenschutz`} />
+	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de/datenschutz/`} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={m.privacy_page_title({}, { locale })} />

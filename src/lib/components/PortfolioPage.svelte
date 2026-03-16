@@ -21,12 +21,12 @@ const primaryProfiles = $derived(
 const otherLocale = $derived<Locale>(locale === "de" ? "en" : "de");
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
-const pageUrl = $derived(`${siteUrl}/${locale}`);
+const pageUrl = $derived(`${siteUrl}/${locale}/`);
 const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 const legalLinks = $derived(
 	locale === "de"
-		? { imprint: "/de/impressum", privacy: "/de/datenschutz" }
-		: { imprint: "/en/imprint", privacy: "/en/privacy" },
+		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
+		: { imprint: "/en/imprint/", privacy: "/en/privacy/" },
 );
 </script>
 
@@ -34,9 +34,9 @@ const legalLinks = $derived(
 	<title>{t(m.site_title)}</title>
 	<meta name="description" content={t(m.meta_description)} />
 	<link rel="canonical" href={pageUrl} />
-	<link rel="alternate" hreflang="de" href={`${siteUrl}/de`} />
-	<link rel="alternate" hreflang="en" href={`${siteUrl}/en`} />
-	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de`} />
+	<link rel="alternate" hreflang="de" href={`${siteUrl}/de/`} />
+	<link rel="alternate" hreflang="en" href={`${siteUrl}/en/`} />
+	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de/`} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={t(m.site_title)} />
@@ -55,17 +55,17 @@ const legalLinks = $derived(
 		<div class="flex flex-wrap items-center justify-between gap-4">
 			<a
 				class="font-semibold uppercase tracking-[0.28em] text-white no-underline"
-				href={`/${locale}`}
+				href={`/${locale}/`}
 			>
 				{content.basics.name}
 			</a>
 			<div class="ml-auto flex flex-wrap items-center justify-end gap-6 text-right">
 				<nav aria-label={t(m.nav_primary_label)}>
 					<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
-						<li><a href={`/${locale}#projects`}>{t(m.nav_projects)}</a></li>
-						<li><a href={`/${locale}#experience`}>{t(m.nav_experience)}</a></li>
-						<li><a href={`/${locale}#talks`}>{t(m.nav_talks)}</a></li>
-						<li><a href={`/${locale}#contact`}>{t(m.nav_contact)}</a></li>
+						<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
+						<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
+						<li><a href={`/${locale}/#talks`}>{t(m.nav_talks)}</a></li>
+						<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
 					</ul>
 				</nav>
 				<nav aria-label={t(m.lang_switch)}>
@@ -74,7 +74,7 @@ const legalLinks = $derived(
 							<a
 								aria-current="page"
 								class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 no-underline"
-								href={`/${locale}`}
+								href={`/${locale}/`}
 							>
 								{locale.toUpperCase()}
 							</a>
@@ -82,7 +82,7 @@ const legalLinks = $derived(
 						<li>
 							<a
 								class="rounded-full border border-transparent px-3 py-1 no-underline"
-								href={`/${otherLocale}`}
+								href={`/${otherLocale}/`}
 							>
 								{otherLocale.toUpperCase()}
 							</a>
@@ -112,7 +112,7 @@ const legalLinks = $derived(
 					<li>
 						<a
 							class="inline-flex rounded-full border-4 border-[var(--color-brand-cyan)] bg-[var(--color-brand-cyan)] px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-black no-underline transition hover:scale-105 hover:text-white focus-visible:scale-105"
-							href={`/${locale}#projects`}
+							href={`/${locale}/#projects`}
 						>
 							{t(m.hero_browse_projects)}
 						</a>
@@ -120,7 +120,7 @@ const legalLinks = $derived(
 					<li>
 						<a
 							class="inline-flex rounded-full border-4 border-white px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white no-underline transition hover:scale-105 hover:bg-white hover:text-black focus-visible:scale-105"
-							href={`/${locale}#contact`}
+							href={`/${locale}/#contact`}
 						>
 							{t(m.hero_contact)}
 						</a>
