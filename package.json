@@ -10,7 +10,7 @@
 		"build": "pnpm paraglide:compile && vite build",
 		"preview": "vite preview",
 		"check": "pnpm paraglide:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"resume:skills:update": "node scripts/update-resume-skills.mjs",
+		"resume:skills:update": "node scripts/update-resume-skills.mjs && pnpm run lint --fix",
 		"test": "pnpm paraglide:compile && vitest run",
 		"test:watch": "vitest",
 		"lint": "biome check .",

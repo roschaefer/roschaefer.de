@@ -83,15 +83,11 @@
 	"skills": [
 		{
 			"name": "Ruby",
-			"level": "10 Jahre, 1 Monat"
+			"level": "9 Jahre, 2 Monate"
 		},
 		{
 			"name": "Ruby on Rails",
-			"level": "9 Jahre, 8 Monate"
-		},
-		{
-			"name": "RSpec",
-			"level": "8 Jahre, 4 Monate"
+			"level": "8 Jahre, 9 Monate"
 		},
 		{
 			"name": "Node.js",
@@ -102,7 +98,7 @@
 			"level": "7 Jahre, 8 Monate"
 		},
 		{
-			"name": "Digital Ocean",
+			"name": "RSpec",
 			"level": "7 Jahre, 5 Monate"
 		},
 		{
@@ -114,20 +110,8 @@
 			"level": "6 Jahre, 7 Monate"
 		},
 		{
-			"name": "Ansible",
-			"level": "6 Jahre, 1 Monat"
-		},
-		{
-			"name": "Postmark",
-			"level": "6 Jahre, 1 Monat"
-		},
-		{
-			"name": "Sentry",
-			"level": "6 Jahre, 1 Monat"
-		},
-		{
-			"name": "Stimulus",
-			"level": "6 Jahre, 1 Monat"
+			"name": "Digital Ocean",
+			"level": "6 Jahre, 6 Monate"
 		},
 		{
 			"name": "TypeScript",
@@ -136,6 +120,22 @@
 		{
 			"name": "Jest",
 			"level": "5 Jahre, 8 Monate"
+		},
+		{
+			"name": "Ansible",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Postmark",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Sentry",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Stimulus",
+			"level": "5 Jahre, 2 Monate"
 		},
 		{
 			"name": "Auth0",
@@ -355,6 +355,7 @@
 			"entity": "tactile.news GmbH",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2020-03-30",
+			"endDate": "2025-04-16",
 			"keywords": [
 				"Ruby",
 				"TypeScript",
