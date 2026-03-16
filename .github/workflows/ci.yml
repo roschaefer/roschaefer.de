@@ -31,8 +31,11 @@ jobs:
       - name: Compile Paraglide messages
         run: pnpm paraglide:compile
 
-      - name: Verify generated Paraglide files are committed
-        run: git diff --exit-code -- src/lib/paraglide
+      - name: Generate resume outputs
+        run: pnpm resume:build
+
+      - name: Verify generated files are committed
+        run: git diff --exit-code
 
       - name: Lint
         run: pnpm lint

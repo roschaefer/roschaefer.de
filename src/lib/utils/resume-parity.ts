@@ -1,74 +1,92 @@
-import { getResume, projectEntryId } from "$lib/data/resume";
-import type { ResumeAward, ResumeEducation, ResumeProject } from "$lib/types/resume";
+import source from "../../../resume.i18n.json";
 
-const assertSameKeys = (label: string, left: string[], right: string[]) => {
-	const leftOnly = left.filter((value) => !right.includes(value));
-	const rightOnly = right.filter((value) => !left.includes(value));
+const locales = ["de", "en"] as const;
 
-	if (leftOnly.length || rightOnly.length) {
-		throw new Error(
-			`${label} mismatch. Only in left: ${leftOnly.join(", ") || "none"}. Only in right: ${
-				rightOnly.join(", ") || "none"
-			}.`,
-		);
+type Locale = (typeof locales)[number];
+type LocalizedValue = Partial<Record<Locale, unknown>>;
+
+const isPlainObject = (value: unknown): value is Record<string, unknown> =>
+	value !== null && typeof value === "object" && !Array.isArray(value);
+
+const isLocalizedValue = (value: unknown): value is LocalizedValue => {
+	if (!isPlainObject(value)) {
+		return false;
+	}
+
+	const keys = Object.keys(value);
+	return keys.length > 0 && keys.every((key) => locales.includes(key as Locale));
+};
+
+const assertValidLocalizedNodes = (value: unknown, path: string[] = []) => {
+	if (Array.isArray(value)) {
+		for (const [index, entry] of value.entries()) {
+			assertValidLocalizedNodes(entry, [...path, String(index)]);
+		}
+
+		return;
+	}
+
+	if (!isPlainObject(value)) {
+		return;
+	}
+
+	if (isLocalizedValue(value)) {
+		for (const locale of locales) {
+			if (!(locale in value)) {
+				throw new Error(`Missing ${locale} translation at ${path.join(".") || "<root>"}.`);
+			}
+		}
+
+		return;
+	}
+
+	for (const [key, entry] of Object.entries(value)) {
+		assertValidLocalizedNodes(entry, [...path, key]);
 	}
 };
 
-const projectIds = (projects: ResumeProject[] = []) => projects.map(projectEntryId);
-const awardKeys = (awards: ResumeAward[] = []) =>
-	awards.map((award) => `${award.date ?? "no-date"}-${award.awarder ?? "no-awarder"}`);
-const educationKeys = (entries: ResumeEducation[] = []) =>
-	entries.map(
-		(entry) =>
-			`${entry.institution}-${entry.area ?? "no-area"}-${entry.startDate ?? "no-start"}-${
-				entry.endDate ?? "no-end"
-			}`,
-	);
-const projectMap = (projects: ResumeProject[] = []) =>
-	new Map(projects.map((project) => [projectEntryId(project), project]));
+const assertNoGeneratedFieldsInSource = (value: Record<string, unknown>) => {
+	if ("$schema" in value) {
+		throw new Error('resume.i18n.json must not define "$schema".');
+	}
 
-const assertProjectDateParity = (
-	deProjects: ResumeProject[] = [],
-	enProjects: ResumeProject[] = [],
-) => {
-	const deById = projectMap(deProjects);
-	const enById = projectMap(enProjects);
+	if ("skills" in value) {
+		throw new Error('resume.i18n.json must not define "skills".');
+	}
+};
 
-	for (const [projectId, deProject] of deById) {
-		const enProject = enById.get(projectId);
-
-		if (!enProject) {
-			continue;
+const assertDatedEntriesHaveRequiredDates = (value: unknown, path: string[] = []) => {
+	if (Array.isArray(value)) {
+		for (const [index, entry] of value.entries()) {
+			assertDatedEntriesHaveRequiredDates(entry, [...path, String(index)]);
 		}
 
-		if (deProject.startDate !== enProject.startDate) {
-			throw new Error(
-				`Project startDate mismatch for ${projectId}. de=${deProject.startDate}, en=${enProject.startDate}.`,
-			);
-		}
+		return;
+	}
 
-		if (deProject.endDate !== enProject.endDate) {
-			throw new Error(
-				`Project endDate mismatch for ${projectId}. de=${deProject.endDate ?? "missing"}, en=${enProject.endDate ?? "missing"}.`,
-			);
+	if (!isPlainObject(value) || isLocalizedValue(value)) {
+		return;
+	}
+
+	if ("startDate" in value || "endDate" in value) {
+		if (typeof value.startDate !== "string" || value.startDate.length === 0) {
+			throw new Error(`Missing startDate at ${path.join(".") || "<root>"}.`);
 		}
+	}
+
+	if ("date" in value) {
+		if (typeof value.date !== "string" || value.date.length === 0) {
+			throw new Error(`Missing date at ${path.join(".") || "<root>"}.`);
+		}
+	}
+
+	for (const [key, entry] of Object.entries(value)) {
+		assertDatedEntriesHaveRequiredDates(entry, [...path, key]);
 	}
 };
 
 export const validateResumeParity = () => {
-	const de = getResume("de");
-	const en = getResume("en");
-
-	assertSameKeys("Top-level keys", Object.keys(de).sort(), Object.keys(en).sort());
-
-	assertSameKeys("Project IDs", projectIds(de.projects).sort(), projectIds(en.projects).sort());
-	assertProjectDateParity(de.projects, en.projects);
-
-	assertSameKeys("Awards", awardKeys(de.awards).sort(), awardKeys(en.awards).sort());
-
-	assertSameKeys(
-		"Education entries",
-		educationKeys(de.education).sort(),
-		educationKeys(en.education).sort(),
-	);
+	assertNoGeneratedFieldsInSource(source);
+	assertValidLocalizedNodes(source);
+	assertDatedEntriesHaveRequiredDates(source);
 };
