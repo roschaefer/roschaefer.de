@@ -83,87 +83,87 @@
 	"skills": [
 		{
 			"name": "Ruby",
-			"level": "9 Jahre, 10 Monate"
+			"level": "10 Jahre, 1 Monat"
 		},
 		{
 			"name": "Ruby on Rails",
-			"level": "9 Jahre, 5 Monate"
+			"level": "9 Jahre, 8 Monate"
 		},
 		{
 			"name": "RSpec",
-			"level": "8 Jahre, 1 Monat"
+			"level": "8 Jahre, 4 Monate"
 		},
 		{
 			"name": "Node.js",
-			"level": "7 Jahre, 10 Monate"
+			"level": "8 Jahre, 3 Monate"
 		},
 		{
 			"name": "Docker",
-			"level": "7 Jahre, 5 Monate"
+			"level": "7 Jahre, 8 Monate"
 		},
 		{
 			"name": "Digital Ocean",
-			"level": "7 Jahre, 3 Monate"
+			"level": "7 Jahre, 5 Monate"
 		},
 		{
 			"name": "Vue",
-			"level": "6 Jahre, 6 Monate"
+			"level": "6 Jahre, 9 Monate"
 		},
 		{
 			"name": "Apollo GraphQL",
-			"level": "6 Jahre, 3 Monate"
-		},
-		{
-			"name": "Stimulus",
-			"level": "6 Jahre"
+			"level": "6 Jahre, 7 Monate"
 		},
 		{
 			"name": "Ansible",
-			"level": "6 Jahre"
-		},
-		{
-			"name": "Sentry",
-			"level": "6 Jahre"
+			"level": "6 Jahre, 1 Monat"
 		},
 		{
 			"name": "Postmark",
-			"level": "6 Jahre"
+			"level": "6 Jahre, 1 Monat"
+		},
+		{
+			"name": "Sentry",
+			"level": "6 Jahre, 1 Monat"
+		},
+		{
+			"name": "Stimulus",
+			"level": "6 Jahre, 1 Monat"
 		},
 		{
 			"name": "TypeScript",
-			"level": "6 Jahre"
+			"level": "6 Jahre, 1 Monat"
 		},
 		{
 			"name": "Jest",
-			"level": "5 Jahre, 4 Monate"
-		},
-		{
-			"name": "PostgreSQL",
-			"level": "4 Jahre, 10 Monate"
+			"level": "5 Jahre, 8 Monate"
 		},
 		{
 			"name": "Auth0",
-			"level": "4 Jahre, 9 Monate"
+			"level": "5 Jahre"
+		},
+		{
+			"name": "PostgreSQL",
+			"level": "5 Jahre"
 		},
 		{
 			"name": "Nuxt",
-			"level": "4 Jahre, 5 Monate"
+			"level": "4 Jahre, 7 Monate"
 		},
 		{
 			"name": "Tailwind",
-			"level": "3 Jahre, 9 Monate"
+			"level": "3 Jahre, 11 Monate"
 		},
 		{
 			"name": "JavaScript",
-			"level": "3 Jahre, 6 Monate"
-		},
-		{
-			"name": "Vuetify",
-			"level": "3 Jahre, 2 Monate"
+			"level": "3 Jahre, 8 Monate"
 		},
 		{
 			"name": "Kubernetes",
-			"level": "3 Jahre, 2 Monate"
+			"level": "3 Jahre, 4 Monate"
+		},
+		{
+			"name": "Vuetify",
+			"level": "3 Jahre, 4 Monate"
 		},
 		{
 			"name": "HyGraph",
@@ -174,40 +174,44 @@
 			"level": "2 Jahre, 11 Monate"
 		},
 		{
-			"name": "Ember",
-			"level": "2 Jahre, 7 Monate"
+			"name": "D3",
+			"level": "2 Jahre, 8 Monate"
 		},
 		{
-			"name": "D3",
-			"level": "2 Jahre, 7 Monate"
+			"name": "Ember",
+			"level": "2 Jahre, 8 Monate"
 		},
 		{
 			"name": "Highcharts",
-			"level": "2 Jahre, 7 Monate"
+			"level": "2 Jahre, 8 Monate"
 		},
 		{
 			"name": "Uberspace",
-			"level": "2 Jahre, 7 Monate"
+			"level": "2 Jahre, 8 Monate"
 		},
 		{
 			"name": "Neo4J",
+			"level": "2 Jahre, 5 Monate"
+		},
+		{
+			"name": "Google Cloud",
+			"level": "2 Jahre, 4 Monate"
+		},
+		{
+			"name": "Hasura",
 			"level": "2 Jahre, 4 Monate"
 		},
 		{
 			"name": "Testing-Library",
-			"level": "2 Jahre, 2 Monate"
-		},
-		{
-			"name": "Hasura",
-			"level": "2 Jahre, 2 Monate"
-		},
-		{
-			"name": "Google Cloud",
-			"level": "2 Jahre, 2 Monate"
+			"level": "2 Jahre, 4 Monate"
 		},
 		{
 			"name": "Vercel",
-			"level": "2 Jahre, 2 Monate"
+			"level": "2 Jahre, 4 Monate"
+		},
+		{
+			"name": "Cucumber",
+			"level": "2 Jahre, 3 Monate"
 		},
 		{
 			"name": "Svelte",
@@ -218,52 +222,48 @@
 			"level": "2 Jahre, 2 Monate"
 		},
 		{
-			"name": "Cucumber",
-			"level": "2 Jahre, 1 Monat"
-		},
-		{
-			"name": "Vike",
-			"level": "1 Jahr, 9 Monate"
-		},
-		{
 			"name": "Authentik",
-			"level": "1 Jahr, 9 Monate"
-		},
-		{
-			"name": "Terraform",
-			"level": "1 Jahr, 9 Monate"
+			"level": "1 Jahr, 10 Monate"
 		},
 		{
 			"name": "Helm",
-			"level": "1 Jahr, 9 Monate"
+			"level": "1 Jahr, 10 Monate"
 		},
 		{
 			"name": "Hetzner",
-			"level": "1 Jahr, 9 Monate"
+			"level": "1 Jahr, 10 Monate"
+		},
+		{
+			"name": "Terraform",
+			"level": "1 Jahr, 10 Monate"
+		},
+		{
+			"name": "Vike",
+			"level": "1 Jahr, 10 Monate"
 		},
 		{
 			"name": "Serverless",
 			"level": "1 Jahr, 7 Monate"
 		},
 		{
-			"name": "Storybook",
-			"level": "1 Jahr, 5 Monate"
+			"name": "Cypress",
+			"level": "1 Jahr, 6 Monate"
 		},
 		{
-			"name": "Cypress",
-			"level": "1 Jahr, 5 Monate"
+			"name": "Storybook",
+			"level": "1 Jahr, 6 Monate"
 		},
 		{
 			"name": "Java",
-			"level": "7 Monate"
-		},
-		{
-			"name": "Wordpress",
-			"level": "2 Monate"
+			"level": "8 Monate"
 		},
 		{
 			"name": "PHP",
-			"level": "2 Monate"
+			"level": "3 Monate"
+		},
+		{
+			"name": "Wordpress",
+			"level": "3 Monate"
 		},
 		{
 			"name": "Python",
