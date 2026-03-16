@@ -16,7 +16,7 @@
 		"format": "biome format --write ."
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.4.7",
 		"@fontsource-variable/jost": "^5.2.8",
 		"@fontsource/titillium-web": "^5.2.8",
 		"@inlang/paraglide-js": "^2.15.0",
@@ -31,7 +31,7 @@
 		"svelte-check": "^4.3.4",
 		"tailwindcss": "^4.1.17",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.2",
+		"vite": "^8.0.0",
 		"vitest": "^4.0.8"
 	}
 }

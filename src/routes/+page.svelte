@@ -1,6 +1,9 @@
 <script lang="ts">
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import * as m from "$lib/paraglide/messages";
+import { markUsed } from "$lib/utils/mark-used";
+
+markUsed(siteImage, siteName, siteUrl, m);
 </script>
 
 <svelte:head>

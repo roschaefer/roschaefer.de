@@ -4,6 +4,7 @@ import { printLinkLabel } from "$lib/data/short-links";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
 import type { SiteContent } from "$lib/utils/content";
+import { markUsed } from "$lib/utils/mark-used";
 
 interface Props {
 	content: SiteContent;
@@ -27,6 +28,19 @@ const legalLinks = $derived(
 	locale === "de"
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
 		: { imprint: "/en/imprint/", privacy: "/en/privacy/" },
+);
+markUsed(
+	siteImage,
+	siteName,
+	siteUrl,
+	printLinkLabel,
+	m,
+	primaryProfiles,
+	otherLocale,
+	t,
+	pageUrl,
+	ogLocale,
+	legalLinks,
 );
 </script>
 
