@@ -18,6 +18,7 @@ describe("createTechExperience", () => {
 					keywords: ["TypeScript"],
 				},
 			],
+			"en",
 			new Date("2021-03-20"),
 		);
 
@@ -37,9 +38,27 @@ describe("createTechExperience", () => {
 					keywords: ["Svelte", "TypeScript"],
 				},
 			],
+			"en",
 			new Date("2024-02-01"),
 		);
 
 		expect(result.find((entry) => entry.name === "Svelte")?.projects).toHaveLength(1);
+	});
+
+	it("formats labels for German locales", () => {
+		const result = createTechExperience(
+			[
+				{
+					name: "A",
+					startDate: "2020-01-01",
+					endDate: "2021-03-01",
+					keywords: ["TypeScript"],
+				},
+			],
+			"de",
+			new Date("2021-03-20"),
+		);
+
+		expect(result[0]?.label).toBe("1 Jahr, 3 Monate");
 	});
 });

@@ -15,7 +15,7 @@ export const createSiteContent = (locale: Locale) => {
 		projects: sortedProjects,
 		featuredProjects: sortedProjects.filter((project) => project.type !== "talk").slice(0, 6),
 		talks: sortedProjects.filter((project) => project.type === "talk"),
-		techExperience: createTechExperience(projects).slice(0, 12),
+		techExperience: createTechExperience(projects, locale).slice(0, 12),
 		profiles,
 		awards: resume.awards ?? [],
 		languages: resume.languages ?? [],

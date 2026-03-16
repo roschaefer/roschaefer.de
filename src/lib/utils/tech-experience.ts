@@ -1,4 +1,6 @@
+import type { Locale } from "$lib/i18n";
 import type { ResumeProject } from "$lib/types/resume";
+import { formatMonthDuration } from "./duration";
 
 export type TechExperience = {
 	name: string;
@@ -19,21 +21,6 @@ const monthIndex = (value: string): number => {
 
 const monthDiff = (start: number, end: number): number => Math.max(1, end - start + 1);
 
-const formatDuration = (months: number): string => {
-	const years = Math.floor(months / 12);
-	const remainder = months % 12;
-
-	if (years === 0) {
-		return `${remainder} month${remainder === 1 ? "" : "s"}`;
-	}
-
-	if (remainder === 0) {
-		return `${years} year${years === 1 ? "" : "s"}`;
-	}
-
-	return `${years} year${years === 1 ? "" : "s"}, ${remainder} month${remainder === 1 ? "" : "s"}`;
-};
-
 const mergeIntervals = (intervals: Interval[]): Interval[] => {
 	const sorted = [...intervals].sort((left, right) => left.start - right.start);
 	const merged: Interval[] = [];
@@ -53,6 +40,7 @@ const mergeIntervals = (intervals: Interval[]): Interval[] => {
 
 export const createTechExperience = (
 	projects: ResumeProject[],
+	locale: Locale,
 	now = new Date(),
 ): TechExperience[] => {
 	const currentMonth = now.getUTCFullYear() * 12 + now.getUTCMonth();
@@ -87,7 +75,7 @@ export const createTechExperience = (
 			return {
 				name,
 				totalMonths,
-				label: formatDuration(totalMonths),
+				label: formatMonthDuration(totalMonths, locale),
 				projects,
 			};
 		})
