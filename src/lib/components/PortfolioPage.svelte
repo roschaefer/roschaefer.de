@@ -23,6 +23,11 @@ const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale 
 	message({}, { locale });
 const pageUrl = $derived(`${siteUrl}/${locale}`);
 const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
+const legalLinks = $derived(
+	locale === "de"
+		? { imprint: "/de/impressum", privacy: "/de/datenschutz" }
+		: { imprint: "/en/imprint", privacy: "/en/privacy" },
+);
 </script>
 
 <svelte:head>
@@ -324,8 +329,8 @@ const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 			</ul>
 			<nav aria-label="Legal" class="print-hidden">
 				<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.2em]">
-					<li><a href="/impressum">{t(m.nav_imprint)}</a></li>
-					<li><a href="/datenschutz">{t(m.nav_privacy)}</a></li>
+					<li><a href={legalLinks.imprint}>{t(m.nav_imprint)}</a></li>
+					<li><a href={legalLinks.privacy}>{t(m.nav_privacy)}</a></li>
 				</ul>
 			</nav>
 		</div>
