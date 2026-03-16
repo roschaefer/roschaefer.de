@@ -21,17 +21,17 @@ const primaryProfiles = $derived(
 const otherLocale = $derived<Locale>(locale === "de" ? "en" : "de");
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
-const pageUrl = `${siteUrl}/${locale}`;
-const ogLocale = locale === "de" ? "de_DE" : "en_US";
+const pageUrl = $derived(`${siteUrl}/${locale}`);
+const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 </script>
 
 <svelte:head>
 	<title>{t(m.site_title)}</title>
 	<meta name="description" content={t(m.meta_description)} />
 	<link rel="canonical" href={pageUrl} />
-	<link rel="alternate" hreflang="de" href="/de" />
-	<link rel="alternate" hreflang="en" href="/en" />
-	<link rel="alternate" hreflang="x-default" href="/de" />
+	<link rel="alternate" hreflang="de" href={`${siteUrl}/de`} />
+	<link rel="alternate" hreflang="en" href={`${siteUrl}/en`} />
+	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de`} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={t(m.site_title)} />
