@@ -1,0 +1,83 @@
+[build]
+command = "pnpm build"
+publish = "build"
+
+[[redirects]]
+from = "/linkedin"
+to = "https://www.linkedin.com/in/robert-schäfer-788b8615b/"
+status = 302
+force = true
+
+[[redirects]]
+from = "/github"
+to = "https://github.com/roschaefer"
+status = 302
+force = true
+
+[[redirects]]
+from = "/youtube"
+to = "https://www.youtube.com/channel/UCyrLYmvmLzWxnPHxt4n5aPw"
+status = 302
+force = true
+
+[[redirects]]
+from = "/mastodon"
+to = "https://mastodon.social/@roschaefer"
+status = 302
+force = true
+
+[[redirects]]
+from = "/signal"
+to = "https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00"
+status = 302
+force = true
+
+[[redirects]]
+from = "/codementor"
+to = "https://www.codementor.io/@roschaefer"
+status = 302
+force = true
+
+[[redirects]]
+from = "/oss-contributors-berlin"
+to = "https://www.youtube.com/watch?v=p5iMjfVCXBY"
+status = 302
+force = true
+
+[[redirects]]
+from = "/neo4j-human-connection"
+to = "https://www.youtube.com/watch?v=kGwGX6R70H4"
+status = 302
+force = true
+
+[[redirects]]
+from = "/oss-contributors-35c3"
+to = "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147"
+status = 302
+force = true
+
+[[redirects]]
+from = "/human-connection-35c3"
+to = "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180"
+status = 302
+force = true
+
+[[redirects]]
+from = "/informatikradar"
+to = "https://www.youtube.com/watch?v=fzTmJBo4R5A"
+status = 302
+force = true
+
+[[redirects]]
+from = "/story-trolley-talk"
+to = "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm"
+status = 302
+force = true
+
+[[edge_functions]]
+function = "locale-redirect"
+path = "/"
+
+[[edge_functions]]
+function = "locale-redirect"
+path = "/resume.json"
