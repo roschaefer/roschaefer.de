@@ -1,5 +1,6 @@
 import type { Locale } from "$lib/i18n";
 import type { ResumeProject, ResumeSkill } from "$lib/types/resume";
+import { formatMonthDuration } from "./duration";
 
 type Interval = {
 	start: number;
@@ -30,35 +31,8 @@ const mergeIntervals = (intervals: Interval[]): Interval[] => {
 	return merged;
 };
 
-const pluralize = (count: number, singular: string, plural: string): string =>
-	`${count} ${count === 1 ? singular : plural}`;
-
-export const formatSkillDuration = (months: number, locale: Locale): string => {
-	const years = Math.floor(months / 12);
-	const remainder = months % 12;
-
-	if (locale === "de") {
-		if (years === 0) {
-			return pluralize(remainder, "Monat", "Monate");
-		}
-
-		if (remainder === 0) {
-			return pluralize(years, "Jahr", "Jahre");
-		}
-
-		return `${pluralize(years, "Jahr", "Jahre")}, ${pluralize(remainder, "Monat", "Monate")}`;
-	}
-
-	if (years === 0) {
-		return pluralize(remainder, "month", "months");
-	}
-
-	if (remainder === 0) {
-		return pluralize(years, "year", "years");
-	}
-
-	return `${pluralize(years, "year", "years")}, ${pluralize(remainder, "month", "months")}`;
-};
+export const formatSkillDuration = (months: number, locale: Locale): string =>
+	formatMonthDuration(months, locale);
 
 export const createResumeSkills = (
 	projects: ResumeProject[] = [],
