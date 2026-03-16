@@ -69,7 +69,7 @@
 		},
 		{
 			"title": "Deutscher Reporterpreis 2017 (nominiert)",
-			"date": "2019-12-11",
+			"date": "2017-12-11",
 			"summary": "[\"Superkühe\"](https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904)",
 			"awarder": "Reporter-Forum e. V."
 		},
@@ -78,200 +78,6 @@
 			"summary": "[#ursuppe](https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg)",
 			"date": "2015-11-12",
 			"awarder": "MIZ Babelsberg"
-		}
-	],
-	"skills": [
-		{
-			"name": "Ruby",
-			"level": "9 Jahre, 2 Monate"
-		},
-		{
-			"name": "Ruby on Rails",
-			"level": "8 Jahre, 9 Monate"
-		},
-		{
-			"name": "Node.js",
-			"level": "8 Jahre, 3 Monate"
-		},
-		{
-			"name": "Docker",
-			"level": "7 Jahre, 8 Monate"
-		},
-		{
-			"name": "RSpec",
-			"level": "7 Jahre, 5 Monate"
-		},
-		{
-			"name": "Vue",
-			"level": "6 Jahre, 9 Monate"
-		},
-		{
-			"name": "Apollo GraphQL",
-			"level": "6 Jahre, 7 Monate"
-		},
-		{
-			"name": "Digital Ocean",
-			"level": "6 Jahre, 6 Monate"
-		},
-		{
-			"name": "TypeScript",
-			"level": "6 Jahre, 1 Monat"
-		},
-		{
-			"name": "Jest",
-			"level": "5 Jahre, 8 Monate"
-		},
-		{
-			"name": "Ansible",
-			"level": "5 Jahre, 2 Monate"
-		},
-		{
-			"name": "Postmark",
-			"level": "5 Jahre, 2 Monate"
-		},
-		{
-			"name": "Sentry",
-			"level": "5 Jahre, 2 Monate"
-		},
-		{
-			"name": "Stimulus",
-			"level": "5 Jahre, 2 Monate"
-		},
-		{
-			"name": "Auth0",
-			"level": "5 Jahre"
-		},
-		{
-			"name": "PostgreSQL",
-			"level": "5 Jahre"
-		},
-		{
-			"name": "Nuxt",
-			"level": "4 Jahre, 7 Monate"
-		},
-		{
-			"name": "Tailwind",
-			"level": "3 Jahre, 11 Monate"
-		},
-		{
-			"name": "JavaScript",
-			"level": "3 Jahre, 8 Monate"
-		},
-		{
-			"name": "Kubernetes",
-			"level": "3 Jahre, 4 Monate"
-		},
-		{
-			"name": "Vuetify",
-			"level": "3 Jahre, 4 Monate"
-		},
-		{
-			"name": "HyGraph",
-			"level": "2 Jahre, 11 Monate"
-		},
-		{
-			"name": "Netlify",
-			"level": "2 Jahre, 11 Monate"
-		},
-		{
-			"name": "D3",
-			"level": "2 Jahre, 8 Monate"
-		},
-		{
-			"name": "Ember",
-			"level": "2 Jahre, 8 Monate"
-		},
-		{
-			"name": "Highcharts",
-			"level": "2 Jahre, 8 Monate"
-		},
-		{
-			"name": "Uberspace",
-			"level": "2 Jahre, 8 Monate"
-		},
-		{
-			"name": "Neo4J",
-			"level": "2 Jahre, 5 Monate"
-		},
-		{
-			"name": "Google Cloud",
-			"level": "2 Jahre, 4 Monate"
-		},
-		{
-			"name": "Hasura",
-			"level": "2 Jahre, 4 Monate"
-		},
-		{
-			"name": "Testing-Library",
-			"level": "2 Jahre, 4 Monate"
-		},
-		{
-			"name": "Vercel",
-			"level": "2 Jahre, 4 Monate"
-		},
-		{
-			"name": "Cucumber",
-			"level": "2 Jahre, 3 Monate"
-		},
-		{
-			"name": "Svelte",
-			"level": "2 Jahre, 2 Monate"
-		},
-		{
-			"name": "SvelteKit",
-			"level": "2 Jahre, 2 Monate"
-		},
-		{
-			"name": "Authentik",
-			"level": "1 Jahr, 10 Monate"
-		},
-		{
-			"name": "Helm",
-			"level": "1 Jahr, 10 Monate"
-		},
-		{
-			"name": "Hetzner",
-			"level": "1 Jahr, 10 Monate"
-		},
-		{
-			"name": "Terraform",
-			"level": "1 Jahr, 10 Monate"
-		},
-		{
-			"name": "Vike",
-			"level": "1 Jahr, 10 Monate"
-		},
-		{
-			"name": "Serverless",
-			"level": "1 Jahr, 7 Monate"
-		},
-		{
-			"name": "Cypress",
-			"level": "1 Jahr, 6 Monate"
-		},
-		{
-			"name": "Storybook",
-			"level": "1 Jahr, 6 Monate"
-		},
-		{
-			"name": "Java",
-			"level": "8 Monate"
-		},
-		{
-			"name": "PHP",
-			"level": "3 Monate"
-		},
-		{
-			"name": "Wordpress",
-			"level": "3 Monate"
-		},
-		{
-			"name": "Python",
-			"level": "2 Monate"
-		},
-		{
-			"name": "MQTT",
-			"level": "1 Monat"
 		}
 	],
 	"languages": [
@@ -330,6 +136,7 @@
 			"entity": "IT4C",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2024-06-21",
+			"endDate": "2025-06-09",
 			"keywords": [
 				"TypeScript",
 				"Docker",
@@ -494,6 +301,24 @@
 			"type": "employment"
 		},
 		{
+			"name": "Find open-source contributors in online learner communities",
+			"entity": "Vue.js Berlin Meetup",
+			"startDate": "2020-01-14",
+			"endDate": "2020-01-14",
+			"roles": ["Referent"],
+			"url": "https://www.youtube.com/watch?v=p5iMjfVCXBY",
+			"type": "talk"
+		},
+		{
+			"name": "Using Neo4J and GraphQL to build Human Connection",
+			"entity": "Neo4J Online Meetup",
+			"startDate": "2019-06-20",
+			"endDate": "2019-06-20",
+			"roles": ["Referent"],
+			"url": "https://www.youtube.com/watch?v=kGwGX6R70H4",
+			"type": "talk"
+		},
+		{
 			"entity": "tactile.news GmbH",
 			"name": "#bienenlive",
 			"roles": ["Full-Stack-Entwickler"],
@@ -522,6 +347,24 @@
 			"type": "volunteering"
 		},
 		{
+			"name": "Find open-source contributors in online learner communities",
+			"entity": "35th Chaos Communication Congress",
+			"startDate": "2018-12-30",
+			"endDate": "2018-12-30",
+			"roles": ["Referent"],
+			"url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147",
+			"type": "talk"
+		},
+		{
+			"name": "Human Connection",
+			"entity": "35th Chaos Communication Congress",
+			"startDate": "2018-12-29",
+			"endDate": "2018-12-29",
+			"roles": ["Referent"],
+			"url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180",
+			"type": "talk"
+		},
+		{
 			"name": "Rubies in the woods",
 			"entity": "MIZ Babelsberg",
 			"roles": ["Programmier-Mentor"],
@@ -545,6 +388,15 @@
 			"type": "freelancing"
 		},
 		{
+			"name": "Informatikradar #1",
+			"entity": "Gesellschaft für Informatik",
+			"startDate": "2018-05-04",
+			"endDate": "2018-05-04",
+			"roles": ["Referent"],
+			"url": "https://www.youtube.com/watch?v=fzTmJBo4R5A",
+			"type": "talk"
+		},
+		{
 			"name": "sMirror",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT-Entwickler"],
@@ -554,111 +406,6 @@
 			"description": "Schneller Prototyp eines smarten Badezimmerspiegels und Schranks mit Raspberry Pis und Arduinos.",
 			"location": "Lunenburg, Lower Saxony, Germany",
 			"type": "freelancing"
-		},
-		{
-			"name": "Superkühe",
-			"entity": "tactile.news GmbH",
-			"roles": ["Full-Stack-Entwickler"],
-			"startDate": "2016-05-31",
-			"endDate": "2017-10-31",
-			"keywords": ["Ruby on Rails", "Ruby", "RSpec", "Cucumber"],
-			"description": "Wir entwickelten ein innovatives Medienformat für [WDR](https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html) und [Spiegel Online](https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html). Es entstand eine Software, die automatisiert Berichte auf Basis von Sensordaten dreier Milchkühe erzeugt. Das Projekt erhielt große mediale Aufmerksamkeit mit über [63 Berichten und Features](https://superkuehe.wdr.de/zum-projekt/meinung/).",
-			"url": "https://superkuehe.wdr.de/"
-		},
-		{
-			"name": "Story trolley",
-			"entity": "tactile.news GmbH",
-			"roles": ["IoT-Entwickler"],
-			"startDate": "2017-06-01",
-			"endDate": "2017-06-30",
-			"keywords": ["Node.js", "Ember", "Python"],
-			"description": "Schneller Prototyp eines smarten Einkaufswagens.",
-			"url": "https://www.facebook.com/watch?v=746195418906331",
-			"type": "freelancing"
-		},
-		{
-			"name": "Protothon",
-			"entity": "MIZ Babelsberg",
-			"roles": ["Hackathon-Coach"],
-			"startDate": "2015-08-31",
-			"endDate": "2016-09-30",
-			"keywords": ["Node.js", "JavaScript"],
-			"highlights": [
-				"An interactive, decision-based podcast.",
-				"A location aware music player.",
-				"#ursuppe - IoT app for automated journalism based on scientific experiments."
-			],
-			"description": "",
-			"url": "https://www.miz-babelsberg.de/startseite.html",
-			"location": "Potsdam, Brandenburg, Germany"
-		},
-		{
-			"entity": "OXON AG",
-			"name": "Clubcorner",
-			"roles": ["Full-Stack-Entwickler"],
-			"startDate": "2013-04-01",
-			"endDate": "2013-09-30",
-			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber", "PostgreSQL"],
-			"description": "Entwicklung einer Webanwendung für Funktionäre, Schiedsrichter und Trainer. Erster Entwickler, der eine automatisierte Testumgebung eingeführt hat.",
-			"url": "https://clubcorner.ch/",
-			"location": "Bern, Switzerland",
-			"type": "employment"
-		},
-		{
-			"name": "Enterprise programming models for in-memory databases",
-			"entity": "Hasso Plattner Institute",
-			"roles": ["Wissenschaftlicher Mitarbeiter"],
-			"startDate": "2012-01-31",
-			"endDate": "2012-08-31",
-			"keywords": ["Java"],
-			"description": "Implementierung eines Geschäftsprozesses und einer Webanwendung, die SAP als Use Case für die HANA-In-Memory-Datenbank spezifiziert hat.",
-			"url": "https://hpi.de/",
-			"type": "student assistant"
-		},
-		{
-			"name": "Find open-source contributors in online learner communities",
-			"entity": "Vue.js Berlin Meetup",
-			"startDate": "2020-01-14",
-			"endDate": "2020-01-14",
-			"roles": ["Referent"],
-			"url": "https://www.youtube.com/watch?v=p5iMjfVCXBY",
-			"type": "talk"
-		},
-		{
-			"name": "Using Neo4J and GraphQL to build Human Connection",
-			"entity": "Neo4J Online Meetup",
-			"startDate": "2019-06-20",
-			"endDate": "2019-06-20",
-			"roles": ["Referent"],
-			"url": "https://www.youtube.com/watch?v=kGwGX6R70H4",
-			"type": "talk"
-		},
-		{
-			"name": "Find open-source contributors in online learner communities",
-			"entity": "35th Chaos Communication Congress",
-			"startDate": "2018-12-30",
-			"endDate": "2018-12-30",
-			"roles": ["Referent"],
-			"url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147",
-			"type": "talk"
-		},
-		{
-			"name": "Human Connection",
-			"entity": "35th Chaos Communication Congress",
-			"startDate": "2018-12-29",
-			"endDate": "2018-12-29",
-			"roles": ["Referent"],
-			"url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180",
-			"type": "talk"
-		},
-		{
-			"name": "Informatikradar #1",
-			"entity": "Gesellschaft für Informatik",
-			"startDate": "2018-05-04",
-			"endDate": "2018-05-04",
-			"roles": ["Referent"],
-			"url": "https://www.youtube.com/watch?v=fzTmJBo4R5A",
-			"type": "talk"
 		},
 		{
 			"name": "Story-Trolley: Ember meets the IoT",
@@ -690,6 +437,16 @@
 			"type": "talk"
 		},
 		{
+			"name": "Superkühe",
+			"entity": "tactile.news GmbH",
+			"roles": ["Full-Stack-Entwickler"],
+			"startDate": "2016-05-31",
+			"endDate": "2017-10-31",
+			"keywords": ["Ruby on Rails", "Ruby", "RSpec", "Cucumber"],
+			"description": "Wir entwickelten ein innovatives Medienformat für [WDR](https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html) und [Spiegel Online](https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html). Es entstand eine Software, die automatisiert Berichte auf Basis von Sensordaten dreier Milchkühe erzeugt. Das Projekt erhielt große mediale Aufmerksamkeit mit über [63 Berichten und Features](https://superkuehe.wdr.de/zum-projekt/meinung/).",
+			"url": "https://superkuehe.wdr.de/"
+		},
+		{
 			"name": "Coding In The Woods",
 			"description": "Einführung ins Programmieren mit Rails.",
 			"entity": "Codemotion Berlin 2017",
@@ -708,6 +465,17 @@
 			"roles": ["Referent"],
 			"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
 			"type": "talk"
+		},
+		{
+			"name": "Story trolley",
+			"entity": "tactile.news GmbH",
+			"roles": ["IoT-Entwickler"],
+			"startDate": "2017-06-01",
+			"endDate": "2017-06-30",
+			"keywords": ["Node.js", "Ember", "Python"],
+			"description": "Schneller Prototyp eines smarten Einkaufswagens.",
+			"url": "https://www.facebook.com/watch?v=746195418906331",
+			"type": "freelancing"
 		},
 		{
 			"name": "Rundfunk mitbestimmen",
@@ -767,6 +535,239 @@
 			"url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
 			"type": "talk",
 			"description": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) und [RBB](https://www.wwwagner.tv/?p=36200) aufgegriffen."
+		},
+		{
+			"name": "Protothon",
+			"entity": "MIZ Babelsberg",
+			"roles": ["Hackathon-Coach"],
+			"startDate": "2015-08-31",
+			"endDate": "2016-09-30",
+			"keywords": ["Node.js", "JavaScript"],
+			"highlights": [
+				"An interactive, decision-based podcast.",
+				"A location aware music player.",
+				"#ursuppe - IoT app for automated journalism based on scientific experiments."
+			],
+			"description": "",
+			"url": "https://www.miz-babelsberg.de/startseite.html",
+			"location": "Potsdam, Brandenburg, Germany"
+		},
+		{
+			"entity": "OXON AG",
+			"name": "Clubcorner",
+			"roles": ["Full-Stack-Entwickler"],
+			"startDate": "2013-04-01",
+			"endDate": "2013-09-30",
+			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber", "PostgreSQL"],
+			"description": "Entwicklung einer Webanwendung für Funktionäre, Schiedsrichter und Trainer. Erster Entwickler, der eine automatisierte Testumgebung eingeführt hat.",
+			"url": "https://clubcorner.ch/",
+			"location": "Bern, Switzerland",
+			"type": "employment"
+		},
+		{
+			"name": "Enterprise programming models for in-memory databases",
+			"entity": "Hasso Plattner Institute",
+			"roles": ["Wissenschaftlicher Mitarbeiter"],
+			"startDate": "2012-01-31",
+			"endDate": "2012-08-31",
+			"keywords": ["Java"],
+			"description": "Implementierung eines Geschäftsprozesses und einer Webanwendung, die SAP als Use Case für die HANA-In-Memory-Datenbank spezifiziert hat.",
+			"url": "https://hpi.de/",
+			"type": "student assistant"
+		}
+	],
+	"skills": [
+		{
+			"name": "Ruby",
+			"level": "9 Jahre, 2 Monate"
+		},
+		{
+			"name": "Ruby on Rails",
+			"level": "8 Jahre, 9 Monate"
+		},
+		{
+			"name": "Node.js",
+			"level": "7 Jahre, 6 Monate"
+		},
+		{
+			"name": "RSpec",
+			"level": "7 Jahre, 5 Monate"
+		},
+		{
+			"name": "Docker",
+			"level": "6 Jahre, 11 Monate"
+		},
+		{
+			"name": "Digital Ocean",
+			"level": "6 Jahre, 6 Monate"
+		},
+		{
+			"name": "Vue",
+			"level": "6 Jahre"
+		},
+		{
+			"name": "Apollo GraphQL",
+			"level": "5 Jahre, 10 Monate"
+		},
+		{
+			"name": "TypeScript",
+			"level": "5 Jahre, 4 Monate"
+		},
+		{
+			"name": "Ansible",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Postmark",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Sentry",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Stimulus",
+			"level": "5 Jahre, 2 Monate"
+		},
+		{
+			"name": "Auth0",
+			"level": "5 Jahre"
+		},
+		{
+			"name": "Jest",
+			"level": "4 Jahre, 11 Monate"
+		},
+		{
+			"name": "Nuxt",
+			"level": "4 Jahre, 7 Monate"
+		},
+		{
+			"name": "PostgreSQL",
+			"level": "4 Jahre, 3 Monate"
+		},
+		{
+			"name": "Tailwind",
+			"level": "3 Jahre, 11 Monate"
+		},
+		{
+			"name": "JavaScript",
+			"level": "3 Jahre, 8 Monate"
+		},
+		{
+			"name": "HyGraph",
+			"level": "2 Jahre, 11 Monate"
+		},
+		{
+			"name": "Netlify",
+			"level": "2 Jahre, 11 Monate"
+		},
+		{
+			"name": "D3",
+			"level": "2 Jahre, 8 Monate"
+		},
+		{
+			"name": "Ember",
+			"level": "2 Jahre, 8 Monate"
+		},
+		{
+			"name": "Highcharts",
+			"level": "2 Jahre, 8 Monate"
+		},
+		{
+			"name": "Uberspace",
+			"level": "2 Jahre, 8 Monate"
+		},
+		{
+			"name": "Kubernetes",
+			"level": "2 Jahre, 7 Monate"
+		},
+		{
+			"name": "Vuetify",
+			"level": "2 Jahre, 7 Monate"
+		},
+		{
+			"name": "Neo4J",
+			"level": "2 Jahre, 5 Monate"
+		},
+		{
+			"name": "Google Cloud",
+			"level": "2 Jahre, 4 Monate"
+		},
+		{
+			"name": "Hasura",
+			"level": "2 Jahre, 4 Monate"
+		},
+		{
+			"name": "Testing-Library",
+			"level": "2 Jahre, 4 Monate"
+		},
+		{
+			"name": "Vercel",
+			"level": "2 Jahre, 4 Monate"
+		},
+		{
+			"name": "Cucumber",
+			"level": "2 Jahre, 3 Monate"
+		},
+		{
+			"name": "Svelte",
+			"level": "2 Jahre, 2 Monate"
+		},
+		{
+			"name": "SvelteKit",
+			"level": "2 Jahre, 2 Monate"
+		},
+		{
+			"name": "Serverless",
+			"level": "1 Jahr, 7 Monate"
+		},
+		{
+			"name": "Cypress",
+			"level": "1 Jahr, 6 Monate"
+		},
+		{
+			"name": "Storybook",
+			"level": "1 Jahr, 6 Monate"
+		},
+		{
+			"name": "Authentik",
+			"level": "1 Jahr, 1 Monat"
+		},
+		{
+			"name": "Helm",
+			"level": "1 Jahr, 1 Monat"
+		},
+		{
+			"name": "Hetzner",
+			"level": "1 Jahr, 1 Monat"
+		},
+		{
+			"name": "Terraform",
+			"level": "1 Jahr, 1 Monat"
+		},
+		{
+			"name": "Vike",
+			"level": "1 Jahr, 1 Monat"
+		},
+		{
+			"name": "Java",
+			"level": "8 Monate"
+		},
+		{
+			"name": "PHP",
+			"level": "3 Monate"
+		},
+		{
+			"name": "Wordpress",
+			"level": "3 Monate"
+		},
+		{
+			"name": "Python",
+			"level": "2 Monate"
+		},
+		{
+			"name": "MQTT",
+			"level": "1 Monat"
 		}
 	]
 }

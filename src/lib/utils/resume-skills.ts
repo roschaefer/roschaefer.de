@@ -1,6 +1,6 @@
 import type { Locale } from "$lib/i18n";
 import type { ResumeProject, ResumeSkill } from "$lib/types/resume";
-import { formatMonthDuration } from "./duration";
+import { formatMonthDuration } from "./duration.ts";
 
 type Interval = {
 	start: number;

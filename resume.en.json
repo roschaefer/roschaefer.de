@@ -69,7 +69,7 @@
 		},
 		{
 			"title": "German Reporter Award 2017 (nominated)",
-			"date": "2019-12-11",
+			"date": "2017-12-11",
 			"summary": "[\"Superkühe\"](https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904)",
 			"awarder": "Reporter-Forum e. V."
 		},
@@ -78,200 +78,6 @@
 			"summary": "[#ursuppe](https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg)",
 			"date": "2015-11-12",
 			"awarder": "MIZ Babelsberg"
-		}
-	],
-	"skills": [
-		{
-			"name": "Ruby",
-			"level": "9 years, 2 months"
-		},
-		{
-			"name": "Ruby on Rails",
-			"level": "8 years, 9 months"
-		},
-		{
-			"name": "Node.js",
-			"level": "8 years, 3 months"
-		},
-		{
-			"name": "Docker",
-			"level": "7 years, 8 months"
-		},
-		{
-			"name": "RSpec",
-			"level": "7 years, 5 months"
-		},
-		{
-			"name": "Vue",
-			"level": "6 years, 9 months"
-		},
-		{
-			"name": "Apollo GraphQL",
-			"level": "6 years, 7 months"
-		},
-		{
-			"name": "Digital Ocean",
-			"level": "6 years, 6 months"
-		},
-		{
-			"name": "TypeScript",
-			"level": "6 years, 1 month"
-		},
-		{
-			"name": "Jest",
-			"level": "5 years, 8 months"
-		},
-		{
-			"name": "Ansible",
-			"level": "5 years, 2 months"
-		},
-		{
-			"name": "Postmark",
-			"level": "5 years, 2 months"
-		},
-		{
-			"name": "Sentry",
-			"level": "5 years, 2 months"
-		},
-		{
-			"name": "Stimulus",
-			"level": "5 years, 2 months"
-		},
-		{
-			"name": "Auth0",
-			"level": "5 years"
-		},
-		{
-			"name": "PostgreSQL",
-			"level": "5 years"
-		},
-		{
-			"name": "Nuxt",
-			"level": "4 years, 7 months"
-		},
-		{
-			"name": "Tailwind",
-			"level": "3 years, 11 months"
-		},
-		{
-			"name": "JavaScript",
-			"level": "3 years, 8 months"
-		},
-		{
-			"name": "Kubernetes",
-			"level": "3 years, 4 months"
-		},
-		{
-			"name": "Vuetify",
-			"level": "3 years, 4 months"
-		},
-		{
-			"name": "HyGraph",
-			"level": "2 years, 11 months"
-		},
-		{
-			"name": "Netlify",
-			"level": "2 years, 11 months"
-		},
-		{
-			"name": "D3",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Ember",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Highcharts",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Uberspace",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Neo4J",
-			"level": "2 years, 5 months"
-		},
-		{
-			"name": "Google Cloud",
-			"level": "2 years, 4 months"
-		},
-		{
-			"name": "Hasura",
-			"level": "2 years, 4 months"
-		},
-		{
-			"name": "Testing-Library",
-			"level": "2 years, 4 months"
-		},
-		{
-			"name": "Vercel",
-			"level": "2 years, 4 months"
-		},
-		{
-			"name": "Cucumber",
-			"level": "2 years, 3 months"
-		},
-		{
-			"name": "Svelte",
-			"level": "2 years, 2 months"
-		},
-		{
-			"name": "SvelteKit",
-			"level": "2 years, 2 months"
-		},
-		{
-			"name": "Authentik",
-			"level": "1 year, 10 months"
-		},
-		{
-			"name": "Helm",
-			"level": "1 year, 10 months"
-		},
-		{
-			"name": "Hetzner",
-			"level": "1 year, 10 months"
-		},
-		{
-			"name": "Terraform",
-			"level": "1 year, 10 months"
-		},
-		{
-			"name": "Vike",
-			"level": "1 year, 10 months"
-		},
-		{
-			"name": "Serverless",
-			"level": "1 year, 7 months"
-		},
-		{
-			"name": "Cypress",
-			"level": "1 year, 6 months"
-		},
-		{
-			"name": "Storybook",
-			"level": "1 year, 6 months"
-		},
-		{
-			"name": "Java",
-			"level": "8 months"
-		},
-		{
-			"name": "PHP",
-			"level": "3 months"
-		},
-		{
-			"name": "Wordpress",
-			"level": "3 months"
-		},
-		{
-			"name": "Python",
-			"level": "2 months"
-		},
-		{
-			"name": "MQTT",
-			"level": "1 month"
 		}
 	],
 	"languages": [
@@ -330,6 +136,7 @@
 			"entity": "IT4C",
 			"roles": ["Full Stack Developer"],
 			"startDate": "2024-06-21",
+			"endDate": "2025-06-09",
 			"keywords": [
 				"TypeScript",
 				"Docker",
@@ -494,6 +301,24 @@
 			"type": "employment"
 		},
 		{
+			"name": "Find open-source contributors in online learner communities",
+			"entity": "Vue.js Berlin Meetup",
+			"startDate": "2020-01-14",
+			"endDate": "2020-01-14",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=p5iMjfVCXBY",
+			"type": "talk"
+		},
+		{
+			"name": "Using Neo4J and GraphQL to build Human Connection",
+			"entity": "Neo4J Online Meetup",
+			"startDate": "2019-06-20",
+			"endDate": "2019-06-20",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=kGwGX6R70H4",
+			"type": "talk"
+		},
+		{
 			"entity": "tactile.news GmbH",
 			"name": "#bienenlive",
 			"roles": ["Full Stack Developer"],
@@ -522,6 +347,24 @@
 			"type": "volunteering"
 		},
 		{
+			"name": "Find open-source contributors in online learner communities",
+			"entity": "35th Chaos Communication Congress",
+			"startDate": "2018-12-30",
+			"endDate": "2018-12-30",
+			"roles": ["Speaker"],
+			"url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147",
+			"type": "talk"
+		},
+		{
+			"name": "Human Connection",
+			"entity": "35th Chaos Communication Congress",
+			"startDate": "2018-12-29",
+			"endDate": "2018-12-29",
+			"roles": ["Speaker"],
+			"url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180",
+			"type": "talk"
+		},
+		{
 			"name": "Rubies in the woods",
 			"entity": "MIZ Babelsberg",
 			"roles": ["Programming Mentor"],
@@ -545,6 +388,15 @@
 			"type": "freelancing"
 		},
 		{
+			"name": "Informatikradar #1",
+			"entity": "Gesellschaft für Informatik",
+			"startDate": "2018-05-04",
+			"endDate": "2018-05-04",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=fzTmJBo4R5A",
+			"type": "talk"
+		},
+		{
 			"name": "sMirror",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT Developer"],
@@ -554,6 +406,35 @@
 			"description": "Rapid prototype of a smart bathroom mirror and cabinet using Raspberry PIs and Arduinos.",
 			"location": "Lunenburg, Lower Saxony, Germany",
 			"type": "freelancing"
+		},
+		{
+			"name": "Story-Trolley: Ember meets the IoT",
+			"description": "How to use Ember to build a smart shopping cart.",
+			"entity": "Ember.js Meetup Berlin",
+			"startDate": "2018-01-19",
+			"endDate": "2018-01-19",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
+			"type": "talk"
+		},
+		{
+			"name": "Rundfunk mitbestimmen",
+			"entity": "34th Chaos Communication Congress",
+			"startDate": "2017-12-30",
+			"endDate": "2017-12-30",
+			"roles": ["Speaker"],
+			"url": "https://media.ccc.de/v/34c3-9258-lightning_talks_day_4#t=1352",
+			"type": "talk",
+			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
+		},
+		{
+			"name": "GEZ - scrap it or pay it?",
+			"entity": "University Meetup Group \"Bremer Gesellschaft\"",
+			"startDate": "2017-12-19",
+			"endDate": "2017-12-19",
+			"roles": ["Speaker"],
+			"url": "https://www.facebook.com/events/732304050294246/",
+			"type": "talk"
 		},
 		{
 			"name": "Superkühe",
@@ -566,6 +447,26 @@
 			"url": "https://superkuehe.wdr.de/"
 		},
 		{
+			"name": "Coding In The Woods",
+			"description": "Introduction to Coding with Rails.",
+			"entity": "Codemotion Berlin 2017",
+			"startDate": "2017-10-12",
+			"endDate": "2017-10-12",
+			"roles": ["Speaker"],
+			"url": "https://berlin2017.codemotionworld.com/speaker/3623/",
+			"type": "talk"
+		},
+		{
+			"name": "How to enjoy paying for public broadcasting",
+			"description": "Ask-me-anything session at the festival for young visionaries.",
+			"entity": "Z2X Festival",
+			"startDate": "2017-09-04",
+			"endDate": "2017-09-04",
+			"roles": ["Speaker"],
+			"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+			"type": "talk"
+		},
+		{
 			"name": "Story trolley",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT Developer"],
@@ -575,6 +476,65 @@
 			"description": "Rapid prototype of a smart shopping cart.",
 			"url": "https://www.facebook.com/watch?v=746195418906331",
 			"type": "freelancing"
+		},
+		{
+			"name": "Rundfunk mitbestimmen",
+			"entity": "Nerd Nite Berlin #17",
+			"startDate": "2017-06-16",
+			"endDate": "2017-06-16",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=3BmdDEuW-ZA",
+			"type": "talk",
+			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
+		},
+		{
+			"name": "Why do I have to pay and don't get a say?",
+			"description": "Democratize public broadcasting.",
+			"entity": "OpenTechSummit 2017",
+			"startDate": "2017-05-25",
+			"endDate": "2017-05-25",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
+			"type": "talk"
+		},
+		{
+			"name": "MIZ Rapid Fire Pitch",
+			"description": "SensorStory (Best Practices)",
+			"entity": "re:publica 2017 - Love Out Loud",
+			"startDate": "2017-05-09",
+			"endDate": "2017-05-09",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
+			"type": "talk"
+		},
+		{
+			"name": "Ember.js + Rails + Capybara = ♥️",
+			"entity": "Ember.js Meetup Berlin",
+			"startDate": "2017-03-10",
+			"endDate": "2017-03-10",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
+			"type": "talk"
+		},
+		{
+			"name": "Rundfunk mitbestimmen",
+			"entity": "Swift Meetup Berlin",
+			"startDate": "2016-11-14",
+			"endDate": "2016-11-14",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=8TyViNgmeSQ",
+			"type": "talk",
+			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
+		},
+		{
+			"name": "Rundfunk mitbestimmen",
+			"entity": "HPI Hack'n Tell",
+			"startDate": "2016-10-26",
+			"endDate": "2016-10-26",
+			"roles": ["Speaker"],
+			"url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
+			"type": "talk",
+			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
 		},
 		{
 			"name": "Protothon",
@@ -614,155 +574,200 @@
 			"description": "Implementation of a business process and web application as specified by SAP as a use case for the HANA in-memory database.",
 			"url": "https://hpi.de/",
 			"type": "student assistant"
+		}
+	],
+	"skills": [
+		{
+			"name": "Ruby",
+			"level": "9 years, 2 months"
 		},
 		{
-			"name": "Find open-source contributors in online learner communities",
-			"entity": "Vue.js Berlin Meetup",
-			"startDate": "2020-01-14",
-			"endDate": "2020-01-14",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=p5iMjfVCXBY",
-			"type": "talk"
+			"name": "Ruby on Rails",
+			"level": "8 years, 9 months"
 		},
 		{
-			"name": "Using Neo4J and GraphQL to build Human Connection",
-			"entity": "Neo4J Online Meetup",
-			"startDate": "2019-06-20",
-			"endDate": "2019-06-20",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=kGwGX6R70H4",
-			"type": "talk"
+			"name": "Node.js",
+			"level": "7 years, 6 months"
 		},
 		{
-			"name": "Find open-source contributors in online learner communities",
-			"entity": "35th Chaos Communication Congress",
-			"startDate": "2018-12-30",
-			"endDate": "2018-12-30",
-			"roles": ["Speaker"],
-			"url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147",
-			"type": "talk"
+			"name": "RSpec",
+			"level": "7 years, 5 months"
 		},
 		{
-			"name": "Human Connection",
-			"entity": "35th Chaos Communication Congress",
-			"startDate": "2018-12-29",
-			"endDate": "2018-12-29",
-			"roles": ["Speaker"],
-			"url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180",
-			"type": "talk"
+			"name": "Docker",
+			"level": "6 years, 11 months"
 		},
 		{
-			"name": "Informatikradar #1",
-			"entity": "Gesellschaft für Informatik",
-			"startDate": "2018-05-04",
-			"endDate": "2018-05-04",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=fzTmJBo4R5A",
-			"type": "talk"
+			"name": "Digital Ocean",
+			"level": "6 years, 6 months"
 		},
 		{
-			"name": "Story-Trolley: Ember meets the IoT",
-			"description": "How to use Ember to build a smart shopping cart.",
-			"entity": "Ember.js Meetup Berlin",
-			"startDate": "2018-01-19",
-			"endDate": "2018-01-19",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
-			"type": "talk"
+			"name": "Vue",
+			"level": "6 years"
 		},
 		{
-			"name": "Rundfunk mitbestimmen",
-			"entity": "34th Chaos Communication Congress",
-			"startDate": "2017-12-30",
-			"endDate": "2017-12-30",
-			"roles": ["Speaker"],
-			"url": "https://media.ccc.de/v/34c3-9258-lightning_talks_day_4#t=1352",
-			"type": "talk"
+			"name": "Apollo GraphQL",
+			"level": "5 years, 10 months"
 		},
 		{
-			"name": "GEZ - scrap it or pay it?",
-			"entity": "University Meetup Group \"Bremer Gesellschaft\"",
-			"startDate": "2017-12-19",
-			"endDate": "2017-12-19",
-			"roles": ["Speaker"],
-			"url": "https://www.facebook.com/events/732304050294246/",
-			"type": "talk"
+			"name": "TypeScript",
+			"level": "5 years, 4 months"
 		},
 		{
-			"name": "Coding In The Woods",
-			"description": "Introduction to Coding with Rails.",
-			"entity": "Codemotion Berlin 2017",
-			"startDate": "2017-10-12",
-			"endDate": "2017-10-12",
-			"roles": ["Speaker"],
-			"url": "https://berlin2017.codemotionworld.com/speaker/3623/",
-			"type": "talk"
+			"name": "Ansible",
+			"level": "5 years, 2 months"
 		},
 		{
-			"name": "How to enjoy paying for public broadcasting",
-			"description": "Ask-me-anything session at the festival for young visionaries.",
-			"entity": "Z2X Festival",
-			"startDate": "2017-09-04",
-			"endDate": "2017-09-04",
-			"roles": ["Speaker"],
-			"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-			"type": "talk"
+			"name": "Postmark",
+			"level": "5 years, 2 months"
 		},
 		{
-			"name": "Rundfunk mitbestimmen",
-			"entity": "Nerd Nite Berlin #17",
-			"startDate": "2017-06-16",
-			"endDate": "2017-06-16",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=3BmdDEuW-ZA",
-			"type": "talk"
+			"name": "Sentry",
+			"level": "5 years, 2 months"
 		},
 		{
-			"name": "Why do I have to pay and don't get a say?",
-			"description": "Democratize public broadcasting.",
-			"entity": "OpenTechSummit 2017",
-			"startDate": "2017-05-25",
-			"endDate": "2017-05-25",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
-			"type": "talk"
+			"name": "Stimulus",
+			"level": "5 years, 2 months"
 		},
 		{
-			"name": "MIZ Rapid Fire Pitch",
-			"description": "SensorStory (Best Practices)",
-			"entity": "re:publica 2017 - Love Out Loud",
-			"startDate": "2017-05-09",
-			"endDate": "2017-05-09",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
-			"type": "talk"
+			"name": "Auth0",
+			"level": "5 years"
 		},
 		{
-			"name": "Ember.js + Rails + Capybara = ♥️",
-			"entity": "Ember.js Meetup Berlin",
-			"startDate": "2017-03-10",
-			"endDate": "2017-03-10",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
-			"type": "talk"
+			"name": "Jest",
+			"level": "4 years, 11 months"
 		},
 		{
-			"name": "Rundfunk mitbestimmen",
-			"entity": "Swift Meetup Berlin",
-			"startDate": "2016-11-14",
-			"endDate": "2016-11-14",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=8TyViNgmeSQ",
-			"type": "talk"
+			"name": "Nuxt",
+			"level": "4 years, 7 months"
 		},
 		{
-			"name": "Rundfunk mitbestimmen",
-			"entity": "HPI Hack'n Tell",
-			"startDate": "2016-10-26",
-			"endDate": "2016-10-26",
-			"roles": ["Speaker"],
-			"url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
-			"type": "talk"
+			"name": "PostgreSQL",
+			"level": "4 years, 3 months"
+		},
+		{
+			"name": "Tailwind",
+			"level": "3 years, 11 months"
+		},
+		{
+			"name": "JavaScript",
+			"level": "3 years, 8 months"
+		},
+		{
+			"name": "HyGraph",
+			"level": "2 years, 11 months"
+		},
+		{
+			"name": "Netlify",
+			"level": "2 years, 11 months"
+		},
+		{
+			"name": "D3",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Ember",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Highcharts",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Uberspace",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Kubernetes",
+			"level": "2 years, 7 months"
+		},
+		{
+			"name": "Vuetify",
+			"level": "2 years, 7 months"
+		},
+		{
+			"name": "Neo4J",
+			"level": "2 years, 5 months"
+		},
+		{
+			"name": "Google Cloud",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Hasura",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Testing-Library",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Vercel",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Cucumber",
+			"level": "2 years, 3 months"
+		},
+		{
+			"name": "Svelte",
+			"level": "2 years, 2 months"
+		},
+		{
+			"name": "SvelteKit",
+			"level": "2 years, 2 months"
+		},
+		{
+			"name": "Serverless",
+			"level": "1 year, 7 months"
+		},
+		{
+			"name": "Cypress",
+			"level": "1 year, 6 months"
+		},
+		{
+			"name": "Storybook",
+			"level": "1 year, 6 months"
+		},
+		{
+			"name": "Authentik",
+			"level": "1 year, 1 month"
+		},
+		{
+			"name": "Helm",
+			"level": "1 year, 1 month"
+		},
+		{
+			"name": "Hetzner",
+			"level": "1 year, 1 month"
+		},
+		{
+			"name": "Terraform",
+			"level": "1 year, 1 month"
+		},
+		{
+			"name": "Vike",
+			"level": "1 year, 1 month"
+		},
+		{
+			"name": "Java",
+			"level": "8 months"
+		},
+		{
+			"name": "PHP",
+			"level": "3 months"
+		},
+		{
+			"name": "Wordpress",
+			"level": "3 months"
+		},
+		{
+			"name": "Python",
+			"level": "2 months"
+		},
+		{
+			"name": "MQTT",
+			"level": "1 month"
 		}
 	]
 }
