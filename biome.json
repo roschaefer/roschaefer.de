@@ -1,0 +1,26 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 100
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"ignore": [
+			".svelte-kit",
+			"build",
+			"node_modules",
+			"project.inlang/.meta.json",
+			"resume.json",
+			"pnpm-lock.yaml",
+			"src/lib/paraglide"
+		]
+	}
+}

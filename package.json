@@ -1,0 +1,37 @@
+{
+	"name": "portfolio",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"packageManager": "pnpm@10.22.0",
+	"scripts": {
+		"paraglide:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide --emit-ts-declarations",
+		"dev": "pnpm paraglide:compile && vite dev",
+		"build": "pnpm paraglide:compile && vite build",
+		"preview": "vite preview",
+		"check": "pnpm paraglide:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"test": "pnpm paraglide:compile && vitest run",
+		"test:watch": "vitest",
+		"lint": "biome check .",
+		"format": "biome format --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@fontsource-variable/jost": "^5.2.8",
+		"@fontsource/titillium-web": "^5.2.8",
+		"@inlang/paraglide-js": "^2.15.0",
+		"@inlang/plugin-m-function-matcher": "^2.2.2",
+		"@inlang/plugin-message-format": "^4.4.0",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/kit": "^2.48.4",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@tailwindcss/vite": "^4.1.17",
+		"@types/node": "^25.5.0",
+		"svelte": "^5.43.6",
+		"svelte-check": "^4.3.4",
+		"tailwindcss": "^4.1.17",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.2",
+		"vitest": "^4.0.8"
+	}
+}

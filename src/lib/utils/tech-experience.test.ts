@@ -1,0 +1,45 @@
+import { createTechExperience } from "$lib/utils/tech-experience";
+import { describe, expect, it } from "vitest";
+
+describe("createTechExperience", () => {
+	it("merges overlapping project intervals for the same technology", () => {
+		const result = createTechExperience(
+			[
+				{
+					name: "A",
+					startDate: "2020-01-01",
+					endDate: "2020-12-01",
+					keywords: ["TypeScript"],
+				},
+				{
+					name: "B",
+					startDate: "2020-06-01",
+					endDate: "2021-03-01",
+					keywords: ["TypeScript"],
+				},
+			],
+			new Date("2021-03-20"),
+		);
+
+		expect(result[0]).toMatchObject({
+			name: "TypeScript",
+			totalMonths: 15,
+			label: "1 year, 3 months",
+		});
+	});
+
+	it("keeps a unique list of projects per technology", () => {
+		const result = createTechExperience(
+			[
+				{
+					name: "A",
+					startDate: "2024-01-01",
+					keywords: ["Svelte", "TypeScript"],
+				},
+			],
+			new Date("2024-02-01"),
+		);
+
+		expect(result.find((entry) => entry.name === "Svelte")?.projects).toHaveLength(1);
+	});
+});
