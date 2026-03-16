@@ -81,59 +81,212 @@
 		}
 	],
 	"skills": [
-		{ "name": "Ruby", "level": "9 years, 10 months" },
-		{ "name": "Ruby on Rails", "level": "9 years, 5 months" },
-		{ "name": "RSpec", "level": "8 years, 1 month" },
-		{ "name": "Node.js", "level": "7 years, 10 months" },
-		{ "name": "Docker", "level": "7 years, 5 months" },
-		{ "name": "Digital Ocean", "level": "7 years, 3 months" },
-		{ "name": "Vue", "level": "6 years, 6 months" },
-		{ "name": "Apollo GraphQL", "level": "6 years, 3 months" },
-		{ "name": "Stimulus", "level": "6 years" },
-		{ "name": "Ansible", "level": "6 years" },
-		{ "name": "Sentry", "level": "6 years" },
-		{ "name": "Postmark", "level": "6 years" },
-		{ "name": "TypeScript", "level": "6 years" },
-		{ "name": "Jest", "level": "5 years, 4 months" },
-		{ "name": "PostgreSQL", "level": "4 years, 10 months" },
-		{ "name": "Auth0", "level": "4 years, 9 months" },
-		{ "name": "Nuxt", "level": "4 years, 5 months" },
-		{ "name": "Tailwind", "level": "3 years, 9 months" },
-		{ "name": "JavaScript", "level": "3 years, 6 months" },
-		{ "name": "Vuetify", "level": "3 years, 2 months" },
-		{ "name": "Kubernetes", "level": "3 years, 2 months" },
-		{ "name": "HyGraph", "level": "2 years, 11 months" },
-		{ "name": "Netlify", "level": "2 years, 11 months" },
-		{ "name": "Ember", "level": "2 years, 7 months" },
-		{ "name": "D3", "level": "2 years, 7 months" },
-		{ "name": "Highcharts", "level": "2 years, 7 months" },
-		{ "name": "Uberspace", "level": "2 years, 7 months" },
-		{ "name": "Neo4J", "level": "2 years, 4 months" },
-		{ "name": "Testing-Library", "level": "2 years, 2 months" },
-		{ "name": "Hasura", "level": "2 years, 2 months" },
-		{ "name": "Google Cloud", "level": "2 years, 2 months" },
-		{ "name": "Vercel", "level": "2 years, 2 months" },
-		{ "name": "Svelte", "level": "2 years, 2 months" },
-		{ "name": "SvelteKit", "level": "2 years, 2 months" },
-		{ "name": "Cucumber", "level": "2 years, 1 month" },
-		{ "name": "Vike", "level": "1 year, 9 months" },
-		{ "name": "Authentik", "level": "1 year, 9 months" },
-		{ "name": "Terraform", "level": "1 year, 9 months" },
-		{ "name": "Helm", "level": "1 year, 9 months" },
-		{ "name": "Hetzner", "level": "1 year, 9 months" },
-		{ "name": "Serverless", "level": "1 year, 7 months" },
-		{ "name": "Storybook", "level": "1 year, 5 months" },
-		{ "name": "Cypress", "level": "1 year, 5 months" },
-		{ "name": "Java", "level": "7 months" },
-		{ "name": "Wordpress", "level": "2 months" },
-		{ "name": "PHP", "level": "2 months" },
-		{ "name": "Python", "level": "2 months" },
-		{ "name": "MQTT", "level": "1 month" }
+		{
+			"name": "Ruby",
+			"level": "10 years, 1 month"
+		},
+		{
+			"name": "Ruby on Rails",
+			"level": "9 years, 8 months"
+		},
+		{
+			"name": "RSpec",
+			"level": "8 years, 4 months"
+		},
+		{
+			"name": "Node.js",
+			"level": "8 years, 3 months"
+		},
+		{
+			"name": "Docker",
+			"level": "7 years, 8 months"
+		},
+		{
+			"name": "Digital Ocean",
+			"level": "7 years, 5 months"
+		},
+		{
+			"name": "Vue",
+			"level": "6 years, 9 months"
+		},
+		{
+			"name": "Apollo GraphQL",
+			"level": "6 years, 7 months"
+		},
+		{
+			"name": "Ansible",
+			"level": "6 years, 1 month"
+		},
+		{
+			"name": "Postmark",
+			"level": "6 years, 1 month"
+		},
+		{
+			"name": "Sentry",
+			"level": "6 years, 1 month"
+		},
+		{
+			"name": "Stimulus",
+			"level": "6 years, 1 month"
+		},
+		{
+			"name": "TypeScript",
+			"level": "6 years, 1 month"
+		},
+		{
+			"name": "Jest",
+			"level": "5 years, 8 months"
+		},
+		{
+			"name": "Auth0",
+			"level": "5 years"
+		},
+		{
+			"name": "PostgreSQL",
+			"level": "5 years"
+		},
+		{
+			"name": "Nuxt",
+			"level": "4 years, 7 months"
+		},
+		{
+			"name": "Tailwind",
+			"level": "3 years, 11 months"
+		},
+		{
+			"name": "JavaScript",
+			"level": "3 years, 8 months"
+		},
+		{
+			"name": "Kubernetes",
+			"level": "3 years, 4 months"
+		},
+		{
+			"name": "Vuetify",
+			"level": "3 years, 4 months"
+		},
+		{
+			"name": "HyGraph",
+			"level": "2 years, 11 months"
+		},
+		{
+			"name": "Netlify",
+			"level": "2 years, 11 months"
+		},
+		{
+			"name": "D3",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Ember",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Highcharts",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Uberspace",
+			"level": "2 years, 8 months"
+		},
+		{
+			"name": "Neo4J",
+			"level": "2 years, 5 months"
+		},
+		{
+			"name": "Google Cloud",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Hasura",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Testing-Library",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Vercel",
+			"level": "2 years, 4 months"
+		},
+		{
+			"name": "Cucumber",
+			"level": "2 years, 3 months"
+		},
+		{
+			"name": "Svelte",
+			"level": "2 years, 2 months"
+		},
+		{
+			"name": "SvelteKit",
+			"level": "2 years, 2 months"
+		},
+		{
+			"name": "Authentik",
+			"level": "1 year, 10 months"
+		},
+		{
+			"name": "Helm",
+			"level": "1 year, 10 months"
+		},
+		{
+			"name": "Hetzner",
+			"level": "1 year, 10 months"
+		},
+		{
+			"name": "Terraform",
+			"level": "1 year, 10 months"
+		},
+		{
+			"name": "Vike",
+			"level": "1 year, 10 months"
+		},
+		{
+			"name": "Serverless",
+			"level": "1 year, 7 months"
+		},
+		{
+			"name": "Cypress",
+			"level": "1 year, 6 months"
+		},
+		{
+			"name": "Storybook",
+			"level": "1 year, 6 months"
+		},
+		{
+			"name": "Java",
+			"level": "8 months"
+		},
+		{
+			"name": "PHP",
+			"level": "3 months"
+		},
+		{
+			"name": "Wordpress",
+			"level": "3 months"
+		},
+		{
+			"name": "Python",
+			"level": "2 months"
+		},
+		{
+			"name": "MQTT",
+			"level": "1 month"
+		}
 	],
 	"languages": [
-		{ "language": "German", "fluency": "Native Speaker" },
-		{ "language": "English", "fluency": "Business Fluent" },
-		{ "language": "Spanish", "fluency": "Fluent" }
+		{
+			"language": "German",
+			"fluency": "Native Speaker"
+		},
+		{
+			"language": "English",
+			"fluency": "Business Fluent"
+		},
+		{
+			"language": "Spanish",
+			"fluency": "Fluent"
+		}
 	],
 	"certificates": [],
 	"references": [],
@@ -158,9 +311,18 @@
 		}
 	],
 	"interests": [
-		{ "name": "Modern Compiled Languages", "keywords": ["Rust", "Go", "Zig"] },
-		{ "name": "Cross-platform Development", "keywords": ["Flutter"] },
-		{ "name": "Infrastructure as Code", "keywords": ["Terraform"] }
+		{
+			"name": "Modern Compiled Languages",
+			"keywords": ["Rust", "Go", "Zig"]
+		},
+		{
+			"name": "Cross-platform Development",
+			"keywords": ["Flutter"]
+		},
+		{
+			"name": "Infrastructure as Code",
+			"keywords": ["Terraform"]
+		}
 	],
 	"projects": [
 		{
