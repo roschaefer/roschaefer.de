@@ -7,7 +7,7 @@ import * as m from "$lib/paraglide/messages";
 	<title>{m.root_page_title({}, { locale: "de" })}</title>
 	<meta name="description" content={m.root_page_description({}, { locale: "de" })} />
 	<link rel="canonical" href={`${siteUrl}/`} />
-	<meta http-equiv="refresh" content="0; url=/de" />
+	<meta http-equiv="refresh" content="0; url=/de/" />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={m.root_page_title({}, { locale: "de" })} />
@@ -38,7 +38,7 @@ import * as m from "$lib/paraglide/messages";
 				<li>
 					<a
 						class="inline-flex rounded-full border-4 border-[var(--color-brand-cyan)] bg-[var(--color-brand-cyan)] px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-black no-underline transition hover:scale-105 hover:text-white focus-visible:scale-105"
-						href="/de"
+						href="/de/"
 					>
 						{m.root_german({}, { locale: "de" })}
 					</a>
@@ -46,7 +46,7 @@ import * as m from "$lib/paraglide/messages";
 				<li>
 					<a
 						class="inline-flex rounded-full border-4 border-white px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white no-underline transition hover:scale-105 hover:bg-white hover:text-black focus-visible:scale-105"
-						href="/en"
+						href="/en/"
 					>
 						{m.root_english({}, { locale: "en" })}
 					</a>

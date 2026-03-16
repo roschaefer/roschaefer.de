@@ -21,7 +21,7 @@ const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 	<link rel="canonical" href={pageUrl} />
 	<link rel="alternate" hreflang={locale} href={pageUrl} />
 	<link rel="alternate" hreflang={locale === "de" ? "en" : "de"} href={alternateUrl} />
-	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de/impressum`} />
+	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de/impressum/`} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={m.imprint_page_title({}, { locale })} />
@@ -53,7 +53,7 @@ const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 			<br />
 			53797 Lohmar
 			<br />
-			Germany
+			{locale === "de" ? "Deutschland" : "Germany"}
 		</address>
 		<p>
 			{m.imprint_email_label({}, { locale })}:
