@@ -1,5 +1,5 @@
-import { createTechExperience } from "$lib/utils/tech-experience";
 import { describe, expect, it } from "vitest";
+import { createTechExperience } from "$lib/utils/tech-experience";
 
 describe("createTechExperience", () => {
 	it("merges overlapping project intervals for the same technology", () => {

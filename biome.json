@@ -1,9 +1,14 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.7/schema.json",
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
 		"lineWidth": 100
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -13,14 +18,15 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"ignore": [
-			".svelte-kit",
-			"build",
-			"node_modules",
-			"project.inlang/.meta.json",
-			"resume.json",
-			"pnpm-lock.yaml",
-			"src/lib/paraglide"
+		"includes": [
+			"**",
+			"!**/.svelte-kit",
+			"!**/build",
+			"!**/node_modules",
+			"!**/project.inlang/.meta.json",
+			"!**/resume.json",
+			"!**/pnpm-lock.yaml",
+			"!**/src/lib/paraglide"
 		]
 	}
 }

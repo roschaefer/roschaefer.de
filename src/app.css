@@ -20,7 +20,8 @@
 	:root {
 		color: var(--color-brand-text);
 		font-family: var(--font-sans);
-		background: radial-gradient(circle at top, rgba(51, 187, 255, 0.16), transparent 35%),
+		background:
+			radial-gradient(circle at top, rgba(51, 187, 255, 0.16), transparent 35%),
 			linear-gradient(180deg, #020304 0%, #06080c 45%, #050608 100%);
 		background-color: var(--color-brand-ink);
 		scroll-behavior: smooth;
@@ -33,7 +34,8 @@
 	body {
 		min-height: 100vh;
 		margin: 0;
-		background: radial-gradient(circle at 20% 0%, rgba(51, 187, 255, 0.12), transparent 28%),
+		background:
+			radial-gradient(circle at 20% 0%, rgba(51, 187, 255, 0.12), transparent 28%),
 			radial-gradient(circle at 80% 10%, rgba(51, 187, 255, 0.08), transparent 24%),
 			linear-gradient(180deg, #020304 0%, #06080c 45%, #050608 100%);
 		color: var(--color-brand-text);
@@ -110,13 +112,13 @@
 	}
 
 	.print-body {
-		max-width: none !important;
-		padding: 0 !important;
-		margin: 0 !important;
+		max-width: none;
+		padding: 0;
+		margin: 0;
 	}
 
 	.print-hidden {
-		display: none !important;
+		display: none;
 	}
 
 	main,
@@ -135,7 +137,7 @@
 	h3 {
 		break-after: avoid;
 		page-break-after: avoid;
-		color: black !important;
+		color: black;
 	}
 
 	.print-section {
@@ -144,16 +146,16 @@
 	}
 
 	.print-section + .print-section {
-		margin-top: 12mm !important;
+		margin-top: 12mm;
 		padding-top: 6mm;
 	}
 
 	.print-card {
-		box-shadow: none !important;
+		box-shadow: none;
 	}
 
 	.print-url {
-		color: black !important;
+		color: black;
 		text-decoration: none;
 	}
 

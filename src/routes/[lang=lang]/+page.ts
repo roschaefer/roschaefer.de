@@ -1,6 +1,6 @@
+import { error } from "@sveltejs/kit";
 import { isLocale } from "$lib/i18n";
 import { createSiteContent } from "$lib/utils/content";
-import { error } from "@sveltejs/kit";
 
 export const entries = () => [{ lang: "de" }, { lang: "en" }];
 

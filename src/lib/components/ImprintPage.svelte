@@ -2,6 +2,7 @@
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
+import { markUsed } from "$lib/utils/mark-used";
 
 interface Props {
 	locale: Locale;
@@ -13,6 +14,7 @@ const { locale, path, alternatePath }: Props = $props();
 const pageUrl = $derived(`${siteUrl}${path}`);
 const alternateUrl = $derived(`${siteUrl}${alternatePath}`);
 const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
+markUsed(siteImage, siteName, siteUrl, m, pageUrl, alternateUrl, ogLocale);
 </script>
 
 <svelte:head>
