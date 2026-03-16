@@ -24,6 +24,36 @@ const educationKeys = (entries: ResumeEducation[] = []) =>
 				entry.endDate ?? "no-end"
 			}`,
 	);
+const projectMap = (projects: ResumeProject[] = []) =>
+	new Map(projects.map((project) => [projectEntryId(project), project]));
+
+const assertProjectDateParity = (
+	deProjects: ResumeProject[] = [],
+	enProjects: ResumeProject[] = [],
+) => {
+	const deById = projectMap(deProjects);
+	const enById = projectMap(enProjects);
+
+	for (const [projectId, deProject] of deById) {
+		const enProject = enById.get(projectId);
+
+		if (!enProject) {
+			continue;
+		}
+
+		if (deProject.startDate !== enProject.startDate) {
+			throw new Error(
+				`Project startDate mismatch for ${projectId}. de=${deProject.startDate}, en=${enProject.startDate}.`,
+			);
+		}
+
+		if (deProject.endDate !== enProject.endDate) {
+			throw new Error(
+				`Project endDate mismatch for ${projectId}. de=${deProject.endDate ?? "missing"}, en=${enProject.endDate ?? "missing"}.`,
+			);
+		}
+	}
+};
 
 export const validateResumeParity = () => {
 	const de = getResume("de");
@@ -32,6 +62,7 @@ export const validateResumeParity = () => {
 	assertSameKeys("Top-level keys", Object.keys(de).sort(), Object.keys(en).sort());
 
 	assertSameKeys("Project IDs", projectIds(de.projects).sort(), projectIds(en.projects).sort());
+	assertProjectDateParity(de.projects, en.projects);
 
 	assertSameKeys("Awards", awardKeys(de.awards).sort(), awardKeys(en.awards).sort());
 
