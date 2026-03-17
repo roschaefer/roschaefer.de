@@ -95,11 +95,11 @@ await execFileAsync("node", [path.join(rootDir, "scripts", "build-typst-data.mjs
 });
 
 await fs.mkdir(path.join(rootDir, "typst", "out"), { recursive: true });
-await fs.mkdir(path.join(rootDir, "static"), { recursive: true });
 
 for (const locale of ["de", "en"]) {
 	const outputName = resumePdfFilename(locale);
 	const outputPath = path.join(rootDir, "typst", "out", outputName);
+	const staticLocaleDir = path.join(rootDir, "static", locale);
 	const args = [
 		"compile",
 		path.join(rootDir, "typst", "resume.typ"),
@@ -114,5 +114,6 @@ for (const locale of ["de", "en"]) {
 
 	logCommand("typst", args);
 	await execFileAsync("typst", args, { cwd: rootDir });
-	await fs.copyFile(outputPath, path.join(rootDir, "static", outputName));
+	await fs.mkdir(staticLocaleDir, { recursive: true });
+	await fs.copyFile(outputPath, path.join(staticLocaleDir, outputName));
 }
