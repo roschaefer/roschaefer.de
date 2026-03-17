@@ -4,8 +4,8 @@ build
 dist
 typst/content
 typst/out
-static/resume.de.pdf
-static/resume.en.pdf
+static/de/robert-schaefer-resume.de.pdf
+static/en/robert-schaefer-resume.en.pdf
 
 .DS_Store
 Thumbs.db

@@ -111,8 +111,8 @@ Target hosting is `Netlify`.
 
 The deployed PDFs are published as:
 
-- `/resume.de.pdf`
-- `/resume.en.pdf`
+- `/de/robert-schaefer-resume.de.pdf`
+- `/en/robert-schaefer-resume.en.pdf`
 
 Important deployment behavior:
 

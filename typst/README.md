@@ -39,6 +39,6 @@ typst fonts --font-path typst/fonts
 Inspect the fonts embedded in the generated PDF:
 
 ```bash
-pdffonts static/resume.de.pdf
-pdffonts static/resume.en.pdf
+pdffonts static/de/robert-schaefer-resume.de.pdf
+pdffonts static/en/robert-schaefer-resume.en.pdf
 ```
