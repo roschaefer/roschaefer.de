@@ -89,88 +89,84 @@
 		background: rgba(51, 187, 255, 0.35);
 		color: white;
 	}
+
+	.print-only {
+		display: none;
+	}
 }
 
 @media print {
 	@page {
-		margin: 22mm 20mm;
+		margin: 18mm 16mm;
 	}
 
 	:root,
 	html,
 	body {
 		background: white;
-		color: black;
+		color: #101418;
 	}
 
 	body {
 		font-size: 11pt;
+		line-height: 1.45;
 	}
 
-	.print-shell {
-		padding: 18mm 16mm;
-	}
-
-	.print-body {
-		max-width: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.print-hidden {
+	.print-screen {
 		display: none;
 	}
 
-	main,
-	section,
-	article,
-	aside,
-	li,
-	figure,
-	footer {
-		break-inside: avoid;
-		page-break-inside: avoid;
+	.print-only {
+		display: block;
 	}
 
-	h1,
-	h2,
-	h3 {
-		break-after: avoid;
-		page-break-after: avoid;
-		color: black;
+	.print-fallback {
+		padding: 0;
+		max-width: none;
 	}
 
-	.print-section {
-		break-before: auto;
-		page-break-before: auto;
+	.print-fallback h1,
+	.print-fallback h2 {
+		color: #101418;
 	}
 
-	.print-section + .print-section {
-		margin-top: 12mm;
-		padding-top: 6mm;
+	.print-fallback h1 {
+		margin: 0;
+		font-size: 26pt;
+		line-height: 1;
 	}
 
-	.print-card {
-		box-shadow: none;
+	.print-fallback h2 {
+		margin: 16mm 0 4mm;
+		font-size: 12pt;
 	}
 
-	.print-url {
-		color: black;
+	.print-fallback-role {
+		margin: 4mm 0 0;
+		font-size: 11pt;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.print-fallback-links {
+		display: grid;
+		gap: 4mm;
+		margin: 8mm 0 0;
+	}
+
+	.print-fallback-links dt {
+		font-weight: 700;
+	}
+
+	.print-fallback-links dd {
+		margin: 1mm 0 0;
+	}
+
+	.print-fallback-url {
+		color: inherit;
 		text-decoration: none;
-	}
-
-	.print-url::after {
-		content: " (" attr(data-print-label) ")";
-		font-size: 0.85em;
 		word-break: break-all;
-	}
-
-	.print-mailto::after {
-		content: "";
-	}
-
-	a[href^="#"]::after {
-		content: "";
 	}
 
 	img {

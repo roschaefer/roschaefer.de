@@ -2,6 +2,10 @@ node_modules
 .svelte-kit
 build
 dist
+typst/content
+typst/out
+static/resume.de.pdf
+static/resume.en.pdf
 
 .DS_Store
 Thumbs.db

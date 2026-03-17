@@ -1,5 +1,6 @@
 <script lang="ts">
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
+import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
 import { printLinkLabel } from "$lib/data/short-links";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
@@ -24,6 +25,9 @@ const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale 
 	message({}, { locale });
 const pageUrl = $derived(`${siteUrl}/${locale}/`);
 const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
+const pdfPath = $derived(resumePdfPath(locale));
+const pdfFilename = $derived(resumePdfFilename(locale));
+const pdfUrl = $derived(`${siteUrl}${pdfPath}`);
 const legalLinks = $derived(
 	locale === "de"
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
@@ -40,6 +44,9 @@ markUsed(
 	t,
 	pageUrl,
 	ogLocale,
+	pdfPath,
+	pdfFilename,
+	pdfUrl,
 	legalLinks,
 );
 </script>
@@ -64,8 +71,30 @@ markUsed(
 	<meta name="twitter:image" content={siteImage} />
 </svelte:head>
 
-<div class="print-shell min-h-screen">
-	<header class="print-hidden mx-auto max-w-6xl px-6 py-6 sm:px-8 lg:px-12">
+<div class="min-h-screen">
+	<section class="print-only print-fallback px-6 py-8">
+		<h1>{content.basics.name}</h1>
+		<p class="print-fallback-role">{content.basics.label}</p>
+		<h2>{t(m.print_fallback_title)}</h2>
+		<p>{t(m.print_fallback_body)}</p>
+		<dl class="print-fallback-links">
+			<div>
+				<dt>{t(m.print_fallback_website)}</dt>
+				<dd>
+					<a class="print-fallback-url" href={pageUrl}>{pageUrl}</a>
+				</dd>
+			</div>
+			<div>
+				<dt>{t(m.print_fallback_pdf)}</dt>
+				<dd>
+					<a class="print-fallback-url" href={pdfUrl}>{pdfUrl}</a>
+				</dd>
+			</div>
+		</dl>
+	</section>
+
+	<div class="print-screen">
+	<header class="mx-auto max-w-6xl px-6 py-6 sm:px-8 lg:px-12">
 		<div class="flex flex-wrap items-center justify-between gap-4">
 			<a
 				class="font-semibold uppercase tracking-[0.28em] text-white no-underline"
@@ -107,10 +136,10 @@ markUsed(
 		</div>
 	</header>
 
-	<main class="print-body mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-20 pt-10 sm:px-8 lg:px-12 print:gap-10">
+	<main class="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-20 pt-10 sm:px-8 lg:px-12">
 		<section
 			aria-labelledby="intro-title"
-			class="print-section grid gap-10 lg:grid-cols-[1.35fr_0.9fr] print:gap-6"
+			class="grid gap-10 lg:grid-cols-[1.35fr_0.9fr]"
 		>
 			<div class="space-y-8">
 				<p class="text-sm font-semibold uppercase tracking-[0.36em] text-[var(--color-brand-cyan)]">
@@ -122,7 +151,7 @@ markUsed(
 					<span class="text-[var(--color-brand-cyan)]">{t(m.hero_accent)}</span>
 				</h1>
 				<p class="text-lg text-[var(--color-brand-text)]">{content.basics.summary}</p>
-				<ul class="print-hidden flex list-none flex-wrap gap-4 p-0">
+				<ul class="flex list-none flex-wrap gap-4 p-0">
 					<li>
 						<a
 							class="inline-flex rounded-full border-4 border-[var(--color-brand-cyan)] bg-[var(--color-brand-cyan)] px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-black no-underline transition hover:scale-105 hover:text-white focus-visible:scale-105"
@@ -144,7 +173,7 @@ markUsed(
 
 			<aside
 				aria-label={t(m.at_a_glance)}
-				class="print-card rounded-[2rem] border border-[var(--color-brand-line)] bg-[rgba(13,17,23,0.78)] p-6 backdrop-blur print:rounded-none print:border print:border-black/20 print:bg-transparent print:p-4"
+				class="rounded-[2rem] border border-[var(--color-brand-line)] bg-[rgba(13,17,23,0.78)] p-6 backdrop-blur"
 			>
 				<figure class="mb-6">
 					<img
@@ -178,7 +207,7 @@ markUsed(
 						<dd class="mt-1 text-white">{t(m.open_source_summary)}</dd>
 					</div>
 				</dl>
-				<ul class="mt-6 flex list-none flex-wrap gap-4 p-0 print:mt-4">
+				<ul class="mt-6 flex list-none flex-wrap gap-4 p-0">
 					{#each primaryProfiles as profile}
 						<li>
 							<a
@@ -191,13 +220,39 @@ markUsed(
 						</li>
 					{/each}
 				</ul>
+				<a
+					class="mt-8 flex items-center gap-4 rounded-[1.5rem] border border-[rgba(51,187,255,0.35)] bg-[linear-gradient(135deg,rgba(51,187,255,0.16),rgba(255,255,255,0.02))] px-4 py-4 text-white no-underline transition hover:border-[var(--color-brand-cyan)] hover:bg-[linear-gradient(135deg,rgba(51,187,255,0.26),rgba(255,255,255,0.04))] hover:text-white focus-visible:border-[var(--color-brand-cyan)]"
+					href={pdfPath}
+					download={pdfFilename}
+				>
+					<span
+						aria-hidden="true"
+						class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-[rgba(255,255,255,0.12)] bg-[rgba(5,6,8,0.38)] text-[var(--color-brand-cyan)]"
+					>
+						<svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.7">
+							<path d="M7 3.75h7.5L19 8.25V20.25a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 6 20.25v-15A1.5 1.5 0 0 1 7.5 3.75Z" />
+							<path d="M14.5 3.75v4.5H19" />
+							<path d="M12 10.75v6.5" />
+							<path d="m9.5 14.75 2.5 2.5 2.5-2.5" />
+						</svg>
+					</span>
+					<span class="min-w-0">
+						<span class="block text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-brand-cyan-soft)]">
+							{t(m.at_a_glance_cv)}
+						</span>
+						<span class="mt-1 block text-sm text-[var(--color-brand-text)]">
+							{t(m.at_a_glance_cv_hint)}
+						</span>
+						<span class="mt-2 block font-mono text-sm text-white/88">{pdfPath}</span>
+					</span>
+				</a>
 			</aside>
 		</section>
 
 		<section
 			aria-labelledby="experience-title"
 			id="experience"
-			class="print-section space-y-8 print:space-y-4"
+			class="space-y-8"
 		>
 			<div class="space-y-3">
 				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
@@ -207,9 +262,9 @@ markUsed(
 				<p>{t(m.tech_experience_intro)}</p>
 			</div>
 
-			<ol class="grid list-none gap-4 p-0 md:grid-cols-2 xl:grid-cols-3 print:grid-cols-2 print:gap-3">
+			<ol class="grid list-none gap-4 p-0 md:grid-cols-2 xl:grid-cols-3">
 				{#each content.techExperience as entry}
-					<li class="print-card rounded-[1.5rem] border border-[var(--color-brand-line)] bg-[rgba(255,255,255,0.03)] p-5 print:rounded-none print:border-black/20 print:bg-transparent print:p-3">
+					<li class="rounded-[1.5rem] border border-[var(--color-brand-line)] bg-[rgba(255,255,255,0.03)] p-5">
 						<article>
 							<h3 class="text-white">{entry.name}</h3>
 							<p class="mt-1 text-[var(--color-brand-cyan)]">{entry.label}</p>
@@ -228,7 +283,7 @@ markUsed(
 		<section
 			aria-labelledby="projects-title"
 			id="projects"
-			class="print-section space-y-8 print:space-y-4"
+			class="space-y-8"
 		>
 			<div class="space-y-3">
 				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
@@ -237,9 +292,9 @@ markUsed(
 				<h2 id="projects-title" class="text-white">{t(m.selected_work_title)}</h2>
 			</div>
 
-			<div class="grid gap-6 lg:grid-cols-2 print:grid-cols-1 print:gap-3">
+			<div class="grid gap-6 lg:grid-cols-2">
 				{#each content.featuredProjects as project}
-					<article class="print-card rounded-[1.75rem] border border-[var(--color-brand-line)] bg-[rgba(255,255,255,0.025)] p-6 print:rounded-none print:border-black/20 print:bg-transparent print:p-4">
+					<article class="rounded-[1.75rem] border border-[var(--color-brand-line)] bg-[rgba(255,255,255,0.025)] p-6">
 						<header class="space-y-3">
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 								{project.roles?.join(", ") ?? project.type ?? t(m.project_fallback)}
@@ -270,7 +325,7 @@ markUsed(
 						{#if project.keywords?.length}
 							<ul class="mt-5 flex list-none flex-wrap gap-2 p-0">
 								{#each project.keywords.slice(0, 6) as keyword}
-									<li class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)] print:border-black/20 print:text-black">
+									<li class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)]">
 										{keyword}
 									</li>
 								{/each}
@@ -284,7 +339,7 @@ markUsed(
 		<section
 			aria-labelledby="talks-title"
 			id="talks"
-			class="print-section space-y-8 print:space-y-4"
+			class="space-y-8"
 		>
 			<div class="space-y-3">
 				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
@@ -294,10 +349,10 @@ markUsed(
 				<p>{t(m.talks_intro)}</p>
 			</div>
 
-			<ul class="grid list-none gap-4 p-0 lg:grid-cols-2 print:grid-cols-1 print:gap-3">
+			<ul class="grid list-none gap-4 p-0 lg:grid-cols-2">
 				{#each content.talks.slice(0, 6) as talk}
 					<li>
-						<article class="print-card rounded-[1.5rem] border border-[var(--color-brand-line)] p-5 print:rounded-none print:border-black/20 print:p-4">
+						<article class="rounded-[1.5rem] border border-[var(--color-brand-line)] p-5">
 							<h3 class="text-white">
 								<a
 									class="print-url"
@@ -317,8 +372,8 @@ markUsed(
 		</section>
 	</main>
 
-	<footer id="contact" class="print-section border-t border-[var(--color-brand-line)] print:border-black/20">
-		<div class="print-body mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:px-8 lg:px-12">
+	<footer id="contact" class="border-t border-[var(--color-brand-line)]">
+		<div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:px-8 lg:px-12">
 			<section aria-labelledby="contact-title" class="space-y-4">
 				<h2 id="contact-title" class="text-white">{t(m.contact_title)}</h2>
 				<address class="not-italic">
@@ -341,7 +396,7 @@ markUsed(
 					</li>
 				{/each}
 			</ul>
-			<nav aria-label="Legal" class="print-hidden">
+			<nav aria-label="Legal">
 				<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.2em]">
 					<li><a href={legalLinks.imprint}>{t(m.nav_imprint)}</a></li>
 					<li><a href={legalLinks.privacy}>{t(m.nav_privacy)}</a></li>
@@ -349,4 +404,5 @@ markUsed(
 			</nav>
 		</div>
 	</footer>
+	</div>
 </div>

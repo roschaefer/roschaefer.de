@@ -1,6 +1,6 @@
 # Robert Schäfer Portfolio
 
-Personal portfolio and printable CV built with `SvelteKit`, `Tailwind CSS`, `Paraglide`, and prerendering.
+Personal portfolio and printable CV built with `SvelteKit`, `Tailwind CSS`, `Paraglide`, `Typst`, and prerendering.
 
 The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, and designed to print cleanly as a CV.
 
@@ -9,6 +9,7 @@ The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, a
 - `SvelteKit` with `@sveltejs/adapter-static`
 - `Tailwind CSS`
 - `Paraglide` for UI i18n
+- `Typst` for PDF generation
 - `Biome` for linting and formatting
 - `Vitest` for unit tests
 - `Netlify` for hosting, edge locale redirects, and short-link redirects
@@ -19,6 +20,8 @@ The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, a
 - `resume.en.json`
 
 These two files are the canonical localized resume sources.
+
+The downloadable PDFs are generated from the same localized JSON sources through a dedicated `Typst` pipeline.
 
 UI translations live in:
 
@@ -73,6 +76,18 @@ Build:
 pnpm build
 ```
 
+Build production output including PDFs:
+
+```bash
+pnpm build:prod
+```
+
+Build PDFs only:
+
+```bash
+pnpm pdf:build
+```
+
 Format:
 
 ```bash
@@ -92,11 +107,29 @@ The repo currently checks:
 
 Target hosting is `Netlify`.
 
+The deployed PDFs are published as:
+
+- `/resume.de.pdf`
+- `/resume.en.pdf`
+
 Important deployment behavior:
 
 - `/` redirects to `/de` or `/en` via a Netlify edge function based on `Accept-Language`
 - `/resume.json` redirects to `/de/resume.json` or `/en/resume.json`
 - human-readable short links like `/linkedin` or `/oss-contributors-35c3` are defined in `netlify.toml`
+
+## PDF Build And Deploy
+
+- `Typst` is not assumed to be available in Netlify builds.
+- GitHub Actions builds the PDFs and the final static site.
+- GitHub Actions deploys the finished `build/` directory to Netlify.
+- Netlify should be configured to use the GitHub Actions deployment path rather than relying on its own repository build if you want the PDFs to stay part of every deploy.
+- Vendored `ttf` or `otf` fonts under `typst/fonts/` are required for the PDF build. See [`typst/README.md`](/home/robert/Development/schaefer-development/roschaefer.de/typst/README.md).
+
+Required GitHub repository secrets for deployment:
+
+- `NETLIFY_AUTH_TOKEN`
+- `NETLIFY_SITE_ID`
 
 ## SEO / Social Metadata
 
