@@ -170,8 +170,10 @@ Deliverable: localized resume file strategy + render pipeline + parity validatio
 │   ├── assets/
 │   └── out/
 ├── static/
-│   ├── resume.de.pdf
-│   └── resume.en.pdf
+│   ├── de/
+│   │   └── robert-schaefer-resume.de.pdf
+│   └── en/
+│       └── robert-schaefer-resume.en.pdf
 └── src/
 ```
 
@@ -180,7 +182,7 @@ Deliverable: localized resume file strategy + render pipeline + parity validatio
 - `typst/template/` should be hand-written and modular, not generated from JSON.
 - `typst/content/` should contain generated Typst input data and can be regenerated.
 - `typst/out/` should be treated as a build directory.
-- `static/resume.*.pdf` should be the stable deploy target.
+- `static/<locale>/robert-schaefer-resume.<locale>.pdf` should be the stable deploy target.
 
 Implementation steps:
 
@@ -188,8 +190,8 @@ Implementation steps:
 - Add a checked-in Typst layout in `typst/template/`.
 - Add `scripts/build-pdfs.mjs` to compile both locales.
 - Publish the generated PDFs with the website so the site can link to stable URLs such as:
-  - `/resume.de.pdf`
-  - `/resume.en.pdf`
+  - `/de/robert-schaefer-resume.de.pdf`
+  - `/en/robert-schaefer-resume.en.pdf`
 
 Important constraints:
 
@@ -357,8 +359,8 @@ Routing:
   - `/en/resume.json`
   - `/resume.json` defaults to `/de/resume.json` at the app level
 - PDF routes:
-  - `/resume.de.pdf`
-  - `/resume.en.pdf`
+  - `/de/robert-schaefer-resume.de.pdf`
+  - `/en/robert-schaefer-resume.en.pdf`
 - Separate legal pages:
   - `/impressum`
   - `/datenschutz`
