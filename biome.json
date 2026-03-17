@@ -26,7 +26,11 @@
 			"!**/project.inlang/.meta.json",
 			"!**/resume.json",
 			"!**/pnpm-lock.yaml",
-			"!**/src/lib/paraglide"
+			"!**/src/lib/paraglide",
+			"!**/typst/content",
+			"!**/typst/out",
+			"!**/static/resume.de.pdf",
+			"!**/static/resume.en.pdf"
 		]
 	}
 }

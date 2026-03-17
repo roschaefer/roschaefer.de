@@ -1,0 +1,167 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { printLinkLabel } from "../src/lib/data/short-links.ts";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, "..");
+const outputDir = path.join(rootDir, "typst", "content");
+
+const localeConfigs = {
+	de: {
+		dateLocale: "de-DE",
+		labels: {
+			skills: "Technologien",
+			languages: "Sprachen",
+			education: "Ausbildung",
+			awards: "Auszeichnungen",
+			profiles: "Profile",
+			location: "Standort",
+			email: "E-Mail",
+			website: "Website",
+			present: "Heute",
+			selectedProjects: "Ausgewählte aktuelle Projekte",
+			selectedTalks: "Ausgewählte Vorträge",
+		},
+	},
+	en: {
+		dateLocale: "en-US",
+		labels: {
+			skills: "Technologies",
+			languages: "Languages",
+			education: "Education",
+			awards: "Awards",
+			profiles: "Profiles",
+			location: "Location",
+			email: "Email",
+			website: "Website",
+			present: "Present",
+			selectedProjects: "Selected Recent Projects",
+			selectedTalks: "Selected Talks",
+		},
+	},
+};
+
+const formatters = Object.fromEntries(
+	Object.entries(localeConfigs).map(([locale, config]) => [
+		locale,
+		new Intl.DateTimeFormat(config.dateLocale, { month: "short", year: "numeric" }),
+	]),
+);
+
+const stripMarkdownLinks = (value) =>
+	value
+		.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+		.replace(/\s+/g, " ")
+		.trim();
+
+const formatDate = (value, locale) => {
+	if (!value) {
+		return "";
+	}
+
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) {
+		return value;
+	}
+
+	return formatters[locale].format(date);
+};
+
+const formatDateRange = ({ startDate, endDate }, locale, presentLabel) => {
+	const start = formatDate(startDate, locale);
+	const end = endDate ? formatDate(endDate, locale) : presentLabel;
+	return [start, end].filter(Boolean).join(" - ");
+};
+
+const formatLocation = (location) =>
+	[location?.city, location?.region, location?.countryCode].filter(Boolean).join(", ");
+
+const pickProfiles = (profiles = []) =>
+	profiles.filter((profile) =>
+		["Github", "LinkedIn", "Mastodon", "YouTube"].includes(profile.network),
+	);
+
+const projectRole = (project) => project.roles?.join(", ") ?? project.type ?? "";
+
+const createProjectEntry = (project, locale, config) => ({
+	name: project.name,
+	entity: project.entity ?? "",
+	role: projectRole(project),
+	period: formatDateRange(project, locale, config.labels.present),
+	description: stripMarkdownLinks(project.description ?? ""),
+	keywords: (project.keywords ?? []).slice(0, 6),
+	url: project.url ?? null,
+	printLabel: project.url ? printLinkLabel(project.url) : null,
+});
+
+const createTalkEntry = (project, locale) => ({
+	name: project.name,
+	entity: project.entity ?? "",
+	period: formatDate(project.startDate, locale),
+	url: project.url ?? null,
+	printLabel: project.url ? printLinkLabel(project.url) : null,
+});
+
+const createEducationEntry = (entry, locale, config) => ({
+	title: [entry.studyType, entry.area].filter(Boolean).join(", "),
+	institution: entry.institution,
+	period: formatDateRange(entry, locale, config.labels.present),
+	score: entry.score ?? "",
+});
+
+const createAwardEntry = (entry, locale) => ({
+	title: entry.title,
+	awarder: entry.awarder ?? "",
+	period: formatDate(entry.date, locale),
+	summary: stripMarkdownLinks(entry.summary ?? ""),
+});
+
+await fs.mkdir(outputDir, { recursive: true });
+
+for (const [locale, config] of Object.entries(localeConfigs)) {
+	const resume = JSON.parse(await fs.readFile(path.join(rootDir, `resume.${locale}.json`), "utf8"));
+	const projects = [...(resume.projects ?? [])].sort((left, right) =>
+		right.startDate.localeCompare(left.startDate),
+	);
+
+	const payload = {
+		locale,
+		labels: config.labels,
+		basics: {
+			name: resume.basics.name,
+			label: resume.basics.label,
+			summary: resume.basics.summary,
+			email: resume.basics.email,
+			websiteUrl: resume.basics.url,
+			websiteLabel: printLinkLabel(resume.basics.url),
+			location: formatLocation(resume.basics.location),
+		},
+		profiles: pickProfiles(resume.basics.profiles).map((profile) => ({
+			network: profile.network,
+			url: profile.url,
+			printLabel: printLinkLabel(profile.url),
+		})),
+		skills: (resume.skills ?? []).slice(0, 16).map((skill) => skill.name),
+		languages: (resume.languages ?? []).map((language) => ({
+			name: language.language,
+			fluency: language.fluency,
+		})),
+		education: (resume.education ?? []).map((entry) => createEducationEntry(entry, locale, config)),
+		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
+		experience: projects
+			.filter((project) => project.type !== "talk")
+			.slice(0, 8)
+			.map((project) => createProjectEntry(project, locale, config)),
+		talks: projects
+			.filter((project) => project.type === "talk")
+			.slice(0, 6)
+			.map((project) => createTalkEntry(project, locale)),
+	};
+
+	await fs.writeFile(
+		path.join(outputDir, `${locale}.typ.json`),
+		`${JSON.stringify(payload, null, "\t")}\n`,
+	);
+}

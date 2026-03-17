@@ -2,15 +2,15 @@
 
 This site should serve two purposes:
 1. A web portfolio for recruiters, hiring managers, and peers.
-2. A print-friendly version that can be exported as a CV document.
+2. A high-quality CV/PDF that is derived from the same content source.
 
 ## 1. Goals, Audience, Content, Constraints
 
-- Primary goal: clarify (e.g., job search, freelance, credibility).
+- Primary goal: clarify positioning for recruiters, engineering leads, hiring managers, and peers.
 - Audience: hiring managers, engineering leads, recruiters, peers.
 - Positioning: 1–2 sentence summary of who you are + what you excel at.
 - Scope: single page vs multi-page; static vs CMS-driven.
-- Dual output requirement: web-first but printable as a CV.
+- Dual output requirement: web-first portfolio plus a dedicated downloadable CV/PDF.
 - Existing product constraint: keep the current portfolio's look and feel unless a specific UX, accessibility, or print requirement justifies change.
 - Engineering constraint: prefer test-driven development for data transformations, rendering logic, and critical UI behavior.
 - Localization constraint: support both German and English, with German treated as the primary audience language.
@@ -22,9 +22,9 @@ This site should serve two purposes:
   - Skills/stack
   - Writing/talks (optional)
   - Contact/CTA
-  - Resume PDF (optional)
+  - Resume PDF
 
-Deliverable: short brief + list of available assets + print requirements.
+Deliverable: short brief + list of available assets + print/PDF requirements.
 
 ---
 
@@ -35,7 +35,7 @@ Recommended single-page structure:
 - Hero
   - Name, role, specialization
   - 1–2 sentence positioning
-  - CTA buttons (Contact, Resume, GitHub/LinkedIn)
+  - CTA buttons (Contact, Resume PDF, GitHub/LinkedIn)
 - Experience
   - Roles with impact bullets (quantified)
   - Tech stack per role
@@ -44,8 +44,7 @@ Recommended single-page structure:
   - For each: problem, solution, stack, results, links
 - Skills
   - Languages, frameworks, tooling, infra
-  - Add an animated “Tech Experience” block that shows years per technology
-    and links each tech to projects where it was used
+  - Add an animated “Tech Experience” block that shows years per technology and links each tech to projects where it was used
 - About
   - Brief narrative, values
 - Contact
@@ -68,33 +67,51 @@ Content drafting checklist:
 - Use metrics and outcomes where possible.
 - Keep sentences concise; avoid buzzwords.
 
-Deliverable: page outline + draft content blocks + print layout notes.
+Deliverable: page outline + draft content blocks + PDF content notes.
 
 ---
 
 ## 3. Design System & Visual Direction
 
 - Start from the current site's visual language and preserve its typography, color mood, spacing rhythm, and general tone where possible.
-- Only introduce visual changes when they improve content clarity, accessibility, responsiveness, or print output.
+- Only introduce visual changes when they improve content clarity, accessibility, responsiveness, or print/PDF output.
 - Existing visual baseline from `/home/robert/Development/schaefer-development/roschaefer`:
   - dark background with cool blue accent
   - oversized uppercase hero typography
   - `Jost` for display and `Titillium Web` for body copy
   - spacious layout with strong CTA buttons and understated motion
-  - textured/parallax background as long as it does not interfere with readability or print
+  - textured/parallax background as long as it does not interfere with readability
 - Typography: keep the current display/body pairing unless there is a strong reason to change it.
 - Color palette: preserve the black + cyan/blue identity as the default direction.
 - Layout: consistent grid, generous spacing.
-- Print style: define a clean 1-page or 2-page CV layout (A4/US Letter).
-- Print strategy:
-  - optimize first for Firefox print/PDF output
-  - keep Chromium print output acceptable, even if not identical
-  - prefer a simplified document-style print layout over a visually complex website replica
 - Motion: subtle page-load + section reveal animations.
 - Brand elements: optional logo/monogram, consistent icon style.
 - Design review step: compare the new implementation against the currently running site before making any intentional visual departure.
 
-Deliverable: design tokens (fonts, colors, spacing, motion) + print stylesheet.
+### PDF design direction
+
+- The PDF should no longer be treated as a browser printout of the website.
+- The PDF should be a dedicated document layout with its own page geometry, spacing, and typographic decisions.
+- The PDF may share brand tone with the website but does not need to mirror the screen layout.
+- The PDF should optimize for:
+  - consistent pagination
+  - stronger typography
+  - stable link presentation
+  - predictable output in CI
+
+### Browser print direction
+
+- Browser print should become a minimal fallback, not a second CV renderer.
+- Do not maintain a full browser-print CV layout once the Typst PDF exists.
+- The printed fallback should show only:
+  - full name
+  - role/title
+  - website URL
+  - a short note that the official CV is available as PDF
+  - the direct PDF URL for the current locale
+- Hide decorative and content-heavy sections in browser print.
+
+Deliverable: design tokens (fonts, colors, spacing, motion) + Typst PDF theme + minimal browser print fallback.
 
 ---
 
@@ -105,14 +122,17 @@ Deliverable: design tokens (fonts, colors, spacing, motion) + print stylesheet.
 - Use localized JSON Resume files as the canonical content source:
   - `resume.de.json`
   - `resume.en.json`
+- The authored source remains:
+  - `resume.i18n.json`
 - Pipeline:
   - localized JSON Resume data -> site templates (web)
-  - localized JSON Resume data -> print-friendly template (CV)
+  - localized JSON Resume data -> Typst-ready data
+  - Typst-ready data -> PDF
 - Benefits:
-  - One localized update location for both web and print outputs.
-  - Easy to add new views (PDF, plain text, etc.).
+  - One localized update location for both web and PDF outputs.
+  - Easy to add new views later.
 - Considerations:
-  - Map schema fields to your desired section order and labels.
+  - Map schema fields to the desired section order and labels.
   - Decide whether to support optional sections (volunteer, awards, publications).
   - Validate against schema to prevent broken builds.
   - Derive technology durations from project date ranges, merging overlapping intervals so "years of experience" is defensible.
@@ -123,6 +143,61 @@ Deliverable: design tokens (fonts, colors, spacing, motion) + print stylesheet.
   - Validate both locale files against the same TypeScript/schema model.
 
 Deliverable: localized resume file strategy + render pipeline + parity validation plan.
+
+### Typst-based PDF Generation
+
+- Introduce `typst` as the dedicated print/PDF renderer.
+- Keep Typst code separate from the SvelteKit app.
+- Recommended directory structure:
+
+```text
+.
+├── resume.i18n.json
+├── resume.de.json
+├── resume.en.json
+├── scripts/
+│   ├── build-resumes.mjs
+│   ├── build-typst-data.mjs
+│   └── build-pdfs.mjs
+├── typst/
+│   ├── template/
+│   │   ├── resume.typ
+│   │   ├── partials/
+│   │   └── theme.typ
+│   ├── content/
+│   │   ├── de.typ.json
+│   │   └── en.typ.json
+│   ├── assets/
+│   └── out/
+├── static/
+│   ├── resume.de.pdf
+│   └── resume.en.pdf
+└── src/
+```
+
+- `src/` remains web-only.
+- `typst/` owns PDF layout, typography, page geometry, and document-level formatting.
+- `typst/template/` should be hand-written and modular, not generated from JSON.
+- `typst/content/` should contain generated Typst input data and can be regenerated.
+- `typst/out/` should be treated as a build directory.
+- `static/resume.*.pdf` should be the stable deploy target.
+
+Implementation steps:
+
+- Add `scripts/build-typst-data.mjs` to shape `resume.de.json` and `resume.en.json` into Typst-ready input.
+- Add a checked-in Typst layout in `typst/template/`.
+- Add `scripts/build-pdfs.mjs` to compile both locales.
+- Publish the generated PDFs with the website so the site can link to stable URLs such as:
+  - `/resume.de.pdf`
+  - `/resume.en.pdf`
+
+Important constraints:
+
+- Generate data, not Typst template code.
+- Do not rely on GitHub Actions artifacts as the canonical public PDF URL.
+- Treat workflow artifacts only as CI inspection output when useful.
+
+Deliverable: dedicated PDF pipeline with stable public URLs.
 
 ### Localization Strategy
 
@@ -147,6 +222,7 @@ Deliverable: localized resume file strategy + render pipeline + parity validatio
   - metadata such as page titles and descriptions
 - Current translation decision: summaries and descriptions should be fully translated.
 - Keep dates, links, and most technical keywords language-neutral where appropriate.
+- Link each locale route to its matching PDF locale.
 
 Deliverable: locale routing plan and translation source structure.
 
@@ -192,7 +268,7 @@ Deliverable: contact exposure strategy and spam-mitigation decision.
 - Join resume entries with media metadata at build time using a stable `id` or `slug`.
 - Keep provider-specific behavior in code, but keep media metadata provider-agnostic in the content file where possible.
 - Initial presentation decision: plain prominent video links are acceptable in the first release; privacy-friendly media cards remain a possible later enhancement.
-- For print output, prefer domain-owned short aliases over full long video URLs.
+- For PDF output, prefer domain-owned short aliases over full long video URLs.
 
 Deliverable: talk/media schema, stable key strategy, and `talks.ts` source file definition.
 
@@ -219,6 +295,7 @@ Stack options:
 - Framework: SvelteKit with prerendering (preferred)
 - Styling: Tailwind CSS
 - Tooling: Biome for linting and formatting
+- PDF renderer: Typst
 - Alternative: plain HTML/CSS/JS if needed
 
 Hosting:
@@ -236,6 +313,7 @@ Core components:
 - Layout (header, footer, section wrapper)
 - Language switcher
 - Hero
+- Resume PDF CTA
 - Tech Experience visualization on the start page
   - Highlight technologies by years of experience
   - Link each technology to projects where it was used
@@ -243,7 +321,6 @@ Core components:
   - Animate a rotating set of technologies and visually highlight the related projects without requiring user input
   - Reuse the previous portfolio's skill-duration idea as the data model, but not necessarily the interaction pattern
   - Make the animation informative first: readable without motion, enhanced by motion
-  - Keep the web interaction lightweight and degrade gracefully in print
 - Experience list
 - Project cards + detail view
 - Skills list
@@ -266,9 +343,8 @@ Progressive enhancement requirements:
 - The site must render core content fully without JavaScript.
 - Navigation, content hierarchy, links, and contact options must remain usable without JavaScript.
 - Interactive enhancements such as tech animations and click-to-load media embeds must degrade to static, readable content.
-- Print output must not depend on client-side rendering.
-- Print output should simplify the screen layout where necessary to improve cross-browser consistency.
-- Prefer native semantic HTML elements such as `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `figure`, and `address` before using generic `div` wrappers.
+- The downloadable PDF must not depend on client-side rendering.
+- Browser print should not attempt to reproduce the full CV document.
 - Locale selection and locale-specific routing must work without JavaScript.
 
 Routing:
@@ -280,19 +356,22 @@ Routing:
   - `/de/resume.json`
   - `/en/resume.json`
   - `/resume.json` defaults to `/de/resume.json` at the app level
+- PDF routes:
+  - `/resume.de.pdf`
+  - `/resume.en.pdf`
 - Separate legal pages:
   - `/impressum`
   - `/datenschutz`
 - Add short redirect aliases for print-friendly links on the primary domain
-- Optional: /projects/[slug], /writing, /about
+- Optional: `/projects/[slug]`, `/writing`, `/about`
 
 Assets:
 
 - Optimize images
-- Include resume PDF
+- Include generated resume PDFs
 - Reuse existing visual assets selectively from `/home/robert/Development/schaefer-development/roschaefer/static` if they still fit the updated content
 
-Deliverable: architecture decisions + component list + content format + print export plan.
+Deliverable: architecture decisions + component list + content format + PDF export plan.
 
 ---
 
@@ -364,6 +443,13 @@ Thumbnail strategy:
 - Fall back to provider thumbnails only when acceptable from a privacy and maintenance perspective
 - Ensure every video card still works without a thumbnail
 
+PDF link strategy:
+
+- Publish the PDFs with the website build.
+- Do not use GitHub workflow artifacts as the canonical public URL.
+- Keep URLs short and stable.
+- Prefer locale-specific links from each localized route.
+
 Print link strategy:
 
 - Do not print long raw URLs when they are hard to type or remember.
@@ -379,19 +465,22 @@ Testing:
 
 - Prefer test-driven development while implementing core features
 - Unit test data mapping, duration calculations, content joins, and provider/embed decisions
-- Component/integration test accessible rendering, no-JS fallbacks, and print-relevant output where practical
+- Unit test the Typst data generation layer
+- Component/integration test accessible rendering, no-JS fallbacks, and browser-print fallback output where practical
+- Verify that generated PDFs are built in CI for both locales
 - Lighthouse audit
 - Mobile + cross-browser checks
-- Print/PDF checks should prioritize Firefox, with Chromium as a secondary compatibility check
+- PDF/print checks should prioritize the Typst-generated output; browser print is only a fallback
 
 Deployment:
 
 - Automated build on push
 - Custom domain + SSL
 - Netlify deployment with optional edge/function redirects for locale detection
+- GitHub workflow for PDF generation as part of CI
 - Analytics (optional)
 
-Deliverable: checklist + deployment plan + print/PDF verification steps.
+Deliverable: checklist + deployment plan + PDF verification steps.
 
 ---
 
@@ -415,10 +504,11 @@ Deliverable: checklist + deployment plan + print/PDF verification steps.
   - thumbnails
   - featured status
   - provider behavior (`embed` vs `link`)
+- Review the Typst PDF layout and typography decisions
+- Review the minimal browser-print fallback copy before publication
 - Provide any assets to reuse from the old site
   - background artwork
   - profile image
-  - resume PDF
 - Review the final legal text before publication
 
 Current details already provided:

@@ -25,6 +25,9 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -46,7 +49,10 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - name: Build
+      - name: Build PDFs
+        run: pnpm pdf:build
+
+      - name: Build site
         run: pnpm build
 
   lighthouse:
@@ -68,11 +74,14 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        run: pnpm build
+      - name: Build production site
+        run: pnpm build:prod
 
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
