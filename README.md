@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/52ed3916-b0ff-40cd-a343-3b35e8e5d4c7/deploy-status)](https://app.netlify.com/projects/roschaefer/deploys)
+
 # Robert Schäfer Portfolio
 
 Personal portfolio and printable CV built with `SvelteKit`, `Tailwind CSS`, `Paraglide`, `Typst`, and prerendering.
