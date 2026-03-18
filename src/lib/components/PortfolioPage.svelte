@@ -1,4 +1,5 @@
 <script lang="ts">
+import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
 import { printLinkLabel } from "$lib/data/short-links";
@@ -33,7 +34,7 @@ const legalLinks = $derived(
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
 		: { imprint: "/en/imprint/", privacy: "/en/privacy/" },
 );
-markUsed(
+markUsed(() => [
 	siteImage,
 	siteName,
 	siteUrl,
@@ -48,7 +49,8 @@ markUsed(
 	pdfFilename,
 	pdfUrl,
 	legalLinks,
-);
+	ThemeToggle,
+]);
 </script>
 
 <svelte:head>
@@ -97,7 +99,7 @@ markUsed(
 	<header class="mx-auto max-w-6xl px-6 py-6 sm:px-8 lg:px-12">
 		<div class="flex flex-wrap items-center justify-between gap-4">
 			<a
-				class="font-semibold uppercase tracking-[0.28em] text-white no-underline"
+				class="theme-heading font-semibold uppercase tracking-[0.28em] no-underline"
 				href={`/${locale}/`}
 			>
 				{content.basics.name}
@@ -132,6 +134,11 @@ markUsed(
 						</li>
 					</ul>
 				</nav>
+				<ThemeToggle
+					label={t(m.theme_switch_label)}
+					switchToDark={t(m.theme_switch_to_dark)}
+					switchToLight={t(m.theme_switch_to_light)}
+				/>
 			</div>
 		</div>
 	</header>
@@ -145,7 +152,7 @@ markUsed(
 				<p class="text-sm font-semibold uppercase tracking-[0.36em] text-[var(--color-brand-cyan)]">
 					{t(m.hero_role)}
 				</p>
-				<h1 id="intro-title" class="max-w-4xl text-white">
+				<h1 id="intro-title" class="theme-heading max-w-4xl">
 					{t(m.hero_title)}
 					<br />
 					<span class="text-[var(--color-brand-cyan)]">{t(m.hero_accent)}</span>
@@ -154,7 +161,7 @@ markUsed(
 				<ul class="flex list-none flex-wrap gap-4 p-0">
 					<li>
 						<a
-							class="inline-flex rounded-full border-4 border-[var(--color-brand-cyan)] bg-[var(--color-brand-cyan)] px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-black no-underline transition hover:scale-105 hover:text-white focus-visible:scale-105"
+							class="theme-button-primary inline-flex rounded-full border-4 px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] no-underline transition hover:scale-105 focus-visible:scale-105"
 							href={`/${locale}/#projects`}
 						>
 							{t(m.hero_browse_projects)}
@@ -162,7 +169,7 @@ markUsed(
 					</li>
 					<li>
 						<a
-							class="inline-flex rounded-full border-4 border-white px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white no-underline transition hover:scale-105 hover:bg-white hover:text-black focus-visible:scale-105"
+							class="theme-button-secondary inline-flex rounded-full border-4 px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] no-underline transition hover:scale-105 focus-visible:scale-105"
 							href={`/${locale}/#contact`}
 						>
 							{t(m.hero_contact)}
@@ -173,22 +180,23 @@ markUsed(
 
 			<aside
 				aria-label={t(m.at_a_glance)}
-				class="rounded-[2rem] border border-[var(--color-brand-line)] bg-[rgba(13,17,23,0.78)] p-6 backdrop-blur"
+				class="theme-panel rounded-[2rem] p-6"
 			>
 				<figure class="mb-6">
 					<img
-						class="aspect-square w-28 rounded-[1.5rem] border border-[var(--color-brand-line)] object-cover shadow-[0_0_40px_rgba(51,187,255,0.12)]"
+						class="aspect-square w-28 rounded-[1.5rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] object-cover shadow-[0_0_40px_var(--color-brand-shadow)]"
 						src="/roschaefer.jpg"
 						alt="Portrait of Robert Schäfer"
 					/>
+					<figcaption class="sr-only">Robert Schäfer</figcaption>
 				</figure>
-				<h2 class="mb-4 text-white">{t(m.at_a_glance)}</h2>
+				<h2 class="theme-heading mb-4">{t(m.at_a_glance)}</h2>
 				<dl class="grid gap-4">
 					<div>
 						<dt class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 							{t(m.based_in)}
 						</dt>
-						<dd class="mt-1 text-white">
+						<dd class="theme-heading mt-1">
 							{content.basics.location?.city}, {content.basics.location?.region}
 						</dd>
 					</div>
@@ -196,7 +204,7 @@ markUsed(
 						<dt class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 							{t(m.languages)}
 						</dt>
-						<dd class="mt-1 text-white">
+						<dd class="theme-heading mt-1">
 							{content.languages.map((entry) => entry.language).join(" . ")}
 						</dd>
 					</div>
@@ -204,7 +212,7 @@ markUsed(
 						<dt class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 							{t(m.open_source)}
 						</dt>
-						<dd class="mt-1 text-white">{t(m.open_source_summary)}</dd>
+						<dd class="theme-heading mt-1">{t(m.open_source_summary)}</dd>
 					</div>
 				</dl>
 				<ul class="mt-6 flex list-none flex-wrap gap-4 p-0">
@@ -221,13 +229,13 @@ markUsed(
 					{/each}
 				</ul>
 				<a
-					class="mt-8 flex items-center gap-4 rounded-[1.5rem] border border-[rgba(51,187,255,0.35)] bg-[linear-gradient(135deg,rgba(51,187,255,0.16),rgba(255,255,255,0.02))] px-4 py-4 text-white no-underline transition hover:border-[var(--color-brand-cyan)] hover:bg-[linear-gradient(135deg,rgba(51,187,255,0.26),rgba(255,255,255,0.04))] hover:text-white focus-visible:border-[var(--color-brand-cyan)]"
+					class="mt-8 flex items-center gap-4 rounded-[1.5rem] border border-[color:color-mix(in_srgb,var(--color-brand-cyan)_35%,transparent)] bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-brand-cyan)_16%,transparent),color-mix(in_srgb,var(--color-brand-panel)_85%,transparent))] px-4 py-4 no-underline transition hover:border-[var(--color-brand-cyan)] focus-visible:border-[var(--color-brand-cyan)]"
 					href={pdfPath}
 					download={pdfFilename}
 				>
 					<span
 						aria-hidden="true"
-						class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-[rgba(255,255,255,0.12)] bg-[rgba(5,6,8,0.38)] text-[var(--color-brand-cyan)]"
+						class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] text-[var(--color-brand-cyan)]"
 					>
 						<svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.7">
 							<path d="M7 3.75h7.5L19 8.25V20.25a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 6 20.25v-15A1.5 1.5 0 0 1 7.5 3.75Z" />
@@ -237,13 +245,16 @@ markUsed(
 						</svg>
 					</span>
 					<span class="min-w-0">
-						<span class="block text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-brand-cyan-soft)]">
+						<span
+							data-testid="pdf-cta-title"
+							class="block text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-brand-link)]"
+						>
 							{t(m.at_a_glance_cv)}
 						</span>
 						<span class="mt-1 block text-sm text-[var(--color-brand-text)]">
 							{t(m.at_a_glance_cv_hint)}
 						</span>
-						<span class="mt-2 block font-mono text-sm text-white/88">{pdfPath}</span>
+						<span class="theme-heading mt-2 block font-mono text-sm">{pdfPath}</span>
 					</span>
 				</a>
 			</aside>
@@ -258,15 +269,15 @@ markUsed(
 				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
 					{t(m.tech_experience_eyebrow)}
 				</p>
-				<h2 id="experience-title" class="text-white">{t(m.tech_experience_title)}</h2>
+				<h2 id="experience-title" class="theme-heading">{t(m.tech_experience_title)}</h2>
 				<p>{t(m.tech_experience_intro)}</p>
 			</div>
 
 			<ol class="grid list-none gap-4 p-0 md:grid-cols-2 xl:grid-cols-3">
 				{#each content.techExperience as entry}
-					<li class="rounded-[1.5rem] border border-[var(--color-brand-line)] bg-[rgba(255,255,255,0.03)] p-5">
+					<li class="theme-card rounded-[1.5rem] p-5">
 						<article>
-							<h3 class="text-white">{entry.name}</h3>
+							<h3 class="theme-heading">{entry.name}</h3>
 							<p class="mt-1 text-[var(--color-brand-cyan)]">{entry.label}</p>
 							<p class="mt-3 text-sm text-[var(--color-brand-muted)]">
 								{t(m.used_in)} {entry.projects.slice(0, 3).map((project) => project.name).join(", ")}
@@ -289,17 +300,17 @@ markUsed(
 				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
 					{t(m.selected_work_eyebrow)}
 				</p>
-				<h2 id="projects-title" class="text-white">{t(m.selected_work_title)}</h2>
+				<h2 id="projects-title" class="theme-heading">{t(m.selected_work_title)}</h2>
 			</div>
 
 			<div class="grid gap-6 lg:grid-cols-2">
 				{#each content.featuredProjects as project}
-					<article class="rounded-[1.75rem] border border-[var(--color-brand-line)] bg-[rgba(255,255,255,0.025)] p-6">
+					<article class="theme-card rounded-[1.75rem] p-6">
 						<header class="space-y-3">
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 								{project.roles?.join(", ") ?? project.type ?? t(m.project_fallback)}
 							</p>
-							<h3 class="text-white">
+							<h3 class="theme-heading">
 								{#if project.url}
 									<a
 										class="print-url no-underline"
@@ -345,15 +356,15 @@ markUsed(
 				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
 					{t(m.speaking_eyebrow)}
 				</p>
-				<h2 id="talks-title" class="text-white">{t(m.talks_title)}</h2>
+				<h2 id="talks-title" class="theme-heading">{t(m.talks_title)}</h2>
 				<p>{t(m.talks_intro)}</p>
 			</div>
 
 			<ul class="grid list-none gap-4 p-0 lg:grid-cols-2">
 				{#each content.talks.slice(0, 6) as talk}
 					<li>
-						<article class="rounded-[1.5rem] border border-[var(--color-brand-line)] p-5">
-							<h3 class="text-white">
+						<article class="theme-card rounded-[1.5rem] p-5">
+							<h3 class="theme-heading">
 								<a
 									class="print-url"
 									href={talk.url}
@@ -375,7 +386,7 @@ markUsed(
 	<footer id="contact" class="border-t border-[var(--color-brand-line)]">
 		<div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:px-8 lg:px-12">
 			<section aria-labelledby="contact-title" class="space-y-4">
-				<h2 id="contact-title" class="text-white">{t(m.contact_title)}</h2>
+				<h2 id="contact-title" class="theme-heading">{t(m.contact_title)}</h2>
 				<address class="not-italic">
 					<a
 						class="print-url print-mailto"
