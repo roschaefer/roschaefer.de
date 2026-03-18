@@ -47,7 +47,13 @@ jobs:
         run: pnpm check
 
       - name: Test
-        run: pnpm test
+        run: pnpm test:unit
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium firefox
+
+      - name: Accessibility test
+        run: pnpm test:a11y
 
       - name: Build PDFs
         run: pnpm pdf:build

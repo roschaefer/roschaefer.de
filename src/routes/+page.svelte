@@ -1,9 +1,10 @@
 <script lang="ts">
+import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import * as m from "$lib/paraglide/messages";
 import { markUsed } from "$lib/utils/mark-used";
 
-markUsed(siteImage, siteName, siteUrl, m);
+markUsed(siteImage, siteName, siteUrl, m, ThemeToggle);
 </script>
 
 <svelte:head>
@@ -25,11 +26,18 @@ markUsed(siteImage, siteName, siteUrl, m);
 </svelte:head>
 
 <main class="mx-auto flex min-h-screen max-w-3xl flex-col justify-center gap-8 px-6 py-16 sm:px-8">
-	<section class="rounded-[2rem] border border-[var(--color-brand-line)] bg-[rgba(13,17,23,0.78)] p-8 backdrop-blur">
+	<div class="flex justify-end">
+		<ThemeToggle
+			label={m.theme_switch_label({}, { locale: "en" })}
+			switchToDark={m.theme_switch_to_dark({}, { locale: "en" })}
+			switchToLight={m.theme_switch_to_light({}, { locale: "en" })}
+		/>
+	</div>
+	<section class="theme-panel rounded-[2rem] p-8">
 		<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
 			{m.root_kicker({}, { locale: "en" })}
 		</p>
-		<h1 class="mt-4 text-white">{m.root_title({}, { locale: "de" })}</h1>
+		<h1 class="theme-heading mt-4">{m.root_title({}, { locale: "de" })}</h1>
 		<p class="mt-6">
 			{m.root_lead_de({}, { locale: "de" })}
 		</p>
@@ -40,7 +48,7 @@ markUsed(siteImage, siteName, siteUrl, m);
 			<ul class="flex list-none flex-wrap gap-4 p-0">
 				<li>
 					<a
-						class="inline-flex rounded-full border-4 border-[var(--color-brand-cyan)] bg-[var(--color-brand-cyan)] px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-black no-underline transition hover:scale-105 hover:text-white focus-visible:scale-105"
+						class="theme-button-primary inline-flex rounded-full border-4 px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] no-underline transition hover:scale-105 focus-visible:scale-105"
 						href="/de/"
 					>
 						{m.root_german({}, { locale: "de" })}
@@ -48,7 +56,7 @@ markUsed(siteImage, siteName, siteUrl, m);
 				</li>
 				<li>
 					<a
-						class="inline-flex rounded-full border-4 border-white px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white no-underline transition hover:scale-105 hover:bg-white hover:text-black focus-visible:scale-105"
+						class="theme-button-secondary inline-flex rounded-full border-4 px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] no-underline transition hover:scale-105 focus-visible:scale-105"
 						href="/en/"
 					>
 						{m.root_english({}, { locale: "en" })}
