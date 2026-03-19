@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.2.1/schema.json",
 	"basics": {
 		"name": "Robert Schäfer",
-		"label": "Full Stack Developer",
+		"label": "Full-Stack-Entwickler",
 		"image": "https://avatars.githubusercontent.com/u/2110676",
 		"email": "hello@roschaefer.de",
 		"url": "https://roschaefer.de/",
