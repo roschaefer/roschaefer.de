@@ -14,52 +14,44 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.22.0
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v17
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v4
+      - name: Enable Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: nix develop --command pnpm install --frozen-lockfile
 
       - name: Compile Paraglide messages
-        run: pnpm paraglide:compile
+        run: nix develop --command pnpm paraglide:compile
 
       - name: Generate resume outputs
-        run: pnpm resume:build
+        run: nix develop --command pnpm resume:build
 
       - name: Verify generated files are committed
-        run: git diff --exit-code
+        run: nix develop --command git diff --exit-code
 
       - name: Lint
-        run: pnpm lint
+        run: nix develop --command pnpm lint
 
       - name: Typecheck
-        run: pnpm check
+        run: nix develop --command pnpm check
 
       - name: Test
-        run: pnpm test:unit
+        run: nix develop --command pnpm test:unit
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium firefox
+        run: nix develop --command pnpm exec playwright install --with-deps chromium firefox
 
       - name: Accessibility test
-        run: pnpm test:a11y
+        run: nix develop --command pnpm test:a11y
 
       - name: Build PDFs
-        run: pnpm pdf:build
+        run: nix develop --command pnpm pdf:build
 
       - name: Build site
-        run: pnpm build
+        run: nix develop --command pnpm build
 
   lighthouse:
     runs-on: ubuntu-latest
@@ -69,25 +61,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.22.0
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v17
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v4
+      - name: Enable Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: nix develop --command pnpm install --frozen-lockfile
 
       - name: Build production site
-        run: pnpm build:prod
+        run: nix develop --command pnpm build:prod
 
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
@@ -95,3 +79,4 @@ jobs:
           configPath: ./lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
+          buildCommand: nix develop --command pnpm build:prod
