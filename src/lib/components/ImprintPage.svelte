@@ -1,5 +1,5 @@
 <script lang="ts">
-import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
@@ -15,7 +15,18 @@ const { locale, path, alternatePath }: Props = $props();
 const pageUrl = $derived(`${siteUrl}${path}`);
 const alternateUrl = $derived(`${siteUrl}${alternatePath}`);
 const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
-markUsed(() => [siteImage, siteName, siteUrl, m, pageUrl, alternateUrl, ogLocale, ThemeToggle]);
+const privacyPath = $derived(locale === "de" ? "/de/datenschutz/" : "/en/privacy/");
+markUsed(() => [
+	siteImage,
+	siteName,
+	siteUrl,
+	m,
+	pageUrl,
+	alternateUrl,
+	ogLocale,
+	privacyPath,
+	PageShell,
+]);
 </script>
 
 <svelte:head>
@@ -38,42 +49,48 @@ markUsed(() => [siteImage, siteName, siteUrl, m, pageUrl, alternateUrl, ogLocale
 	<meta name="twitter:image" content={siteImage} />
 </svelte:head>
 
-<main class="mx-auto max-w-3xl px-6 py-12 sm:px-8">
-	<div class="mb-8 flex justify-end">
-		<ThemeToggle
-			label={m.theme_switch_label({}, { locale })}
-			switchToDark={m.theme_switch_to_dark({}, { locale })}
-			switchToLight={m.theme_switch_to_light({}, { locale })}
-		/>
-	</div>
-	<header class="mb-8 space-y-3">
-		<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
-			{m.imprint_kicker({}, { locale })}
-		</p>
-		<h1 class="theme-heading">{m.imprint_title({}, { locale })}</h1>
-		<p>{m.imprint_intro({}, { locale })}</p>
-	</header>
+<PageShell
+	locale={locale}
+	homeHref={`/${locale}/`}
+	homeLabel="Robert Schäfer"
+	currentPath={path}
+	alternatePath={alternatePath}
+	footerLinks={[
+		{ href: `/${locale}/`, label: m.nav_cv({}, { locale }) },
+		{ href: privacyPath, label: m.nav_privacy({}, { locale }) },
+	]}
+	mainClass="mx-auto max-w-3xl px-6 pb-12 pt-10 sm:px-8"
+>
+	{#snippet children()}
+		<header class="mb-8 space-y-3">
+			<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
+				{m.imprint_kicker({}, { locale })}
+			</p>
+			<h1 class="theme-heading">{m.imprint_title({}, { locale })}</h1>
+			<p>{m.imprint_intro({}, { locale })}</p>
+		</header>
 
-	<section class="space-y-4">
-		<h2 class="theme-heading">{m.imprint_provider({}, { locale })}</h2>
-		<address class="not-italic">
-			Robert Schäfer
-			<br />
-			Unterdorfstrasse 5
-			<br />
-			53797 Lohmar
-			<br />
-			{locale === "de" ? "Deutschland" : "Germany"}
-		</address>
-		<p>
-			{m.imprint_email_label({}, { locale })}:
-			<a href="mailto:hello@roschaefer.de">hello@roschaefer.de</a>
-		</p>
-		<p>
-			{m.imprint_signal_label({}, { locale })}:
-			<a href="https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00">
-				{m.imprint_signal_link_label({}, { locale })}
-			</a>
-		</p>
-	</section>
-</main>
+		<section class="space-y-4">
+			<h2 class="theme-heading">{m.imprint_provider({}, { locale })}</h2>
+			<address class="not-italic">
+				Robert Schäfer
+				<br />
+				Unterdorfstrasse 5
+				<br />
+				53797 Lohmar
+				<br />
+				{locale === "de" ? "Deutschland" : "Germany"}
+			</address>
+			<p>
+				{m.imprint_email_label({}, { locale })}:
+				<a href="mailto:hello@roschaefer.de">hello@roschaefer.de</a>
+			</p>
+			<p>
+				{m.imprint_signal_label({}, { locale })}:
+				<a href="https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00">
+					{m.imprint_signal_link_label({}, { locale })}
+				</a>
+			</p>
+		</section>
+	{/snippet}
+</PageShell>

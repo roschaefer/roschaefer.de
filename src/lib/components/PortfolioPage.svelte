@@ -1,5 +1,5 @@
 <script lang="ts">
-import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
 import { printLinkLabel } from "$lib/data/short-links";
@@ -49,7 +49,7 @@ markUsed(() => [
 	pdfFilename,
 	pdfUrl,
 	legalLinks,
-	ThemeToggle,
+	PageShell,
 ]);
 </script>
 
@@ -73,77 +73,51 @@ markUsed(() => [
 	<meta name="twitter:image" content={siteImage} />
 </svelte:head>
 
-<div class="min-h-screen">
-	<section class="print-only print-fallback px-6 py-8">
-		<h1>{content.basics.name}</h1>
-		<p class="print-fallback-role">{content.basics.label}</p>
-		<h2>{t(m.print_fallback_title)}</h2>
-		<p>{t(m.print_fallback_body)}</p>
-		<dl class="print-fallback-links">
-			<div>
-				<dt>{t(m.print_fallback_website)}</dt>
-				<dd>
-					<a class="print-fallback-url" href={pageUrl}>{pageUrl}</a>
-				</dd>
-			</div>
-			<div>
-				<dt>{t(m.print_fallback_pdf)}</dt>
-				<dd>
-					<a class="print-fallback-url" href={pdfUrl}>{pdfUrl}</a>
-				</dd>
-			</div>
-		</dl>
-	</section>
-
-	<div class="print-screen">
-	<header class="mx-auto max-w-6xl px-6 py-6 sm:px-8 lg:px-12">
-		<div class="flex flex-wrap items-center justify-between gap-4">
-			<a
-				class="theme-heading font-semibold uppercase tracking-[0.28em] no-underline"
-				href={`/${locale}/`}
-			>
-				{content.basics.name}
-			</a>
-			<div class="ml-auto flex flex-wrap items-center justify-end gap-6 text-right">
-				<nav aria-label={t(m.nav_primary_label)}>
-					<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
-						<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
-						<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
-						<li><a href={`/${locale}/#talks`}>{t(m.nav_talks)}</a></li>
-						<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
-					</ul>
-				</nav>
-				<nav aria-label={t(m.lang_switch)}>
-					<ul class="flex list-none gap-3 p-0 text-sm uppercase tracking-[0.2em]">
-						<li>
-							<a
-								aria-current="page"
-								class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 no-underline"
-								href={`/${locale}/`}
-							>
-								{locale.toUpperCase()}
-							</a>
-						</li>
-						<li>
-							<a
-								class="rounded-full border border-transparent px-3 py-1 no-underline"
-								href={`/${otherLocale}/`}
-							>
-								{otherLocale.toUpperCase()}
-							</a>
-						</li>
-					</ul>
-				</nav>
-				<ThemeToggle
-					label={t(m.theme_switch_label)}
-					switchToDark={t(m.theme_switch_to_dark)}
-					switchToLight={t(m.theme_switch_to_light)}
-				/>
-			</div>
+<section class="print-only print-fallback px-6 py-8">
+	<h1>{content.basics.name}</h1>
+	<p class="print-fallback-role">{content.basics.label}</p>
+	<h2>{t(m.print_fallback_title)}</h2>
+	<p>{t(m.print_fallback_body)}</p>
+	<dl class="print-fallback-links">
+		<div>
+			<dt>{t(m.print_fallback_website)}</dt>
+			<dd>
+				<a class="print-fallback-url" href={pageUrl}>{pageUrl}</a>
+			</dd>
 		</div>
-	</header>
+		<div>
+			<dt>{t(m.print_fallback_pdf)}</dt>
+			<dd>
+				<a class="print-fallback-url" href={pdfUrl}>{pdfUrl}</a>
+			</dd>
+		</div>
+	</dl>
+</section>
 
-	<main class="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-20 pt-10 sm:px-8 lg:px-12">
+<PageShell
+	locale={locale}
+	homeHref={`/${locale}/`}
+	homeLabel={content.basics.name}
+	currentPath={`/${locale}/`}
+	alternatePath={`/${otherLocale}/`}
+	footerLinks={[
+		{ href: legalLinks.imprint, label: t(m.nav_imprint) },
+		{ href: legalLinks.privacy, label: t(m.nav_privacy) },
+	]}
+	mainClass="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-20 pt-10 sm:px-8 lg:px-12"
+>
+	{#snippet topNav()}
+		<nav aria-label={t(m.nav_primary_label)}>
+			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
+				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
+				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
+				<li><a href={`/${locale}/#talks`}>{t(m.nav_talks)}</a></li>
+				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
+			</ul>
+		</nav>
+	{/snippet}
+
+	{#snippet children()}
 		<section
 			aria-labelledby="intro-title"
 			class="grid gap-10 lg:grid-cols-[1.35fr_0.9fr]"
@@ -381,39 +355,32 @@ markUsed(() => [
 				{/each}
 			</ul>
 		</section>
-	</main>
 
-	<footer id="contact" class="border-t border-[var(--color-brand-line)]">
-		<div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:px-8 lg:px-12">
-			<section aria-labelledby="contact-title" class="space-y-4">
-				<h2 id="contact-title" class="theme-heading">{t(m.contact_title)}</h2>
-				<address class="not-italic">
-					<a
-						class="print-url print-mailto"
-						href={`mailto:${content.basics.email}`}
-						data-print-label={content.basics.email}
-					>
-						{content.basics.email}
-					</a>
-				</address>
-				<p>{t(m.contact_summary)}</p>
-			</section>
-			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.2em]">
-				{#each content.profiles as profile}
-					<li>
-						<a class="print-url" href={profile.url} data-print-label={printLinkLabel(profile.url)}>
-							{profile.network}
+		<section id="contact" aria-labelledby="contact-title" class="border-t border-[var(--color-brand-line)] pt-10">
+			<div class="flex flex-col gap-6">
+				<div class="space-y-4">
+					<h2 id="contact-title" class="theme-heading">{t(m.contact_title)}</h2>
+					<address class="not-italic">
+						<a
+							class="print-url print-mailto"
+							href={`mailto:${content.basics.email}`}
+							data-print-label={content.basics.email}
+						>
+							{content.basics.email}
 						</a>
-					</li>
-				{/each}
-			</ul>
-			<nav aria-label="Legal">
+					</address>
+					<p>{t(m.contact_summary)}</p>
+				</div>
 				<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.2em]">
-					<li><a href={legalLinks.imprint}>{t(m.nav_imprint)}</a></li>
-					<li><a href={legalLinks.privacy}>{t(m.nav_privacy)}</a></li>
+					{#each content.profiles as profile}
+						<li>
+							<a class="print-url" href={profile.url} data-print-label={printLinkLabel(profile.url)}>
+								{profile.network}
+							</a>
+						</li>
+					{/each}
 				</ul>
-			</nav>
-		</div>
-	</footer>
-	</div>
-</div>
+			</div>
+		</section>
+	{/snippet}
+</PageShell>

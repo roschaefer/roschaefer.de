@@ -1,5 +1,5 @@
 <script lang="ts">
-import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
@@ -15,7 +15,18 @@ const { locale, path, alternatePath }: Props = $props();
 const pageUrl = $derived(`${siteUrl}${path}`);
 const alternateUrl = $derived(`${siteUrl}${alternatePath}`);
 const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
-markUsed(() => [siteImage, siteName, siteUrl, m, pageUrl, alternateUrl, ogLocale, ThemeToggle]);
+const imprintPath = $derived(locale === "de" ? "/de/impressum/" : "/en/imprint/");
+markUsed(() => [
+	siteImage,
+	siteName,
+	siteUrl,
+	m,
+	pageUrl,
+	alternateUrl,
+	ogLocale,
+	imprintPath,
+	PageShell,
+]);
 </script>
 
 <svelte:head>
@@ -38,53 +49,59 @@ markUsed(() => [siteImage, siteName, siteUrl, m, pageUrl, alternateUrl, ogLocale
 	<meta name="twitter:image" content={siteImage} />
 </svelte:head>
 
-<main class="mx-auto max-w-3xl px-6 py-12 sm:px-8">
-	<div class="mb-8 flex justify-end">
-		<ThemeToggle
-			label={m.theme_switch_label({}, { locale })}
-			switchToDark={m.theme_switch_to_dark({}, { locale })}
-			switchToLight={m.theme_switch_to_light({}, { locale })}
-		/>
-	</div>
-	<header class="mb-8 space-y-3">
-		<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
-			{m.privacy_kicker({}, { locale })}
-		</p>
-		<h1 class="theme-heading">{m.privacy_title({}, { locale })}</h1>
-		<p>{m.privacy_intro({}, { locale })}</p>
-	</header>
-
-	<section class="space-y-6">
-		<article class="space-y-3">
-			<h2 class="theme-heading">{m.privacy_controller({}, { locale })}</h2>
-			<address class="not-italic">
-				Robert Schäfer
-				<br />
-				Unterdorfstrasse 5
-				<br />
-				53797 Lohmar
-				<br />
-				Germany
-			</address>
-			<p>
-				{m.imprint_email_label({}, { locale })}:
-				<a href="mailto:hello@roschaefer.de">hello@roschaefer.de</a>
+<PageShell
+	locale={locale}
+	homeHref={`/${locale}/`}
+	homeLabel="Robert Schäfer"
+	currentPath={path}
+	alternatePath={alternatePath}
+	footerLinks={[
+		{ href: `/${locale}/`, label: m.nav_cv({}, { locale }) },
+		{ href: imprintPath, label: m.nav_imprint({}, { locale }) },
+	]}
+	mainClass="mx-auto max-w-3xl px-6 pb-12 pt-10 sm:px-8"
+>
+	{#snippet children()}
+		<header class="mb-8 space-y-3">
+			<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
+				{m.privacy_kicker({}, { locale })}
 			</p>
-		</article>
+			<h1 class="theme-heading">{m.privacy_title({}, { locale })}</h1>
+			<p>{m.privacy_intro({}, { locale })}</p>
+		</header>
 
-		<article class="space-y-3">
-			<h2 class="theme-heading">{m.privacy_hosting_title({}, { locale })}</h2>
-			<p>{m.privacy_hosting_body({}, { locale })}</p>
-		</article>
+		<section class="space-y-6">
+			<article class="space-y-3">
+				<h2 class="theme-heading">{m.privacy_controller({}, { locale })}</h2>
+				<address class="not-italic">
+					Robert Schäfer
+					<br />
+					Unterdorfstrasse 5
+					<br />
+					53797 Lohmar
+					<br />
+					Germany
+				</address>
+				<p>
+					{m.imprint_email_label({}, { locale })}:
+					<a href="mailto:hello@roschaefer.de">hello@roschaefer.de</a>
+				</p>
+			</article>
 
-		<article class="space-y-3">
-			<h2 class="theme-heading">{m.privacy_contact_title({}, { locale })}</h2>
-			<p>{m.privacy_contact_body({}, { locale })}</p>
-		</article>
+			<article class="space-y-3">
+				<h2 class="theme-heading">{m.privacy_hosting_title({}, { locale })}</h2>
+				<p>{m.privacy_hosting_body({}, { locale })}</p>
+			</article>
 
-		<article class="space-y-3">
-			<h2 class="theme-heading">{m.privacy_external_title({}, { locale })}</h2>
-			<p>{m.privacy_external_body({}, { locale })}</p>
-		</article>
-	</section>
-</main>
+			<article class="space-y-3">
+				<h2 class="theme-heading">{m.privacy_contact_title({}, { locale })}</h2>
+				<p>{m.privacy_contact_body({}, { locale })}</p>
+			</article>
+
+			<article class="space-y-3">
+				<h2 class="theme-heading">{m.privacy_external_title({}, { locale })}</h2>
+				<p>{m.privacy_external_body({}, { locale })}</p>
+			</article>
+		</section>
+	{/snippet}
+</PageShell>
