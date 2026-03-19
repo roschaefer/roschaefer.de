@@ -1,7 +1,10 @@
 {
 	"basics": {
 		"name": "Robert Schäfer",
-		"label": "Full Stack Developer",
+		"label": {
+			"de": "Full-Stack-Entwickler",
+			"en": "Full Stack Developer"
+		},
 		"image": "https://avatars.githubusercontent.com/u/2110676",
 		"email": "hello@roschaefer.de",
 		"url": "https://roschaefer.de/",
