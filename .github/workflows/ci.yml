@@ -41,9 +41,6 @@ jobs:
       - name: Test
         run: nix develop --command pnpm test:unit
 
-      - name: Install Playwright browsers
-        run: nix develop --command pnpm exec playwright install --with-deps chromium firefox
-
       - name: Accessibility test
         run: nix develop --command pnpm test:a11y
 

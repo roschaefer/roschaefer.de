@@ -12,6 +12,7 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
+        playwrightBrowsers = pkgs.playwright-driver.browsers;
         nodeVersion = "24";
         pnpmVersion = "10.22.0";
         typstVersion = "0.14.8";
@@ -53,6 +54,8 @@
             sync-version-files
 
             export PATH="$PWD/node_modules/.bin:$PATH"
+            export PLAYWRIGHT_BROWSERS_PATH='${playwrightBrowsers}'
+            export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 
             printf 'Updated .tool-versions and .node-version from flake defaults.\n'
           '';
