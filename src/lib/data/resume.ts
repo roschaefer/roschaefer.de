@@ -1,14 +1,18 @@
 import type { Locale } from "$lib/i18n";
-import type { Resume, ResumeProject } from "$lib/types/resume";
+import type { Resume, ResumeFeatured, ResumeProject } from "$lib/types/resume";
 import de from "../../../resume.de.json";
 import en from "../../../resume.en.json";
+import source from "../../../resume.i18n.json";
 
 const resumes: Record<Locale, Resume> = {
 	de: de as Resume,
 	en: en as Resume,
 };
 
+const featured = (source as { featured?: ResumeFeatured }).featured;
+
 export const getResume = (locale: Locale): Resume => resumes[locale];
+export const getResumeFeatured = (): ResumeFeatured | undefined => featured;
 
 export const resumeEntryId = (entry: { id?: string; name?: string; url?: string }): string => {
 	if (entry.id) {
