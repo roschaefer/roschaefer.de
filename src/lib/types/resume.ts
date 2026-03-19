@@ -63,6 +63,11 @@ export type ResumeSkill = {
 	level?: string;
 };
 
+export type ResumeFeatured = {
+	projectIds?: string[];
+	skillNames?: string[];
+};
+
 export type Resume = {
 	basics: ResumeBasics;
 	projects?: ResumeProject[];
@@ -71,4 +76,5 @@ export type Resume = {
 	education?: ResumeEducation[];
 	interests?: ResumeInterest[];
 	skills?: ResumeSkill[];
+	featured?: ResumeFeatured;
 };

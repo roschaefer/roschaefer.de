@@ -1,4 +1,39 @@
 {
+	"featured": {
+		"projectIds": [
+			"dreammall",
+			"am-meer-norderney",
+			"rhenania-computer",
+			"beteon",
+			"tanzimpulse",
+			"werkhof-ichen",
+			"100eyes",
+			"systems-development-and-framework"
+		],
+		"skillNames": [
+			"TypeScript",
+			"Ruby",
+			"Python",
+			"SvelteKit",
+			"Vue",
+			"Tailwind",
+			"Apollo GraphQL",
+			"Node.js",
+			"Ruby on Rails",
+			"Docker",
+			"Kubernetes",
+			"Terraform",
+			"Ansible",
+			"PostgreSQL",
+			"Neo4J",
+			"Netlify",
+			"Vercel",
+			"Google Cloud",
+			"Digital Ocean",
+			"Sentry",
+			"Hasura"
+		]
+	},
 	"basics": {
 		"name": "Robert Schäfer",
 		"label": {
@@ -179,6 +214,7 @@
 	],
 	"projects": [
 		{
+			"id": "dreammall",
 			"name": "DreamMall",
 			"entity": "IT4C",
 			"roles": [
@@ -213,6 +249,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "100eyes",
 			"name": "100eyes",
 			"entity": "tactile.news GmbH",
 			"roles": [
@@ -243,6 +280,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "beteon",
 			"name": "beteon",
 			"entity": "auteon",
 			"roles": [
@@ -275,6 +313,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "rhenania-computer",
 			"name": "Rhenania Computer",
 			"entity": "Johannes Schäfer",
 			"roles": [
@@ -302,6 +341,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "werkhof-ichen",
 			"name": "Werkhof Ichen",
 			"entity": "Johannes Schäfer",
 			"roles": [
@@ -321,6 +361,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "tanzimpulse",
 			"name": "Tanzimpulse - Institut für Tanzpädagogik",
 			"entity": "Johannes Schäfer",
 			"roles": [
@@ -340,6 +381,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "am-meer-norderney",
 			"name": "Ferienwohnung - Am Meer Norderneys",
 			"entity": "Johannes Schäfer",
 			"roles": [
@@ -359,6 +401,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "systems-development-and-framework",
 			"entity": "Hochschule für Technik und Wirtschaft Berlin",
 			"name": "Systems-Development and Framework",
 			"roles": [
@@ -388,6 +431,7 @@
 			"type": "teaching"
 		},
 		{
+			"id": "ocelot-social",
 			"name": "Ocelot.social",
 			"entity": "busfaktor e.V.",
 			"roles": [
@@ -420,6 +464,7 @@
 			"type": "employment"
 		},
 		{
+			"id": "find-open-source-contributors-vuejs-berlin",
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "Vue.js Berlin Meetup",
 			"startDate": "2020-01-14",
@@ -434,6 +479,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "neo4j-graphql-human-connection",
 			"name": "Using Neo4J and GraphQL to build Human Connection",
 			"entity": "Neo4J Online Meetup",
 			"startDate": "2019-06-20",
@@ -448,6 +494,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "bienenlive",
 			"entity": "tactile.news GmbH",
 			"name": "#bienenlive",
 			"roles": [
@@ -467,6 +514,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-project",
 			"name": "Rundfunk mitbestimmen",
 			"roles": [
 				{
@@ -492,6 +540,7 @@
 			"type": "volunteering"
 		},
 		{
+			"id": "find-open-source-contributors-35c3",
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "35th Chaos Communication Congress",
 			"startDate": "2018-12-30",
@@ -506,6 +555,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "human-connection-35c3",
 			"name": "Human Connection",
 			"entity": "35th Chaos Communication Congress",
 			"startDate": "2018-12-29",
@@ -520,6 +570,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "rubies-in-the-woods",
 			"name": "Rubies in the woods",
 			"entity": "MIZ Babelsberg",
 			"roles": [
@@ -540,6 +591,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "solutiance",
 			"name": "solutiance.com",
 			"entity": "Solutiance AG",
 			"roles": [
@@ -559,6 +611,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "informatikradar-1",
 			"name": "Informatikradar #1",
 			"entity": "Gesellschaft für Informatik",
 			"startDate": "2018-05-04",
@@ -573,6 +626,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "smirror",
 			"name": "sMirror",
 			"entity": "tactile.news GmbH",
 			"roles": [
@@ -592,6 +646,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "story-trolley-ember-meets-iot",
 			"name": "Story-Trolley: Ember meets the IoT",
 			"description": {
 				"de": "Wie man mit Ember einen smarten Einkaufswagen baut.",
@@ -610,6 +665,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-34c3",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "34th Chaos Communication Congress",
 			"startDate": "2017-12-30",
@@ -628,6 +684,7 @@
 			}
 		},
 		{
+			"id": "gez-scrap-it-or-pay-it",
 			"name": "GEZ - scrap it or pay it?",
 			"entity": "University Meetup Group \"Bremer Gesellschaft\"",
 			"startDate": "2017-12-19",
@@ -642,6 +699,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "superkuehe",
 			"name": "Superkühe",
 			"entity": "tactile.news GmbH",
 			"roles": [
@@ -660,6 +718,7 @@
 			"url": "https://superkuehe.wdr.de/"
 		},
 		{
+			"id": "coding-in-the-woods",
 			"name": "Coding In The Woods",
 			"description": {
 				"de": "Einführung ins Programmieren mit Rails.",
@@ -678,6 +737,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "how-to-enjoy-paying-for-public-broadcasting",
 			"name": "How to enjoy paying for public broadcasting",
 			"description": {
 				"de": "Ask-me-anything-Session auf dem Festival für junge Visionäre.",
@@ -696,6 +756,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "story-trolley",
 			"name": "Story trolley",
 			"entity": "tactile.news GmbH",
 			"roles": [
@@ -715,6 +776,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-nerd-nite-17",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "Nerd Nite Berlin #17",
 			"startDate": "2017-06-16",
@@ -733,6 +795,7 @@
 			}
 		},
 		{
+			"id": "why-do-i-have-to-pay-and-dont-get-a-say",
 			"name": "Why do I have to pay and don't get a say?",
 			"description": {
 				"de": "Den öffentlich-rechtlichen Rundfunk demokratisieren.",
@@ -751,6 +814,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "miz-rapid-fire-pitch",
 			"name": "MIZ Rapid Fire Pitch",
 			"description": "SensorStory (Best Practices)",
 			"entity": "re:publica 2017 - Love Out Loud",
@@ -766,6 +830,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "ember-rails-capybara",
 			"name": "Ember.js + Rails + Capybara = ♥️",
 			"entity": "Ember.js Meetup Berlin",
 			"startDate": "2017-03-10",
@@ -780,6 +845,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-swift-meetup",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "Swift Meetup Berlin",
 			"startDate": "2016-11-14",
@@ -798,6 +864,7 @@
 			}
 		},
 		{
+			"id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "HPI Hack'n Tell",
 			"startDate": "2016-10-26",
@@ -816,6 +883,7 @@
 			}
 		},
 		{
+			"id": "protothon",
 			"name": "Protothon",
 			"entity": "MIZ Babelsberg",
 			"roles": [
@@ -837,6 +905,7 @@
 			"location": "Potsdam, Brandenburg, Germany"
 		},
 		{
+			"id": "clubcorner",
 			"entity": "OXON AG",
 			"name": "Clubcorner",
 			"roles": [
@@ -857,6 +926,7 @@
 			"type": "employment"
 		},
 		{
+			"id": "enterprise-programming-models-in-memory-databases",
 			"name": "Enterprise programming models for in-memory databases",
 			"entity": "Hasso Plattner Institute",
 			"roles": [
