@@ -1,7 +1,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import source from "../resume.i18n.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
+import {
+	createFeaturedProjects,
+	createFeaturedSkills,
+	getFeaturedConfig,
+} from "../src/lib/utils/resume-featured.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -119,12 +125,17 @@ const createAwardEntry = (entry, locale) => ({
 });
 
 await fs.mkdir(outputDir, { recursive: true });
+const featured = getFeaturedConfig(source.featured);
 
 for (const [locale, config] of Object.entries(localeConfigs)) {
 	const resume = JSON.parse(await fs.readFile(path.join(rootDir, `resume.${locale}.json`), "utf8"));
 	const projects = [...(resume.projects ?? [])].sort((left, right) =>
 		right.startDate.localeCompare(left.startDate),
 	);
+	const featuredProjects = createFeaturedProjects(projects, featured.projectIds).filter(
+		(project) => project.type !== "talk",
+	);
+	const featuredSkills = createFeaturedSkills(resume.skills ?? [], featured.skillNames);
 
 	const payload = {
 		locale,
@@ -143,17 +154,19 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 			url: profile.url,
 			printLabel: printLinkLabel(profile.url),
 		})),
-		skills: (resume.skills ?? []).slice(0, 16).map((skill) => skill.name),
+		skills: (featuredSkills.length > 0 ? featuredSkills : (resume.skills ?? []).slice(0, 16)).map(
+			(skill) => skill.name,
+		),
 		languages: (resume.languages ?? []).map((language) => ({
 			name: language.language,
 			fluency: language.fluency,
 		})),
 		education: (resume.education ?? []).map((entry) => createEducationEntry(entry, locale, config)),
 		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
-		experience: projects
-			.filter((project) => project.type !== "talk")
-			.slice(0, 8)
-			.map((project) => createProjectEntry(project, locale, config)),
+		experience: (featuredProjects.length > 0
+			? featuredProjects.slice(0, 8)
+			: projects.filter((project) => project.type !== "talk").slice(0, 8)
+		).map((project) => createProjectEntry(project, locale, config)),
 		talks: projects
 			.filter((project) => project.type === "talk")
 			.slice(0, 6)

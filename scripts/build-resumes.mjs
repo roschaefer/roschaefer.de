@@ -51,10 +51,11 @@ const source = JSON.parse(await fs.readFile(sourceFile, "utf8"));
 
 for (const locale of locales) {
 	const resume = localizeValue(source, locale);
+	const { featured: _featured, ...resumeWithoutFeatured } = resume;
 	const sortedResume = sortResumeDatedSections({
 		$schema: resumeSchema,
-		...resume,
-		skills: createResumeSkills(resume.projects ?? [], locale),
+		...resumeWithoutFeatured,
+		skills: createResumeSkills(resumeWithoutFeatured.projects ?? [], locale),
 	});
 	await fs.writeFile(
 		path.join(rootDir, `resume.${locale}.json`),

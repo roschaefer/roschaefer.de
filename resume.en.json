@@ -132,6 +132,7 @@
 	],
 	"projects": [
 		{
+			"id": "dreammall",
 			"name": "DreamMall",
 			"entity": "IT4C",
 			"roles": ["Full Stack Developer"],
@@ -158,6 +159,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "100eyes",
 			"name": "100eyes",
 			"entity": "tactile.news GmbH",
 			"roles": ["Full Stack Developer"],
@@ -180,6 +182,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "beteon",
 			"name": "beteon",
 			"entity": "auteon",
 			"roles": ["Full Stack Developer"],
@@ -204,6 +207,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "rhenania-computer",
 			"name": "Rhenania Computer",
 			"entity": "Johannes Schäfer",
 			"roles": ["Backend Developer"],
@@ -223,6 +227,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "werkhof-ichen",
 			"name": "Werkhof Ichen",
 			"entity": "Johannes Schäfer",
 			"roles": ["Backend Developer"],
@@ -234,6 +239,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "tanzimpulse",
 			"name": "Tanzimpulse - Institut für Tanzpädagogik",
 			"entity": "Johannes Schäfer",
 			"roles": ["Backend Developer"],
@@ -245,6 +251,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "am-meer-norderney",
 			"name": "Ferienwohnung - Am Meer Norderneys",
 			"entity": "Johannes Schäfer",
 			"roles": ["Backend Developer"],
@@ -256,6 +263,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "systems-development-and-framework",
 			"entity": "Hochschule für Technik und Wirtschaft Berlin",
 			"name": "Systems-Development and Framework",
 			"roles": ["University Lecturer"],
@@ -277,6 +285,7 @@
 			"type": "teaching"
 		},
 		{
+			"id": "ocelot-social",
 			"name": "Ocelot.social",
 			"entity": "busfaktor e.V.",
 			"roles": ["Technical Lead"],
@@ -301,6 +310,7 @@
 			"type": "employment"
 		},
 		{
+			"id": "find-open-source-contributors-vuejs-berlin",
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "Vue.js Berlin Meetup",
 			"startDate": "2020-01-14",
@@ -310,6 +320,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "neo4j-graphql-human-connection",
 			"name": "Using Neo4J and GraphQL to build Human Connection",
 			"entity": "Neo4J Online Meetup",
 			"startDate": "2019-06-20",
@@ -319,6 +330,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "bienenlive",
 			"entity": "tactile.news GmbH",
 			"name": "#bienenlive",
 			"roles": ["Full Stack Developer"],
@@ -330,6 +342,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-project",
 			"name": "Rundfunk mitbestimmen",
 			"roles": ["Founder"],
 			"startDate": "2016-08-31",
@@ -347,6 +360,7 @@
 			"type": "volunteering"
 		},
 		{
+			"id": "find-open-source-contributors-35c3",
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "35th Chaos Communication Congress",
 			"startDate": "2018-12-30",
@@ -356,6 +370,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "human-connection-35c3",
 			"name": "Human Connection",
 			"entity": "35th Chaos Communication Congress",
 			"startDate": "2018-12-29",
@@ -365,6 +380,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "rubies-in-the-woods",
 			"name": "Rubies in the woods",
 			"entity": "MIZ Babelsberg",
 			"roles": ["Programming Mentor"],
@@ -377,6 +393,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "solutiance",
 			"name": "solutiance.com",
 			"entity": "Solutiance AG",
 			"roles": ["Back End Developer"],
@@ -388,6 +405,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "informatikradar-1",
 			"name": "Informatikradar #1",
 			"entity": "Gesellschaft für Informatik",
 			"startDate": "2018-05-04",
@@ -397,6 +415,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "smirror",
 			"name": "sMirror",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT Developer"],
@@ -408,6 +427,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "story-trolley-ember-meets-iot",
 			"name": "Story-Trolley: Ember meets the IoT",
 			"description": "How to use Ember to build a smart shopping cart.",
 			"entity": "Ember.js Meetup Berlin",
@@ -418,6 +438,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-34c3",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "34th Chaos Communication Congress",
 			"startDate": "2017-12-30",
@@ -428,6 +449,7 @@
 			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
 		},
 		{
+			"id": "gez-scrap-it-or-pay-it",
 			"name": "GEZ - scrap it or pay it?",
 			"entity": "University Meetup Group \"Bremer Gesellschaft\"",
 			"startDate": "2017-12-19",
@@ -437,6 +459,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "superkuehe",
 			"name": "Superkühe",
 			"entity": "tactile.news GmbH",
 			"roles": ["Full Stack Developer"],
@@ -447,6 +470,7 @@
 			"url": "https://superkuehe.wdr.de/"
 		},
 		{
+			"id": "coding-in-the-woods",
 			"name": "Coding In The Woods",
 			"description": "Introduction to Coding with Rails.",
 			"entity": "Codemotion Berlin 2017",
@@ -457,6 +481,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "how-to-enjoy-paying-for-public-broadcasting",
 			"name": "How to enjoy paying for public broadcasting",
 			"description": "Ask-me-anything session at the festival for young visionaries.",
 			"entity": "Z2X Festival",
@@ -467,6 +492,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "story-trolley",
 			"name": "Story trolley",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT Developer"],
@@ -478,6 +504,7 @@
 			"type": "freelancing"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-nerd-nite-17",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "Nerd Nite Berlin #17",
 			"startDate": "2017-06-16",
@@ -488,6 +515,7 @@
 			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
 		},
 		{
+			"id": "why-do-i-have-to-pay-and-dont-get-a-say",
 			"name": "Why do I have to pay and don't get a say?",
 			"description": "Democratize public broadcasting.",
 			"entity": "OpenTechSummit 2017",
@@ -498,6 +526,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "miz-rapid-fire-pitch",
 			"name": "MIZ Rapid Fire Pitch",
 			"description": "SensorStory (Best Practices)",
 			"entity": "re:publica 2017 - Love Out Loud",
@@ -508,6 +537,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "ember-rails-capybara",
 			"name": "Ember.js + Rails + Capybara = ♥️",
 			"entity": "Ember.js Meetup Berlin",
 			"startDate": "2017-03-10",
@@ -517,6 +547,7 @@
 			"type": "talk"
 		},
 		{
+			"id": "rundfunk-mitbestimmen-swift-meetup",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "Swift Meetup Berlin",
 			"startDate": "2016-11-14",
@@ -527,6 +558,7 @@
 			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
 		},
 		{
+			"id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
 			"name": "Rundfunk mitbestimmen",
 			"entity": "HPI Hack'n Tell",
 			"startDate": "2016-10-26",
@@ -537,6 +569,7 @@
 			"description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
 		},
 		{
+			"id": "protothon",
 			"name": "Protothon",
 			"entity": "MIZ Babelsberg",
 			"roles": ["Hackathon Coach"],
@@ -553,6 +586,7 @@
 			"location": "Potsdam, Brandenburg, Germany"
 		},
 		{
+			"id": "clubcorner",
 			"entity": "OXON AG",
 			"name": "Clubcorner",
 			"roles": ["Full Stack Developer"],
@@ -565,6 +599,7 @@
 			"type": "employment"
 		},
 		{
+			"id": "enterprise-programming-models-in-memory-databases",
 			"name": "Enterprise programming models for in-memory databases",
 			"entity": "Hasso Plattner Institute",
 			"roles": ["Researcher"],
