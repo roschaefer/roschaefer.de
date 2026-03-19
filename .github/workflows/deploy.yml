@@ -14,28 +14,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.22.0
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v17
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v4
+      - name: Enable Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: nix develop --command pnpm install --frozen-lockfile
 
       - name: Build production site
-        run: pnpm build:prod
+        run: nix develop --command pnpm build:prod
 
       - name: Deploy to Netlify
-        run: pnpm --package=netlify-cli dlx netlify deploy --dir=build --prod
+        run: nix develop --command pnpm --package=netlify-cli dlx netlify deploy --dir=build --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
