@@ -1,4 +1,39 @@
 {
+	"featured": {
+		"projectIds": [
+			"dreammall",
+			"am-meer-norderney",
+			"rhenania-computer",
+			"beteon",
+			"tanzimpulse",
+			"werkhof-ichen",
+			"100eyes",
+			"systems-development-and-framework"
+		],
+		"skillNames": [
+			"TypeScript",
+			"Ruby",
+			"Python",
+			"SvelteKit",
+			"Vue",
+			"Tailwind",
+			"Apollo GraphQL",
+			"Node.js",
+			"Ruby on Rails",
+			"Docker",
+			"Kubernetes",
+			"Terraform",
+			"Ansible",
+			"PostgreSQL",
+			"Neo4J",
+			"Netlify",
+			"Vercel",
+			"Google Cloud",
+			"Digital Ocean",
+			"Sentry",
+			"Hasura"
+		]
+	},
 	"basics": {
 		"name": "Robert Schäfer",
 		"label": {
@@ -177,36 +212,6 @@
 			"keywords": ["Terraform"]
 		}
 	],
-	"featured": {
-		"projectIds": [
-			"dreammall",
-			"am-meer-norderney",
-			"rhenania-computer",
-			"beteon",
-			"tanzimpulse",
-			"werkhof-ichen",
-			"100eyes",
-			"systems-development-and-framework"
-		],
-		"skillNames": [
-			"Ruby",
-			"Ruby on Rails",
-			"Node.js",
-			"RSpec",
-			"Docker",
-			"Digital Ocean",
-			"Vue",
-			"Apollo GraphQL",
-			"TypeScript",
-			"Ansible",
-			"Postmark",
-			"Sentry",
-			"Stimulus",
-			"Auth0",
-			"Jest",
-			"Nuxt"
-		]
-	},
 	"projects": [
 		{
 			"id": "dreammall",

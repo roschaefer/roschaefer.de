@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { createFeaturedProjects, createFeaturedSkills, getFeaturedConfig } from "./resume-featured";
+import {
+	createFeaturedEntriesByName,
+	createFeaturedProjects,
+	createFeaturedSkills,
+	getFeaturedConfig,
+} from "./resume-featured";
 
 describe("resume featured", () => {
 	it("orders featured projects by configured ids", () => {
@@ -23,6 +28,17 @@ describe("resume featured", () => {
 		expect(createFeaturedSkills(skills, ["Ruby", "TypeScript"]).map((skill) => skill.name)).toEqual(
 			["Ruby", "TypeScript"],
 		);
+	});
+
+	it("orders arbitrary named entries by configured names", () => {
+		const entries = [
+			{ name: "Vue", label: "6 years" },
+			{ name: "TypeScript", label: "5 years" },
+		];
+
+		expect(
+			createFeaturedEntriesByName(entries, ["TypeScript", "Vue"]).map((entry) => entry.name),
+		).toEqual(["TypeScript", "Vue"]);
 	});
 
 	it("normalizes missing featured config to empty arrays", () => {

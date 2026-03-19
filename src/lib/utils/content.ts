@@ -1,6 +1,10 @@
 import { getResume, getResumeFeatured } from "$lib/data/resume";
 import type { Locale } from "$lib/i18n";
-import { createFeaturedProjects, getFeaturedConfig } from "$lib/utils/resume-featured";
+import {
+	createFeaturedEntriesByName,
+	createFeaturedProjects,
+	getFeaturedConfig,
+} from "$lib/utils/resume-featured";
 import { createTechExperience } from "$lib/utils/tech-experience";
 
 export const createSiteContent = (locale: Locale) => {
@@ -14,6 +18,8 @@ export const createSiteContent = (locale: Locale) => {
 		createFeaturedProjects(sortedProjects, featured.projectIds).filter(
 			(project) => project.type !== "talk",
 		) || [];
+	const techExperience = createTechExperience(projects, locale);
+	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
 	const profiles = resume.basics.profiles ?? [];
 
 	return {
@@ -21,10 +27,11 @@ export const createSiteContent = (locale: Locale) => {
 		projects: sortedProjects,
 		featuredProjects:
 			featuredProjects.length > 0
-				? featuredProjects.slice(0, 6)
+				? featuredProjects
 				: sortedProjects.filter((project) => project.type !== "talk").slice(0, 6),
 		talks: sortedProjects.filter((project) => project.type === "talk"),
-		techExperience: createTechExperience(projects, locale).slice(0, 12),
+		techExperience:
+			featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 12),
 		profiles,
 		awards: resume.awards ?? [],
 		languages: resume.languages ?? [],
