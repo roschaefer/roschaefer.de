@@ -42,6 +42,10 @@ describe("createTechExperience", () => {
 			new Date("2024-02-01"),
 		);
 
+		expect(result.find((entry) => entry.name === "Svelte")).toMatchObject({
+			projectCount: 1,
+			lastUsedLabel: "Active in current work",
+		});
 		expect(result.find((entry) => entry.name === "Svelte")?.projects).toHaveLength(1);
 	});
 
@@ -60,5 +64,38 @@ describe("createTechExperience", () => {
 		);
 
 		expect(result[0]?.label).toBe("1 Jahr, 3 Monate");
+	});
+
+	it("boosts technologies used more recently and across more projects", () => {
+		const result = createTechExperience(
+			[
+				{
+					name: "Legacy app",
+					startDate: "2018-01-01",
+					endDate: "2021-12-01",
+					keywords: ["PHP"],
+				},
+				{
+					name: "Client A",
+					startDate: "2024-01-01",
+					endDate: "2024-06-01",
+					keywords: ["Svelte"],
+				},
+				{
+					name: "Client B",
+					startDate: "2024-08-01",
+					endDate: "2025-02-01",
+					keywords: ["Svelte"],
+				},
+			],
+			"en",
+			new Date("2025-03-15"),
+		);
+
+		expect(result.map((entry) => entry.name)).toEqual(["Svelte", "PHP"]);
+		expect(result[0]).toMatchObject({
+			projectCount: 2,
+			lastUsedLabel: "last month",
+		});
 	});
 });
