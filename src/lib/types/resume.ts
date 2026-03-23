@@ -61,6 +61,7 @@ export type ResumeInterest = {
 export type ResumeSkill = {
 	name: string;
 	level?: string;
+	keywords?: string[];
 };
 
 export type ResumeFeatured = {
