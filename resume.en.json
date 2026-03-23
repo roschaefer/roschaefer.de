@@ -613,196 +613,244 @@
 	],
 	"skills": [
 		{
+			"name": "Node.js",
+			"level": "Long-term experience",
+			"keywords": ["7 years, 6 months", "9 projects", "last used 9 months ago"]
+		},
+		{
 			"name": "Ruby",
-			"level": "9 years, 2 months"
+			"level": "Long-term experience",
+			"keywords": ["9 years, 2 months", "5 projects", "last used 11 months ago"]
 		},
 		{
 			"name": "Ruby on Rails",
-			"level": "8 years, 9 months"
-		},
-		{
-			"name": "Node.js",
-			"level": "7 years, 6 months"
-		},
-		{
-			"name": "RSpec",
-			"level": "7 years, 5 months"
+			"level": "Long-term experience",
+			"keywords": ["8 years, 9 months", "5 projects", "last used 11 months ago"]
 		},
 		{
 			"name": "Docker",
-			"level": "6 years, 11 months"
-		},
-		{
-			"name": "Digital Ocean",
-			"level": "6 years, 6 months"
-		},
-		{
-			"name": "Vue",
-			"level": "6 years"
-		},
-		{
-			"name": "Apollo GraphQL",
-			"level": "5 years, 10 months"
+			"level": "Long-term experience",
+			"keywords": ["6 years, 11 months", "5 projects", "last used 9 months ago"]
 		},
 		{
 			"name": "TypeScript",
-			"level": "5 years, 4 months"
+			"level": "Long-term experience",
+			"keywords": ["5 years, 4 months", "7 projects", "last used 9 months ago"]
 		},
 		{
-			"name": "Ansible",
-			"level": "5 years, 2 months"
+			"name": "RSpec",
+			"level": "Long-term experience",
+			"keywords": ["7 years, 5 months", "4 projects", "last used 11 months ago"]
 		},
 		{
-			"name": "Postmark",
-			"level": "5 years, 2 months"
+			"name": "Vue",
+			"level": "Long-term experience",
+			"keywords": ["6 years", "5 projects", "last used 9 months ago"]
 		},
 		{
-			"name": "Sentry",
-			"level": "5 years, 2 months"
+			"name": "Apollo GraphQL",
+			"level": "Long-term experience",
+			"keywords": ["5 years, 10 months", "4 projects", "last used 9 months ago"]
 		},
 		{
-			"name": "Stimulus",
-			"level": "5 years, 2 months"
-		},
-		{
-			"name": "Auth0",
-			"level": "5 years"
+			"name": "Digital Ocean",
+			"level": "Proficient use",
+			"keywords": ["6 years, 6 months", "2 projects", "last used 11 months ago"]
 		},
 		{
 			"name": "Jest",
-			"level": "4 years, 11 months"
-		},
-		{
-			"name": "Nuxt",
-			"level": "4 years, 7 months"
+			"level": "Proficient use",
+			"keywords": ["4 years, 11 months", "3 projects", "last used 9 months ago"]
 		},
 		{
 			"name": "PostgreSQL",
-			"level": "4 years, 3 months"
+			"level": "Proficient use",
+			"keywords": ["4 years, 3 months", "3 projects", "last used 9 months ago"]
+		},
+		{
+			"name": "Ansible",
+			"level": "Practical experience",
+			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+		},
+		{
+			"name": "Postmark",
+			"level": "Practical experience",
+			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+		},
+		{
+			"name": "Sentry",
+			"level": "Practical experience",
+			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+		},
+		{
+			"name": "Stimulus",
+			"level": "Practical experience",
+			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+		},
+		{
+			"name": "Nuxt",
+			"level": "Proficient use",
+			"keywords": ["4 years, 7 months", "3 projects", "last used May 2023"]
 		},
 		{
 			"name": "Tailwind",
-			"level": "3 years, 11 months"
-		},
-		{
-			"name": "JavaScript",
-			"level": "3 years, 8 months"
-		},
-		{
-			"name": "HyGraph",
-			"level": "2 years, 11 months"
-		},
-		{
-			"name": "Netlify",
-			"level": "2 years, 11 months"
-		},
-		{
-			"name": "D3",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Ember",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Highcharts",
-			"level": "2 years, 8 months"
-		},
-		{
-			"name": "Uberspace",
-			"level": "2 years, 8 months"
+			"level": "Proficient use",
+			"keywords": ["3 years, 11 months", "4 projects", "last used Sep 2023"]
 		},
 		{
 			"name": "Kubernetes",
-			"level": "2 years, 7 months"
+			"level": "Proficient use",
+			"keywords": ["2 years, 7 months", "2 projects", "last used 9 months ago"]
 		},
 		{
 			"name": "Vuetify",
-			"level": "2 years, 7 months"
+			"level": "Proficient use",
+			"keywords": ["2 years, 7 months", "2 projects", "last used 9 months ago"]
 		},
 		{
-			"name": "Neo4J",
-			"level": "2 years, 5 months"
+			"name": "Auth0",
+			"level": "Proficient use",
+			"keywords": ["5 years", "2 projects", "last used Sep 2023"]
 		},
 		{
-			"name": "Google Cloud",
-			"level": "2 years, 4 months"
+			"name": "JavaScript",
+			"level": "Practical experience",
+			"keywords": ["3 years, 8 months", "4 projects", "last used Mar 2021"]
 		},
 		{
-			"name": "Hasura",
-			"level": "2 years, 4 months"
+			"name": "Netlify",
+			"level": "Proficient use",
+			"keywords": ["2 years, 11 months", "4 projects", "last used Jun 2023"]
 		},
 		{
-			"name": "Testing-Library",
-			"level": "2 years, 4 months"
-		},
-		{
-			"name": "Vercel",
-			"level": "2 years, 4 months"
+			"name": "HyGraph",
+			"level": "Proficient use",
+			"keywords": ["2 years, 11 months", "2 projects", "last used Jun 2023"]
 		},
 		{
 			"name": "Cucumber",
-			"level": "2 years, 3 months"
-		},
-		{
-			"name": "Svelte",
-			"level": "2 years, 2 months"
-		},
-		{
-			"name": "SvelteKit",
-			"level": "2 years, 2 months"
-		},
-		{
-			"name": "Serverless",
-			"level": "1 year, 7 months"
-		},
-		{
-			"name": "Cypress",
-			"level": "1 year, 6 months"
-		},
-		{
-			"name": "Storybook",
-			"level": "1 year, 6 months"
+			"level": "Basic exposure",
+			"keywords": ["2 years, 3 months", "3 projects", "last used May 2019"]
 		},
 		{
 			"name": "Authentik",
-			"level": "1 year, 1 month"
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
 		},
 		{
 			"name": "Helm",
-			"level": "1 year, 1 month"
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
 		},
 		{
 			"name": "Hetzner",
-			"level": "1 year, 1 month"
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
 		},
 		{
 			"name": "Terraform",
-			"level": "1 year, 1 month"
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
 		},
 		{
 			"name": "Vike",
-			"level": "1 year, 1 month"
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
 		},
 		{
-			"name": "Java",
-			"level": "8 months"
+			"name": "Svelte",
+			"level": "Proficient use",
+			"keywords": ["2 years, 2 months", "3 projects", "last used Jun 2023"]
 		},
 		{
-			"name": "PHP",
-			"level": "3 months"
+			"name": "SvelteKit",
+			"level": "Proficient use",
+			"keywords": ["2 years, 2 months", "3 projects", "last used Jun 2023"]
 		},
 		{
-			"name": "Wordpress",
-			"level": "3 months"
+			"name": "Ember",
+			"level": "Basic exposure",
+			"keywords": ["2 years, 8 months", "2 projects", "last used Mar 2019"]
+		},
+		{
+			"name": "Neo4J",
+			"level": "Practical experience",
+			"keywords": ["2 years, 5 months", "2 projects", "last used Mar 2021"]
+		},
+		{
+			"name": "D3",
+			"level": "Basic exposure",
+			"keywords": ["2 years, 8 months", "1 project", "last used Mar 2019"]
+		},
+		{
+			"name": "Highcharts",
+			"level": "Basic exposure",
+			"keywords": ["2 years, 8 months", "1 project", "last used Mar 2019"]
+		},
+		{
+			"name": "Uberspace",
+			"level": "Basic exposure",
+			"keywords": ["2 years, 8 months", "1 project", "last used Mar 2019"]
+		},
+		{
+			"name": "Google Cloud",
+			"level": "Practical experience",
+			"keywords": ["2 years, 4 months", "1 project", "last used Sep 2023"]
+		},
+		{
+			"name": "Hasura",
+			"level": "Practical experience",
+			"keywords": ["2 years, 4 months", "1 project", "last used Sep 2023"]
+		},
+		{
+			"name": "Testing-Library",
+			"level": "Practical experience",
+			"keywords": ["2 years, 4 months", "1 project", "last used Sep 2023"]
+		},
+		{
+			"name": "Vercel",
+			"level": "Practical experience",
+			"keywords": ["2 years, 4 months", "1 project", "last used Sep 2023"]
+		},
+		{
+			"name": "Serverless",
+			"level": "Practical experience",
+			"keywords": ["1 year, 7 months", "1 project", "last used Jun 2023"]
+		},
+		{
+			"name": "Cypress",
+			"level": "Basic exposure",
+			"keywords": ["1 year, 6 months", "1 project", "last used Apr 2020"]
+		},
+		{
+			"name": "Storybook",
+			"level": "Basic exposure",
+			"keywords": ["1 year, 6 months", "1 project", "last used Apr 2020"]
 		},
 		{
 			"name": "Python",
-			"level": "2 months"
+			"level": "Basic exposure",
+			"keywords": ["2 months", "2 projects", "last used Jan 2018"]
+		},
+		{
+			"name": "Java",
+			"level": "Basic exposure",
+			"keywords": ["8 months", "1 project", "last used Aug 2012"]
+		},
+		{
+			"name": "PHP",
+			"level": "Basic exposure",
+			"keywords": ["3 months", "1 project", "last used Jun 2018"]
+		},
+		{
+			"name": "Wordpress",
+			"level": "Basic exposure",
+			"keywords": ["3 months", "1 project", "last used Jun 2018"]
 		},
 		{
 			"name": "MQTT",
-			"level": "1 month"
+			"level": "Basic exposure",
+			"keywords": ["1 month", "1 project", "last used Jan 2018"]
 		}
 	]
 }
