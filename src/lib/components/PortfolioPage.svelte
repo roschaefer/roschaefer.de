@@ -254,8 +254,33 @@ markUsed(() => [
 					<li class="theme-card rounded-[1.5rem] p-5">
 						<article>
 							<h3 class="theme-heading">{entry.name}</h3>
-							<p class="mt-1 text-[var(--color-brand-cyan)]">{entry.label}</p>
-							<p class="mt-3 text-sm text-[var(--color-brand-muted)]">
+							<dl class="mt-4 space-y-2 rounded-[1rem] border border-[var(--color-brand-line)] bg-[color:color-mix(in_srgb,var(--color-brand-panel)_76%,transparent)] p-3">
+								<div class="flex items-start justify-between gap-4">
+									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+										{t(m.tech_experience_projects)}
+									</dt>
+									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+										{entry.projectCount}
+									</dd>
+								</div>
+								<div class="flex items-start justify-between gap-4">
+									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+										{t(m.tech_experience_duration)}
+									</dt>
+									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+										{entry.label}
+									</dd>
+								</div>
+								<div class="flex items-start justify-between gap-4">
+									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+										{t(m.tech_experience_recency)}
+									</dt>
+									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+										{entry.lastUsedLabel}
+									</dd>
+								</div>
+							</dl>
+							<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
 								{t(m.used_in)} {entry.projects.slice(0, 3).map((project) => project.name).join(", ")}
 								{#if entry.projects.length > 3}
 									, {t(m.and_more)}
