@@ -160,6 +160,55 @@
 	],
 	"projects": [
 		{
+			"id": "dialogbank-app",
+			"name": "Dialogbank",
+			"entity": "tactile.news GmbH",
+			"roles": ["Full Stack Developer"],
+			"startDate": "2026-03-23",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind",
+				"Better Auth",
+				"Drizzle ORM",
+				"Neon DB",
+				"PostgreSQL",
+				"Playwright",
+				"Vitest",
+				"Netlify",
+				"Sentry",
+				"Serverless",
+				"Infisical",
+				"ElevenLabs"
+			],
+			"description": "Dialogbank is a SvelteKit application for collecting structured interview data from an ElevenLabs conversational agent and publishing the resulting answers. The project includes signed webhook ingestion, an editorial backend for review and classification, and public pages for published answers.",
+			"url": "https://github.com/tactilenews/dialogbank-app/",
+			"type": "freelancing"
+		},
+		{
+			"id": "roschaefer-portfolio",
+			"name": "roschaefer.de",
+			"entity": "Robert Schäfer",
+			"roles": ["Design and Development"],
+			"startDate": "2026-03-16",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind",
+				"Paraglide",
+				"Typst",
+				"Nix",
+				"Vitest",
+				"Playwright",
+				"Netlify"
+			],
+			"description": "My personal portfolio website and print-optimized CV. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, standards-compliant `resume.json`, and accessible, privacy-conscious presentation for web and print from a shared content source.",
+			"url": "https://roschaefer.de/",
+			"type": "independent"
+		},
+		{
 			"id": "dreammall",
 			"name": "DreamMall",
 			"entity": "IT4C",
@@ -169,7 +218,6 @@
 			"keywords": [
 				"TypeScript",
 				"Docker",
-				"Node.js",
 				"Vue",
 				"Vike",
 				"Vuetify",
@@ -226,7 +274,6 @@
 			"keywords": [
 				"TypeScript",
 				"Docker",
-				"Node.js",
 				"Vue",
 				"Tailwind",
 				"Jest",
@@ -237,7 +284,7 @@
 				"Google Cloud",
 				"Vercel"
 			],
-			"description": "Auteon GmbH is an investor-funded startup that creates software for the automotive aftermarket, allowing auto repair shops to compare prices across various wholesalers. We transitioned from a desktop application based on Electron to a cloud-based solution on the Google Cloud Platform, Auth0 and Hasura. This significantly improved software quality and increased the number of connected wholesalers from three to 240. Vue, Tailwind and Node.js as techologies were retained.",
+			"description": "Auteon GmbH is an investor-funded startup that creates software for the automotive aftermarket, allowing auto repair shops to compare prices across various wholesalers. We transitioned from a desktop application based on Electron to a cloud-based solution on the Google Cloud Platform, Auth0 and Hasura. This significantly improved software quality and increased the number of connected wholesalers from three to 240. Vue and Tailwind were retained.",
 			"url": "https://www.auteon.com",
 			"type": "freelancing"
 		},
@@ -248,15 +295,7 @@
 			"roles": ["Backend Developer"],
 			"startDate": "2021-12-09",
 			"endDate": "2023-06-28",
-			"keywords": [
-				"TypeScript",
-				"Svelte",
-				"SvelteKit",
-				"HyGraph",
-				"Node.js",
-				"Netlify",
-				"Serverless"
-			],
+			"keywords": ["TypeScript", "Svelte", "SvelteKit", "HyGraph", "Netlify", "Serverless"],
 			"description": "Rhenania Computer GmbH has been developing logistics software for over 30 years. We rebuilt their website using SvelteKit and deployed it statically on Netlify. Server-side code runs in Serverless Functions and data is fetched via GraphQL from the Headless CMS called HyGraph. This allowed us to improve performance, SEO and user experience.",
 			"url": "https://rhenania-computer.de/de",
 			"type": "freelancing"
@@ -268,7 +307,7 @@
 			"roles": ["Backend Developer"],
 			"startDate": "2020-08-11",
 			"endDate": "2023-05-02",
-			"keywords": ["TypeScript", "Netlify", "Node.js", "Vue", "Nuxt", "HyGraph"],
+			"keywords": ["TypeScript", "Netlify", "Vue", "Nuxt", "HyGraph"],
 			"description": "At Werkhof Ichen, Irmina Schmitz creates tailor-made clothing. We developed a custom booking system for the website, where sewing classes for adults, teens, and children are offered. Interested individuals can sign up for courses or join a waiting list.",
 			"url": "https://werkhof-ichen.de/",
 			"type": "freelancing"
@@ -304,16 +343,7 @@
 			"roles": ["University Lecturer"],
 			"startDate": "2019-10-31",
 			"endDate": "2021-03-31",
-			"keywords": [
-				"JavaScript",
-				"Node.js",
-				"Vue",
-				"Apollo GraphQL",
-				"Neo4J",
-				"Nuxt",
-				"Vuetify",
-				"Tailwind"
-			],
+			"keywords": ["JavaScript", "Vue", "Apollo GraphQL", "Neo4J", "Nuxt", "Vuetify", "Tailwind"],
 			"description": "Complete responsibility including grading for a lecture on full stack development in the Master of Applied Computer Science with 40 students. Topics cover e.g. functional programming, advanced git and test-driven development. Team submissions were submitted on Github and evaluated via code reviews. All lectures are published on YouTube.",
 			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
 			"links": [
@@ -343,7 +373,6 @@
 				"Jest",
 				"Vue",
 				"Nuxt",
-				"Node.js",
 				"Storybook",
 				"Cypress",
 				"Apollo GraphQL",
@@ -475,7 +504,7 @@
 			"roles": ["Back End Developer"],
 			"startDate": "2018-04-30",
 			"endDate": "2018-06-30",
-			"keywords": ["Node.js", "Wordpress", "PHP", "Docker"],
+			"keywords": ["Wordpress", "PHP", "Docker"],
 			"description": "Custom CMS development with a focus on search engine optimization.",
 			"url": "https://solutiance.com/",
 			"type": "freelancing"
@@ -613,7 +642,7 @@
 			"roles": ["IoT Developer"],
 			"startDate": "2017-06-01",
 			"endDate": "2017-06-30",
-			"keywords": ["Node.js", "Ember", "Python"],
+			"keywords": ["Ember", "Python"],
 			"description": "Rapid prototype of a smart shopping cart.",
 			"url": "https://www.facebook.com/watch?v=746195418906331",
 			"type": "freelancing"
@@ -756,7 +785,7 @@
 			"roles": ["Hackathon Coach"],
 			"startDate": "2015-08-31",
 			"endDate": "2016-09-30",
-			"keywords": ["Node.js", "JavaScript"],
+			"keywords": ["JavaScript"],
 			"highlights": [
 				"An interactive, decision-based podcast.",
 				"A location aware music player.",
@@ -794,9 +823,9 @@
 	],
 	"skills": [
 		{
-			"name": "Node.js",
+			"name": "TypeScript",
 			"level": "Long-term experience",
-			"keywords": ["7 years, 6 months", "9 projects", "last used 9 months ago"]
+			"keywords": ["5 years, 5 months", "9 projects", "active now"]
 		},
 		{
 			"name": "Ruby",
@@ -814,14 +843,14 @@
 			"keywords": ["6 years, 11 months", "5 projects", "last used 9 months ago"]
 		},
 		{
-			"name": "TypeScript",
-			"level": "Long-term experience",
-			"keywords": ["5 years, 4 months", "7 projects", "last used 9 months ago"]
-		},
-		{
 			"name": "RSpec",
 			"level": "Long-term experience",
 			"keywords": ["7 years, 5 months", "4 projects", "last used 11 months ago"]
+		},
+		{
+			"name": "Tailwind",
+			"level": "Proficient use",
+			"keywords": ["4 years", "6 projects", "active now"]
 		},
 		{
 			"name": "Vue",
@@ -834,19 +863,39 @@
 			"keywords": ["5 years, 10 months", "4 projects", "last used 9 months ago"]
 		},
 		{
+			"name": "PostgreSQL",
+			"level": "Proficient use",
+			"keywords": ["4 years, 4 months", "4 projects", "active now"]
+		},
+		{
+			"name": "Netlify",
+			"level": "Proficient use",
+			"keywords": ["3 years", "6 projects", "active now"]
+		},
+		{
+			"name": "Sentry",
+			"level": "Proficient use",
+			"keywords": ["5 years, 3 months", "2 projects", "active now"]
+		},
+		{
 			"name": "Digital Ocean",
 			"level": "Proficient use",
 			"keywords": ["6 years, 6 months", "2 projects", "last used 11 months ago"]
 		},
 		{
+			"name": "Svelte",
+			"level": "Proficient use",
+			"keywords": ["2 years, 3 months", "5 projects", "active now"]
+		},
+		{
+			"name": "SvelteKit",
+			"level": "Proficient use",
+			"keywords": ["2 years, 3 months", "5 projects", "active now"]
+		},
+		{
 			"name": "Jest",
 			"level": "Proficient use",
 			"keywords": ["4 years, 11 months", "3 projects", "last used 9 months ago"]
-		},
-		{
-			"name": "PostgreSQL",
-			"level": "Proficient use",
-			"keywords": ["4 years, 3 months", "3 projects", "last used 9 months ago"]
 		},
 		{
 			"name": "Ansible",
@@ -859,24 +908,19 @@
 			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
 		},
 		{
-			"name": "Sentry",
-			"level": "Practical experience",
-			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
-		},
-		{
 			"name": "Stimulus",
 			"level": "Practical experience",
 			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
 		},
 		{
+			"name": "Serverless",
+			"level": "Practical experience",
+			"keywords": ["1 year, 8 months", "2 projects", "active now"]
+		},
+		{
 			"name": "Nuxt",
 			"level": "Proficient use",
 			"keywords": ["4 years, 7 months", "3 projects", "last used May 2023"]
-		},
-		{
-			"name": "Tailwind",
-			"level": "Proficient use",
-			"keywords": ["3 years, 11 months", "4 projects", "last used Sep 2023"]
 		},
 		{
 			"name": "Kubernetes",
@@ -899,9 +943,54 @@
 			"keywords": ["3 years, 8 months", "4 projects", "last used Mar 2021"]
 		},
 		{
-			"name": "Netlify",
-			"level": "Proficient use",
-			"keywords": ["2 years, 11 months", "4 projects", "last used Jun 2023"]
+			"name": "Playwright",
+			"level": "Practical experience",
+			"keywords": ["1 month", "2 projects", "active now"]
+		},
+		{
+			"name": "Vitest",
+			"level": "Practical experience",
+			"keywords": ["1 month", "2 projects", "active now"]
+		},
+		{
+			"name": "Better Auth",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "Drizzle ORM",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "ElevenLabs",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "Infisical",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "Neon DB",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "Nix",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "Paraglide",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
+		},
+		{
+			"name": "Typst",
+			"level": "Practical experience",
+			"keywords": ["1 month", "1 project", "active now"]
 		},
 		{
 			"name": "HyGraph",
@@ -937,16 +1026,6 @@
 			"name": "Vike",
 			"level": "Practical experience",
 			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
-		},
-		{
-			"name": "Svelte",
-			"level": "Proficient use",
-			"keywords": ["2 years, 2 months", "3 projects", "last used Jun 2023"]
-		},
-		{
-			"name": "SvelteKit",
-			"level": "Proficient use",
-			"keywords": ["2 years, 2 months", "3 projects", "last used Jun 2023"]
 		},
 		{
 			"name": "Ember",
@@ -992,11 +1071,6 @@
 			"name": "Vercel",
 			"level": "Practical experience",
 			"keywords": ["2 years, 4 months", "1 project", "last used Sep 2023"]
-		},
-		{
-			"name": "Serverless",
-			"level": "Practical experience",
-			"keywords": ["1 year, 7 months", "1 project", "last used Jun 2023"]
 		},
 		{
 			"name": "Cypress",

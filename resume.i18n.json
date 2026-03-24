@@ -1,6 +1,8 @@
 {
 	"featured": {
 		"projectIds": [
+			"roschaefer-portfolio",
+			"dialogbank-app",
 			"dreammall",
 			"am-meer-norderney",
 			"rhenania-computer",
@@ -18,12 +20,12 @@
 			"Vue",
 			"Tailwind",
 			"Apollo GraphQL",
-			"Node.js",
 			"Ruby on Rails",
 			"Docker",
 			"Kubernetes",
 			"Terraform",
 			"Ansible",
+			"Neon DB",
 			"PostgreSQL",
 			"Neo4J",
 			"Netlify",
@@ -242,6 +244,71 @@
 	],
 	"projects": [
 		{
+			"id": "roschaefer-portfolio",
+			"name": "roschaefer.de",
+			"entity": "Robert Schäfer",
+			"roles": [
+				{
+					"de": "Entwicklung und Design",
+					"en": "Design and Development"
+				}
+			],
+			"startDate": "2026-03-16",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind",
+				"Paraglide",
+				"Typst",
+				"Nix",
+				"Vitest",
+				"Playwright",
+				"Netlify"
+			],
+			"description": {
+				"de": "Meine persönliche Portfolio-Website und druckoptimierter Lebenslauf. Das Projekt vereint eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst, standardkonformes `resume.json` und zugängliche, datensparsame Darstellung für Web und Druck aus einer gemeinsamen Datenquelle.",
+				"en": "My personal portfolio website and print-optimized CV. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, standards-compliant `resume.json`, and accessible, privacy-conscious presentation for web and print from a shared content source."
+			},
+			"url": "https://roschaefer.de/",
+			"type": "independent"
+		},
+		{
+			"id": "dialogbank-app",
+			"name": "Dialogbank",
+			"entity": "tactile.news GmbH",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2026-03-23",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind",
+				"Better Auth",
+				"Drizzle ORM",
+				"Neon DB",
+				"PostgreSQL",
+				"Playwright",
+				"Vitest",
+				"Netlify",
+				"Sentry",
+				"Serverless",
+				"Infisical",
+				"ElevenLabs"
+			],
+			"description": {
+				"de": "Dialogbank ist eine SvelteKit-Anwendung zur Erfassung strukturierter Interviewdaten aus einem ElevenLabs-Sprachagenten und zur Veröffentlichung der daraus gewonnenen Antworten. Das Projekt umfasst Webhook-Verarbeitung mit Signaturprüfung, ein redaktionelles Backend zur Sichtung und Klassifikation sowie öffentliche Seiten für veröffentlichte Antworten.",
+				"en": "Dialogbank is a SvelteKit application for collecting structured interview data from an ElevenLabs conversational agent and publishing the resulting answers. The project includes signed webhook ingestion, an editorial backend for review and classification, and public pages for published answers."
+			},
+			"url": "https://github.com/tactilenews/dialogbank-app/",
+			"type": "freelancing"
+		},
+		{
 			"id": "dreammall",
 			"name": "DreamMall",
 			"entity": "IT4C",
@@ -256,7 +323,6 @@
 			"keywords": [
 				"TypeScript",
 				"Docker",
-				"Node.js",
 				"Vue",
 				"Vike",
 				"Vuetify",
@@ -329,7 +395,6 @@
 			"keywords": [
 				"TypeScript",
 				"Docker",
-				"Node.js",
 				"Vue",
 				"Tailwind",
 				"Jest",
@@ -341,8 +406,8 @@
 				"Vercel"
 			],
 			"description": {
-				"de": "Die auteon GmbH ist ein venture-finanziertes Startup, das Software für den Automotive Aftermarket entwickelt, mit der Werkstätten Preise verschiedener Großhändler vergleichen können. Wir haben eine Electron-Desktop-Anwendung in eine cloudbasierte Lösung auf Google Cloud Platform, Auth0 und Hasura überführt. Dadurch verbesserten sich die Softwarequalität deutlich und die Anzahl angebundener Großhändler stieg von drei auf 240. Vue, Tailwind und Node.js blieben als Technologien erhalten.",
-				"en": "Auteon GmbH is an investor-funded startup that creates software for the automotive aftermarket, allowing auto repair shops to compare prices across various wholesalers. We transitioned from a desktop application based on Electron to a cloud-based solution on the Google Cloud Platform, Auth0 and Hasura. This significantly improved software quality and increased the number of connected wholesalers from three to 240. Vue, Tailwind and Node.js as techologies were retained."
+				"de": "Die auteon GmbH ist ein venture-finanziertes Startup, das Software für den Automotive Aftermarket entwickelt, mit der Werkstätten Preise verschiedener Großhändler vergleichen können. Wir haben eine Electron-Desktop-Anwendung in eine cloudbasierte Lösung auf Google Cloud Platform, Auth0 und Hasura überführt. Dadurch verbesserten sich die Softwarequalität deutlich und die Anzahl angebundener Großhändler stieg von drei auf 240. Vue und Tailwind blieben als Technologien erhalten.",
+				"en": "Auteon GmbH is an investor-funded startup that creates software for the automotive aftermarket, allowing auto repair shops to compare prices across various wholesalers. We transitioned from a desktop application based on Electron to a cloud-based solution on the Google Cloud Platform, Auth0 and Hasura. This significantly improved software quality and increased the number of connected wholesalers from three to 240. Vue and Tailwind were retained."
 			},
 			"url": "https://www.auteon.com",
 			"type": "freelancing"
@@ -359,15 +424,7 @@
 			],
 			"startDate": "2021-12-09",
 			"endDate": "2023-06-28",
-			"keywords": [
-				"TypeScript",
-				"Svelte",
-				"SvelteKit",
-				"HyGraph",
-				"Node.js",
-				"Netlify",
-				"Serverless"
-			],
+			"keywords": ["TypeScript", "Svelte", "SvelteKit", "HyGraph", "Netlify", "Serverless"],
 			"description": {
 				"de": "Die Rhenania Computer GmbH entwickelt seit über 30 Jahren Logistiksoftware. Wir haben ihre Website mit SvelteKit neu aufgebaut und statisch auf Netlify ausgerollt. Serverseitiger Code läuft in Serverless Functions, Daten werden per GraphQL aus dem Headless CMS HyGraph geladen. Das verbesserte Performance, SEO und Nutzererlebnis.",
 				"en": "Rhenania Computer GmbH has been developing logistics software for over 30 years. We rebuilt their website using SvelteKit and deployed it statically on Netlify. Server-side code runs in Serverless Functions and data is fetched via GraphQL from the Headless CMS called HyGraph. This allowed us to improve performance, SEO and user experience."
@@ -387,7 +444,7 @@
 			],
 			"startDate": "2020-08-11",
 			"endDate": "2023-05-02",
-			"keywords": ["TypeScript", "Netlify", "Node.js", "Vue", "Nuxt", "HyGraph"],
+			"keywords": ["TypeScript", "Netlify", "Vue", "Nuxt", "HyGraph"],
 			"description": {
 				"de": "Bei Werkhof Ichen entwirft Irmina Schmitz maßgeschneiderte Kleidung. Wir haben für die Website ein individuelles Buchungssystem entwickelt, über das Nähkurse für Erwachsene, Jugendliche und Kinder angeboten werden. Interessierte können sich für Kurse anmelden oder auf eine Warteliste setzen lassen.",
 				"en": "At Werkhof Ichen, Irmina Schmitz creates tailor-made clothing. We developed a custom booking system for the website, where sewing classes for adults, teens, and children are offered. Interested individuals can sign up for courses or join a waiting list."
@@ -447,16 +504,7 @@
 			],
 			"startDate": "2019-10-31",
 			"endDate": "2021-03-31",
-			"keywords": [
-				"JavaScript",
-				"Node.js",
-				"Vue",
-				"Apollo GraphQL",
-				"Neo4J",
-				"Nuxt",
-				"Vuetify",
-				"Tailwind"
-			],
+			"keywords": ["JavaScript", "Vue", "Apollo GraphQL", "Neo4J", "Nuxt", "Vuetify", "Tailwind"],
 			"description": {
 				"de": "Vollständige Verantwortung inklusive Benotung für eine Vorlesung zur Full-Stack-Entwicklung im Masterstudiengang Angewandte Informatik mit 40 Studierenden. Themen waren unter anderem funktionale Programmierung, fortgeschrittenes Git und testgetriebene Entwicklung. Team-Abgaben wurden auf GitHub eingereicht und per Code Review bewertet. Alle Vorlesungen sind auf YouTube veröffentlicht.",
 				"en": "Complete responsibility including grading for a lecture on full stack development in the Master of Applied Computer Science with 40 students. Topics cover e.g. functional programming, advanced git and test-driven development. Team submissions were submitted on Github and evaluated via code reviews. All lectures are published on YouTube."
@@ -494,7 +542,6 @@
 				"Jest",
 				"Vue",
 				"Nuxt",
-				"Node.js",
 				"Storybook",
 				"Cypress",
 				"Apollo GraphQL",
@@ -681,7 +728,7 @@
 			],
 			"startDate": "2018-04-30",
 			"endDate": "2018-06-30",
-			"keywords": ["Node.js", "Wordpress", "PHP", "Docker"],
+			"keywords": ["Wordpress", "PHP", "Docker"],
 			"description": {
 				"de": "Individuelle CMS-Entwicklung mit Schwerpunkt auf Suchmaschinenoptimierung.",
 				"en": "Custom CMS development with a focus on search engine optimization."
@@ -888,7 +935,7 @@
 			],
 			"startDate": "2017-06-01",
 			"endDate": "2017-06-30",
-			"keywords": ["Node.js", "Ember", "Python"],
+			"keywords": ["Ember", "Python"],
 			"description": {
 				"de": "Schneller Prototyp eines smarten Einkaufswagens.",
 				"en": "Rapid prototype of a smart shopping cart."
@@ -1081,7 +1128,7 @@
 			],
 			"startDate": "2015-08-31",
 			"endDate": "2016-09-30",
-			"keywords": ["Node.js", "JavaScript"],
+			"keywords": ["JavaScript"],
 			"highlights": [
 				"An interactive, decision-based podcast.",
 				"A location aware music player.",
