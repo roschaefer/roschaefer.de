@@ -199,7 +199,6 @@
 				"Tailwind",
 				"Paraglide",
 				"Typst",
-				"Nix",
 				"Vitest",
 				"Playwright",
 				"Netlify"
@@ -974,11 +973,6 @@
 		},
 		{
 			"name": "Neon DB",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
-		},
-		{
-			"name": "Nix",
 			"level": "Praxiserfahrung",
 			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
 		},
