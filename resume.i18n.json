@@ -107,8 +107,15 @@
 				"en": "Grimme Online Award (nominated)"
 			},
 			"date": "2020-06-25",
-			"summary": "[#bienenlive](https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen)",
-			"awarder": "Grimme-Institut"
+			"summary": "#bienenlive",
+			"awarder": "Grimme-Institut",
+			"links": [
+				{
+					"label": "#bienenlive",
+					"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen",
+					"kind": "award"
+				}
+			]
 		},
 		{
 			"title": {
@@ -116,8 +123,15 @@
 				"en": "German Reporter Award 2017 (nominated)"
 			},
 			"date": "2017-12-11",
-			"summary": "[\"Superkühe\"](https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904)",
-			"awarder": "Reporter-Forum e. V."
+			"summary": "\"Superkühe\"",
+			"awarder": "Reporter-Forum e. V.",
+			"links": [
+				{
+					"label": "\"Superkühe\"",
+					"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904",
+					"kind": "award"
+				}
+			]
 		},
 		{
 			"title": {
@@ -125,17 +139,31 @@
 				"en": "German Reporter Award 2019"
 			},
 			"date": "2019-12-02",
-			"summary": "[#bienenlive](https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019)",
-			"awarder": "Reporter-Forum e. V."
+			"summary": "#bienenlive",
+			"awarder": "Reporter-Forum e. V.",
+			"links": [
+				{
+					"label": "#bienenlive",
+					"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019",
+					"kind": "award"
+				}
+			]
 		},
 		{
 			"title": {
 				"de": "Gewinner des MIZ Formatfestivals 2015",
 				"en": "Winner of MIZ Formatfestival 2015"
 			},
-			"summary": "[#ursuppe](https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg)",
+			"summary": "#ursuppe",
 			"date": "2015-11-12",
-			"awarder": "MIZ Babelsberg"
+			"awarder": "MIZ Babelsberg",
+			"links": [
+				{
+					"label": "#ursuppe",
+					"url": "https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg",
+					"kind": "award"
+				}
+			]
 		}
 	],
 	"languages": [
@@ -273,10 +301,17 @@
 				"Postmark"
 			],
 			"description": {
-				"de": "[100eyes](https://github.com/tactilenews/100eyes) ist eine Dialog-Software, mit der Journalistinnen und Journalisten mit ihren Leserinnen und Lesern interagieren können. Rückmeldungen aus dem Publikum lassen sich direkt in den Recherche- und Berichtsprozess einbeziehen. Die Software nutzt APIs von Telegram, Signal, Threema und WhatsApp sowie Postmark für E-Mails.",
-				"en": "[100eyes](https://github.com/tactilenews/100eyes) is a dialogue software that allows journalists to interact with their readers. Feedback from readers can be incorporated into the reporting process. The software uses APIs from the messaging apps Telegram, Signal, Threema and WhatsApp, as well as Postmark for emails."
+				"de": "100eyes ist eine Dialog-Software, mit der Journalistinnen und Journalisten mit ihren Leserinnen und Lesern interagieren können. Rückmeldungen aus dem Publikum lassen sich direkt in den Recherche- und Berichtsprozess einbeziehen. Die Software nutzt APIs von Telegram, Signal, Threema und WhatsApp sowie Postmark für E-Mails.",
+				"en": "100eyes is a dialogue software that allows journalists to interact with their readers. Feedback from readers can be incorporated into the reporting process. The software uses APIs from the messaging apps Telegram, Signal, Threema and WhatsApp, as well as Postmark for emails."
 			},
 			"url": "https://tactile.news/",
+			"links": [
+				{
+					"label": "GitHub",
+					"url": "https://github.com/tactilenews/100eyes",
+					"kind": "repository"
+				}
+			],
 			"type": "freelancing"
 		},
 		{
@@ -423,10 +458,22 @@
 				"Tailwind"
 			],
 			"description": {
-				"de": "Vollständige Verantwortung inklusive Benotung für eine Vorlesung zur Full-Stack-Entwicklung im Masterstudiengang Angewandte Informatik mit 40 Studierenden. Themen waren unter anderem funktionale Programmierung, fortgeschrittenes Git und testgetriebene Entwicklung. Team-Abgaben wurden [auf GitHub eingereicht](https://github.com/systems-development-and-frameworks) und per Code Review bewertet. Alle Vorlesungen sind [auf YouTube veröffentlicht](https://www.youtube.com/playlist?list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs).",
-				"en": "Complete responsibility including grading for a lecture on full stack development in the Master of Applied Computer Science with 40 students. Topics cover e.g. functional programming, advanced git and test-driven development. Team submissions were [submitted on Github](https://github.com/systems-development-and-frameworks) and evaluated via code reviews. All lectures are [published on YouTube](https://www.youtube.com/playlist?list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs)."
+				"de": "Vollständige Verantwortung inklusive Benotung für eine Vorlesung zur Full-Stack-Entwicklung im Masterstudiengang Angewandte Informatik mit 40 Studierenden. Themen waren unter anderem funktionale Programmierung, fortgeschrittenes Git und testgetriebene Entwicklung. Team-Abgaben wurden auf GitHub eingereicht und per Code Review bewertet. Alle Vorlesungen sind auf YouTube veröffentlicht.",
+				"en": "Complete responsibility including grading for a lecture on full stack development in the Master of Applied Computer Science with 40 students. Topics cover e.g. functional programming, advanced git and test-driven development. Team submissions were submitted on Github and evaluated via code reviews. All lectures are published on YouTube."
 			},
 			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
+			"links": [
+				{
+					"label": "GitHub",
+					"url": "https://github.com/systems-development-and-frameworks",
+					"kind": "repository"
+				},
+				{
+					"label": "YouTube Playlist",
+					"url": "https://www.youtube.com/playlist?list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
+					"kind": "playlist"
+				}
+			],
 			"location": "Berlin, Germany",
 			"type": "teaching"
 		},
@@ -458,9 +505,19 @@
 			],
 			"url": "https://github.com/Ocelot-Social-Community/Ocelot-Social",
 			"description": {
-				"de": "Ocelot.social, früher Human Connection, ist ein spendenfinanziertes, freies und quelloffenes soziales Netzwerk mit Fokus auf aktive Zivilgesellschaft. Wir nutzen die Graphdatenbank Neo4J produktiv, um Nutzerkonten und soziale Beziehungen zu modellieren. Die Daten werden per GraphQL ausgeliefert und auf einem gemanagten Kubernetes-Cluster bei Digital Ocean betrieben. Als Open-Source-Projekt arbeiten wir mit Online-Lerncommunities, um Mitwirkende zu gewinnen und Menschen beim Programmierenlernen zu unterstützen. Die Software kann selbst gehostet und individuell gebrandet werden; eine [Staging-Umgebung ist online verfügbar](https://stage.ocelot.social).",
-				"en": "Ocelot.social, formerly known as Human Connection, is a donation-based, free and open-source social network focused on active citizenship. We use the Neo4J graph database in production to model user accounts and social connections. Data is served via GraphQL and deployed on a managed Kubernetes cluster on Digital Ocean. As an open-source project, we engage with online learning communities to attract contributors and help people learn programming. The software can be self-hosted and individually branded, a [staging environment is available online](https://stage.ocelot.social)."
+				"de": "Ocelot.social, früher Human Connection, ist ein spendenfinanziertes, freies und quelloffenes soziales Netzwerk mit Fokus auf aktive Zivilgesellschaft. Wir nutzen die Graphdatenbank Neo4J produktiv, um Nutzerkonten und soziale Beziehungen zu modellieren. Die Daten werden per GraphQL ausgeliefert und auf einem gemanagten Kubernetes-Cluster bei Digital Ocean betrieben. Als Open-Source-Projekt arbeiten wir mit Online-Lerncommunities, um Mitwirkende zu gewinnen und Menschen beim Programmierenlernen zu unterstützen. Die Software kann selbst gehostet und individuell gebrandet werden.",
+				"en": "Ocelot.social, formerly known as Human Connection, is a donation-based, free and open-source social network focused on active citizenship. We use the Neo4J graph database in production to model user accounts and social connections. Data is served via GraphQL and deployed on a managed Kubernetes cluster on Digital Ocean. As an open-source project, we engage with online learning communities to attract contributors and help people learn programming. The software can be self-hosted and individually branded."
 			},
+			"links": [
+				{
+					"label": {
+						"de": "Staging",
+						"en": "Staging"
+					},
+					"url": "https://stage.ocelot.social",
+					"kind": "demo"
+				}
+			],
 			"type": "employment"
 		},
 		{
@@ -534,9 +591,31 @@
 				"PostgreSQL"
 			],
 			"description": {
-				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) und [RBB](https://www.wwwagner.tv/?p=36200) aufgegriffen.",
-				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
 			},
+			"links": [
+				{
+					"label": "Zeit Online",
+					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+					"kind": "press"
+				},
+				{
+					"label": "Netzpolitik.org",
+					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
+					"kind": "press"
+				},
+				{
+					"label": "Deutschlandfunk",
+					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
+					"kind": "press"
+				},
+				{
+					"label": "RBB",
+					"url": "https://www.wwwagner.tv/?p=36200",
+					"kind": "press"
+				}
+			],
 			"type": "volunteering"
 		},
 		{
@@ -679,9 +758,31 @@
 			"url": "https://media.ccc.de/v/34c3-9258-lightning_talks_day_4#t=1352",
 			"type": "talk",
 			"description": {
-				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) und [RBB](https://www.wwwagner.tv/?p=36200) aufgegriffen.",
-				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
-			}
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			},
+			"links": [
+				{
+					"label": "Zeit Online",
+					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+					"kind": "press"
+				},
+				{
+					"label": "Netzpolitik.org",
+					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
+					"kind": "press"
+				},
+				{
+					"label": "Deutschlandfunk",
+					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
+					"kind": "press"
+				},
+				{
+					"label": "RBB",
+					"url": "https://www.wwwagner.tv/?p=36200",
+					"kind": "press"
+				}
+			]
 		},
 		{
 			"id": "gez-scrap-it-or-pay-it",
@@ -712,10 +813,30 @@
 			"endDate": "2017-10-31",
 			"keywords": ["Ruby on Rails", "Ruby", "RSpec", "Cucumber"],
 			"description": {
-				"de": "Wir entwickelten ein innovatives Medienformat für [WDR](https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html) und [Spiegel Online](https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html). Es entstand eine Software, die automatisiert Berichte auf Basis von Sensordaten dreier Milchkühe erzeugt. Das Projekt erhielt große mediale Aufmerksamkeit mit über [63 Berichten und Features](https://superkuehe.wdr.de/zum-projekt/meinung/).",
-				"en": "We developed an innovative media format for [WDR](https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html) and [Spiegel Online](https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html). A software was created to automatically generate a report based on sensory data from three dairy cows. This project received significant media attention with over [63 reports and features](https://superkuehe.wdr.de/zum-projekt/meinung/)."
+				"de": "Wir entwickelten ein innovatives Medienformat für WDR und Spiegel Online. Es entstand eine Software, die automatisiert Berichte auf Basis von Sensordaten dreier Milchkühe erzeugt. Das Projekt erhielt große mediale Aufmerksamkeit mit über 63 Berichten und Features.",
+				"en": "We developed an innovative media format for WDR and Spiegel Online. A software was created to automatically generate a report based on sensory data from three dairy cows. This project received significant media attention with over 63 reports and features."
 			},
-			"url": "https://superkuehe.wdr.de/"
+			"url": "https://superkuehe.wdr.de/",
+			"links": [
+				{
+					"label": "WDR",
+					"url": "https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html",
+					"kind": "press"
+				},
+				{
+					"label": "Spiegel Online",
+					"url": "https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html",
+					"kind": "press"
+				},
+				{
+					"label": {
+						"de": "63 Berichte und Features",
+						"en": "63 reports and features"
+					},
+					"url": "https://superkuehe.wdr.de/zum-projekt/meinung/",
+					"kind": "press"
+				}
+			]
 		},
 		{
 			"id": "coding-in-the-woods",
@@ -790,9 +911,31 @@
 			"url": "https://www.youtube.com/watch?v=3BmdDEuW-ZA",
 			"type": "talk",
 			"description": {
-				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) und [RBB](https://www.wwwagner.tv/?p=36200) aufgegriffen.",
-				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
-			}
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			},
+			"links": [
+				{
+					"label": "Zeit Online",
+					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+					"kind": "press"
+				},
+				{
+					"label": "Netzpolitik.org",
+					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
+					"kind": "press"
+				},
+				{
+					"label": "Deutschlandfunk",
+					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
+					"kind": "press"
+				},
+				{
+					"label": "RBB",
+					"url": "https://www.wwwagner.tv/?p=36200",
+					"kind": "press"
+				}
+			]
 		},
 		{
 			"id": "why-do-i-have-to-pay-and-dont-get-a-say",
@@ -859,9 +1002,31 @@
 			"url": "https://www.youtube.com/watch?v=8TyViNgmeSQ",
 			"type": "talk",
 			"description": {
-				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) und [RBB](https://www.wwwagner.tv/?p=36200) aufgegriffen.",
-				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
-			}
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			},
+			"links": [
+				{
+					"label": "Zeit Online",
+					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+					"kind": "press"
+				},
+				{
+					"label": "Netzpolitik.org",
+					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
+					"kind": "press"
+				},
+				{
+					"label": "Deutschlandfunk",
+					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
+					"kind": "press"
+				},
+				{
+					"label": "RBB",
+					"url": "https://www.wwwagner.tv/?p=36200",
+					"kind": "press"
+				}
+			]
 		},
 		{
 			"id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
@@ -878,9 +1043,31 @@
 			"url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
 			"type": "talk",
 			"description": {
-				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) und [RBB](https://www.wwwagner.tv/?p=36200) aufgegriffen.",
-				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by [Zeit Online](https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2), [Netzpolitik.org](https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/), [Deutschlandfunk](https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html) and [RBB](https://www.wwwagner.tv/?p=36200)."
-			}
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			},
+			"links": [
+				{
+					"label": "Zeit Online",
+					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+					"kind": "press"
+				},
+				{
+					"label": "Netzpolitik.org",
+					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
+					"kind": "press"
+				},
+				{
+					"label": "Deutschlandfunk",
+					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
+					"kind": "press"
+				},
+				{
+					"label": "RBB",
+					"url": "https://www.wwwagner.tv/?p=36200",
+					"kind": "press"
+				}
+			]
 		},
 		{
 			"id": "protothon",

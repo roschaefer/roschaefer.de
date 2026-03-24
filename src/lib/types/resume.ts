@@ -4,6 +4,12 @@ export type ResumeProfile = {
 	url: string;
 };
 
+export type ResumeLink = {
+	label: string;
+	url: string;
+	kind?: string;
+};
+
 export type ResumeBasics = {
 	name: string;
 	label: string;
@@ -29,6 +35,7 @@ export type ResumeProject = {
 	keywords?: string[];
 	description?: string;
 	url?: string;
+	links?: ResumeLink[];
 	type?: string;
 };
 
@@ -37,6 +44,7 @@ export type ResumeAward = {
 	date?: string;
 	summary?: string;
 	awarder?: string;
+	links?: ResumeLink[];
 };
 
 export type ResumeLanguage = {
