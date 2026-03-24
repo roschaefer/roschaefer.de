@@ -336,11 +336,16 @@ markUsed(() => [
 						<p class="mt-4">{project.description}</p>
 						{#if project.keywords?.length}
 							<ul class="mt-5 flex list-none flex-wrap gap-2 p-0">
-								{#each project.keywords.slice(0, 6) as keyword}
+								{#each project.keywords.slice(0, 8) as keyword}
 									<li class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)]">
 										{keyword}
 									</li>
 								{/each}
+								{#if project.keywords.length > 8}
+									<li class="rounded-full border border-dashed border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-muted)]">
+										+{project.keywords.length - 8} more
+									</li>
+								{/if}
 							</ul>
 						{/if}
 					</article>
