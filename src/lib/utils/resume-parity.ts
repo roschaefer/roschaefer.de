@@ -149,9 +149,48 @@ const assertFeaturedReferencesAreValid = (value: Record<string, unknown>) => {
 	}
 };
 
+const assertStructuredLinks = (value: unknown, path: string[] = []) => {
+	if (Array.isArray(value)) {
+		for (const [index, entry] of value.entries()) {
+			assertStructuredLinks(entry, [...path, String(index)]);
+		}
+
+		return;
+	}
+
+	if (!isPlainObject(value) || isLocalizedValue(value)) {
+		return;
+	}
+
+	if ("links" in value) {
+		if (!Array.isArray(value.links)) {
+			throw new Error(`Expected links array at ${path.join(".") || "<root>"}.`);
+		}
+
+		for (const [index, link] of value.links.entries()) {
+			if (!isPlainObject(link)) {
+				throw new Error(`Expected link object at ${[...path, "links", String(index)].join(".")}.`);
+			}
+
+			if (!("label" in link)) {
+				throw new Error(`Missing link label at ${[...path, "links", String(index)].join(".")}.`);
+			}
+
+			if (!("url" in link) || typeof link.url !== "string" || link.url.length === 0) {
+				throw new Error(`Missing link url at ${[...path, "links", String(index)].join(".")}.`);
+			}
+		}
+	}
+
+	for (const [key, entry] of Object.entries(value)) {
+		assertStructuredLinks(entry, [...path, key]);
+	}
+};
+
 export const validateResumeParity = () => {
 	assertNoGeneratedFieldsInSource(source);
 	assertValidLocalizedNodes(source);
 	assertDatedEntriesHaveRequiredDates(source);
 	assertFeaturedReferencesAreValid(source);
+	assertStructuredLinks(source);
 };
