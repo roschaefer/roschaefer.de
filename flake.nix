@@ -15,7 +15,7 @@
         playwrightBrowsers = pkgs.playwright-driver.browsers;
         nodeVersion = "24";
         pnpmVersion = "10.22.0";
-        typstVersion = "0.14.8";
+        typstVersion = "0.14.2";
         toolVersionsText = ''
           nodejs ${nodeVersion}
           pnpm ${pnpmVersion}

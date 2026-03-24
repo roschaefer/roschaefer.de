@@ -14,20 +14,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v17
-
-      - name: Enable Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v13
+      - name: Install tools from .tool-versions
+        uses: jdx/mise-action@v3
+        with:
+          cache: true
 
       - name: Install dependencies
-        run: nix develop --command pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build production site
-        run: nix develop --command pnpm build:prod
+        run: pnpm build:prod
 
       - name: Deploy to Netlify
-        run: nix develop --command pnpm --package=netlify-cli dlx netlify deploy --dir=build --prod
+        run: pnpm dlx netlify deploy --dir=build --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
