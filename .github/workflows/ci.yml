@@ -14,41 +14,43 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v17
-
-      - name: Enable Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v13
+      - name: Install tools from .tool-versions
+        uses: jdx/mise-action@v3
+        with:
+          cache: true
 
       - name: Install dependencies
-        run: nix develop --command pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium firefox
 
       - name: Compile Paraglide messages
-        run: nix develop --command pnpm paraglide:compile
+        run: pnpm paraglide:compile
 
       - name: Generate resume outputs
-        run: nix develop --command pnpm resume:build
+        run: pnpm resume:build
 
       - name: Verify generated files are committed
-        run: nix develop --command git diff --exit-code
+        run: git diff --exit-code
 
       - name: Lint
-        run: nix develop --command pnpm lint
+        run: pnpm lint
 
       - name: Typecheck
-        run: nix develop --command pnpm check
+        run: pnpm check
 
       - name: Test
-        run: nix develop --command pnpm test:unit
+        run: pnpm test:unit
 
       - name: Accessibility test
-        run: nix develop --command pnpm test:a11y
+        run: pnpm test:a11y
 
       - name: Build PDFs
-        run: nix develop --command pnpm pdf:build
+        run: pnpm pdf:build
 
       - name: Build site
-        run: nix develop --command pnpm build
+        run: pnpm build
 
   lighthouse:
     runs-on: ubuntu-latest
@@ -58,17 +60,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v17
-
-      - name: Enable Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v13
+      - name: Install tools from .tool-versions
+        uses: jdx/mise-action@v3
+        with:
+          cache: true
 
       - name: Install dependencies
-        run: nix develop --command pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build production site
-        run: nix develop --command pnpm build:prod
+        run: pnpm build:prod
 
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
@@ -76,4 +77,4 @@ jobs:
           configPath: ./lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
-          buildCommand: nix develop --command pnpm build:prod
+          buildCommand: pnpm build:prod
