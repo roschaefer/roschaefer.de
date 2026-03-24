@@ -4,10 +4,12 @@ import { fileURLToPath } from "node:url";
 import source from "../resume.i18n.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
 import {
+	createFeaturedEntriesByName,
 	createFeaturedProjects,
 	createFeaturedSkills,
 	getFeaturedConfig,
 } from "../src/lib/utils/resume-featured.ts";
+import { createTechExperience } from "../src/lib/utils/tech-experience.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -124,6 +126,19 @@ const createAwardEntry = (entry, locale) => ({
 	summary: stripMarkdownLinks(entry.summary ?? ""),
 });
 
+const createTechnologyEntry = (entry) => ({
+	name: entry.name,
+	duration: entry.label,
+	projectCount: entry.projectCount,
+	lastUsedLabel: entry.lastUsedLabel,
+	projects: entry.projects.map((project) => ({
+		name: project.name,
+		entity: project.entity ?? "",
+		url: project.url ?? null,
+		printLabel: project.url ? printLinkLabel(project.url) : null,
+	})),
+});
+
 await fs.mkdir(outputDir, { recursive: true });
 const featured = getFeaturedConfig(source.featured);
 
@@ -136,6 +151,10 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 		(project) => project.type !== "talk",
 	);
 	const featuredSkills = createFeaturedSkills(resume.skills ?? [], featured.skillNames);
+	const techExperience = createTechExperience(projects, locale);
+	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
+	const typstTechExperience =
+		featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 16);
 
 	const payload = {
 		locale,
@@ -157,6 +176,7 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 		skills: (featuredSkills.length > 0 ? featuredSkills : (resume.skills ?? []).slice(0, 16)).map(
 			(skill) => skill.name,
 		),
+		technologies: typstTechExperience.map((entry) => createTechnologyEntry(entry)),
 		languages: (resume.languages ?? []).map((language) => ({
 			name: language.language,
 			fluency: language.fluency,
