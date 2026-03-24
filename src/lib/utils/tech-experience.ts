@@ -1,6 +1,7 @@
 import type { Locale } from "$lib/i18n";
 import type { ResumeProject } from "$lib/types/resume";
 import { formatMonthDuration } from "./duration";
+import { createTechnologyAggregates } from "./technology-aggregate";
 
 export type TechExperience = {
 	name: string;
@@ -11,35 +12,6 @@ export type TechExperience = {
 	lastUsedMonth: number;
 	lastUsedLabel: string;
 	score: number;
-};
-
-type Interval = {
-	start: number;
-	end: number;
-};
-
-const monthIndex = (value: string): number => {
-	const date = new Date(value);
-	return date.getUTCFullYear() * 12 + date.getUTCMonth();
-};
-
-const monthDiff = (start: number, end: number): number => Math.max(1, end - start + 1);
-
-const mergeIntervals = (intervals: Interval[]): Interval[] => {
-	const sorted = [...intervals].sort((left, right) => left.start - right.start);
-	const merged: Interval[] = [];
-
-	for (const interval of sorted) {
-		const previous = merged.at(-1);
-		if (!previous || interval.start > previous.end + 1) {
-			merged.push({ ...interval });
-			continue;
-		}
-
-		previous.end = Math.max(previous.end, interval.end);
-	}
-
-	return merged;
 };
 
 const formatRelativeLastUsed = (
@@ -78,43 +50,10 @@ export const createTechExperience = (
 	now = new Date(),
 ): TechExperience[] => {
 	const currentMonth = now.getUTCFullYear() * 12 + now.getUTCMonth();
-	const entries = new Map<
-		string,
-		{ intervals: Interval[]; projects: ResumeProject[]; lastUsedMonth: number }
-	>();
 
-	for (const project of projects) {
-		const keywords = project.keywords ?? [];
-		const interval = {
-			start: monthIndex(project.startDate),
-			end: project.endDate ? monthIndex(project.endDate) : currentMonth,
-		};
-
-		for (const keyword of keywords) {
-			const current = entries.get(keyword) ?? {
-				intervals: [],
-				projects: [],
-				lastUsedMonth: interval.end,
-			};
-			current.intervals.push(interval);
-			current.projects.push(project);
-			current.lastUsedMonth = Math.max(current.lastUsedMonth, interval.end);
-			entries.set(keyword, current);
-		}
-	}
-
-	return [...entries.entries()]
-		.map(([name, value]) => {
-			const merged = mergeIntervals(value.intervals);
-			const totalMonths = merged.reduce(
-				(sum, interval) => sum + monthDiff(interval.start, interval.end),
-				0,
-			);
-			const projects = [
-				...new Map(value.projects.map((project) => [project.name, project])).values(),
-			];
-			const projectCount = projects.length;
-			const monthsSinceLastUsed = Math.max(0, currentMonth - value.lastUsedMonth);
+	return createTechnologyAggregates(projects, now)
+		.map(({ name, totalMonths, projects, projectCount, lastUsedMonth }) => {
+			const monthsSinceLastUsed = Math.max(0, currentMonth - lastUsedMonth);
 
 			return {
 				name,
@@ -122,8 +61,8 @@ export const createTechExperience = (
 				label: formatMonthDuration(totalMonths, locale),
 				projects,
 				projectCount,
-				lastUsedMonth: value.lastUsedMonth,
-				lastUsedLabel: formatRelativeLastUsed(value.lastUsedMonth, currentMonth, locale),
+				lastUsedMonth,
+				lastUsedLabel: formatRelativeLastUsed(lastUsedMonth, currentMonth, locale),
 				score: createScore(totalMonths, projectCount, monthsSinceLastUsed),
 			};
 		})

@@ -1,11 +1,7 @@
 import type { Locale } from "$lib/i18n";
 import type { ResumeProject, ResumeSkill } from "$lib/types/resume";
 import { formatMonthDuration } from "./duration.ts";
-
-type Interval = {
-	start: number;
-	end: number;
-};
+import { createTechnologyAggregates } from "./technology-aggregate.ts";
 
 type SkillSignals = {
 	name: string;
@@ -13,30 +9,6 @@ type SkillSignals = {
 	projectCount: number;
 	monthsSinceLastUsed: number;
 	lastUsedMonth: number;
-};
-
-const monthIndex = (value: string): number => {
-	const date = new Date(value);
-	return date.getUTCFullYear() * 12 + date.getUTCMonth();
-};
-
-const monthDiff = (start: number, end: number): number => Math.max(1, end - start + 1);
-
-const mergeIntervals = (intervals: Interval[]): Interval[] => {
-	const sorted = [...intervals].sort((left, right) => left.start - right.start);
-	const merged: Interval[] = [];
-
-	for (const interval of sorted) {
-		const previous = merged.at(-1);
-		if (!previous || interval.start > previous.end + 1) {
-			merged.push({ ...interval });
-			continue;
-		}
-
-		previous.end = Math.max(previous.end, interval.end);
-	}
-
-	return merged;
 };
 
 export const formatSkillDuration = (months: number, locale: Locale): string =>
@@ -116,51 +88,17 @@ export const createResumeSkills = (
 	now = new Date(),
 ): ResumeSkill[] => {
 	const currentMonth = now.getUTCFullYear() * 12 + now.getUTCMonth();
-	const entries = new Map<
-		string,
-		{
-			intervals: Interval[];
-			projectKeys: Set<string>;
-			lastUsedMonth: number;
-		}
-	>();
 
-	for (const project of projects) {
-		const keywords = project.keywords ?? [];
-		const interval = {
-			start: monthIndex(project.startDate),
-			end: project.endDate ? monthIndex(project.endDate) : currentMonth,
-		};
-		const projectKey = `${project.name}:${project.startDate}:${project.endDate ?? ""}`;
-
-		for (const keyword of keywords) {
-			const entry = entries.get(keyword) ?? {
-				intervals: [],
-				projectKeys: new Set<string>(),
-				lastUsedMonth: interval.end,
-			};
-			entry.intervals.push(interval);
-			entry.projectKeys.add(projectKey);
-			entry.lastUsedMonth = Math.max(entry.lastUsedMonth, interval.end);
-			entries.set(keyword, entry);
-		}
-	}
-
-	return [...entries.entries()]
-		.map(([name, entry]) => {
-			const totalMonths = mergeIntervals(entry.intervals).reduce(
-				(sum, interval) => sum + monthDiff(interval.start, interval.end),
-				0,
-			);
-			const projectCount = entry.projectKeys.size;
-			const monthsSinceLastUsed = Math.max(0, currentMonth - entry.lastUsedMonth);
+	return createTechnologyAggregates(projects, now)
+		.map(({ name, totalMonths, projectCount, lastUsedMonth }) => {
+			const monthsSinceLastUsed = Math.max(0, currentMonth - lastUsedMonth);
 
 			const signals: SkillSignals = {
 				name,
 				totalMonths,
 				projectCount,
 				monthsSinceLastUsed,
-				lastUsedMonth: entry.lastUsedMonth,
+				lastUsedMonth,
 			};
 
 			return {
@@ -169,7 +107,7 @@ export const createResumeSkills = (
 				keywords: [
 					formatSkillDuration(totalMonths, locale),
 					formatProjectCount(projectCount, locale),
-					formatLastUsedKeyword(entry.lastUsedMonth, monthsSinceLastUsed, locale),
+					formatLastUsedKeyword(lastUsedMonth, monthsSinceLastUsed, locale),
 				],
 				sortScore: createSortScore(totalMonths, projectCount, monthsSinceLastUsed),
 			};
