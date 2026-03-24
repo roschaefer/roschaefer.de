@@ -18,10 +18,14 @@ The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, a
 
 ## Content Model
 
+- `resume.i18n.json`
+
+This file is the authored source of truth for resume content.
+
 - `resume.de.json`
 - `resume.en.json`
 
-These two files are the canonical localized resume sources.
+These two localized JSON Resume files are generated from `resume.i18n.json`.
 
 The downloadable PDFs are generated from the same localized JSON sources through a dedicated `Typst` pipeline.
 
