@@ -81,6 +81,34 @@
   #item-meta(entry.fluency)
 ]
 
+#let technology-project-count(count) = {
+  if data.locale == "de" {
+    if count == 1 {
+      "1 Projekt"
+    } else {
+      str(count) + " Projekte"
+    }
+  } else {
+    if count == 1 {
+      "1 project"
+    } else {
+      str(count) + " projects"
+    }
+  }
+}
+
+#let technology-entry(entry) = [
+  #item-title(entry.name)
+  #v(1pt)
+  #item-meta(entry.duration + "   " + technology-project-count(entry.projectCount))
+  #v(1pt)
+  #item-meta(entry.lastUsedLabel)
+]
+
+#let technology-grid-entry(entry) = [
+  #technology-entry(entry)
+]
+
 #let contact-entry(label, value, link-url: none) = [
   #text(size: 7.6pt, weight: 700, tracking: 0.1em, fill: brand)[#upper(label)]
   #v(1.5pt)
@@ -135,16 +163,16 @@
       #v(10pt)
     ]
 
-    #if data.talks.len() > 0 [
-      #section-heading(data.labels.selectedTalks)
-      #for entry in data.talks [
-        #talk-entry(entry)
-        #v(7pt)
-      ]
-    ]
-  ],
-  [
-    #if data.skills.len() > 0 [
+    #if data.technologies.len() > 0 [
+      #section-heading(data.labels.skills)
+      #grid(
+        columns: (1fr, 1fr),
+        gutter: 8pt,
+        row-gutter: 7pt,
+        ..data.technologies.map(technology-grid-entry),
+      )
+      #v(10pt)
+    ] else if data.skills.len() > 0 [
       #section-heading(data.labels.skills)
       #grid(
         columns: (1fr, 1fr),
@@ -154,6 +182,15 @@
       #v(10pt)
     ]
 
+    #if data.talks.len() > 0 [
+      #section-heading(data.labels.selectedTalks)
+      #for entry in data.talks [
+        #talk-entry(entry)
+        #v(7pt)
+      ]
+    ]
+  ],
+  [
     #if data.languages.len() > 0 [
       #section-heading(data.labels.languages)
       #sidebar-list(data.languages, language-entry)
