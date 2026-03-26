@@ -309,7 +309,7 @@ markUsed(() => [
 					<article class="theme-card rounded-[1.75rem] p-6">
 						<header class="space-y-3">
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
-								{project.roles?.join(", ") ?? project.type ?? t(m.project_fallback)}
+								{project.roles?.join(", ") ?? t(m.project_fallback)}
 							</p>
 							<h3 class="theme-heading">
 								{#if project.url}
@@ -333,7 +333,9 @@ markUsed(() => [
 								{/if}
 							</p>
 						</header>
-						<p class="mt-4">{project.description}</p>
+						{#if project.description}
+							<p class="mt-4 text-[var(--color-brand-text)]">{project.description}</p>
+						{/if}
 						{#if project.keywords?.length}
 							<ul class="mt-5 flex list-none flex-wrap gap-2 p-0">
 								{#each project.keywords.slice(0, 8) as keyword}
@@ -376,11 +378,12 @@ markUsed(() => [
 									href={talk.url}
 									data-print-label={talk.url ? printLinkLabel(talk.url) : ""}
 								>
-									{talk.name}
+									{talk.entity}
 								</a>
 							</h3>
+							<p class="mt-2 text-sm text-[var(--color-brand-text)]">{talk.name}</p>
 							<p class="mt-2 text-sm text-[var(--color-brand-muted)]">
-								{talk.entity} . {talk.startDate}
+								{talk.startDate}
 							</p>
 						</article>
 					</li>

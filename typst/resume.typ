@@ -19,7 +19,7 @@
   ]
 ]
 
-#let experience-entry(entry) = [
+#let experience-entry(entry) = block(breakable: false)[
   #item-title(entry.name, suffix: entry.entity, link-url: entry.url)
   #v(2pt)
   #item-meta(entry.role + "   " + entry.period)
@@ -29,15 +29,16 @@
   ]
   #if entry.keywords.len() > 0 [
     #v(5pt)
-    #grid(
-      columns: (1fr, 1fr),
-      gutter: 4pt,
-      ..entry.keywords.map(chip),
-    )
+    #for (index, keyword) in entry.keywords.enumerate() [
+      #chip(keyword)
+      #if index < entry.keywords.len() - 1 [
+        #h(4pt)
+      ]
+    ]
   ]
 ]
 
-#let talk-entry(entry) = [
+#let talk-entry(entry) = block(breakable: false)[
   #item-title(entry.name, suffix: entry.entity, link-url: entry.url)
   #v(2pt)
   #item-meta(entry.period)
@@ -142,16 +143,32 @@
         value: data.basics.email,
         link: "mailto:" + data.basics.email,
       ),
-      (
-        label: data.labels.location,
-        value: data.basics.location,
-        link: none,
-      ),
     ), entry => contact-entry(entry.label, entry.value, link-url: entry.link))
   ],
 )
 
 #v(10pt)
+
+#if data.technologies.len() > 0 [
+  #section-heading(data.labels.skills)
+  #grid(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    gutter: 8pt,
+    row-gutter: 7pt,
+    ..data.technologies.map(technology-grid-entry),
+  )
+  #v(10pt)
+] else if data.skills.len() > 0 [
+  #section-heading(data.labels.skills)
+  #grid(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    gutter: 4pt,
+    ..data.skills.map(chip),
+  )
+  #v(10pt)
+]
+
+#v(4pt)
 
 #grid(
   columns: (2.1fr, 1fr),
@@ -160,25 +177,6 @@
     #section-heading(data.labels.selectedProjects)
     #for entry in data.experience [
       #experience-entry(entry)
-      #v(10pt)
-    ]
-
-    #if data.technologies.len() > 0 [
-      #section-heading(data.labels.skills)
-      #grid(
-        columns: (1fr, 1fr),
-        gutter: 8pt,
-        row-gutter: 7pt,
-        ..data.technologies.map(technology-grid-entry),
-      )
-      #v(10pt)
-    ] else if data.skills.len() > 0 [
-      #section-heading(data.labels.skills)
-      #grid(
-        columns: (1fr, 1fr),
-        gutter: 4pt,
-        ..data.skills.map(chip),
-      )
       #v(10pt)
     ]
 
@@ -192,23 +190,31 @@
   ],
   [
     #if data.languages.len() > 0 [
+      #block(breakable: false)[
       #section-heading(data.labels.languages)
       #sidebar-list(data.languages, language-entry)
+      ]
     ]
 
     #if data.education.len() > 0 [
+      #block(breakable: false)[
       #section-heading(data.labels.education)
       #sidebar-list(data.education, education-entry)
+      ]
     ]
 
     #if data.profiles.len() > 0 [
+      #block(breakable: false)[
       #section-heading(data.labels.profiles)
       #sidebar-list(data.profiles, profile-entry)
+      ]
     ]
 
     #if data.awards.len() > 0 [
+      #block(breakable: false)[
       #section-heading(data.labels.awards)
       #sidebar-list(data.awards, award-entry)
+      ]
     ]
   ],
 )

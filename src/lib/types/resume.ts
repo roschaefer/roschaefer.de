@@ -37,6 +37,8 @@ export type ResumeProject = {
 	url?: string;
 	links?: ResumeLink[];
 	type?: string;
+	engagement?: string;
+	visibility?: string;
 };
 
 export type ResumeAward = {
@@ -74,6 +76,7 @@ export type ResumeSkill = {
 
 export type ResumeFeatured = {
 	projectIds?: string[];
+	talkIds?: string[];
 	skillNames?: string[];
 };
 
