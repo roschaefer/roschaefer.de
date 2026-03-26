@@ -16,7 +16,11 @@ export const createSiteContent = (locale: Locale) => {
 	);
 	const featuredProjects =
 		createFeaturedProjects(sortedProjects, featured.projectIds).filter(
-			(project) => project.type !== "talk",
+			(project) => project.type !== "presentation",
+		) || [];
+	const featuredTalks =
+		createFeaturedProjects(sortedProjects, featured.talkIds).filter(
+			(project) => project.type === "presentation",
 		) || [];
 	const techExperience = createTechExperience(projects, locale);
 	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
@@ -28,8 +32,11 @@ export const createSiteContent = (locale: Locale) => {
 		featuredProjects:
 			featuredProjects.length > 0
 				? featuredProjects
-				: sortedProjects.filter((project) => project.type !== "talk").slice(0, 6),
-		talks: sortedProjects.filter((project) => project.type === "talk"),
+				: sortedProjects.filter((project) => project.type !== "presentation").slice(0, 6),
+		talks:
+			featuredTalks.length > 0
+				? featuredTalks
+				: sortedProjects.filter((project) => project.type === "presentation"),
 		techExperience:
 			featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 12),
 		profiles,
