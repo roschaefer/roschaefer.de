@@ -38,5 +38,6 @@ export const createFeaturedEntriesByName = <T extends { name: string }>(
 
 export const getFeaturedConfig = (featured?: ResumeFeatured): Required<ResumeFeatured> => ({
 	projectIds: featured?.projectIds ?? [],
+	talkIds: featured?.talkIds ?? [],
 	skillNames: featured?.skillNames ?? [],
 });

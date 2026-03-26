@@ -25,7 +25,6 @@ const localeConfigs = {
 			education: "Ausbildung",
 			awards: "Auszeichnungen",
 			profiles: "Profile",
-			location: "Standort",
 			email: "E-Mail",
 			website: "Website",
 			present: "Heute",
@@ -41,7 +40,6 @@ const localeConfigs = {
 			education: "Education",
 			awards: "Awards",
 			profiles: "Profiles",
-			location: "Location",
 			email: "Email",
 			website: "Website",
 			present: "Present",
@@ -83,15 +81,12 @@ const formatDateRange = ({ startDate, endDate }, locale, presentLabel) => {
 	return [start, end].filter(Boolean).join(" - ");
 };
 
-const formatLocation = (location) =>
-	[location?.city, location?.region, location?.countryCode].filter(Boolean).join(", ");
-
 const pickProfiles = (profiles = []) =>
 	profiles.filter((profile) =>
 		["Github", "LinkedIn", "Mastodon", "YouTube"].includes(profile.network),
 	);
 
-const projectRole = (project) => project.roles?.join(", ") ?? project.type ?? "";
+const projectRole = (project) => project.roles?.join(", ") ?? "";
 
 const createProjectEntry = (project, locale, config) => ({
 	name: project.name,
@@ -148,13 +143,18 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 		right.startDate.localeCompare(left.startDate),
 	);
 	const featuredProjects = createFeaturedProjects(projects, featured.projectIds).filter(
-		(project) => project.type !== "talk",
+		(project) => project.type !== "presentation",
+	);
+	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
+		(project) => project.type === "presentation",
 	);
 	const featuredSkills = createFeaturedSkills(resume.skills ?? [], featured.skillNames);
 	const techExperience = createTechExperience(projects, locale);
 	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
 	const typstTechExperience =
-		featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 16);
+		featuredTechExperience.length > 0
+			? featuredTechExperience.slice(0, 12)
+			: techExperience.slice(0, 12);
 
 	const payload = {
 		locale,
@@ -166,16 +166,16 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 			email: resume.basics.email,
 			websiteUrl: resume.basics.url,
 			websiteLabel: printLinkLabel(resume.basics.url),
-			location: formatLocation(resume.basics.location),
 		},
 		profiles: pickProfiles(resume.basics.profiles).map((profile) => ({
 			network: profile.network,
 			url: profile.url,
 			printLabel: printLinkLabel(profile.url),
 		})),
-		skills: (featuredSkills.length > 0 ? featuredSkills : (resume.skills ?? []).slice(0, 16)).map(
-			(skill) => skill.name,
-		),
+		skills: (featuredSkills.length > 0
+			? featuredSkills.slice(0, 12)
+			: (resume.skills ?? []).slice(0, 12)
+		).map((skill) => skill.name),
 		technologies: typstTechExperience.map((entry) => createTechnologyEntry(entry)),
 		languages: (resume.languages ?? []).map((language) => ({
 			name: language.language,
@@ -184,13 +184,13 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 		education: (resume.education ?? []).map((entry) => createEducationEntry(entry, locale, config)),
 		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
 		experience: (featuredProjects.length > 0
-			? featuredProjects.slice(0, 8)
-			: projects.filter((project) => project.type !== "talk").slice(0, 8)
+			? featuredProjects.slice(0, 6)
+			: projects.filter((project) => project.type !== "presentation").slice(0, 6)
 		).map((project) => createProjectEntry(project, locale, config)),
-		talks: projects
-			.filter((project) => project.type === "talk")
-			.slice(0, 6)
-			.map((project) => createTalkEntry(project, locale)),
+		talks: (featuredTalks.length > 0
+			? featuredTalks.slice(0, 3)
+			: projects.filter((project) => project.type === "presentation").slice(0, 3)
+		).map((project) => createTalkEntry(project, locale)),
 	};
 
 	await fs.writeFile(

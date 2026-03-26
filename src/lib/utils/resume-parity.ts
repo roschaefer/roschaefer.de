@@ -129,6 +129,22 @@ const assertFeaturedReferencesAreValid = (value: Record<string, unknown>) => {
 		}
 	}
 
+	if ("talkIds" in featured) {
+		if (!Array.isArray(featured.talkIds) || featured.talkIds.some((id) => typeof id !== "string")) {
+			throw new Error("featured.talkIds must be an array of strings.");
+		}
+
+		if (featured.talkIds.length !== new Set(featured.talkIds).size) {
+			throw new Error("featured.talkIds must not contain duplicates.");
+		}
+
+		for (const id of featured.talkIds) {
+			if (!projectIds.includes(id)) {
+				throw new Error(`featured.talkIds references unknown project id "${id}".`);
+			}
+		}
+	}
+
 	if ("skillNames" in featured) {
 		if (
 			!Array.isArray(featured.skillNames) ||

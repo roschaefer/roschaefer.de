@@ -42,6 +42,6 @@ describe("resume featured", () => {
 	});
 
 	it("normalizes missing featured config to empty arrays", () => {
-		expect(getFeaturedConfig()).toEqual({ projectIds: [], skillNames: [] });
+		expect(getFeaturedConfig()).toEqual({ projectIds: [], talkIds: [], skillNames: [] });
 	});
 });

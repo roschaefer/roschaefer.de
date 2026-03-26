@@ -7,7 +7,7 @@
 		"email": "hello@roschaefer.de",
 		"url": "https://roschaefer.de/",
 		"signal": "https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00",
-		"summary": "Ich bin digitaler Nomade und arbeite remote als freiberuflicher Full-Stack-Entwickler. Ich begeistere mich für freie und quelloffene Software und teile mein Wissen gern in Pair Programming und Tech Talks. Bei der Arbeit priorisiere ich Softwarequalität und verbringe einen großen Teil meiner Zeit mit Tests und Code Reviews.",
+		"summary": "Ich arbeite remote als freiberuflicher Full-Stack-Entwickler an Webanwendungen, Produktentwicklung und Infrastruktur und investiere zusätzliche Zeit in Open Source. Mein Fokus liegt auf wartbarer Software, hoher Testabdeckung und der Modernisierung fragiler Systeme, indem ich Deployment- und Betriebsprozesse vereinfache und Qualität durch verlässliche Zusammenarbeit, Code Reviews, Pair Programming und technische Mentoring-Arbeit absichere.",
 		"location": {
 			"address": "kein fester Wohnsitz",
 			"city": "Köln",
@@ -163,6 +163,8 @@
 			"id": "dialogbank-app",
 			"name": "Dialogbank",
 			"entity": "tactile.news GmbH",
+			"engagement": "freelance",
+			"visibility": "open-source",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2026-03-23",
 			"keywords": [
@@ -182,14 +184,16 @@
 				"Infisical",
 				"ElevenLabs"
 			],
-			"description": "Dialogbank ist eine SvelteKit-Anwendung zur Erfassung strukturierter Interviewdaten aus einem ElevenLabs-Sprachagenten und zur Veröffentlichung der daraus gewonnenen Antworten. Das Projekt umfasst Webhook-Verarbeitung mit Signaturprüfung, ein redaktionelles Backend zur Sichtung und Klassifikation sowie öffentliche Seiten für veröffentlichte Antworten.",
+			"description": "Dialogbank ist eine SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung. Ich arbeite an der Ablösung einer fragilen, auf Airtable, Voiceflow und weiteren eigenen Diensten verteilten Infrastruktur durch eine einheitliche serverlose Anwendung. Durch die Nutzung der integrierten Workflows von ElevenLabs AI Agents sinken Wartungsaufwand und Komplexität deutlich, während sich die Antwortzeit des Telefonagenten um mehrere Sekunden verbessert, was für eine gute Nutzererfahrung entscheidend ist.",
 			"url": "https://github.com/tactilenews/dialogbank-app/",
-			"type": "freelancing"
+			"type": "product"
 		},
 		{
 			"id": "roschaefer-portfolio",
 			"name": "roschaefer.de",
 			"entity": "Robert Schäfer",
+			"engagement": "independent",
+			"visibility": "open-source",
 			"roles": ["Entwicklung und Design"],
 			"startDate": "2026-03-16",
 			"keywords": [
@@ -203,14 +207,16 @@
 				"Playwright",
 				"Netlify"
 			],
-			"description": "Meine persönliche Portfolio-Website und druckoptimierter Lebenslauf. Das Projekt vereint eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst, standardkonformes `resume.json` und zugängliche, datensparsame Darstellung für Web und Druck aus einer gemeinsamen Datenquelle.",
+			"description": "Meine persönliche Portfolio-Website und ein druckoptimierter Lebenslauf aus einer gemeinsamen Datenquelle. Das Projekt verbindet eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst und standardkonformes `resume.json` zu einer zugänglichen, datensparsamen Darstellung für Web und Druck.",
 			"url": "https://roschaefer.de/",
-			"type": "independent"
+			"type": "portfolio"
 		},
 		{
 			"id": "dreammall",
 			"name": "DreamMall",
 			"entity": "IT4C",
+			"engagement": "freelance",
+			"visibility": "open-source",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2024-06-21",
 			"endDate": "2025-06-09",
@@ -229,14 +235,16 @@
 				"Hetzner",
 				"PostgreSQL"
 			],
-			"description": "DreamMall ist eine freie und quelloffene Social-Media-App für Unternehmerinnen und Unternehmer. Unser Team arbeitet vollständig remote und umfasst Mitglieder mit sehr unterschiedlichen Erfahrungsstufen. Wir betreiben einen K3S-Kubernetes-Cluster auf Hetzner selbst und verwalten ihn mit Terraform, sodass jedes Teammitglied eigene Git-Branches in einer separaten Umgebung deployen kann.",
+			"description": "DreamMall ist eine freie und quelloffene Social-Media-Plattform für Unternehmerinnen und Unternehmer. Ich habe die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Durch die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform konnte jedes Teammitglied eigene Branches in produktionsnahen Umgebungen testen, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
 			"url": "https://dreammall.earth/",
-			"type": "freelancing"
+			"type": "product"
 		},
 		{
 			"id": "100eyes",
 			"name": "100eyes",
 			"entity": "tactile.news GmbH",
+			"engagement": "freelance",
+			"visibility": "open-source",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2020-03-30",
 			"endDate": "2025-04-16",
@@ -252,7 +260,7 @@
 				"Sentry",
 				"Postmark"
 			],
-			"description": "100eyes ist eine Dialog-Software, mit der Journalistinnen und Journalisten mit ihren Leserinnen und Lesern interagieren können. Rückmeldungen aus dem Publikum lassen sich direkt in den Recherche- und Berichtsprozess einbeziehen. Die Software nutzt APIs von Telegram, Signal, Threema und WhatsApp sowie Postmark für E-Mails.",
+			"description": "100eyes ist eine Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus. Ich habe an einer Ruby-on-Rails-Anwendung gearbeitet, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
 			"url": "https://tactile.news/",
 			"links": [
 				{
@@ -261,12 +269,14 @@
 					"kind": "repository"
 				}
 			],
-			"type": "freelancing"
+			"type": "product"
 		},
 		{
 			"id": "beteon",
 			"name": "beteon",
 			"entity": "auteon",
+			"engagement": "freelance",
+			"visibility": "private",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2021-06-30",
 			"endDate": "2023-09-01",
@@ -283,67 +293,77 @@
 				"Google Cloud",
 				"Vercel"
 			],
-			"description": "Die auteon GmbH ist ein venture-finanziertes Startup, das Software für den Automotive Aftermarket entwickelt, mit der Werkstätten Preise verschiedener Großhändler vergleichen können. Wir haben eine Electron-Desktop-Anwendung in eine cloudbasierte Lösung auf Google Cloud Platform, Auth0 und Hasura überführt. Dadurch verbesserten sich die Softwarequalität deutlich und die Anzahl angebundener Großhändler stieg von drei auf 240. Vue und Tailwind blieben als Technologien erhalten.",
+			"description": "beteon ist Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können. Wir haben eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
 			"url": "https://www.auteon.com",
-			"type": "freelancing"
+			"type": "product"
 		},
 		{
 			"id": "rhenania-computer",
 			"name": "Rhenania Computer",
 			"entity": "Johannes Schäfer",
-			"roles": ["Backend-Entwickler"],
+			"engagement": "freelance",
+			"visibility": "private",
+			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2021-12-09",
 			"endDate": "2023-06-28",
 			"keywords": ["TypeScript", "Svelte", "SvelteKit", "HyGraph", "Netlify", "Serverless"],
-			"description": "Die Rhenania Computer GmbH entwickelt seit über 30 Jahren Logistiksoftware. Wir haben ihre Website mit SvelteKit neu aufgebaut und statisch auf Netlify ausgerollt. Serverseitiger Code läuft in Serverless Functions, Daten werden per GraphQL aus dem Headless CMS HyGraph geladen. Das verbesserte Performance, SEO und Nutzererlebnis.",
+			"description": "Für Rhenania Computer habe ich die Website mit SvelteKit und Hygraph neu aufgebaut und statisch auf Netlify ausgerollt. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegebarkeit.",
 			"url": "https://rhenania-computer.de/de",
-			"type": "freelancing"
+			"type": "client-platform"
 		},
 		{
 			"id": "werkhof-ichen",
 			"name": "Werkhof Ichen",
 			"entity": "Johannes Schäfer",
-			"roles": ["Backend-Entwickler"],
+			"engagement": "freelance",
+			"visibility": "private",
+			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2020-08-11",
 			"endDate": "2023-05-02",
 			"keywords": ["TypeScript", "Netlify", "Vue", "Nuxt", "HyGraph"],
-			"description": "Bei Werkhof Ichen entwirft Irmina Schmitz maßgeschneiderte Kleidung. Wir haben für die Website ein individuelles Buchungssystem entwickelt, über das Nähkurse für Erwachsene, Jugendliche und Kinder angeboten werden. Interessierte können sich für Kurse anmelden oder auf eine Warteliste setzen lassen.",
+			"description": "Für Werkhof Ichen habe ich ein individuelles Buchungssystem für Nähkurse entwickelt und in die Website integriert. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
 			"url": "https://werkhof-ichen.de/",
-			"type": "freelancing"
+			"type": "client-platform"
 		},
 		{
 			"id": "tanzimpulse",
 			"name": "Tanzimpulse - Institut für Tanzpädagogik",
 			"entity": "Johannes Schäfer",
-			"roles": ["Backend-Entwickler"],
+			"engagement": "freelance",
+			"visibility": "private",
+			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2021-05-12",
 			"endDate": "2022-12-10",
 			"keywords": ["TypeScript", "Netlify", "Svelte", "SvelteKit", "Tailwind"],
-			"description": "Das Tanzimpulse Institut in Köln bietet berufsbegleitende Weiterbildungen für verschiedene Berufsgruppen an. Wir haben für die Website ein individuelles Buchungssystem mit E-Mail-Bestätigung und Warteliste entwickelt. Technisch wurde die Lösung mit SvelteKit und HyGraph als Headless CMS umgesetzt.",
+			"description": "Für Tanzimpulse habe ich ein individuelles Buchungssystem für berufsbegleitende Weiterbildungen entwickelt. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
 			"url": "https://tanzimpulse.de/",
-			"type": "freelancing"
+			"type": "client-platform"
 		},
 		{
 			"id": "am-meer-norderney",
 			"name": "Ferienwohnung - Am Meer Norderneys",
 			"entity": "Johannes Schäfer",
-			"roles": ["Backend-Entwickler"],
+			"engagement": "freelance",
+			"visibility": "private",
+			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2022-01-28",
 			"endDate": "2022-08-09",
 			"keywords": ["TypeScript", "Netlify", "Svelte", "SvelteKit", "Tailwind"],
-			"description": "Eine Website zur Buchung einer Ferienwohnung auf Norderney. Die Verfügbarkeit einzelner Tage wird über einen Google Calendar gepflegt, und die Daten werden über Google-APIs auf der Website aktualisiert.",
+			"description": "Für eine Ferienwohnung auf Norderney habe ich eine Buchungswebsite mit Kalenderintegration umgesetzt. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
 			"url": "https://am-meer-norderney.de/",
-			"type": "freelancing"
+			"type": "client-platform"
 		},
 		{
 			"id": "systems-development-and-framework",
 			"entity": "Hochschule für Technik und Wirtschaft Berlin",
 			"name": "Systems-Development and Framework",
+			"engagement": "freelance",
+			"visibility": "open-source",
 			"roles": ["Lehrbeauftragter"],
 			"startDate": "2019-10-31",
 			"endDate": "2021-03-31",
 			"keywords": ["JavaScript", "Vue", "Apollo GraphQL", "Neo4J", "Nuxt", "Vuetify", "Tailwind"],
-			"description": "Vollständige Verantwortung inklusive Benotung für eine Vorlesung zur Full-Stack-Entwicklung im Masterstudiengang Angewandte Informatik mit 40 Studierenden. Themen waren unter anderem funktionale Programmierung, fortgeschrittenes Git und testgetriebene Entwicklung. Team-Abgaben wurden auf GitHub eingereicht und per Code Review bewertet. Alle Vorlesungen sind auf YouTube veröffentlicht.",
+			"description": "Ich habe eine Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden vollständig verantwortet, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
 			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
 			"links": [
 				{
@@ -358,12 +378,14 @@
 				}
 			],
 			"location": "Berlin, Germany",
-			"type": "teaching"
+			"type": "course"
 		},
 		{
 			"id": "ocelot-social",
 			"name": "Ocelot.social",
 			"entity": "busfaktor e.V.",
+			"engagement": "freelance",
+			"visibility": "open-source",
 			"roles": ["Technischer Leiter"],
 			"startDate": "2018-11-30",
 			"endDate": "2020-04-30",
@@ -381,7 +403,7 @@
 				"Kubernetes"
 			],
 			"url": "https://github.com/Ocelot-Social-Community/Ocelot-Social",
-			"description": "Ocelot.social, früher Human Connection, ist ein spendenfinanziertes, freies und quelloffenes soziales Netzwerk mit Fokus auf aktive Zivilgesellschaft. Wir nutzen die Graphdatenbank Neo4J produktiv, um Nutzerkonten und soziale Beziehungen zu modellieren. Die Daten werden per GraphQL ausgeliefert und auf einem gemanagten Kubernetes-Cluster bei Digital Ocean betrieben. Als Open-Source-Projekt arbeiten wir mit Online-Lerncommunities, um Mitwirkende zu gewinnen und Menschen beim Programmierenlernen zu unterstützen. Die Software kann selbst gehostet und individuell gebrandet werden.",
+			"description": "Ocelot.social ist ein gemeinschaftlich entwickeltes Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet. Als Technical Lead habe ich an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb gearbeitet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; ich habe neue Mitwirkende über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und den Großteil der Beiträge reviewed. Neo4J haben wir produktiv als Primärdatenbank eingesetzt, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
 			"links": [
 				{
 					"label": "Staging",
@@ -389,39 +411,45 @@
 					"kind": "demo"
 				}
 			],
-			"type": "employment"
+			"type": "product"
 		},
 		{
 			"id": "find-open-source-contributors-vuejs-berlin",
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "Vue.js Berlin Meetup",
+			"engagement": "community",
+			"visibility": "public",
 			"startDate": "2020-01-14",
 			"endDate": "2020-01-14",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=p5iMjfVCXBY",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "neo4j-graphql-human-connection",
 			"name": "Using Neo4J and GraphQL to build Human Connection",
 			"entity": "Neo4J Online Meetup",
+			"engagement": "community",
+			"visibility": "public",
 			"startDate": "2019-06-20",
 			"endDate": "2019-06-20",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=kGwGX6R70H4",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "bienenlive",
 			"entity": "tactile.news GmbH",
 			"name": "#bienenlive",
+			"engagement": "freelance",
+			"visibility": "private",
 			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2019-03-31",
 			"endDate": "2019-05-31",
 			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber"],
-			"description": "Aufbauend auf dem Erfolg des Projekts \"Superkühe\" haben wir die Software für neue Inhalte wiederverwendet. Diesmal lag der Fokus auf dem Insektensterben, und Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern generiert. Mit diesem Projekt wurden wir für den Grimme Online Award nominiert und gewannen den Deutschen Reporterpreis.",
+			"description": "Aufbauend auf \"Superkühe\" haben wir die Plattform für ein neues journalistisches Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
 			"url": "https://tactile.news/startseite/journalismus-der-dinge/bienenlive/",
-			"type": "freelancing"
+			"type": "product"
 		},
 		{
 			"id": "rundfunk-mitbestimmen-project",
@@ -438,7 +466,7 @@
 				"Uberspace",
 				"PostgreSQL"
 			],
-			"description": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+			"description": "\"Rundfunk mitbestimmen\" ist ein Civic-Tech-Projekt zur symbolischen Mitbestimmung über die Verwendung des Rundfunkbeitrags. Nutzerinnen und Nutzer können Beiträge einzelnen Programmen zuordnen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 			"links": [
 				{
 					"label": "Zeit Online",
@@ -461,7 +489,7 @@
 					"kind": "press"
 				}
 			],
-			"type": "volunteering"
+			"type": "civic-tech"
 		},
 		{
 			"id": "find-open-source-contributors-35c3",
@@ -471,7 +499,7 @@
 			"endDate": "2018-12-30",
 			"roles": ["Referent"],
 			"url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "human-connection-35c3",
@@ -481,7 +509,7 @@
 			"endDate": "2018-12-29",
 			"roles": ["Referent"],
 			"url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "rubies-in-the-woods",
@@ -491,22 +519,22 @@
 			"startDate": "2015-09-30",
 			"endDate": "2018-11-30",
 			"keywords": ["Ruby"],
-			"description": "Unterstützung einer einsteigerfreundlichen Gruppe beim Programmierenlernen. Diversität fördern. Wöchentliche Treffen.",
+			"description": "Mentoring einer einsteigerfreundlichen Programmiergruppe mit wöchentlichen Treffen und Fokus auf Diversität und niedrigschwelligen Einstieg ins Programmieren.",
 			"url": "https://www.facebook.com/watch?v=1342132595875337",
 			"location": "Potsdam, Brandenburg, Germany",
-			"type": "freelancing"
+			"type": "mentoring"
 		},
 		{
 			"id": "solutiance",
 			"name": "solutiance.com",
 			"entity": "Solutiance AG",
-			"roles": ["Backend-Entwickler"],
+			"roles": ["Full-Stack-Entwickler"],
 			"startDate": "2018-04-30",
 			"endDate": "2018-06-30",
 			"keywords": ["Wordpress", "PHP", "Docker"],
-			"description": "Individuelle CMS-Entwicklung mit Schwerpunkt auf Suchmaschinenoptimierung.",
+			"description": "Individuelle CMS-Entwicklung für die Unternehmenswebsite mit Schwerpunkt auf Pflegebarkeit und Suchmaschinenoptimierung.",
 			"url": "https://solutiance.com/",
-			"type": "freelancing"
+			"type": "client-platform"
 		},
 		{
 			"id": "informatikradar-1",
@@ -516,7 +544,7 @@
 			"endDate": "2018-05-04",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=fzTmJBo4R5A",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "smirror",
@@ -526,9 +554,9 @@
 			"startDate": "2018-01-01",
 			"endDate": "2018-01-31",
 			"keywords": ["Python", "JavaScript", "MQTT"],
-			"description": "Schneller Prototyp eines smarten Badezimmerspiegels und Schranks mit Raspberry Pis und Arduinos.",
+			"description": "Schneller IoT-Prototyp eines smarten Badezimmerspiegels und Schranks auf Basis von Raspberry Pis, Arduinos und MQTT.",
 			"location": "Lunenburg, Lower Saxony, Germany",
-			"type": "freelancing"
+			"type": "prototype"
 		},
 		{
 			"id": "story-trolley-ember-meets-iot",
@@ -539,7 +567,7 @@
 			"endDate": "2018-01-19",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "rundfunk-mitbestimmen-34c3",
@@ -549,7 +577,7 @@
 			"endDate": "2017-12-30",
 			"roles": ["Referent"],
 			"url": "https://media.ccc.de/v/34c3-9258-lightning_talks_day_4#t=1352",
-			"type": "talk",
+			"type": "presentation",
 			"description": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 			"links": [
 				{
@@ -582,7 +610,7 @@
 			"endDate": "2017-12-19",
 			"roles": ["Referent"],
 			"url": "https://www.facebook.com/events/732304050294246/",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "superkuehe",
@@ -592,7 +620,7 @@
 			"startDate": "2016-05-31",
 			"endDate": "2017-10-31",
 			"keywords": ["Ruby on Rails", "Ruby", "RSpec", "Cucumber"],
-			"description": "Wir entwickelten ein innovatives Medienformat für WDR und Spiegel Online. Es entstand eine Software, die automatisiert Berichte auf Basis von Sensordaten dreier Milchkühe erzeugt. Das Projekt erhielt große mediale Aufmerksamkeit mit über 63 Berichten und Features.",
+			"description": "Für WDR und Spiegel Online entwickelten wir ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
 			"url": "https://superkuehe.wdr.de/",
 			"links": [
 				{
@@ -621,18 +649,18 @@
 			"endDate": "2017-10-12",
 			"roles": ["Referent"],
 			"url": "https://berlin2017.codemotionworld.com/speaker/3623/",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "how-to-enjoy-paying-for-public-broadcasting",
 			"name": "How to enjoy paying for public broadcasting",
 			"description": "Ask-me-anything-Session auf dem Festival für junge Visionäre.",
-			"entity": "Z2X Festival",
+			"entity": "Z2X Festival - Die Zeit",
 			"startDate": "2017-09-04",
 			"endDate": "2017-09-04",
 			"roles": ["Referent"],
 			"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "story-trolley",
@@ -642,9 +670,9 @@
 			"startDate": "2017-06-01",
 			"endDate": "2017-06-30",
 			"keywords": ["Ember", "Python"],
-			"description": "Schneller Prototyp eines smarten Einkaufswagens.",
+			"description": "Schneller IoT-Prototyp eines smarten Einkaufswagens.",
 			"url": "https://www.facebook.com/watch?v=746195418906331",
-			"type": "freelancing"
+			"type": "prototype"
 		},
 		{
 			"id": "rundfunk-mitbestimmen-nerd-nite-17",
@@ -654,7 +682,7 @@
 			"endDate": "2017-06-16",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=3BmdDEuW-ZA",
-			"type": "talk",
+			"type": "presentation",
 			"description": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 			"links": [
 				{
@@ -688,7 +716,7 @@
 			"endDate": "2017-05-25",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "miz-rapid-fire-pitch",
@@ -699,7 +727,7 @@
 			"endDate": "2017-05-09",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "ember-rails-capybara",
@@ -709,7 +737,7 @@
 			"endDate": "2017-03-10",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
-			"type": "talk"
+			"type": "presentation"
 		},
 		{
 			"id": "rundfunk-mitbestimmen-swift-meetup",
@@ -719,7 +747,7 @@
 			"endDate": "2016-11-14",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=8TyViNgmeSQ",
-			"type": "talk",
+			"type": "presentation",
 			"description": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 			"links": [
 				{
@@ -752,7 +780,7 @@
 			"endDate": "2016-10-26",
 			"roles": ["Referent"],
 			"url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
-			"type": "talk",
+			"type": "presentation",
 			"description": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 			"links": [
 				{
@@ -785,11 +813,6 @@
 			"startDate": "2015-08-31",
 			"endDate": "2016-09-30",
 			"keywords": ["JavaScript"],
-			"highlights": [
-				"An interactive, decision-based podcast.",
-				"A location aware music player.",
-				"#ursuppe - IoT app for automated journalism based on scientific experiments."
-			],
 			"description": "",
 			"url": "https://www.miz-babelsberg.de/startseite.html",
 			"location": "Potsdam, Brandenburg, Germany"
@@ -805,7 +828,7 @@
 			"description": "Entwicklung einer Webanwendung für Funktionäre, Schiedsrichter und Trainer. Erster Entwickler, der eine automatisierte Testumgebung eingeführt hat.",
 			"url": "https://clubcorner.ch/",
 			"location": "Bern, Switzerland",
-			"type": "employment"
+			"type": "product"
 		},
 		{
 			"id": "enterprise-programming-models-in-memory-databases",
@@ -817,7 +840,7 @@
 			"keywords": ["Java"],
 			"description": "Implementierung eines Geschäftsprozesses und einer Webanwendung, die SAP als Use Case für die HANA-In-Memory-Datenbank spezifiziert hat.",
 			"url": "https://hpi.de/",
-			"type": "student assistant"
+			"type": "research"
 		}
 	],
 	"skills": [
