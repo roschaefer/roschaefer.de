@@ -96,24 +96,31 @@ await execFileAsync("node", [path.join(rootDir, "scripts", "build-typst-data.mjs
 
 await fs.mkdir(path.join(rootDir, "typst", "out"), { recursive: true });
 
+const variants = [
+	{ template: "resume.typ", variant: "default" },
+	{ template: "resume-ats.typ", variant: "ats" },
+];
+
 for (const locale of ["de", "en"]) {
-	const outputName = resumePdfFilename(locale);
-	const outputPath = path.join(rootDir, "typst", "out", outputName);
-	const staticLocaleDir = path.join(rootDir, "static", locale);
-	const args = [
-		"compile",
-		path.join(rootDir, "typst", "resume.typ"),
-		outputPath,
-		"--root",
-		rootDir,
-		"--input",
-		`lang=${locale}`,
-	];
+	for (const { template, variant } of variants) {
+		const outputName = resumePdfFilename(locale, variant);
+		const outputPath = path.join(rootDir, "typst", "out", outputName);
+		const staticLocaleDir = path.join(rootDir, "static", locale);
+		const args = [
+			"compile",
+			path.join(rootDir, "typst", template),
+			outputPath,
+			"--root",
+			rootDir,
+			"--input",
+			`lang=${locale}`,
+		];
 
-	args.push("--font-path", vendoredFontDir);
+		args.push("--font-path", vendoredFontDir);
 
-	logCommand("typst", args);
-	await execFileAsync("typst", args, { cwd: rootDir });
-	await fs.mkdir(staticLocaleDir, { recursive: true });
-	await fs.copyFile(outputPath, path.join(staticLocaleDir, outputName));
+		logCommand("typst", args);
+		await execFileAsync("typst", args, { cwd: rootDir });
+		await fs.mkdir(staticLocaleDir, { recursive: true });
+		await fs.copyFile(outputPath, path.join(staticLocaleDir, outputName));
+	}
 }

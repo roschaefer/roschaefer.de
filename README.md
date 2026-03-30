@@ -85,7 +85,7 @@ pnpm build
 Build production output including PDFs:
 
 ```bash
-pnpm build:prod
+pnpm build
 ```
 
 Build PDFs only:

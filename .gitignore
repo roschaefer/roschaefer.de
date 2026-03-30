@@ -6,8 +6,8 @@ playwright-report/
 test-results/
 typst/content
 typst/out
-static/de/robert-schaefer-resume.de.pdf
-static/en/robert-schaefer-resume.en.pdf
+static/de/*.pdf
+static/en/*.pdf
 
 .DS_Store
 Thumbs.db

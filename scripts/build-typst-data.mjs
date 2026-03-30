@@ -152,9 +152,7 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 	const techExperience = createTechExperience(projects, locale);
 	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
 	const typstTechExperience =
-		featuredTechExperience.length > 0
-			? featuredTechExperience.slice(0, 12)
-			: techExperience.slice(0, 12);
+		featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 12);
 
 	const payload = {
 		locale,
@@ -172,10 +170,9 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 			url: profile.url,
 			printLabel: printLinkLabel(profile.url),
 		})),
-		skills: (featuredSkills.length > 0
-			? featuredSkills.slice(0, 12)
-			: (resume.skills ?? []).slice(0, 12)
-		).map((skill) => skill.name),
+		skills: (featuredSkills.length > 0 ? featuredSkills : (resume.skills ?? []).slice(0, 12)).map(
+			(skill) => skill.name,
+		),
 		technologies: typstTechExperience.map((entry) => createTechnologyEntry(entry)),
 		languages: (resume.languages ?? []).map((language) => ({
 			name: language.language,
@@ -184,7 +181,7 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 		education: (resume.education ?? []).map((entry) => createEducationEntry(entry, locale, config)),
 		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
 		experience: (featuredProjects.length > 0
-			? featuredProjects.slice(0, 6)
+			? featuredProjects
 			: projects.filter((project) => project.type !== "presentation").slice(0, 6)
 		).map((project) => createProjectEntry(project, locale, config)),
 		talks: (featuredTalks.length > 0
