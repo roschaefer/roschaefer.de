@@ -101,7 +101,9 @@
 #let technology-entry(entry) = [
   #item-title(entry.name)
   #v(1pt)
-  #item-meta(entry.duration + "   " + technology-project-count(entry.projectCount))
+  #item-meta(entry.duration)
+  #v(1pt)
+  #item-meta(technology-project-count(entry.projectCount))
   #v(1pt)
   #item-meta(entry.lastUsedLabel)
 ]
@@ -149,40 +151,48 @@
 
 #v(10pt)
 
-#if data.technologies.len() > 0 [
-  #section-heading(data.labels.skills)
-  #grid(
-    columns: (1fr, 1fr, 1fr, 1fr),
-    gutter: 8pt,
-    row-gutter: 7pt,
-    ..data.technologies.map(technology-grid-entry),
-  )
-  #v(10pt)
-] else if data.skills.len() > 0 [
-  #section-heading(data.labels.skills)
-  #grid(
-    columns: (1fr, 1fr, 1fr, 1fr),
-    gutter: 4pt,
-    ..data.skills.map(chip),
-  )
-  #v(10pt)
-]
-
-#v(4pt)
-
 #grid(
   columns: (2.1fr, 1fr),
   gutter: 16pt,
   [
-    #section-heading(data.labels.selectedProjects)
-    #for entry in data.experience [
+    #if data.technologies.len() > 0 [
+      #section-heading(data.labels.skills)
+      #grid(
+        columns: (1fr, 1fr, 1fr),
+        gutter: 8pt,
+        row-gutter: 7pt,
+        ..data.technologies.map(technology-grid-entry),
+      )
+      #v(10pt)
+    ] else if data.skills.len() > 0 [
+      #section-heading(data.labels.skills)
+      #grid(
+        columns: (1fr, 1fr, 1fr),
+        gutter: 4pt,
+        ..data.skills.map(chip),
+      )
+      #v(10pt)
+    ]
+
+    #if data.experience.len() > 0 [
+      #block(breakable: false)[
+        #section-heading(data.labels.selectedProjects)
+        #experience-entry(data.experience.first())
+      ]
+      #v(10pt)
+    ]
+    #for entry in data.experience.slice(1) [
       #experience-entry(entry)
       #v(10pt)
     ]
 
     #if data.talks.len() > 0 [
-      #section-heading(data.labels.selectedTalks)
-      #for entry in data.talks [
+      #block(breakable: false)[
+        #section-heading(data.labels.selectedTalks)
+        #talk-entry(data.talks.first())
+      ]
+      #v(7pt)
+      #for entry in data.talks.slice(1) [
         #talk-entry(entry)
         #v(7pt)
       ]
@@ -191,29 +201,49 @@
   [
     #if data.languages.len() > 0 [
       #block(breakable: false)[
-      #section-heading(data.labels.languages)
-      #sidebar-list(data.languages, language-entry)
+        #section-heading(data.labels.languages)
+        #language-entry(data.languages.first())
+      ]
+      #v(7pt)
+      #for entry in data.languages.slice(1) [
+        #language-entry(entry)
+        #v(7pt)
       ]
     ]
 
     #if data.education.len() > 0 [
       #block(breakable: false)[
-      #section-heading(data.labels.education)
-      #sidebar-list(data.education, education-entry)
+        #section-heading(data.labels.education)
+        #education-entry(data.education.first())
+      ]
+      #v(7pt)
+      #for entry in data.education.slice(1) [
+        #education-entry(entry)
+        #v(7pt)
       ]
     ]
 
     #if data.profiles.len() > 0 [
       #block(breakable: false)[
-      #section-heading(data.labels.profiles)
-      #sidebar-list(data.profiles, profile-entry)
+        #section-heading(data.labels.profiles)
+        #profile-entry(data.profiles.first())
+      ]
+      #v(7pt)
+      #for entry in data.profiles.slice(1) [
+        #profile-entry(entry)
+        #v(7pt)
       ]
     ]
 
     #if data.awards.len() > 0 [
       #block(breakable: false)[
-      #section-heading(data.labels.awards)
-      #sidebar-list(data.awards, award-entry)
+        #section-heading(data.labels.awards)
+        #award-entry(data.awards.first())
+      ]
+      #v(7pt)
+      #for entry in data.awards.slice(1) [
+        #award-entry(entry)
+        #v(7pt)
       ]
     ]
   ],

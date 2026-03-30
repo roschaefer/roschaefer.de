@@ -23,7 +23,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build production site
-        run: pnpm build:prod
+        run: pnpm build
 
       - name: Deploy to Netlify
         run: pnpm dlx netlify deploy --dir=build --prod
