@@ -24,7 +24,7 @@
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.11.1",
-		"@biomejs/biome": "^2.4.8",
+		"@biomejs/biome": "^2.4.9",
 		"@fontsource-variable/jost": "^5.2.8",
 		"@fontsource/titillium-web": "^5.2.8",
 		"@inlang/paraglide-js": "^2.15.1",
@@ -40,8 +40,8 @@
 		"svelte": "^5.55.0",
 		"svelte-check": "^4.3.4",
 		"tailwindcss": "^4.2.2",
-		"typescript": "^5.9.3",
-		"vite": "^8.0.1",
-		"vitest": "^4.0.8"
+		"typescript": "^6.0.2",
+		"vite": "^8.0.3",
+		"vitest": "^4.1.2"
 	}
 }
