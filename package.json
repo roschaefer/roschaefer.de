@@ -26,7 +26,7 @@
 		"@biomejs/biome": "^2.4.8",
 		"@fontsource-variable/jost": "^5.2.8",
 		"@fontsource/titillium-web": "^5.2.8",
-		"@inlang/paraglide-js": "^2.15.1",
+		"@inlang/paraglide-js": "^2.15.3",
 		"@inlang/plugin-m-function-matcher": "^2.2.4",
 		"@inlang/plugin-message-format": "^4.4.0",
 		"@jsonresume/schema": "^1.2.1",
