@@ -22,7 +22,7 @@
 		"format": "biome format --write ."
 	},
 	"devDependencies": {
-		"@axe-core/playwright": "^4.11.1",
+		"@axe-core/playwright": "^4.11.2",
 		"@biomejs/biome": "^2.4.8",
 		"@fontsource-variable/jost": "^5.2.8",
 		"@fontsource/titillium-web": "^5.2.8",
