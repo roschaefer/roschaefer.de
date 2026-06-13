@@ -9,6 +9,11 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    container:
+      # Keep this in sync with the @playwright/test version in pnpm-lock.yaml.
+      image: mcr.microsoft.com/playwright:v1.58.2-noble
+      options: --user 1001
+    timeout-minutes: 60
 
     steps:
       - name: Checkout
@@ -21,9 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium firefox
 
       - name: Compile Paraglide messages
         run: pnpm paraglide:compile
