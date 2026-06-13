@@ -847,112 +847,102 @@
 		{
 			"name": "TypeScript",
 			"level": "Long-term experience",
-			"keywords": ["5 years, 5 months", "9 projects", "active now"]
+			"keywords": ["5 years, 8 months", "9 projects", "active now"]
 		},
 		{
 			"name": "Ruby",
 			"level": "Long-term experience",
-			"keywords": ["9 years, 2 months", "5 projects", "last used 11 months ago"]
+			"keywords": ["9 years, 2 months", "5 projects", "last used Apr 2025"]
 		},
 		{
 			"name": "Ruby on Rails",
 			"level": "Long-term experience",
-			"keywords": ["8 years, 9 months", "5 projects", "last used 11 months ago"]
+			"keywords": ["8 years, 9 months", "5 projects", "last used Apr 2025"]
 		},
 		{
 			"name": "Docker",
 			"level": "Long-term experience",
-			"keywords": ["6 years, 11 months", "5 projects", "last used 9 months ago"]
-		},
-		{
-			"name": "RSpec",
-			"level": "Long-term experience",
-			"keywords": ["7 years, 5 months", "4 projects", "last used 11 months ago"]
+			"keywords": ["6 years, 11 months", "5 projects", "last used Jun 2025"]
 		},
 		{
 			"name": "Tailwind",
 			"level": "Proficient use",
-			"keywords": ["4 years", "6 projects", "active now"]
+			"keywords": ["4 years, 3 months", "6 projects", "active now"]
+		},
+		{
+			"name": "RSpec",
+			"level": "Long-term experience",
+			"keywords": ["7 years, 5 months", "4 projects", "last used Apr 2025"]
 		},
 		{
 			"name": "Vue",
 			"level": "Long-term experience",
-			"keywords": ["6 years", "5 projects", "last used 9 months ago"]
-		},
-		{
-			"name": "Apollo GraphQL",
-			"level": "Long-term experience",
-			"keywords": ["5 years, 10 months", "4 projects", "last used 9 months ago"]
+			"keywords": ["6 years", "5 projects", "last used Jun 2025"]
 		},
 		{
 			"name": "PostgreSQL",
 			"level": "Proficient use",
-			"keywords": ["4 years, 4 months", "4 projects", "active now"]
+			"keywords": ["4 years, 7 months", "4 projects", "active now"]
 		},
 		{
 			"name": "Netlify",
 			"level": "Proficient use",
-			"keywords": ["3 years", "6 projects", "active now"]
+			"keywords": ["3 years, 3 months", "6 projects", "active now"]
 		},
 		{
 			"name": "Sentry",
 			"level": "Proficient use",
-			"keywords": ["5 years, 3 months", "2 projects", "active now"]
+			"keywords": ["5 years, 6 months", "2 projects", "active now"]
 		},
 		{
-			"name": "Digital Ocean",
-			"level": "Proficient use",
-			"keywords": ["6 years, 6 months", "2 projects", "last used 11 months ago"]
+			"name": "Apollo GraphQL",
+			"level": "Long-term experience",
+			"keywords": ["5 years, 10 months", "4 projects", "last used Jun 2025"]
 		},
 		{
 			"name": "Svelte",
 			"level": "Proficient use",
-			"keywords": ["2 years, 3 months", "5 projects", "active now"]
+			"keywords": ["2 years, 6 months", "5 projects", "active now"]
 		},
 		{
 			"name": "SvelteKit",
 			"level": "Proficient use",
-			"keywords": ["2 years, 3 months", "5 projects", "active now"]
+			"keywords": ["2 years, 6 months", "5 projects", "active now"]
+		},
+		{
+			"name": "Digital Ocean",
+			"level": "Proficient use",
+			"keywords": ["6 years, 6 months", "2 projects", "last used Apr 2025"]
 		},
 		{
 			"name": "Jest",
 			"level": "Proficient use",
-			"keywords": ["4 years, 11 months", "3 projects", "last used 9 months ago"]
+			"keywords": ["4 years, 11 months", "3 projects", "last used Jun 2025"]
 		},
 		{
 			"name": "Ansible",
 			"level": "Practical experience",
-			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+			"keywords": ["5 years, 2 months", "1 project", "last used Apr 2025"]
 		},
 		{
 			"name": "Postmark",
 			"level": "Practical experience",
-			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+			"keywords": ["5 years, 2 months", "1 project", "last used Apr 2025"]
 		},
 		{
 			"name": "Stimulus",
 			"level": "Practical experience",
-			"keywords": ["5 years, 2 months", "1 project", "last used 11 months ago"]
+			"keywords": ["5 years, 2 months", "1 project", "last used Apr 2025"]
 		},
 		{
 			"name": "Serverless",
 			"level": "Practical experience",
-			"keywords": ["1 year, 8 months", "2 projects", "active now"]
+			"keywords": ["1 year, 11 months", "2 projects", "active now"]
 		},
 		{
 			"name": "Nuxt",
 			"level": "Proficient use",
 			"keywords": ["4 years, 7 months", "3 projects", "last used May 2023"]
-		},
-		{
-			"name": "Kubernetes",
-			"level": "Proficient use",
-			"keywords": ["2 years, 7 months", "2 projects", "last used 9 months ago"]
-		},
-		{
-			"name": "Vuetify",
-			"level": "Proficient use",
-			"keywords": ["2 years, 7 months", "2 projects", "last used 9 months ago"]
 		},
 		{
 			"name": "Auth0",
@@ -961,53 +951,63 @@
 		},
 		{
 			"name": "JavaScript",
-			"level": "Practical experience",
+			"level": "Basic exposure",
 			"keywords": ["3 years, 8 months", "4 projects", "last used Mar 2021"]
+		},
+		{
+			"name": "Kubernetes",
+			"level": "Proficient use",
+			"keywords": ["2 years, 7 months", "2 projects", "last used Jun 2025"]
+		},
+		{
+			"name": "Vuetify",
+			"level": "Proficient use",
+			"keywords": ["2 years, 7 months", "2 projects", "last used Jun 2025"]
 		},
 		{
 			"name": "Playwright",
 			"level": "Practical experience",
-			"keywords": ["1 month", "2 projects", "active now"]
+			"keywords": ["4 months", "2 projects", "active now"]
 		},
 		{
 			"name": "Vitest",
 			"level": "Practical experience",
-			"keywords": ["1 month", "2 projects", "active now"]
+			"keywords": ["4 months", "2 projects", "active now"]
 		},
 		{
 			"name": "Better Auth",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "Drizzle ORM",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "ElevenLabs",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "Infisical",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "Neon DB",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "Paraglide",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "Typst",
 			"level": "Practical experience",
-			"keywords": ["1 month", "1 project", "active now"]
+			"keywords": ["4 months", "1 project", "active now"]
 		},
 		{
 			"name": "HyGraph",
@@ -1020,39 +1020,39 @@
 			"keywords": ["2 years, 3 months", "3 projects", "last used May 2019"]
 		},
 		{
-			"name": "Authentik",
-			"level": "Practical experience",
-			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
-		},
-		{
-			"name": "Helm",
-			"level": "Practical experience",
-			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
-		},
-		{
-			"name": "Hetzner",
-			"level": "Practical experience",
-			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
-		},
-		{
-			"name": "Terraform",
-			"level": "Practical experience",
-			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
-		},
-		{
-			"name": "Vike",
-			"level": "Practical experience",
-			"keywords": ["1 year, 1 month", "1 project", "last used 9 months ago"]
-		},
-		{
 			"name": "Ember",
 			"level": "Basic exposure",
 			"keywords": ["2 years, 8 months", "2 projects", "last used Mar 2019"]
 		},
 		{
 			"name": "Neo4J",
-			"level": "Practical experience",
+			"level": "Basic exposure",
 			"keywords": ["2 years, 5 months", "2 projects", "last used Mar 2021"]
+		},
+		{
+			"name": "Authentik",
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
+		},
+		{
+			"name": "Helm",
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
+		},
+		{
+			"name": "Hetzner",
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
+		},
+		{
+			"name": "Terraform",
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
+		},
+		{
+			"name": "Vike",
+			"level": "Practical experience",
+			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
 		},
 		{
 			"name": "D3",

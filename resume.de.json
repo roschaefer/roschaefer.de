@@ -847,112 +847,102 @@
 		{
 			"name": "TypeScript",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["5 Jahre, 5 Monate", "9 Projekte", "aktuell im Einsatz"]
+			"keywords": ["5 Jahre, 8 Monate", "9 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Ruby",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["9 Jahre, 2 Monate", "5 Projekte", "zuletzt vor 11 Monaten"]
+			"keywords": ["9 Jahre, 2 Monate", "5 Projekte", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Ruby on Rails",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["8 Jahre, 9 Monate", "5 Projekte", "zuletzt vor 11 Monaten"]
+			"keywords": ["8 Jahre, 9 Monate", "5 Projekte", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Docker",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["6 Jahre, 11 Monate", "5 Projekte", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "RSpec",
-			"level": "Langjährige Erfahrung",
-			"keywords": ["7 Jahre, 5 Monate", "4 Projekte", "zuletzt vor 11 Monaten"]
+			"keywords": ["6 Jahre, 11 Monate", "5 Projekte", "zuletzt Juni 2025"]
 		},
 		{
 			"name": "Tailwind",
 			"level": "Souveräne Nutzung",
-			"keywords": ["4 Jahre", "6 Projekte", "aktuell im Einsatz"]
+			"keywords": ["4 Jahre, 3 Monate", "6 Projekte", "aktuell im Einsatz"]
+		},
+		{
+			"name": "RSpec",
+			"level": "Langjährige Erfahrung",
+			"keywords": ["7 Jahre, 5 Monate", "4 Projekte", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Vue",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["6 Jahre", "5 Projekte", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "Apollo GraphQL",
-			"level": "Langjährige Erfahrung",
-			"keywords": ["5 Jahre, 10 Monate", "4 Projekte", "zuletzt vor 9 Monaten"]
+			"keywords": ["6 Jahre", "5 Projekte", "zuletzt Juni 2025"]
 		},
 		{
 			"name": "PostgreSQL",
 			"level": "Souveräne Nutzung",
-			"keywords": ["4 Jahre, 4 Monate", "4 Projekte", "aktuell im Einsatz"]
+			"keywords": ["4 Jahre, 7 Monate", "4 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Netlify",
 			"level": "Souveräne Nutzung",
-			"keywords": ["3 Jahre", "6 Projekte", "aktuell im Einsatz"]
+			"keywords": ["3 Jahre, 3 Monate", "6 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Sentry",
 			"level": "Souveräne Nutzung",
-			"keywords": ["5 Jahre, 3 Monate", "2 Projekte", "aktuell im Einsatz"]
+			"keywords": ["5 Jahre, 6 Monate", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
-			"name": "Digital Ocean",
-			"level": "Souveräne Nutzung",
-			"keywords": ["6 Jahre, 6 Monate", "2 Projekte", "zuletzt vor 11 Monaten"]
+			"name": "Apollo GraphQL",
+			"level": "Langjährige Erfahrung",
+			"keywords": ["5 Jahre, 10 Monate", "4 Projekte", "zuletzt Juni 2025"]
 		},
 		{
 			"name": "Svelte",
 			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 3 Monate", "5 Projekte", "aktuell im Einsatz"]
+			"keywords": ["2 Jahre, 6 Monate", "5 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "SvelteKit",
 			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 3 Monate", "5 Projekte", "aktuell im Einsatz"]
+			"keywords": ["2 Jahre, 6 Monate", "5 Projekte", "aktuell im Einsatz"]
+		},
+		{
+			"name": "Digital Ocean",
+			"level": "Souveräne Nutzung",
+			"keywords": ["6 Jahre, 6 Monate", "2 Projekte", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Jest",
 			"level": "Souveräne Nutzung",
-			"keywords": ["4 Jahre, 11 Monate", "3 Projekte", "zuletzt vor 9 Monaten"]
+			"keywords": ["4 Jahre, 11 Monate", "3 Projekte", "zuletzt Juni 2025"]
 		},
 		{
 			"name": "Ansible",
 			"level": "Praxiserfahrung",
-			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt vor 11 Monaten"]
+			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Postmark",
 			"level": "Praxiserfahrung",
-			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt vor 11 Monaten"]
+			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Stimulus",
 			"level": "Praxiserfahrung",
-			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt vor 11 Monaten"]
+			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt Apr. 2025"]
 		},
 		{
 			"name": "Serverless",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 8 Monate", "2 Projekte", "aktuell im Einsatz"]
+			"keywords": ["1 Jahr, 11 Monate", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Nuxt",
 			"level": "Souveräne Nutzung",
 			"keywords": ["4 Jahre, 7 Monate", "3 Projekte", "zuletzt Mai 2023"]
-		},
-		{
-			"name": "Kubernetes",
-			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 7 Monate", "2 Projekte", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "Vuetify",
-			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 7 Monate", "2 Projekte", "zuletzt vor 9 Monaten"]
 		},
 		{
 			"name": "Auth0",
@@ -961,53 +951,63 @@
 		},
 		{
 			"name": "JavaScript",
-			"level": "Praxiserfahrung",
+			"level": "Grundkenntnisse",
 			"keywords": ["3 Jahre, 8 Monate", "4 Projekte", "zuletzt März 2021"]
+		},
+		{
+			"name": "Kubernetes",
+			"level": "Souveräne Nutzung",
+			"keywords": ["2 Jahre, 7 Monate", "2 Projekte", "zuletzt Juni 2025"]
+		},
+		{
+			"name": "Vuetify",
+			"level": "Souveräne Nutzung",
+			"keywords": ["2 Jahre, 7 Monate", "2 Projekte", "zuletzt Juni 2025"]
 		},
 		{
 			"name": "Playwright",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "2 Projekte", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Vitest",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "2 Projekte", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Better Auth",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Drizzle ORM",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "ElevenLabs",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Infisical",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Neon DB",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Paraglide",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Typst",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Monat", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "HyGraph",
@@ -1020,39 +1020,39 @@
 			"keywords": ["2 Jahre, 3 Monate", "3 Projekte", "zuletzt Mai 2019"]
 		},
 		{
-			"name": "Authentik",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "Helm",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "Hetzner",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "Terraform",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt vor 9 Monaten"]
-		},
-		{
-			"name": "Vike",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt vor 9 Monaten"]
-		},
-		{
 			"name": "Ember",
 			"level": "Grundkenntnisse",
 			"keywords": ["2 Jahre, 8 Monate", "2 Projekte", "zuletzt März 2019"]
 		},
 		{
 			"name": "Neo4J",
-			"level": "Praxiserfahrung",
+			"level": "Grundkenntnisse",
 			"keywords": ["2 Jahre, 5 Monate", "2 Projekte", "zuletzt März 2021"]
+		},
+		{
+			"name": "Authentik",
+			"level": "Praxiserfahrung",
+			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt Juni 2025"]
+		},
+		{
+			"name": "Helm",
+			"level": "Praxiserfahrung",
+			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt Juni 2025"]
+		},
+		{
+			"name": "Hetzner",
+			"level": "Praxiserfahrung",
+			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt Juni 2025"]
+		},
+		{
+			"name": "Terraform",
+			"level": "Praxiserfahrung",
+			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt Juni 2025"]
+		},
+		{
+			"name": "Vike",
+			"level": "Praxiserfahrung",
+			"keywords": ["1 Jahr, 1 Monat", "1 Projekt", "zuletzt Juni 2025"]
 		},
 		{
 			"name": "D3",
