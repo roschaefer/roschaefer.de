@@ -376,12 +376,31 @@ pnpm check
 pnpm test
 ```
 
+Keep pull requests focused on one coherent change:
+
+- Do not let unrelated edits sneak into a pull request.
+- If you notice useful follow-up work that is not required for the current change, leave it out of the current branch.
+- Create a separate feature branch and pull request for unrelated changes.
+- Prefer this split even for small cleanups because it keeps `git bisect` useful and makes `git blame` easier to reason about.
+
 Keep the branch up to date with `main`:
 
 ```bash
 git fetch origin
 git rebase origin/main
 ```
+
+When asked to squash commits since `origin/main`, first rebase the branch onto the current `origin/main`, then squash only the commits that still remain on top:
+
+```bash
+git fetch origin
+git rebase origin/main
+git log --oneline origin/main..HEAD
+```
+
+Do not use `git reset --soft origin/main` before rebasing onto the current remote base. If `origin/main` advanced and contains equivalent or related commits, a reset can stage unrelated base changes that a normal rebase would have dropped or reconciled. If this happens, use `git reflog` to find the pre-reset commit, reset back to it, then rebase normally.
+
+Before considering the work ready for `git push`, run `pnpm ready`. This script is also used by CI and should stay in sync with the quick, inexpensive checks from the CI pipeline. It should keep successful output concise and print the current check name plus the failing command's output when a check fails.
 
 Publish the branch:
 
