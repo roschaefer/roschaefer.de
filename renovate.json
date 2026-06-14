@@ -6,6 +6,7 @@
 	"dependencyDashboard": true,
 	"configMigration": true,
 	"labels": ["dependencies"],
+	"ignorePaths": [".tool-versions", ".node-version"],
 	"semanticCommits": "enabled",
 	"semanticCommitType": "chore",
 	"prHourlyLimit": 2,

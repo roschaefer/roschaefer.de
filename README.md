@@ -49,7 +49,7 @@ Enter the development shell from the repository root:
 nix develop
 ```
 
-The shell hook runs `sync-version-files`, which derives `.tool-versions`, `.node-version`, and the `packageManager` field in `package.json` from `flake.nix`. When upgrading tools, update the versions in `flake.nix`, enter the shell again, and commit the generated version-file changes.
+The shell hook runs `sync-version-files`, which derives `.tool-versions`, `.node-version`, and the `packageManager` field in `package.json` from the package versions resolved by `flake.nix`. When Renovate updates Nix flake inputs, enter the shell again and commit any generated version-file changes.
 
 Install dependencies:
 
@@ -195,3 +195,4 @@ The current social preview image is:
 - The web version and print version share the same content source.
 - Generated Paraglide files in `src/lib/paraglide` are expected to be committed.
 - CI verifies that `pnpm paraglide:compile` does not leave generated changes uncommitted.
+- CI verifies that `.tool-versions`, `.node-version`, and `package.json` stay in sync with the package versions resolved by `flake.nix`.

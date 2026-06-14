@@ -13,28 +13,28 @@
       let
         pkgs = import nixpkgs { inherit system; };
         playwrightBrowsers = pkgs.playwright-driver.browsers;
-        nodeVersion = "24";
-        pnpmVersion = "10.22.0";
-        typstVersion = "0.14.2";
+        node = pkgs.nodejs_24;
+        pnpm = pkgs.pnpm;
+        typst = pkgs.typst;
         toolVersionsText = ''
-          nodejs ${nodeVersion}
-          pnpm ${pnpmVersion}
-          typst ${typstVersion}
+          nodejs ${node.version}
+          pnpm ${pnpm.version}
+          typst ${typst.version}
         '';
         syncVersionFiles = pkgs.writeShellApplication {
           name = "sync-version-files";
-          runtimeInputs = [ pkgs.nodejs_24 ];
+          runtimeInputs = [ node ];
           text = ''
             printf '%s' '${toolVersionsText}' > .tool-versions
 
-            printf '%s\n' '${nodeVersion}' > .node-version
+            printf '%s\n' '${node.version}' > .node-version
 
             node --input-type=module <<'EOF'
             import fs from "node:fs";
 
             const packageJsonPath = "package.json";
             const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-            packageJson.packageManager = "pnpm@${pnpmVersion}";
+            packageJson.packageManager = "pnpm@${pnpm.version}";
             fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, "\t") + "\n");
             EOF
           '';
@@ -44,8 +44,8 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             git
-            nodejs_24
-            nodePackages.pnpm
+            node
+            pnpm
             syncVersionFiles
             typst
           ];
