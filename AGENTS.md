@@ -391,6 +391,8 @@ git push -u origin <feature>
 
 ## Commit And PR Messages
 
+When a coding agent makes repository changes, commit the completed agent-authored changes before finishing unless the user explicitly asks to leave them uncommitted.
+
 Use Conventional Commits for commit subjects:
 
 ```text
