@@ -1,0 +1,84 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended"],
+	"timezone": "Europe/Berlin",
+	"schedule": ["before 7am on Monday"],
+	"dependencyDashboard": true,
+	"configMigration": true,
+	"labels": ["dependencies"],
+	"semanticCommits": "enabled",
+	"semanticCommitType": "chore",
+	"prHourlyLimit": 2,
+	"prConcurrentLimit": 10,
+	"nix": {
+		"enabled": true
+	},
+	"customManagers": [
+		{
+			"customType": "regex",
+			"managerFilePatterns": ["/^biome\\.json$/"],
+			"matchStrings": [
+				"\"\\$schema\":\\s*\"https://biomejs\\.dev/schemas/(?<currentValue>[^/]+)/schema\\.json\""
+			],
+			"depNameTemplate": "@biomejs/biome",
+			"packageNameTemplate": "@biomejs/biome",
+			"datasourceTemplate": "npm",
+			"versioningTemplate": "semver"
+		}
+	],
+	"lockFileMaintenance": {
+		"enabled": true,
+		"schedule": ["before 7am on Monday"]
+	},
+	"packageRules": [
+		{
+			"matchManagers": ["github-actions"],
+			"groupName": "github actions",
+			"groupSlug": "github-actions"
+		},
+		{
+			"matchManagers": ["nix"],
+			"groupName": "nix flake inputs",
+			"groupSlug": "nix-flake-inputs"
+		},
+		{
+			"matchPackageNames": ["svelte", "/^@sveltejs\\//"],
+			"groupName": "svelte",
+			"groupSlug": "svelte"
+		},
+		{
+			"matchPackageNames": ["tailwindcss", "/^@tailwindcss\\//", "/^@fontsource/"],
+			"groupName": "styling",
+			"groupSlug": "styling"
+		},
+		{
+			"matchPackageNames": ["/^@inlang\\//"],
+			"groupName": "i18n",
+			"groupSlug": "i18n"
+		},
+		{
+			"matchPackageNames": ["@biomejs/biome"],
+			"groupName": "biome",
+			"groupSlug": "biome"
+		},
+		{
+			"matchPackageNames": ["typescript", "vite", "vitest", "svelte-check", "/^@types\\//"],
+			"groupName": "quality tooling",
+			"groupSlug": "quality"
+		},
+		{
+			"matchPackageNames": ["@playwright/test", "mcr.microsoft.com/playwright"],
+			"groupName": "playwright",
+			"groupSlug": "playwright"
+		},
+		{
+			"matchDepNames": ["pnpm"],
+			"groupName": "package manager",
+			"groupSlug": "package-manager"
+		},
+		{
+			"matchUpdateTypes": ["major"],
+			"dependencyDashboardApproval": true
+		}
+	]
+}
