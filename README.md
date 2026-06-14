@@ -36,6 +36,21 @@ UI translations live in:
 
 ## Local Development
 
+The Nix flake is the authoritative definition of the local toolchain. It provides:
+
+- `node`
+- `pnpm`
+- `typst`
+- Playwright browser binaries from `nixpkgs`
+
+Enter the development shell from the repository root:
+
+```bash
+nix develop
+```
+
+The shell hook runs `sync-version-files`, which derives `.tool-versions`, `.node-version`, and the `packageManager` field in `package.json` from `flake.nix`. When upgrading tools, update the versions in `flake.nix`, enter the shell again, and commit the generated version-file changes.
+
 Install dependencies:
 
 ```bash
@@ -49,6 +64,29 @@ pnpm dev
 ```
 
 The app runs with Paraglide compilation as part of the dev workflow.
+
+### Without Nix
+
+If you do not have `nix`, use `.tool-versions` with `mise` or `asdf`. These files are compatibility inputs for non-Nix users; do not edit them directly when changing tool versions.
+
+With `mise`:
+
+```bash
+mise install
+mise exec -- pnpm install
+mise exec -- pnpm dev
+```
+
+With `asdf`:
+
+```bash
+asdf plugin add nodejs
+asdf plugin add pnpm
+asdf plugin add typst
+asdf install
+pnpm install
+pnpm dev
+```
 
 ## Useful Commands
 
