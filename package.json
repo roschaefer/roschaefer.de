@@ -17,6 +17,8 @@
 		"test": "pnpm test:unit && pnpm test:a11y",
 		"test:unit": "pnpm paraglide:compile && vitest run",
 		"test:a11y": "playwright test",
+		"ready": "pnpm -s ready:run",
+		"ready:run": "printf 'checking Paraglide messages...\\n' && pnpm -s paraglide:compile && printf 'checking resume outputs...\\n' && pnpm -s resume:build && printf 'checking generated files...\\n' && pnpm -s generated:check && printf 'checking lint...\\n' && pnpm -s lint && printf 'checking typecheck...\\n' && pnpm -s check && printf 'checking unit tests...\\n' && pnpm -s test:unit",
 		"test:watch": "vitest",
 		"lint": "biome check .",
 		"format": "biome format --write ."

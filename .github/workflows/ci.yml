@@ -27,23 +27,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Compile Paraglide messages
-        run: pnpm paraglide:compile
-
-      - name: Generate resume outputs
-        run: pnpm resume:build
-
-      - name: Verify generated files are committed
-        run: git diff --exit-code
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Typecheck
-        run: pnpm check
-
-      - name: Test
-        run: pnpm test:unit
+      - name: Quick verification
+        run: pnpm ready
 
       - name: Accessibility test
         run: pnpm test:a11y
