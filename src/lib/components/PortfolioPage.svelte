@@ -311,7 +311,8 @@ markUsed(() => [
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 								{project.roles?.join(", ") ?? t(m.project_fallback)}
 							</p>
-							<h3 class="theme-heading">
+							<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
+							<p class="text-sm font-semibold text-[var(--color-brand-text)]">
 								{#if project.url}
 									<a
 										class="print-url no-underline"
@@ -323,9 +324,9 @@ markUsed(() => [
 								{:else}
 									{project.name}
 								{/if}
-							</h3>
+							</p>
 							<p class="text-sm text-[var(--color-brand-muted)]">
-								{project.entity ?? t(m.independent)} . {project.startDate}
+								{project.startDate}
 								{#if project.endDate}
 									- {project.endDate}
 								{:else}
