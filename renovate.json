@@ -10,9 +10,6 @@
 	"semanticCommitType": "chore",
 	"prHourlyLimit": 2,
 	"prConcurrentLimit": 10,
-	"nix": {
-		"enabled": true
-	},
 	"customManagers": [
 		{
 			"customType": "regex",
@@ -37,9 +34,9 @@
 			"groupSlug": "github-actions"
 		},
 		{
-			"matchManagers": ["nix"],
-			"groupName": "nix flake inputs",
-			"groupSlug": "nix-flake-inputs"
+			"matchManagers": ["mise"],
+			"groupName": "mise tools",
+			"groupSlug": "mise-tools"
 		},
 		{
 			"matchPackageNames": ["svelte", "/^@sveltejs\\//"],
