@@ -12,8 +12,11 @@
 #set par(justify: false, leading: 0.62em)
 #show link: set text(fill: brand)
 
+#let project-heading(entry) = if entry.entity != "" { entry.entity } else { entry.name }
+#let project-suffix(entry) = if entry.entity != "" { entry.name } else { none }
+
 #let experience-entry(entry) = block(breakable: false)[
-  #item-title(entry.name, suffix: entry.entity, link-url: entry.url)
+  #item-title(project-heading(entry), suffix: project-suffix(entry), link-url: entry.url)
   #v(2pt)
   #item-meta(entry.role + "   " + entry.period)
   #if entry.description != "" [
