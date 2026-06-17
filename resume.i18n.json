@@ -1,6 +1,7 @@
 {
 	"featured": {
 		"projectIds": [
+			"hagen",
 			"dialogbank-app",
 			"dreammall",
 			"beteon",
@@ -314,6 +315,38 @@
 				"en": "Dialogbank is a SvelteKit application for AI-assisted interviews and editorial publishing. I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
 			},
 			"url": "https://github.com/tactilenews/dialogbank-app/",
+			"type": "product"
+		},
+		{
+			"id": "hagen",
+			"name": "Hagen",
+			"entity": "Bosse Consulting GmbH",
+			"engagement": "freelance",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2025-03-25",
+			"keywords": [
+				"TypeScript",
+				"Nuxt",
+				"Vue",
+				"Fly.io",
+				"Docker",
+				"AWS",
+				"Terraform",
+				"Playwright",
+				"Cucumber",
+				"Tailwind",
+				"NINA",
+				"Tailscale"
+			],
+			"description": {
+				"de": "Hagen ist eine Web-Anwendung zur Fernsteuerung von Teleskopen über die Astrofotografie-Software NINA – und macht damit Astrofotografie für alle zugänglich, ohne eigenes Equipment oder Fachwissen vorauszusetzen. Nutzerinnen und Nutzer wählen ein Himmelsobjekt und buchen Beobachtungszeit; Hagen überträgt Aufnahmesequenzen per Tailscale an NINA, die diese in der Nacht autonom ausführt und die Ergebnisse bereitstellt. Die zentrale Herausforderung besteht darin, eine primär interaktive Windows-Software in eine vollständig autonome Pipeline zu überführen.",
+				"en": "Hagen is a web application for remotely controlling telescopes through the astrophotography software NINA, making deep-sky imaging accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; Hagen sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline."
+			},
 			"type": "product"
 		},
 		{
