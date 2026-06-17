@@ -272,6 +272,30 @@
 			"type": "product"
 		},
 		{
+			"id": "hagen",
+			"name": "Hagen",
+			"entity": "REDACTED-CLIENT-HAGEN",
+			"engagement": "freelance",
+			"roles": ["Full Stack Developer"],
+			"startDate": "2025-03-25",
+			"keywords": [
+				"TypeScript",
+				"Nuxt",
+				"Vue",
+				"Fly.io",
+				"Docker",
+				"AWS",
+				"Terraform",
+				"Playwright",
+				"Cucumber",
+				"Tailwind",
+				"NINA",
+				"Tailscale"
+			],
+			"description": "Hagen is a web application for remotely controlling telescopes through the astrophotography software NINA, making deep-sky imaging accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; Hagen sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline.",
+			"type": "product"
+		},
+		{
 			"id": "beteon",
 			"name": "beteon",
 			"entity": "REDACTED-CLIENT-BETEON GmbH",
@@ -847,7 +871,17 @@
 		{
 			"name": "TypeScript",
 			"level": "Long-term experience",
-			"keywords": ["5 years, 8 months", "9 projects", "active now"]
+			"keywords": ["6 years, 4 months", "10 projects", "active now"]
+		},
+		{
+			"name": "Docker",
+			"level": "Long-term experience",
+			"keywords": ["7 years, 11 months", "6 projects", "active now"]
+		},
+		{
+			"name": "Vue",
+			"level": "Long-term experience",
+			"keywords": ["7 years", "6 projects", "active now"]
 		},
 		{
 			"name": "Ruby",
@@ -855,29 +889,24 @@
 			"keywords": ["9 years, 2 months", "5 projects", "last used Apr 2025"]
 		},
 		{
+			"name": "Tailwind",
+			"level": "Long-term experience",
+			"keywords": ["5 years, 3 months", "7 projects", "active now"]
+		},
+		{
 			"name": "Ruby on Rails",
 			"level": "Long-term experience",
 			"keywords": ["8 years, 9 months", "5 projects", "last used Apr 2025"]
 		},
 		{
-			"name": "Docker",
+			"name": "Nuxt",
 			"level": "Long-term experience",
-			"keywords": ["6 years, 11 months", "5 projects", "last used Jun 2025"]
-		},
-		{
-			"name": "Tailwind",
-			"level": "Proficient use",
-			"keywords": ["4 years, 3 months", "6 projects", "active now"]
+			"keywords": ["5 years, 11 months", "4 projects", "active now"]
 		},
 		{
 			"name": "RSpec",
 			"level": "Long-term experience",
 			"keywords": ["7 years, 5 months", "4 projects", "last used Apr 2025"]
-		},
-		{
-			"name": "Vue",
-			"level": "Long-term experience",
-			"keywords": ["6 years", "5 projects", "last used Jun 2025"]
 		},
 		{
 			"name": "PostgreSQL",
@@ -898,6 +927,11 @@
 			"name": "Apollo GraphQL",
 			"level": "Long-term experience",
 			"keywords": ["5 years, 10 months", "4 projects", "last used Jun 2025"]
+		},
+		{
+			"name": "Cucumber",
+			"level": "Proficient use",
+			"keywords": ["3 years, 7 months", "4 projects", "active now"]
 		},
 		{
 			"name": "Svelte",
@@ -935,14 +969,19 @@
 			"keywords": ["5 years, 2 months", "1 project", "last used Apr 2025"]
 		},
 		{
+			"name": "Terraform",
+			"level": "Proficient use",
+			"keywords": ["2 years, 1 month", "2 projects", "active now"]
+		},
+		{
+			"name": "Playwright",
+			"level": "Practical experience",
+			"keywords": ["1 year, 4 months", "3 projects", "active now"]
+		},
+		{
 			"name": "Serverless",
 			"level": "Practical experience",
 			"keywords": ["1 year, 11 months", "2 projects", "active now"]
-		},
-		{
-			"name": "Nuxt",
-			"level": "Proficient use",
-			"keywords": ["4 years, 7 months", "3 projects", "last used May 2023"]
 		},
 		{
 			"name": "Auth0",
@@ -955,6 +994,26 @@
 			"keywords": ["3 years, 8 months", "4 projects", "last used Mar 2021"]
 		},
 		{
+			"name": "AWS",
+			"level": "Practical experience",
+			"keywords": ["1 year, 4 months", "1 project", "active now"]
+		},
+		{
+			"name": "Fly.io",
+			"level": "Practical experience",
+			"keywords": ["1 year, 4 months", "1 project", "active now"]
+		},
+		{
+			"name": "NINA",
+			"level": "Practical experience",
+			"keywords": ["1 year, 4 months", "1 project", "active now"]
+		},
+		{
+			"name": "Tailscale",
+			"level": "Practical experience",
+			"keywords": ["1 year, 4 months", "1 project", "active now"]
+		},
+		{
 			"name": "Kubernetes",
 			"level": "Proficient use",
 			"keywords": ["2 years, 7 months", "2 projects", "last used Jun 2025"]
@@ -963,11 +1022,6 @@
 			"name": "Vuetify",
 			"level": "Proficient use",
 			"keywords": ["2 years, 7 months", "2 projects", "last used Jun 2025"]
-		},
-		{
-			"name": "Playwright",
-			"level": "Practical experience",
-			"keywords": ["4 months", "2 projects", "active now"]
 		},
 		{
 			"name": "Vitest",
@@ -1015,11 +1069,6 @@
 			"keywords": ["2 years, 11 months", "2 projects", "last used Jun 2023"]
 		},
 		{
-			"name": "Cucumber",
-			"level": "Basic exposure",
-			"keywords": ["2 years, 3 months", "3 projects", "last used May 2019"]
-		},
-		{
 			"name": "Ember",
 			"level": "Basic exposure",
 			"keywords": ["2 years, 8 months", "2 projects", "last used Mar 2019"]
@@ -1041,11 +1090,6 @@
 		},
 		{
 			"name": "Hetzner",
-			"level": "Practical experience",
-			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
-		},
-		{
-			"name": "Terraform",
 			"level": "Practical experience",
 			"keywords": ["1 year, 1 month", "1 project", "last used Jun 2025"]
 		},
