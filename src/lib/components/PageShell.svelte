@@ -87,8 +87,12 @@ markUsed(() => [
 					</nav>
 					<ThemeToggle
 						label={m.theme_switch_label({}, { locale })}
-						switchToDark={m.theme_switch_to_dark({}, { locale })}
-						switchToLight={m.theme_switch_to_light({}, { locale })}
+						systemLabel={m.theme_system({}, { locale })}
+						lightLabel={m.theme_light({}, { locale })}
+						darkLabel={m.theme_dark({}, { locale })}
+						useSystem={m.theme_use_system({}, { locale })}
+						useLight={m.theme_use_light({}, { locale })}
+						useDark={m.theme_use_dark({}, { locale })}
 					/>
 				</div>
 			</div>
