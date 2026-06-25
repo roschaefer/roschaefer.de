@@ -39,6 +39,18 @@ status = 302
 force = true
 
 [[redirects]]
+from = "/gc/count.js"
+to = "https://gc.zgo.at/count.js"
+status = 200
+force = true
+
+[[redirects]]
+from = "/gc/count"
+to = "https://roschaefer.goatcounter.com/count"
+status = 200
+force = true
+
+[[redirects]]
 from = "/oss-contributors-berlin"
 to = "https://www.youtube.com/watch?v=p5iMjfVCXBY"
 status = 302
