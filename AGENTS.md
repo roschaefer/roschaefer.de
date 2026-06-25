@@ -430,6 +430,7 @@ Pull request commits are squashed before merge, so the final commit message matt
 
 - Use the subject to summarize the behavioral or documentation change.
 - Use the body to explain why the changed lines should exist, not what changed. The diff already shows what changed.
+- Preserve the user's stated intention in the commit body when it was explained in chat with the coding agent. Capture the problem they wanted solved, the UX or maintenance goal, and any rejected alternatives that clarify why this approach exists.
 - Include the motivation, context, constraints, and tradeoffs that are not visible from a single blamed line.
 - Mention relevant verification commands and any skipped checks.
 - Keep the PR description in sync with the intended squash commit message.

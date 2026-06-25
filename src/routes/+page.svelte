@@ -29,8 +29,12 @@ markUsed(siteImage, siteName, siteUrl, m, ThemeToggle);
 	<div class="flex justify-end">
 		<ThemeToggle
 			label={m.theme_switch_label({}, { locale: "en" })}
-			switchToDark={m.theme_switch_to_dark({}, { locale: "en" })}
-			switchToLight={m.theme_switch_to_light({}, { locale: "en" })}
+			systemLabel={m.theme_system({}, { locale: "en" })}
+			lightLabel={m.theme_light({}, { locale: "en" })}
+			darkLabel={m.theme_dark({}, { locale: "en" })}
+			useSystem={m.theme_use_system({}, { locale: "en" })}
+			useLight={m.theme_use_light({}, { locale: "en" })}
+			useDark={m.theme_use_dark({}, { locale: "en" })}
 		/>
 	</div>
 	<section class="theme-panel rounded-[2rem] p-8">

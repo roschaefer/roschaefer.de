@@ -1,6 +1,7 @@
-const THEME_STORAGE_KEY = "roschaefer-theme";
+export const THEME_STORAGE_KEY = "roschaefer-theme";
 
 export type Theme = "light" | "dark";
+export type ThemePreference = Theme | "system";
 
 const isTheme = (value: string | null): value is Theme => value === "light" || value === "dark";
 
@@ -15,6 +16,8 @@ export const getStoredTheme = (): Theme | null => {
 	const value = window.localStorage.getItem(THEME_STORAGE_KEY);
 	return isTheme(value) ? value : null;
 };
+
+export const getThemePreference = (): ThemePreference => getStoredTheme() ?? "system";
 
 export const getPreferredTheme = (): Theme => {
 	if (typeof window === "undefined") {
@@ -45,4 +48,9 @@ export const clearThemePreference = (): void => {
 	if (typeof window !== "undefined") {
 		window.localStorage.removeItem(THEME_STORAGE_KEY);
 	}
+};
+
+export const setSystemThemePreference = (): void => {
+	clearThemePreference();
+	applyTheme(getSystemTheme());
 };
