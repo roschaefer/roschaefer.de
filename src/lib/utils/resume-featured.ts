@@ -26,6 +26,9 @@ export const createFeaturedProjects = (
 	);
 };
 
+export const createAtsExperienceProjects = (projects: ResumeProject[] = []): ResumeProject[] =>
+	projects.filter((project) => project.type !== "presentation");
+
 export const createFeaturedSkills = (
 	skills: ResumeSkill[] = [],
 	skillNames: string[] = [],
