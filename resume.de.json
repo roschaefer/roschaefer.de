@@ -871,17 +871,17 @@
 		{
 			"name": "TypeScript",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["6 Jahre, 4 Monate", "10 Projekte", "aktuell im Einsatz"]
+			"keywords": ["6 Jahre, 5 Monate", "10 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Docker",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["7 Jahre, 11 Monate", "6 Projekte", "aktuell im Einsatz"]
+			"keywords": ["8 Jahre", "6 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Vue",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["7 Jahre", "6 Projekte", "aktuell im Einsatz"]
+			"keywords": ["7 Jahre, 1 Monat", "6 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Ruby",
@@ -891,7 +891,7 @@
 		{
 			"name": "Tailwind",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["5 Jahre, 3 Monate", "7 Projekte", "aktuell im Einsatz"]
+			"keywords": ["5 Jahre, 4 Monate", "7 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Ruby on Rails",
@@ -901,7 +901,7 @@
 		{
 			"name": "Nuxt",
 			"level": "Langjährige Erfahrung",
-			"keywords": ["5 Jahre, 11 Monate", "4 Projekte", "aktuell im Einsatz"]
+			"keywords": ["6 Jahre", "4 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "RSpec",
@@ -911,17 +911,17 @@
 		{
 			"name": "PostgreSQL",
 			"level": "Souveräne Nutzung",
-			"keywords": ["4 Jahre, 7 Monate", "4 Projekte", "aktuell im Einsatz"]
+			"keywords": ["4 Jahre, 8 Monate", "4 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Netlify",
 			"level": "Souveräne Nutzung",
-			"keywords": ["3 Jahre, 3 Monate", "6 Projekte", "aktuell im Einsatz"]
+			"keywords": ["3 Jahre, 4 Monate", "6 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Sentry",
 			"level": "Souveräne Nutzung",
-			"keywords": ["5 Jahre, 6 Monate", "2 Projekte", "aktuell im Einsatz"]
+			"keywords": ["5 Jahre, 7 Monate", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Apollo GraphQL",
@@ -931,17 +931,17 @@
 		{
 			"name": "Cucumber",
 			"level": "Souveräne Nutzung",
-			"keywords": ["3 Jahre, 7 Monate", "4 Projekte", "aktuell im Einsatz"]
+			"keywords": ["3 Jahre, 8 Monate", "4 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Svelte",
 			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 6 Monate", "5 Projekte", "aktuell im Einsatz"]
+			"keywords": ["2 Jahre, 7 Monate", "5 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "SvelteKit",
 			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 6 Monate", "5 Projekte", "aktuell im Einsatz"]
+			"keywords": ["2 Jahre, 7 Monate", "5 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Digital Ocean",
@@ -952,6 +952,16 @@
 			"name": "Jest",
 			"level": "Souveräne Nutzung",
 			"keywords": ["4 Jahre, 11 Monate", "3 Projekte", "zuletzt Juni 2025"]
+		},
+		{
+			"name": "Terraform",
+			"level": "Souveräne Nutzung",
+			"keywords": ["2 Jahre, 2 Monate", "2 Projekte", "aktuell im Einsatz"]
+		},
+		{
+			"name": "Playwright",
+			"level": "Praxiserfahrung",
+			"keywords": ["1 Jahr, 5 Monate", "3 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Ansible",
@@ -969,19 +979,9 @@
 			"keywords": ["5 Jahre, 2 Monate", "1 Projekt", "zuletzt Apr. 2025"]
 		},
 		{
-			"name": "Terraform",
-			"level": "Souveräne Nutzung",
-			"keywords": ["2 Jahre, 1 Monat", "2 Projekte", "aktuell im Einsatz"]
-		},
-		{
-			"name": "Playwright",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 4 Monate", "3 Projekte", "aktuell im Einsatz"]
-		},
-		{
 			"name": "Serverless",
-			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 11 Monate", "2 Projekte", "aktuell im Einsatz"]
+			"level": "Souveräne Nutzung",
+			"keywords": ["2 Jahre", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Auth0",
@@ -996,22 +996,22 @@
 		{
 			"name": "AWS",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["1 Jahr, 5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Fly.io",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["1 Jahr, 5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "NINA",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["1 Jahr, 5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Tailscale",
 			"level": "Praxiserfahrung",
-			"keywords": ["1 Jahr, 4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["1 Jahr, 5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Kubernetes",
@@ -1026,42 +1026,42 @@
 		{
 			"name": "Vitest",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "2 Projekte", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "2 Projekte", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Better Auth",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Drizzle ORM",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "ElevenLabs",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Infisical",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Neon DB",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Paraglide",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "Typst",
 			"level": "Praxiserfahrung",
-			"keywords": ["4 Monate", "1 Projekt", "aktuell im Einsatz"]
+			"keywords": ["5 Monate", "1 Projekt", "aktuell im Einsatz"]
 		},
 		{
 			"name": "HyGraph",
