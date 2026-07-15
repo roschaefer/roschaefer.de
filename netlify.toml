@@ -4,7 +4,7 @@ publish = "build"
 
 [[redirects]]
 from = "/linkedin"
-to = "https://www.linkedin.com/in/robert-schäfer-788b8615b/"
+to = "https://www.linkedin.com/in/roschaefer/"
 status = 302
 force = true
 
