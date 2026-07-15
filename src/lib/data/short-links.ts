@@ -1,5 +1,5 @@
 const shortLinkEntries = [
-	["https://www.linkedin.com/in/robert-schäfer-788b8615b/", "/linkedin"],
+	["https://www.linkedin.com/in/roschaefer/", "/linkedin"],
 	["https://github.com/roschaefer", "/github"],
 	["https://www.youtube.com/channel/UCyrLYmvmLzWxnPHxt4n5aPw", "/youtube"],
 	["https://mastodon.social/@roschaefer", "/mastodon"],
