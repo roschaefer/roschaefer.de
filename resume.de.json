@@ -842,6 +842,30 @@
 			"location": "Potsdam, Brandenburg, Germany"
 		},
 		{
+			"id": "ursuppe",
+			"name": "#ursuppe",
+			"entity": "MIZ Babelsberg",
+			"roles": ["Hackathon-Coach"],
+			"startDate": "2015-08-01",
+			"endDate": "2015-08-31",
+			"description": "Coachte das Team hinter #ursuppe, einem IoT-Prototyp, der automatisiert einen journalistischen Live-Bericht aus einem biologischen Experiment mit Urzeitkrebsen erzeugte. Gewinner des MIZ Formatfestivals 2015.",
+			"url": "https://www.youtube.com/watch?v=-H9aFNUXvvA",
+			"location": "Potsdam, Brandenburg, Germany",
+			"type": "prototype"
+		},
+		{
+			"id": "sap-research-internship",
+			"name": "Automated Risk Analysis in Supply Chains",
+			"entity": "SAP",
+			"roles": ["Forschungspraktikant"],
+			"startDate": "2013-10-01",
+			"endDate": "2013-11-30",
+			"description": "Werkzeugentwicklung zur automatisierten Risikoanalyse in Lieferketten auf Basis einer bestehenden Legacy-Codebasis.",
+			"url": "https://www.sap.com/",
+			"location": "Belfast, United Kingdom",
+			"type": "research"
+		},
+		{
 			"id": "clubcorner",
 			"entity": "OXON AG",
 			"name": "Clubcorner",
