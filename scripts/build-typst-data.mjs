@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import source from "../resume.i18n.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
 import {
+	createAtsExperienceProjects,
 	createFeaturedEntriesByName,
 	createFeaturedProjects,
 	createFeaturedSkills,
@@ -29,6 +30,7 @@ const localeConfigs = {
 			website: "Website",
 			present: "Heute",
 			selectedProjects: "Ausgewählte aktuelle Projekte",
+			experience: "Berufserfahrung",
 			selectedTalks: "Ausgewählte Vorträge",
 		},
 	},
@@ -44,6 +46,7 @@ const localeConfigs = {
 			website: "Website",
 			present: "Present",
 			selectedProjects: "Selected Recent Projects",
+			experience: "Experience",
 			selectedTalks: "Selected Talks",
 		},
 	},
@@ -145,6 +148,7 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 	const featuredProjects = createFeaturedProjects(projects, featured.projectIds).filter(
 		(project) => project.type !== "presentation",
 	);
+	const atsExperienceProjects = createAtsExperienceProjects(projects);
 	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
 		(project) => project.type === "presentation",
 	);
@@ -184,6 +188,9 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 			? featuredProjects
 			: projects.filter((project) => project.type !== "presentation").slice(0, 6)
 		).map((project) => createProjectEntry(project, locale, config)),
+		experienceFull: atsExperienceProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
 		talks: (featuredTalks.length > 0
 			? featuredTalks.slice(0, 3)
 			: projects.filter((project) => project.type === "presentation").slice(0, 3)

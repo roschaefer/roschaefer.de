@@ -61,13 +61,13 @@
 
 #v(10pt)
 
-#if data.experience.len() > 0 [
+#if data.experienceFull.len() > 0 [
   #block(breakable: false)[
-    #section-heading(data.labels.selectedProjects)
-    #experience-entry(data.experience.first())
+    #section-heading(data.labels.experience)
+    #experience-entry(data.experienceFull.first())
   ]
   #v(8pt)
-  #for entry in data.experience.slice(1) [
+  #for entry in data.experienceFull.slice(1) [
     #experience-entry(entry)
     #v(8pt)
   ]
