@@ -1,4 +1,4 @@
 [tools]
 node = "26"
-pnpm = "11.8.0"
+pnpm = "11.13.1"
 typst = "latest"
