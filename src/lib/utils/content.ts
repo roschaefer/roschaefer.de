@@ -1,6 +1,7 @@
 import { getResume, getResumeFeatured } from "$lib/data/resume";
 import type { Locale } from "$lib/i18n";
 import {
+	createFeaturedEducation,
 	createFeaturedEntriesByName,
 	createFeaturedProjects,
 	getFeaturedConfig,
@@ -24,6 +25,7 @@ export const createSiteContent = (locale: Locale) => {
 		) || [];
 	const techExperience = createTechExperience(projects, locale);
 	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
+	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
 	const profiles = resume.basics.profiles ?? [];
 
 	return {
@@ -42,7 +44,7 @@ export const createSiteContent = (locale: Locale) => {
 		profiles,
 		awards: resume.awards ?? [],
 		languages: resume.languages ?? [],
-		education: resume.education ?? [],
+		education: featuredEducation.length > 0 ? featuredEducation : (resume.education ?? []),
 		interests: resume.interests ?? [],
 	};
 };
