@@ -18,6 +18,7 @@
 			"rundfunk-mitbestimmen-34c3",
 			"how-to-enjoy-paying-for-public-broadcasting"
 		],
+		"educationIds": ["hpi-msc", "hpi-bsc"],
 		"skillNames": [
 			"TypeScript",
 			"Ruby",
@@ -210,6 +211,7 @@
 	"references": [],
 	"education": [
 		{
+			"id": "hpi-msc",
 			"institution": "Hasso Plattner Institute",
 			"area": "IT-Systems Engineering",
 			"studyType": "Master of Science",
@@ -219,12 +221,22 @@
 			"courses": []
 		},
 		{
+			"id": "hpi-bsc",
 			"institution": "Hasso Plattner Institute",
 			"area": "IT-Systems Engineering",
 			"studyType": "Bachelor of Science",
 			"startDate": "2009-09-01",
 			"endDate": "2012-07-01",
 			"score": "1.7",
+			"courses": []
+		},
+		{
+			"id": "gymnasium-lohmar-abitur",
+			"institution": "Gymnasium Lohmar",
+			"area": "",
+			"studyType": "Abitur",
+			"startDate": "1999-08-01",
+			"endDate": "2008-06-30",
 			"courses": []
 		}
 	],

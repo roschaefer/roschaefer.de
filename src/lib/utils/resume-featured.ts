@@ -1,4 +1,9 @@
-import type { ResumeFeatured, ResumeProject, ResumeSkill } from "$lib/types/resume";
+import type {
+	ResumeEducation,
+	ResumeFeatured,
+	ResumeProject,
+	ResumeSkill,
+} from "$lib/types/resume";
 
 const unique = <T>(values: T[]): T[] => [...new Set(values)];
 const pickByKey = <T, K>(entries: T[], keys: K[], getKey: (entry: T) => K): T[] => {
@@ -29,6 +34,18 @@ export const createFeaturedProjects = (
 export const createAtsExperienceProjects = (projects: ResumeProject[] = []): ResumeProject[] =>
 	projects.filter((project) => project.type !== "presentation");
 
+export const createFeaturedEducation = (
+	education: ResumeEducation[] = [],
+	educationIds: string[] = [],
+): ResumeEducation[] =>
+	pickByKey(
+		education.filter(
+			(entry): entry is ResumeEducation & { id: string } => typeof entry.id === "string",
+		),
+		educationIds,
+		(entry) => entry.id,
+	);
+
 export const createFeaturedSkills = (
 	skills: ResumeSkill[] = [],
 	skillNames: string[] = [],
@@ -43,4 +60,5 @@ export const getFeaturedConfig = (featured?: ResumeFeatured): Required<ResumeFea
 	projectIds: featured?.projectIds ?? [],
 	talkIds: featured?.talkIds ?? [],
 	skillNames: featured?.skillNames ?? [],
+	educationIds: featured?.educationIds ?? [],
 });
