@@ -34,6 +34,22 @@ const legalLinks = $derived(
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
 		: { imprint: "/en/imprint/", privacy: "/en/privacy/" },
 );
+const educationDateFormatter = $derived(
+	new Intl.DateTimeFormat(locale === "de" ? "de-DE" : "en-US", { year: "numeric" }),
+);
+const formatYear = (value?: string) => {
+	if (!value) {
+		return "";
+	}
+
+	const date = new Date(value);
+	return Number.isNaN(date.getTime()) ? value : educationDateFormatter.format(date);
+};
+const formatEducationPeriod = (entry: SiteContent["education"][number]) => {
+	const start = formatYear(entry.startDate);
+	const end = entry.endDate ? formatYear(entry.endDate) : t(m.present);
+	return [start, end].filter(Boolean).join(" - ");
+};
 markUsed(() => [
 	siteImage,
 	siteName,
@@ -49,6 +65,9 @@ markUsed(() => [
 	pdfFilename,
 	pdfUrl,
 	legalLinks,
+	educationDateFormatter,
+	formatYear,
+	formatEducationPeriod,
 	PageShell,
 ]);
 </script>
@@ -112,6 +131,7 @@ markUsed(() => [
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
 				<li><a href={`/${locale}/#talks`}>{t(m.nav_talks)}</a></li>
+				<li><a href={`/${locale}/#education`}>{t(m.nav_education)}</a></li>
 				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
 			</ul>
 		</nav>
@@ -391,6 +411,63 @@ markUsed(() => [
 				{/each}
 			</ul>
 		</section>
+
+		{#if content.education.length > 0}
+			<section
+				aria-labelledby="education-title"
+				id="education"
+				class="space-y-8"
+			>
+				<div class="space-y-3">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
+						{t(m.education_eyebrow)}
+					</p>
+					<h2 id="education-title" class="theme-heading">{t(m.education_title)}</h2>
+					<p>{t(m.education_intro)}</p>
+				</div>
+
+				<ol class="grid list-none gap-4 p-0 md:grid-cols-2">
+					{#each content.education as education}
+						<li>
+							<article class="theme-card rounded-[1.5rem] p-5">
+								<header class="space-y-2">
+									<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
+										{formatEducationPeriod(education)}
+									</p>
+									<h3 class="theme-heading">{education.studyType}</h3>
+									<p class="font-semibold text-[var(--color-brand-text)]">{education.area}</p>
+									<p class="text-sm text-[var(--color-brand-muted)]">
+										{#if education.url}
+											<a
+												class="print-url"
+												href={education.url}
+												data-print-label={printLinkLabel(education.url)}
+											>
+												{education.institution}
+											</a>
+										{:else}
+											{education.institution}
+										{/if}
+									</p>
+								</header>
+								{#if education.score}
+									<dl class="mt-4 rounded-[1rem] border border-[var(--color-brand-line)] bg-[color:color-mix(in_srgb,var(--color-brand-panel)_76%,transparent)] p-3">
+										<div class="flex items-start justify-between gap-4">
+											<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+												{t(m.education_score)}
+											</dt>
+											<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+												{education.score}
+											</dd>
+										</div>
+									</dl>
+								{/if}
+							</article>
+						</li>
+					{/each}
+				</ol>
+			</section>
+		{/if}
 
 		<section id="contact" aria-labelledby="contact-title" class="border-t border-[var(--color-brand-line)] pt-10">
 			<div class="flex flex-col gap-6">
