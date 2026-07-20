@@ -55,6 +55,7 @@ export type ResumeLanguage = {
 };
 
 export type ResumeEducation = {
+	id?: string;
 	institution: string;
 	area: string;
 	studyType: string;
@@ -78,6 +79,7 @@ export type ResumeFeatured = {
 	projectIds?: string[];
 	talkIds?: string[];
 	skillNames?: string[];
+	educationIds?: string[];
 };
 
 export type Resume = {
