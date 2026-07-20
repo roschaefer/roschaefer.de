@@ -120,18 +120,18 @@
   ]
 ]
 
-#if data.education.len() > 0 [
+#if data.educationFull.len() > 0 [
   #v(4pt)
   #block(breakable: false)[
     #section-heading(data.labels.education)
     #simple-entry(
-      data.education.first().title,
-      meta: data.education.first().institution + "   " + data.education.first().period,
-      copy: data.education.first().score,
+      data.educationFull.first().title,
+      meta: data.educationFull.first().institution + "   " + data.educationFull.first().period,
+      copy: data.educationFull.first().score,
     )
   ]
   #v(6pt)
-  #for entry in data.education.slice(1) [
+  #for entry in data.educationFull.slice(1) [
     #simple-entry(entry.title, meta: entry.institution + "   " + entry.period, copy: entry.score)
     #v(6pt)
   ]

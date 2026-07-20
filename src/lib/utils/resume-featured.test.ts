@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
 	createAtsExperienceProjects,
+	createFeaturedEducation,
 	createFeaturedEntriesByName,
 	createFeaturedProjects,
 	createFeaturedSkills,
@@ -43,7 +44,25 @@ describe("resume featured", () => {
 	});
 
 	it("normalizes missing featured config to empty arrays", () => {
-		expect(getFeaturedConfig()).toEqual({ projectIds: [], talkIds: [], skillNames: [] });
+		expect(getFeaturedConfig()).toEqual({
+			projectIds: [],
+			talkIds: [],
+			skillNames: [],
+			educationIds: [],
+		});
+	});
+
+	it("orders featured education by configured ids", () => {
+		const education = [
+			{ id: "abitur", institution: "Gymnasium Lohmar", area: "", studyType: "Abitur" },
+			{ id: "msc", institution: "HPI", area: "IT-Systems Engineering", studyType: "M.Sc." },
+			{ id: "bsc", institution: "HPI", area: "IT-Systems Engineering", studyType: "B.Sc." },
+		];
+
+		expect(createFeaturedEducation(education, ["msc", "bsc"]).map((entry) => entry.id)).toEqual([
+			"msc",
+			"bsc",
+		]);
 	});
 
 	it("includes every non-presentation project regardless of featured config", () => {

@@ -5,6 +5,7 @@ import source from "../resume.i18n.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
 import {
 	createAtsExperienceProjects,
+	createFeaturedEducation,
 	createFeaturedEntriesByName,
 	createFeaturedProjects,
 	createFeaturedSkills,
@@ -153,6 +154,7 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 		(project) => project.type === "presentation",
 	);
 	const featuredSkills = createFeaturedSkills(resume.skills ?? [], featured.skillNames);
+	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
 	const techExperience = createTechExperience(projects, locale);
 	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
 	const typstTechExperience =
@@ -182,7 +184,12 @@ for (const [locale, config] of Object.entries(localeConfigs)) {
 			name: language.language,
 			fluency: language.fluency,
 		})),
-		education: (resume.education ?? []).map((entry) => createEducationEntry(entry, locale, config)),
+		education: (featuredEducation.length > 0 ? featuredEducation : (resume.education ?? [])).map(
+			(entry) => createEducationEntry(entry, locale, config),
+		),
+		educationFull: (resume.education ?? []).map((entry) =>
+			createEducationEntry(entry, locale, config),
+		),
 		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
 		experience: (featuredProjects.length > 0
 			? featuredProjects
