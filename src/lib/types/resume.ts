@@ -57,6 +57,7 @@ export type ResumeLanguage = {
 export type ResumeEducation = {
 	id?: string;
 	institution: string;
+	url?: string;
 	area: string;
 	studyType: string;
 	startDate?: string;

@@ -213,6 +213,7 @@
 		{
 			"id": "hpi-msc",
 			"institution": "Hasso Plattner Institute",
+			"url": "https://hpi.de/",
 			"area": "IT-Systems Engineering",
 			"studyType": "Master of Science",
 			"startDate": "2014-10-01",
@@ -223,6 +224,7 @@
 		{
 			"id": "hpi-bsc",
 			"institution": "Hasso Plattner Institute",
+			"url": "https://hpi.de/",
 			"area": "IT-Systems Engineering",
 			"studyType": "Bachelor of Science",
 			"startDate": "2009-09-01",
