@@ -1,4 +1,5 @@
 <script lang="ts">
+import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import type { Locale } from "$lib/i18n";
@@ -26,6 +27,7 @@ markUsed(() => [
 	ogLocale,
 	imprintPath,
 	PageShell,
+	ContactLinks,
 ]);
 </script>
 
@@ -82,10 +84,7 @@ markUsed(() => [
 					<br />
 					Germany
 				</address>
-				<p>
-					{m.imprint_email_label({}, { locale })}:
-					<a href="mailto:hello@roschaefer.de">hello@roschaefer.de</a>
-				</p>
+				<ContactLinks locale={locale} />
 			</article>
 
 			<article class="space-y-3">
