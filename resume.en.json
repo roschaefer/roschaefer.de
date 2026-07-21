@@ -197,7 +197,7 @@
 				"Infisical",
 				"ElevenLabs"
 			],
-			"description": "A SvelteKit application for AI-assisted interviews and editorial publishing. I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience.",
+			"description": "With this SvelteKit application for AI-assisted interviews and editorial publishing, I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience.",
 			"url": "https://github.com/tactilenews/dialogbank-app/",
 			"type": "product"
 		},
@@ -248,7 +248,7 @@
 				"Hetzner",
 				"PostgreSQL"
 			],
-			"description": "A free and open-source social platform for entrepreneurs. I fundamentally reworked the delivery and infrastructure architecture after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. By moving the project to a self-managed Kubernetes setup on Hetzner with Terraform, each developer could test their own branches in production-like environments while keeping operating costs extremely low at under 20 euros per month.",
+			"description": "For this free and open-source social platform for entrepreneurs I fundamentally reworked the delivery and infrastructure architecture after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. By moving the project to a self-managed Kubernetes setup on Hetzner with Terraform, each developer could test their own branches in production-like environments while keeping operating costs extremely low at under 20 euros per month.",
 			"url": "https://dreammall.earth/",
 			"type": "product"
 		},
@@ -273,7 +273,7 @@
 				"Sentry",
 				"Postmark"
 			],
-			"description": "A platform for audience engagement and crowd-based reporting in journalism. I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research.",
+			"description": "For this platform for audience engagement and crowd-based reporting in journalism, I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research.",
 			"url": "https://tactile.news/",
 			"links": [
 				{
@@ -305,7 +305,7 @@
 				"NINA",
 				"Tailscale"
 			],
-			"description": "A web application for remotely controlling telescopes through the astrophotography software NINA, making deep-sky imaging accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline.",
+			"description": "With this platform for remotely controlling telescopes through the astrophotography software NINA, deep-sky imaging gets accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline.",
 			"type": "product"
 		},
 		{
@@ -330,7 +330,7 @@
 				"Google Cloud",
 				"Vercel"
 			],
-			"description": "Software for the automotive aftermarket that helps repair shops compare prices across wholesalers. We migrated an Electron desktop application to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240.",
+			"description": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, we migrated an Electron desktop application to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240.",
 			"url": "https://www.auteon.com",
 			"type": "product"
 		},
@@ -440,7 +440,7 @@
 				"Kubernetes"
 			],
 			"url": "https://github.com/Ocelot-Social-Community/Ocelot-Social",
-			"description": "A community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. As Technical Lead, I worked on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly.",
+			"description": "For this community-built open-source social network that offers communities a privacy-friendly alternative to large platforms, I worked as Technical Lead on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly.",
 			"links": [
 				{
 					"label": "Staging",
@@ -886,7 +886,7 @@
 			"startDate": "2013-04-01",
 			"endDate": "2013-09-30",
 			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber", "PostgreSQL"],
-			"description": "Develop a web application for officials, referees and coaches. First developer who established an automated test environment.",
+			"description": "For this web application for officials, referees, and coaches, I was the first developer to introduce an automated test environment.",
 			"url": "https://clubcorner.ch/",
 			"location": "Bern, Switzerland",
 			"type": "product"
