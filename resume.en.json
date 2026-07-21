@@ -58,11 +58,11 @@
 		{
 			"title": "Grimme Online Award (nominated)",
 			"date": "2020-06-25",
-			"summary": "#bienenlive",
+			"summary": "Automated sensor-driven storytelling format (bees)",
 			"awarder": "Grimme-Institut",
 			"links": [
 				{
-					"label": "#bienenlive",
+					"label": "Automated sensor-driven storytelling format (bees)",
 					"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen",
 					"kind": "award"
 				}
@@ -71,11 +71,11 @@
 		{
 			"title": "German Reporter Award 2019",
 			"date": "2019-12-02",
-			"summary": "#bienenlive",
+			"summary": "Automated sensor-driven storytelling format (bees)",
 			"awarder": "Reporter-Forum e. V.",
 			"links": [
 				{
-					"label": "#bienenlive",
+					"label": "Automated sensor-driven storytelling format (bees)",
 					"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019",
 					"kind": "award"
 				}
@@ -84,11 +84,11 @@
 		{
 			"title": "German Reporter Award 2017 (nominated)",
 			"date": "2017-12-11",
-			"summary": "\"Superkühe\"",
+			"summary": "Automated sensor-driven storytelling format (dairy cows)",
 			"awarder": "Reporter-Forum e. V.",
 			"links": [
 				{
-					"label": "\"Superkühe\"",
+					"label": "Automated sensor-driven storytelling format (dairy cows)",
 					"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904",
 					"kind": "award"
 				}
@@ -173,8 +173,8 @@
 	],
 	"projects": [
 		{
-			"id": "dialogbank-app",
-			"name": "Dialogbank",
+			"id": "ai-interview-platform",
+			"name": "AI-assisted interview platform",
 			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
 			"visibility": "open-source",
@@ -197,7 +197,7 @@
 				"Infisical",
 				"ElevenLabs"
 			],
-			"description": "Dialogbank is a SvelteKit application for AI-assisted interviews and editorial publishing. I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience.",
+			"description": "A SvelteKit application for AI-assisted interviews and editorial publishing. I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience.",
 			"url": "https://github.com/tactilenews/dialogbank-app/",
 			"type": "product"
 		},
@@ -225,8 +225,8 @@
 			"type": "portfolio"
 		},
 		{
-			"id": "dreammall",
-			"name": "DreamMall",
+			"id": "entrepreneur-social-platform",
+			"name": "Social platform for entrepreneurs",
 			"entity": "IT4C",
 			"engagement": "freelance",
 			"visibility": "open-source",
@@ -248,13 +248,13 @@
 				"Hetzner",
 				"PostgreSQL"
 			],
-			"description": "DreamMall is a free and open-source social platform for entrepreneurs. I fundamentally reworked the delivery and infrastructure architecture after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. By moving the project to a self-managed Kubernetes setup on Hetzner with Terraform, each developer could test their own branches in production-like environments while keeping operating costs extremely low at under 20 euros per month.",
+			"description": "A free and open-source social platform for entrepreneurs. I fundamentally reworked the delivery and infrastructure architecture after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. By moving the project to a self-managed Kubernetes setup on Hetzner with Terraform, each developer could test their own branches in production-like environments while keeping operating costs extremely low at under 20 euros per month.",
 			"url": "https://dreammall.earth/",
 			"type": "product"
 		},
 		{
-			"id": "100eyes",
-			"name": "100eyes",
+			"id": "audience-engagement-platform",
+			"name": "Audience engagement platform for newsrooms",
 			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
 			"visibility": "open-source",
@@ -273,7 +273,7 @@
 				"Sentry",
 				"Postmark"
 			],
-			"description": "100eyes is a platform for audience engagement and crowd-based reporting in journalism. I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research.",
+			"description": "A platform for audience engagement and crowd-based reporting in journalism. I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research.",
 			"url": "https://tactile.news/",
 			"links": [
 				{
@@ -285,8 +285,8 @@
 			"type": "product"
 		},
 		{
-			"id": "hagen",
-			"name": "Hagen",
+			"id": "remote-telescope-platform",
+			"name": "Remote telescope control platform",
 			"entity": "Bosse Consulting GmbH",
 			"engagement": "freelance",
 			"roles": ["Full Stack Developer"],
@@ -305,12 +305,12 @@
 				"NINA",
 				"Tailscale"
 			],
-			"description": "Hagen is a web application for remotely controlling telescopes through the astrophotography software NINA, making deep-sky imaging accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; Hagen sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline.",
+			"description": "A web application for remotely controlling telescopes through the astrophotography software NINA, making deep-sky imaging accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline.",
 			"type": "product"
 		},
 		{
-			"id": "beteon",
-			"name": "beteon",
+			"id": "automotive-price-comparison",
+			"name": "Price comparison platform for the automotive aftermarket",
 			"entity": "auteon GmbH",
 			"engagement": "freelance",
 			"visibility": "private",
@@ -330,13 +330,13 @@
 				"Google Cloud",
 				"Vercel"
 			],
-			"description": "beteon is software for the automotive aftermarket that helps repair shops compare prices across wholesalers. We migrated an Electron desktop application to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240.",
+			"description": "Software for the automotive aftermarket that helps repair shops compare prices across wholesalers. We migrated an Electron desktop application to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240.",
 			"url": "https://www.auteon.com",
 			"type": "product"
 		},
 		{
-			"id": "rhenania-computer",
-			"name": "Rhenania Computer",
+			"id": "retail-website-relaunch",
+			"name": "Website relaunch with SvelteKit and Hygraph",
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"visibility": "private",
@@ -344,13 +344,13 @@
 			"startDate": "2021-12-09",
 			"endDate": "2023-06-28",
 			"keywords": ["TypeScript", "Svelte", "SvelteKit", "HyGraph", "Netlify", "Serverless"],
-			"description": "For Rhenania Computer, I rebuilt the website with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability.",
+			"description": "I rebuilt the website for a retail client with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability.",
 			"url": "https://rhenania-computer.de/de",
 			"type": "client-platform"
 		},
 		{
-			"id": "werkhof-ichen",
-			"name": "Werkhof Ichen",
+			"id": "course-booking-system",
+			"name": "Booking system for course providers",
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"visibility": "private",
@@ -358,13 +358,13 @@
 			"startDate": "2020-08-11",
 			"endDate": "2023-05-02",
 			"keywords": ["TypeScript", "Netlify", "Vue", "Nuxt", "HyGraph"],
-			"description": "For Werkhof Ichen, I built a custom booking system for sewing classes and integrated it into the website. Courses for adults, teens, and children can be managed online, including registration and waiting lists.",
+			"description": "I built a custom booking system for sewing classes for a course provider and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists.",
 			"url": "https://werkhof-ichen.de/",
 			"type": "client-platform"
 		},
 		{
-			"id": "tanzimpulse",
-			"name": "Tanzimpulse - Institut für Tanzpädagogik",
+			"id": "continuing-education-booking-system",
+			"name": "Booking system for continuing education providers",
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"visibility": "private",
@@ -372,13 +372,13 @@
 			"startDate": "2021-05-12",
 			"endDate": "2022-12-10",
 			"keywords": ["TypeScript", "Netlify", "Svelte", "SvelteKit", "Tailwind"],
-			"description": "For Tanzimpulse, I built a custom booking system for continuing education programs. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS.",
+			"description": "I built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS.",
 			"url": "https://tanzimpulse.de/",
 			"type": "client-platform"
 		},
 		{
-			"id": "am-meer-norderney",
-			"name": "Ferienwohnung - Am Meer Norderneys",
+			"id": "holiday-apartment-booking-site",
+			"name": "Booking website for a holiday apartment",
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"visibility": "private",
@@ -418,8 +418,8 @@
 			"type": "course"
 		},
 		{
-			"id": "ocelot-social",
-			"name": "Ocelot.social",
+			"id": "open-source-social-network",
+			"name": "Community-run open-source social network",
 			"entity": "busfaktor e.V.",
 			"engagement": "freelance",
 			"visibility": "open-source",
@@ -440,7 +440,7 @@
 				"Kubernetes"
 			],
 			"url": "https://github.com/Ocelot-Social-Community/Ocelot-Social",
-			"description": "Ocelot.social is a community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. As Technical Lead, I worked on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly.",
+			"description": "A community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. As Technical Lead, I worked on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly.",
 			"links": [
 				{
 					"label": "Staging",
@@ -475,16 +475,16 @@
 			"type": "presentation"
 		},
 		{
-			"id": "bienenlive",
+			"id": "sensor-storytelling-bees",
 			"entity": "tactile.news GmbH",
-			"name": "#bienenlive",
+			"name": "Automated sensor-driven storytelling format (bees)",
 			"engagement": "freelance",
 			"visibility": "private",
 			"roles": ["Full Stack Developer"],
 			"startDate": "2019-03-31",
 			"endDate": "2019-05-31",
 			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber"],
-			"description": "Building on \"Superkühe\", we reused and extended the platform for a new journalistic format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award.",
+			"description": "Building on an earlier journalistic sensor-data project, we reused and extended the platform for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award.",
 			"url": "https://tactile.news/startseite/journalismus-der-dinge/bienenlive/",
 			"type": "product"
 		},
@@ -562,8 +562,8 @@
 			"type": "mentoring"
 		},
 		{
-			"id": "solutiance",
-			"name": "solutiance.com",
+			"id": "custom-cms-platform",
+			"name": "Custom CMS platform",
 			"entity": "Solutiance AG",
 			"roles": ["Full Stack Developer"],
 			"startDate": "2018-04-30",
@@ -584,8 +584,8 @@
 			"type": "presentation"
 		},
 		{
-			"id": "smirror",
-			"name": "sMirror",
+			"id": "smart-mirror-prototype",
+			"name": "IoT prototype: smart bathroom mirror",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT Developer"],
 			"startDate": "2018-01-01",
@@ -650,8 +650,8 @@
 			"type": "presentation"
 		},
 		{
-			"id": "superkuehe",
-			"name": "Superkühe",
+			"id": "sensor-storytelling-dairy-cows",
+			"name": "Automated sensor-driven storytelling format (dairy cows)",
 			"entity": "tactile.news GmbH",
 			"roles": ["Full Stack Developer"],
 			"startDate": "2016-05-31",
@@ -700,8 +700,8 @@
 			"type": "presentation"
 		},
 		{
-			"id": "story-trolley",
-			"name": "Story trolley",
+			"id": "smart-shopping-cart-prototype",
+			"name": "IoT prototype: smart shopping cart",
 			"entity": "tactile.news GmbH",
 			"roles": ["IoT Developer"],
 			"startDate": "2017-06-01",
@@ -867,7 +867,7 @@
 			"type": "prototype"
 		},
 		{
-			"id": "sap-research-internship",
+			"id": "supply-chain-risk-research",
 			"name": "Automated Risk Analysis in Supply Chains",
 			"entity": "SAP",
 			"roles": ["Research Intern"],
@@ -879,9 +879,9 @@
 			"type": "research"
 		},
 		{
-			"id": "clubcorner",
+			"id": "sports-association-webapp",
 			"entity": "OXON AG",
-			"name": "Clubcorner",
+			"name": "Web application for sports associations",
 			"roles": ["Full Stack Developer"],
 			"startDate": "2013-04-01",
 			"endDate": "2013-09-30",
