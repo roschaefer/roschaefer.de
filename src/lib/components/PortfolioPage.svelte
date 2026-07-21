@@ -1,4 +1,5 @@
 <script lang="ts">
+import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
@@ -69,6 +70,7 @@ markUsed(() => [
 	formatYear,
 	formatEducationPeriod,
 	PageShell,
+	ContactLinks,
 ]);
 </script>
 
@@ -473,15 +475,7 @@ markUsed(() => [
 			<div class="flex flex-col gap-6">
 				<div class="space-y-4">
 					<h2 id="contact-title" class="theme-heading">{t(m.contact_title)}</h2>
-					<address class="not-italic">
-						<a
-							class="print-url print-mailto"
-							href={`mailto:${content.basics.email}`}
-							data-print-label={content.basics.email}
-						>
-							{content.basics.email}
-						</a>
-					</address>
+					<ContactLinks locale={locale} />
 					<p>{t(m.contact_summary)}</p>
 				</div>
 				<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.2em]">

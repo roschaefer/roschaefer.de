@@ -1,4 +1,5 @@
 <script lang="ts">
+import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import type { Locale } from "$lib/i18n";
@@ -26,6 +27,7 @@ markUsed(() => [
 	ogLocale,
 	privacyPath,
 	PageShell,
+	ContactLinks,
 ]);
 </script>
 
@@ -81,16 +83,7 @@ markUsed(() => [
 				<br />
 				{locale === "de" ? "Deutschland" : "Germany"}
 			</address>
-			<p>
-				{m.imprint_email_label({}, { locale })}:
-				<a href="mailto:hello@roschaefer.de">hello@roschaefer.de</a>
-			</p>
-			<p>
-				{m.imprint_signal_label({}, { locale })}:
-				<a href="https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00">
-					{m.imprint_signal_link_label({}, { locale })}
-				</a>
-			</p>
+			<ContactLinks locale={locale} />
 		</section>
 	{/snippet}
 </PageShell>
