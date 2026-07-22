@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import source from "../resume.i18n.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
+import { deriveResume } from "../src/lib/utils/derive-resume.ts";
 import {
 	createAtsExperienceProjects,
 	createFeaturedEducation,
@@ -142,7 +143,7 @@ await fs.mkdir(outputDir, { recursive: true });
 const featured = getFeaturedConfig(source.featured);
 
 for (const [locale, config] of Object.entries(localeConfigs)) {
-	const resume = JSON.parse(await fs.readFile(path.join(rootDir, `resume.${locale}.json`), "utf8"));
+	const resume = deriveResume(source, locale);
 	const projects = [...(resume.projects ?? [])].sort((left, right) =>
 		right.startDate.localeCompare(left.startDate),
 	);

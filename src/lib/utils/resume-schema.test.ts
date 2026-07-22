@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
-import de from "../../../resume.de.json";
-import en from "../../../resume.en.json";
+import source from "../../../resume.i18n.json";
+import { deriveResume } from "./derive-resume.ts";
 import { validateResumeSchema } from "./validate-resume-schema";
+
+const de = deriveResume(source, "de");
+const en = deriveResume(source, "en");
 
 const markdownLinkPattern = /\[[^\]]+\]\((https?:\/\/[^)]+)\)/;
 
@@ -25,16 +28,16 @@ const collectMarkdownLinks = (value: unknown, path: string[] = []): string[] => 
 
 describe("resume schema", () => {
 	it.each([
-		["resume.de.json", de],
-		["resume.en.json", en],
-	])("validates %s against the JSON Resume schema", async (_fileName, resume) => {
+		["de", de],
+		["en", en],
+	])("validates %s against the JSON Resume schema", async (_locale, resume) => {
 		await expect(validateResumeSchema(resume)).resolves.toBeUndefined();
 	});
 
 	it.each([
-		["resume.de.json", de],
-		["resume.en.json", en],
-	])("keeps %s free of inline markdown links", (_fileName, resume) => {
+		["de", de],
+		["en", en],
+	])("keeps %s free of inline markdown links", (_locale, resume) => {
 		expect(collectMarkdownLinks(resume)).toEqual([]);
 	});
 });

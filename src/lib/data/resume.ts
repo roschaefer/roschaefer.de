@@ -1,12 +1,11 @@
 import type { Locale } from "$lib/i18n";
 import type { Resume, ResumeFeatured, ResumeProject } from "$lib/types/resume";
-import de from "../../../resume.de.json";
-import en from "../../../resume.en.json";
 import source from "../../../resume.i18n.json";
+import { deriveResume } from "../utils/derive-resume.ts";
 
 const resumes: Record<Locale, Resume> = {
-	de: de as Resume,
-	en: en as Resume,
+	de: deriveResume(source, "de"),
+	en: deriveResume(source, "en"),
 };
 
 const featured = (source as { featured?: ResumeFeatured }).featured;
