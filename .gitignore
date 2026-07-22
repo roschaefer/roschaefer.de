@@ -8,8 +8,6 @@ typst/content
 typst/out
 static/de/*.pdf
 static/en/*.pdf
-/resume.de.json
-/resume.en.json
 
 .DS_Store
 Thumbs.db
