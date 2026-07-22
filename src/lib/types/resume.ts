@@ -38,7 +38,7 @@ export type ResumeProject = {
 	links?: ResumeLink[];
 	type?: string;
 	engagement?: string;
-	visibility?: string;
+	codeVisibility?: string;
 };
 
 export type ResumeAward = {

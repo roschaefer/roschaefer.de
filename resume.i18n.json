@@ -286,7 +286,7 @@
 			"name": "roschaefer.de",
 			"entity": "Robert Schäfer",
 			"engagement": "independent",
-			"visibility": "open-source",
+			"codeVisibility": "open-source",
 			"roles": [
 				{
 					"de": "Entwicklung und Design",
@@ -320,7 +320,7 @@
 			},
 			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
-			"visibility": "open-source",
+			"codeVisibility": "open-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -395,7 +395,7 @@
 			},
 			"entity": "IT4C",
 			"engagement": "freelance",
-			"visibility": "open-source",
+			"codeVisibility": "open-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -434,7 +434,7 @@
 			},
 			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
-			"visibility": "open-source",
+			"codeVisibility": "open-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -477,7 +477,7 @@
 			},
 			"entity": "auteon GmbH",
 			"engagement": "freelance",
-			"visibility": "private",
+			"codeVisibility": "closed-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -514,7 +514,7 @@
 			},
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
-			"visibility": "private",
+			"codeVisibility": "closed-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -539,7 +539,7 @@
 			},
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
-			"visibility": "private",
+			"codeVisibility": "closed-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -564,7 +564,7 @@
 			},
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
-			"visibility": "private",
+			"codeVisibility": "closed-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -589,7 +589,7 @@
 			},
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
-			"visibility": "private",
+			"codeVisibility": "closed-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -611,7 +611,7 @@
 			"entity": "Hochschule für Technik und Wirtschaft Berlin",
 			"name": "Systems-Development and Framework",
 			"engagement": "freelance",
-			"visibility": "open-source",
+			"codeVisibility": "open-source",
 			"roles": [
 				{
 					"de": "Lehrbeauftragter",
@@ -649,7 +649,7 @@
 			},
 			"entity": "busfaktor e.V.",
 			"engagement": "freelance",
-			"visibility": "open-source",
+			"codeVisibility": "open-source",
 			"roles": [
 				{
 					"de": "Technischer Leiter",
@@ -693,7 +693,7 @@
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "Vue.js Berlin Meetup",
 			"engagement": "community",
-			"visibility": "public",
+			"codeVisibility": "open-source",
 			"startDate": "2020-01-14",
 			"endDate": "2020-01-14",
 			"roles": [
@@ -710,7 +710,7 @@
 			"name": "Using Neo4J and GraphQL to build Human Connection",
 			"entity": "Neo4J Online Meetup",
 			"engagement": "community",
-			"visibility": "public",
+			"codeVisibility": "open-source",
 			"startDate": "2019-06-20",
 			"endDate": "2019-06-20",
 			"roles": [
@@ -730,7 +730,7 @@
 				"en": "Automated sensor-driven storytelling format (bees)"
 			},
 			"engagement": "freelance",
-			"visibility": "private",
+			"codeVisibility": "closed-source",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",

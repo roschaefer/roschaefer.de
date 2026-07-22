@@ -93,6 +93,7 @@ Guidelines:
 - IDs should not change just because a title or URL changes.
 - Derive technology durations from project date ranges, merging overlapping intervals so "years of experience" remains defensible.
 - Derive reverse links from each technology to the projects where it appears.
+- `codeVisibility` (`open-source`/`closed-source`) on a project entry describes whether the project's *code* is public. It says nothing about whether the client/entity name is public — don't repurpose it for that.
 
 ## PDF And Print
 
