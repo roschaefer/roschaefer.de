@@ -9,9 +9,16 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
 const locales = ["de", "en"];
-const sourceFile = path.join(rootDir, "resume.i18n.json");
 const resumeSchema =
 	"https://raw.githubusercontent.com/jsonresume/resume-schema/v1.2.1/schema.json";
+
+const readStdin = async () => {
+	const chunks = [];
+	for await (const chunk of process.stdin) {
+		chunks.push(chunk);
+	}
+	return Buffer.concat(chunks).toString("utf8");
+};
 
 const isPlainObject = (value) =>
 	Boolean(value) && typeof value === "object" && !Array.isArray(value);
@@ -47,7 +54,7 @@ const localizeValue = (value, locale, pathSegments = []) => {
 	);
 };
 
-const source = JSON.parse(await fs.readFile(sourceFile, "utf8"));
+const source = JSON.parse(await readStdin());
 
 for (const locale of locales) {
 	const resume = localizeValue(source, locale);
