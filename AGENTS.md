@@ -72,23 +72,20 @@ The authored resume source is:
 
 - `resume.i18n.json`
 
-Generated localized resume files are:
-
-- `resume.de.json`
-- `resume.en.json`
+There are no generated `resume.de.json`/`resume.en.json` files — localizing `resume.i18n.json` into a single locale's JSON Resume data is a pure, synchronous function (`deriveResume` in `src/lib/utils/derive-resume.ts`), computed in memory wherever it's needed rather than written to disk as an intermediate file. This avoids keeping two copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed.
 
 The pipeline is:
 
-- `resume.i18n.json` -> localized JSON Resume data
-- localized JSON Resume data -> web rendering
-- localized JSON Resume data -> Typst-ready data
-- Typst-ready data -> PDFs
+- `resume.i18n.json` -> (`deriveResume`, in memory) -> localized JSON Resume data
+- localized JSON Resume data -> web rendering (`src/lib/data/resume.ts` calls `deriveResume` once per locale at module load)
+- localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.mjs` calls `deriveResume` directly instead of reading a file)
 
 Guidelines:
 
-- Edit resume content in `resume.i18n.json`, then run `pnpm resume:build`.
+- Edit resume content in `resume.i18n.json` directly — there is no separate build step to run first.
+- Anything that needs localized resume data should call `deriveResume(source, locale)` rather than introduce another on-disk intermediate file.
 - Keep German and English resume structures aligned.
-- Validate both localized files against the same TypeScript/schema model.
+- Validate both localized outputs against the same TypeScript/schema model.
 - Use stable `id` fields for translatable entries such as projects and talks.
 - IDs should not change just because a title or URL changes.
 - Derive technology durations from project date ranges, merging overlapping intervals so "years of experience" remains defensible.
@@ -333,22 +330,10 @@ Build everything, including PDFs:
 pnpm build
 ```
 
-Build generated resume JSON:
-
-```bash
-pnpm resume:build
-```
-
 Build PDFs:
 
 ```bash
 pnpm pdf:build
-```
-
-Check generated files:
-
-```bash
-pnpm generated:check
 ```
 
 For documentation-only changes, `git diff --check` is usually enough.
