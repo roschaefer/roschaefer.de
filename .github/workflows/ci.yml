@@ -30,8 +30,8 @@ jobs:
       - name: Quick verification
         run: pnpm ready
 
-      - name: Accessibility test
-        run: pnpm test:a11y
+      - name: E2E tests
+        run: pnpm test:e2e
 
       - name: Build PDFs
         run: pnpm pdf:build

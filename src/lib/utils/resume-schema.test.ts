@@ -1,22 +1,9 @@
-import type { ResumeValidationError } from "@jsonresume/schema";
-import { validate } from "@jsonresume/schema";
 import { describe, expect, it } from "vitest";
 import de from "../../../resume.de.json";
 import en from "../../../resume.en.json";
+import { validateResumeSchema } from "./validate-resume-schema";
 
 const markdownLinkPattern = /\[[^\]]+\]\((https?:\/\/[^)]+)\)/;
-
-const validateResume = async (resume: unknown) =>
-	new Promise<void>((resolve, reject) => {
-		validate(resume, (errors: ResumeValidationError[] | null) => {
-			if (errors) {
-				reject(new Error(errors.map((error: ResumeValidationError) => error.stack).join("\n")));
-				return;
-			}
-
-			resolve();
-		});
-	});
 
 const collectMarkdownLinks = (value: unknown, path: string[] = []): string[] => {
 	if (typeof value === "string") {
@@ -41,7 +28,7 @@ describe("resume schema", () => {
 		["resume.de.json", de],
 		["resume.en.json", en],
 	])("validates %s against the JSON Resume schema", async (_fileName, resume) => {
-		await expect(validateResume(resume)).resolves.toBeUndefined();
+		await expect(validateResumeSchema(resume)).resolves.toBeUndefined();
 	});
 
 	it.each([
