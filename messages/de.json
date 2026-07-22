@@ -55,6 +55,7 @@
 	"contact_email_label": "E-Mail",
 	"contact_signal_label": "Signal",
 	"contact_signal_link_label": "öffentlicher Signal-Link",
+	"resume_json_link_label": "CV als JSON Resume laden",
 	"print_fallback_title": "Offizieller CV",
 	"print_fallback_body": "Für die offizielle PDF-Version dieses CVs nutzen Sie bitte die folgenden Links.",
 	"print_fallback_website": "Website",

@@ -255,6 +255,14 @@ markUsed(() => [
 						<span class="theme-heading mt-2 block font-mono text-sm">{pdfPath}</span>
 					</span>
 				</a>
+				<a
+					class="print-url mt-3 block text-sm"
+					href={`/${locale}/resume.json`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{t(m.resume_json_link_label)}
+				</a>
 			</aside>
 		</section>
 

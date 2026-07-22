@@ -55,6 +55,7 @@
 	"contact_email_label": "Email",
 	"contact_signal_label": "Signal",
 	"contact_signal_link_label": "public Signal link",
+	"resume_json_link_label": "Download CV as JSON Resume",
 	"print_fallback_title": "Official CV",
 	"print_fallback_body": "For the official PDF version of this CV, use the links below.",
 	"print_fallback_website": "Website",
