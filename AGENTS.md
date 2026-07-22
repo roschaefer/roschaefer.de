@@ -336,12 +336,6 @@ Build PDFs:
 pnpm pdf:build
 ```
 
-Check generated files:
-
-```bash
-pnpm generated:check
-```
-
 For documentation-only changes, `git diff --check` is usually enough.
 
 ## Git Worktree And Subtree Branch Model

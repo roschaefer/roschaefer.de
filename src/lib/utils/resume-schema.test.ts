@@ -27,17 +27,11 @@ const collectMarkdownLinks = (value: unknown, path: string[] = []): string[] => 
 };
 
 describe("resume schema", () => {
-	it.each([
-		["de", de],
-		["en", en],
-	])("validates %s against the JSON Resume schema", async (_locale, resume) => {
+	it.each([de, en])("validates against the JSON Resume schema", async (resume) => {
 		await expect(validateResumeSchema(resume)).resolves.toBeUndefined();
 	});
 
-	it.each([
-		["de", de],
-		["en", en],
-	])("keeps %s free of inline markdown links", (_locale, resume) => {
+	it.each([de, en])("keeps resume free of inline markdown links", (resume) => {
 		expect(collectMarkdownLinks(resume)).toEqual([]);
 	});
 });
