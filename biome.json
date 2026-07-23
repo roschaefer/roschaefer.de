@@ -27,6 +27,7 @@
 			"!**/playwright-report",
 			"!**/project.inlang/.meta.json",
 			"!**/resume.json",
+			"!**/resume.i18n.json",
 			"!**/pnpm-lock.yaml",
 			"!**/src/lib/paraglide",
 			"!**/test-results",

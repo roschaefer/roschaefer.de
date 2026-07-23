@@ -74,22 +74,22 @@ The authored resume source is:
 
 There are no generated `resume.de.json`/`resume.en.json` files committed to the repo. Instead:
 
-1. `pnpm build:json-resume` (`scripts/generate-resume-source.ts`) copies `resume.i18n.json` to the gitignored `.generated/resume-source.json` — never committed, always regenerated fresh.
+1. `pnpm build:json-resume` (`scripts/generate-resume-source.ts`) decrypts `resume.i18n.json` (`sops -d`) and masks redacted-client fields (see "Redacted Clients" below) once, writing the result to the gitignored `.generated/resume-source.json` — never committed, always regenerated fresh.
 2. `deriveResume(source, locale)` (`src/lib/utils/derive-resume.ts`, pure) localizes that file into a single locale's JSON Resume data, sorts dated sections, and computes skills.
 
-This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed.
+This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed. `build:json-resume` is the only place `sops`/decryption is ever invoked — everything downstream (`src/lib/data/resume.ts`, `scripts/build-typst-data.ts`, tests) just reads `.generated/resume-source.json` as plain data, so none of it needs to be Node-only or server-only.
 
 The pipeline is:
 
-- `resume.i18n.json` -> (`pnpm build:json-resume`, copy) -> `.generated/resume-source.json`
+- `resume.i18n.json` -> (`pnpm build:json-resume`, decrypt + mask, one Node script) -> `.generated/resume-source.json`
 - `.generated/resume-source.json` -> (`deriveResume`, pure) -> localized JSON Resume data
 - localized JSON Resume data -> web rendering (`src/lib/data/resume.ts` imports the generated file, calls `deriveResume` once per locale at module load)
 - localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.ts` imports the same generated file directly)
 
 Guidelines:
 
-- Edit resume content in `resume.i18n.json`, then run `pnpm build:json-resume`. `dev`/`build`/`check:types`/`test:unit` all run it explicitly first, so this is rarely a manual step.
-- Anything that needs localized resume data should import `.generated/resume-source.json` and call `deriveResume(source, locale)`, the same way `resume.ts`/`build-typst-data.ts` do — never add another parallel on-disk intermediate file.
+- Edit resume content in `resume.i18n.json`, then run `pnpm build:json-resume` (a working `sops` decryption key is required — see "Redacted Clients"). `dev`/`build`/`check:types`/`test:unit` all run it explicitly first, so this is rarely a manual step.
+- Anything that needs localized resume data should import `.generated/resume-source.json` and call `deriveResume(source, locale)`, the same way `resume.ts`/`build-typst-data.ts` do — never add another parallel decrypt path.
 - Keep German and English resume structures aligned.
 - Validate both localized outputs against the same TypeScript/schema model.
 - Use stable `id` fields for translatable entries such as projects and talks.
@@ -97,6 +97,24 @@ Guidelines:
 - Derive technology durations from project date ranges, merging overlapping intervals so "years of experience" remains defensible.
 - Derive reverse links from each technology to the projects where it appears.
 - `codeVisibility` (`open-source`/`closed-source`) describes whether a project's *code* is public. It says nothing about whether the client/entity name is public — don't repurpose it for that. Only set it when there's an actual codebase behind the entry (e.g. a linked repository); a `type: "presentation"` entry whose only public link is a recording is not "open-source" just because the talk itself was public — omit the field rather than guess.
+
+## Redacted Clients
+
+Fields prefixed `sopsEncrypted` (`sopsEncryptedEntity`, `sopsEncryptedUrl`, `sopsEncryptedLinks`) hold real client identities that must never appear in this public repo, on the website, in `/resume.json`, or in either PDF variant. `sops` encrypts only these fields in place in `resume.i18n.json` (`encrypted_regex: '^sopsEncrypted[A-Za-z]*$'` in `.sops.yaml`, `mac_only_encrypted: true` so plaintext edits elsewhere never break decryption). Edit with `sops resume.i18n.json` or view with `sops -d resume.i18n.json`; `biome.json` excludes this file so it never fights `sops`'s formatting.
+
+**Masking is computed, not authored, and generic over field name.** There is no hand-typed masked name anywhere in the source. `scripts/generate-resume-source.ts` decrypts `resume.i18n.json` (`sops -d`) and, via `src/lib/utils/mask-sops-fields.ts`, resolves *any* key matching `sopsEncrypted<Name>` to `<name>` (lowercased) with a masked value — it doesn't hardcode "Entity" as a specially-known field; the `sopsEncrypted` prefix alone is what marks a field as sensitive. What "masked" means depends on the value's shape, not its key name: a plain string that isn't a URL gets a computed partial reveal (`src/lib/utils/mask-entity.ts`: first two + last two characters with `***` between, or plain `"***"` for names too short to mask safely); a URL or structured data (e.g. a links array) has no meaningful partial form, so it's omitted entirely rather than replaced with anything — a masked URL would have nowhere to point. Any object that had at least one `sopsEncrypted*` key gets `redacted: true`. This means decryption is required to run `pnpm build:json-resume` at all, not just an explicit "show me the real data" step — there's no code path that produces `.generated/resume-source.json` without a working `sops` key.
+
+**Decryption is confined to `scripts/generate-resume-source.ts`, a standalone Node script — never anything SvelteKit bundles.** Earlier this lived in-process (a `src/lib/server/` module called from `resume.ts`), which forced every consumer of resume data — including components that only wanted non-secret fields like `basics.email` — through SvelteKit's server-only load-function boundary, since `resume.ts` gets bundled for both server and client and browsers can't run `sops`/`child_process`. Generating a gitignored file upfront removes that constraint entirely: `resume.ts`, `build-typst-data.ts`, and the tests all just read `.generated/resume-source.json` as plain data, so `ContactLinks.svelte` (and anything else) can call `getResume()` directly again, same as before redaction existed.
+
+`codeVisibility` (`open-source`/`closed-source`) is unrelated and must not be used to decide redaction — a project's code can be open source with a redacted client, or vice versa.
+
+For a redacted-client entry:
+
+- `sopsEncryptedEntity` holds the real name; `sopsEncryptedUrl`/`sopsEncryptedLinks` replace `url`/`links` only if they'd reveal the client (e.g. domain is the client's name).
+- Genericize `name`, `description`, and the `id` (serialized verbatim into `/resume.json`) so none of them name the client or product — update `featured.projectIds`/`featured.talkIds` if the id changes. Genericize matching `awards` entries too.
+- Don't hand-add `redacted` or a masked name by hand — both are derived automatically by `pnpm build:json-resume` (`scripts/generate-resume-source.ts`), for use by `PortfolioPage.svelte` and `build-typst-data.ts`.
+- The masked name links to `/de/auf-anfrage/` / `/en/on-request/` (`RedactedClientPage.svelte`), not `#contact`.
+- `node scripts/merge-private-resume.ts` decrypts and restores real values, writing a fully merged copy to a temp path outside the repo (never committed) for any tooling that needs the real data.
 
 ## PDF And Print
 
@@ -304,6 +322,8 @@ Testing:
 
 ## Commands
 
+All `scripts/*.ts` files are real TypeScript, run directly via `node scripts/foo.ts` (Node's native type-stripping, no build step). `scripts/tsconfig.json` extends the root `tsconfig.json` (inheriting its `$lib` path mapping, `allowImportingTsExtensions`, and `strict` mode) and only overrides `include` to scope it to `scripts/**`, so editors give these files full IntelliSense/go-to-definition, same as anything under `src/`. It's editor-only — `pnpm check:types` doesn't use it and still only covers `src/**`/`test/**`.
+
 Install dependencies:
 
 ```bash
@@ -320,7 +340,7 @@ Every `build:*` script does exactly one job and can be run standalone; `pnpm bui
 
 ```bash
 pnpm build:paraglide     # compile Paraglide UI messages
-pnpm build:json-resume   # copy resume.i18n.json -> .generated/resume-source.json (gitignored)
+pnpm build:json-resume   # decrypt + mask resume.i18n.json -> .generated/resume-source.json (gitignored, requires a sops key)
 pnpm build:typst-data    # -> typst/content/{de,en}.typ.json (implies build:json-resume)
 pnpm build:pdf           # -> static/{de,en}/*.pdf (implies build:json-resume; internally also runs build-typst-data.ts)
 pnpm build:vite          # vite build -> build/

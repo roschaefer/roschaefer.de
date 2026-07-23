@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import source from "../.generated/resume-source.json" with { type: "json" };
+import { siteUrl } from "../src/lib/config/site.ts";
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
 import type {
 	ResumeAward,
@@ -25,6 +26,7 @@ type Locale = "de" | "en";
 type LocaleConfig = {
 	dateLocale: string;
 	labels: Record<string, string>;
+	redactedClientUrl: string;
 };
 
 type DatedEntry = { startDate?: string; endDate?: string };
@@ -49,7 +51,9 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			selectedProjects: "Ausgewählte aktuelle Projekte",
 			experience: "Berufserfahrung",
 			selectedTalks: "Ausgewählte Vorträge",
+			redactedClient: "Name auf Anfrage",
 		},
+		redactedClientUrl: `${siteUrl}/de/auf-anfrage/`,
 	},
 	en: {
 		dateLocale: "en-US",
@@ -65,7 +69,9 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			selectedProjects: "Selected Recent Projects",
 			experience: "Experience",
 			selectedTalks: "Selected Talks",
+			redactedClient: "Name on request",
 		},
+		redactedClientUrl: `${siteUrl}/en/on-request/`,
 	},
 };
 
@@ -112,20 +118,60 @@ const pickProfiles = (profiles: ResumeProfile[] = []): ResumeProfile[] =>
 
 const projectRole = (project: ResumeProject): string => project.roles?.join(", ") ?? "";
 
-const createProjectEntry = (project: ResumeProject, locale: Locale, config: LocaleConfig) => ({
+// entity is already resolved (real or masked) by the time source is loaded -
+// this only adds PDF-specific display rules: a defensive label for the rare
+// case entity is somehow still empty, and swapping the link target to the
+// redacted-client explanation page (the website does the equivalent via a
+// hardcoded relative path in a component; this one needs a full URL since a
+// PDF has no notion of "relative to the current page"). Computed once per
+// project here rather than left to every call site that builds an output
+// shape, since the same project can appear in experience, experienceFull,
+// and one or more technologies[].projects.
+type DisplayProject = Omit<ResumeProject, "entity"> & {
+	entity: string;
+	linkUrl: string | null;
+	suffixUrl: string | null;
+};
+
+type DisplayTechExperience = Omit<TechExperience, "projects"> & { projects: DisplayProject[] };
+
+const toDisplayProject = (project: ResumeProject, config: LocaleConfig): DisplayProject => ({
+	...project,
+	entity: project.redacted
+		? (project.entity ?? config.labels.redactedClient)
+		: (project.entity ?? ""),
+	// Redacted entries link the entity heading to the redacted-client
+	// explanation page instead of the project's own (unrelated) URL. When a
+	// redacted entry still has a real, safe-to-show project URL, that link
+	// moves to the project name (the suffix) instead of being dropped.
+	linkUrl: project.redacted ? config.redactedClientUrl : (project.url ?? null),
+	suffixUrl: project.redacted ? (project.url ?? null) : null,
+});
+
+// createFeaturedProjects/createAtsExperienceProjects/createTechExperience only
+// filter, group, or reorder the exact objects passed in - they never clone or
+// replace fields - so casting their ResumeProject[]-typed output back to
+// DisplayProject[] is safe as long as DisplayProject[] was what went in.
+const asDisplayProjects = (projects: ResumeProject[]): DisplayProject[] =>
+	projects as DisplayProject[];
+const asDisplayTechExperience = (entries: TechExperience[]): DisplayTechExperience[] =>
+	entries as DisplayTechExperience[];
+
+const createProjectEntry = (project: DisplayProject, locale: Locale, config: LocaleConfig) => ({
 	name: project.name,
-	entity: project.entity ?? "",
+	entity: project.entity,
 	role: projectRole(project),
 	period: formatDateRange(project, locale, config.labels.present),
 	description: stripMarkdownLinks(project.description ?? ""),
 	keywords: (project.keywords ?? []).slice(0, 6),
-	url: project.url ?? null,
+	url: project.linkUrl,
+	suffixUrl: project.suffixUrl,
 	printLabel: project.url ? printLinkLabel(project.url) : null,
 });
 
-const createTalkEntry = (project: ResumeProject, locale: Locale) => ({
+const createTalkEntry = (project: DisplayProject, locale: Locale) => ({
 	name: project.name,
-	entity: project.entity ?? "",
+	entity: project.entity,
 	period: formatDate(project.startDate, locale),
 	url: project.url ?? null,
 	printLabel: project.url ? printLinkLabel(project.url) : null,
@@ -145,15 +191,15 @@ const createAwardEntry = (entry: ResumeAward, locale: Locale) => ({
 	summary: stripMarkdownLinks(entry.summary ?? ""),
 });
 
-const createTechnologyEntry = (entry: TechExperience) => ({
+const createTechnologyEntry = (entry: DisplayTechExperience) => ({
 	name: entry.name,
 	duration: entry.label,
 	projectCount: entry.projectCount,
 	lastUsedLabel: entry.lastUsedLabel,
 	projects: entry.projects.map((project) => ({
 		name: project.name,
-		entity: project.entity ?? "",
-		url: project.url ?? null,
+		entity: project.entity,
+		url: project.linkUrl,
 		printLabel: project.url ? printLinkLabel(project.url) : null,
 	})),
 });
@@ -163,19 +209,19 @@ const featured = getFeaturedConfig(source.featured);
 
 for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleConfig][]) {
 	const resume = deriveResume(source, locale);
-	const projects = [...(resume.projects ?? [])].sort((left, right) =>
-		right.startDate.localeCompare(left.startDate),
-	);
-	const featuredProjects = createFeaturedProjects(projects, featured.projectIds).filter(
-		(project) => project.type !== "presentation",
-	);
-	const atsExperienceProjects = createAtsExperienceProjects(projects);
-	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
-		(project) => project.type === "presentation",
-	);
+	const projects = [...(resume.projects ?? [])]
+		.sort((left, right) => right.startDate.localeCompare(left.startDate))
+		.map((project) => toDisplayProject(project, config));
+	const featuredProjects = asDisplayProjects(
+		createFeaturedProjects(projects, featured.projectIds),
+	).filter((project) => project.type !== "presentation");
+	const atsExperienceProjects = asDisplayProjects(createAtsExperienceProjects(projects));
+	const featuredTalks = asDisplayProjects(
+		createFeaturedProjects(projects, featured.talkIds),
+	).filter((project) => project.type === "presentation");
 	const featuredSkills = createFeaturedSkills(resume.skills ?? [], featured.skillNames);
 	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
-	const techExperience = createTechExperience(projects, locale);
+	const techExperience = asDisplayTechExperience(createTechExperience(projects, locale));
 	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
 	const typstTechExperience =
 		featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 12);

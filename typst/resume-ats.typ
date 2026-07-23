@@ -16,7 +16,12 @@
 #let project-suffix(entry) = if entry.entity != "" { entry.name } else { none }
 
 #let experience-entry(entry) = block(breakable: false)[
-  #item-title(project-heading(entry), suffix: project-suffix(entry), link-url: entry.url)
+  #item-title(
+    project-heading(entry),
+    suffix: project-suffix(entry),
+    link-url: entry.url,
+    suffix-link-url: entry.suffixUrl,
+  )
   #v(2pt)
   #item-meta(entry.role + "   " + entry.period)
   #if entry.description != "" [

@@ -79,6 +79,7 @@ const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 const pdfPath = $derived(resumePdfPath(locale));
 const pdfFilename = $derived(resumePdfFilename(locale));
 const pdfUrl = $derived(`${siteUrl}${pdfPath}`);
+const redactedClientPath = $derived(locale === "de" ? "/de/auf-anfrage/" : "/en/on-request/");
 const legalLinks = $derived(
 	locale === "de"
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
@@ -117,6 +118,7 @@ markUsed(() => [
 	pdfPath,
 	pdfFilename,
 	pdfUrl,
+	redactedClientPath,
 	legalLinks,
 	educationDateFormatter,
 	formatYear,
@@ -421,7 +423,19 @@ markUsed(() => [
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 								{project.roles?.join(", ") ?? t(m.project_fallback)}
 							</p>
-							<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
+							{#if project.redacted}
+								<h3 class="theme-heading">
+									<a
+										class="no-underline"
+										href={redactedClientPath}
+										aria-label={t(m.redacted_link_label)}
+									>
+										{project.entity}
+									</a>
+								</h3>
+							{:else}
+								<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
+							{/if}
 							<p class="text-sm font-semibold text-[var(--color-brand-text)]">
 								{#if project.url}
 									<a

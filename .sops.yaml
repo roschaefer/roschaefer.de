@@ -1,0 +1,5 @@
+creation_rules:
+  - path_regex: resume\.i18n\.json$
+    age: age1llp6k66265q3rzqemxpnq0x3562u20989vcjf65fl9s3hjhgcscq6mhnjw
+    encrypted_regex: '^sopsEncrypted[A-Za-z]*$'
+    mac_only_encrypted: true
