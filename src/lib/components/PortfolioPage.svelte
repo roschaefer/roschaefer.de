@@ -313,7 +313,7 @@ markUsed(() => [
 							<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
 								{t(m.used_in)} {entry.projects.slice(0, 3).map((project) => project.name).join(", ")}
 								{#if entry.projects.length > 3}
-									, {t(m.and_more)}
+									{" "}{t(m.and_more)}
 								{/if}
 							</p>
 						</article>
