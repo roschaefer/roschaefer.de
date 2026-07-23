@@ -160,6 +160,15 @@
 		background: var(--color-brand-panel-soft);
 	}
 
+	.project-card:target,
+	.project-card-active {
+		border-color: color-mix(in srgb, var(--color-brand-cyan) 72%, transparent);
+		box-shadow:
+			0 0 0 3px color-mix(in srgb, var(--color-brand-cyan) 24%, transparent),
+			0 20px 60px var(--color-brand-shadow);
+		transform: scale(1.015);
+	}
+
 	.theme-button-primary {
 		border-color: var(--color-brand-cyan);
 		background: var(--color-brand-cyan);
@@ -180,6 +189,21 @@
 	.theme-button-secondary:focus-visible {
 		background: var(--color-brand-button-secondary-hover-bg);
 		color: var(--color-brand-button-secondary-hover-text);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		scroll-behavior: auto;
+	}
+
+	.project-card {
+		transition: none;
+	}
+
+	.project-card:target,
+	.project-card-active {
+		transform: none;
 	}
 }
 
