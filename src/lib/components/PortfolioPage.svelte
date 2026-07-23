@@ -1,7 +1,9 @@
 <script lang="ts">
+import { onMount } from "svelte";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
+import { projectEntryId } from "$lib/data/resume";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
 import { printLinkLabel } from "$lib/data/short-links";
 import type { Locale } from "$lib/i18n";
@@ -15,6 +17,48 @@ interface Props {
 }
 
 const { content, locale }: Props = $props();
+
+let activeProjectId = $state<string | null>(null);
+
+const visibleProjectIds = $derived(
+	new Set(content.featuredProjects.map((project) => projectEntryId(project))),
+);
+const scrollBehavior = (): ScrollBehavior =>
+	window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+const currentHashTarget = () => {
+	try {
+		return decodeURIComponent(window.location.hash.slice(1));
+	} catch {
+		return "";
+	}
+};
+const activateProject = (projectId: string) => {
+	activeProjectId = projectId;
+
+	const projectElement = document.getElementById(projectId);
+	if (!projectElement) {
+		return;
+	}
+
+	projectElement.focus({ preventScroll: true });
+	projectElement.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
+};
+onMount(() => {
+	const activateHashProject = () => {
+		const projectId = currentHashTarget();
+		if (visibleProjectIds.has(projectId)) {
+			activateProject(projectId);
+			return;
+		}
+
+		activeProjectId = null;
+	};
+
+	activateHashProject();
+	window.addEventListener("hashchange", activateHashProject);
+
+	return () => window.removeEventListener("hashchange", activateHashProject);
+});
 
 const primaryProfiles = $derived(
 	content.profiles.filter((profile) =>
@@ -71,6 +115,9 @@ markUsed(() => [
 	formatEducationPeriod,
 	PageShell,
 	ContactLinks,
+	projectEntryId,
+	visibleProjectIds,
+	activeProjectId,
 ]);
 </script>
 
@@ -311,7 +358,15 @@ markUsed(() => [
 								</div>
 							</dl>
 							<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
-								{t(m.used_in)} {entry.projects.slice(0, 3).map((project) => project.name).join(", ")}
+								{t(m.used_in)}
+								{#each entry.projects.slice(0, 3) as project, index}
+									{@const projectId = projectEntryId(project)}
+									{#if index > 0}{", "}{/if}{#if visibleProjectIds.has(projectId)}<a
+											href={`#${projectId}`}
+										>
+											{project.name}
+										</a>{:else}{project.name}{/if}
+								{/each}
 								{#if entry.projects.length > 3}
 									{" "}{t(m.and_more)}
 								{/if}
@@ -336,7 +391,12 @@ markUsed(() => [
 
 			<div class="grid gap-6 lg:grid-cols-2">
 				{#each content.featuredProjects as project}
-					<article class="theme-card rounded-[1.75rem] p-6">
+					<article
+						id={projectEntryId(project)}
+						tabindex="-1"
+						class="project-card theme-card scroll-mt-8 rounded-[1.75rem] p-6 transition duration-300 focus:outline-none"
+						class:project-card-active={activeProjectId === projectEntryId(project)}
+					>
 						<header class="space-y-3">
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 								{project.roles?.join(", ") ?? t(m.project_fallback)}
