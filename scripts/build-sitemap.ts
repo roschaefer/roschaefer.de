@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const buildDir = path.join(rootDir, "build");
 
-const pathExists = async (target) => {
+const pathExists = async (target: string): Promise<boolean> => {
 	try {
 		await fs.access(target);
 		return true;
@@ -20,9 +20,9 @@ const pathExists = async (target) => {
 	}
 };
 
-const walkFiles = async (target) => {
+const walkFiles = async (target: string): Promise<string[]> => {
 	const entries = await fs.readdir(target, { withFileTypes: true });
-	const files = [];
+	const files: string[] = [];
 
 	for (const entry of entries) {
 		const entryPath = path.join(target, entry.name);
@@ -36,7 +36,7 @@ const walkFiles = async (target) => {
 	return files;
 };
 
-const normalizePath = (value) => {
+const normalizePath = (value: string): string | null => {
 	if (!value.startsWith("/")) {
 		return null;
 	}
@@ -54,7 +54,7 @@ const normalizePath = (value) => {
 	return cleanPath;
 };
 
-const htmlPathToUrlPath = (filePath) => {
+const htmlPathToUrlPath = (filePath: string): string | null => {
 	const relative = path.relative(buildDir, filePath).replaceAll(path.sep, "/");
 
 	if (relative === "index.html") {
@@ -72,9 +72,9 @@ const htmlPathToUrlPath = (filePath) => {
 	return null;
 };
 
-const extractInternalLinks = (html) => {
+const extractInternalLinks = (html: string): Set<string> => {
 	const matches = html.matchAll(/href="([^"]+)"/g);
-	const links = new Set();
+	const links = new Set<string>();
 
 	for (const match of matches) {
 		const href = match[1];
