@@ -117,15 +117,15 @@
 			},
 			"date": "2020-06-25",
 			"summary": {
-				"de": "Automatisiertes Sensor-Storytelling-Format (Bienen)",
-				"en": "Automated sensor-driven storytelling format (bees)"
+				"de": "Sensorstories: Bienen",
+				"en": "Bee sensor stories"
 			},
 			"awarder": "Grimme-Institut",
 			"links": [
 				{
 					"label": {
-						"de": "Automatisiertes Sensor-Storytelling-Format (Bienen)",
-						"en": "Automated sensor-driven storytelling format (bees)"
+						"de": "Sensorstories: Bienen",
+						"en": "Bee sensor stories"
 					},
 					"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen",
 					"kind": "award"
@@ -139,15 +139,15 @@
 			},
 			"date": "2017-12-11",
 			"summary": {
-				"de": "Automatisiertes Sensor-Storytelling-Format (Milchkühe)",
-				"en": "Automated sensor-driven storytelling format (dairy cows)"
+				"de": "Sensorstories: Milchkühe",
+				"en": "Dairy cow sensor stories"
 			},
 			"awarder": "Reporter-Forum e. V.",
 			"links": [
 				{
 					"label": {
-						"de": "Automatisiertes Sensor-Storytelling-Format (Milchkühe)",
-						"en": "Automated sensor-driven storytelling format (dairy cows)"
+						"de": "Sensorstories: Milchkühe",
+						"en": "Dairy cow sensor stories"
 					},
 					"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904",
 					"kind": "award"
@@ -161,15 +161,15 @@
 			},
 			"date": "2019-12-02",
 			"summary": {
-				"de": "Automatisiertes Sensor-Storytelling-Format (Bienen)",
-				"en": "Automated sensor-driven storytelling format (bees)"
+				"de": "Sensorstories: Bienen",
+				"en": "Bee sensor stories"
 			},
 			"awarder": "Reporter-Forum e. V.",
 			"links": [
 				{
 					"label": {
-						"de": "Automatisiertes Sensor-Storytelling-Format (Bienen)",
-						"en": "Automated sensor-driven storytelling format (bees)"
+						"de": "Sensorstories: Bienen",
+						"en": "Bee sensor stories"
 					},
 					"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019",
 					"kind": "award"
@@ -315,8 +315,8 @@
 		{
 			"id": "ai-interview-platform",
 			"name": {
-				"de": "KI-gestützte Interviewplattform",
-				"en": "AI-assisted interview platform"
+				"de": "KI-Interviewplattform",
+				"en": "AI interview platform"
 			},
 			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
@@ -355,8 +355,8 @@
 		{
 			"id": "remote-telescope-platform",
 			"name": {
-				"de": "Fernsteuerung für Teleskope",
-				"en": "Remote telescope control platform"
+				"de": "Remote-Sternwarte",
+				"en": "Remote observatory"
 			},
 			"entity": "Bosse Consulting GmbH",
 			"engagement": "freelance",
@@ -390,8 +390,8 @@
 		{
 			"id": "entrepreneur-social-platform",
 			"name": {
-				"de": "Social-Media-Plattform für Unternehmerinnen und Unternehmer",
-				"en": "Social platform for entrepreneurs"
+				"de": "Gründungsnetzwerk",
+				"en": "Founder network"
 			},
 			"entity": "IT4C",
 			"engagement": "freelance",
@@ -429,8 +429,8 @@
 		{
 			"id": "audience-engagement-platform",
 			"name": {
-				"de": "Publikumsdialog-Plattform für Redaktionen",
-				"en": "Audience engagement platform for newsrooms"
+				"de": "Newsroom-Dialog",
+				"en": "Newsroom dialog"
 			},
 			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
@@ -472,8 +472,8 @@
 		{
 			"id": "automotive-price-comparison",
 			"name": {
-				"de": "Preisvergleichsplattform für den Automotive Aftermarket",
-				"en": "Price comparison platform for the automotive aftermarket"
+				"de": "Kfz-Preisvergleich",
+				"en": "Auto parts price comparison"
 			},
 			"entity": "auteon GmbH",
 			"engagement": "freelance",
@@ -509,8 +509,8 @@
 		{
 			"id": "retail-website-relaunch",
 			"name": {
-				"de": "Website-Relaunch mit SvelteKit und Hygraph",
-				"en": "Website relaunch with SvelteKit and Hygraph"
+				"de": "SvelteKit-Relaunch",
+				"en": "SvelteKit relaunch"
 			},
 			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
@@ -644,8 +644,8 @@
 		{
 			"id": "open-source-social-network",
 			"name": {
-				"de": "Community-betriebenes soziales Netzwerk (Open Source)",
-				"en": "Community-run open-source social network"
+				"de": "FOSS Soziales Netzwerk",
+				"en": "FOSS social network"
 			},
 			"entity": "busfaktor e.V.",
 			"engagement": "freelance",
@@ -724,8 +724,8 @@
 			"id": "sensor-storytelling-bees",
 			"entity": "tactile.news GmbH",
 			"name": {
-				"de": "Automatisiertes Sensor-Storytelling-Format (Bienen)",
-				"en": "Automated sensor-driven storytelling format (bees)"
+				"de": "Sensorstories: Bienen",
+				"en": "Bee sensor stories"
 			},
 			"engagement": "freelance",
 			"codeVisibility": "closed-source",
@@ -885,8 +885,8 @@
 		{
 			"id": "smart-mirror-prototype",
 			"name": {
-				"de": "IoT-Prototyp: smarter Badezimmerspiegel",
-				"en": "IoT prototype: smart bathroom mirror"
+				"de": "Smarter Badezimmerspiegel",
+				"en": "Smart bathroom mirror"
 			},
 			"entity": "tactile.news GmbH",
 			"roles": [
@@ -983,8 +983,8 @@
 		{
 			"id": "sensor-storytelling-dairy-cows",
 			"name": {
-				"de": "Automatisiertes Sensor-Storytelling-Format (Milchkühe)",
-				"en": "Automated sensor-driven storytelling format (dairy cows)"
+				"de": "Sensorstories: Milchkühe",
+				"en": "Dairy cow sensor stories"
 			},
 			"entity": "tactile.news GmbH",
 			"roles": [
@@ -1063,8 +1063,8 @@
 		{
 			"id": "smart-shopping-cart-prototype",
 			"name": {
-				"de": "IoT-Prototyp: smarter Einkaufswagen",
-				"en": "IoT prototype: smart shopping cart"
+				"de": "Smarter Einkaufswagen",
+				"en": "Smart shopping cart"
 			},
 			"entity": "tactile.news GmbH",
 			"roles": [
