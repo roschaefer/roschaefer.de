@@ -160,8 +160,8 @@
 		background: var(--color-brand-panel-soft);
 	}
 
-	.project-card:target,
-	.project-card-active {
+	.anchor-target-card:target,
+	.anchor-target-card-active {
 		border-color: color-mix(in srgb, var(--color-brand-cyan) 72%, transparent);
 		box-shadow:
 			0 0 0 3px color-mix(in srgb, var(--color-brand-cyan) 24%, transparent),
@@ -197,12 +197,12 @@
 		scroll-behavior: auto;
 	}
 
-	.project-card {
+	.anchor-target-card {
 		transition: none;
 	}
 
-	.project-card:target,
-	.project-card-active {
+	.anchor-target-card:target,
+	.anchor-target-card-active {
 		transform: none;
 	}
 }
