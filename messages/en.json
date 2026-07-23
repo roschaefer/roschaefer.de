@@ -33,7 +33,7 @@
 	"tech_experience_eyebrow": "Tech experience",
 	"tech_experience_title": "Project-backed technology signals",
 	"tech_experience_intro": "Each technology combines three signals: time spent with it, how many projects it appeared in, and how recently it was part of shipped work.",
-	"tech_experience_duration": "Time in projects",
+	"tech_experience_duration": "Experience",
 	"tech_experience_projects": "Projects",
 	"tech_experience_recency": "Last used",
 	"used_in": "Used in",
