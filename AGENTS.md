@@ -78,7 +78,7 @@ The pipeline is:
 
 - `resume.i18n.json` -> (`deriveResume`, in memory) -> localized JSON Resume data
 - localized JSON Resume data -> web rendering (`src/lib/data/resume.ts` calls `deriveResume` once per locale at module load)
-- localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.mjs` calls `deriveResume` directly instead of reading a file)
+- localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.ts` calls `deriveResume` directly instead of reading a file)
 
 Guidelines:
 
