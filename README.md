@@ -64,7 +64,7 @@ mise exec -- pnpm dev
 Compile Paraglide messages:
 
 ```bash
-pnpm paraglide:compile
+pnpm build:paraglide
 ```
 
 Lint:
@@ -76,6 +76,18 @@ pnpm lint
 Typecheck:
 
 ```bash
+pnpm check:types
+```
+
+Quick pre-push check (paraglide + lint + typecheck + unit tests):
+
+```bash
+pnpm check:quick
+```
+
+Full check, mirroring everything CI runs (slow - includes Playwright and a full build):
+
+```bash
 pnpm check
 ```
 
@@ -85,13 +97,7 @@ Test:
 pnpm test
 ```
 
-Build:
-
-```bash
-pnpm build
-```
-
-Build production output including PDFs:
+Build everything, including PDFs:
 
 ```bash
 pnpm build
@@ -100,7 +106,7 @@ pnpm build
 Build PDFs only:
 
 ```bash
-pnpm pdf:build
+pnpm build:pdf
 ```
 
 Format:
@@ -164,5 +170,4 @@ The current social preview image is:
 
 - Print output is optimized primarily for Firefox.
 - The web version and print version share the same content source.
-- Generated Paraglide files in `src/lib/paraglide` are expected to be committed.
-- CI verifies that `pnpm paraglide:compile` does not leave generated changes uncommitted.
+- Generated Paraglide files in `src/lib/paraglide` are never committed (the directory has its own nested `.gitignore`) and are recompiled on every `dev`/`build`/`check`/`test` run.

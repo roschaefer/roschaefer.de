@@ -28,16 +28,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Quick verification
-        run: pnpm ready
+        run: pnpm check:quick
 
+      # Builds and serves the full site (including PDFs) to run these tests -
+      # a working `pnpm build` is already proven by the time this passes, so
+      # there's no separate "Build PDFs"/"Build site" step after this one.
       - name: E2E tests
         run: pnpm test:e2e
-
-      - name: Build PDFs
-        run: pnpm pdf:build
-
-      - name: Build site
-        run: pnpm build
 
   lighthouse:
     runs-on: ubuntu-latest
