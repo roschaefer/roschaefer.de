@@ -310,30 +310,23 @@ Start development server:
 pnpm dev
 ```
 
-Compile Paraglide messages:
+Every `build:*` script does exactly one job and can be run standalone; `pnpm build` runs them all in the order a full production build needs:
 
 ```bash
-pnpm paraglide:compile
+pnpm build:paraglide  # compile Paraglide UI messages
+pnpm build:typst-data # -> typst/content/{de,en}.typ.json
+pnpm build:pdf        # -> static/{de,en}/*.pdf
+pnpm build:vite       # vite build -> build/
+pnpm build:sitemap    # crawl build/ -> build/sitemap.xml, build/robots.txt
+pnpm build            # build:pdf -> build:paraglide -> build:vite -> build:sitemap
 ```
 
-Run the normal verification set:
+Verification, from fastest to slowest:
 
 ```bash
-pnpm check
-pnpm test
-pnpm lint
-```
-
-Build everything, including PDFs:
-
-```bash
-pnpm build
-```
-
-Build PDFs:
-
-```bash
-pnpm pdf:build
+pnpm check:types  # svelte-check only
+pnpm check:quick  # paraglide + lint + check:types + unit tests - what CI's "Quick verification" step runs
+pnpm check        # check:quick + test:e2e - test:e2e's own webServer already runs a full pnpm build (incl. build:pdf) to serve the site, so a working build is proven without a separate build step; slow, don't run this reflexively
 ```
 
 For documentation-only changes, `git diff --check` is usually enough.
@@ -358,7 +351,7 @@ Work in the feature worktree:
 ```bash
 cd <feature>
 pnpm install
-pnpm check
+pnpm check:quick
 pnpm test
 ```
 
@@ -386,7 +379,7 @@ git log --oneline origin/main..HEAD
 
 Do not use `git reset --soft origin/main` before rebasing onto the current remote base. If `origin/main` advanced and contains equivalent or related commits, a reset can stage unrelated base changes that a normal rebase would have dropped or reconciled. If this happens, use `git reflog` to find the pre-reset commit, reset back to it, then rebase normally.
 
-Before considering the work ready for `git push`, run `pnpm ready`. This script is also used by CI and should stay in sync with the quick, inexpensive checks from the CI pipeline. It should keep successful output concise and print the current check name plus the failing command's output when a check fails.
+Before considering the work ready for `git push`, run `pnpm check:quick`. This script is also used by CI (as its "Quick verification" step) and should stay in sync with it — the quick, inexpensive checks, not the full `pnpm check` suite. It should keep successful output concise and print the current check name plus the failing command's output when a check fails.
 
 Publish the branch:
 
