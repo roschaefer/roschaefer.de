@@ -3,6 +3,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import source from "../resume.i18n.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
+import type {
+	ResumeAward,
+	ResumeEducation,
+	ResumeProfile,
+	ResumeProject,
+} from "../src/lib/types/resume.ts";
 import { deriveResume } from "../src/lib/utils/derive-resume.ts";
 import {
 	createAtsExperienceProjects,
@@ -12,14 +18,23 @@ import {
 	createFeaturedSkills,
 	getFeaturedConfig,
 } from "../src/lib/utils/resume-featured.ts";
+import type { TechExperience } from "../src/lib/utils/tech-experience.ts";
 import { createTechExperience } from "../src/lib/utils/tech-experience.ts";
+
+type Locale = "de" | "en";
+type LocaleConfig = {
+	dateLocale: string;
+	labels: Record<string, string>;
+};
+
+type DatedEntry = { startDate?: string; endDate?: string };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const outputDir = path.join(rootDir, "typst", "content");
 
-const localeConfigs = {
+const localeConfigs: Record<Locale, LocaleConfig> = {
 	de: {
 		dateLocale: "de-DE",
 		labels: {
@@ -61,13 +76,13 @@ const formatters = Object.fromEntries(
 	]),
 );
 
-const stripMarkdownLinks = (value) =>
+const stripMarkdownLinks = (value: string): string =>
 	value
 		.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
 		.replace(/\s+/g, " ")
 		.trim();
 
-const formatDate = (value, locale) => {
+const formatDate = (value: string | undefined, locale: Locale): string => {
 	if (!value) {
 		return "";
 	}
@@ -80,20 +95,24 @@ const formatDate = (value, locale) => {
 	return formatters[locale].format(date);
 };
 
-const formatDateRange = ({ startDate, endDate }, locale, presentLabel) => {
+const formatDateRange = (
+	{ startDate, endDate }: DatedEntry,
+	locale: Locale,
+	presentLabel: string,
+): string => {
 	const start = formatDate(startDate, locale);
 	const end = endDate ? formatDate(endDate, locale) : presentLabel;
 	return [start, end].filter(Boolean).join(" - ");
 };
 
-const pickProfiles = (profiles = []) =>
+const pickProfiles = (profiles: ResumeProfile[] = []): ResumeProfile[] =>
 	profiles.filter((profile) =>
 		["Github", "LinkedIn", "Mastodon", "YouTube"].includes(profile.network),
 	);
 
-const projectRole = (project) => project.roles?.join(", ") ?? "";
+const projectRole = (project: ResumeProject): string => project.roles?.join(", ") ?? "";
 
-const createProjectEntry = (project, locale, config) => ({
+const createProjectEntry = (project: ResumeProject, locale: Locale, config: LocaleConfig) => ({
 	name: project.name,
 	entity: project.entity ?? "",
 	role: projectRole(project),
@@ -104,7 +123,7 @@ const createProjectEntry = (project, locale, config) => ({
 	printLabel: project.url ? printLinkLabel(project.url) : null,
 });
 
-const createTalkEntry = (project, locale) => ({
+const createTalkEntry = (project: ResumeProject, locale: Locale) => ({
 	name: project.name,
 	entity: project.entity ?? "",
 	period: formatDate(project.startDate, locale),
@@ -112,21 +131,21 @@ const createTalkEntry = (project, locale) => ({
 	printLabel: project.url ? printLinkLabel(project.url) : null,
 });
 
-const createEducationEntry = (entry, locale, config) => ({
+const createEducationEntry = (entry: ResumeEducation, locale: Locale, config: LocaleConfig) => ({
 	title: [entry.studyType, entry.area].filter(Boolean).join(", "),
 	institution: entry.institution,
 	period: formatDateRange(entry, locale, config.labels.present),
 	score: entry.score ?? "",
 });
 
-const createAwardEntry = (entry, locale) => ({
+const createAwardEntry = (entry: ResumeAward, locale: Locale) => ({
 	title: entry.title,
 	awarder: entry.awarder ?? "",
 	period: formatDate(entry.date, locale),
 	summary: stripMarkdownLinks(entry.summary ?? ""),
 });
 
-const createTechnologyEntry = (entry) => ({
+const createTechnologyEntry = (entry: TechExperience) => ({
 	name: entry.name,
 	duration: entry.label,
 	projectCount: entry.projectCount,
@@ -142,7 +161,7 @@ const createTechnologyEntry = (entry) => ({
 await fs.mkdir(outputDir, { recursive: true });
 const featured = getFeaturedConfig(source.featured);
 
-for (const [locale, config] of Object.entries(localeConfigs)) {
+for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleConfig][]) {
 	const resume = deriveResume(source, locale);
 	const projects = [...(resume.projects ?? [])].sort((left, right) =>
 		right.startDate.localeCompare(left.startDate),

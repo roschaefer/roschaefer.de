@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
+import type { ResumePdfVariant } from "../src/lib/data/resume-pdf.ts";
 import { resumePdfFilename } from "../src/lib/data/resume-pdf.ts";
 
 const execFileAsync = promisify(execFile);
@@ -13,7 +14,7 @@ const rootDir = path.resolve(__dirname, "..");
 const vendoredFontDir = path.join(rootDir, "typst", "fonts");
 const expectedFonts = ["Jost*", "Titillium"];
 
-const pathExists = async (target) => {
+const pathExists = async (target: string): Promise<boolean> => {
 	try {
 		await fs.access(target);
 		return true;
@@ -22,7 +23,7 @@ const pathExists = async (target) => {
 	}
 };
 
-const hasVendoredFontFiles = async (target) => {
+const hasVendoredFontFiles = async (target: string): Promise<boolean> => {
 	if (!(await pathExists(target))) {
 		return false;
 	}
@@ -44,7 +45,7 @@ const hasVendoredFontFiles = async (target) => {
 	return false;
 };
 
-const quoteArg = (value) => {
+const quoteArg = (value: string): string => {
 	if (/^[A-Za-z0-9_./:=+-]+$/.test(value)) {
 		return value;
 	}
@@ -52,7 +53,7 @@ const quoteArg = (value) => {
 	return `'${value.replace(/'/g, `'\\''`)}'`;
 };
 
-const logCommand = (command, args) => {
+const logCommand = (command: string, args: string[]): void => {
 	console.log(`$ ${[command, ...args].map(quoteArg).join(" ")}`);
 };
 
@@ -90,18 +91,18 @@ if (missingFonts.length > 0) {
 	);
 }
 
-await execFileAsync("node", [path.join(rootDir, "scripts", "build-typst-data.mjs")], {
+await execFileAsync("node", [path.join(rootDir, "scripts", "build-typst-data.ts")], {
 	cwd: rootDir,
 });
 
 await fs.mkdir(path.join(rootDir, "typst", "out"), { recursive: true });
 
-const variants = [
+const variants: Array<{ template: string; variant: ResumePdfVariant }> = [
 	{ template: "resume.typ", variant: "default" },
 	{ template: "resume-ats.typ", variant: "ats" },
 ];
 
-for (const locale of ["de", "en"]) {
+for (const locale of ["de", "en"] as const) {
 	for (const { template, variant } of variants) {
 		const outputName = resumePdfFilename(locale, variant);
 		const outputPath = path.join(rootDir, "typst", "out", outputName);
