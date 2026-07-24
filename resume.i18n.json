@@ -18,7 +18,10 @@
 			"rundfunk-mitbestimmen-34c3",
 			"how-to-enjoy-paying-for-public-broadcasting"
 		],
-		"educationIds": ["hpi-msc", "hpi-bsc"],
+		"educationIds": [
+			"hpi-msc",
+			"hpi-bsc"
+		],
 		"skillNames": [
 			"TypeScript",
 			"Ruby",
@@ -266,18 +269,26 @@
 				"de": "Moderne kompilierte Sprachen",
 				"en": "Modern Compiled Languages"
 			},
-			"keywords": ["Rust", "Go", "Zig"]
+			"keywords": [
+				"Rust",
+				"Go",
+				"Zig"
+			]
 		},
 		{
 			"name": {
 				"de": "Cross-Plattform-Entwicklung",
 				"en": "Cross-platform Development"
 			},
-			"keywords": ["Flutter"]
+			"keywords": [
+				"Flutter"
+			]
 		},
 		{
 			"name": "Infrastructure as Code",
-			"keywords": ["Terraform"]
+			"keywords": [
+				"Terraform"
+			]
 		}
 	],
 	"projects": [
@@ -318,7 +329,6 @@
 				"de": "KI-Interviewplattform",
 				"en": "AI interview platform"
 			},
-			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
@@ -349,8 +359,9 @@
 				"de": "Bei dieser SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung arbeite ich an der Ablösung einer fragilen, auf Airtable, Voiceflow und weiteren eigenen Diensten verteilten Infrastruktur durch eine einheitliche serverlose Anwendung. Durch die Nutzung der integrierten Workflows von ElevenLabs AI Agents sinken Wartungsaufwand und Komplexität deutlich, während sich die Antwortzeit des Telefonagenten um mehrere Sekunden verbessert, was für eine gute Nutzererfahrung entscheidend ist.",
 				"en": "With this SvelteKit application for AI-assisted interviews and editorial publishing, I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
 			},
-			"url": "https://github.com/tactilenews/dialogbank-app/",
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:ePd5STc3Mcjbb5Oq5Efxr1g=,iv:W3SYhlsV3H+UsaEWj5zUpczURwTfV9FnIJLNVtmhXwo=,tag:++Am/lZ34wP1WNnogwOSpg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:/kBfZPmVzICYDYx/qaQ3gQsIoEYAeTHGz/oXtDgvwBMH5shLYuIi5XxLCoWfZw==,iv:W6rU7AFOoCCpGb+6zhrQkr1ptN+yE8AIrS5qaIzdEOY=,tag:bpFIRBZknbpUPaSzVoxbng==,type:str]"
 		},
 		{
 			"id": "remote-telescope-platform",
@@ -358,7 +369,6 @@
 				"de": "Remote-Sternwarte",
 				"en": "Remote observatory"
 			},
-			"entity": "Bosse Consulting GmbH",
 			"engagement": "freelance",
 			"roles": [
 				{
@@ -385,7 +395,8 @@
 				"de": "Mit dieser Plattform zur Fernsteuerung von Teleskopen über die Astrofotografie-Software NINA wird Astrofotografie für alle zugänglich, ohne eigenes Equipment oder Fachwissen. Nutzerinnen und Nutzer wählen ein Himmelsobjekt und buchen Beobachtungszeit; die Anwendung überträgt Aufnahmesequenzen per Tailscale an NINA, die diese in der Nacht autonom ausführt und die Ergebnisse bereitstellt. Die zentrale Herausforderung besteht darin, eine primär interaktive Windows-Software in eine vollständig autonome Pipeline zu überführen.",
 				"en": "With this platform for remotely controlling telescopes through the astrophotography software NINA, deep-sky imaging gets accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline."
 			},
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:VR5sEy45ZMgiCZn3VNjiPOMP+tSd,iv:+f3Wq59UcIPdIowT6fajktwEPwvvkQJnOIX1Gi53PuE=,tag:R7pQRaERBc2oy9p2uWLaAg==,type:str]"
 		},
 		{
 			"id": "entrepreneur-social-platform",
@@ -393,7 +404,6 @@
 				"de": "Gründungsnetzwerk",
 				"en": "Founder network"
 			},
-			"entity": "IT4C",
 			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
@@ -423,8 +433,9 @@
 				"de": "Bei dieser freien und quelloffenen Social-Media-Plattform für Unternehmerinnen und Unternehmer habe ich die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Durch die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform konnte jedes Teammitglied eigene Branches in produktionsnahen Umgebungen testen, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
 				"en": "For this free and open-source social platform for entrepreneurs I fundamentally reworked the delivery and infrastructure architecture after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. By moving the project to a self-managed Kubernetes setup on Hetzner with Terraform, each developer could test their own branches in production-like environments while keeping operating costs extremely low at under 20 euros per month."
 			},
-			"url": "https://dreammall.earth/",
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:vYEpaA==,iv:aKogwOIHSi796ezOaL1c3NFjmxWZWXyajnMuPcDifsc=,tag:jPEFB71mvy+sObtbraDDGw==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:3+9jBYej0XvAl+oevAYySf6E2tZVUFPw,iv:vcCKYDNksDyrrWj9J2kamdG77jLB9UNAOGAmWpQ1I6s=,tag:r04iwYwj1bbxhWVPRXfk2g==,type:str]"
 		},
 		{
 			"id": "audience-engagement-platform",
@@ -432,7 +443,6 @@
 				"de": "Newsroom-Dialog",
 				"en": "Newsroom dialog"
 			},
-			"entity": "tactile.news GmbH",
 			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
@@ -459,15 +469,9 @@
 				"de": "Bei dieser Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus habe ich an einer Ruby-on-Rails-Anwendung gearbeitet, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
 				"en": "For this platform for audience engagement and crowd-based reporting in journalism, I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
 			},
-			"url": "https://tactile.news/",
-			"links": [
-				{
-					"label": "GitHub",
-					"url": "https://github.com/tactilenews/100eyes",
-					"kind": "repository"
-				}
-			],
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:qSEiEvrzzs5aJe7MSLe8DAA=,iv:ZLd4K5Icl0U5Wd5nywfN6ryPp54zSrb6dGhabbLX1lA=,tag:Thfnq9ZjNLqLBcqmjImx2Q==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:mpDUjdEkbswTYfgLvDvShVbGsUbGQ+T6EBPIhxqWn3vL5navqekbzeOJHow39950bYOf0v3Mr8k+gBWl08l8CDg/+7WrmA==,iv:RWpRvNfcMzpFUAGLDlnt0incjjOJk/uLzsiHV0juIwk=,tag:C5N3qcP4rGecVq0cM1HvUw==,type:str]"
 		},
 		{
 			"id": "automotive-price-comparison",
@@ -475,7 +479,6 @@
 				"de": "Kfz-Preisvergleich",
 				"en": "Auto parts price comparison"
 			},
-			"entity": "auteon GmbH",
 			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
@@ -503,8 +506,9 @@
 				"de": "Bei dieser Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können, haben wir eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
 				"en": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, we migrated an Electron desktop application to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240."
 			},
-			"url": "https://www.auteon.com",
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:GtL9/lngovYnKaI=,iv:ktVxlpByVZNEvVl0DgvzKfuSEjyza52DSftQWavdzQQ=,tag:eTQIVsbr2TWmyX2sk8NzJw==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:vAa3UktyfQtCYiz1u6XJloMtxUVigQ==,iv:XiGxJ3QpPhPBwOO6d/5Ia7Rz33uvJWF7iOE9Lgnjwa4=,tag:gYBDc5PfpknrDPj7/1uUtA==,type:str]"
 		},
 		{
 			"id": "retail-website-relaunch",
@@ -512,7 +516,6 @@
 				"de": "SvelteKit-Relaunch",
 				"en": "SvelteKit relaunch"
 			},
-			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
@@ -523,13 +526,21 @@
 			],
 			"startDate": "2021-12-09",
 			"endDate": "2023-06-28",
-			"keywords": ["TypeScript", "Svelte", "SvelteKit", "HyGraph", "Netlify", "Serverless"],
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"HyGraph",
+				"Netlify",
+				"Serverless"
+			],
 			"description": {
 				"de": "Ich habe die Website eines Einzelhandelskunden mit SvelteKit und Hygraph neu aufgebaut und statisch auf Netlify ausgerollt. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegbarkeit.",
 				"en": "I rebuilt the website for a retail client with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
 			},
-			"url": "https://rhenania-computer.de/de",
-			"type": "client-platform"
+			"type": "client-platform",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:6UTanKS/8lUrh0wJ9GP2X7M=,iv:qT0zg63BBH35QV5fuN9hJs8fHepd0lOSP4hSdN/oPJM=,tag:yFZuSOPcejaDVF77d/b+3g==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:0g9b1Yf2rAcebsvvtgaiaOvAvGvSMHImuUsOv1niCA==,iv:6zHYve+5soQf1HQNchkw89StPr1ekHJqQyedUgGcYmw=,tag:EL8qI6u++r791N13z21rfg==,type:str]"
 		},
 		{
 			"id": "course-booking-system",
@@ -537,7 +548,6 @@
 				"de": "Buchungssystem für Kursanbieter",
 				"en": "Booking system for course providers"
 			},
-			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
@@ -548,13 +558,20 @@
 			],
 			"startDate": "2020-08-11",
 			"endDate": "2023-05-02",
-			"keywords": ["TypeScript", "Netlify", "Vue", "Nuxt", "HyGraph"],
+			"keywords": [
+				"TypeScript",
+				"Netlify",
+				"Vue",
+				"Nuxt",
+				"HyGraph"
+			],
 			"description": {
 				"de": "Ich habe für einen Kursanbieter ein individuelles Buchungssystem für Nähkurse entwickelt und in die Website integriert. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
 				"en": "I built a custom booking system for sewing classes for a course provider and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
 			},
-			"url": "https://werkhof-ichen.de/",
-			"type": "client-platform"
+			"type": "client-platform",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:q6XSHq4G2LYQ5Fgc0zQWtzg=,iv:EiEwPo3fNKo3X4BnAZH2T+YOI0+9vE8cRMXCvjGAztY=,tag:SAsGIrPZ1/0cSohX5Pv8Qw==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:SoIM2kD+EAjGGUJM+JvYVWpsWbOIApLZFw==,iv:jYaLkBIUB0XIb6/niH57K8TNBe21iz5jweYHLp6WBq4=,tag:DiVL9Bfs+NDI05XR01FbFw==,type:str]"
 		},
 		{
 			"id": "continuing-education-booking-system",
@@ -562,7 +579,6 @@
 				"de": "Buchungssystem für Weiterbildungsanbieter",
 				"en": "Booking system for continuing education providers"
 			},
-			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
@@ -573,13 +589,20 @@
 			],
 			"startDate": "2021-05-12",
 			"endDate": "2022-12-10",
-			"keywords": ["TypeScript", "Netlify", "Svelte", "SvelteKit", "Tailwind"],
+			"keywords": [
+				"TypeScript",
+				"Netlify",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind"
+			],
 			"description": {
 				"de": "Ich habe für einen Anbieter berufsbegleitender Weiterbildungen ein individuelles Buchungssystem entwickelt. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
 				"en": "I built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
 			},
-			"url": "https://tanzimpulse.de/",
-			"type": "client-platform"
+			"type": "client-platform",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:ydL94oWJH3W+vg4ivd8nx6E=,iv:MwMMwgOmXC+pQZwEMGoIHs9Ff/1qrc6KPenIhNhaOis=,tag:xWdEyUSd9i738TX45QGIWQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:by3Z5QT1ILhiMo16m2ZIvx2+en9telQ=,iv:9JMD+9Sd1y50Qbt7wZIAs//kBBfF0YnxEnWEXX76WIM=,tag:FqQx6t0eSGR/nP7ynnBsWg==,type:str]"
 		},
 		{
 			"id": "holiday-apartment-booking-site",
@@ -587,7 +610,6 @@
 				"de": "Buchungswebsite für eine Ferienwohnung",
 				"en": "Booking website for a holiday apartment"
 			},
-			"entity": "Johannes Schäfer",
 			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
@@ -598,13 +620,20 @@
 			],
 			"startDate": "2022-01-28",
 			"endDate": "2022-08-09",
-			"keywords": ["TypeScript", "Netlify", "Svelte", "SvelteKit", "Tailwind"],
+			"keywords": [
+				"TypeScript",
+				"Netlify",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind"
+			],
 			"description": {
 				"de": "Für eine Ferienwohnung auf Norderney habe ich eine Buchungswebsite mit Kalenderintegration umgesetzt. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
 				"en": "For a holiday apartment on Norderney, I built a booking website with calendar integration. Day-by-day availability is maintained in Google Calendar and synchronized to the site via Google APIs."
 			},
-			"url": "https://am-meer-norderney.de/",
-			"type": "client-platform"
+			"type": "client-platform",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:uS5D26ZSXLP8ETSNoMpykl0=,iv:Q7vDZ108glooZo+8SJNmDAzPEunTd9j9FrRqupTfwiw=,tag:iM2Q7ZKrAFvJJipcn9+pKg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:5cSiJQpX+GNHLyVZ+i/FMszHX/bs5IgylA0D1IA=,iv:9nBO4Jhk93uVAeMwjiTyHpxqtlkWfEIT2Ua93QLqpDQ=,tag:YE7kDJsLke1YLHbj1uKM1A==,type:str]"
 		},
 		{
 			"id": "systems-development-and-framework",
@@ -620,12 +649,20 @@
 			],
 			"startDate": "2019-10-31",
 			"endDate": "2021-03-31",
-			"keywords": ["JavaScript", "Vue", "Apollo GraphQL", "Neo4J", "Nuxt", "Vuetify", "Tailwind"],
+			"keywords": [
+				"JavaScript",
+				"Vue",
+				"Apollo GraphQL",
+				"Neo4J",
+				"Nuxt",
+				"Vuetify",
+				"Tailwind"
+			],
 			"description": {
 				"de": "Ich habe eine Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden vollständig verantwortet, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
 				"en": "I was fully responsible for a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
 			},
-			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
+			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo\u0026list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
 			"links": [
 				{
 					"label": "GitHub",
@@ -647,7 +684,6 @@
 				"de": "FOSS Soziales Netzwerk",
 				"en": "FOSS social network"
 			},
-			"entity": "busfaktor e.V.",
 			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
@@ -671,22 +707,23 @@
 				"Digital Ocean",
 				"Kubernetes"
 			],
-			"url": "https://github.com/Ocelot-Social-Community/Ocelot-Social",
 			"description": {
 				"de": "Bei diesem gemeinschaftlich entwickelten Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet, habe ich als Technical Lead an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb gearbeitet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; ich habe neue Mitwirkende über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und den Großteil der Beiträge reviewed. Neo4J haben wir produktiv als Primärdatenbank eingesetzt, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
 				"en": "For this community-built open-source social network that offers communities a privacy-friendly alternative to large platforms, I worked as Technical Lead on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly."
 			},
-			"links": [
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:OAzo62odUGr1WnnERmg=,iv:e/ws3tIkSdP30LP6kqP0UYhIQS3UwP0q1r7LFWEdZx8=,tag:JSnP/aluLupEVLfaOO3ICQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ZPdfPEl3Lm/9lJP5Z4qYmIyJYKwrU07xiKsoFbMNLQidi7s5v/9yBQzo0gtbYIazyYHT9QR2gCQ=,iv:SMbB4dvaoS7pFRNrn+5HVqGph2rlO2pv0FOpxQYLZII=,tag:jWpIytkYIv9zcwHKeTdsIQ==,type:str]",
+			"sopsEncryptedLinks": [
 				{
 					"label": {
-						"de": "Staging",
-						"en": "Staging"
+						"de": "ENC[AES256_GCM,data:IlyF2NLkWw==,iv:eBkgyRjUH2+mQdpglIIf7hZzy9tVmkmdDZ3WIYL6iC0=,tag:UU1bbg7T+I5MUGCUTGgLjg==,type:str]",
+						"en": "ENC[AES256_GCM,data:GhvePQTEgA==,iv:wly6adhEPhoWUK4hDT0umrqcSua9ANgnNdpRnkzEzAI=,tag:UFtWjg+/eWoolQjKBzgUmg==,type:str]"
 					},
-					"url": "https://stage.ocelot.social",
-					"kind": "demo"
+					"url": "ENC[AES256_GCM,data:3CnrCySGwixkbJ73ZZWaplQJiyhIzwDAxAy2,iv:uV+QeT+Au8S/36WgTOnRJtKozmYv4zqvCFk0WJ8H8FA=,tag:qmlIBjPjkoUtHldVS1kZMg==,type:str]",
+					"kind": "ENC[AES256_GCM,data:0rVHbg==,iv:mV4tQ5qPIgP4M0QcDugaMiaec6oB6HgL2sGI8zZkja4=,tag:geqVQJvjq7pSRd88tFOhIQ==,type:str]"
 				}
-			],
-			"type": "product"
+			]
 		},
 		{
 			"id": "find-open-source-contributors-vuejs-berlin",
@@ -722,7 +759,6 @@
 		},
 		{
 			"id": "sensor-storytelling-bees",
-			"entity": "tactile.news GmbH",
 			"name": {
 				"de": "Sensorstories: Bienen",
 				"en": "Bee sensor stories"
@@ -737,13 +773,19 @@
 			],
 			"startDate": "2019-03-31",
 			"endDate": "2019-05-31",
-			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber"],
+			"keywords": [
+				"Ruby",
+				"Ruby on Rails",
+				"RSpec",
+				"Cucumber"
+			],
 			"description": {
 				"de": "Aufbauend auf einem früheren journalistischen Sensor-Projekt haben wir die Plattform für ein neues Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
 				"en": "Building on an earlier journalistic sensor-data project, we reused and extended the platform for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
 			},
-			"url": "https://tactile.news/startseite/journalismus-der-dinge/bienenlive/",
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:6qFxrhdLosc8jgmQuNsh/G4=,iv:MqaqcYRuo3lJv6c0S8Cx2Z/THBeilpg0eJfIvHLNcIo=,tag:pxkk4y6cpW1yIOZR58475Q==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:CBeIrg/OIx2nsZg/S7FYKWfwEdlQGGLOeOOfBnbeCvyT//FpFzGkqdkvlQVWBJi6JcqGKrs6c4zW9jz4wMZf6z1w,iv:1s2e7GRAcp3c3Xm4e8lvHXqcci68UgBvoekLZ5okz+U=,tag:G+KOpooHQLRQs8dIc1y6tw==,type:str]"
 		},
 		{
 			"id": "rundfunk-mitbestimmen-project",
@@ -835,7 +877,9 @@
 			],
 			"startDate": "2015-09-30",
 			"endDate": "2018-11-30",
-			"keywords": ["Ruby"],
+			"keywords": [
+				"Ruby"
+			],
 			"description": {
 				"de": "Mentoring einer einsteigerfreundlichen Programmiergruppe mit wöchentlichen Treffen und Fokus auf Diversität und niedrigschwelligen Einstieg ins Programmieren.",
 				"en": "Mentored a beginner-friendly programming group through weekly sessions focused on diversity and low-barrier access to learning how to code."
@@ -850,7 +894,6 @@
 				"de": "Individuelle CMS-Entwicklung",
 				"en": "Custom CMS platform"
 			},
-			"entity": "Solutiance AG",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -859,13 +902,18 @@
 			],
 			"startDate": "2018-04-30",
 			"endDate": "2018-06-30",
-			"keywords": ["Wordpress", "PHP", "Docker"],
+			"keywords": [
+				"Wordpress",
+				"PHP",
+				"Docker"
+			],
 			"description": {
 				"de": "Individuelle CMS-Entwicklung für die Unternehmenswebsite mit Schwerpunkt auf Pflegebarkeit und Suchmaschinenoptimierung.",
 				"en": "Custom CMS development for the company website with a focus on maintainability and search engine optimization."
 			},
-			"url": "https://solutiance.com/",
-			"type": "client-platform"
+			"type": "client-platform",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:J1awT2rkYWTnCvWfmQ==,iv:XICq3JGLW7VAdUY5bzOgViCb//pZRfExBLbNTP6RvgM=,tag:S9xgHevZDsNm1tPvvGIZgQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:H+sT6Hv/I1OenYF/5PHyoFdlljG7uQU=,iv:wWV4WxNPwMSbuq3gYnCXFNhHRIZdtafbfvhZsLOkbXw=,tag:omHeOHIT+hOsxyOVSch6bw==,type:str]"
 		},
 		{
 			"id": "informatikradar-1",
@@ -888,7 +936,6 @@
 				"de": "Smarter Badezimmerspiegel",
 				"en": "Smart bathroom mirror"
 			},
-			"entity": "tactile.news GmbH",
 			"roles": [
 				{
 					"de": "IoT-Entwickler",
@@ -897,13 +944,18 @@
 			],
 			"startDate": "2018-01-01",
 			"endDate": "2018-01-31",
-			"keywords": ["Python", "JavaScript", "MQTT"],
+			"keywords": [
+				"Python",
+				"JavaScript",
+				"MQTT"
+			],
 			"description": {
 				"de": "Schneller IoT-Prototyp eines smarten Badezimmerspiegels und Schranks auf Basis von Raspberry Pis, Arduinos und MQTT.",
 				"en": "Rapid IoT prototype of a smart bathroom mirror and cabinet built with Raspberry Pis, Arduinos, and MQTT."
 			},
 			"location": "Lunenburg, Lower Saxony, Germany",
-			"type": "prototype"
+			"type": "prototype",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:BcE1PP9Ui1MnIATEGvhdSwY=,iv:v2DiCWlH2Uoh/J7UV5row20NRu2XGyNf1hCzyRwWogo=,tag:mbEEJVw3f7vnskCfuEGCNw==,type:str]"
 		},
 		{
 			"id": "story-trolley-ember-meets-iot",
@@ -921,7 +973,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
+			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ\u0026list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
 			"type": "presentation"
 		},
 		{
@@ -986,7 +1038,6 @@
 				"de": "Sensorstories: Milchkühe",
 				"en": "Dairy cow sensor stories"
 			},
-			"entity": "tactile.news GmbH",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -995,30 +1046,36 @@
 			],
 			"startDate": "2016-05-31",
 			"endDate": "2017-10-31",
-			"keywords": ["Ruby on Rails", "Ruby", "RSpec", "Cucumber"],
+			"keywords": [
+				"Ruby on Rails",
+				"Ruby",
+				"RSpec",
+				"Cucumber"
+			],
 			"description": {
 				"de": "Für WDR und Spiegel Online entwickelten wir ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
 				"en": "For WDR and Spiegel Online, we developed a journalistic format that generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
 			},
-			"url": "https://superkuehe.wdr.de/",
-			"links": [
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Qv0sj+gMpA+PgqVwGT8zz1M=,iv:U95o0zWEw1Aseb893sqxeCOSWhvfKWYLULS89QGPkBA=,tag:4f/Pb+dFiQYzt2wNn1o9eA==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:2iHyrNfRETc6SUf4ssmumbeOTbovOaX2GEs=,iv:0NehzqboB4+0Bp9NSAU9a9BfW1bbUsn7turU4JtMhmc=,tag:qSDjLizW05SJ0zvvFWGP7w==,type:str]",
+			"sopsEncryptedLinks": [
 				{
-					"label": "WDR",
-					"url": "https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html",
-					"kind": "press"
+					"label": "ENC[AES256_GCM,data:2X0x,iv:47DqCmJ22eq099hdv90uAHwnkIe5C2Xi8iUripqhvH4=,tag:G9H8d6njfxNmJSBmx36//w==,type:str]",
+					"url": "ENC[AES256_GCM,data:7Yl2E2xx2M9jTEQHtYcTxBngEBuWOEClrCbp5YQSwUXLMaVSnSCRrG358QFpAUpSeShOpy6Hx+EZ2LNpSeDCJ/t2fvqA2Sk=,iv:ZunfqxkNfri/rLq+oR1WHwxHo4Ezzatl//Dy7vT+zgM=,tag:9Y6BZgruEQJr/z4qHPz2/w==,type:str]",
+					"kind": "ENC[AES256_GCM,data:iP8Y54w=,iv:ABMnI0sY3/BnZ+9p4Bs4HRqi1bIWs08QHWJfCTPrOsk=,tag:IfIgXGkbXuPmQ5/X5+xKPA==,type:str]"
 				},
 				{
-					"label": "Spiegel Online",
-					"url": "https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html",
-					"kind": "press"
+					"label": "ENC[AES256_GCM,data:oXT6cSKkxG49+CdM608=,iv:k9LFpLeTSHlaFRKp036jzq+Uadt420+96eBfn/zrz3A=,tag:NP/cBW0s5aVKBuCW4Krndw==,type:str]",
+					"url": "ENC[AES256_GCM,data:NC/J7wMRxtEj+nV7pkMJxZW8Duh7vZQK9qCgWxaBslqCjSCtEse3eEorPOLoz0ZWiabMyJYK2RxZQIwCuaW4pwUyCk5jYZiGlUCkdwRptprLUbMBpJapKltMxMHlCbPq,iv:vj7Ml7z6iwHRMEye4jU+GznuqiunI1eavsimS77Nr88=,tag:+nzIFGRlqTLPCLfjb+8vtw==,type:str]",
+					"kind": "ENC[AES256_GCM,data:E+B/4ns=,iv:yHglkZzdZLkL12lGhKLSSAiXqdMdHlh3acmD9U70m50=,tag:2efgD//FZM27bjpBzu8cAQ==,type:str]"
 				},
 				{
 					"label": {
-						"de": "63 Berichte und Features",
-						"en": "63 reports and features"
+						"de": "ENC[AES256_GCM,data:wraqR6mUzMRDYX+BSZgQU+2nLbp299ea,iv:KHyCdtSz84zSmFRvEH0FS9R7N1DhZvzlrjkFtkp/iVA=,tag:kEQTWKBnqNlD3/APjZcv3w==,type:str]",
+						"en": "ENC[AES256_GCM,data:xlH0SzAp7zPgXoVQfvm1Uig5Nt1meRM=,iv:fyG41i04fjWuVRUEqkqhWvGFXZ4vOhl5bcgFdawV5h4=,tag:uy9cYkHlCSLA4vkLugQV4A==,type:str]"
 					},
-					"url": "https://superkuehe.wdr.de/zum-projekt/meinung/",
-					"kind": "press"
+					"url": "ENC[AES256_GCM,data:ruDOQXXYGZg+4fLkVDc/0ulXPacExwILWwtsep7UWPbK1mfxIInXFq8+vHxLoA==,iv:bMwe+nuAcTWqlFP9s/2UuwhNHC7UYXJAbazzLIH82Jw=,tag:vg9ILZod0u3EPfiU9H1kiA==,type:str]",
+					"kind": "ENC[AES256_GCM,data:vQJAZKQ=,iv:Zt6dC1i8HQSmz8WAEMnYFwPV5P/wg7VqZ4hvWzW8fS0=,tag:PasWFKVpwXLUmmO19Z75yA==,type:str]"
 				}
 			]
 		},
@@ -1066,7 +1123,6 @@
 				"de": "Smarter Einkaufswagen",
 				"en": "Smart shopping cart"
 			},
-			"entity": "tactile.news GmbH",
 			"roles": [
 				{
 					"de": "IoT-Entwickler",
@@ -1075,13 +1131,17 @@
 			],
 			"startDate": "2017-06-01",
 			"endDate": "2017-06-30",
-			"keywords": ["Ember", "Python"],
+			"keywords": [
+				"Ember",
+				"Python"
+			],
 			"description": {
 				"de": "Schneller IoT-Prototyp eines smarten Einkaufswagens.",
 				"en": "Rapid IoT prototype of a smart shopping cart."
 			},
 			"url": "https://www.facebook.com/watch?v=746195418906331",
-			"type": "prototype"
+			"type": "prototype",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Xvepj33g2JSmMDL18M/WIqI=,iv:Hcg+liHkz7iENDCscq5jsDhYgPhJbxZPAjBWWmFWUEc=,tag:sbwCFOzok0TMalPC3umymA==,type:str]"
 		},
 		{
 			"id": "rundfunk-mitbestimmen-nerd-nite-17",
@@ -1140,7 +1200,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
+			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI\u0026list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
 			"type": "presentation"
 		},
 		{
@@ -1156,7 +1216,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
+			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII\u0026t=358s",
 			"type": "presentation"
 		},
 		{
@@ -1171,7 +1231,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
+			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI\u0026list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
 			"type": "presentation"
 		},
 		{
@@ -1268,7 +1328,9 @@
 			],
 			"startDate": "2015-08-31",
 			"endDate": "2016-09-30",
-			"keywords": ["JavaScript"],
+			"keywords": [
+				"JavaScript"
+			],
 			"description": "",
 			"url": "https://www.miz-babelsberg.de/startseite.html",
 			"location": "Potsdam, Brandenburg, Germany"
@@ -1295,7 +1357,6 @@
 		},
 		{
 			"id": "sports-association-webapp",
-			"entity": "OXON AG",
 			"name": {
 				"de": "Webanwendung für Sportverbände",
 				"en": "Web application for sports associations"
@@ -1308,19 +1369,25 @@
 			],
 			"startDate": "2013-04-01",
 			"endDate": "2013-09-30",
-			"keywords": ["Ruby", "Ruby on Rails", "RSpec", "Cucumber", "PostgreSQL"],
+			"keywords": [
+				"Ruby",
+				"Ruby on Rails",
+				"RSpec",
+				"Cucumber",
+				"PostgreSQL"
+			],
 			"description": {
 				"de": "Bei dieser Webanwendung für Funktionäre, Schiedsrichter und Trainer war ich der erste Entwickler, der eine automatisierte Testumgebung eingeführt hat.",
 				"en": "For this web application for officials, referees, and coaches, I was the first developer to introduce an automated test environment."
 			},
-			"url": "https://clubcorner.ch/",
 			"location": "Bern, Switzerland",
-			"type": "product"
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:mRwKuSeCNw==,iv:n6hkSMxf1tMGmQ2SV/zSkYxBk2IpmeQz+0qdDlGOQJo=,tag:dxUlJ6EbIvHColX1Vlwkug==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:rLEYY98O0wq4AjxqQr5bSTKztr/qYA==,iv:8aV+oMusKkX7rwrj5We1F37bKOHayf+u9mVQnyou14s=,tag:vkejZq7JtgYMxv4CC+j2+Q==,type:str]"
 		},
 		{
 			"id": "supply-chain-risk-research",
 			"name": "Automated Risk Analysis in Supply Chains",
-			"entity": "SAP",
 			"roles": [
 				{
 					"de": "Forschungspraktikant",
@@ -1333,9 +1400,10 @@
 				"de": "Werkzeugentwicklung zur automatisierten Risikoanalyse in Lieferketten auf Basis einer bestehenden Legacy-Codebasis.",
 				"en": "Built a tool for automated risk analysis in supply chains, working with an existing legacy codebase."
 			},
-			"url": "https://www.sap.com/",
 			"location": "Belfast, United Kingdom",
-			"type": "research"
+			"type": "research",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:keT0,iv:bynjA+ilxHpxh2NKLUyx2fUc+FjdeueqR8SCBeGlrZM=,tag:TMbFethWA2VUsHYNgscw3Q==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:4zT5Vi2YnfCrlztFa2I43FVHqWI=,iv:DTkqO8fn599Kzn1ng2nP3E0hYdvb1dvkdNOw2t0tj64=,tag:yKHDIzt9b7NG74L+rJ20ew==,type:str]"
 		},
 		{
 			"id": "enterprise-programming-models-in-memory-databases",
@@ -1349,7 +1417,9 @@
 			],
 			"startDate": "2012-01-31",
 			"endDate": "2012-08-31",
-			"keywords": ["Java"],
+			"keywords": [
+				"Java"
+			],
 			"description": {
 				"de": "Implementierung eines Geschäftsprozesses und einer Webanwendung, die SAP als Use Case für die HANA-In-Memory-Datenbank spezifiziert hat.",
 				"en": "Implementation of a business process and web application as specified by SAP as a use case for the HANA in-memory database."
@@ -1357,5 +1427,18 @@
 			"url": "https://hpi.de/",
 			"type": "research"
 		}
-	]
+	],
+	"sops": {
+		"age": [
+			{
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBiSmRVM05rcVR1NmpnRTVz\nNWhWY1VuZlkyQmVCbzZudUZZQWQ1UFJRdjI4CnFVaXU4NC9ZNmN4MzJSOVF0aWRh\nNHV1dDNDQmRUU0RYdDFJZXkybnhBWjAKLS0tIC9SM0cxOHFDb3lqU05DdkhIbnNB\neDRoelYvRzNMQ0hFWFIzMFdQc1BDK00Kqa8M2MRNXw7R/Oslm+flT1A05215K/It\n5PqwOsxDhJUEB3PPl7iXvMyG0vxZopA3SX1WrTdViSJEnOnBAoYWxw==\n-----END AGE ENCRYPTED FILE-----\n",
+				"recipient": "age1llp6k66265q3rzqemxpnq0x3562u20989vcjf65fl9s3hjhgcscq6mhnjw"
+			}
+		],
+		"encrypted_regex": "^sopsEncrypted[A-Za-z]*$",
+		"lastmodified": "2026-07-22T22:01:11Z",
+		"mac": "ENC[AES256_GCM,data:Oy23yTem3OZlNa7VGBFRk2mfM/S2AXgKxpugB262mCY7Uje/q9kz8TC4WXZGpYSouQQIMDiMOrb8DTw6p9pOa/42wWw1HHm+r8DSaBJM6ycAxnCL+H5XCPbL2oPHFnzRXs2CiTODwKjKQDjz/ocGM8U9YXsTH5/FQ4U2jNUpa2o=,iv:w4b4gIJAixieEAZ98T0dwHgLiuc534CuB0qj1D08fn8=,tag:C8YC37SrwKBppBVkvXNY4w==,type:str]",
+		"mac_only_encrypted": true,
+		"version": "3.13.2"
+	}
 }

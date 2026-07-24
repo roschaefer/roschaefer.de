@@ -11,7 +11,7 @@
   #v(7pt)
 ]
 
-#let item-title(title, suffix: none, link-url: none) = {
+#let item-title(title, suffix: none, link-url: none, suffix-link-url: none) = {
   let content = if link-url != none {
     link(link-url)[#text(weight: 700, fill: ink)[#title]]
   } else {
@@ -19,7 +19,12 @@
   }
 
   if suffix != none and suffix != "" {
-    [#content#text(fill: muted)[, #suffix]]
+    let suffix-content = if suffix-link-url != none {
+      link(suffix-link-url)[#text(fill: muted)[#suffix]]
+    } else {
+      text(fill: muted)[#suffix]
+    }
+    [#content#text(fill: muted)[, ]#suffix-content]
   } else {
     [#content]
   }
