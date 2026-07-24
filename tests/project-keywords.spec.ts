@@ -42,3 +42,27 @@ test("project keyword pills render fully without JavaScript", async ({ browser }
 
 	await context.close();
 });
+
+test("skill project mentions expand inline", async ({ page }) => {
+	await page.goto("/en/");
+
+	const projectMentions = page
+		.locator("#experience p")
+		.filter({ has: page.getByRole("button", { name: "and more projects" }) })
+		.first();
+	const moreButton = projectMentions.getByRole("button", { name: "and more projects" });
+	const projectMentionsId = await moreButton.getAttribute("aria-controls");
+	expect(projectMentionsId).toBeTruthy();
+	const expandedProjectMentions = page.locator(`#${projectMentionsId}`);
+	const initialProjectLinkCount = await expandedProjectMentions.locator('a[href^="#"]').count();
+
+	await moreButton.click();
+
+	await expect(
+		expandedProjectMentions.getByRole("button", { name: "and more projects" }),
+	).toHaveCount(0);
+	expect(await expandedProjectMentions.locator('a[href^="#"]').count()).toBeGreaterThan(
+		initialProjectLinkCount,
+	);
+	await expect(expandedProjectMentions).toBeFocused();
+});
