@@ -8,6 +8,7 @@ typst/content
 typst/out
 static/de/*.pdf
 static/en/*.pdf
+/.generated
 
 .DS_Store
 Thumbs.db

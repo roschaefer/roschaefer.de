@@ -1,6 +1,6 @@
 import type { Locale } from "$lib/i18n";
 import type { Resume, ResumeFeatured, ResumeProject } from "$lib/types/resume";
-import source from "../../../resume.i18n.json";
+import source from "../../../.generated/resume-source.json";
 import { deriveResume } from "../utils/derive-resume.ts";
 
 const resumes: Record<Locale, Resume> = {

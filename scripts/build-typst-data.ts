@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import source from "../resume.i18n.json" with { type: "json" };
+import source from "../.generated/resume-source.json" with { type: "json" };
 import { printLinkLabel } from "../src/lib/data/short-links.ts";
 import type {
 	ResumeAward,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import source from "../../../resume.i18n.json";
+import source from "../../../.generated/resume-source.json";
 import { deriveResume } from "./derive-resume.ts";
 import { validateResumeSchema } from "./validate-resume-schema";
 

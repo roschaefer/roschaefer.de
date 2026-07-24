@@ -20,6 +20,7 @@
 		"ignoreUnknown": true,
 		"includes": [
 			"**",
+			"!**/.generated",
 			"!**/.svelte-kit",
 			"!**/build",
 			"!**/node_modules",
