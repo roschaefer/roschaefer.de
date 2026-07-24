@@ -1,8 +1,10 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
+import ExpandableItems from "$lib/components/ExpandableItems.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import ProjectKeywordPills from "$lib/components/ProjectKeywordPills.svelte";
+import RevealMoreButton from "$lib/components/RevealMoreButton.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { projectEntryId, skillEntryId } from "$lib/data/resume";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
@@ -100,6 +102,7 @@ const formatEducationPeriod = (entry: SiteContent["education"][number]) => {
 	const end = entry.endDate ? formatYear(entry.endDate) : t(m.present);
 	return [start, end].filter(Boolean).join(" - ");
 };
+const skillProjectListId = (skillName: string) => `${skillEntryId(skillName)}-projects`;
 const projectKeywordListId = (project: SiteContent["featuredProjects"][number], index: number) =>
 	`project-keywords-${project.id ?? `${project.name}-${project.startDate}-${index}`}`;
 
@@ -121,10 +124,13 @@ markUsed(() => [
 	educationDateFormatter,
 	formatYear,
 	formatEducationPeriod,
+	skillProjectListId,
 	projectKeywordListId,
 	PageShell,
 	ContactLinks,
+	ExpandableItems,
 	ProjectKeywordPills,
+	RevealMoreButton,
 	projectEntryId,
 	skillEntryId,
 	visibleProjectIds,
@@ -375,19 +381,37 @@ markUsed(() => [
 									</dd>
 								</div>
 							</dl>
-							<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
+							<p
+								id={skillProjectListId(entry.name)}
+								tabindex="-1"
+								class="mt-4 text-sm text-[var(--color-brand-muted)] focus:outline-none"
+							>
 								{t(m.used_in)}
-								{#each entry.projects.slice(0, 3) as project, index}
-									{@const projectId = projectEntryId(project)}
-									{#if index > 0}{", "}{/if}{#if visibleProjectIds.has(projectId)}<a
-											href={`#${projectId}`}
-										>
-											{project.name}
-										</a>{:else}{project.name}{/if}
-								{/each}
-								{#if entry.projects.length > 3}
-									{" "}{t(m.and_more)}
-								{/if}
+								<ExpandableItems
+									items={entry.projects}
+									previewLimit={3}
+									controls={skillProjectListId(entry.name)}
+									showMoreLabel={t(m.and_more)}
+								>
+									{#snippet item(_, projectIndex)}
+										{@const project = entry.projects[projectIndex]}
+										{@const projectId = projectEntryId(project)}
+										{#if projectIndex > 0}{", "}{/if}{#if visibleProjectIds.has(projectId)}<a
+												href={`#${projectId}`}
+											>
+												{project.name}
+											</a>{:else}{project.name}{/if}
+									{/snippet}
+									{#snippet revealButton(label, onReveal, controls)}
+										{" "}
+										<RevealMoreButton
+											{controls}
+											{label}
+											{onReveal}
+											class="inline border-0 bg-transparent p-0 text-inherit underline decoration-dotted decoration-[var(--color-brand-line)] decoration-1 underline-offset-4 transition hover:text-[var(--color-brand-cyan-soft)] hover:decoration-[var(--color-brand-cyan)] focus-visible:text-[var(--color-brand-cyan-soft)] focus-visible:decoration-[var(--color-brand-cyan)]"
+										/>
+									{/snippet}
+								</ExpandableItems>
 							</p>
 						</article>
 					</li>
