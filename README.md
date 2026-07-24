@@ -79,7 +79,7 @@ Typecheck:
 pnpm check:types
 ```
 
-Quick pre-push check (paraglide + lint + typecheck + unit tests):
+Quick pre-push check (paraglide + resume source + lint + typecheck + unit tests):
 
 ```bash
 pnpm check:quick
@@ -171,3 +171,4 @@ The current social preview image is:
 - Print output is optimized primarily for Firefox.
 - The web version and print version share the same content source.
 - Generated Paraglide files in `src/lib/paraglide` are never committed (the directory has its own nested `.gitignore`) and are recompiled on every `dev`/`build`/`check`/`test` run.
+- The resume source (`.generated/resume-source.json`) is likewise gitignored and always regenerated fresh - see `AGENTS.md` for why.

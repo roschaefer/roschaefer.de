@@ -72,18 +72,24 @@ The authored resume source is:
 
 - `resume.i18n.json`
 
-There are no generated `resume.de.json`/`resume.en.json` files — localizing `resume.i18n.json` into a single locale's JSON Resume data is a pure, synchronous function (`deriveResume` in `src/lib/utils/derive-resume.ts`), computed in memory wherever it's needed rather than written to disk as an intermediate file. This avoids keeping two copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed.
+There are no generated `resume.de.json`/`resume.en.json` files committed to the repo. Instead:
+
+1. `pnpm build:json-resume` (`scripts/generate-resume-source.ts`) copies `resume.i18n.json` to the gitignored `.generated/resume-source.json` — never committed, always regenerated fresh.
+2. `deriveResume(source, locale)` (`src/lib/utils/derive-resume.ts`, pure) localizes that file into a single locale's JSON Resume data, sorts dated sections, and computes skills.
+
+This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed.
 
 The pipeline is:
 
-- `resume.i18n.json` -> (`deriveResume`, in memory) -> localized JSON Resume data
-- localized JSON Resume data -> web rendering (`src/lib/data/resume.ts` calls `deriveResume` once per locale at module load)
-- localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.ts` calls `deriveResume` directly instead of reading a file)
+- `resume.i18n.json` -> (`pnpm build:json-resume`, copy) -> `.generated/resume-source.json`
+- `.generated/resume-source.json` -> (`deriveResume`, pure) -> localized JSON Resume data
+- localized JSON Resume data -> web rendering (`src/lib/data/resume.ts` imports the generated file, calls `deriveResume` once per locale at module load)
+- localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.ts` imports the same generated file directly)
 
 Guidelines:
 
-- Edit resume content in `resume.i18n.json` directly — there is no separate build step to run first.
-- Anything that needs localized resume data should call `deriveResume(source, locale)` rather than introduce another on-disk intermediate file.
+- Edit resume content in `resume.i18n.json`, then run `pnpm build:json-resume`. `dev`/`build`/`check:types`/`test:unit` all run it explicitly first, so this is rarely a manual step.
+- Anything that needs localized resume data should import `.generated/resume-source.json` and call `deriveResume(source, locale)`, the same way `resume.ts`/`build-typst-data.ts` do — never add another parallel on-disk intermediate file.
 - Keep German and English resume structures aligned.
 - Validate both localized outputs against the same TypeScript/schema model.
 - Use stable `id` fields for translatable entries such as projects and talks.
@@ -313,19 +319,20 @@ pnpm dev
 Every `build:*` script does exactly one job and can be run standalone; `pnpm build` runs them all in the order a full production build needs:
 
 ```bash
-pnpm build:paraglide  # compile Paraglide UI messages
-pnpm build:typst-data # -> typst/content/{de,en}.typ.json
-pnpm build:pdf        # -> static/{de,en}/*.pdf
-pnpm build:vite       # vite build -> build/
-pnpm build:sitemap    # crawl build/ -> build/sitemap.xml, build/robots.txt
-pnpm build            # build:pdf -> build:paraglide -> build:vite -> build:sitemap
+pnpm build:paraglide     # compile Paraglide UI messages
+pnpm build:json-resume   # copy resume.i18n.json -> .generated/resume-source.json (gitignored)
+pnpm build:typst-data    # -> typst/content/{de,en}.typ.json (implies build:json-resume)
+pnpm build:pdf           # -> static/{de,en}/*.pdf (implies build:json-resume; internally also runs build-typst-data.ts)
+pnpm build:vite          # vite build -> build/
+pnpm build:sitemap       # crawl build/ -> build/sitemap.xml, build/robots.txt
+pnpm build               # build:json-resume -> build:pdf -> build:paraglide -> build:vite -> build:sitemap
 ```
 
 Verification, from fastest to slowest:
 
 ```bash
 pnpm check:types  # svelte-check only
-pnpm check:quick  # paraglide + lint + check:types + unit tests - what CI's "Quick verification" step runs
+pnpm check:quick  # paraglide + resume source + lint + check:types + unit tests - what CI's "Quick verification" step runs
 pnpm check        # check:quick + test:e2e - test:e2e's own webServer already runs a full pnpm build (incl. build:pdf) to serve the site, so a working build is proven without a separate build step; slow, don't run this reflexively
 ```
 
