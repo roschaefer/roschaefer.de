@@ -2,6 +2,7 @@
 import { onMount } from "svelte";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
+import ProjectKeywordPills from "$lib/components/ProjectKeywordPills.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { projectEntryId, skillEntryId } from "$lib/data/resume";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
@@ -99,6 +100,9 @@ const formatEducationPeriod = (entry: SiteContent["education"][number]) => {
 	const end = entry.endDate ? formatYear(entry.endDate) : t(m.present);
 	return [start, end].filter(Boolean).join(" - ");
 };
+const projectKeywordListId = (project: SiteContent["featuredProjects"][number], index: number) =>
+	`project-keywords-${project.id ?? `${project.name}-${project.startDate}-${index}`}`;
+
 markUsed(() => [
 	siteImage,
 	siteName,
@@ -117,8 +121,10 @@ markUsed(() => [
 	educationDateFormatter,
 	formatYear,
 	formatEducationPeriod,
+	projectKeywordListId,
 	PageShell,
 	ContactLinks,
+	ProjectKeywordPills,
 	projectEntryId,
 	skillEntryId,
 	visibleProjectIds,
@@ -402,7 +408,9 @@ markUsed(() => [
 			</div>
 
 			<div class="grid gap-6 lg:grid-cols-2">
-				{#each content.featuredProjects as project}
+				{#each content.featuredProjects as project, projectIndex}
+					{@const keywordListId = projectKeywordListId(project, projectIndex)}
+					{@const projectKeywords = project.keywords ?? []}
 					<article
 						id={projectEntryId(project)}
 						tabindex="-1"
@@ -439,24 +447,13 @@ markUsed(() => [
 						{#if project.description}
 							<p class="mt-4 text-[var(--color-brand-text)]">{project.description}</p>
 						{/if}
-						{#if project.keywords?.length}
-							<ul class="mt-5 flex list-none flex-wrap gap-2 p-0">
-								{#each project.keywords.slice(0, 8) as keyword}
-									{@const skillId = skillEntryId(keyword)}
-									<li class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)]">
-										{#if visibleSkillIds.has(skillId)}
-											<a class="no-underline" href={`#${skillId}`}>{keyword}</a>
-										{:else}
-											{keyword}
-										{/if}
-									</li>
-								{/each}
-								{#if project.keywords.length > 8}
-									<li class="rounded-full border border-dashed border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-muted)]">
-										+{project.keywords.length - 8} more
-									</li>
-								{/if}
-							</ul>
+						{#if projectKeywords.length}
+							<ProjectKeywordPills
+								keywords={projectKeywords}
+								listId={keywordListId}
+								{locale}
+								{visibleSkillIds}
+							/>
 						{/if}
 					</article>
 				{/each}
