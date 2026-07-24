@@ -20,6 +20,9 @@ interface Props {
 const { content, locale }: Props = $props();
 
 let activeAnchorTargetId = $state<string | null>(null);
+let jsReady = $state(false);
+let projectsExpanded = $state(true);
+let technologiesExpanded = $state(true);
 
 const visibleProjectIds = $derived(
 	new Set(content.featuredProjects.map((project) => projectEntryId(project))),
@@ -49,6 +52,10 @@ const activateAnchorTarget = (targetId: string) => {
 	targetElement.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
 };
 onMount(() => {
+	jsReady = true;
+	projectsExpanded = false;
+	technologiesExpanded = false;
+
 	const activateHashTarget = () => {
 		const targetId = currentHashTarget();
 		if (visibleAnchorTargetIds.has(targetId)) {
@@ -104,6 +111,9 @@ const projectKeywordListId = (project: SiteContent["featuredProjects"][number], 
 	`project-keywords-${project.id ?? `${project.name}-${project.startDate}-${index}`}`;
 
 markUsed(() => [
+	jsReady,
+	projectsExpanded,
+	technologiesExpanded,
 	siteImage,
 	siteName,
 	siteUrl,
@@ -341,59 +351,83 @@ markUsed(() => [
 
 			<ol class="grid list-none gap-4 p-0 md:grid-cols-2 xl:grid-cols-3">
 				{#each content.techExperience as entry}
-					<li
-						id={skillEntryId(entry.name)}
-						tabindex="-1"
-						class="anchor-target-card theme-card scroll-mt-8 rounded-[1.5rem] p-5 transition duration-300 focus:outline-none"
-						class:anchor-target-card-active={activeAnchorTargetId === skillEntryId(entry.name)}
-					>
-						<article>
-							<h3 class="theme-heading">{entry.name}</h3>
-							<dl class="mt-4 space-y-2 rounded-[1rem] border border-[var(--color-brand-line)] bg-[color:color-mix(in_srgb,var(--color-brand-panel)_76%,transparent)] p-3">
-								<div class="flex items-start justify-between gap-4">
-									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
-										{t(m.tech_experience_projects)}
-									</dt>
-									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
-										{entry.projectCount}
-									</dd>
-								</div>
-								<div class="flex items-start justify-between gap-4">
-									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
-										{t(m.tech_experience_duration)}
-									</dt>
-									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
-										{entry.label}
-									</dd>
-								</div>
-								<div class="flex items-start justify-between gap-4">
-									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
-										{t(m.tech_experience_recency)}
-									</dt>
-									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
-										{entry.lastUsedLabel}
-									</dd>
-								</div>
-							</dl>
-							<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
-								{t(m.used_in)}
-								{#each entry.projects.slice(0, 3) as project, index}
-									{@const projectId = projectEntryId(project)}
-									{#if index > 0}{", "}{/if}{#if visibleProjectIds.has(projectId)}<a
-											href={`#${projectId}`}
-										>
-											{project.name}
-										</a>{:else}{project.name}{/if}
-								{/each}
-								{#if entry.projects.length > 3}
-									{" "}{t(m.and_more)}
-								{/if}
-							</p>
-						</article>
-					</li>
+					{@render techExperienceCard(entry)}
 				{/each}
+				{#if content.remainingTechExperience.length > 0}
+					{#if technologiesExpanded}
+						{#each content.remainingTechExperience as entry}
+							{@render techExperienceCard(entry)}
+						{/each}
+					{/if}
+					{#if jsReady}
+						<li class="contents">
+							<button
+								type="button"
+								class="theme-card col-span-full flex cursor-pointer items-center justify-center rounded-[1.5rem] p-5 text-sm font-semibold text-[var(--color-brand-cyan)]"
+								onclick={() => (technologiesExpanded = !technologiesExpanded)}
+							>
+								{technologiesExpanded
+									? t(m.show_fewer_technologies)
+									: `${t(m.show_all_technologies)} (${content.remainingTechExperience.length})`}
+							</button>
+						</li>
+					{/if}
+				{/if}
 			</ol>
 		</section>
+
+		{#snippet techExperienceCard(entry: SiteContent["techExperience"][number])}
+			<li
+				id={skillEntryId(entry.name)}
+				tabindex="-1"
+				class="anchor-target-card theme-card scroll-mt-8 rounded-[1.5rem] p-5 transition duration-300 focus:outline-none"
+				class:anchor-target-card-active={activeAnchorTargetId === skillEntryId(entry.name)}
+			>
+				<article>
+					<h3 class="theme-heading">{entry.name}</h3>
+					<dl class="mt-4 space-y-2 rounded-[1rem] border border-[var(--color-brand-line)] bg-[color:color-mix(in_srgb,var(--color-brand-panel)_76%,transparent)] p-3">
+						<div class="flex items-start justify-between gap-4">
+							<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+								{t(m.tech_experience_projects)}
+							</dt>
+							<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+								{entry.projectCount}
+							</dd>
+						</div>
+						<div class="flex items-start justify-between gap-4">
+							<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+								{t(m.tech_experience_duration)}
+							</dt>
+							<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+								{entry.label}
+							</dd>
+						</div>
+						<div class="flex items-start justify-between gap-4">
+							<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
+								{t(m.tech_experience_recency)}
+							</dt>
+							<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
+								{entry.lastUsedLabel}
+							</dd>
+						</div>
+					</dl>
+					<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
+						{t(m.used_in)}
+						{#each entry.projects.slice(0, 3) as project, index}
+							{@const projectId = projectEntryId(project)}
+							{#if index > 0}{", "}{/if}{#if visibleProjectIds.has(projectId)}<a
+									href={`#${projectId}`}
+								>
+									{project.name}
+								</a>{:else}{project.name}{/if}
+						{/each}
+						{#if entry.projects.length > 3}
+							{" "}{t(m.and_more)}
+						{/if}
+					</p>
+				</article>
+			</li>
+		{/snippet}
 
 		<section
 			aria-labelledby="projects-title"
@@ -409,56 +443,78 @@ markUsed(() => [
 
 			<div class="grid gap-6 lg:grid-cols-2">
 				{#each content.featuredProjects as project, projectIndex}
-					{@const keywordListId = projectKeywordListId(project, projectIndex)}
-					{@const projectKeywords = project.keywords ?? []}
-					<article
-						id={projectEntryId(project)}
-						tabindex="-1"
-						class="anchor-target-card theme-card scroll-mt-8 rounded-[1.75rem] p-6 transition duration-300 focus:outline-none"
-						class:anchor-target-card-active={activeAnchorTargetId === projectEntryId(project)}
-					>
-						<header class="space-y-3">
-							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
-								{project.roles?.join(", ") ?? t(m.project_fallback)}
-							</p>
-							<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
-							<p class="text-sm font-semibold text-[var(--color-brand-text)]">
-								{#if project.url}
-									<a
-										class="print-url no-underline"
-										href={project.url}
-										data-print-label={printLinkLabel(project.url)}
-									>
-										{project.name}
-									</a>
-								{:else}
-									{project.name}
-								{/if}
-							</p>
-							<p class="text-sm text-[var(--color-brand-muted)]">
-								{project.startDate}
-								{#if project.endDate}
-									- {project.endDate}
-								{:else}
-									- {t(m.present)}
-								{/if}
-							</p>
-						</header>
-						{#if project.description}
-							<p class="mt-4 text-[var(--color-brand-text)]">{project.description}</p>
-						{/if}
-						{#if projectKeywords.length}
-							<ProjectKeywordPills
-								keywords={projectKeywords}
-								listId={keywordListId}
-								{locale}
-								{visibleSkillIds}
-							/>
-						{/if}
-					</article>
+					{@render projectCard(project, projectIndex)}
 				{/each}
+				{#if content.remainingProjects.length > 0}
+					{#if projectsExpanded}
+						{#each content.remainingProjects as project, remainingIndex}
+							{@render projectCard(project, content.featuredProjects.length + remainingIndex)}
+						{/each}
+					{/if}
+					{#if jsReady}
+						<button
+							type="button"
+							class="theme-card col-span-full flex cursor-pointer items-center justify-center rounded-[1.75rem] p-6 text-sm font-semibold text-[var(--color-brand-cyan)]"
+							onclick={() => (projectsExpanded = !projectsExpanded)}
+						>
+							{projectsExpanded
+								? t(m.show_fewer_projects)
+								: `${t(m.show_all_projects)} (${content.remainingProjects.length})`}
+						</button>
+					{/if}
+				{/if}
 			</div>
 		</section>
+
+		{#snippet projectCard(project: SiteContent["featuredProjects"][number], projectIndex: number)}
+			{@const keywordListId = projectKeywordListId(project, projectIndex)}
+			{@const projectKeywords = project.keywords ?? []}
+			<article
+				id={projectEntryId(project)}
+				tabindex="-1"
+				class="anchor-target-card theme-card scroll-mt-8 rounded-[1.75rem] p-6 transition duration-300 focus:outline-none"
+				class:anchor-target-card-active={activeAnchorTargetId === projectEntryId(project)}
+			>
+				<header class="space-y-3">
+					<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
+						{project.roles?.join(", ") ?? t(m.project_fallback)}
+					</p>
+					<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
+					<p class="text-sm font-semibold text-[var(--color-brand-text)]">
+						{#if project.url}
+							<a
+								class="print-url no-underline"
+								href={project.url}
+								data-print-label={printLinkLabel(project.url)}
+							>
+								{project.name}
+							</a>
+						{:else}
+							{project.name}
+						{/if}
+					</p>
+					<p class="text-sm text-[var(--color-brand-muted)]">
+						{project.startDate}
+						{#if project.endDate}
+							- {project.endDate}
+						{:else}
+							- {t(m.present)}
+						{/if}
+					</p>
+				</header>
+				{#if project.description}
+					<p class="mt-4 text-[var(--color-brand-text)]">{project.description}</p>
+				{/if}
+				{#if projectKeywords.length}
+					<ProjectKeywordPills
+						keywords={projectKeywords}
+						listId={keywordListId}
+						{locale}
+						{visibleSkillIds}
+					/>
+				{/if}
+			</article>
+		{/snippet}
 
 		<section
 			aria-labelledby="talks-title"
