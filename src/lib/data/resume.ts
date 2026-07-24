@@ -38,3 +38,6 @@ export const resumeEntryId = (entry: { id?: string; name?: string; url?: string 
 };
 
 export const projectEntryId = (project: ResumeProject): string => resumeEntryId(project);
+
+export const skillEntryId = (skillName: string): string =>
+	`skill-${resumeEntryId({ name: skillName })}`;

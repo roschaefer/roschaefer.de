@@ -3,7 +3,7 @@ import { onMount } from "svelte";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
-import { projectEntryId } from "$lib/data/resume";
+import { projectEntryId, skillEntryId } from "$lib/data/resume";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
 import { printLinkLabel } from "$lib/data/short-links";
 import type { Locale } from "$lib/i18n";
@@ -18,11 +18,15 @@ interface Props {
 
 const { content, locale }: Props = $props();
 
-let activeProjectId = $state<string | null>(null);
+let activeAnchorTargetId = $state<string | null>(null);
 
 const visibleProjectIds = $derived(
 	new Set(content.featuredProjects.map((project) => projectEntryId(project))),
 );
+const visibleSkillIds = $derived(
+	new Set(content.techExperience.map((entry) => skillEntryId(entry.name))),
+);
+const visibleAnchorTargetIds = $derived(new Set([...visibleProjectIds, ...visibleSkillIds]));
 const scrollBehavior = (): ScrollBehavior =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 const currentHashTarget = () => {
@@ -32,32 +36,32 @@ const currentHashTarget = () => {
 		return "";
 	}
 };
-const activateProject = (projectId: string) => {
-	activeProjectId = projectId;
+const activateAnchorTarget = (targetId: string) => {
+	activeAnchorTargetId = targetId;
 
-	const projectElement = document.getElementById(projectId);
-	if (!projectElement) {
+	const targetElement = document.getElementById(targetId);
+	if (!targetElement) {
 		return;
 	}
 
-	projectElement.focus({ preventScroll: true });
-	projectElement.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
+	targetElement.focus({ preventScroll: true });
+	targetElement.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
 };
 onMount(() => {
-	const activateHashProject = () => {
-		const projectId = currentHashTarget();
-		if (visibleProjectIds.has(projectId)) {
-			activateProject(projectId);
+	const activateHashTarget = () => {
+		const targetId = currentHashTarget();
+		if (visibleAnchorTargetIds.has(targetId)) {
+			activateAnchorTarget(targetId);
 			return;
 		}
 
-		activeProjectId = null;
+		activeAnchorTargetId = null;
 	};
 
-	activateHashProject();
-	window.addEventListener("hashchange", activateHashProject);
+	activateHashTarget();
+	window.addEventListener("hashchange", activateHashTarget);
 
-	return () => window.removeEventListener("hashchange", activateHashProject);
+	return () => window.removeEventListener("hashchange", activateHashTarget);
 });
 
 const primaryProfiles = $derived(
@@ -116,8 +120,11 @@ markUsed(() => [
 	PageShell,
 	ContactLinks,
 	projectEntryId,
+	skillEntryId,
 	visibleProjectIds,
-	activeProjectId,
+	visibleSkillIds,
+	visibleAnchorTargetIds,
+	activeAnchorTargetId,
 ]);
 </script>
 
@@ -328,7 +335,12 @@ markUsed(() => [
 
 			<ol class="grid list-none gap-4 p-0 md:grid-cols-2 xl:grid-cols-3">
 				{#each content.techExperience as entry}
-					<li class="theme-card rounded-[1.5rem] p-5">
+					<li
+						id={skillEntryId(entry.name)}
+						tabindex="-1"
+						class="anchor-target-card theme-card scroll-mt-8 rounded-[1.5rem] p-5 transition duration-300 focus:outline-none"
+						class:anchor-target-card-active={activeAnchorTargetId === skillEntryId(entry.name)}
+					>
 						<article>
 							<h3 class="theme-heading">{entry.name}</h3>
 							<dl class="mt-4 space-y-2 rounded-[1rem] border border-[var(--color-brand-line)] bg-[color:color-mix(in_srgb,var(--color-brand-panel)_76%,transparent)] p-3">
@@ -394,8 +406,8 @@ markUsed(() => [
 					<article
 						id={projectEntryId(project)}
 						tabindex="-1"
-						class="project-card theme-card scroll-mt-8 rounded-[1.75rem] p-6 transition duration-300 focus:outline-none"
-						class:project-card-active={activeProjectId === projectEntryId(project)}
+						class="anchor-target-card theme-card scroll-mt-8 rounded-[1.75rem] p-6 transition duration-300 focus:outline-none"
+						class:anchor-target-card-active={activeAnchorTargetId === projectEntryId(project)}
 					>
 						<header class="space-y-3">
 							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
@@ -430,8 +442,13 @@ markUsed(() => [
 						{#if project.keywords?.length}
 							<ul class="mt-5 flex list-none flex-wrap gap-2 p-0">
 								{#each project.keywords.slice(0, 8) as keyword}
+									{@const skillId = skillEntryId(keyword)}
 									<li class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)]">
-										{keyword}
+										{#if visibleSkillIds.has(skillId)}
+											<a class="no-underline" href={`#${skillId}`}>{keyword}</a>
+										{:else}
+											{keyword}
+										{/if}
 									</li>
 								{/each}
 								{#if project.keywords.length > 8}
