@@ -459,14 +459,7 @@
 				"de": "Bei dieser Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus habe ich an einer Ruby-on-Rails-Anwendung gearbeitet, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
 				"en": "For this platform for audience engagement and crowd-based reporting in journalism, I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
 			},
-			"url": "https://tactile.news/",
-			"links": [
-				{
-					"label": "GitHub",
-					"url": "https://github.com/tactilenews/100eyes",
-					"kind": "repository"
-				}
-			],
+			"url": "https://tactile.news/dialog-loesungen/100eyes/",
 			"type": "product"
 		},
 		{
@@ -626,18 +619,6 @@
 				"en": "I was fully responsible for a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
 			},
 			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
-			"links": [
-				{
-					"label": "GitHub",
-					"url": "https://github.com/systems-development-and-frameworks",
-					"kind": "repository"
-				},
-				{
-					"label": "YouTube Playlist",
-					"url": "https://www.youtube.com/playlist?list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
-					"kind": "playlist"
-				}
-			],
 			"location": "Berlin, Germany",
 			"type": "course"
 		},
@@ -676,16 +657,6 @@
 				"de": "Bei diesem gemeinschaftlich entwickelten Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet, habe ich als Technical Lead an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb gearbeitet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; ich habe neue Mitwirkende über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und den Großteil der Beiträge reviewed. Neo4J haben wir produktiv als Primärdatenbank eingesetzt, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
 				"en": "For this community-built open-source social network that offers communities a privacy-friendly alternative to large platforms, I worked as Technical Lead on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly."
 			},
-			"links": [
-				{
-					"label": {
-						"de": "Staging",
-						"en": "Staging"
-					},
-					"url": "https://stage.ocelot.social",
-					"kind": "demo"
-				}
-			],
 			"type": "product"
 		},
 		{
