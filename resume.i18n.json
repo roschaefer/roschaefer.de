@@ -120,17 +120,7 @@
 				"de": "Sensorstories: Bienen",
 				"en": "Bee sensor stories"
 			},
-			"awarder": "Grimme-Institut",
-			"links": [
-				{
-					"label": {
-						"de": "Sensorstories: Bienen",
-						"en": "Bee sensor stories"
-					},
-					"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen",
-					"kind": "award"
-				}
-			]
+			"awarder": "Grimme-Institut"
 		},
 		{
 			"title": {
@@ -142,17 +132,7 @@
 				"de": "Sensorstories: Milchkühe",
 				"en": "Dairy cow sensor stories"
 			},
-			"awarder": "Reporter-Forum e. V.",
-			"links": [
-				{
-					"label": {
-						"de": "Sensorstories: Milchkühe",
-						"en": "Dairy cow sensor stories"
-					},
-					"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904",
-					"kind": "award"
-				}
-			]
+			"awarder": "Reporter-Forum e. V."
 		},
 		{
 			"title": {
@@ -164,17 +144,7 @@
 				"de": "Sensorstories: Bienen",
 				"en": "Bee sensor stories"
 			},
-			"awarder": "Reporter-Forum e. V.",
-			"links": [
-				{
-					"label": {
-						"de": "Sensorstories: Bienen",
-						"en": "Bee sensor stories"
-					},
-					"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019",
-					"kind": "award"
-				}
-			]
+			"awarder": "Reporter-Forum e. V."
 		},
 		{
 			"title": {
@@ -183,14 +153,7 @@
 			},
 			"summary": "#ursuppe",
 			"date": "2015-11-12",
-			"awarder": "MIZ Babelsberg",
-			"links": [
-				{
-					"label": "#ursuppe",
-					"url": "https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg",
-					"kind": "award"
-				}
-			]
+			"awarder": "MIZ Babelsberg"
 		}
 	],
 	"languages": [
@@ -460,13 +423,6 @@
 				"en": "For this platform for audience engagement and crowd-based reporting in journalism, I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
 			},
 			"url": "https://tactile.news/",
-			"links": [
-				{
-					"label": "GitHub",
-					"url": "https://github.com/tactilenews/100eyes",
-					"kind": "repository"
-				}
-			],
 			"type": "product"
 		},
 		{
@@ -626,18 +582,6 @@
 				"en": "I was fully responsible for a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
 			},
 			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
-			"links": [
-				{
-					"label": "GitHub",
-					"url": "https://github.com/systems-development-and-frameworks",
-					"kind": "repository"
-				},
-				{
-					"label": "YouTube Playlist",
-					"url": "https://www.youtube.com/playlist?list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
-					"kind": "playlist"
-				}
-			],
 			"location": "Berlin, Germany",
 			"type": "course"
 		},
@@ -676,16 +620,6 @@
 				"de": "Bei diesem gemeinschaftlich entwickelten Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet, habe ich als Technical Lead an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb gearbeitet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; ich habe neue Mitwirkende über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und den Großteil der Beiträge reviewed. Neo4J haben wir produktiv als Primärdatenbank eingesetzt, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
 				"en": "For this community-built open-source social network that offers communities a privacy-friendly alternative to large platforms, I worked as Technical Lead on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly."
 			},
-			"links": [
-				{
-					"label": {
-						"de": "Staging",
-						"en": "Staging"
-					},
-					"url": "https://stage.ocelot.social",
-					"kind": "demo"
-				}
-			],
 			"type": "product"
 		},
 		{
@@ -769,28 +703,6 @@
 				"de": "\"Rundfunk mitbestimmen\" ist ein Civic-Tech-Projekt zur symbolischen Mitbestimmung über die Verwendung des Rundfunkbeitrags. Nutzerinnen und Nutzer können Beiträge einzelnen Programmen zuordnen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a civic tech project that lets people symbolically influence how public broadcasting fees are allocated. Users can assign their contributions to individual programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk, and RBB."
 			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			],
 			"type": "civic-tech"
 		},
 		{
@@ -941,29 +853,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "gez-scrap-it-or-pay-it",
@@ -1000,27 +890,7 @@
 				"de": "Für WDR und Spiegel Online entwickelten wir ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
 				"en": "For WDR and Spiegel Online, we developed a journalistic format that generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
 			},
-			"url": "https://superkuehe.wdr.de/",
-			"links": [
-				{
-					"label": "WDR",
-					"url": "https://www1.wdr.de/unternehmen/der-wdr/unternehmen/superkuehe-114.html",
-					"kind": "press"
-				},
-				{
-					"label": "Spiegel Online",
-					"url": "https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html",
-					"kind": "press"
-				},
-				{
-					"label": {
-						"de": "63 Berichte und Features",
-						"en": "63 reports and features"
-					},
-					"url": "https://superkuehe.wdr.de/zum-projekt/meinung/",
-					"kind": "press"
-				}
-			]
+			"url": "https://superkuehe.wdr.de/"
 		},
 		{
 			"id": "coding-in-the-woods",
@@ -1100,29 +970,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "why-do-i-have-to-pay-and-dont-get-a-say",
@@ -1191,29 +1039,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
@@ -1232,29 +1058,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "protothon",
