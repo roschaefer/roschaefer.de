@@ -85,7 +85,7 @@ Quick pre-push check (paraglide + resume source + lint + typecheck + unit tests)
 pnpm check:quick
 ```
 
-Full check, mirroring everything CI runs (slow - includes Playwright and a full build):
+Full check, mirroring everything CI runs (slow - includes Playwright, PDFs, and a full build):
 
 ```bash
 pnpm check
@@ -151,6 +151,7 @@ Required GitHub repository secrets for deployment:
 
 - `NETLIFY_AUTH_TOKEN`
 - `NETLIFY_SITE_ID`
+- `SOPS_AGE_KEY` (a dedicated age private key for CI decryption of `resume.i18n.json` - see "Redacted Clients" in `AGENTS.md`)
 
 ## SEO / Social Metadata
 
@@ -171,4 +172,5 @@ The current social preview image is:
 - Print output is optimized primarily for Firefox.
 - The web version and print version share the same content source.
 - Generated Paraglide files in `src/lib/paraglide` are never committed (the directory has its own nested `.gitignore`) and are recompiled on every `dev`/`build`/`check`/`test` run.
-- The resume source (`.generated/resume-source.json`) is likewise gitignored and always regenerated fresh - see `AGENTS.md` for why.
+- The decrypted, masked resume source (`.generated/resume-source.json`, `.generated/resume.de.json`, `.generated/resume.en.json`) is likewise gitignored and always regenerated fresh - see `AGENTS.md` for why.
+- CI needs a `SOPS_AGE_KEY` repository secret (a dedicated age private key, separate from any personal key) to decrypt `resume.i18n.json` during `pnpm build`/`pnpm check:quick`.

@@ -1,10 +1,7 @@
 import { describe, expect, it } from "vitest";
-import source from "../../../.generated/resume-source.json";
-import { deriveResume } from "./derive-resume.ts";
+import de from "../../../.generated/resume.de.json";
+import en from "../../../.generated/resume.en.json";
 import { validateResumeSchema } from "./validate-resume-schema";
-
-const de = deriveResume(source, "de");
-const en = deriveResume(source, "en");
 
 const markdownLinkPattern = /\[[^\]]+\]\((https?:\/\/[^)]+)\)/;
 

@@ -30,6 +30,7 @@ let enhanced = $state(false);
 
 const collapses = $derived(remaining.length > 0);
 const isExpanded = $derived(!enhanced || expanded || !collapses);
+const redactedClientPath = $derived(locale === "de" ? "/de/auf-anfrage/" : "/en/on-request/");
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
 const projectKeywordListId = (project: SiteContent["featuredProjects"][number], index: number) =>
@@ -51,6 +52,7 @@ markUsed(() => [
 	linkableSkillIds,
 	activeAnchorTargetId,
 	isExpanded,
+	redactedClientPath,
 	t,
 	projectKeywordListId,
 	expand,
@@ -93,7 +95,15 @@ markUsed(() => [
 			<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
 				{project.roles?.join(", ") ?? t(m.project_fallback)}
 			</p>
-			<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
+			{#if project.redacted}
+				<h3 class="theme-heading">
+					<a class="no-underline" href={redactedClientPath} aria-label={t(m.redacted_link_label)}>
+						{project.entity}
+					</a>
+				</h3>
+			{:else}
+				<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
+			{/if}
 			<p class="text-sm font-semibold text-[var(--color-brand-text)]">
 				{#if project.url}
 					<a

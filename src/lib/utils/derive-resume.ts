@@ -40,6 +40,10 @@ const localizeValue = (value: unknown, locale: Locale): unknown => {
 	);
 };
 
+// Localizes an already-resolved (decrypted/masked or unredacted) resume tree
+// into a single locale's JSON Resume data, sorts dated sections, and computes
+// skills. Pure and redaction-agnostic - it has no idea whether the source it
+// was handed is masked or real, it just localizes whatever it's given.
 export const deriveResume = (source: unknown, locale: Locale): Resume => {
 	const resume = localizeValue(source, locale) as Record<string, unknown>;
 	const { featured: _featured, ...resumeWithoutFeatured } = resume;

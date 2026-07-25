@@ -3,11 +3,11 @@ import type { ResumeProject } from "$lib/types/resume";
 import { formatMonthDuration } from "./duration.ts";
 import { createTechnologyAggregates } from "./technology-aggregate.ts";
 
-export type TechExperience = {
+export type TechExperience<T extends ResumeProject = ResumeProject> = {
 	name: string;
 	totalMonths: number;
 	label: string;
-	projects: ResumeProject[];
+	projects: T[];
 	projectCount: number;
 	lastUsedMonth: number;
 	lastUsedLabel: string;
@@ -44,11 +44,11 @@ const createScore = (
 	monthsSinceLastUsed: number,
 ): number => totalMonths + projectCount * 8 + Math.max(0, 24 - monthsSinceLastUsed) * 2;
 
-export const createTechExperience = (
-	projects: ResumeProject[],
+export const createTechExperience = <T extends ResumeProject>(
+	projects: T[],
 	locale: Locale,
 	now = new Date(),
-): TechExperience[] => {
+): TechExperience<T>[] => {
 	const currentMonth = now.getUTCFullYear() * 12 + now.getUTCMonth();
 
 	return createTechnologyAggregates(projects, now)
