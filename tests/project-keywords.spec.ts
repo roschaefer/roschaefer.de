@@ -17,7 +17,10 @@ test("project keyword pills expand without horizontal overflow", async ({ page }
 
 	await expect(expandedKeywordList.getByRole("button")).toHaveCount(0);
 	expect(await expandedKeywordList.locator("li").count()).toBeGreaterThan(initialPillCount);
-	await expect(expandedKeywordList).toBeFocused();
+	// initialPillCount includes the now-removed "+N more" button's own <li>,
+	// so the first newly revealed pill sits one slot earlier than that count.
+	const firstRevealedPill = expandedKeywordList.locator("li").nth(initialPillCount - 1);
+	await expect(firstRevealedPill).toBeFocused();
 
 	const layout = await page.evaluate(() => ({
 		scrollWidth: document.documentElement.scrollWidth,
