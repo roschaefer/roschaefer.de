@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
-import { projectEntryId, skillEntryId } from "$lib/data/resume";
+import SkillProjectMentions from "$lib/components/SkillProjectMentions.svelte";
+import { skillEntryId } from "$lib/data/resume";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
 import type { SiteContent } from "$lib/utils/content";
@@ -30,6 +31,7 @@ const collapses = $derived(remaining.length > 0);
 const isExpanded = $derived(!enhanced || expanded || !collapses);
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
+const skillProjectListId = (skillName: string) => `${skillEntryId(skillName)}-projects`;
 
 const expand = async () => {
 	const firstRevealedId = skillEntryId(remaining[0].name);
@@ -50,7 +52,8 @@ markUsed(() => [
 	t,
 	expand,
 	m,
-	projectEntryId,
+	skillProjectListId,
+	SkillProjectMentions,
 ]);
 </script>
 
@@ -113,17 +116,12 @@ markUsed(() => [
 			</dl>
 			<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
 				{t(m.used_in)}
-				{#each entry.projects.slice(0, 3) as project, index}
-					{@const projectId = projectEntryId(project)}
-					{#if index > 0}{", "}{/if}{#if linkableProjectIds.has(projectId)}<a
-							href={`#${projectId}`}
-						>
-							{project.name}
-						</a>{:else}{project.name}{/if}
-				{/each}
-				{#if entry.projects.length > 3}
-					{" "}{t(m.and_more)}
-				{/if}
+				<SkillProjectMentions
+					projects={entry.projects}
+					listId={skillProjectListId(entry.name)}
+					{locale}
+					{linkableProjectIds}
+				/>
 			</p>
 		</article>
 	</li>
