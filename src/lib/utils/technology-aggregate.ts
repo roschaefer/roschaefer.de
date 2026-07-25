@@ -1,9 +1,9 @@
 import type { ResumeProject } from "$lib/types/resume";
 
-export type TechnologyAggregate = {
+export type TechnologyAggregate<T extends ResumeProject = ResumeProject> = {
 	name: string;
 	totalMonths: number;
-	projects: ResumeProject[];
+	projects: T[];
 	projectCount: number;
 	lastUsedMonth: number;
 };
@@ -37,16 +37,16 @@ const mergeIntervals = (intervals: Interval[]): Interval[] => {
 	return merged;
 };
 
-export const createTechnologyAggregates = (
-	projects: ResumeProject[] = [],
+export const createTechnologyAggregates = <T extends ResumeProject>(
+	projects: T[] = [],
 	now = new Date(),
-): TechnologyAggregate[] => {
+): TechnologyAggregate<T>[] => {
 	const currentMonth = now.getUTCFullYear() * 12 + now.getUTCMonth();
 	const entries = new Map<
 		string,
 		{
 			intervals: Interval[];
-			projects: ResumeProject[];
+			projects: T[];
 			projectKeys: Set<string>;
 			lastUsedMonth: number;
 		}

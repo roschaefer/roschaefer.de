@@ -39,6 +39,7 @@ export type ResumeProject = {
 	type?: string;
 	engagement?: string;
 	codeVisibility?: string;
+	redacted?: boolean;
 };
 
 export type ResumeAward = {

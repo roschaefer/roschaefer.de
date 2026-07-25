@@ -72,24 +72,25 @@ The authored resume source is:
 
 - `resume.i18n.json`
 
-There are no generated `resume.de.json`/`resume.en.json` files committed to the repo. Instead:
+There are no generated `resume.de.json`/`resume.en.json` files committed to the repo — they're gitignored and regenerated fresh by `pnpm build:json-resume` (`scripts/generate-resume-source.ts`):
 
-1. `pnpm build:json-resume` (`scripts/generate-resume-source.ts`) copies `resume.i18n.json` to the gitignored `.generated/resume-source.json` — never committed, always regenerated fresh.
-2. `deriveResume(source, locale)` (`src/lib/utils/derive-resume.ts`, pure) localizes that file into a single locale's JSON Resume data, sorts dated sections, and computes skills.
+1. Decrypt `resume.i18n.json` (`sops -d`) and mask redacted-client fields (see "Redacted Clients" below), writing the result to `.generated/resume-source.json` (locale-agnostic, never committed).
+2. `deriveResume` (`src/lib/utils/derive-resume.ts`, a pure function) localizes that into a single locale's JSON Resume data, sorts dated sections, and computes skills. Written to `.generated/resume.de.json` / `.generated/resume.en.json`.
 
-This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed.
+This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed. `build:json-resume` is the only place `sops`/decryption is ever invoked — everything downstream (`src/lib/data/resume.ts`, `scripts/build-typst-data.ts`, tests) just reads the generated per-locale files as plain data, so none of it needs to be Node-only or server-only.
 
 The pipeline is:
 
-- `resume.i18n.json` -> (`pnpm build:json-resume`, copy) -> `.generated/resume-source.json`
-- `.generated/resume-source.json` -> (`deriveResume`, pure) -> localized JSON Resume data
-- localized JSON Resume data -> web rendering (`src/lib/data/resume.ts` imports the generated file, calls `deriveResume` once per locale at module load)
-- localized JSON Resume data -> Typst-ready data (`scripts/build-typst-data.ts` imports the same generated file directly)
+- `resume.i18n.json` -> (`pnpm build:json-resume`, decrypt + mask, one Node script) -> `.generated/resume-source.json`
+- `.generated/resume-source.json` -> (`deriveResume`, pure, once per locale) -> `.generated/resume.de.json` / `.generated/resume.en.json`
+- `.generated/resume.<locale>.json` -> web rendering (`src/lib/data/resume.ts` imports both generated files directly)
+- `.generated/resume.<locale>.json` -> Typst-ready data (`scripts/build-typst-data.ts` imports the same generated files directly)
+
+By default (`RESUME_MODE` unset, or `RESUME_MODE=masked`) real client identities never leave `generate-resume-source.ts`. `RESUME_MODE=unredacted pnpm build:json-resume` restores real values into the same gitignored `.generated/` files instead, for local, personal use (e.g. printing your own real CV) — never use this mode for a build that gets committed, deployed, or shared, and regenerate the masked version afterward before running `dev`/`build` again.
 
 Guidelines:
 
-- Edit resume content in `resume.i18n.json`, then run `pnpm build:json-resume`. `dev`/`build`/`check:types`/`test:unit` all run it explicitly first, so this is rarely a manual step.
-- Anything that needs localized resume data should import `.generated/resume-source.json` and call `deriveResume(source, locale)`, the same way `resume.ts`/`build-typst-data.ts` do — never add another parallel on-disk intermediate file.
+- Anything that needs localized resume data should import `.generated/resume.<locale>.json` directly, the same way `resume.ts`/`build-typst-data.ts` do — never add another parallel decrypt path.
 - Keep German and English resume structures aligned.
 - Validate both localized outputs against the same TypeScript/schema model.
 - Use stable `id` fields for translatable entries such as projects and talks.
@@ -97,6 +98,14 @@ Guidelines:
 - Derive technology durations from project date ranges, merging overlapping intervals so "years of experience" remains defensible.
 - Derive reverse links from each technology to the projects where it appears.
 - `codeVisibility` (`open-source`/`closed-source`) describes whether a project's *code* is public. It says nothing about whether the client/entity name is public — don't repurpose it for that. Only set it when there's an actual codebase behind the entry (e.g. a linked repository); a `type: "presentation"` entry whose only public link is a recording is not "open-source" just because the talk itself was public — omit the field rather than guess.
+
+## Redacted Clients
+
+Fields prefixed `sopsEncrypted` (`sopsEncryptedEntity`, `sopsEncryptedUrl`, `sopsEncryptedLinks`) hold real client identities. `sops` encrypts these fields in place in `resume.i18n.json` (`encrypted_regex: '^sopsEncrypted[A-Za-z]*$'` in `.sops.yaml`, `mac_only_encrypted: true` so plaintext edits elsewhere never break decryption). The goal is that no *current* build artifact — the live website, `/resume.json`, either PDF variant, or the current `resume.i18n.json` blob — ever exposes a real client name or a URL that would reveal one.
+
+This is a scoped mitigation against low-effort CV/data farming (bots and scrapers reading the current tree or the deployed site), not a guarantee that these identities are unreachable in this public repo altogether. Earlier commits still contain the plaintext values in `resume.i18n.json` blobs from before they were encrypted, and that's an accepted tradeoff, not an oversight — a recruiter who goes digging through Git history is out of scope for this protection. **Do not rewrite Git history to purge old blobs** as a way to "fully" fix this, whether in response to review feedback or otherwise, without being explicitly asked; that's a judgment call for Robert, not something to do preemptively. If plaintext history turns out to be trivially discoverable by an AI agent in a way that matters, that's a reason to revisit later, not a bug to fix now.
+
+Edit with `sops resume.i18n.json` or view with `sops -d resume.i18n.json`; `biome.json` excludes this file so it never fights `sops`'s formatting. `.sops.yaml` lists two age recipients: a personal key for local interactive edits, and a CI-only key (its private half lives in the `SOPS_AGE_KEY` GitHub Actions secret, attached only to the individual CI steps that actually invoke `sops` — never at job level, to keep it out of reach of unrelated steps like checkout or dependency install) so `pnpm build`/`pnpm check:quick` can decrypt in CI without ever exposing the personal key.
 
 ## PDF And Print
 
@@ -320,7 +329,7 @@ Every `build:*` script does exactly one job and can be run standalone; `pnpm bui
 
 ```bash
 pnpm build:paraglide     # compile Paraglide UI messages
-pnpm build:json-resume   # copy resume.i18n.json -> .generated/resume-source.json (gitignored)
+pnpm build:json-resume   # decrypt + mask resume.i18n.json -> .generated/resume.{de,en}.json (gitignored, requires a sops key)
 pnpm build:typst-data    # -> typst/content/{de,en}.typ.json (implies build:json-resume)
 pnpm build:pdf           # -> static/{de,en}/*.pdf (implies build:json-resume; internally also runs build-typst-data.ts)
 pnpm build:vite          # vite build -> build/

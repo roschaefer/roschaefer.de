@@ -27,14 +27,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # SOPS_AGE_KEY is attached only to steps that actually decrypt
+      # resume.i18n.json, not at job level, so checkout/mise/install never see it.
       - name: Quick verification
         run: pnpm check:quick
+        env:
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
 
       # Builds and serves the full site (including PDFs) to run these tests -
       # this is also the ./build the Lighthouse step below reuses, so it's
       # never rebuilt a second time.
       - name: E2E tests
         run: pnpm test:e2e
+        env:
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
 
       # This job runs inside the Playwright container, so Chrome isn't on the
       # path Lighthouse's launcher checks. Resolve it via Playwright's own API
@@ -43,8 +49,9 @@ jobs:
         id: chrome
         run: echo "path=$(node -e "console.log(require('@playwright/test').chromium.executablePath())")" >> "$GITHUB_OUTPUT"
 
-      # No buildCommand here: lighthouserc.json's staticDistDir already points
-      # at ./build from the E2E step above, so this doesn't rebuild.
+      # No buildCommand/env here: lighthouserc.json's staticDistDir already
+      # points at ./build from the E2E step above, so this neither rebuilds
+      # nor needs the decryption key.
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
         with:

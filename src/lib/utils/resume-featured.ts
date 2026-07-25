@@ -18,20 +18,18 @@ const pickByKey = <T, K>(entries: T[], keys: K[], getKey: (entry: T) => K): T[] 
 		.filter((entry): entry is T => entry !== undefined);
 };
 
-export const createFeaturedProjects = (
-	projects: ResumeProject[] = [],
+export const createFeaturedProjects = <T extends ResumeProject>(
+	projects: T[] = [],
 	projectIds: string[] = [],
-): ResumeProject[] => {
+): T[] => {
 	return pickByKey(
-		projects.filter(
-			(project): project is ResumeProject & { id: string } => typeof project.id === "string",
-		),
+		projects.filter((project): project is T & { id: string } => typeof project.id === "string"),
 		projectIds,
 		(project) => project.id,
 	);
 };
 
-export const createAtsExperienceProjects = (projects: ResumeProject[] = []): ResumeProject[] =>
+export const createAtsExperienceProjects = <T extends ResumeProject>(projects: T[] = []): T[] =>
 	projects.filter((project) => project.type !== "presentation");
 
 export const createFeaturedEducation = (
