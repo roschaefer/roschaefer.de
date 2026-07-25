@@ -1,8 +1,9 @@
 <script lang="ts">
-import { onMount } from "svelte";
+import { onMount, tick } from "svelte";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
-import ProjectKeywordPills from "$lib/components/ProjectKeywordPills.svelte";
+import ProjectsList from "$lib/components/ProjectsList.svelte";
+import TechExperienceList from "$lib/components/TechExperienceList.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { projectEntryId, skillEntryId } from "$lib/data/resume";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
@@ -20,14 +21,30 @@ interface Props {
 const { content, locale }: Props = $props();
 
 let activeAnchorTargetId = $state<string | null>(null);
+let projectsExpanded = $state(false);
+let technologiesExpanded = $state(false);
 
-const visibleProjectIds = $derived(
-	new Set(content.featuredProjects.map((project) => projectEntryId(project))),
+const linkableProjectIds = $derived(
+	new Set(
+		[...content.featuredProjects, ...content.remainingProjects].map((project) =>
+			projectEntryId(project),
+		),
+	),
 );
-const visibleSkillIds = $derived(
-	new Set(content.techExperience.map((entry) => skillEntryId(entry.name))),
+const linkableSkillIds = $derived(
+	new Set(
+		[...content.techExperience, ...content.remainingTechExperience].map((entry) =>
+			skillEntryId(entry.name),
+		),
+	),
 );
-const visibleAnchorTargetIds = $derived(new Set([...visibleProjectIds, ...visibleSkillIds]));
+const anchorTargetIds = $derived(new Set([...linkableProjectIds, ...linkableSkillIds]));
+const remainingProjectIds = $derived(
+	new Set(content.remainingProjects.map((project) => projectEntryId(project))),
+);
+const remainingSkillIds = $derived(
+	new Set(content.remainingTechExperience.map((entry) => skillEntryId(entry.name))),
+);
 const scrollBehavior = (): ScrollBehavior =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 const currentHashTarget = () => {
@@ -49,14 +66,32 @@ const activateAnchorTarget = (targetId: string) => {
 	targetElement.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
 };
 onMount(() => {
-	const activateHashTarget = () => {
+	const activateHashTarget = async () => {
 		const targetId = currentHashTarget();
-		if (visibleAnchorTargetIds.has(targetId)) {
-			activateAnchorTarget(targetId);
+		if (!targetId) {
+			activeAnchorTargetId = null;
 			return;
 		}
 
-		activeAnchorTargetId = null;
+		if (!anchorTargetIds.has(targetId)) {
+			activeAnchorTargetId = null;
+			// Collapsing the lists above shrinks the page, so a section hash
+			// the browser already scrolled to (against the full SSR markup)
+			// needs to be re-aligned once the collapse has taken effect.
+			await tick();
+			document.getElementById(targetId)?.scrollIntoView({ behavior: "auto" });
+			return;
+		}
+
+		if (remainingProjectIds.has(targetId)) {
+			projectsExpanded = true;
+		}
+		if (remainingSkillIds.has(targetId)) {
+			technologiesExpanded = true;
+		}
+
+		await tick();
+		activateAnchorTarget(targetId);
 	};
 
 	activateHashTarget();
@@ -100,10 +135,9 @@ const formatEducationPeriod = (entry: SiteContent["education"][number]) => {
 	const end = entry.endDate ? formatYear(entry.endDate) : t(m.present);
 	return [start, end].filter(Boolean).join(" - ");
 };
-const projectKeywordListId = (project: SiteContent["featuredProjects"][number], index: number) =>
-	`project-keywords-${project.id ?? `${project.name}-${project.startDate}-${index}`}`;
-
 markUsed(() => [
+	projectsExpanded,
+	technologiesExpanded,
 	siteImage,
 	siteName,
 	siteUrl,
@@ -121,15 +155,12 @@ markUsed(() => [
 	educationDateFormatter,
 	formatYear,
 	formatEducationPeriod,
-	projectKeywordListId,
 	PageShell,
 	ContactLinks,
-	ProjectKeywordPills,
-	projectEntryId,
-	skillEntryId,
-	visibleProjectIds,
-	visibleSkillIds,
-	visibleAnchorTargetIds,
+	ProjectsList,
+	TechExperienceList,
+	linkableProjectIds,
+	linkableSkillIds,
 	activeAnchorTargetId,
 ]);
 </script>
@@ -339,60 +370,14 @@ markUsed(() => [
 				<p>{t(m.tech_experience_intro)}</p>
 			</div>
 
-			<ol class="grid list-none gap-4 p-0 md:grid-cols-2 xl:grid-cols-3">
-				{#each content.techExperience as entry}
-					<li
-						id={skillEntryId(entry.name)}
-						tabindex="-1"
-						class="anchor-target-card theme-card scroll-mt-8 rounded-[1.5rem] p-5 transition duration-300 focus:outline-none"
-						class:anchor-target-card-active={activeAnchorTargetId === skillEntryId(entry.name)}
-					>
-						<article>
-							<h3 class="theme-heading">{entry.name}</h3>
-							<dl class="mt-4 space-y-2 rounded-[1rem] border border-[var(--color-brand-line)] bg-[color:color-mix(in_srgb,var(--color-brand-panel)_76%,transparent)] p-3">
-								<div class="flex items-start justify-between gap-4">
-									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
-										{t(m.tech_experience_projects)}
-									</dt>
-									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
-										{entry.projectCount}
-									</dd>
-								</div>
-								<div class="flex items-start justify-between gap-4">
-									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
-										{t(m.tech_experience_duration)}
-									</dt>
-									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
-										{entry.label}
-									</dd>
-								</div>
-								<div class="flex items-start justify-between gap-4">
-									<dt class="pt-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-muted)]">
-										{t(m.tech_experience_recency)}
-									</dt>
-									<dd class="text-right text-sm font-semibold leading-tight text-[var(--color-brand-text)]">
-										{entry.lastUsedLabel}
-									</dd>
-								</div>
-							</dl>
-							<p class="mt-4 text-sm text-[var(--color-brand-muted)]">
-								{t(m.used_in)}
-								{#each entry.projects.slice(0, 3) as project, index}
-									{@const projectId = projectEntryId(project)}
-									{#if index > 0}{", "}{/if}{#if visibleProjectIds.has(projectId)}<a
-											href={`#${projectId}`}
-										>
-											{project.name}
-										</a>{:else}{project.name}{/if}
-								{/each}
-								{#if entry.projects.length > 3}
-									{" "}{t(m.and_more)}
-								{/if}
-							</p>
-						</article>
-					</li>
-				{/each}
-			</ol>
+			<TechExperienceList
+				featured={content.techExperience}
+				remaining={content.remainingTechExperience}
+				{locale}
+				{linkableProjectIds}
+				{activeAnchorTargetId}
+				bind:expanded={technologiesExpanded}
+			/>
 		</section>
 
 		<section
@@ -407,57 +392,14 @@ markUsed(() => [
 				<h2 id="projects-title" class="theme-heading">{t(m.selected_work_title)}</h2>
 			</div>
 
-			<div class="grid gap-6 lg:grid-cols-2">
-				{#each content.featuredProjects as project, projectIndex}
-					{@const keywordListId = projectKeywordListId(project, projectIndex)}
-					{@const projectKeywords = project.keywords ?? []}
-					<article
-						id={projectEntryId(project)}
-						tabindex="-1"
-						class="anchor-target-card theme-card scroll-mt-8 rounded-[1.75rem] p-6 transition duration-300 focus:outline-none"
-						class:anchor-target-card-active={activeAnchorTargetId === projectEntryId(project)}
-					>
-						<header class="space-y-3">
-							<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
-								{project.roles?.join(", ") ?? t(m.project_fallback)}
-							</p>
-							<h3 class="theme-heading">{project.entity ?? t(m.independent)}</h3>
-							<p class="text-sm font-semibold text-[var(--color-brand-text)]">
-								{#if project.url}
-									<a
-										class="print-url no-underline"
-										href={project.url}
-										data-print-label={printLinkLabel(project.url)}
-									>
-										{project.name}
-									</a>
-								{:else}
-									{project.name}
-								{/if}
-							</p>
-							<p class="text-sm text-[var(--color-brand-muted)]">
-								{project.startDate}
-								{#if project.endDate}
-									- {project.endDate}
-								{:else}
-									- {t(m.present)}
-								{/if}
-							</p>
-						</header>
-						{#if project.description}
-							<p class="mt-4 text-[var(--color-brand-text)]">{project.description}</p>
-						{/if}
-						{#if projectKeywords.length}
-							<ProjectKeywordPills
-								keywords={projectKeywords}
-								listId={keywordListId}
-								{locale}
-								{visibleSkillIds}
-							/>
-						{/if}
-					</article>
-				{/each}
-			</div>
+			<ProjectsList
+				featured={content.featuredProjects}
+				remaining={content.remainingProjects}
+				{locale}
+				{linkableSkillIds}
+				{activeAnchorTargetId}
+				bind:expanded={projectsExpanded}
+			/>
 		</section>
 
 		<section

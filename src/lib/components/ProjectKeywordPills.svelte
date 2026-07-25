@@ -32,10 +32,12 @@ const visibleKeywords = $derived(
 );
 const hiddenKeywordCount = $derived(keywords.length - projectKeywordPreviewLimit);
 
+const firstRevealedId = $derived(`${listId}-reveal-target`);
+
 const expand = async () => {
 	expanded = true;
 	await tick();
-	document.getElementById(listId)?.focus({ preventScroll: true });
+	document.getElementById(firstRevealedId)?.focus({ preventScroll: true });
 };
 
 onMount(() => {
@@ -46,12 +48,16 @@ onMount(() => {
 <ul
 	id={listId}
 	data-testid="project-keywords"
-	tabindex="-1"
 	class="mt-5 flex list-none flex-wrap gap-2 p-0"
 >
-	{#each visibleKeywords as keyword}
+	{#each visibleKeywords as keyword, index}
 		{@const skillId = skillEntryId(keyword)}
-		<li class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)]">
+		{@const isFirstRevealed = index === projectKeywordPreviewLimit}
+		<li
+			id={isFirstRevealed ? firstRevealedId : undefined}
+			tabindex="-1"
+			class="rounded-full border border-[var(--color-brand-line)] px-3 py-1 text-sm text-[var(--color-brand-cyan-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-cyan)]"
+		>
 			{#if visibleSkillIds.has(skillId)}
 				<a class="no-underline" href={`#${skillId}`}>{keyword}</a>
 			{:else}
