@@ -3,7 +3,10 @@
 		"collect": {
 			"staticDistDir": "./build",
 			"url": ["/de/", "/en/", "/de/impressum/", "/en/imprint/", "/de/datenschutz/", "/en/privacy/"],
-			"numberOfRuns": 1
+			"numberOfRuns": 1,
+			"settings": {
+				"chromeFlags": "--no-sandbox --disable-dev-shm-usage"
+			}
 		},
 		"assert": {
 			"assertions": {
