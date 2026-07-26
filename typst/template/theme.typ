@@ -28,6 +28,17 @@
 #let item-meta(value) = text(size: 8.1pt, fill: muted)[#value]
 #let item-copy(value) = text(size: 8.9pt, fill: ink)[#value]
 
+#let link-list(prefix, entries) = if entries.len() > 0 [
+  #v(3pt)
+  #if prefix != "" [
+    #text(size: 8.1pt, fill: muted)[#prefix]
+  ]
+  #for (index, entry) in entries.enumerate() [
+    #text(size: 8.1pt)[#link(entry.url)[#text(fill: brand)[#entry.label]]]
+    #if index < entries.len() - 1 [#text(size: 8.1pt, fill: muted)[, ]]
+  ]
+]
+
 #let chip(value) = box(
   fill: chip-fill,
   radius: 4pt,

@@ -1,7 +1,8 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
+import NewspaperIcon from "$lib/components/NewspaperIcon.svelte";
 import ProjectKeywordPills from "$lib/components/ProjectKeywordPills.svelte";
-import { projectEntryId } from "$lib/data/resume";
+import { pressEntryId, projectEntryId } from "$lib/data/resume";
 import { printLinkLabel } from "$lib/data/short-links";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
@@ -57,6 +58,8 @@ markUsed(() => [
 	projectKeywordListId,
 	expand,
 	ProjectKeywordPills,
+	NewspaperIcon,
+	pressEntryId,
 	printLinkLabel,
 	m,
 ]);
@@ -85,6 +88,7 @@ markUsed(() => [
 {#snippet projectCard(project: SiteContent["featuredProjects"][number], projectIndex: number)}
 	{@const keywordListId = projectKeywordListId(project, projectIndex)}
 	{@const projectKeywords = project.keywords ?? []}
+	{@const pressLinks = (project.links ?? []).filter((link) => link.kind === "press")}
 	<article
 		id={projectEntryId(project)}
 		tabindex="-1"
@@ -136,6 +140,15 @@ markUsed(() => [
 				{locale}
 				visibleSkillIds={linkableSkillIds}
 			/>
+		{/if}
+		{#if pressLinks.length}
+			<a
+				href={`#${pressEntryId(project)}`}
+				class="mt-4 inline-flex items-center gap-1.5 rounded-full border border-[var(--color-brand-line)] px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-[var(--color-brand-cyan-soft)] no-underline transition hover:border-[var(--color-brand-cyan)]"
+			>
+				<NewspaperIcon class="h-3.5 w-3.5 shrink-0" />
+				{t(m.press_coverage_label)} ({pressLinks.length})
+			</a>
 		{/if}
 	</article>
 {/snippet}

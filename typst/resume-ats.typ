@@ -1,4 +1,4 @@
-#import "template/theme.typ": brand, item-copy, item-meta, item-title, section-heading
+#import "template/theme.typ": brand, item-copy, item-meta, item-title, link-list, section-heading
 
 #let lang = sys.inputs.at("lang", default: "de")
 #let data = json("content/" + lang + ".typ.json")
@@ -27,6 +27,7 @@
     #v(3pt)
     #item-meta(entry.keywords.join(" • "))
   ]
+  #link-list(data.labels.press, entry.pressLinks)
 ]
 
 #let simple-entry(title, meta: "", copy: "", link-url: none) = block(breakable: false)[
@@ -158,11 +159,17 @@
       data.awards.first().title,
       meta: data.awards.first().awarder + "   " + data.awards.first().period,
       copy: data.awards.first().summary,
+      link-url: data.awards.first().url,
     )
   ]
   #v(6pt)
   #for entry in data.awards.slice(1) [
-    #simple-entry(entry.title, meta: entry.awarder + "   " + entry.period, copy: entry.summary)
+    #simple-entry(
+      entry.title,
+      meta: entry.awarder + "   " + entry.period,
+      copy: entry.summary,
+      link-url: entry.url,
+    )
     #v(6pt)
   ]
 ]

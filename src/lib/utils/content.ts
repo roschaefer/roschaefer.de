@@ -42,6 +42,12 @@ export const createSiteContent = (locale: Locale) => {
 	);
 	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
 	const profiles = resume.basics.profiles ?? [];
+	const press = sortedProjects
+		.map((project) => ({
+			project,
+			links: (project.links ?? []).filter((link) => link.kind === "press"),
+		}))
+		.filter((entry) => entry.links.length > 0);
 
 	return {
 		basics: resume.basics,
@@ -56,6 +62,7 @@ export const createSiteContent = (locale: Locale) => {
 		remainingTechExperience,
 		profiles,
 		awards: resume.awards ?? [],
+		press,
 		languages: resume.languages ?? [],
 		education: featuredEducation.length > 0 ? featuredEducation : (resume.education ?? []),
 		interests: resume.interests ?? [],

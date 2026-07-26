@@ -10,6 +10,7 @@ import type {
 	Resume,
 	ResumeAward,
 	ResumeEducation,
+	ResumeLink,
 	ResumeProfile,
 	ResumeProject,
 } from "../src/lib/types/resume.ts";
@@ -59,6 +60,7 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			experience: "Berufserfahrung",
 			selectedTalks: "Ausgewählte Vorträge",
 			redactedClient: "Name auf Anfrage",
+			press: "Presse:",
 		},
 		redactedClientUrl: `${siteUrl}/de/auf-anfrage/`,
 	},
@@ -77,6 +79,7 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			experience: "Experience",
 			selectedTalks: "Selected Talks",
 			redactedClient: "Name on request",
+			press: "Press:",
 		},
 		redactedClientUrl: `${siteUrl}/en/on-request/`,
 	},
@@ -153,6 +156,15 @@ const toDisplayProject = (project: ResumeProject, config: LocaleConfig): Display
 	linkUrl: project.redacted ? config.redactedClientUrl : (project.url ?? null),
 });
 
+const createLinkEntries = (links: ResumeLink[] = [], kind?: string) =>
+	links
+		.filter((link) => (kind ? link.kind === kind : true))
+		.map((link) => ({
+			label: link.label,
+			url: link.url,
+			printLabel: printLinkLabel(link.url),
+		}));
+
 const createProjectEntry = (project: DisplayProject, locale: Locale, config: LocaleConfig) => ({
 	name: project.name,
 	entity: project.entity,
@@ -162,6 +174,7 @@ const createProjectEntry = (project: DisplayProject, locale: Locale, config: Loc
 	keywords: (project.keywords ?? []).slice(0, 6),
 	url: project.linkUrl,
 	printLabel: project.url ? printLinkLabel(project.url) : null,
+	pressLinks: createLinkEntries(project.links, "press"),
 });
 
 const createTalkEntry = (project: DisplayProject, locale: Locale) => ({
@@ -184,6 +197,7 @@ const createAwardEntry = (entry: ResumeAward, locale: Locale) => ({
 	awarder: entry.awarder ?? "",
 	period: formatDate(entry.date, locale),
 	summary: stripMarkdownLinks(entry.summary ?? ""),
+	url: entry.url ?? null,
 });
 
 const createTechnologyEntry = (entry: DisplayTechExperience) => ({
