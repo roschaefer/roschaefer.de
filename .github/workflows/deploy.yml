@@ -22,13 +22,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build production site
-        run: pnpm build
-        env:
-          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
-
       - name: Deploy to Netlify
         run: pnpm dlx netlify deploy --dir=build --prod
         env:
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
