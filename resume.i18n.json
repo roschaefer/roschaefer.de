@@ -24,26 +24,20 @@
 		],
 		"skillNames": [
 			"TypeScript",
-			"Ruby",
-			"Python",
 			"SvelteKit",
 			"Vue",
 			"Tailwind",
 			"Apollo GraphQL",
-			"Ruby on Rails",
 			"Docker",
 			"Kubernetes",
 			"Terraform",
-			"Ansible",
 			"Neon DB",
-			"PostgreSQL",
 			"Neo4J",
 			"Netlify",
 			"Vercel",
 			"Google Cloud",
 			"Digital Ocean",
-			"Sentry",
-			"Hasura"
+			"Sentry"
 		]
 	},
 	"basics": {
@@ -360,7 +354,7 @@
 				"en": "With this SvelteKit application for AI-assisted interviews and editorial publishing, I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
 			},
 			"type": "product",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:hEBQ4aXWWclZACK/ctDi54g=,iv:nHRGqIS5rAt8WB8K9KL8Nh3hlz7oW7zBQz6z5u5HXQU=,tag:ghexeVsJhcg8cxyDBD8jrA==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:oOzZHnoH+qKci4a9+SGrNk6SmKd5vUqMIIjpDm+3kGxcV8VJlCfcWlOxyq+fgg==,iv:xO6jGUnrd1cPciF5E7Es5G99fPYxZ4wprIV2MGlChac=,tag:r4lI4pY2i0N0hcvkMb6ipg==,type:str]"
 		},
 		{
@@ -376,7 +370,7 @@
 					"en": "Full Stack Developer"
 				}
 			],
-			"startDate": "2025-03-25",
+			"startDate": "2026-03-25",
 			"keywords": [
 				"TypeScript",
 				"Nuxt",
@@ -470,7 +464,7 @@
 				"en": "For this platform for audience engagement and crowd-based reporting in journalism, I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
 			},
 			"type": "product",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:6UHekhwFdyG+HXlfDKNwcl4=,iv:gC7N1yOyqUosRb+ok+6+Ob4DUacTITNcQUxn8FV9lB8=,tag:MVGWmJO4NWbM80m9sTN/9w==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:gtM/2qp1enCNDOl2rlfOEY1TNGXaZmYYJUd81GlNZVWBOxcAkWrWQ0EtUK4BUA==,iv:hTOYUPHsAkFD/+MDbJO94cSeaE1jfIOJXXWAql5e17k=,tag:BLgG+2axeKernNZ4URHg/A==,type:str]"
 		},
 		{
@@ -539,7 +533,7 @@
 				"en": "I rebuilt the website for a retail client with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
 			},
 			"type": "client-platform",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Ba67ZaPYpgoxG19x7rw9zzg=,iv:c/iLjEqe3JIbBePfKPVIjeNdcUsndXVPo3hwZJ1a7w0=,tag:SbfAFLudlQtH7YayGtDZpQ==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:JTxSRIeSkAn+cdpWVb8DiVnQj3hnB/COBrg6C+h5Jg==,iv:iKCY6ibky3HlzX3q7AdLVSNnK/XECoYL4K1yZQ8GpP4=,tag:sWxheqYE3sg0EgfYScbW7w==,type:str]"
 		},
 		{
@@ -570,7 +564,7 @@
 				"en": "I built a custom booking system for sewing classes for a course provider and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
 			},
 			"type": "client-platform",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Np9Iw7/Tet3RzGP9YHHnwcw=,iv:YXh93fEB9qx9j3zl60rMm99B5J2lhaCzccZWJKcX2o4=,tag:lglmPEKYVyz9xO3DCtULOQ==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:aCDbQPkPxAcyp+iG7F9KTH9nVujeLhY63g==,iv:h9zC/36wIz2EmeHGJSIFD5tXGc4wtzboy5boRUgfC94=,tag:7mWZI6xI2f7FA/OcV375PQ==,type:str]"
 		},
 		{
@@ -601,7 +595,7 @@
 				"en": "I built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
 			},
 			"type": "client-platform",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:p3g7AYH2FE+AXb8G2tUHdr8=,iv:rTwLwJxzgpoHk9Ay3vFDDv2uBU+QNw3B6QHrEZ+YLec=,tag:FL0Q5TrXIYd/Ld07sWvTmA==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:VBj94gbeila6T1zFy5CmqhlK2CnbF7I=,iv:EUSzSlK+lrqpQHr/JR/94DunOglBZCqSW61shFhvLbY=,tag:HbtLzhNk64fpnPsFXGw2Yg==,type:str]"
 		},
 		{
@@ -762,7 +756,7 @@
 				"en": "Building on an earlier journalistic sensor-data project, we reused and extended the platform for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
 			},
 			"type": "product",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:s/bmgUyxdAumsZj8i0IxbKo=,iv:V33/D+nsRJhUY/OWPt5nQOaSAuduYav8chzalnH7p3w=,tag:ztHzc4uhXNQgnBs0r4ExRw==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data://eYgDZ54bFbj6FveEy/HgVVcIof/W/NlQ2SPPP8Gu/6rnaBSqaPIezqgzyzLBjrszS2TXreU9/LiLLZSeUyXTvn,iv:IVZCpgVwIRuAYXzAiSylostDGcNjo2tEA+I3+abZR00=,tag:u5x5FEh8F+gmqFJDFkKUWg==,type:str]"
 		},
 		{
@@ -933,7 +927,7 @@
 			},
 			"location": "Lunenburg, Lower Saxony, Germany",
 			"type": "prototype",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:y+tpTwm2wlOC2nV4/HzNXYU=,iv:pyEMwlYA5wAiJVJipymAS0mb7gYrLZIkgbqisKvnNHs=,tag:JHKGRi1t8gaSSO9DPfy6lA==,type:str]"
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]"
 		},
 		{
 			"id": "story-trolley-ember-meets-iot",
@@ -1034,18 +1028,18 @@
 				"de": "Für WDR und Spiegel Online entwickelten wir ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
 				"en": "For WDR and Spiegel Online, we developed a journalistic format that generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
 			},
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:lgk0yeA7JDzzF3ce2D67vqU=,iv:daijQ87lnKSC0YjPbhFA6/8N4wYH8kKjvYMpYeiNOAY=,tag:lir3b2u+FJLh6h5AY2dNeg==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:B2GBMQFMeIHJMPRlPKU7iPS7qgb3WMTQvAw=,iv:tTBZvtlk697pYTHdFcLuIOmPSrvz7Y71ThhIvMKqJgc=,tag:eQgocc+69HyCRYM2yr3tXA==,type:str]",
 			"sopsEncryptedLinks": [
 				{
 					"label": "ENC[AES256_GCM,data:Ec85,iv:p0gFerL930+2/i/q1JJgubyIGwWxtpwKbt98oRYoWq8=,tag:/Z4GXr7llm+narVXye5Vug==,type:str]",
 					"url": "ENC[AES256_GCM,data:uZfJX8Z/uPpCW9iob9WpcH8QkpFwsAuOG6GKHaMGCofzzanWyjEakcSzbndtSUnm5DXTK3xnYPVqyJND9J05Tq4qC2ahQ/I=,iv:UEAVxWAsjFYPvafL4zKBy/i/Kag1q099qPVbyq0C4MQ=,tag:F2/kLJMj/vhvZylZeW0EFA==,type:str]",
-					"kind": "ENC[AES256_GCM,data:AndnyTY=,iv:6JXw66ZYguMSCrQ+RHsU2v7v3pUTpVLdGCzEpH7tJJc=,tag:tx7o/BSYHxjam7jXXH+xiA==,type:str]"
+					"kind": "ENC[AES256_GCM,data:YteHvRo=,iv:QpTMHqFAogI0a+RZR3iuNfS10PM+/QCbOV2tt+Tp69Y=,tag:h0VeYd8AnhEPsLGZQ2tltQ==,type:str]"
 				},
 				{
 					"label": "ENC[AES256_GCM,data:A8W01wwW/mR5JvVvYck=,iv:9HwFpRe3LWm3xTzVf/AaekK+80X51JzpsJumMGoJNsE=,tag:VVOA39GKQ7bzwjk9Li8z7g==,type:str]",
 					"url": "ENC[AES256_GCM,data:61VuiaShmbXJW9OIqi3pvgUO4oTyb/o7ObqZZ2rR+b3yBSk+5zW6p217yDuxaKhaRfV+wTreoqrIYLpMQCxYR0AQcchDyXRbaA68daIyfTu2krhO1iwB2EIlZzOK1Ehl,iv:E2E9Adssg5LJt0Wni7+tOMHiXHG+vYHTtLRxwxCdn3I=,tag:rRpQVbtUrlRzGAP2+glywA==,type:str]",
-					"kind": "ENC[AES256_GCM,data:2aYARyE=,iv:GyobsgP8QTZ+UMIZpr18kDz0h9SXEjWxaOlLdEXvciQ=,tag:+EtKlgKwnXJJJrTGymTjbg==,type:str]"
+					"kind": "ENC[AES256_GCM,data:YteHvRo=,iv:QpTMHqFAogI0a+RZR3iuNfS10PM+/QCbOV2tt+Tp69Y=,tag:h0VeYd8AnhEPsLGZQ2tltQ==,type:str]"
 				},
 				{
 					"label": {
@@ -1418,8 +1412,8 @@
 			}
 		],
 		"encrypted_regex": "^sopsEncrypted[A-Za-z]*$",
-		"lastmodified": "2026-07-25T16:05:38Z",
-		"mac": "ENC[AES256_GCM,data:0OgRPitw6gd1z/289cnT8x8GDbLkxUg3OwoUSIDJd7n1HQdr7Bw1jHsDm8NRaVqEXGq7v2uJTobETGBl4zTZcttZDSKZ0Jwc2wvtKmjhxI0V5dHmL04HjFpfrELa4M6J6Ntv9kA9fivxBd1IyJdGCx4NdLYriMJpUvQYNmVCyIM=,iv:unDKfP9lZ+aAWH9NM5WpBFpTWUNbdbC2v2eU1kLO5qE=,tag:oqZyFZZLy7T9IOy9HJtMsw==,type:str]",
+		"lastmodified": "2026-07-26T10:50:56Z",
+		"mac": "ENC[AES256_GCM,data:NG/a7KCaDThf1++mNEEwl0ygds4UX6RQ5ZQt3EMN0tsloCW2iSm72UNBR57V7zcvyFXLIRPJPzune6cAUd8yFwCETu/2Le/99zJs23Z3TMCcHJlY/1SF42FlgW9Ypo4WkSjWWhMBC9A5qkgeRUnZD7tOxfLReiTASrmVyX7gh10=,iv:VjWjFQd/bk3jAKkjUIGJGKNQN/5KbIXxstS0xppyoJI=,tag:1lasPV882kIxDKYabNtKtg==,type:str]",
 		"mac_only_encrypted": true,
 		"version": "3.13.3"
 	}
