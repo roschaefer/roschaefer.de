@@ -8,7 +8,9 @@
 			"audience-engagement-platform",
 			"open-source-social-network",
 			"systems-development-and-framework",
-			"roschaefer-portfolio"
+			"roschaefer-portfolio",
+			"hledger-document-check",
+			"hledger-elster"
 		],
 		"talkIds": [
 			"find-open-source-contributors-vuejs-berlin",
@@ -283,6 +285,56 @@
 			},
 			"url": "https://roschaefer.de/",
 			"type": "portfolio"
+		},
+		{
+			"id": "hledger-document-check",
+			"name": "hledger-document-check",
+			"entity": "Robert Schäfer",
+			"engagement": "independent",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-03-19",
+			"keywords": [
+				"Rust",
+				"hledger",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Ein quelloffenes Kommandozeilenwerkzeug für Belegprüfung und Voucher-Audits in hledger-Journalen. Es gleicht buchungspflichtige Transaktionen mit Belegen auf der Festplatte ab, erkennt fehlende oder ungebuchte Dokumente, prüft Plausibilität von Beträgen und kann ein abgeleitetes Journal mit `document:`-Tags für nachgelagerte Werkzeuge wie Fava ausgeben.",
+				"en": "An open-source command-line tool for document checks and voucher audits in hledger journals. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, audits amount plausibility, and can emit an enriched journal with `document:` tags for downstream tools such as Fava."
+			},
+			"url": "https://github.com/roschaefer/hledger-document-check",
+			"type": "tool"
+		},
+		{
+			"id": "hledger-elster",
+			"name": "hledger-elster",
+			"entity": "Robert Schäfer",
+			"engagement": "independent",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-03-19",
+			"keywords": [
+				"Rust",
+				"hledger",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Ein quelloffenes Kommandozeilenwerkzeug, das aus einem hledger-Journal strukturierte Auswertungen für deutsche Steuererklärungen erzeugt. Es liest steuerliche Metadaten aus Kontodirektiven, berechnet nachvollziehbare Exporte für EÜR, Umsatzsteuer und Einkommensteuer und schreibt sowohl zusammenfassende Arbeitsmappen als auch CSV-basierte Herleitungen zur Prüfung der Werte.",
+				"en": "An open-source command-line tool that turns an hledger journal into structured outputs for German tax filing. It reads tax metadata from account directives, calculates traceable exports for EÜR, VAT, and income tax, and writes both summary workbooks and CSV-based derivations for auditing the reported values."
+			},
+			"url": "https://github.com/roschaefer/hledger-elster",
+			"type": "tool"
 		},
 		{
 			"id": "ai-interview-platform",
