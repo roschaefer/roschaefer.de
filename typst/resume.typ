@@ -1,4 +1,4 @@
-#import "template/theme.typ": brand, chip, item-copy, item-meta, item-title, section-heading
+#import "template/theme.typ": brand, chip, item-copy, item-meta, item-title, link-list, section-heading
 
 #let lang = sys.inputs.at("lang", default: "de")
 #let data = json("content/" + lang + ".typ.json")
@@ -39,6 +39,7 @@
       ]
     ]
   ]
+  #link-list(data.labels.press, entry.pressLinks)
 ]
 
 #let talk-entry(entry) = block(breakable: false)[
@@ -62,7 +63,7 @@
 ]
 
 #let award-entry(entry) = [
-  #item-title(entry.title, suffix: entry.awarder)
+  #item-title(entry.title, suffix: entry.awarder, link-url: entry.url)
   #if entry.period != "" [
     #v(2pt)
     #item-meta(entry.period)

@@ -1,11 +1,12 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
+import NewspaperIcon from "$lib/components/NewspaperIcon.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
 import ProjectsList from "$lib/components/ProjectsList.svelte";
 import TechExperienceList from "$lib/components/TechExperienceList.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
-import { projectEntryId, skillEntryId } from "$lib/data/resume";
+import { pressEntryId, projectEntryId, skillEntryId } from "$lib/data/resume";
 import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
 import { printLinkLabel } from "$lib/data/short-links";
 import type { Locale } from "$lib/i18n";
@@ -38,7 +39,10 @@ const linkableSkillIds = $derived(
 		),
 	),
 );
-const anchorTargetIds = $derived(new Set([...linkableProjectIds, ...linkableSkillIds]));
+const pressAnchorIds = $derived(new Set(content.press.map((entry) => pressEntryId(entry.project))));
+const anchorTargetIds = $derived(
+	new Set([...linkableProjectIds, ...linkableSkillIds, ...pressAnchorIds]),
+);
 const remainingProjectIds = $derived(
 	new Set(content.remainingProjects.map((project) => projectEntryId(project))),
 );
@@ -157,10 +161,13 @@ markUsed(() => [
 	formatEducationPeriod,
 	PageShell,
 	ContactLinks,
+	NewspaperIcon,
 	ProjectsList,
 	TechExperienceList,
 	linkableProjectIds,
 	linkableSkillIds,
+	pressAnchorIds,
+	pressEntryId,
 	activeAnchorTargetId,
 ]);
 </script>
@@ -225,6 +232,8 @@ markUsed(() => [
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
 				<li><a href={`/${locale}/#talks`}>{t(m.nav_talks)}</a></li>
 				<li><a href={`/${locale}/#education`}>{t(m.nav_education)}</a></li>
+				<li><a href={`/${locale}/#awards`}>{t(m.nav_awards)}</a></li>
+				<li><a href={`/${locale}/#press`}>{t(m.nav_press)}</a></li>
 				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
 			</ul>
 		</nav>
@@ -417,6 +426,7 @@ markUsed(() => [
 
 			<ul class="grid list-none gap-4 p-0 lg:grid-cols-2">
 				{#each content.talks.slice(0, 6) as talk}
+					{@const pressLinks = (talk.links ?? []).filter((link) => link.kind === "press")}
 					<li>
 						<article class="theme-card rounded-[1.5rem] p-5">
 							<h3 class="theme-heading">
@@ -432,6 +442,15 @@ markUsed(() => [
 							<p class="mt-2 text-sm text-[var(--color-brand-muted)]">
 								{talk.startDate}
 							</p>
+							{#if pressLinks.length}
+								<a
+									href={`#${pressEntryId(talk)}`}
+									class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--color-brand-line)] px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-[var(--color-brand-cyan-soft)] no-underline transition hover:border-[var(--color-brand-cyan)]"
+								>
+									<NewspaperIcon class="h-3.5 w-3.5 shrink-0" />
+									{t(m.press_coverage_label)} ({pressLinks.length})
+								</a>
+							{/if}
 						</article>
 					</li>
 				{/each}
@@ -488,6 +507,110 @@ markUsed(() => [
 										</div>
 									</dl>
 								{/if}
+							</article>
+						</li>
+					{/each}
+				</ol>
+			</section>
+		{/if}
+
+		{#if content.awards.length > 0}
+			<section
+				aria-labelledby="awards-title"
+				id="awards"
+				class="space-y-8"
+			>
+				<div class="space-y-3">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
+						{t(m.awards_eyebrow)}
+					</p>
+					<h2 id="awards-title" class="theme-heading">{t(m.awards_title)}</h2>
+					<p>{t(m.awards_intro)}</p>
+				</div>
+
+				<ol class="grid list-none gap-4 p-0 md:grid-cols-2">
+					{#each content.awards as award}
+						<li>
+							<article class="theme-card rounded-[1.5rem] p-5">
+								<header class="space-y-2">
+									<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
+										{formatYear(award.date)}
+									</p>
+									<h3 class="theme-heading">
+										{#if award.url}
+											<a class="print-url" href={award.url} data-print-label={printLinkLabel(award.url)}>
+												{award.title}
+											</a>
+										{:else}
+											{award.title}
+										{/if}
+									</h3>
+									{#if award.awarder}
+										<p class="font-semibold text-[var(--color-brand-text)]">{award.awarder}</p>
+									{/if}
+								</header>
+								{#if award.summary}
+									<p class="mt-4 text-sm text-[var(--color-brand-muted)]">{award.summary}</p>
+								{/if}
+							</article>
+						</li>
+					{/each}
+				</ol>
+			</section>
+		{/if}
+
+		{#if content.press.length > 0}
+			<section
+				aria-labelledby="press-title"
+				id="press"
+				class="space-y-8"
+			>
+				<div class="space-y-3">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
+						{t(m.press_eyebrow)}
+					</p>
+					<h2 id="press-title" class="theme-heading">{t(m.press_title)}</h2>
+					<p>{t(m.press_intro)}</p>
+				</div>
+
+				<ol class="grid list-none gap-4 p-0 md:grid-cols-2">
+					{#each content.press as feature}
+						<li class="flex">
+							<article
+								id={pressEntryId(feature.project)}
+								tabindex="-1"
+								class="anchor-target-card theme-card flex h-full w-full scroll-mt-8 flex-col rounded-[1.5rem] p-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-brand-cyan)]"
+								class:anchor-target-card-active={activeAnchorTargetId === pressEntryId(feature.project)}
+							>
+								<header class="space-y-2">
+									<p class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
+										{formatYear(feature.project.startDate)}
+									</p>
+									<h3 class="theme-heading">
+										<a href={`#${projectEntryId(feature.project)}`}>
+											{feature.project.name}
+										</a>
+									</h3>
+									{#if feature.project.entity}
+										<p class="font-semibold text-[var(--color-brand-text)]">
+											{feature.project.entity}
+										</p>
+									{/if}
+								</header>
+								<ul class="mt-4 flex flex-wrap gap-2 text-sm">
+									{#each feature.links as link}
+										<li>
+											<a
+												class="print-url inline-flex items-center gap-1.5 rounded-full border border-[var(--color-brand-line)] px-3 py-1.5 text-[var(--color-brand-cyan-soft)] no-underline transition hover:border-[var(--color-brand-cyan)]"
+												href={link.url}
+												data-print-label={printLinkLabel(link.url)}
+											>
+												<NewspaperIcon class="h-4 w-4 shrink-0" />
+												{link.label}
+											</a>
+										</li>
+									{/each}
+								</ul>
 							</article>
 						</li>
 					{/each}

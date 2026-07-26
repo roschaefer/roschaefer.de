@@ -118,16 +118,7 @@
 				"en": "Bee sensor stories"
 			},
 			"awarder": "Grimme-Institut",
-			"links": [
-				{
-					"label": {
-						"de": "Sensorstories: Bienen",
-						"en": "Bee sensor stories"
-					},
-					"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen",
-					"kind": "award"
-				}
-			]
+			"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen"
 		},
 		{
 			"title": {
@@ -140,16 +131,7 @@
 				"en": "Dairy cow sensor stories"
 			},
 			"awarder": "Reporter-Forum e. V.",
-			"links": [
-				{
-					"label": {
-						"de": "Sensorstories: Milchkühe",
-						"en": "Dairy cow sensor stories"
-					},
-					"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904",
-					"kind": "award"
-				}
-			]
+			"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904"
 		},
 		{
 			"title": {
@@ -162,16 +144,7 @@
 				"en": "Bee sensor stories"
 			},
 			"awarder": "Reporter-Forum e. V.",
-			"links": [
-				{
-					"label": {
-						"de": "Sensorstories: Bienen",
-						"en": "Bee sensor stories"
-					},
-					"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019",
-					"kind": "award"
-				}
-			]
+			"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019"
 		},
 		{
 			"title": {
@@ -181,13 +154,7 @@
 			"summary": "#ursuppe",
 			"date": "2015-11-12",
 			"awarder": "MIZ Babelsberg",
-			"links": [
-				{
-					"label": "#ursuppe",
-					"url": "https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg",
-					"kind": "award"
-				}
-			]
+			"url": "https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg"
 		}
 	],
 	"languages": [
@@ -762,6 +729,7 @@
 		{
 			"id": "rundfunk-mitbestimmen-project",
 			"name": "Rundfunk mitbestimmen",
+			"entity": "Rundfunk mitbestimmen e.V.",
 			"roles": [
 				{
 					"de": "Gründer",
@@ -965,29 +933,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "gez-scrap-it-or-pay-it",
@@ -1029,25 +975,11 @@
 				"en": "For WDR and Spiegel Online, we developed a journalistic format that generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
 			},
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
-			"sopsEncryptedUrl": "ENC[AES256_GCM,data:B2GBMQFMeIHJMPRlPKU7iPS7qgb3WMTQvAw=,iv:tTBZvtlk697pYTHdFcLuIOmPSrvz7Y71ThhIvMKqJgc=,tag:eQgocc+69HyCRYM2yr3tXA==,type:str]",
-			"sopsEncryptedLinks": [
+			"links": [
 				{
-					"label": "ENC[AES256_GCM,data:Ec85,iv:p0gFerL930+2/i/q1JJgubyIGwWxtpwKbt98oRYoWq8=,tag:/Z4GXr7llm+narVXye5Vug==,type:str]",
-					"url": "ENC[AES256_GCM,data:uZfJX8Z/uPpCW9iob9WpcH8QkpFwsAuOG6GKHaMGCofzzanWyjEakcSzbndtSUnm5DXTK3xnYPVqyJND9J05Tq4qC2ahQ/I=,iv:UEAVxWAsjFYPvafL4zKBy/i/Kag1q099qPVbyq0C4MQ=,tag:F2/kLJMj/vhvZylZeW0EFA==,type:str]",
-					"kind": "ENC[AES256_GCM,data:YteHvRo=,iv:QpTMHqFAogI0a+RZR3iuNfS10PM+/QCbOV2tt+Tp69Y=,tag:h0VeYd8AnhEPsLGZQ2tltQ==,type:str]"
-				},
-				{
-					"label": "ENC[AES256_GCM,data:A8W01wwW/mR5JvVvYck=,iv:9HwFpRe3LWm3xTzVf/AaekK+80X51JzpsJumMGoJNsE=,tag:VVOA39GKQ7bzwjk9Li8z7g==,type:str]",
-					"url": "ENC[AES256_GCM,data:61VuiaShmbXJW9OIqi3pvgUO4oTyb/o7ObqZZ2rR+b3yBSk+5zW6p217yDuxaKhaRfV+wTreoqrIYLpMQCxYR0AQcchDyXRbaA68daIyfTu2krhO1iwB2EIlZzOK1Ehl,iv:E2E9Adssg5LJt0Wni7+tOMHiXHG+vYHTtLRxwxCdn3I=,tag:rRpQVbtUrlRzGAP2+glywA==,type:str]",
-					"kind": "ENC[AES256_GCM,data:YteHvRo=,iv:QpTMHqFAogI0a+RZR3iuNfS10PM+/QCbOV2tt+Tp69Y=,tag:h0VeYd8AnhEPsLGZQ2tltQ==,type:str]"
-				},
-				{
-					"label": {
-						"de": "ENC[AES256_GCM,data:2GYf87Cs3zraqA3mEJvDhc9RjBDq7WPQ,iv:WGpgfUBpA3YS1HfrRvLk0DPArucUflUBqKxXHxwVv8s=,tag:Aey+WZ3Qw8ES7PL4uealQg==,type:str]",
-						"en": "ENC[AES256_GCM,data:o1+Kt0/jl5JYPd/9Xp6XUCq1UM3qLFQ=,iv:5y4Vs2r8sVEqaYhev8bE/xLh9ILFP434pnOWtcz4qxI=,tag:d5icjnbGISofs+WOJ7FPWw==,type:str]"
-					},
-					"url": "ENC[AES256_GCM,data:cWUMLaGhj6+13b3AE4Mf8mNXyQTfXmn9vBsHToputQJGzzGgcoZ2Vh2JxoJLlg==,iv:eSmIFVLe1ZWOzvG03pGnuDpEaykQFnHUx/kur39/pV0=,tag:XiW4pWEe8IgSr5OYxDyYuA==,type:str]",
-					"kind": "ENC[AES256_GCM,data:YteHvRo=,iv:QpTMHqFAogI0a+RZR3iuNfS10PM+/QCbOV2tt+Tp69Y=,tag:h0VeYd8AnhEPsLGZQ2tltQ==,type:str]"
+					"label": "Spiegel Online",
+					"url": "https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html",
+					"kind": "press"
 				}
 			]
 		},
@@ -1132,29 +1064,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "why-do-i-have-to-pay-and-dont-get-a-say",
@@ -1223,29 +1133,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
@@ -1264,29 +1152,7 @@
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
 				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
-			},
-			"links": [
-				{
-					"label": "Zeit Online",
-					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
-					"kind": "press"
-				},
-				{
-					"label": "Netzpolitik.org",
-					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
-					"kind": "press"
-				},
-				{
-					"label": "Deutschlandfunk",
-					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
-					"kind": "press"
-				},
-				{
-					"label": "RBB",
-					"url": "https://www.wwwagner.tv/?p=36200",
-					"kind": "press"
-				}
-			]
+			}
 		},
 		{
 			"id": "protothon",
@@ -1412,8 +1278,8 @@
 			}
 		],
 		"encrypted_regex": "^sopsEncrypted[A-Za-z]*$",
-		"lastmodified": "2026-07-26T10:50:56Z",
-		"mac": "ENC[AES256_GCM,data:NG/a7KCaDThf1++mNEEwl0ygds4UX6RQ5ZQt3EMN0tsloCW2iSm72UNBR57V7zcvyFXLIRPJPzune6cAUd8yFwCETu/2Le/99zJs23Z3TMCcHJlY/1SF42FlgW9Ypo4WkSjWWhMBC9A5qkgeRUnZD7tOxfLReiTASrmVyX7gh10=,iv:VjWjFQd/bk3jAKkjUIGJGKNQN/5KbIXxstS0xppyoJI=,tag:1lasPV882kIxDKYabNtKtg==,type:str]",
+		"lastmodified": "2026-07-26T11:31:38Z",
+		"mac": "ENC[AES256_GCM,data:XAGXQswuy/176XQ/N7EEn1rSV35bVs7t1uV7KtYpVMiwCy5lK/3hwYXHP3jdPtAYDpWY1ODkd63BjucD9vfKninZTNCgAt8VzRGYOEreoYe9ctD9p3XaGwRdYJ6qKAnTPQcaSGuFnCiaPD56RAYHA6tcgJWhNKxY+DWRXZxYmo0=,iv:98cr5v4eZqrghkNQcQdv4+cUrPnYW5WLTQOcjp5C3sg=,tag:JtZuVBYvkWcc6rRBsn3RXA==,type:str]",
 		"mac_only_encrypted": true,
 		"version": "3.13.3"
 	}

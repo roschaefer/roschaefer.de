@@ -1,82 +1,86 @@
-export type ResumeProfile = {
-	network: string;
-	username?: string;
-	url: string;
-};
+import type {
+	JsonResume,
+	JsonResumeAward,
+	JsonResumeBasics,
+	JsonResumeEducation,
+	JsonResumeInterest,
+	JsonResumeLanguage,
+	JsonResumeProfile,
+	JsonResumeProject,
+	JsonResumeSkill,
+} from "./json-resume";
 
+// This site's extensions to the canonical JSON Resume schema (see ./json-resume.ts).
+// The JSON Resume spec allows `additionalProperties`, so these coexist fine at
+// runtime (validated in resume-schema.test.ts) — this file just gives the
+// custom fields real types and narrows canonical fields this codebase always
+// expects to be present.
+
+/** Not part of the JSON Resume schema — used to attach press/award coverage links. */
 export type ResumeLink = {
 	label: string;
 	url: string;
 	kind?: string;
 };
 
-export type ResumeBasics = {
+export type ResumeProfile = JsonResumeProfile & {
+	network: string;
+	url: string;
+};
+
+export type ResumeBasics = Omit<JsonResumeBasics, "profiles"> & {
 	name: string;
 	label: string;
 	email: string;
 	url: string;
 	summary: string;
+	/** Not part of the JSON Resume schema — used for the Signal contact link. */
 	signal?: string;
-	location?: {
-		city?: string;
-		region?: string;
-		countryCode?: string;
-	};
 	profiles?: ResumeProfile[];
 };
 
-export type ResumeProject = {
+export type ResumeProject = JsonResumeProject & {
+	/** Not part of the JSON Resume schema — used for stable anchor ids. */
 	id?: string;
 	name: string;
-	entity?: string;
-	roles?: string[];
 	startDate: string;
-	endDate?: string;
-	keywords?: string[];
-	description?: string;
-	url?: string;
+	/** Not part of the JSON Resume schema — press/award coverage for this entry. */
 	links?: ResumeLink[];
-	type?: string;
+	/** Not part of the JSON Resume schema — e.g. "independent", "employed". */
 	engagement?: string;
+	/** Not part of the JSON Resume schema — e.g. "open-source", "private". */
 	codeVisibility?: string;
 	redacted?: boolean;
 };
 
-export type ResumeAward = {
+export type ResumeAward = JsonResumeAward & {
 	title: string;
-	date?: string;
-	summary?: string;
-	awarder?: string;
-	links?: ResumeLink[];
+	/** Not part of the JSON Resume schema — link to the award announcement/details. */
+	url?: string;
 };
 
-export type ResumeLanguage = {
+export type ResumeEducation = JsonResumeEducation & {
+	/** Not part of the JSON Resume schema — used for stable anchor ids. */
+	id?: string;
+	institution: string;
+	area: string;
+	studyType: string;
+};
+
+export type ResumeLanguage = JsonResumeLanguage & {
 	language: string;
 	fluency: string;
 };
 
-export type ResumeEducation = {
-	id?: string;
-	institution: string;
-	url?: string;
-	area: string;
-	studyType: string;
-	startDate?: string;
-	endDate?: string;
-	score?: string;
-};
-
-export type ResumeInterest = {
+export type ResumeInterest = JsonResumeInterest & {
 	name: string;
-	keywords?: string[];
 };
 
-export type ResumeSkill = {
+export type ResumeSkill = JsonResumeSkill & {
 	name: string;
-	level?: string;
-	keywords?: string[];
 };
 
+/** Fully custom — this site's curation config, has no equivalent in the JSON Resume schema. */
 export type ResumeFeatured = {
 	projectIds?: string[];
 	talkIds?: string[];
@@ -84,7 +88,10 @@ export type ResumeFeatured = {
 	educationIds?: string[];
 };
 
-export type Resume = {
+export type Resume = Omit<
+	JsonResume,
+	"basics" | "projects" | "awards" | "languages" | "education" | "interests" | "skills"
+> & {
 	basics: ResumeBasics;
 	projects?: ResumeProject[];
 	awards?: ResumeAward[];
@@ -92,5 +99,6 @@ export type Resume = {
 	education?: ResumeEducation[];
 	interests?: ResumeInterest[];
 	skills?: ResumeSkill[];
+	/** Fully custom — not part of the JSON Resume schema. */
 	featured?: ResumeFeatured;
 };
