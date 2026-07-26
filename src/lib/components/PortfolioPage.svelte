@@ -230,10 +230,6 @@ markUsed(() => [
 			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
-				<li><a href={`/${locale}/#talks`}>{t(m.nav_talks)}</a></li>
-				<li><a href={`/${locale}/#education`}>{t(m.nav_education)}</a></li>
-				<li><a href={`/${locale}/#awards`}>{t(m.nav_awards)}</a></li>
-				<li><a href={`/${locale}/#press`}>{t(m.nav_press)}</a></li>
 				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
 			</ul>
 		</nav>
@@ -242,10 +238,10 @@ markUsed(() => [
 	{#snippet children()}
 		<section
 			aria-labelledby="intro-title"
-			class="grid gap-10 lg:grid-cols-[1.35fr_0.9fr]"
+			class="grid gap-10 xl:grid-cols-[minmax(0,1.35fr)_minmax(24rem,0.9fr)]"
 		>
-			<div class="space-y-8">
-				<h1 id="intro-title" class="theme-heading max-w-4xl">
+			<div class="min-w-0 space-y-8">
+				<h1 id="intro-title" class="theme-heading max-w-4xl xl:text-[6.4rem]">
 					{t(m.hero_title)}
 					<br />
 					<span class="text-[var(--color-brand-cyan)]">{t(m.hero_accent)}</span>
@@ -273,7 +269,7 @@ markUsed(() => [
 
 			<aside
 				aria-label={t(m.at_a_glance)}
-				class="theme-panel rounded-[2rem] p-6"
+				class="theme-panel min-w-0 rounded-[2rem] p-6"
 			>
 				<figure class="mb-6 flex items-center gap-4">
 					<img

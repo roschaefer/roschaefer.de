@@ -61,9 +61,6 @@ markUsed(() => [
 					{homeLabel}
 				</a>
 				<div class="ml-auto flex flex-wrap items-center justify-end gap-6 text-right">
-					{#if topNav}
-						{@render topNav()}
-					{/if}
 					<nav aria-label={m.lang_switch({}, { locale })}>
 						<ul class="flex list-none gap-3 p-0 text-sm uppercase tracking-[0.2em]">
 							<li>
@@ -96,6 +93,11 @@ markUsed(() => [
 					/>
 				</div>
 			</div>
+			{#if topNav}
+				<div class="mt-5">
+					{@render topNav()}
+				</div>
+			{/if}
 		</header>
 
 		<main class={mainClass}>
