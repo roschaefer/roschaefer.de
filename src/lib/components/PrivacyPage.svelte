@@ -78,7 +78,7 @@ markUsed(() => [
 			<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
 				{m.privacy_kicker({}, { locale })}
 			</p>
-			<h1 class="theme-heading">{m.privacy_title({}, { locale })}</h1>
+			<h1 class="hero-heading theme-heading">{m.privacy_title({}, { locale })}</h1>
 			<p>{m.privacy_intro({}, { locale })}</p>
 		</header>
 

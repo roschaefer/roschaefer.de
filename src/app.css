@@ -149,6 +149,10 @@
 		color: var(--color-brand-heading);
 	}
 
+	.hero-heading {
+		font-size: clamp(3.6rem, 8vw, 5.4rem);
+	}
+
 	.theme-panel {
 		border: 1px solid var(--color-brand-line);
 		background: var(--color-brand-panel-strong);
