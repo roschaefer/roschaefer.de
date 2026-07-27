@@ -118,6 +118,10 @@ const ogLocale = $derived(locale === "de" ? "de_DE" : "en_US");
 const pdfPath = $derived(resumePdfPath(locale));
 const pdfFilename = $derived(resumePdfFilename(locale));
 const pdfUrl = $derived(`${siteUrl}${pdfPath}`);
+const atsPdfPath = $derived(resumePdfPath(locale, "ats"));
+const atsPdfFilename = $derived(resumePdfFilename(locale, "ats"));
+const pdfDownloadLinkClass =
+	"flex items-center gap-4 rounded-[1.5rem] border border-[color:color-mix(in_srgb,var(--color-brand-cyan)_35%,transparent)] bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-brand-cyan)_16%,transparent),color-mix(in_srgb,var(--color-brand-panel)_85%,transparent))] px-4 py-4 no-underline transition hover:border-[var(--color-brand-cyan)] focus-visible:border-[var(--color-brand-cyan)]";
 const legalLinks = $derived(
 	locale === "de"
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
@@ -155,6 +159,9 @@ markUsed(() => [
 	pdfPath,
 	pdfFilename,
 	pdfUrl,
+	atsPdfPath,
+	atsPdfFilename,
+	pdfDownloadLinkClass,
 	legalLinks,
 	educationDateFormatter,
 	formatYear,
@@ -241,7 +248,7 @@ markUsed(() => [
 			class="grid gap-10 xl:grid-cols-[minmax(0,1.35fr)_minmax(24rem,0.9fr)]"
 		>
 			<div class="min-w-0 space-y-8">
-				<h1 id="intro-title" class="theme-heading max-w-4xl xl:text-[6.4rem]">
+				<h1 id="intro-title" class="theme-heading max-w-4xl xl:text-[5.4rem]">
 					{t(m.hero_title)}
 					<br />
 					<span class="text-[var(--color-brand-cyan)]">{t(m.hero_accent)}</span>
@@ -268,7 +275,7 @@ markUsed(() => [
 			</div>
 
 			<aside
-				aria-label={t(m.at_a_glance)}
+				aria-label={content.basics.name}
 				class="theme-panel min-w-0 rounded-[2rem] p-6"
 			>
 				<figure class="mb-6 flex items-center justify-between gap-4">
@@ -284,7 +291,6 @@ markUsed(() => [
 						alt="Portrait of Robert Schäfer"
 					/>
 				</figure>
-				<h2 class="theme-heading mb-4">{t(m.at_a_glance)}</h2>
 				<dl class="grid gap-4">
 					<div>
 						<dt class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
@@ -302,12 +308,6 @@ markUsed(() => [
 							{content.languages.map((entry) => entry.language).join(" . ")}
 						</dd>
 					</div>
-					<div>
-						<dt class="text-xs uppercase tracking-[0.28em] text-[var(--color-brand-muted)]">
-							{t(m.open_source)}
-						</dt>
-						<dd class="theme-heading mt-1">{t(m.open_source_summary)}</dd>
-					</div>
 				</dl>
 				<ul class="mt-6 flex list-none flex-wrap gap-4 p-0">
 					{#each primaryProfiles as profile}
@@ -322,35 +322,65 @@ markUsed(() => [
 						</li>
 					{/each}
 				</ul>
-				<a
-					class="mt-8 flex items-center gap-4 rounded-[1.5rem] border border-[color:color-mix(in_srgb,var(--color-brand-cyan)_35%,transparent)] bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-brand-cyan)_16%,transparent),color-mix(in_srgb,var(--color-brand-panel)_85%,transparent))] px-4 py-4 no-underline transition hover:border-[var(--color-brand-cyan)] focus-visible:border-[var(--color-brand-cyan)]"
-					href={pdfPath}
-					download={pdfFilename}
-				>
-					<span
-						aria-hidden="true"
-						class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] text-[var(--color-brand-cyan)]"
-					>
-						<svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.7">
-							<path d="M7 3.75h7.5L19 8.25V20.25a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 6 20.25v-15A1.5 1.5 0 0 1 7.5 3.75Z" />
-							<path d="M14.5 3.75v4.5H19" />
-							<path d="M12 10.75v6.5" />
-							<path d="m9.5 14.75 2.5 2.5 2.5-2.5" />
-						</svg>
-					</span>
-					<span class="min-w-0">
-						<span
-							data-testid="pdf-cta-title"
-							class="block text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-brand-link)]"
+				<ul class="mt-8 grid list-none gap-3 p-0">
+					<li>
+						<a
+							class={pdfDownloadLinkClass}
+							href={pdfPath}
+							download={pdfFilename}
 						>
-							{t(m.at_a_glance_cv)}
-						</span>
-						<span class="mt-1 block text-sm text-[var(--color-brand-text)]">
-							{t(m.at_a_glance_cv_hint)}
-						</span>
-						<span class="theme-heading mt-2 block font-mono text-sm">{pdfPath}</span>
-					</span>
-				</a>
+							<span
+								aria-hidden="true"
+								class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] text-[var(--color-brand-cyan)]"
+							>
+								<svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.7">
+									<path d="M7 3.75h7.5L19 8.25V20.25a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 6 20.25v-15A1.5 1.5 0 0 1 7.5 3.75Z" />
+									<path d="M14.5 3.75v4.5H19" />
+									<path d="M12 10.75v6.5" />
+									<path d="m9.5 14.75 2.5 2.5 2.5-2.5" />
+								</svg>
+							</span>
+							<span class="min-w-0">
+								<span
+									data-testid="pdf-cta-title"
+									class="block text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-brand-link)]"
+								>
+									{t(m.cv_pdf_download)}
+								</span>
+								<span class="mt-1 block text-sm text-[var(--color-brand-text)]">
+									{t(m.cv_pdf_download_hint)}
+								</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a
+							class={pdfDownloadLinkClass}
+							href={atsPdfPath}
+							download={atsPdfFilename}
+						>
+							<span
+								aria-hidden="true"
+								class="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] text-[var(--color-brand-cyan)]"
+							>
+								<svg viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.7">
+									<path d="M4.75 5.75h14.5" />
+									<path d="M4.75 9.75h14.5" />
+									<path d="M4.75 13.75h8.5" />
+									<path d="M4.75 17.75h6.5" />
+								</svg>
+							</span>
+							<span class="min-w-0">
+								<span class="block text-sm font-bold uppercase tracking-[0.2em] text-[var(--color-brand-link)]">
+									{t(m.cv_ats_download)}
+								</span>
+								<span class="mt-1 block text-sm text-[var(--color-brand-text)]">
+									{t(m.cv_ats_download_hint)}
+								</span>
+							</span>
+						</a>
+					</li>
+				</ul>
 				<a
 					class="print-url mt-3 block text-sm"
 					href={`/${locale}/resume.json`}
