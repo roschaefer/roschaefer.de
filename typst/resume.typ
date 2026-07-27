@@ -104,12 +104,8 @@
 
 #let technology-entry(entry) = [
   #item-title(entry.name)
-  #v(1pt)
-  #item-meta(entry.duration)
-  #v(1pt)
-  #item-meta(technology-project-count(entry.projectCount))
-  #v(1pt)
-  #item-meta(entry.lastUsedLabel)
+  #v(5pt)
+  #item-meta(entry.duration + " / " + technology-project-count(entry.projectCount))
 ]
 
 #let technology-grid-entry(entry) = [
@@ -128,13 +124,13 @@
 
 #text(font: "Jost*", size: 24pt, weight: 700, tracking: 0.03em)[#data.basics.name]
 #v(2pt)
-#text(size: 10.2pt, weight: 700, tracking: 0.16em, fill: brand)[#upper(data.basics.label)]
-#v(7pt)
 
 #grid(
   columns: (2.3fr, 1fr),
   gutter: 14pt,
   [
+    #text(size: 10.2pt, weight: 700, tracking: 0.16em, fill: brand)[#upper(data.basics.label)]
+    #v(7pt)
     #item-copy(data.basics.summary)
   ],
   [
@@ -160,16 +156,16 @@
   gutter: 16pt,
   [
     #if data.technologies.len() > 0 [
-      #section-heading(data.labels.skills)
+      #section-heading(data.labels.skillsRecent)
       #grid(
         columns: (1fr, 1fr, 1fr),
         gutter: 8pt,
-        row-gutter: 7pt,
+        row-gutter: 14pt,
         ..data.technologies.map(technology-grid-entry),
       )
       #v(10pt)
     ] else if data.skills.len() > 0 [
-      #section-heading(data.labels.skills)
+      #section-heading(data.labels.skillsRecent)
       #grid(
         columns: (1fr, 1fr, 1fr),
         gutter: 4pt,
@@ -188,18 +184,6 @@
     #for entry in data.experience.slice(1) [
       #experience-entry(entry)
       #v(10pt)
-    ]
-
-    #if data.talks.len() > 0 [
-      #block(breakable: false)[
-        #section-heading(data.labels.selectedTalks)
-        #talk-entry(data.talks.first())
-      ]
-      #v(7pt)
-      #for entry in data.talks.slice(1) [
-        #talk-entry(entry)
-        #v(7pt)
-      ]
     ]
   ],
   [
@@ -247,6 +231,18 @@
       #v(7pt)
       #for entry in data.awards.slice(1) [
         #award-entry(entry)
+        #v(7pt)
+      ]
+    ]
+
+    #if data.talks.len() > 0 [
+      #block(breakable: false)[
+        #section-heading(data.labels.selectedTalks)
+        #talk-entry(data.talks.first())
+      ]
+      #v(7pt)
+      #for entry in data.talks.slice(1) [
+        #talk-entry(entry)
         #v(7pt)
       ]
     ]

@@ -74,18 +74,18 @@
   ]
 ]
 
-#if data.technologies.len() > 0 [
+#if data.technologiesFull.len() > 0 [
   #v(4pt)
   #block(breakable: false)[
     #section-heading(data.labels.skills)
     #simple-entry(
-      data.technologies.first().name,
-      meta: data.technologies.first().duration + "   " + technology-project-count(data.technologies.first().projectCount),
-      copy: data.technologies.first().lastUsedLabel,
+      data.technologiesFull.first().name,
+      meta: data.technologiesFull.first().duration + "   " + technology-project-count(data.technologiesFull.first().projectCount),
+      copy: data.technologiesFull.first().lastUsedLabel,
     )
   ]
   #v(6pt)
-  #for entry in data.technologies.slice(1) [
+  #for entry in data.technologiesFull.slice(1) [
     #simple-entry(
       entry.name,
       meta: entry.duration + "   " + technology-project-count(entry.projectCount),

@@ -98,4 +98,33 @@ describe("createTechExperience", () => {
 			lastUsedLabel: "last month",
 		});
 	});
+
+	it("shortens duration and recency labels in compact mode (print only)", () => {
+		const result = createTechExperience(
+			[
+				{
+					name: "A",
+					startDate: "2020-01-01",
+					endDate: "2020-12-01",
+					keywords: ["TypeScript"],
+				},
+				{
+					name: "B",
+					startDate: "2020-06-01",
+					endDate: "2021-03-01",
+					keywords: ["TypeScript"],
+				},
+			],
+			"en",
+			new Date("2021-03-20"),
+			true,
+		);
+
+		expect(result[0]).toMatchObject({
+			name: "TypeScript",
+			totalMonths: 15,
+			label: "1¼ years",
+			lastUsedLabel: "Current",
+		});
+	});
 });
