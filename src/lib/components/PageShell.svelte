@@ -106,7 +106,7 @@ markUsed(() => [
 
 		<footer class="border-t border-[var(--color-brand-line)]">
 			<div class="mx-auto max-w-6xl px-6 py-8 sm:px-8 lg:px-12">
-				<nav aria-label={m.nav_primary_label({}, { locale })}>
+				<nav aria-label={m.nav_legal_label({}, { locale })}>
 					<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.2em]">
 						{#each footerLinks as link}
 							<li><a href={link.href}>{link.label}</a></li>

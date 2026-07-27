@@ -233,7 +233,7 @@ markUsed(() => [
 	mainClass="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-20 pt-10 sm:px-8 lg:px-12"
 >
 	{#snippet topNav()}
-		<nav aria-label={t(m.nav_primary_label)}>
+		<nav aria-label={t(m.nav_site_label)}>
 			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
@@ -248,7 +248,7 @@ markUsed(() => [
 			class="grid gap-10 xl:grid-cols-[minmax(0,1.35fr)_minmax(24rem,0.9fr)]"
 		>
 			<div class="min-w-0 space-y-8">
-				<h1 id="intro-title" class="theme-heading max-w-4xl xl:text-[5.4rem]">
+				<h1 id="intro-title" class="hero-heading theme-heading max-w-4xl" lang={locale}>
 					{t(m.hero_title)}
 					<br />
 					<span class="text-[var(--color-brand-cyan)]">{t(m.hero_accent)}</span>
