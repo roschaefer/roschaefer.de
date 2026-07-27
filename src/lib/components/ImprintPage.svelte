@@ -63,12 +63,22 @@ markUsed(() => [
 	]}
 	mainClass="mx-auto max-w-3xl px-6 pb-12 pt-10 sm:px-8"
 >
+	{#snippet topNav()}
+		<nav aria-label={m.nav_site_label({}, { locale })}>
+			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
+				<li><a href={`/${locale}/#projects`}>{m.nav_projects({}, { locale })}</a></li>
+				<li><a href={`/${locale}/#experience`}>{m.nav_experience({}, { locale })}</a></li>
+				<li><a href={`/${locale}/#contact`}>{m.nav_contact({}, { locale })}</a></li>
+			</ul>
+		</nav>
+	{/snippet}
+
 	{#snippet children()}
 		<header class="mb-8 space-y-3">
 			<p class="text-sm font-semibold uppercase tracking-[0.34em] text-[var(--color-brand-cyan)]">
 				{m.imprint_kicker({}, { locale })}
 			</p>
-			<h1 class="theme-heading">{m.imprint_title({}, { locale })}</h1>
+			<h1 class="hero-heading theme-heading" lang={locale}>{m.imprint_title({}, { locale })}</h1>
 			<p>{m.imprint_intro({}, { locale })}</p>
 		</header>
 
