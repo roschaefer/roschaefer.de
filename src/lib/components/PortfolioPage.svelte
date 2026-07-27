@@ -271,18 +271,18 @@ markUsed(() => [
 				aria-label={t(m.at_a_glance)}
 				class="theme-panel min-w-0 rounded-[2rem] p-6"
 			>
-				<figure class="mb-6 flex items-center gap-4">
-					<img
-						class="aspect-square w-28 rounded-[1.5rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] object-cover shadow-[0_0_40px_var(--color-brand-shadow)]"
-						src="/roschaefer.jpg"
-						alt="Portrait of Robert Schäfer"
-					/>
-					<figcaption>
+				<figure class="mb-6 flex items-center justify-between gap-4">
+					<figcaption class="min-w-0">
 						<p class="theme-heading text-2xl">{content.basics.name}</p>
 						<p class="mt-2 text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">
 							{content.basics.label}
 						</p>
 					</figcaption>
+					<img
+						class="aspect-square w-28 rounded-[1.5rem] border border-[var(--color-brand-line)] bg-[var(--color-brand-photo-bg)] object-cover shadow-[0_0_40px_var(--color-brand-shadow)]"
+						src="/roschaefer.jpg"
+						alt="Portrait of Robert Schäfer"
+					/>
 				</figure>
 				<h2 class="theme-heading mb-4">{t(m.at_a_glance)}</h2>
 				<dl class="grid gap-4">
