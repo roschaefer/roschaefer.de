@@ -233,7 +233,7 @@ markUsed(() => [
 	mainClass="mx-auto flex max-w-6xl flex-col gap-24 px-6 pb-20 pt-10 sm:px-8 lg:px-12"
 >
 	{#snippet topNav()}
-		<nav aria-label={t(m.nav_primary_label)}>
+		<nav aria-label={t(m.nav_site_label)}>
 			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>

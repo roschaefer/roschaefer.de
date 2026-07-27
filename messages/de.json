@@ -1,7 +1,8 @@
 {
 	"site_title": "Robert Schäfer | Full Stack Developer",
 	"meta_description": "Portfolio von Robert Schäfer, Full Stack Developer mit Fokus auf Softwarequalität, Open Source und technische Kommunikation.",
-	"nav_primary_label": "Hauptnavigation",
+	"nav_site_label": "Seitennavigation",
+	"nav_legal_label": "Rechtliche Navigation",
 	"nav_projects": "Projekte",
 	"nav_experience": "Erfahrung",
 	"nav_education": "Ausbildung",
