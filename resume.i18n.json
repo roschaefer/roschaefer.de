@@ -305,8 +305,8 @@
 				"Cucumber"
 			],
 			"description": {
-				"de": "Ein quelloffenes Kommandozeilenwerkzeug für Belegprüfung und Voucher-Audits im Plain-Text-Accounting-Workflow mit hledger. Es gleicht buchungspflichtige Transaktionen mit Belegen auf der Festplatte ab, erkennt fehlende oder ungebuchte Dokumente, prüft Plausibilität von Beträgen und kann ein abgeleitetes Journal mit `document:`-Tags für nachgelagerte Werkzeuge wie Fava ausgeben.",
-				"en": "An open-source command-line tool for document checks and voucher audits in a Plain Text Accounting workflow with hledger. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, audits amount plausibility, and can emit an enriched journal with `document:` tags for downstream tools such as Fava."
+				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für die Belegprüfung mit hledger. Es gleicht buchungspflichtige Transaktionen mit Belegen auf der Festplatte ab, erkennt fehlende oder ungebuchte Dokumente, prüft die Plausibilität von Beträgen und erzeugt ein abgeleitetes Journal für die Belegansicht in Fava.",
+				"en": "A Plain Text Accounting command-line tool for checking documents with hledger. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, checks amount plausibility, and generates an enriched journal for Fava's document view."
 			},
 			"url": "https://github.com/roschaefer/hledger-document-check",
 			"type": "tool"
@@ -330,8 +330,8 @@
 				"Cucumber"
 			],
 			"description": {
-				"de": "Ein quelloffenes Kommandozeilenwerkzeug, das Plain Text Accounting mit hledger für deutsche Steuererklärungen nutzbar macht. Es liest steuerliche Metadaten aus Kontodirektiven, berechnet nachvollziehbare Exporte für EÜR, Umsatzsteuer und Einkommensteuer und schreibt sowohl zusammenfassende Arbeitsmappen als auch CSV-basierte Herleitungen zur Prüfung der Werte.",
-				"en": "An open-source command-line tool that makes Plain Text Accounting with hledger usable for German tax filing. It reads tax metadata from account directives, calculates traceable exports for EÜR, VAT, and income tax, and writes both summary workbooks and CSV-based derivations for auditing the reported values."
+				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für hledger, um die deutsche Steuererklärung zu automatisieren. Es liest Umsätze aus dem Journal und erzeugt daraus nachvollziehbare Exporte für die entsprechenden Formulare auf ELSTER.de. Die Exporte liegen im CSV- und XLSX-Format vor und enthalten Herleitungen zur Nachprüfung durch die Steuerbehörden.",
+				"en": "A Plain Text Accounting command-line tool for hledger that automates German tax filing. It reads transactions from the journal and generates traceable exports for the corresponding forms on ELSTER.de. The exports are available in CSV and XLSX format and include derivations that tax authorities can audit."
 			},
 			"url": "https://github.com/roschaefer/hledger-elster",
 			"type": "tool"
