@@ -17,9 +17,7 @@ import type {
 import {
 	createAtsExperienceProjects,
 	createFeaturedEducation,
-	createFeaturedEntriesByName,
 	createFeaturedProjects,
-	createFeaturedSkills,
 	getFeaturedConfig,
 } from "../src/lib/utils/resume-featured.ts";
 import type { TechExperience } from "../src/lib/utils/tech-experience.ts";
@@ -49,6 +47,7 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 		dateLocale: "de-DE",
 		labels: {
 			skills: "Technologien",
+			skillsRecent: "Aktuelle Technologien",
 			languages: "Sprachen",
 			education: "Ausbildung",
 			awards: "Auszeichnungen",
@@ -68,6 +67,7 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 		dateLocale: "en-US",
 		labels: {
 			skills: "Technologies",
+			skillsRecent: "Recent Technologies",
 			languages: "Languages",
 			education: "Education",
 			awards: "Awards",
@@ -200,6 +200,18 @@ const createAwardEntry = (entry: ResumeAward, locale: Locale) => ({
 	url: entry.url ?? null,
 });
 
+// No manual curation for the print skills section: the curated PDF gets the
+// 15 most recently used technologies, and the ATS variant gets every
+// technology, both ordered by recency so "what's current" reads first.
+const sortByRecency = (entries: DisplayTechExperience[]): DisplayTechExperience[] =>
+	[...entries].sort(
+		(left, right) =>
+			right.lastUsedMonth - left.lastUsedMonth ||
+			right.totalMonths - left.totalMonths ||
+			right.projectCount - left.projectCount ||
+			left.name.localeCompare(right.name),
+	);
+
 const createTechnologyEntry = (entry: DisplayTechExperience) => ({
 	name: entry.name,
 	duration: entry.label,
@@ -228,12 +240,17 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
 		(project) => project.type === "presentation",
 	);
-	const featuredSkills = createFeaturedSkills(resume.skills ?? [], featured.skillNames);
 	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
-	const techExperience: DisplayTechExperience[] = createTechExperience(projects, locale);
-	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
-	const typstTechExperience =
-		featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 12);
+	// compact: true - print gets the shorter duration/recency forms; the
+	// website table (createSiteContent) still wants the spelled-out default.
+	const techExperience: DisplayTechExperience[] = createTechExperience(
+		projects,
+		locale,
+		new Date(),
+		true,
+	);
+	const techExperienceByRecency = sortByRecency(techExperience);
+	const curatedTechExperience = techExperienceByRecency.slice(0, 15);
 
 	const payload = {
 		locale,
@@ -251,10 +268,9 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 			url: profile.url,
 			printLabel: printLinkLabel(profile.url),
 		})),
-		skills: (featuredSkills.length > 0 ? featuredSkills : (resume.skills ?? []).slice(0, 12)).map(
-			(skill) => skill.name,
-		),
-		technologies: typstTechExperience.map((entry) => createTechnologyEntry(entry)),
+		skills: curatedTechExperience.map((entry) => entry.name),
+		technologies: curatedTechExperience.map((entry) => createTechnologyEntry(entry)),
+		technologiesFull: techExperienceByRecency.map((entry) => createTechnologyEntry(entry)),
 		languages: (resume.languages ?? []).map((language) => ({
 			name: language.language,
 			fluency: language.fluency,

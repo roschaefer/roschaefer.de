@@ -27,18 +27,46 @@ const formatUnit = (
 	return `${value} ${label}`;
 };
 
-export const formatMonthDuration = (months: number, locale: Locale): string => {
+const quarterFractions: Record<number, string> = { 3: "¼", 6: "½", 9: "¾" };
+
+// Print-only for now (pass compact: true) - the website table still wants the
+// spelled-out form via the default. Once the website adopts the compact form
+// too, this can drop the flag and always round.
+export const formatMonthDuration = (months: number, locale: Locale, compact = false): string => {
 	const years = Math.floor(months / 12);
 	const remainder = months % 12;
-	const parts: string[] = [];
 
-	if (years > 0) {
-		parts.push(formatUnit(years, "year", locale));
+	if (!compact) {
+		const parts: string[] = [];
+
+		if (years > 0) {
+			parts.push(formatUnit(years, "year", locale));
+		}
+
+		if (remainder > 0 || parts.length === 0) {
+			parts.push(formatUnit(remainder, "month", locale));
+		}
+
+		return parts.join(", ");
 	}
 
-	if (remainder > 0 || parts.length === 0) {
-		parts.push(formatUnit(remainder, "month", locale));
+	// Once there's at least a year of experience, month-level precision mostly
+	// adds noise (and width - "7 years, 4 months" doesn't fit a table column at
+	// tablet sizes where "7¼ years" does), so round the remainder to the
+	// nearest quarter year instead. Below a year, keep the exact month count.
+	if (years === 0) {
+		return formatUnit(remainder, "month", locale);
 	}
 
-	return parts.join(", ");
+	const roundedRemainder = Math.round(remainder / 3) * 3;
+	if (roundedRemainder === 12) {
+		return formatUnit(years + 1, "year", locale);
+	}
+
+	const fraction = quarterFractions[roundedRemainder];
+	if (!fraction) {
+		return formatUnit(years, "year", locale);
+	}
+
+	return `${years}${fraction} ${unitLabels[locale].year.other}`;
 };
