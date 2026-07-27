@@ -8,7 +8,9 @@
 			"audience-engagement-platform",
 			"open-source-social-network",
 			"systems-development-and-framework",
-			"roschaefer-portfolio"
+			"roschaefer-portfolio",
+			"hledger-document-check",
+			"hledger-elster"
 		],
 		"talkIds": [
 			"find-open-source-contributors-vuejs-berlin",
@@ -283,6 +285,56 @@
 			},
 			"url": "https://roschaefer.de/",
 			"type": "portfolio"
+		},
+		{
+			"id": "hledger-document-check",
+			"name": "hledger-document-check",
+			"entity": "Robert Schäfer",
+			"engagement": "independent",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-03-19",
+			"keywords": [
+				"Rust",
+				"hledger",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für die Belegprüfung mit hledger. Es gleicht buchungspflichtige Transaktionen mit Belegen auf der Festplatte ab, erkennt fehlende oder ungebuchte Dokumente, prüft die Plausibilität von Beträgen und erzeugt ein abgeleitetes Journal für die Belegansicht in Fava.",
+				"en": "A Plain Text Accounting command-line tool for checking documents with hledger. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, checks amount plausibility, and generates an enriched journal for Fava's document view."
+			},
+			"url": "https://github.com/roschaefer/hledger-document-check",
+			"type": "tool"
+		},
+		{
+			"id": "hledger-elster",
+			"name": "hledger-elster",
+			"entity": "Robert Schäfer",
+			"engagement": "independent",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-03-19",
+			"keywords": [
+				"Rust",
+				"hledger",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für hledger, um die deutsche Steuererklärung zu automatisieren. Es liest Umsätze aus dem Journal und erzeugt daraus nachvollziehbare Exporte für die entsprechenden Formulare auf ELSTER.de. Die Exporte liegen im CSV- und XLSX-Format vor und enthalten Herleitungen zur Nachprüfung durch die Steuerbehörden.",
+				"en": "A Plain Text Accounting command-line tool for hledger that automates German tax filing. It reads transactions from the journal and generates traceable exports for the corresponding forms on ELSTER.de. The exports are available in CSV and XLSX format and include derivations that tax authorities can audit."
+			},
+			"url": "https://github.com/roschaefer/hledger-elster",
+			"type": "tool"
 		},
 		{
 			"id": "ai-interview-platform",
