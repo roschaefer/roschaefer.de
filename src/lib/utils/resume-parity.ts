@@ -95,16 +95,6 @@ const assertFeaturedReferencesAreValid = (value: Record<string, unknown>) => {
 		throw new Error("Project ids in resume.i18n.json must be unique.");
 	}
 
-	const availableSkillNames = new Set(
-		projects.flatMap((entry) => {
-			if (!isPlainObject(entry) || !Array.isArray(entry.keywords)) {
-				return [];
-			}
-
-			return entry.keywords.filter((keyword): keyword is string => typeof keyword === "string");
-		}),
-	);
-
 	const featured = isPlainObject(value.featured) ? value.featured : null;
 	if (!featured) {
 		return;
@@ -141,25 +131,6 @@ const assertFeaturedReferencesAreValid = (value: Record<string, unknown>) => {
 		for (const id of featured.talkIds) {
 			if (!projectIds.includes(id)) {
 				throw new Error(`featured.talkIds references unknown project id "${id}".`);
-			}
-		}
-	}
-
-	if ("skillNames" in featured) {
-		if (
-			!Array.isArray(featured.skillNames) ||
-			featured.skillNames.some((name) => typeof name !== "string")
-		) {
-			throw new Error("featured.skillNames must be an array of strings.");
-		}
-
-		if (featured.skillNames.length !== new Set(featured.skillNames).size) {
-			throw new Error("featured.skillNames must not contain duplicates.");
-		}
-
-		for (const name of featured.skillNames) {
-			if (!availableSkillNames.has(name)) {
-				throw new Error(`featured.skillNames references unknown skill "${name}".`);
 			}
 		}
 	}

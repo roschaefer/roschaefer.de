@@ -241,14 +241,7 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 		(project) => project.type === "presentation",
 	);
 	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
-	// compact: true - print gets the shorter duration/recency forms; the
-	// website table (createSiteContent) still wants the spelled-out default.
-	const techExperience: DisplayTechExperience[] = createTechExperience(
-		projects,
-		locale,
-		new Date(),
-		true,
-	);
+	const techExperience: DisplayTechExperience[] = createTechExperience(projects, locale);
 	const techExperienceByRecency = sortByRecency(techExperience);
 	const curatedTechExperience = techExperienceByRecency.slice(0, 15);
 

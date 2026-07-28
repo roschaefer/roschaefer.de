@@ -46,9 +46,6 @@ const anchorTargetIds = $derived(
 const remainingProjectIds = $derived(
 	new Set(content.remainingProjects.map((project) => projectEntryId(project))),
 );
-const remainingSkillIds = $derived(
-	new Set(content.remainingTechExperience.map((entry) => skillEntryId(entry.name))),
-);
 const scrollBehavior = (): ScrollBehavior =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 const currentHashTarget = () => {
@@ -59,8 +56,6 @@ const currentHashTarget = () => {
 	}
 };
 const activateAnchorTarget = (targetId: string) => {
-	activeAnchorTargetId = targetId;
-
 	const targetElement = document.getElementById(targetId);
 	if (!targetElement) {
 		return;
@@ -90,9 +85,11 @@ onMount(() => {
 		if (remainingProjectIds.has(targetId)) {
 			projectsExpanded = true;
 		}
-		if (remainingSkillIds.has(targetId)) {
-			technologiesExpanded = true;
-		}
+		// TechExperienceList sorts client-side, so a static "remaining" partition
+		// computed here can't know which rows its *current* sort hides - set the
+		// target before the tick and let the list expand itself if the row is
+		// hidden under whatever sort is active right now.
+		activeAnchorTargetId = targetId;
 
 		await tick();
 		activateAnchorTarget(targetId);
