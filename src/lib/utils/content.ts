@@ -2,7 +2,6 @@ import { getResume, getResumeFeatured } from "$lib/data/resume";
 import type { Locale } from "$lib/i18n";
 import {
 	createFeaturedEducation,
-	createFeaturedEntriesByName,
 	createFeaturedProjects,
 	getFeaturedConfig,
 } from "$lib/utils/resume-featured";
@@ -33,13 +32,21 @@ export const createSiteContent = (locale: Locale) => {
 			(project) => project.type === "presentation",
 		) || [];
 	const techExperience = createTechExperience(projects, locale);
-	const featuredTechExperience = createFeaturedEntriesByName(techExperience, featured.skillNames);
-	const resolvedTechExperience =
-		featuredTechExperience.length > 0 ? featuredTechExperience : techExperience.slice(0, 12);
-	const featuredTechExperienceNames = new Set(resolvedTechExperience.map((entry) => entry.name));
-	const remainingTechExperience = techExperience.filter(
-		(entry) => !featuredTechExperienceNames.has(entry.name),
+	// TechExperienceList defaults to sorting by recency (see its sortKey
+	// initial state), not the score order createTechExperience returns - the
+	// partition here has to match that exact ordering (including tie-breaks),
+	// or a skill that's score-ranked into the "featured" set can still land
+	// outside the table's actual default-visible rows, breaking anchor links
+	// that expect PortfolioPage's remainingSkillIds to agree with what's shown.
+	const techExperienceByRecency = [...techExperience].sort(
+		(left, right) =>
+			right.lastUsedMonth - left.lastUsedMonth ||
+			right.score - left.score ||
+			left.name.localeCompare(right.name),
 	);
+	const visibleTechExperienceCount = 10;
+	const resolvedTechExperience = techExperienceByRecency.slice(0, visibleTechExperienceCount);
+	const remainingTechExperience = techExperienceByRecency.slice(visibleTechExperienceCount);
 	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
 	const profiles = resume.basics.profiles ?? [];
 	const press = sortedProjects

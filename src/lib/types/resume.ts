@@ -84,7 +84,6 @@ export type ResumeSkill = JsonResumeSkill & {
 export type ResumeFeatured = {
 	projectIds?: string[];
 	talkIds?: string[];
-	skillNames?: string[];
 	educationIds?: string[];
 };
 

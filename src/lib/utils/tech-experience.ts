@@ -14,21 +14,14 @@ export type TechExperience<T extends ResumeProject = ResumeProject> = {
 	score: number;
 };
 
-// Print-only for now (pass compact: true) - the website table still shows the
-// longer "Active in current work" form via the default. Once the website
-// adopts the shorter form too, this can drop the flag.
 const formatRelativeLastUsed = (
 	lastUsedMonth: number,
 	currentMonth: number,
 	locale: Locale,
-	compact: boolean,
 ): string => {
 	const monthsAgo = Math.max(0, currentMonth - lastUsedMonth);
 
 	if (monthsAgo === 0) {
-		if (!compact) {
-			return locale === "de" ? "Aktiv im aktuellen Projekt" : "Active in current work";
-		}
 		return locale === "de" ? "Aktuell" : "Current";
 	}
 
@@ -55,7 +48,6 @@ export const createTechExperience = <T extends ResumeProject>(
 	projects: T[],
 	locale: Locale,
 	now = new Date(),
-	compact = false,
 ): TechExperience<T>[] => {
 	const currentMonth = now.getUTCFullYear() * 12 + now.getUTCMonth();
 
@@ -66,11 +58,11 @@ export const createTechExperience = <T extends ResumeProject>(
 			return {
 				name,
 				totalMonths,
-				label: formatMonthDuration(totalMonths, locale, compact),
+				label: formatMonthDuration(totalMonths, locale),
 				projects,
 				projectCount,
 				lastUsedMonth,
-				lastUsedLabel: formatRelativeLastUsed(lastUsedMonth, currentMonth, locale, compact),
+				lastUsedLabel: formatRelativeLastUsed(lastUsedMonth, currentMonth, locale),
 				score: createScore(totalMonths, projectCount, monthsSinceLastUsed),
 			};
 		})

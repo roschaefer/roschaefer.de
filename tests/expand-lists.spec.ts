@@ -28,15 +28,15 @@ test("show all technologies focuses the first newly revealed technology", async 
 	const showAllButton = experienceSection.getByRole("button", { name: /show all technologies/i });
 	// See the "show all projects" test above for why this wait matters.
 	await expect(showAllButton).toBeVisible();
-	const initialCount = await experienceSection.locator("li:has(article)").count();
+	const initialCount = await experienceSection.locator("tbody tr").count();
 
 	await showAllButton.click();
 
 	await expect(showAllButton).toHaveCount(0);
-	const revealedCount = await experienceSection.locator("li:has(article)").count();
+	const revealedCount = await experienceSection.locator("tbody tr").count();
 	expect(revealedCount).toBeGreaterThan(initialCount);
 
-	const firstRevealedEntry = experienceSection.locator("li:has(article)").nth(initialCount);
+	const firstRevealedEntry = experienceSection.locator("tbody tr").nth(initialCount);
 	await expect(firstRevealedEntry).toBeFocused();
 });
 
@@ -71,9 +71,9 @@ test("skill project mentions render fully without JavaScript", async ({ browser 
 	await page.goto("/en/");
 
 	const mentionCounts = await page
-		.locator("#experience p")
-		.evaluateAll((paragraphs) =>
-			paragraphs.map((paragraph) => paragraph.querySelectorAll("span[tabindex='-1']").length),
+		.locator("#experience td")
+		.evaluateAll((cells) =>
+			cells.map((cell) => cell.querySelectorAll("span[tabindex='-1']").length),
 		);
 
 	await expect(

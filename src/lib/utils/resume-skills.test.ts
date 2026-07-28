@@ -4,8 +4,8 @@ import { createResumeSkills, formatSkillDuration, resumeSkillsAreInSync } from "
 
 describe("resume skills", () => {
 	it("delegates duration formatting by locale", () => {
-		expect(formatSkillDuration(26, "de")).toBe("2 Jahre, 2 Monate");
-		expect(formatSkillDuration(26, "en")).toBe("2 years, 2 months");
+		expect(formatSkillDuration(26, "de")).toBe("2¼ Jahre");
+		expect(formatSkillDuration(26, "en")).toBe("2¼ years");
 	});
 
 	it("keeps resume.de.json skills in sync with project keywords", () => {
@@ -72,7 +72,7 @@ describe("resume skills", () => {
 		expect(skills[0]).toEqual({
 			name: "Svelte",
 			level: "Practical experience",
-			keywords: ["1 year, 1 month", "2 projects", "active now"],
+			keywords: ["1 year", "2 projects", "active now"],
 		});
 		expect(skills[1]?.name).toBe("PHP");
 	});

@@ -25,7 +25,7 @@ describe("createTechExperience", () => {
 		expect(result[0]).toMatchObject({
 			name: "TypeScript",
 			totalMonths: 15,
-			label: "1 year, 3 months",
+			label: "1¼ years",
 		});
 	});
 
@@ -44,7 +44,7 @@ describe("createTechExperience", () => {
 
 		expect(result.find((entry) => entry.name === "Svelte")).toMatchObject({
 			projectCount: 1,
-			lastUsedLabel: "Active in current work",
+			lastUsedLabel: "Current",
 		});
 		expect(result.find((entry) => entry.name === "Svelte")?.projects).toHaveLength(1);
 	});
@@ -63,7 +63,7 @@ describe("createTechExperience", () => {
 			new Date("2021-03-20"),
 		);
 
-		expect(result[0]?.label).toBe("1 Jahr, 3 Monate");
+		expect(result[0]?.label).toBe("1¼ Jahre");
 	});
 
 	it("boosts technologies used more recently and across more projects", () => {
@@ -96,35 +96,6 @@ describe("createTechExperience", () => {
 		expect(result[0]).toMatchObject({
 			projectCount: 2,
 			lastUsedLabel: "last month",
-		});
-	});
-
-	it("shortens duration and recency labels in compact mode (print only)", () => {
-		const result = createTechExperience(
-			[
-				{
-					name: "A",
-					startDate: "2020-01-01",
-					endDate: "2020-12-01",
-					keywords: ["TypeScript"],
-				},
-				{
-					name: "B",
-					startDate: "2020-06-01",
-					endDate: "2021-03-01",
-					keywords: ["TypeScript"],
-				},
-			],
-			"en",
-			new Date("2021-03-20"),
-			true,
-		);
-
-		expect(result[0]).toMatchObject({
-			name: "TypeScript",
-			totalMonths: 15,
-			label: "1¼ years",
-			lastUsedLabel: "Current",
 		});
 	});
 });
