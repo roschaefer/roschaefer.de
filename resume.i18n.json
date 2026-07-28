@@ -51,8 +51,8 @@
 		"url": "https://roschaefer.de/",
 		"signal": "https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00",
 		"summary": {
-			"de": "Ich arbeite remote als freiberuflicher Full-Stack-Entwickler an Webanwendungen, Produktentwicklung und Infrastruktur. Mein Fokus liegt auf wartbarer Software, hoher Testabdeckung und einfachen Systemen. Mein Wissen teile ich gerne im Team durch Code Reviews, Pair Programming und technisches Mentoring. Außerdem schreibe ich gerne und viel Open-Source-Software.",
-			"en": "I work remotely as a freelance full stack developer across web applications, product engineering, and infrastructure, and I invest additional time in open source. My focus is on maintainable software, strong test coverage, and modernizing fragile systems by simplifying delivery and operations while strengthening quality through reliable collaboration, code reviews, pair programming, and technical mentoring."
+			"de": "Freiberuflicher Full-Stack-Entwickler für remote umgesetzte Webanwendungen, Produktentwicklung und Infrastruktur. Schwerpunkte sind wartbare Software, hohe Testabdeckung und einfache Systeme. Teams profitieren von strukturierten Code Reviews, Pair Programming, technischem Mentoring und langjähriger Open-Source-Erfahrung.",
+			"en": "Freelance full stack developer working remotely across web applications, product engineering, and infrastructure, with additional investment in open source. Focus areas include maintainable software, strong test coverage, and modernizing fragile systems by simplifying delivery and operations while strengthening quality through reliable collaboration, code reviews, pair programming, and technical mentoring."
 		},
 		"location": {
 			"address": {
@@ -278,8 +278,8 @@
 				"Netlify"
 			],
 			"description": {
-				"de": "Meine persönliche Portfolio-Website und ein druckoptimierter Lebenslauf aus einer gemeinsamen Datenquelle. Das Projekt verbindet eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst und standardkonformes `resume.json` zu einer zugänglichen, datensparsamen Darstellung für Web und Druck.",
-				"en": "My personal portfolio website and a print-optimized resume built from a shared content source. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, and standards-compliant `resume.json` into an accessible, privacy-conscious experience for web and print."
+				"de": "Persönliche Portfolio-Website und druckoptimierter Lebenslauf aus einer gemeinsamen Datenquelle. Das Projekt verbindet eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst und standardkonformes `resume.json` zu einer zugänglichen, datensparsamen Darstellung für Web und Druck.",
+				"en": "Personal portfolio website and print-optimized resume built from a shared content source. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, and standards-compliant `resume.json` into an accessible, privacy-conscious experience for web and print."
 			},
 			"url": "https://roschaefer.de/",
 			"type": "portfolio"
@@ -367,8 +367,8 @@
 				"ElevenLabs"
 			],
 			"description": {
-				"de": "Bei dieser SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung arbeite ich an der Ablösung einer fragilen, auf Airtable, Voiceflow und weiteren eigenen Diensten verteilten Infrastruktur durch eine einheitliche serverlose Anwendung. Durch die Nutzung der integrierten Workflows von ElevenLabs AI Agents sinken Wartungsaufwand und Komplexität deutlich, während sich die Antwortzeit des Telefonagenten um mehrere Sekunden verbessert, was für eine gute Nutzererfahrung entscheidend ist.",
-				"en": "With this SvelteKit application for AI-assisted interviews and editorial publishing, I am helping replace a brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. By using the built-in workflows of ElevenLabs AI Agents, we significantly reduce maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
+				"de": "Diese SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung ersetzt eine fragile, auf Airtable, Voiceflow und weitere eigene Dienste verteilte Infrastruktur durch eine einheitliche serverlose Anwendung. Die Nutzung der integrierten Workflows von ElevenLabs AI Agents senkt Wartungsaufwand und Komplexität deutlich und verbessert die Antwortzeit des Telefonagenten um mehrere Sekunden, was für eine gute Nutzererfahrung entscheidend ist.",
+				"en": "This SvelteKit application for AI-assisted interviews and editorial publishing replaces brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. Using the built-in workflows of ElevenLabs AI Agents significantly reduces maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
 			},
 			"type": "product",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
@@ -441,8 +441,8 @@
 				"PostgreSQL"
 			],
 			"description": {
-				"de": "Bei dieser freien und quelloffenen Social-Media-Plattform für Unternehmerinnen und Unternehmer habe ich die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Durch die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform konnte jedes Teammitglied eigene Branches in produktionsnahen Umgebungen testen, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
-				"en": "For this free and open-source social platform for entrepreneurs I fundamentally reworked the delivery and infrastructure architecture after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. By moving the project to a self-managed Kubernetes setup on Hetzner with Terraform, each developer could test their own branches in production-like environments while keeping operating costs extremely low at under 20 euros per month."
+				"de": "Für diese freie und quelloffene Social-Media-Plattform für Unternehmerinnen und Unternehmer wurde die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform ermöglichte produktionsnahe Testumgebungen für eigene Branches aller Teammitglieder, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
+				"en": "For this free and open-source social platform for entrepreneurs, the delivery and infrastructure architecture was fundamentally reworked after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. Moving the project to a self-managed Kubernetes setup on Hetzner with Terraform gave every developer production-like test environments for their own branches while keeping operating costs extremely low at under 20 euros per month."
 			},
 			"type": "product",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:lHvYhA==,iv:7UNo9vodSDpa38esGF4q/N3CBri1J3/SskGGDvHToDs=,tag:wOExU121uNbMyfXOxKkG2w==,type:str]",
@@ -477,8 +477,8 @@
 				"Postmark"
 			],
 			"description": {
-				"de": "Bei dieser Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus habe ich an einer Ruby-on-Rails-Anwendung gearbeitet, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
-				"en": "For this platform for audience engagement and crowd-based reporting in journalism, I worked on a Ruby on Rails application that integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
+				"de": "Für diese Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus entstand eine Ruby-on-Rails-Anwendung, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
+				"en": "For this platform for audience engagement and crowd-based reporting in journalism, the Ruby on Rails application integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
 			},
 			"type": "product",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
@@ -514,8 +514,8 @@
 				"Vercel"
 			],
 			"description": {
-				"de": "Bei dieser Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können, haben wir eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
-				"en": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, we migrated an Electron desktop application to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240."
+				"de": "Bei dieser Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können, wurde eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
+				"en": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, an Electron desktop application was migrated to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240."
 			},
 			"type": "product",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:6uA37BCdaoeOi7U=,iv:Skq78Etud4TTfnK9cfYMiXGs3bm2RyXwdq03xPskoK0=,tag:YrYTJRGIi4FCMKI5irXATg==,type:str]",
@@ -546,8 +546,8 @@
 				"Serverless"
 			],
 			"description": {
-				"de": "Ich habe die Website eines Einzelhandelskunden mit SvelteKit und Hygraph neu aufgebaut und statisch auf Netlify ausgerollt. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegbarkeit.",
-				"en": "I rebuilt the website for a retail client with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
+				"de": "Website-Relaunch für einen Einzelhandelskunden mit SvelteKit und Hygraph, statisch ausgerollt auf Netlify. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegbarkeit.",
+				"en": "Rebuilt a retail client's website with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
 			},
 			"type": "client-platform",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
@@ -577,8 +577,8 @@
 				"HyGraph"
 			],
 			"description": {
-				"de": "Ich habe für einen Kursanbieter ein individuelles Buchungssystem für Nähkurse entwickelt und in die Website integriert. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
-				"en": "I built a custom booking system for sewing classes for a course provider and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
+				"de": "Individuelles Buchungssystem für die Nähkurse eines Kursanbieters, integriert in die bestehende Website. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
+				"en": "Built a custom booking system for a course provider's sewing classes and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
 			},
 			"type": "client-platform",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
@@ -608,8 +608,8 @@
 				"Tailwind"
 			],
 			"description": {
-				"de": "Ich habe für einen Anbieter berufsbegleitender Weiterbildungen ein individuelles Buchungssystem entwickelt. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
-				"en": "I built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
+				"de": "Individuelles Buchungssystem für einen Anbieter berufsbegleitender Weiterbildungen. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
+				"en": "Built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
 			},
 			"type": "client-platform",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
@@ -639,8 +639,8 @@
 				"Tailwind"
 			],
 			"description": {
-				"de": "Für eine Ferienwohnung auf Norderney habe ich eine Buchungswebsite mit Kalenderintegration umgesetzt. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
-				"en": "For a holiday apartment on Norderney, I built a booking website with calendar integration. Day-by-day availability is maintained in Google Calendar and synchronized to the site via Google APIs."
+				"de": "Buchungswebsite mit Kalenderintegration für eine Ferienwohnung auf Norderney. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
+				"en": "Built a booking website with calendar integration for a holiday apartment on Norderney. Day-by-day availability is maintained in Google Calendar and synchronized to the site via Google APIs."
 			},
 			"type": "client-platform",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:8ozxzsWLcfr+7EKKGvIdBu4=,iv:OVlQ/0MqTo+H0rOA2MB6EO6J7kQly4OCDRsen1h88QU=,tag:O81pa7N25+A0lw0LFjqK3w==,type:str]",
@@ -670,8 +670,8 @@
 				"Tailwind"
 			],
 			"description": {
-				"de": "Ich habe eine Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden vollständig verantwortet, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
-				"en": "I was fully responsible for a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
+				"de": "Vollständige Leitung einer Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
+				"en": "Owned a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
 			},
 			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo\u0026list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
 			"location": "Berlin, Germany",
@@ -707,8 +707,8 @@
 				"Kubernetes"
 			],
 			"description": {
-				"de": "Bei diesem gemeinschaftlich entwickelten Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet, habe ich als Technical Lead an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb gearbeitet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; ich habe neue Mitwirkende über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und den Großteil der Beiträge reviewed. Neo4J haben wir produktiv als Primärdatenbank eingesetzt, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
-				"en": "For this community-built open-source social network that offers communities a privacy-friendly alternative to large platforms, I worked as Technical Lead on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations. The project grew to around 80 code contributors on GitHub; I onboarded newcomers through GitHub, Discord, and online pair programming, mentored them directly, and reviewed most contributions. We used Neo4J in production as the primary database to model the network's social graph directly."
+				"de": "Technical-Lead-Arbeit an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb für ein gemeinschaftlich entwickeltes Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; neue Mitwirkende wurden über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und der Großteil der Beiträge reviewed. Neo4J lief produktiv als Primärdatenbank, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
+				"en": "Technical Lead work on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations for a community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. The project grew to around 80 code contributors on GitHub; newcomers were onboarded through GitHub, Discord, and online pair programming, mentored directly, and most contributions were reviewed. Neo4J ran in production as the primary database to model the network's social graph directly."
 			},
 			"type": "product",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:EUZMLDKUqypxsyIS8ao=,iv:oA5ipbZHqZkq5dLy6e+lNnSiqjqoMezQZgt+EfPCiJk=,tag:B7cDOfNSTlaV5lTOI94T8g==,type:str]",
@@ -769,8 +769,8 @@
 				"Cucumber"
 			],
 			"description": {
-				"de": "Aufbauend auf einem früheren journalistischen Sensor-Projekt haben wir die Plattform für ein neues Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
-				"en": "Building on an earlier journalistic sensor-data project, we reused and extended the platform for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
+				"de": "Aufbauend auf einem früheren journalistischen Sensor-Projekt wurde die Plattform für ein neues Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
+				"en": "Building on an earlier journalistic sensor-data project, the platform was reused and extended for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
 			},
 			"type": "product",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
@@ -1021,8 +1021,8 @@
 				"Cucumber"
 			],
 			"description": {
-				"de": "Für WDR und Spiegel Online entwickelten wir ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
-				"en": "For WDR and Spiegel Online, we developed a journalistic format that generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
+				"de": "Für WDR und Spiegel Online entstand ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
+				"en": "For WDR and Spiegel Online, a journalistic format generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
 			},
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:U8Htr5FoY+YpHqx9NUKEymE=,iv:zDsk4/KTM+PU+3xWAG/jRe+9rTl4Wrw7/l79LfXz+NY=,tag:H+4sRdyovEtPEtldtbCRlw==,type:str]",
 			"links": [
@@ -1265,8 +1265,8 @@
 				"PostgreSQL"
 			],
 			"description": {
-				"de": "Bei dieser Webanwendung für Funktionäre, Schiedsrichter und Trainer war ich der erste Entwickler, der eine automatisierte Testumgebung eingeführt hat.",
-				"en": "For this web application for officials, referees, and coaches, I was the first developer to introduce an automated test environment."
+				"de": "Erste Einführung einer automatisierten Testumgebung für diese Webanwendung für Funktionäre, Schiedsrichter und Trainer.",
+				"en": "First developer to introduce an automated test environment for this web application for officials, referees, and coaches."
 			},
 			"location": "Bern, Switzerland",
 			"type": "product",
