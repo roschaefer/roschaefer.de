@@ -245,10 +245,22 @@ markUsed(() => [
 			class="grid gap-10 xl:grid-cols-[minmax(0,1.35fr)_minmax(24rem,0.9fr)]"
 		>
 			<div class="min-w-0 space-y-8">
-				<h1 id="intro-title" class="hero-heading theme-heading max-w-4xl" lang={locale}>
-					{t(m.hero_title)}
-					<br />
-					<span class="text-[var(--color-brand-cyan)]">{t(m.hero_accent)}</span>
+				<h1
+					id="intro-title"
+					class="hero-heading theme-heading max-w-4xl max-[23rem]:text-5xl"
+					lang={locale}
+					aria-label={`${t(m.hero_heading_line_1)} ${t(m.hero_heading_line_2)} ${t(m.hero_heading_line_3)} ${t(m.hero_heading_line_4)}`}
+				>
+					<span aria-hidden="true">
+						<span class="block">{t(m.hero_heading_line_1)}</span>
+						<span class="block">{t(m.hero_heading_line_2)}</span>
+						<span class="block text-[var(--color-brand-cyan)]">
+							{t(m.hero_heading_line_3)}
+						</span>
+						<span class="block text-[var(--color-brand-cyan)]">
+							{t(m.hero_heading_line_4)}
+						</span>
+					</span>
 				</h1>
 				<p class="text-lg text-[var(--color-brand-text)]">{content.basics.summary}</p>
 				<ul class="flex list-none flex-wrap gap-4 p-0">
