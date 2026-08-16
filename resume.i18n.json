@@ -683,7 +683,6 @@
 				"de": "FOSS Soziales Netzwerk",
 				"en": "FOSS social network"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -711,7 +710,43 @@
 				"en": "Technical Lead work on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations for a community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. The project grew to around 80 code contributors on GitHub; newcomers were onboarded through GitHub, Discord, and online pair programming, mentored directly, and most contributions were reviewed. Neo4J ran in production as the primary database to model the network's social graph directly."
 			},
 			"type": "product",
-			"sopsEncryptedEntity": "ENC[AES256_GCM,data:EUZMLDKUqypxsyIS8ao=,iv:oA5ipbZHqZkq5dLy6e+lNnSiqjqoMezQZgt+EfPCiJk=,tag:B7cDOfNSTlaV5lTOI94T8g==,type:str]",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:6S1Kbi99Zh0Rb2M+TNJBwYPxlvOxiA==,iv:HOI5mE5ts+hwzxQj6HLVETP6Q5B0FNeWofvUSGZNPy4=,tag:8yCLVPI79gf7YZkf31pZLQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:EkXREJE7t9dygS+VRiHzmguWVK0Sp00GK+dSBSt7TMBhui/BwWQRPgiPJ6I513rWqqv/22t7r7Q=,iv:V2UmC9B+xS1PM0MTc8cSTai7sh3uN1NKAgo0aDusx7I=,tag:21jvSNP74lxjjTSveJ0+Mw==,type:str]"
+		},
+		{
+			"id": "foss-social-network-infra-migration",
+			"name": {
+				"de": "FOSS Soziales Netzwerk",
+				"en": "FOSS social network"
+			},
+			"engagement": "freelance",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Infrastruktur-Ingenieur",
+					"en": "Infrastructure Engineer"
+				}
+			],
+			"startDate": "2024-10-01",
+			"endDate": "2025-11-30",
+			"keywords": [
+				"TypeScript",
+				"Vue",
+				"Nuxt",
+				"Terraform",
+				"sops",
+				"Kubernetes",
+				"Hetzner",
+				"S3",
+				"Digital Ocean",
+				"Docker"
+			],
+			"description": {
+				"de": "Migration der Assets von einem Kubernetes-Volume zu S3-kompatiblem Object Storage, um Komplexität und Kosten des Deployments zu senken. Die Infrastruktur wurde mit Terraform und sops neu aufgesetzt; der Wechsel von einem verwalteten Kubernetes-Cluster auf Digital Ocean zu selbst betriebenem Kubernetes-Cluster auf Hetzner senkte die monatlichen Kosten um 80 %.",
+				"en": "Migrated assets from a Kubernetes volume to S3-compatible object storage to reduce deployment complexity and cost. Rebuilt the infrastructure with Terraform and sops, and moved from a managed Kubernetes cluster on Digital Ocean to a self-hosted Kubernetes cluster on Hetzner, cutting monthly costs by 80%."
+			},
+			"type": "product",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Fzb85M1QQQlHVtFTs2QhUg==,iv:GPwNGetCy2U9sNnsqMz7Ls4C2M7rwcc8bQiw/nrBvCo=,tag:9AZ8ak6s+QbFCsS1/GFbLg==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:EkXREJE7t9dygS+VRiHzmguWVK0Sp00GK+dSBSt7TMBhui/BwWQRPgiPJ6I513rWqqv/22t7r7Q=,iv:V2UmC9B+xS1PM0MTc8cSTai7sh3uN1NKAgo0aDusx7I=,tag:21jvSNP74lxjjTSveJ0+Mw==,type:str]"
 		},
 		{
@@ -1328,8 +1363,8 @@
 			}
 		],
 		"encrypted_regex": "^sopsEncrypted[A-Za-z]*$",
-		"lastmodified": "2026-07-26T11:31:38Z",
-		"mac": "ENC[AES256_GCM,data:XAGXQswuy/176XQ/N7EEn1rSV35bVs7t1uV7KtYpVMiwCy5lK/3hwYXHP3jdPtAYDpWY1ODkd63BjucD9vfKninZTNCgAt8VzRGYOEreoYe9ctD9p3XaGwRdYJ6qKAnTPQcaSGuFnCiaPD56RAYHA6tcgJWhNKxY+DWRXZxYmo0=,iv:98cr5v4eZqrghkNQcQdv4+cUrPnYW5WLTQOcjp5C3sg=,tag:JtZuVBYvkWcc6rRBsn3RXA==,type:str]",
+		"lastmodified": "2026-08-16T15:41:55Z",
+		"mac": "ENC[AES256_GCM,data:IZ/KyZy5pW052sQDG7WwvcUpwR7tP5mlUPZ57HgmavqB8JhIOsD4bfDmD7GtNDmNGO0S03DTGRl5T1UKq8HogwqSNlXep4Ii3jbm52jovWsvDmDDCuX0D+KY67OkK8j4PZOMlXCALKgrrC5pq3Bs1pJbFe3UBR5xvyNg33KxZQo=,iv:+gSU5Nev99JfC7CRp3W7CHdOwb8wXuBSOEoc7MIBNyY=,tag:luWfRREefwKb4yxHbprVNg==,type:str]",
 		"mac_only_encrypted": true,
 		"version": "3.13.3"
 	}
