@@ -20,6 +20,13 @@ const monthIndex = (value: string): number => {
 
 const monthDiff = (start: number, end: number): number => Math.max(1, end - start + 1);
 
+// Distinct engagements can share a display name (e.g. a project handed over
+// between clients keeps the same product name for both entries), so `id` is
+// the only reliable identity; fall back to name+dates for fixtures/tests
+// that omit it.
+const projectIdentity = <T extends ResumeProject>(project: T): string =>
+	project.id ?? `${project.name}:${project.startDate}:${project.endDate ?? ""}`;
+
 const mergeIntervals = (intervals: Interval[]): Interval[] => {
 	const sorted = [...intervals].sort((left, right) => left.start - right.start);
 	const merged: Interval[] = [];
@@ -58,7 +65,7 @@ export const createTechnologyAggregates = <T extends ResumeProject>(
 			start: monthIndex(project.startDate),
 			end: project.endDate ? monthIndex(project.endDate) : currentMonth,
 		};
-		const projectKey = `${project.name}:${project.startDate}:${project.endDate ?? ""}`;
+		const projectKey = projectIdentity(project);
 
 		for (const keyword of keywords) {
 			const current = entries.get(keyword) ?? {
@@ -82,7 +89,9 @@ export const createTechnologyAggregates = <T extends ResumeProject>(
 				(sum, interval) => sum + monthDiff(interval.start, interval.end),
 				0,
 			),
-			projects: [...new Map(value.projects.map((project) => [project.name, project])).values()],
+			projects: [
+				...new Map(value.projects.map((project) => [projectIdentity(project), project])).values(),
+			],
 			projectCount: value.projectKeys.size,
 			lastUsedMonth: value.lastUsedMonth,
 		}))
