@@ -66,8 +66,7 @@
 		},
 		{
 			"matchPackageNames": ["@biomejs/biome"],
-			"matchUpdateTypes": ["lockFileMaintenance"],
-			"enabled": false
+			"rangeStrategy": "pin"
 		},
 		{
 			"matchPackageNames": ["typescript", "vite", "vitest", "svelte-check", "/^@types\\//"],
