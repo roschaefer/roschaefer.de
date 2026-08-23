@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.12.1",
-		"@biomejs/biome": "^2.5.3",
+		"@biomejs/biome": "2.5.8",
 		"@fontsource-variable/jost": "^5.2.8",
 		"@fontsource/titillium-web": "^5.2.8",
 		"@inlang/paraglide-js": "^2.21.0",
