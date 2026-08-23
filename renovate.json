@@ -65,6 +65,11 @@
 			"groupSlug": "biome"
 		},
 		{
+			"matchPackageNames": ["@biomejs/biome"],
+			"matchUpdateTypes": ["lockFileMaintenance"],
+			"enabled": false
+		},
+		{
 			"matchPackageNames": ["typescript", "vite", "vitest", "svelte-check", "/^@types\\//"],
 			"groupName": "quality tooling",
 			"groupSlug": "quality"
