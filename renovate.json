@@ -79,6 +79,10 @@
 			"groupSlug": "playwright"
 		},
 		{
+			"matchPackageNames": ["@playwright/test"],
+			"rangeStrategy": "pin"
+		},
+		{
 			"matchDepNames": ["pnpm"],
 			"groupName": "package manager",
 			"groupSlug": "package-manager"
