@@ -119,6 +119,15 @@ const atsPdfPath = $derived(resumePdfPath(locale, "ats"));
 const atsPdfFilename = $derived(resumePdfFilename(locale, "ats"));
 const pdfDownloadLinkClass =
 	"flex items-center gap-4 rounded-[1.5rem] border border-[color:color-mix(in_srgb,var(--color-brand-cyan)_35%,transparent)] bg-[linear-gradient(135deg,color-mix(in_srgb,var(--color-brand-cyan)_16%,transparent),color-mix(in_srgb,var(--color-brand-panel)_85%,transparent))] px-4 py-4 no-underline transition hover:border-[var(--color-brand-cyan)] focus-visible:border-[var(--color-brand-cyan)]";
+const locationLabel = $derived(
+	[
+		content.basics.location?.city,
+		content.basics.location?.region,
+		content.basics.location?.countryCode,
+	]
+		.filter(Boolean)
+		.join(", "),
+);
 const legalLinks = $derived(
 	locale === "de"
 		? { imprint: "/de/impressum/", privacy: "/de/datenschutz/" }
@@ -159,6 +168,7 @@ markUsed(() => [
 	atsPdfPath,
 	atsPdfFilename,
 	pdfDownloadLinkClass,
+	locationLabel,
 	legalLinks,
 	educationDateFormatter,
 	formatYear,
@@ -306,7 +316,7 @@ markUsed(() => [
 							{t(m.based_in)}
 						</dt>
 						<dd class="theme-heading mt-1">
-							{content.basics.location?.city}, {content.basics.location?.region}
+							{locationLabel}
 						</dd>
 					</div>
 					<div>

@@ -21,23 +21,6 @@
 		"educationIds": [
 			"hpi-msc",
 			"hpi-bsc"
-		],
-		"skillNames": [
-			"TypeScript",
-			"SvelteKit",
-			"Vue",
-			"Tailwind",
-			"Apollo GraphQL",
-			"Docker",
-			"Kubernetes",
-			"Terraform",
-			"Neon DB",
-			"Neo4J",
-			"Netlify",
-			"Vercel",
-			"Google Cloud",
-			"Digital Ocean",
-			"Sentry"
 		]
 	},
 	"basics": {
@@ -55,10 +38,6 @@
 			"en": "Freelance full stack developer working remotely across web applications, product engineering, and infrastructure, with additional investment in open source. Focus areas include maintainable software, strong test coverage, and modernizing fragile systems by simplifying delivery and operations while strengthening quality through reliable collaboration, code reviews, pair programming, and technical mentoring."
 		},
 		"location": {
-			"address": {
-				"de": "kein fester Wohnsitz",
-				"en": "no permanent address"
-			},
 			"city": {
 				"de": "Köln",
 				"en": "Cologne"
@@ -104,8 +83,6 @@
 			}
 		]
 	},
-	"work": [],
-	"volunteer": [],
 	"awards": [
 		{
 			"title": {
@@ -189,8 +166,6 @@
 			}
 		}
 	],
-	"certificates": [],
-	"references": [],
 	"education": [
 		{
 			"id": "hpi-msc",
