@@ -3,7 +3,6 @@ import type {
 	JsonResumeAward,
 	JsonResumeBasics,
 	JsonResumeEducation,
-	JsonResumeInterest,
 	JsonResumeLanguage,
 	JsonResumeProfile,
 	JsonResumeProject,
@@ -72,10 +71,6 @@ export type ResumeLanguage = JsonResumeLanguage & {
 	fluency: string;
 };
 
-export type ResumeInterest = JsonResumeInterest & {
-	name: string;
-};
-
 export type ResumeSkill = JsonResumeSkill & {
 	name: string;
 };
@@ -89,14 +84,13 @@ export type ResumeFeatured = {
 
 export type Resume = Omit<
 	JsonResume,
-	"basics" | "projects" | "awards" | "languages" | "education" | "interests" | "skills"
+	"basics" | "projects" | "awards" | "languages" | "education" | "skills"
 > & {
 	basics: ResumeBasics;
 	projects?: ResumeProject[];
 	awards?: ResumeAward[];
 	languages?: ResumeLanguage[];
 	education?: ResumeEducation[];
-	interests?: ResumeInterest[];
 	skills?: ResumeSkill[];
 	/** Fully custom — not part of the JSON Resume schema. */
 	featured?: ResumeFeatured;

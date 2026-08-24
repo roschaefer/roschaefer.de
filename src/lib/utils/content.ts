@@ -72,7 +72,6 @@ export const createSiteContent = (locale: Locale) => {
 		press,
 		languages: resume.languages ?? [],
 		education: featuredEducation.length > 0 ? featuredEducation : (resume.education ?? []),
-		interests: resume.interests ?? [],
 	};
 };
 

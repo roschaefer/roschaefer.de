@@ -224,34 +224,6 @@
 			"courses": []
 		}
 	],
-	"interests": [
-		{
-			"name": {
-				"de": "Moderne kompilierte Sprachen",
-				"en": "Modern Compiled Languages"
-			},
-			"keywords": [
-				"Rust",
-				"Go",
-				"Zig"
-			]
-		},
-		{
-			"name": {
-				"de": "Cross-Plattform-Entwicklung",
-				"en": "Cross-platform Development"
-			},
-			"keywords": [
-				"Flutter"
-			]
-		},
-		{
-			"name": "Infrastructure as Code",
-			"keywords": [
-				"Terraform"
-			]
-		}
-	],
 	"projects": [
 		{
 			"id": "roschaefer-portfolio",
