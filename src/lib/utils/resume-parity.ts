@@ -134,6 +134,25 @@ const assertFeaturedReferencesAreValid = (value: Record<string, unknown>) => {
 			}
 		}
 	}
+
+	if ("mentoringIds" in featured) {
+		if (
+			!Array.isArray(featured.mentoringIds) ||
+			featured.mentoringIds.some((id) => typeof id !== "string")
+		) {
+			throw new Error("featured.mentoringIds must be an array of strings.");
+		}
+
+		if (featured.mentoringIds.length !== new Set(featured.mentoringIds).size) {
+			throw new Error("featured.mentoringIds must not contain duplicates.");
+		}
+
+		for (const id of featured.mentoringIds) {
+			if (!projectIds.includes(id)) {
+				throw new Error(`featured.mentoringIds references unknown project id "${id}".`);
+			}
+		}
+	}
 };
 
 const assertStructuredLinks = (value: unknown, path: string[] = []) => {

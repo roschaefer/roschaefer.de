@@ -185,6 +185,19 @@
       #experience-entry(entry)
       #v(10pt)
     ]
+
+    #if data.mentoring.len() > 0 [
+      #block(breakable: false)[
+        #section-heading(data.labels.mentoring)
+        #experience-entry(data.mentoring.first())
+      ]
+      #v(10pt)
+      #for entry in data.mentoring.slice(1) [
+        #experience-entry(entry)
+        #v(10pt)
+      ]
+    ]
+
   ],
   [
     #if data.languages.len() > 0 [

@@ -10,11 +10,15 @@ import type { SiteContent } from "$lib/utils/content";
 import { markUsed } from "$lib/utils/mark-used";
 
 interface Props {
-	featured: SiteContent["featuredProjects"];
-	remaining: SiteContent["remainingProjects"];
+	featured:
+		| SiteContent["featuredProjects"]
+		| SiteContent["mentoringProjects"]
+		| SiteContent["volunteeringProjects"];
+	remaining: SiteContent["remainingProjects"] | SiteContent["remainingMentoringProjects"];
 	locale: Locale;
 	linkableSkillIds: Set<string>;
 	activeAnchorTargetId: string | null;
+	showAllLabel?: string;
 	expanded?: boolean;
 }
 
@@ -24,6 +28,7 @@ let {
 	locale,
 	linkableSkillIds,
 	activeAnchorTargetId,
+	showAllLabel,
 	expanded = $bindable(false),
 }: Props = $props();
 
@@ -34,7 +39,9 @@ const isExpanded = $derived(!enhanced || expanded || !collapses);
 const redactedClientPath = $derived(locale === "de" ? "/de/auf-anfrage/" : "/en/on-request/");
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
-const projectKeywordListId = (project: SiteContent["featuredProjects"][number], index: number) =>
+type ProjectListEntry = Props["featured"][number] | Props["remaining"][number];
+
+const projectKeywordListId = (project: ProjectListEntry, index: number) =>
 	`project-keywords-${project.id ?? `${project.name}-${project.startDate}-${index}`}`;
 
 const expand = async () => {
@@ -57,6 +64,7 @@ markUsed(() => [
 	t,
 	projectKeywordListId,
 	expand,
+	showAllLabel,
 	ProjectKeywordPills,
 	NewspaperIcon,
 	pressEntryId,
@@ -80,12 +88,12 @@ markUsed(() => [
 			class="theme-card col-span-full flex cursor-pointer items-center justify-center rounded-[1.75rem] p-6 text-sm font-semibold text-[var(--color-brand-cyan)]"
 			onclick={expand}
 		>
-			{`${t(m.show_all_projects)} (${remaining.length})`}
+			{`${showAllLabel ?? t(m.show_all_projects)} (${remaining.length})`}
 		</button>
 	{/if}
 </div>
 
-{#snippet projectCard(project: SiteContent["featuredProjects"][number], projectIndex: number)}
+{#snippet projectCard(project: ProjectListEntry, projectIndex: number)}
 	{@const keywordListId = projectKeywordListId(project, projectIndex)}
 	{@const projectKeywords = project.keywords ?? []}
 	{@const pressLinks = (project.links ?? []).filter((link) => link.kind === "press")}
