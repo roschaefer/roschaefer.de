@@ -15,7 +15,7 @@ import type {
 	ResumeProject,
 } from "../src/lib/types/resume.ts";
 import {
-	createAtsExperienceProjects,
+	createExperienceProjects,
 	createFeaturedEducation,
 	createFeaturedProjects,
 	getFeaturedConfig,
@@ -57,6 +57,8 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			present: "Heute",
 			selectedProjects: "Ausgewählte aktuelle Projekte",
 			experience: "Berufserfahrung",
+			mentoring: "Mentoring und Lehre",
+			volunteering: "Ehrenamt",
 			selectedTalks: "Ausgewählte Vorträge",
 			redactedClient: "Name auf Anfrage",
 			press: "Presse:",
@@ -77,6 +79,8 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			present: "Present",
 			selectedProjects: "Selected Recent Projects",
 			experience: "Experience",
+			mentoring: "Mentoring and Teaching",
+			volunteering: "Volunteering",
 			selectedTalks: "Selected Talks",
 			redactedClient: "Name on request",
 			press: "Press:",
@@ -234,9 +238,15 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 		.sort((left, right) => right.startDate.localeCompare(left.startDate))
 		.map((project) => toDisplayProject(project, config));
 	const featuredProjects = createFeaturedProjects(projects, featured.projectIds).filter(
-		(project) => project.type !== "presentation",
+		(project) => project.type === "experience",
 	);
-	const atsExperienceProjects = createAtsExperienceProjects(projects);
+	const experienceProjects = createExperienceProjects(projects);
+	const mentoringProjects = projects.filter((project) => project.type === "mentoring");
+	const featuredMentoringProjects = createFeaturedProjects(
+		mentoringProjects,
+		featured.mentoringIds,
+	);
+	const volunteeringProjects = projects.filter((project) => project.type === "volunteering");
 	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
 		(project) => project.type === "presentation",
 	);
@@ -277,9 +287,17 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
 		experience: (featuredProjects.length > 0
 			? featuredProjects
-			: projects.filter((project) => project.type !== "presentation").slice(0, 6)
+			: experienceProjects.slice(0, 6)
 		).map((project) => createProjectEntry(project, locale, config)),
-		experienceFull: atsExperienceProjects.map((project) =>
+		experienceFull: experienceProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		mentoring: (featuredMentoringProjects.length > 0
+			? featuredMentoringProjects
+			: mentoringProjects
+		).map((project) => createProjectEntry(project, locale, config)),
+		mentoringFull: mentoringProjects.map((project) => createProjectEntry(project, locale, config)),
+		volunteering: volunteeringProjects.map((project) =>
 			createProjectEntry(project, locale, config),
 		),
 		talks: (featuredTalks.length > 0

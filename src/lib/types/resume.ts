@@ -45,8 +45,6 @@ export type ResumeProject = JsonResumeProject & {
 	startDate: string;
 	/** Not part of the JSON Resume schema — press/award coverage for this entry. */
 	links?: ResumeLink[];
-	/** Not part of the JSON Resume schema — e.g. "independent", "employed". */
-	engagement?: string;
 	/** Not part of the JSON Resume schema — e.g. "open-source", "private". */
 	codeVisibility?: string;
 	redacted?: boolean;
@@ -80,6 +78,7 @@ export type ResumeFeatured = {
 	projectIds?: string[];
 	talkIds?: string[];
 	educationIds?: string[];
+	mentoringIds?: string[];
 };
 
 export type Resume = Omit<

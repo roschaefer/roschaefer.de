@@ -6,9 +6,7 @@
 			"entrepreneur-social-platform",
 			"automotive-price-comparison",
 			"audience-engagement-platform",
-			"open-source-social-network",
-			"systems-development-and-framework",
-			"roschaefer-portfolio"
+			"open-source-social-network"
 		],
 		"talkIds": [
 			"find-open-source-contributors-vuejs-berlin",
@@ -21,6 +19,10 @@
 		"educationIds": [
 			"hpi-msc",
 			"hpi-bsc"
+		],
+		"mentoringIds": [
+			"systems-development-and-framework",
+			"rubies-in-the-woods"
 		]
 	},
 	"basics": {
@@ -204,7 +206,6 @@
 			"id": "roschaefer-portfolio",
 			"name": "roschaefer.de",
 			"entity": "Robert Schäfer",
-			"engagement": "independent",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -229,13 +230,12 @@
 				"en": "Personal portfolio website and print-optimized resume built from a shared content source. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, and standards-compliant `resume.json` into an accessible, privacy-conscious experience for web and print."
 			},
 			"url": "https://roschaefer.de/",
-			"type": "portfolio"
+			"type": "volunteering"
 		},
 		{
 			"id": "hledger-document-check",
 			"name": "hledger-document-check",
 			"entity": "Robert Schäfer",
-			"engagement": "independent",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -254,13 +254,12 @@
 				"en": "A Plain Text Accounting command-line tool for checking documents with hledger. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, checks amount plausibility, and generates an enriched journal for Fava's document view."
 			},
 			"url": "https://github.com/roschaefer/hledger-document-check",
-			"type": "tool"
+			"type": "volunteering"
 		},
 		{
 			"id": "hledger-elster",
 			"name": "hledger-elster",
 			"entity": "Robert Schäfer",
-			"engagement": "independent",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -279,7 +278,7 @@
 				"en": "A Plain Text Accounting command-line tool for hledger that automates German tax filing. It reads transactions from the journal and generates traceable exports for the corresponding forms on ELSTER.de. The exports are available in CSV and XLSX format and include derivations that tax authorities can audit."
 			},
 			"url": "https://github.com/roschaefer/hledger-elster",
-			"type": "tool"
+			"type": "volunteering"
 		},
 		{
 			"id": "ai-interview-platform",
@@ -287,7 +286,6 @@
 				"de": "KI-Interviewplattform",
 				"en": "AI interview platform"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -317,7 +315,7 @@
 				"de": "Diese SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung ersetzt eine fragile, auf Airtable, Voiceflow und weitere eigene Dienste verteilte Infrastruktur durch eine einheitliche serverlose Anwendung. Die Nutzung der integrierten Workflows von ElevenLabs AI Agents senkt Wartungsaufwand und Komplexität deutlich und verbessert die Antwortzeit des Telefonagenten um mehrere Sekunden, was für eine gute Nutzererfahrung entscheidend ist.",
 				"en": "This SvelteKit application for AI-assisted interviews and editorial publishing replaces brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. Using the built-in workflows of ElevenLabs AI Agents significantly reduces maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:SNhET44YI9q9sSQcpNmjYEE=,iv:p+GggAMwCKDpubrs9Y7liBwHS2Jo0rlMvq/RvgeRgCA=,tag:XZ15Wu7xHzXPGumyE3Nf4g==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ypykDECVJtKwJ9iumPXaXg0XAfCW9Cho/VTjYZOv//CWKDP3i4CBHmFysYHebQ==,iv:3lMYJN/E3Fuma/JhyluNTq5c0lub3p3jlqEi0nGGLIc=,tag:Lhs6sn5dw/WhyLvE20RF/w==,type:str]"
 		},
@@ -327,7 +325,6 @@
 				"de": "Remote-Sternwarte",
 				"en": "Remote observatory"
 			},
-			"engagement": "freelance",
 			"roles": [
 				{
 					"de": "Full-Stack-Entwickler",
@@ -353,7 +350,7 @@
 				"de": "Mit dieser Plattform zur Fernsteuerung von Teleskopen über die Astrofotografie-Software NINA wird Astrofotografie für alle zugänglich, ohne eigenes Equipment oder Fachwissen. Nutzerinnen und Nutzer wählen ein Himmelsobjekt und buchen Beobachtungszeit; die Anwendung überträgt Aufnahmesequenzen per Tailscale an NINA, die diese in der Nacht autonom ausführt und die Ergebnisse bereitstellt. Die zentrale Herausforderung besteht darin, eine primär interaktive Windows-Software in eine vollständig autonome Pipeline zu überführen.",
 				"en": "With this platform for remotely controlling telescopes through the astrophotography software NINA, deep-sky imaging gets accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:1OjXKegxjXmE+jK7I1or2/SigDYf,iv:x7MCTpka06ed/DxgnmAGEzcLD1QdPNnGJ7CPd5wX68Y=,tag:HXMQiLZpkImz7fMjJSq8HA==,type:str]"
 		},
 		{
@@ -362,7 +359,6 @@
 				"de": "Gründungsnetzwerk",
 				"en": "Founder network"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -391,7 +387,7 @@
 				"de": "Für diese freie und quelloffene Social-Media-Plattform für Unternehmerinnen und Unternehmer wurde die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform ermöglichte produktionsnahe Testumgebungen für eigene Branches aller Teammitglieder, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
 				"en": "For this free and open-source social platform for entrepreneurs, the delivery and infrastructure architecture was fundamentally reworked after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. Moving the project to a self-managed Kubernetes setup on Hetzner with Terraform gave every developer production-like test environments for their own branches while keeping operating costs extremely low at under 20 euros per month."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:RWsSPQ==,iv:FY0IQBeXQFaOHahgB4/w5DHKeg9f6v4ScNVpWGfva0E=,tag:l0h5g2P8WN385KpvBXqkDg==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:9QwRC/6a//4m5wnuvmwTwWZ4uaRK8yHk,iv:C4f0ITLBXi80PlDpOH6P6ilTLCtVmfzYKX+gpobxGBU=,tag:Dcm0R0411BR7wwf5345iHw==,type:str]"
 		},
@@ -401,7 +397,6 @@
 				"de": "Newsroom-Dialog",
 				"en": "Newsroom dialog"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -427,7 +422,7 @@
 				"de": "Für diese Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus entstand eine Ruby-on-Rails-Anwendung, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
 				"en": "For this platform for audience engagement and crowd-based reporting in journalism, the Ruby on Rails application integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:hsX6keEmzrEOprq56/g/7v4=,iv:l+T9KN0scUXvHpDbPCnavnOb8WI1TfrTXlIw+a8iAVg=,tag:rAUDS8UFwV9bYcGdzMqXNQ==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:1QMb0ZkLcr1SKVfqgQXC/7m9rf2kYiLmf4M8Q7rlbEfrY1db4388iac+sHhW2g==,iv:zAuuGpeIoqgPxtLRQ+Ar7CcutBzap01n/Viwlvbe83s=,tag:fBrqqRHBoLOxlSSgmS6nmg==,type:str]"
 		},
@@ -437,7 +432,6 @@
 				"de": "Kfz-Preisvergleich",
 				"en": "Auto parts price comparison"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
 				{
@@ -464,7 +458,7 @@
 				"de": "Bei dieser Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können, wurde eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
 				"en": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, an Electron desktop application was migrated to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:fFt0czt7OBqrKDU=,iv:FaqCWWNlK7VAQxXCcCEANX2R/Zf4ApS5N6iCgGnED5E=,tag:yZyU92PBf/dNsft2WKcXlw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:WVrq5ARLlazLoR/SqlRz1cF+MWi60Q==,iv:FtKlv1XyOodRZnH4osFPcPzZ1IKiElWZcagPEYzCCL0=,tag:AwZlYpUFJbixZ3i1rJJzqg==,type:str]"
 		},
@@ -474,7 +468,6 @@
 				"de": "SvelteKit-Relaunch",
 				"en": "SvelteKit relaunch"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
 				{
@@ -496,7 +489,7 @@
 				"de": "Website-Relaunch für einen Einzelhandelskunden mit SvelteKit und Hygraph, statisch ausgerollt auf Netlify. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegbarkeit.",
 				"en": "Rebuilt a retail client's website with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
 			},
-			"type": "client-platform",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:csm0wl6LCfeD2TMj+pYxKuw=,iv:X2F4zXQZXxcahWK17L32ebc4rIx+6wPcIQOICOEIfqg=,tag:a8nlnYGcyEp1qpjBz8HMXg==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ihSnEzUfd/k4dKdGiuCOqSg2WNG6m/27ZGOgsZNcIw==,iv:I5WIU8qahF4fPM3UJIhDQtgjZJ1/dE+t+yis6IrFppE=,tag:foluaaTCYY/JBjbpszAFCw==,type:str]"
 		},
@@ -506,7 +499,6 @@
 				"de": "Buchungssystem für Kursanbieter",
 				"en": "Booking system for course providers"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
 				{
@@ -527,7 +519,7 @@
 				"de": "Individuelles Buchungssystem für die Nähkurse eines Kursanbieters, integriert in die bestehende Website. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
 				"en": "Built a custom booking system for a course provider's sewing classes and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
 			},
-			"type": "client-platform",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:OOxaKclTmqJR2wbjHy7myro=,iv:+q9bhFHfhsEGVztGb9Cjq0KE0QtBGrBIIEtqhtj1jtU=,tag:m7gNzMVKuurppEAAiDwvbQ==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:SqGBgKHK3PO5hbbmcHTBmgBjqEjZyvXV3A==,iv:uOzR6xXVnSoLx+Pk0MehKj9v4THaawoNHxQZpcxWYXk=,tag:30KR0KuTBfrmq7EsPpnggg==,type:str]"
 		},
@@ -537,7 +529,6 @@
 				"de": "Buchungssystem für Weiterbildungsanbieter",
 				"en": "Booking system for continuing education providers"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
 				{
@@ -558,7 +549,7 @@
 				"de": "Individuelles Buchungssystem für einen Anbieter berufsbegleitender Weiterbildungen. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
 				"en": "Built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
 			},
-			"type": "client-platform",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:d+vVNOX+vOfAE3xyEeHiVss=,iv:o0Zeg//XVyZishVc2Rhg5fRdfuNSr+t3/gS1chOlwY4=,tag:dYwypdxhY2Mg6f6oWWSjvw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:8A9jLNLyQxpDC2yb53nNKMD66Vdginc=,iv:wTx3RBrQG6jfrnGcm+kj86B/xglhYs930kMNjcVyeGU=,tag:NXwLZ1GiK+6Piy9jh4NFvA==,type:str]"
 		},
@@ -568,7 +559,6 @@
 				"de": "Buchungswebsite für eine Ferienwohnung",
 				"en": "Booking website for a holiday apartment"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
 				{
@@ -589,7 +579,7 @@
 				"de": "Buchungswebsite mit Kalenderintegration für eine Ferienwohnung auf Norderney. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
 				"en": "Built a booking website with calendar integration for a holiday apartment on Norderney. Day-by-day availability is maintained in Google Calendar and synchronized to the site via Google APIs."
 			},
-			"type": "client-platform",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:56/AikTQVGtOqBFCfebeG38=,iv:8uwI4VfbDyhrJLapHKdm8+x/HjsXodQSXv2qqMzcgbw=,tag:/VidS6LHJvBOaxI9S97ksw==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:2N/nX7hi9MlbY/Y5Jdq1IBQcSQxRdbE7D4N1hjs=,iv:moi4cY2Os8/15MAzi9M1r17DIgDpO9ASXY/PL9rohtY=,tag:TRHCgOQsCFz6RWJOPLg+dw==,type:str]"
 		},
@@ -597,7 +587,6 @@
 			"id": "systems-development-and-framework",
 			"entity": "Hochschule für Technik und Wirtschaft Berlin",
 			"name": "Systems-Development and Framework",
-			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -620,9 +609,9 @@
 				"de": "Vollständige Leitung einer Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
 				"en": "Owned a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
 			},
-			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo\u0026list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
+			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
 			"location": "Berlin, Germany",
-			"type": "course"
+			"type": "mentoring"
 		},
 		{
 			"id": "open-source-social-network",
@@ -656,7 +645,7 @@
 				"de": "Technical-Lead-Arbeit an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb für ein gemeinschaftlich entwickeltes Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; neue Mitwirkende wurden über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und der Großteil der Beiträge reviewed. Neo4J lief produktiv als Primärdatenbank, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
 				"en": "Technical Lead work on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations for a community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. The project grew to around 80 code contributors on GitHub; newcomers were onboarded through GitHub, Discord, and online pair programming, mentored directly, and most contributions were reviewed. Neo4J ran in production as the primary database to model the network's social graph directly."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Nl4Ua1hbJXKVgqstCPL7+fObJfruwg==,iv:2zJAEKIMpF6QcYziEQ2/M5D5cPMywAwEFF20QAVT/3g=,tag:ZoPqOE3Y+2n1tL10rbjGSQ==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:Nm4Pux8pFbuepI2dnA4N6kx3/Kvf/4Yqmn1ZewDEPtRnC22+cqxsZhJu2TyDACZ85ZhJrI1tnaU=,iv:3ZFTkCMAQ647dBDEO3e4CKKG5Pnh016+WGtRniTyWdU=,tag:0Bh6j+4a7UqEkgxuOCLiFg==,type:str]"
 		},
@@ -666,7 +655,6 @@
 				"de": "FOSS Soziales Netzwerk",
 				"en": "FOSS social network"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "open-source",
 			"roles": [
 				{
@@ -692,7 +680,7 @@
 				"de": "Migration der Assets von einem Kubernetes-Volume zu S3-kompatiblem Object Storage, um Komplexität und Kosten des Deployments zu senken. Die Infrastruktur wurde mit Terraform und sops neu aufgesetzt; der Wechsel von einem verwalteten Kubernetes-Cluster auf Digital Ocean zu selbst betriebenem Kubernetes-Cluster auf Hetzner senkte die monatlichen Kosten um 80 %.",
 				"en": "Migrated assets from a Kubernetes volume to S3-compatible object storage to reduce deployment complexity and cost. Rebuilt the infrastructure with Terraform and sops, and moved from a managed Kubernetes cluster on Digital Ocean to a self-hosted Kubernetes cluster on Hetzner, cutting monthly costs by 80%."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:pqghmjTrA/o5bUyavo3eQA==,iv:rQ9Zoyr1shqrKEgCyInv6jzVflJponHoHIwVHS6+RZ4=,tag:UHuGaH+5ZbXm/Ge2P4nmQA==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:cUhlgJIne+kjoxbtjHmtNtzSNabMb6iARdQitNvI9LpbqpZl/O9TSB5AoIbwwNdo6NOQ6+kZZtY=,iv:rM1IFjzaU0fdH6qdKBEZex/OdVKY8ipRJ9Ky9veNIkk=,tag:I1dYt50Y00ZqP7D1HlclXA==,type:str]"
 		},
@@ -700,7 +688,6 @@
 			"id": "find-open-source-contributors-vuejs-berlin",
 			"name": "Find open-source contributors in online learner communities",
 			"entity": "Vue.js Berlin Meetup",
-			"engagement": "community",
 			"startDate": "2020-01-14",
 			"endDate": "2020-01-14",
 			"roles": [
@@ -716,7 +703,6 @@
 			"id": "neo4j-graphql-human-connection",
 			"name": "Using Neo4J and GraphQL to build Human Connection",
 			"entity": "Neo4J Online Meetup",
-			"engagement": "community",
 			"startDate": "2019-06-20",
 			"endDate": "2019-06-20",
 			"roles": [
@@ -734,7 +720,6 @@
 				"de": "Sensorstories: Bienen",
 				"en": "Bee sensor stories"
 			},
-			"engagement": "freelance",
 			"codeVisibility": "closed-source",
 			"roles": [
 				{
@@ -754,7 +739,7 @@
 				"de": "Aufbauend auf einem früheren journalistischen Sensor-Projekt wurde die Plattform für ein neues Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
 				"en": "Building on an earlier journalistic sensor-data project, the platform was reused and extended for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
 			},
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:qYQ7xnEqut0KeEl0l7rrdb4=,iv:y7/nTzAtB87visCUQR3w0iczssbVXkulmRedbl0NLas=,tag:fyiOCFQzBH1cDT0iaDcazg==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:5TPCQC1YtjHswaVfUJ6VbherFRnU83/z5sCRb8f7fm/2HS+mWqDbEQCkWFvTPGP174mYRJ0zqMPJdVghzGU3K18T,iv:5uhIrxYhA00rJWXuvqQ4LeBEqN4M3UXve5zjws2V9Eo=,tag:d7rFeR+hq5t2DlqYVDiWPw==,type:str]"
 		},
@@ -805,7 +790,7 @@
 					"kind": "press"
 				}
 			],
-			"type": "civic-tech"
+			"type": "volunteering"
 		},
 		{
 			"id": "find-open-source-contributors-35c3",
@@ -883,7 +868,7 @@
 				"de": "Individuelle CMS-Entwicklung für die Unternehmenswebsite mit Schwerpunkt auf Pflegebarkeit und Suchmaschinenoptimierung.",
 				"en": "Custom CMS development for the company website with a focus on maintainability and search engine optimization."
 			},
-			"type": "client-platform",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:FdvT5n65RCXGzCkZXw==,iv:VUh3/Ap52Dtw8SCET1zZYJtWphpRdAsoMOKesswbPC8=,tag:w64nsGSzkncp+Qxi8aeXSg==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:V/m+Xno2xmokkKG/krnjbKVahdM/YCk=,iv:zPoPoiX3YsVrXYJwGw56Acqu411Nwzc6IGRDQGM7FtQ=,tag:Prh1oLJrSba1S2enltYg9A==,type:str]"
 		},
@@ -926,7 +911,7 @@
 				"en": "Rapid IoT prototype of a smart bathroom mirror and cabinet built with Raspberry Pis, Arduinos, and MQTT."
 			},
 			"location": "Lunenburg, Lower Saxony, Germany",
-			"type": "prototype",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:tDPMg1mjr/hJ4MwLk5wfQwQ=,iv:JVJT/rbl9uHnj3f5mXkMY2wetCo3opm9o+AEJMtElwk=,tag:bWEos6mqzgPZROpTI2Rz8w==,type:str]"
 		},
 		{
@@ -945,7 +930,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ\u0026list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
+			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
 			"type": "presentation"
 		},
 		{
@@ -1013,7 +998,8 @@
 					"url": "https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html",
 					"kind": "press"
 				}
-			]
+			],
+			"type": "experience"
 		},
 		{
 			"id": "coding-in-the-woods",
@@ -1075,7 +1061,7 @@
 				"de": "Schneller IoT-Prototyp eines smarten Einkaufswagens.",
 				"en": "Rapid IoT prototype of a smart shopping cart."
 			},
-			"type": "prototype",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:u40+rv5ntGoZYzKWR6o3FaA=,iv:YokTM8pqL2oFpMlZCwAra/7fRyDS5MQjsHWVi97TwUg=,tag:MGtKRVvrhFQbEoFRaYcDSA==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ZXnbGvWtsGCISXy6YHGhEUGFtuXsSoH68lT5LPdWnYuleRSiEaURHDMOJiLmv8os,iv:VMgSJw/Z/HC6jUdMgi5FEvsTMPtMneK7Ks8lZk8pK70=,tag:qqCbohU7YAhyv/f3WGhpxg==,type:str]"
 		},
@@ -1114,7 +1100,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI\u0026list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
+			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
 			"type": "presentation"
 		},
 		{
@@ -1130,7 +1116,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII\u0026t=358s",
+			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
 			"type": "presentation"
 		},
 		{
@@ -1145,7 +1131,7 @@
 					"en": "Speaker"
 				}
 			],
-			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI\u0026list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
+			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
 			"type": "presentation"
 		},
 		{
@@ -1207,7 +1193,7 @@
 			},
 			"url": "https://www.miz-babelsberg.de/startseite.html",
 			"location": "Potsdam, Brandenburg, Germany",
-			"type": "prototype"
+			"type": "mentoring"
 		},
 		{
 			"id": "protothon-music-player",
@@ -1230,7 +1216,7 @@
 			},
 			"url": "https://www.miz-babelsberg.de/startseite.html",
 			"location": "Potsdam, Brandenburg, Germany",
-			"type": "prototype"
+			"type": "mentoring"
 		},
 		{
 			"id": "ursuppe",
@@ -1250,7 +1236,7 @@
 			},
 			"url": "https://www.youtube.com/watch?v=-H9aFNUXvvA",
 			"location": "Potsdam, Brandenburg, Germany",
-			"type": "prototype"
+			"type": "mentoring"
 		},
 		{
 			"id": "sports-association-webapp",
@@ -1278,7 +1264,7 @@
 				"en": "First developer to introduce an automated test environment for this web application for officials, referees, and coaches."
 			},
 			"location": "Bern, Switzerland",
-			"type": "product",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:pQtkQjWGDw==,iv:ixA1FMd/4+Oq8ERXL0LAAONu8jT8/2aRFVdelNu4H10=,tag:SAV/EXX0NurmEX7iBHVwMA==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:MNha6GUwmyOQSw3D1SRYzkvgzMeHpA==,iv:3hnzro/H9+B1+yNq460s1638tv09kq7CRocOQwcjNWQ=,tag:e3ZggOOXP3oFUhxXuD1fow==,type:str]"
 		},
@@ -1298,7 +1284,7 @@
 				"en": "Built a tool for automated risk analysis in supply chains, working with an existing legacy codebase."
 			},
 			"location": "Belfast, United Kingdom",
-			"type": "research",
+			"type": "experience",
 			"sopsEncryptedEntity": "ENC[AES256_GCM,data:PSDr,iv:ZWT4M+3BQkSZNYuuCvYU5RNrMsOmLYLqMA1Nb4Zt34s=,tag:Frw8Jc7SyFAo4EC7gImgBg==,type:str]",
 			"sopsEncryptedUrl": "ENC[AES256_GCM,data:BWbB2pW2yLSYTb3bE81UagOaBpg=,iv:g1hDMrFCQ0X4BFXE+63mTDZVdoCZPlQlOa+mxaFgFo8=,tag:O3nwrFhfpdgWe2eMYrVncQ==,type:str]"
 		},
@@ -1322,7 +1308,7 @@
 				"en": "Implementation of a business process and web application as specified by SAP as a use case for the HANA in-memory database."
 			},
 			"url": "https://hpi.de/",
-			"type": "research"
+			"type": "experience"
 		}
 	],
 	"sops": {

@@ -24,8 +24,8 @@ export const createFeaturedProjects = <T extends ResumeProject>(
 	);
 };
 
-export const createAtsExperienceProjects = <T extends ResumeProject>(projects: T[] = []): T[] =>
-	projects.filter((project) => project.type !== "presentation");
+export const createExperienceProjects = <T extends ResumeProject>(projects: T[] = []): T[] =>
+	projects.filter((project) => project.type === "experience");
 
 export const createFeaturedEducation = (
 	education: ResumeEducation[] = [],
@@ -43,4 +43,5 @@ export const getFeaturedConfig = (featured?: ResumeFeatured): Required<ResumeFea
 	projectIds: featured?.projectIds ?? [],
 	talkIds: featured?.talkIds ?? [],
 	educationIds: featured?.educationIds ?? [],
+	mentoringIds: featured?.mentoringIds ?? [],
 });

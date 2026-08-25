@@ -14,17 +14,29 @@ export const createSiteContent = (locale: Locale) => {
 	const sortedProjects = [...projects].sort((left, right) =>
 		right.startDate.localeCompare(left.startDate),
 	);
-	const nonPresentationProjects = sortedProjects.filter(
-		(project) => project.type !== "presentation",
+	const experienceProjects = sortedProjects.filter((project) => project.type === "experience");
+	const mentoringProjects = sortedProjects.filter((project) => project.type === "mentoring");
+	const volunteeringProjects = sortedProjects.filter((project) => project.type === "volunteering");
+	const featuredMentoringProjects = createFeaturedProjects(
+		mentoringProjects,
+		featured.mentoringIds,
+	);
+	const resolvedMentoringProjects =
+		featuredMentoringProjects.length > 0 ? featuredMentoringProjects : mentoringProjects;
+	const featuredMentoringProjectIds = new Set(
+		resolvedMentoringProjects.map((project) => project.id),
+	);
+	const remainingMentoringProjects = mentoringProjects.filter(
+		(project) => !featuredMentoringProjectIds.has(project.id),
 	);
 	const featuredProjects =
-		createFeaturedProjects(sortedProjects, featured.projectIds).filter(
-			(project) => project.type !== "presentation",
+		createFeaturedProjects(experienceProjects, featured.projectIds).filter(
+			(project) => project.type === "experience",
 		) || [];
 	const resolvedFeaturedProjects =
-		featuredProjects.length > 0 ? featuredProjects : nonPresentationProjects.slice(0, 6);
+		featuredProjects.length > 0 ? featuredProjects : experienceProjects.slice(0, 6);
 	const featuredProjectIds = new Set(resolvedFeaturedProjects.map((project) => project.id));
-	const remainingProjects = nonPresentationProjects.filter(
+	const remainingProjects = experienceProjects.filter(
 		(project) => !featuredProjectIds.has(project.id),
 	);
 	const featuredTalks =
@@ -61,6 +73,9 @@ export const createSiteContent = (locale: Locale) => {
 		projects: sortedProjects,
 		featuredProjects: resolvedFeaturedProjects,
 		remainingProjects,
+		mentoringProjects: resolvedMentoringProjects,
+		remainingMentoringProjects,
+		volunteeringProjects,
 		talks:
 			featuredTalks.length > 0
 				? featuredTalks

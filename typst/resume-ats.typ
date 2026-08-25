@@ -74,6 +74,32 @@
   ]
 ]
 
+#if data.mentoringFull.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.mentoring)
+    #experience-entry(data.mentoringFull.first())
+  ]
+  #v(8pt)
+  #for entry in data.mentoringFull.slice(1) [
+    #experience-entry(entry)
+    #v(8pt)
+  ]
+]
+
+#if data.volunteering.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.volunteering)
+    #experience-entry(data.volunteering.first())
+  ]
+  #v(8pt)
+  #for entry in data.volunteering.slice(1) [
+    #experience-entry(entry)
+    #v(8pt)
+  ]
+]
+
 #if data.technologiesFull.len() > 0 [
   #v(4pt)
   #block(breakable: false)[

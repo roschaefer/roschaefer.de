@@ -20,7 +20,7 @@ const monthIndex = (value: string): number => {
 
 const monthDiff = (start: number, end: number): number => Math.max(1, end - start + 1);
 
-// Distinct engagements can share a display name (e.g. a project handed over
+// Distinct project entries can share a display name (e.g. a project handed over
 // between clients keeps the same product name for both entries), so `id` is
 // the only reliable identity; fall back to name+dates for fixtures/tests
 // that omit it.

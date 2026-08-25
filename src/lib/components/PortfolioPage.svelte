@@ -23,13 +23,18 @@ const { content, locale }: Props = $props();
 
 let activeAnchorTargetId = $state<string | null>(null);
 let projectsExpanded = $state(false);
+let mentoringExpanded = $state(false);
 let technologiesExpanded = $state(false);
 
 const linkableProjectIds = $derived(
 	new Set(
-		[...content.featuredProjects, ...content.remainingProjects].map((project) =>
-			projectEntryId(project),
-		),
+		[
+			...content.featuredProjects,
+			...content.remainingProjects,
+			...content.mentoringProjects,
+			...content.remainingMentoringProjects,
+			...content.volunteeringProjects,
+		].map((project) => projectEntryId(project)),
 	),
 );
 const linkableSkillIds = $derived(
@@ -45,6 +50,9 @@ const anchorTargetIds = $derived(
 );
 const remainingProjectIds = $derived(
 	new Set(content.remainingProjects.map((project) => projectEntryId(project))),
+);
+const remainingMentoringProjectIds = $derived(
+	new Set(content.remainingMentoringProjects.map((project) => projectEntryId(project))),
 );
 const scrollBehavior = (): ScrollBehavior =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
@@ -84,6 +92,9 @@ onMount(() => {
 
 		if (remainingProjectIds.has(targetId)) {
 			projectsExpanded = true;
+		}
+		if (remainingMentoringProjectIds.has(targetId)) {
+			mentoringExpanded = true;
 		}
 		// TechExperienceList sorts client-side, so a static "remaining" partition
 		// computed here can't know which rows its *current* sort hides - set the
@@ -151,6 +162,7 @@ const formatEducationPeriod = (entry: SiteContent["education"][number]) => {
 };
 markUsed(() => [
 	projectsExpanded,
+	mentoringExpanded,
 	technologiesExpanded,
 	siteImage,
 	siteName,
@@ -181,6 +193,7 @@ markUsed(() => [
 	linkableProjectIds,
 	linkableSkillIds,
 	pressAnchorIds,
+	remainingMentoringProjectIds,
 	pressEntryId,
 	activeAnchorTargetId,
 ]);
@@ -455,6 +468,56 @@ markUsed(() => [
 				bind:expanded={projectsExpanded}
 			/>
 		</section>
+
+		{#if content.mentoringProjects.length > 0}
+			<section
+				aria-labelledby="mentoring-title"
+				id="mentoring"
+				class="space-y-8"
+			>
+				<div class="space-y-3">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
+						{t(m.mentoring_eyebrow)}
+					</p>
+					<h2 id="mentoring-title" class="theme-heading">{t(m.mentoring_title)}</h2>
+					<p>{t(m.mentoring_intro)}</p>
+				</div>
+
+				<ProjectsList
+					featured={content.mentoringProjects}
+					remaining={content.remainingMentoringProjects}
+					{locale}
+					{linkableSkillIds}
+					{activeAnchorTargetId}
+					showAllLabel={t(m.show_all_mentoring)}
+					bind:expanded={mentoringExpanded}
+				/>
+			</section>
+		{/if}
+
+		{#if content.volunteeringProjects.length > 0}
+			<section
+				aria-labelledby="volunteering-title"
+				id="volunteering"
+				class="space-y-8"
+			>
+				<div class="space-y-3">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">
+						{t(m.volunteering_eyebrow)}
+					</p>
+					<h2 id="volunteering-title" class="theme-heading">{t(m.volunteering_title)}</h2>
+					<p>{t(m.volunteering_intro)}</p>
+				</div>
+
+				<ProjectsList
+					featured={content.volunteeringProjects}
+					remaining={[]}
+					{locale}
+					{linkableSkillIds}
+					{activeAnchorTargetId}
+				/>
+			</section>
+		{/if}
 
 		<section
 			aria-labelledby="talks-title"

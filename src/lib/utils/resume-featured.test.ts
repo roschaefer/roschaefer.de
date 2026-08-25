@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-	createAtsExperienceProjects,
+	createExperienceProjects,
 	createFeaturedEducation,
 	createFeaturedProjects,
 	getFeaturedConfig,
@@ -24,6 +24,7 @@ describe("resume featured", () => {
 			projectIds: [],
 			talkIds: [],
 			educationIds: [],
+			mentoringIds: [],
 		});
 	});
 
@@ -40,29 +41,27 @@ describe("resume featured", () => {
 		]);
 	});
 
-	it("includes every non-presentation project regardless of featured config", () => {
+	it("includes every experience project regardless of featured config", () => {
 		const projects = [
-			{ id: "a", name: "Alpha", startDate: "2024-01-01" },
+			{ id: "a", name: "Alpha", startDate: "2024-01-01", type: "experience" },
 			{ id: "b", name: "Beta", startDate: "2020-01-01", type: "presentation" },
-			{ id: "c", name: "Gamma", startDate: "2018-01-01" },
+			{ id: "c", name: "Gamma", startDate: "2018-01-01", type: "volunteering" },
+			{ id: "d", name: "Delta", startDate: "2017-01-01", type: "experience" },
 		];
 
-		expect(createAtsExperienceProjects(projects).map((project) => project.id)).toEqual(["a", "c"]);
+		expect(createExperienceProjects(projects).map((project) => project.id)).toEqual(["a", "d"]);
 	});
 
 	it("preserves incoming order instead of applying featured curation", () => {
 		const projects = [
-			{ id: "old", name: "Old", startDate: "2015-01-01" },
-			{ id: "new", name: "New", startDate: "2024-01-01" },
+			{ id: "old", name: "Old", startDate: "2015-01-01", type: "experience" },
+			{ id: "new", name: "New", startDate: "2024-01-01", type: "experience" },
 		];
 
-		expect(createAtsExperienceProjects(projects).map((project) => project.id)).toEqual([
-			"old",
-			"new",
-		]);
+		expect(createExperienceProjects(projects).map((project) => project.id)).toEqual(["old", "new"]);
 	});
 
 	it("defaults to an empty array when no projects are given", () => {
-		expect(createAtsExperienceProjects()).toEqual([]);
+		expect(createExperienceProjects()).toEqual([]);
 	});
 });
