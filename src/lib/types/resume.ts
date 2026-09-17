@@ -79,6 +79,7 @@ export type ResumeFeatured = {
 	talkIds?: string[];
 	educationIds?: string[];
 	mentoringIds?: string[];
+	volunteeringIds?: string[];
 };
 
 export type Resume = Omit<

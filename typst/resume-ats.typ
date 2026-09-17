@@ -87,14 +87,14 @@
   ]
 ]
 
-#if data.volunteering.len() > 0 [
+#if data.volunteeringFull.len() > 0 [
   #v(4pt)
   #block(breakable: false)[
     #section-heading(data.labels.volunteering)
-    #experience-entry(data.volunteering.first())
+    #experience-entry(data.volunteeringFull.first())
   ]
   #v(8pt)
-  #for entry in data.volunteering.slice(1) [
+  #for entry in data.volunteeringFull.slice(1) [
     #experience-entry(entry)
     #v(8pt)
   ]

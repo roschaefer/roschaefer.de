@@ -19,6 +19,7 @@ import {
 	createFeaturedEducation,
 	createFeaturedProjects,
 	getFeaturedConfig,
+	resolveFeaturedProjects,
 } from "../src/lib/utils/resume-featured.ts";
 import type { TechExperience } from "../src/lib/utils/tech-experience.ts";
 import { createTechExperience } from "../src/lib/utils/tech-experience.ts";
@@ -58,7 +59,7 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			selectedProjects: "Ausgewählte aktuelle Projekte",
 			experience: "Berufserfahrung",
 			mentoring: "Mentoring und Lehre",
-			volunteering: "Ehrenamt",
+			volunteering: "Open Source und Civic Tech",
 			selectedTalks: "Ausgewählte Vorträge",
 			redactedClient: "Name auf Anfrage",
 			press: "Presse:",
@@ -80,7 +81,7 @@ const localeConfigs: Record<Locale, LocaleConfig> = {
 			selectedProjects: "Selected Recent Projects",
 			experience: "Experience",
 			mentoring: "Mentoring and Teaching",
-			volunteering: "Volunteering",
+			volunteering: "Open Source and Civic Work",
 			selectedTalks: "Selected Talks",
 			redactedClient: "Name on request",
 			press: "Press:",
@@ -237,16 +238,22 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 	const projects = [...(resume.projects ?? [])]
 		.sort((left, right) => right.startDate.localeCompare(left.startDate))
 		.map((project) => toDisplayProject(project, config));
-	const featuredProjects = createFeaturedProjects(projects, featured.projectIds).filter(
-		(project) => project.type === "experience",
-	);
 	const experienceProjects = createExperienceProjects(projects);
+	const resolvedFeaturedProjects = resolveFeaturedProjects(
+		experienceProjects,
+		featured.projectIds,
+		experienceProjects.slice(0, 6),
+	);
 	const mentoringProjects = projects.filter((project) => project.type === "mentoring");
-	const featuredMentoringProjects = createFeaturedProjects(
+	const resolvedMentoringProjects = resolveFeaturedProjects(
 		mentoringProjects,
 		featured.mentoringIds,
 	);
 	const volunteeringProjects = projects.filter((project) => project.type === "volunteering");
+	const resolvedVolunteeringProjects = resolveFeaturedProjects(
+		volunteeringProjects,
+		featured.volunteeringIds,
+	);
 	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
 		(project) => project.type === "presentation",
 	);
@@ -285,19 +292,20 @@ for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleC
 			createEducationEntry(entry, locale, config),
 		),
 		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
-		experience: (featuredProjects.length > 0
-			? featuredProjects
-			: experienceProjects.slice(0, 6)
-		).map((project) => createProjectEntry(project, locale, config)),
+		experience: resolvedFeaturedProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
 		experienceFull: experienceProjects.map((project) =>
 			createProjectEntry(project, locale, config),
 		),
-		mentoring: (featuredMentoringProjects.length > 0
-			? featuredMentoringProjects
-			: mentoringProjects
-		).map((project) => createProjectEntry(project, locale, config)),
+		mentoring: resolvedMentoringProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
 		mentoringFull: mentoringProjects.map((project) => createProjectEntry(project, locale, config)),
-		volunteering: volunteeringProjects.map((project) =>
+		volunteering: resolvedVolunteeringProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		volunteeringFull: volunteeringProjects.map((project) =>
 			createProjectEntry(project, locale, config),
 		),
 		talks: (featuredTalks.length > 0

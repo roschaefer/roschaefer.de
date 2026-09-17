@@ -3,7 +3,9 @@ import type { Locale } from "$lib/i18n";
 import {
 	createFeaturedEducation,
 	createFeaturedProjects,
+	createRemainingProjects,
 	getFeaturedConfig,
+	resolveFeaturedProjects,
 } from "$lib/utils/resume-featured";
 import { createTechExperience } from "$lib/utils/tech-experience";
 
@@ -17,28 +19,28 @@ export const createSiteContent = (locale: Locale) => {
 	const experienceProjects = sortedProjects.filter((project) => project.type === "experience");
 	const mentoringProjects = sortedProjects.filter((project) => project.type === "mentoring");
 	const volunteeringProjects = sortedProjects.filter((project) => project.type === "volunteering");
-	const featuredMentoringProjects = createFeaturedProjects(
+	const resolvedMentoringProjects = resolveFeaturedProjects(
 		mentoringProjects,
 		featured.mentoringIds,
 	);
-	const resolvedMentoringProjects =
-		featuredMentoringProjects.length > 0 ? featuredMentoringProjects : mentoringProjects;
-	const featuredMentoringProjectIds = new Set(
-		resolvedMentoringProjects.map((project) => project.id),
+	const remainingMentoringProjects = createRemainingProjects(
+		mentoringProjects,
+		resolvedMentoringProjects,
 	);
-	const remainingMentoringProjects = mentoringProjects.filter(
-		(project) => !featuredMentoringProjectIds.has(project.id),
+	const resolvedVolunteeringProjects = resolveFeaturedProjects(
+		volunteeringProjects,
+		featured.volunteeringIds,
 	);
-	const featuredProjects =
-		createFeaturedProjects(experienceProjects, featured.projectIds).filter(
-			(project) => project.type === "experience",
-		) || [];
-	const resolvedFeaturedProjects =
-		featuredProjects.length > 0 ? featuredProjects : experienceProjects.slice(0, 6);
-	const featuredProjectIds = new Set(resolvedFeaturedProjects.map((project) => project.id));
-	const remainingProjects = experienceProjects.filter(
-		(project) => !featuredProjectIds.has(project.id),
+	const remainingVolunteeringProjects = createRemainingProjects(
+		volunteeringProjects,
+		resolvedVolunteeringProjects,
 	);
+	const resolvedFeaturedProjects = resolveFeaturedProjects(
+		experienceProjects,
+		featured.projectIds,
+		experienceProjects.slice(0, 6),
+	);
+	const remainingProjects = createRemainingProjects(experienceProjects, resolvedFeaturedProjects);
 	const featuredTalks =
 		createFeaturedProjects(sortedProjects, featured.talkIds).filter(
 			(project) => project.type === "presentation",
@@ -75,7 +77,8 @@ export const createSiteContent = (locale: Locale) => {
 		remainingProjects,
 		mentoringProjects: resolvedMentoringProjects,
 		remainingMentoringProjects,
-		volunteeringProjects,
+		volunteeringProjects: resolvedVolunteeringProjects,
+		remainingVolunteeringProjects,
 		talks:
 			featuredTalks.length > 0
 				? featuredTalks

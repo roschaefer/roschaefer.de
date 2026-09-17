@@ -14,7 +14,10 @@ interface Props {
 		| SiteContent["featuredProjects"]
 		| SiteContent["mentoringProjects"]
 		| SiteContent["volunteeringProjects"];
-	remaining: SiteContent["remainingProjects"] | SiteContent["remainingMentoringProjects"];
+	remaining:
+		| SiteContent["remainingProjects"]
+		| SiteContent["remainingMentoringProjects"]
+		| SiteContent["remainingVolunteeringProjects"];
 	locale: Locale;
 	linkableSkillIds: Set<string>;
 	activeAnchorTargetId: string | null;

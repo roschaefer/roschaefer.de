@@ -27,6 +27,28 @@ export const createFeaturedProjects = <T extends ResumeProject>(
 export const createExperienceProjects = <T extends ResumeProject>(projects: T[] = []): T[] =>
 	projects.filter((project) => project.type === "experience");
 
+/**
+ * Picks the featured subset of `projects` by id, falling back to `fallback`
+ * (the full list by default) when no featured ids resolve to a project.
+ */
+export const resolveFeaturedProjects = <T extends ResumeProject>(
+	projects: T[],
+	projectIds: string[] = [],
+	fallback: T[] = projects,
+): T[] => {
+	const featuredProjects = createFeaturedProjects(projects, projectIds);
+	return featuredProjects.length > 0 ? featuredProjects : fallback;
+};
+
+/** The subset of `projects` not included in `resolved`. */
+export const createRemainingProjects = <T extends ResumeProject>(
+	projects: T[],
+	resolved: T[],
+): T[] => {
+	const resolvedSet = new Set(resolved);
+	return projects.filter((project) => !resolvedSet.has(project));
+};
+
 export const createFeaturedEducation = (
 	education: ResumeEducation[] = [],
 	educationIds: string[] = [],
@@ -44,4 +66,5 @@ export const getFeaturedConfig = (featured?: ResumeFeatured): Required<ResumeFea
 	talkIds: featured?.talkIds ?? [],
 	educationIds: featured?.educationIds ?? [],
 	mentoringIds: featured?.mentoringIds ?? [],
+	volunteeringIds: featured?.volunteeringIds ?? [],
 });

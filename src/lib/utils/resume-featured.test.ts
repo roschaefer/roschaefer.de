@@ -3,7 +3,9 @@ import {
 	createExperienceProjects,
 	createFeaturedEducation,
 	createFeaturedProjects,
+	createRemainingProjects,
 	getFeaturedConfig,
+	resolveFeaturedProjects,
 } from "./resume-featured";
 
 describe("resume featured", () => {
@@ -25,6 +27,7 @@ describe("resume featured", () => {
 			talkIds: [],
 			educationIds: [],
 			mentoringIds: [],
+			volunteeringIds: [],
 		});
 	});
 
@@ -63,5 +66,59 @@ describe("resume featured", () => {
 
 	it("defaults to an empty array when no projects are given", () => {
 		expect(createExperienceProjects()).toEqual([]);
+	});
+
+	it("resolves to the featured subset when configured ids match", () => {
+		const projects = [
+			{ id: "a", name: "Alpha", startDate: "2024-01-01" },
+			{ id: "b", name: "Beta", startDate: "2023-01-01" },
+			{ id: "c", name: "Gamma", startDate: "2022-01-01" },
+		];
+
+		expect(resolveFeaturedProjects(projects, ["c", "a"]).map((project) => project.id)).toEqual([
+			"c",
+			"a",
+		]);
+	});
+
+	it("falls back to the full project list when no featured ids are configured", () => {
+		const projects = [
+			{ id: "a", name: "Alpha", startDate: "2024-01-01" },
+			{ id: "b", name: "Beta", startDate: "2023-01-01" },
+		];
+
+		expect(resolveFeaturedProjects(projects, [])).toBe(projects);
+	});
+
+	it("falls back to a custom fallback list when given one", () => {
+		const projects = [
+			{ id: "a", name: "Alpha", startDate: "2024-01-01" },
+			{ id: "b", name: "Beta", startDate: "2023-01-01" },
+		];
+		const fallback = [projects[0]];
+
+		expect(resolveFeaturedProjects(projects, [], fallback)).toBe(fallback);
+	});
+
+	it("excludes only the resolved projects from the remaining list", () => {
+		const projects = [
+			{ id: "a", name: "Alpha", startDate: "2024-01-01" },
+			{ id: "b", name: "Beta", startDate: "2023-01-01" },
+			{ id: "c", name: "Gamma", startDate: "2022-01-01" },
+		];
+		const resolved = [projects[1]];
+
+		expect(createRemainingProjects(projects, resolved).map((project) => project.id)).toEqual([
+			"a",
+			"c",
+		]);
+	});
+
+	it("distinguishes id-less projects by identity instead of id", () => {
+		const resolvedIdLess = { name: "Resolved", startDate: "2024-01-01" };
+		const remainingIdLess = { name: "Remaining", startDate: "2023-01-01" };
+		const projects = [resolvedIdLess, remainingIdLess];
+
+		expect(createRemainingProjects(projects, [resolvedIdLess])).toEqual([remainingIdLess]);
 	});
 });

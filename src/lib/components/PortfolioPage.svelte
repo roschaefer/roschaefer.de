@@ -24,6 +24,7 @@ const { content, locale }: Props = $props();
 let activeAnchorTargetId = $state<string | null>(null);
 let projectsExpanded = $state(false);
 let mentoringExpanded = $state(false);
+let volunteeringExpanded = $state(false);
 let technologiesExpanded = $state(false);
 
 const linkableProjectIds = $derived(
@@ -34,6 +35,7 @@ const linkableProjectIds = $derived(
 			...content.mentoringProjects,
 			...content.remainingMentoringProjects,
 			...content.volunteeringProjects,
+			...content.remainingVolunteeringProjects,
 		].map((project) => projectEntryId(project)),
 	),
 );
@@ -53,6 +55,9 @@ const remainingProjectIds = $derived(
 );
 const remainingMentoringProjectIds = $derived(
 	new Set(content.remainingMentoringProjects.map((project) => projectEntryId(project))),
+);
+const remainingVolunteeringProjectIds = $derived(
+	new Set(content.remainingVolunteeringProjects.map((project) => projectEntryId(project))),
 );
 const scrollBehavior = (): ScrollBehavior =>
 	window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
@@ -95,6 +100,9 @@ onMount(() => {
 		}
 		if (remainingMentoringProjectIds.has(targetId)) {
 			mentoringExpanded = true;
+		}
+		if (remainingVolunteeringProjectIds.has(targetId)) {
+			volunteeringExpanded = true;
 		}
 		// TechExperienceList sorts client-side, so a static "remaining" partition
 		// computed here can't know which rows its *current* sort hides - set the
@@ -163,6 +171,7 @@ const formatEducationPeriod = (entry: SiteContent["education"][number]) => {
 markUsed(() => [
 	projectsExpanded,
 	mentoringExpanded,
+	volunteeringExpanded,
 	technologiesExpanded,
 	siteImage,
 	siteName,
@@ -194,6 +203,7 @@ markUsed(() => [
 	linkableSkillIds,
 	pressAnchorIds,
 	remainingMentoringProjectIds,
+	remainingVolunteeringProjectIds,
 	pressEntryId,
 	activeAnchorTargetId,
 ]);
@@ -511,10 +521,12 @@ markUsed(() => [
 
 				<ProjectsList
 					featured={content.volunteeringProjects}
-					remaining={[]}
+					remaining={content.remainingVolunteeringProjects}
 					{locale}
 					{linkableSkillIds}
 					{activeAnchorTargetId}
+					showAllLabel={t(m.show_all_volunteering)}
+					bind:expanded={volunteeringExpanded}
 				/>
 			</section>
 		{/if}

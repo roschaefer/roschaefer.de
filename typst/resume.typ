@@ -198,6 +198,18 @@
       ]
     ]
 
+    #if data.volunteering.len() > 0 [
+      #block(breakable: false)[
+        #section-heading(data.labels.volunteering)
+        #experience-entry(data.volunteering.first())
+      ]
+      #v(10pt)
+      #for entry in data.volunteering.slice(1) [
+        #experience-entry(entry)
+        #v(10pt)
+      ]
+    ]
+
   ],
   [
     #if data.languages.len() > 0 [
