@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { createTechnologyAggregates } from "$lib/utils/technology-aggregate";
 
 describe("createTechnologyAggregates", () => {
-	it("keeps distinct engagements with the same display name separate", () => {
+	it("keeps distinct project entries with the same display name separate", () => {
 		const result = createTechnologyAggregates(
 			[
 				{

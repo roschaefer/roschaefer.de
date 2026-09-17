@@ -134,6 +134,62 @@ const assertFeaturedReferencesAreValid = (value: Record<string, unknown>) => {
 			}
 		}
 	}
+
+	if ("mentoringIds" in featured) {
+		if (
+			!Array.isArray(featured.mentoringIds) ||
+			featured.mentoringIds.some((id) => typeof id !== "string")
+		) {
+			throw new Error("featured.mentoringIds must be an array of strings.");
+		}
+
+		if (featured.mentoringIds.length !== new Set(featured.mentoringIds).size) {
+			throw new Error("featured.mentoringIds must not contain duplicates.");
+		}
+
+		for (const id of featured.mentoringIds) {
+			if (!projectIds.includes(id)) {
+				throw new Error(`featured.mentoringIds references unknown project id "${id}".`);
+			}
+		}
+	}
+
+	if ("volunteeringIds" in featured) {
+		if (
+			!Array.isArray(featured.volunteeringIds) ||
+			featured.volunteeringIds.some((id) => typeof id !== "string")
+		) {
+			throw new Error("featured.volunteeringIds must be an array of strings.");
+		}
+
+		if (featured.volunteeringIds.length !== new Set(featured.volunteeringIds).size) {
+			throw new Error("featured.volunteeringIds must not contain duplicates.");
+		}
+
+		for (const id of featured.volunteeringIds) {
+			if (!projectIds.includes(id)) {
+				throw new Error(`featured.volunteeringIds references unknown project id "${id}".`);
+			}
+		}
+	}
+};
+
+const knownProjectTypes = ["experience", "mentoring", "volunteering", "presentation"];
+
+const assertProjectTypesAreValid = (value: Record<string, unknown>) => {
+	const projects = Array.isArray(value.projects) ? value.projects : [];
+
+	for (const [index, entry] of projects.entries()) {
+		if (!isPlainObject(entry)) {
+			continue;
+		}
+
+		if (!("type" in entry) || !knownProjectTypes.includes(entry.type as string)) {
+			throw new Error(
+				`projects.${index}.type must be one of ${knownProjectTypes.join(", ")}, got ${JSON.stringify(entry.type)}.`,
+			);
+		}
+	}
 };
 
 const assertStructuredLinks = (value: unknown, path: string[] = []) => {
@@ -179,5 +235,6 @@ export const validateResumeParity = () => {
 	assertValidLocalizedNodes(source);
 	assertDatedEntriesHaveRequiredDates(source);
 	assertFeaturedReferencesAreValid(source);
+	assertProjectTypesAreValid(source);
 	assertStructuredLinks(source);
 };
