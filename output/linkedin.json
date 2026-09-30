@@ -1,0 +1,307 @@
+{
+  "basics": {
+    "name": "Robert Schäfer",
+    "label": "Full Stack Engineer",
+    "email": "linkedin@roschaefer.de",
+    "summary": "Hi, my name is Robert, full-stack engineer, speaker and mentor. I started computer science in 2009 and have been developing full-stack applications since 2012. The technologies I'm most familiar with right now are: VueJS, TailwindCSS, NuxtJS, GraphQL, Apollo, NodeJS, Ruby on Rails, Neo4J, Ansible, Serverless, Docker and Kubernetes. I speak at tech meetups and advocate free and open source software. I am also a programming mentor and teach full-stack development courses at university. At work, I value the transfer of knowledge within the team and am often responsible for training new co-workers. I prefer remote work and am open to freelance work and contracts. My current interests are modern Node.js backends (Nest.js), infrastructure as code (Terraform), cross-platform development (React Native, Flutter) and modern compiled languages (Golang, Rust).",
+    "location": {
+      "city": "Lohmar",
+      "region": "North Rhine-Westphalia, Germany"
+    },
+    "profiles": [
+      {
+        "network": "OTHER",
+        "url": "https://github.com/roschaefer"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Hasso Plattner Institute",
+      "studyType": "Master's degree",
+      "startDate": "2014",
+      "endDate": "2017"
+    },
+    {
+      "institution": "Hasso Plattner Institute",
+      "studyType": "Bachelor's degree",
+      "startDate": "2009",
+      "endDate": "2012"
+    },
+    {
+      "institution": "Gymnasium Lohmar",
+      "studyType": "Abitur",
+      "startDate": "1999",
+      "endDate": "2008"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Apollo GraphQL"
+    },
+    {
+      "name": "auth0"
+    },
+    {
+      "name": "Behavior-Driven Development (BDD)"
+    },
+    {
+      "name": "Design Thinking"
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "git"
+    },
+    {
+      "name": "Google Cloud Platform (GCP)"
+    },
+    {
+      "name": "GraphQL"
+    },
+    {
+      "name": "Hasura"
+    },
+    {
+      "name": "Jest"
+    },
+    {
+      "name": "Kubernetes"
+    },
+    {
+      "name": "Neo4J"
+    },
+    {
+      "name": "Node.js"
+    },
+    {
+      "name": "Nuxt.js"
+    },
+    {
+      "name": "Onboarding"
+    },
+    {
+      "name": "Requirements Engineering"
+    },
+    {
+      "name": "Scrum"
+    },
+    {
+      "name": "Serverless"
+    },
+    {
+      "name": "Software Engineering"
+    },
+    {
+      "name": "Tailwind CSS"
+    },
+    {
+      "name": "Test Driven Development"
+    },
+    {
+      "name": "Testing-Library"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Vercel"
+    },
+    {
+      "name": "Vue.js"
+    },
+    {
+      "name": "Web Development"
+    }
+  ],
+  "projects": [
+    {
+      "entity": "Bosse Consulting GmbH",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2026-03",
+      "description": "With this platform for remotely controlling telescopes through the  astrophotography software NINA, deep-sky imaging gets accessible without  owning expensive hardware or the expertise to operate it. Users select  an astronomical target and book observation time; the application sends  imaging sequences to NINA via Tailscale, which executes them overnight  and delivers the results. The core challenge is turning a Windows-only,  inherently interactive application into a fully autonomous pipeline."
+    },
+    {
+      "entity": "tactile.news",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2026-03",
+      "description": "This SvelteKit application for AI-assisted interviews and editorial  publishing replaces brittle infrastructure spread across Airtable,  Voiceflow, and additional custom services with a single serverless  application. Using the built-in workflows of ElevenLabs AI Agents  significantly reduces maintenance overhead and complexity while  improving the phone agent's response time by several seconds, which is  crucial for a good user experience."
+    },
+    {
+      "entity": "busFaktor() e.V.",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2024-10",
+      "endDate": "2025-11",
+      "description": "Migrated assets from a Kubernetes volume to S3-compatible object storage  to reduce deployment complexity and cost. Rebuilt the infrastructure  with Terraform and sops, and moved from a managed Kubernetes cluster on  Digital Ocean to a self-hosted Kubernetes cluster on Hetzner, cutting  monthly costs by 80%."
+    },
+    {
+      "entity": "IT4C",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2024-06",
+      "endDate": "2025-09",
+      "description": "For this free and open-source social platform for entrepreneurs, the  delivery and infrastructure architecture was fundamentally reworked  after deployments had previously been performed manually via a remote  desktop on the target server, regularly causing downtime. Moving the  project to a self-managed Kubernetes setup on Hetzner with Terraform  gave every developer production-like test environments for their own  branches while keeping operating costs extremely low at under 20 euros  per month."
+    },
+    {
+      "entity": "auteon",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2021-06",
+      "endDate": "2023-09",
+      "description": "Meta search-engine to enable competition in the automotive aftermarket. Full-Stack development."
+    },
+    {
+      "entity": "tactile.news",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2020-03",
+      "endDate": "2025-04",
+      "description": "Crowdsourced journalism tool for tactile.news, using E-Mail, Telegram and Threema as communication channels. Built with Ruby on Rails, Stimulus JS, View Components, Docker and Traefik."
+    },
+    {
+      "entity": "Hochschule für Technik und Wirtschaft Berlin",
+      "roles": [
+        "University Lecturer"
+      ],
+      "startDate": "2019-10",
+      "endDate": "2021-03",
+      "description": "Design and teach weekly lectures and seminars to about 40 participants of a university course focusing on on fullstack development. Homework assignments are submitted via pull requests on Github and reviewed by mentors."
+    },
+    {
+      "entity": "tactile.news",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2019-03",
+      "endDate": "2019-05",
+      "description": "Automate journalism and generate a live report of bee hives based on their sensory data. Built with Ruby on Rails. Won German Reporter Award 2019, Nominated for Grimme Online Award 2020."
+    },
+    {
+      "entity": "Human Connection gGmbH",
+      "roles": [
+        "Technical Lead"
+      ],
+      "startDate": "2018-11",
+      "endDate": "2020-04",
+      "description": "Free and Open-Source and donation based social network for active citizenship. Built with VueJS, NuxtJS, Apollo, GraphQL, NodeJS, Neo4J, Docker and Kubernetes."
+    },
+    {
+      "entity": "Solutiance",
+      "roles": [
+        "Back End Developer"
+      ],
+      "startDate": "2018-04",
+      "endDate": "2018-06",
+      "description": "Custom CMS development using PHP and Docker with a focus on search engine optimization."
+    },
+    {
+      "entity": "tactile.news",
+      "roles": [
+        "IoT Engineer"
+      ],
+      "startDate": "2018-01",
+      "endDate": "2018-01",
+      "description": "Rapid prototype of a smart bathroom mirror and cabinet. Built with several Raspberry PI Zeros and Arduinos, plain HTML/JavaScript and MQTT."
+    },
+    {
+      "entity": "tactile.news",
+      "roles": [
+        "IoT Engineer"
+      ],
+      "startDate": "2017-06",
+      "endDate": "2017-06",
+      "description": "Rapid prototype of a smart shopping cart. Built with a Raspberry Pi, EmberJS, Python and WebSockets."
+    },
+    {
+      "entity": "MIZ Babelsberg",
+      "roles": [
+        "Hackathon Coach"
+      ],
+      "startDate": "2016-09",
+      "endDate": "2016-09",
+      "description": "Prototype an interactive, decision-based podcast."
+    },
+    {
+      "entity": "Rundfunk mitbestimmen e.V.",
+      "roles": [
+        "Founder"
+      ],
+      "startDate": "2016-08",
+      "endDate": "2019-03",
+      "description": "Prototype a tool to encourage public participation in the expenditure German broadcasting fees. Built with Ruby on Rails, EmberJS, D3 and Highcharts."
+    },
+    {
+      "entity": "MIZ Babelsberg",
+      "roles": [
+        "Hackathon Coach"
+      ],
+      "startDate": "2016-08",
+      "endDate": "2016-08",
+      "description": "Prototype a location aware music player."
+    },
+    {
+      "entity": "tactile.news",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2016-05",
+      "endDate": "2017-10",
+      "description": "Automate journalism and generate a live report of dairy cows based on their sensory data. Built with Ruby on Rails. Nominated for German Reporter Award 2017"
+    },
+    {
+      "entity": "MIZ Babelsberg",
+      "roles": [
+        "Programming Mentor"
+      ],
+      "startDate": "2015-09",
+      "endDate": "2018-11",
+      "description": "Coach a beginner friendly programming course to encourage diversity in tech."
+    },
+    {
+      "entity": "MIZ Babelsberg",
+      "roles": [
+        "Hackathon Coach"
+      ],
+      "startDate": "2015-08",
+      "endDate": "2015-08",
+      "description": "#ursuppe - IoT app for automated journalism based on scientific experiments. Winner of MIZ Formatfestival 2015."
+    },
+    {
+      "entity": "SAP",
+      "roles": [
+        "Research Internship"
+      ],
+      "startDate": "2013-10",
+      "endDate": "2013-11",
+      "description": "Tool development for automated risk analysis in supply chains. Legacy code."
+    },
+    {
+      "entity": "OXON AG",
+      "roles": [
+        "Full Stack Engineer"
+      ],
+      "startDate": "2013-04",
+      "endDate": "2013-09",
+      "description": "Develop a web application for officials, referees and coaches with Ruby on Rails and CoffeeScript. First developer who established an automated test environment."
+    },
+    {
+      "entity": "Hasso Plattner Institute",
+      "roles": [
+        "Researcher"
+      ],
+      "startDate": "2012-01",
+      "endDate": "2012-08",
+      "description": "Implementation of a business process and web application as specified by SAP as a use case for the HANA in-memory database."
+    }
+  ]
+}
