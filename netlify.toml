@@ -1,7 +1,7 @@
 # Typst, sops and age are not part of Netlify's build image, so the build
 # installs them with mise before running the site build.
 [build]
-command = "curl -fsSL https://mise.run | sh && export PATH=\"$HOME/.local/bin:$PATH\" && mise trust && mise install && mise exec -- pnpm build"
+command = "scripts/netlify-build.sh"
 publish = "build"
 
 # Netlify installs Node and pnpm itself and runs `pnpm install` before the

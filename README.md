@@ -142,7 +142,8 @@ Important deployment behavior:
 ## PDF Build And Deploy
 
 - Netlify builds the site, including the PDFs, from its own repository checkout.
-- `Typst`, `sops` and `age` are not part of Netlify's build image, so the build command in `netlify.toml` installs the versions pinned in `mise.toml` first.
+- `Typst`, `sops` and `age` are not part of Netlify's build image, so `scripts/netlify-build.sh` installs the versions pinned in `mise.toml` first.
+- Netlify exposes `SOPS_AGE_KEY` to the whole build, including its automatic `pnpm install`. `scripts/netlify-build.sh` keeps the key away from mise and hands it only to `pnpm build`.
 - Vendored `ttf` or `otf` fonts under `typst/fonts/` are required for the PDF build. See [`typst/README.md`](/home/robert/Development/schaefer-development/roschaefer.de/typst/README.md).
 
 Required Netlify environment variable (mark it secret, scope it to builds):
