@@ -1,0 +1,40 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.8/schema.json",
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 100
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended"
+		}
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": [
+			"**",
+			"!**/.generated",
+			"!**/.svelte-kit",
+			"!**/build",
+			"!**/node_modules",
+			"!**/playwright-report",
+			"!**/project.inlang/.meta.json",
+			"!**/resume.json",
+			"!**/resume.i18n.json",
+			"!**/pnpm-lock.yaml",
+			"!**/src/lib/paraglide",
+			"!**/test-results",
+			"!**/typst/content",
+			"!**/typst/out",
+			"!**/static/de/robert-schaefer-resume.de.pdf",
+			"!**/static/en/robert-schaefer-resume.en.pdf"
+		]
+	}
+}

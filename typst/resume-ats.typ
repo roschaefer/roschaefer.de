@@ -1,0 +1,201 @@
+#import "template/theme.typ": brand, item-copy, item-meta, item-title, link-list, section-heading
+
+#let lang = sys.inputs.at("lang", default: "de")
+#let data = json("content/" + lang + ".typ.json")
+
+#set page(
+  paper: "a4",
+  margin: (top: 14mm, right: 15mm, bottom: 15mm, left: 15mm),
+)
+
+#set text(font: "Titillium", fallback: true, size: 9pt, fill: rgb("#12181f"))
+#set par(justify: false, leading: 0.62em)
+#show link: set text(fill: brand)
+
+#let project-heading(entry) = if entry.entity != "" { entry.entity } else { entry.name }
+#let project-suffix(entry) = if entry.entity != "" { entry.name } else { none }
+
+#let experience-entry(entry) = block(breakable: false)[
+  #item-title(project-heading(entry), suffix: project-suffix(entry), link-url: entry.url)
+  #v(2pt)
+  #item-meta(entry.role + "   " + entry.period)
+  #if entry.description != "" [
+    #v(4pt)
+    #item-copy(entry.description)
+  ]
+  #if entry.keywords.len() > 0 [
+    #v(3pt)
+    #item-meta(entry.keywords.join(" • "))
+  ]
+  #link-list(data.labels.press, entry.pressLinks)
+]
+
+#let simple-entry(title, meta: "", copy: "", link-url: none) = block(breakable: false)[
+  #item-title(title, link-url: link-url)
+  #if meta != "" [
+    #v(1.5pt)
+    #item-meta(meta)
+  ]
+  #if copy != "" [
+    #v(2pt)
+    #item-copy(copy)
+  ]
+]
+
+#let technology-project-count(count) = {
+  if data.locale == "de" {
+    if count == 1 { "1 Projekt" } else { str(count) + " Projekte" }
+  } else {
+    if count == 1 { "1 project" } else { str(count) + " projects" }
+  }
+}
+
+#text(font: "Jost*", size: 24pt, weight: 700, tracking: 0.03em)[#data.basics.name]
+#v(2pt)
+#text(size: 10.2pt, weight: 700, tracking: 0.16em, fill: brand)[#upper(data.basics.label)]
+#v(7pt)
+#item-copy(data.basics.summary)
+#v(8pt)
+#item-meta(data.labels.website + ": " + data.basics.websiteLabel)
+#v(1pt)
+#item-meta(data.labels.email + ": " + data.basics.email)
+
+#v(10pt)
+
+#if data.experienceFull.len() > 0 [
+  #block(breakable: false)[
+    #section-heading(data.labels.experience)
+    #experience-entry(data.experienceFull.first())
+  ]
+  #v(8pt)
+  #for entry in data.experienceFull.slice(1) [
+    #experience-entry(entry)
+    #v(8pt)
+  ]
+]
+
+#if data.mentoringFull.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.mentoring)
+    #experience-entry(data.mentoringFull.first())
+  ]
+  #v(8pt)
+  #for entry in data.mentoringFull.slice(1) [
+    #experience-entry(entry)
+    #v(8pt)
+  ]
+]
+
+#if data.volunteeringFull.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.volunteering)
+    #experience-entry(data.volunteeringFull.first())
+  ]
+  #v(8pt)
+  #for entry in data.volunteeringFull.slice(1) [
+    #experience-entry(entry)
+    #v(8pt)
+  ]
+]
+
+#if data.technologiesFull.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.skills)
+    #simple-entry(
+      data.technologiesFull.first().name,
+      meta: data.technologiesFull.first().duration + "   " + technology-project-count(data.technologiesFull.first().projectCount),
+      copy: data.technologiesFull.first().lastUsedLabel,
+    )
+  ]
+  #v(6pt)
+  #for entry in data.technologiesFull.slice(1) [
+    #simple-entry(
+      entry.name,
+      meta: entry.duration + "   " + technology-project-count(entry.projectCount),
+      copy: entry.lastUsedLabel,
+    )
+    #v(6pt)
+  ]
+]
+
+#if data.talks.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.selectedTalks)
+    #simple-entry(data.talks.first().name, meta: data.talks.first().entity + "   " + data.talks.first().period, link-url: data.talks.first().url)
+  ]
+  #v(6pt)
+  #for entry in data.talks.slice(1) [
+    #simple-entry(entry.name, meta: entry.entity + "   " + entry.period, link-url: entry.url)
+    #v(6pt)
+  ]
+]
+
+#if data.languages.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.languages)
+    #simple-entry(data.languages.first().name, meta: data.languages.first().fluency)
+  ]
+  #v(6pt)
+  #for entry in data.languages.slice(1) [
+    #simple-entry(entry.name, meta: entry.fluency)
+    #v(6pt)
+  ]
+]
+
+#if data.educationFull.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.education)
+    #simple-entry(
+      data.educationFull.first().title,
+      meta: data.educationFull.first().institution + "   " + data.educationFull.first().period,
+      copy: data.educationFull.first().score,
+    )
+  ]
+  #v(6pt)
+  #for entry in data.educationFull.slice(1) [
+    #simple-entry(entry.title, meta: entry.institution + "   " + entry.period, copy: entry.score)
+    #v(6pt)
+  ]
+]
+
+#if data.profiles.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.profiles)
+    #simple-entry(data.profiles.first().network, meta: data.profiles.first().printLabel, link-url: data.profiles.first().url)
+  ]
+  #v(6pt)
+  #for entry in data.profiles.slice(1) [
+    #simple-entry(entry.network, meta: entry.printLabel, link-url: entry.url)
+    #v(6pt)
+  ]
+]
+
+#if data.awards.len() > 0 [
+  #v(4pt)
+  #block(breakable: false)[
+    #section-heading(data.labels.awards)
+    #simple-entry(
+      data.awards.first().title,
+      meta: data.awards.first().awarder + "   " + data.awards.first().period,
+      copy: data.awards.first().summary,
+      link-url: data.awards.first().url,
+    )
+  ]
+  #v(6pt)
+  #for entry in data.awards.slice(1) [
+    #simple-entry(
+      entry.title,
+      meta: entry.awarder + "   " + entry.period,
+      copy: entry.summary,
+      link-url: entry.url,
+    )
+    #v(6pt)
+  ]
+]

@@ -1,0 +1,14 @@
+node_modules
+.svelte-kit
+build
+dist
+playwright-report/
+test-results/
+typst/content
+typst/out
+static/de/*.pdf
+static/en/*.pdf
+/.generated
+
+.DS_Store
+Thumbs.db
