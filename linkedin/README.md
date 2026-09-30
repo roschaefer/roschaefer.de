@@ -26,15 +26,15 @@ disagree, the fix is assumed to happen on LinkedIn.
 1. On LinkedIn: **Settings & Privacy → Data privacy → Get a copy of your data**.
 2. Choose "Download larger data archive" (or just make sure "Profile", "Positions", "Education" and "Skills" are included) and request the export. LinkedIn emails you a download link, usually within a few minutes to ~24h.
 3. Unzip the archive into `export/`, replacing its contents (`export/Positions.csv`, `export/Education.csv`, `export/Skills.csv`, etc.).
-4. Since this folder is its own git repo, `git status` / `git diff` will show you exactly what changed in the export since last time — commit it so you have a history of your LinkedIn data over time.
+4. Since the export is tracked in git, `git status` / `git diff` will show you exactly what changed in the export since last time — commit it so you have a history of your LinkedIn data over time.
 
 ## Build & run
 
-With [`just`](https://github.com/casey/just) (paths are pre-wired in the `Justfile`, works from any directory):
+With [`just`](https://github.com/casey/just) (paths are pre-wired in the `Justfile` at the repo root, works from any directory inside the repo):
 
 ```sh
-just --justfile linkedin/Justfile generate   # or just `just generate` from inside linkedin/
-just --justfile linkedin/Justfile diff       # generate, then print the diff
+just linkedin-generate   # build, then write both output files
+just linkedin-diff       # generate, then print the diff
 ```
 
 Or directly with cargo, from inside `linkedin/`:
@@ -53,13 +53,13 @@ git diff --no-index output/resume.json output/linkedin.json
 | Flag | Default | Meaning |
 |---|---|---|
 | `--dir=<path>` | `./export` | Where to find `Positions.csv` / `Education.csv` / `Skills.csv` / `Profile.csv` |
-| `--resume=<path>` | `<dir>/../../roschaefer.de/main/resume.i18n.json` | Path to the authoritative resume data |
+| `--resume=<path>` | `<dir>/../../roschaefer.de/resume.i18n.json` | Path to the authoritative resume data |
 | `--out-dir=<path>` | `./output` | Where to write `resume.json` and `linkedin.json` |
 
 Example, running from the repo root instead of `linkedin/`:
 
 ```sh
-./linkedin/target/release/linkedin-sync --dir=linkedin/export --resume=roschaefer.de/main/resume.i18n.json --out-dir=linkedin/output
+./linkedin/target/release/linkedin-sync --dir=linkedin/export --resume=roschaefer.de/resume.i18n.json --out-dir=linkedin/output
 ```
 
 ## Reading the output

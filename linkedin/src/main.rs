@@ -15,7 +15,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 const DEFAULT_EXPORT_DIR_RELATIVE: &str = "export";
-const DEFAULT_RESUME_RELATIVE: &str = "../../roschaefer.de/main/resume.i18n.json";
+const DEFAULT_RESUME_RELATIVE: &str = "../../roschaefer.de/resume.i18n.json";
 const DEFAULT_OUT_DIR_RELATIVE: &str = "output";
 
 struct Args {
