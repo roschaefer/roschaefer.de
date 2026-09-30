@@ -2,17 +2,20 @@
 
 Reads this folder's LinkedIn data export and the authoritative
 `resume.i18n.json` used by [roschaefer.de](https://roschaefer.de), and
-writes each out as a JSON Resume-shaped file:
+prints either one to stdout as JSON Resume-shaped JSON:
 
-- `output/resume.json` — resolved to English, sops-decrypted.
-- `output/linkedin.json` — built from the LinkedIn CSV export.
+- `linkedin-sync resume` — `resume.i18n.json`, resolved to English, sops-decrypted.
+- `linkedin-sync linkedin` — built from the LinkedIn CSV export.
 
-Both files use the same field names (`basics`, `education`, `skills`,
-`projects`), so you can compare them directly — with `git diff --no-index`,
-your editor's diff view, or by committing `output/` and reading `git diff`
-across runs — to see what's out of sync between LinkedIn and the site.
+Both sides use the same field names (`basics`, `education`, `skills`,
+`projects`), so you can compare them directly with `git diff --no-index`
+to see what's out of sync between LinkedIn and the site.
 
-`resume.json` is always treated as the source of truth: when the two
+Nothing is written to disk. The resume side contains decrypted client
+names, so it is only ever piped into the diff and never lands in a file
+that could get committed.
+
+`resume.i18n.json` is always treated as the source of truth: when the two
 disagree, the fix is assumed to happen on LinkedIn.
 
 ## Prerequisites
@@ -33,44 +36,45 @@ disagree, the fix is assumed to happen on LinkedIn.
 With [`just`](https://github.com/casey/just) (paths are pre-wired in the `Justfile` at the repo root, works from any directory inside the repo):
 
 ```sh
-just linkedin-generate   # build, then write both output files
-just linkedin-diff       # generate, then print the diff
+just linkedin-diff   # build, then print the diff
 ```
 
-Or directly with cargo, from inside `linkedin/`:
+In the diff, the `a/` side (`-` lines) is the resume and the `b/` side (`+` lines) is LinkedIn. The header shows `/dev/fd/…` instead of file names because both sides are piped in.
+
+Or directly with cargo, from inside `linkedin/` (needs bash for the `<(…)` process substitution):
 
 ```sh
 cd linkedin
 cargo build --release
-./target/release/linkedin-sync
-git diff --no-index output/resume.json output/linkedin.json
+git diff --no-index <(./target/release/linkedin-sync resume) <(./target/release/linkedin-sync linkedin)
 ```
 
-`cargo run` also works for a quick check without a release build.
+`cargo run -- resume` / `cargo run -- linkedin` also work for a quick look at one side without a release build.
 
-### Flags
+### Commands and flags
 
-| Flag | Default | Meaning |
-|---|---|---|
-| `--dir=<path>` | `./export` | Where to find `Positions.csv` / `Education.csv` / `Skills.csv` / `Profile.csv` |
-| `--resume=<path>` | `<dir>/../../roschaefer.de/resume.i18n.json` | Path to the authoritative resume data |
-| `--out-dir=<path>` | `./output` | Where to write `resume.json` and `linkedin.json` |
+| Command | Flag | Default | Meaning |
+|---|---|---|---|
+| `resume` | `--resume=<path>` | `../roschaefer.de/resume.i18n.json` | Path to the authoritative resume data |
+| `linkedin` | `--dir=<path>` | `./export` | Where to find `Positions.csv` / `Education.csv` / `Skills.csv` / `Profile.csv` |
 
-Example, running from the repo root instead of `linkedin/`:
+Defaults are relative to the current directory, so they fit when running from inside `linkedin/`. Example, running from the repo root instead:
 
 ```sh
-./linkedin/target/release/linkedin-sync --dir=linkedin/export --resume=roschaefer.de/resume.i18n.json --out-dir=linkedin/output
+git diff --no-index \
+  <(./linkedin/target/release/linkedin-sync resume --resume=roschaefer.de/resume.i18n.json) \
+  <(./linkedin/target/release/linkedin-sync linkedin --dir=linkedin/export)
 ```
 
 ## Reading the output
 
-Both files share the same shape:
+Both sides share the same shape:
 
 - **`basics`** — name, headline/label, summary, email, location, profile links. LinkedIn's side is a best-effort reconstruction from `Profile.csv` and `Email Addresses.csv`; several fields (a personal `url`, precise `countryCode`) have no clean LinkedIn source and are left out.
 - **`education`** — one entry per school. resume.json carries `area`/`score`/full ISO dates; LinkedIn only has a degree name and year-precision dates.
 - **`skills`** — resume.json's side is every unique `keywords` value across all projects; LinkedIn's side is `Skills.csv` verbatim. Both sorted alphabetically.
 - **`projects`** — resume.json's employment/freelance history as-is (`id`, `entity`, `name`, `roles`, `engagement`, `type`, `keywords`, `description`, ISO dates). LinkedIn's positions are mapped onto the same shape (`entity` = company, `roles` = `[title]`, `startDate`/`endDate` at month precision, `description`); LinkedIn has no independent project/product name, so `name` is left out rather than duplicating the title that's already in `roles`, and there's no `id`, `engagement`, `type`, or per-position `keywords` either.
 
-Both `education` and `projects` arrays are sorted by `startDate` descending on both sides, so the same real-world entry tends to land at (or near) the same array position in each file — that's what keeps a line-based diff readable instead of just a wall of adds/removes.
+Both `education` and `projects` arrays are sorted by `startDate` descending on both sides, so the same real-world entry tends to land at (or near) the same array position on each side — that's what keeps a line-based diff readable instead of just a wall of adds/removes.
 
 There's no automatic matching or fuzzy comparison anymore — the tool no longer decides what's "wrong" for you. Read the diff yourself: a block that's pure addition/deletion is usually a LinkedIn-only or resume.json-only entry; a block with both `-` and `+` lines at the same position is usually the same real-world entry with drifted details (a stale end date, a reworded title, a missing description).

@@ -1,47 +1,65 @@
 // Reads this folder's LinkedIn "Get a copy of your data" export and the
-// authoritative resume.i18n.json used by roschaefer.de, and writes each out
-// as a JSON Resume-shaped file (output/resume.json, output/linkedin.json).
-// Both files use the same field names, so `git diff --no-index
-// output/resume.json output/linkedin.json` (or just eyeballing them side by
-// side) shows what's out of sync. resume.json is the source of truth: when
-// the two disagree, the fix is assumed to happen on LinkedIn.
+// authoritative resume.i18n.json used by roschaefer.de, and prints either one
+// to stdout as JSON Resume-shaped JSON. Both sides use the same field names,
+// so `git diff --no-index <(linkedin-sync resume) <(linkedin-sync linkedin)`
+// shows what's out of sync. The resume is the source of truth: when the two
+// disagree, the fix is assumed to happen on LinkedIn.
 //
-// Usage: linkedin-sync [--resume=<path>] [--dir=<path>] [--out-dir=<path>]
+// Nothing is written to disk: the resume side contains sops-decrypted client
+// names, which must not end up in a file that could get committed.
+//
+// Usage: linkedin-sync resume [--resume=<path>]
+//        linkedin-sync linkedin [--dir=<path>]
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::env;
-use std::fs;
 use std::path::{Path, PathBuf};
 
 const DEFAULT_EXPORT_DIR_RELATIVE: &str = "export";
-const DEFAULT_RESUME_RELATIVE: &str = "../../roschaefer.de/resume.i18n.json";
-const DEFAULT_OUT_DIR_RELATIVE: &str = "output";
+const DEFAULT_RESUME_RELATIVE: &str = "../roschaefer.de/resume.i18n.json";
 
-struct Args {
-    dir: PathBuf,
-    resume: Option<PathBuf>,
-    out_dir: PathBuf,
+const USAGE: &str = "\
+Usage: linkedin-sync resume [--resume=<path>]
+       linkedin-sync linkedin [--dir=<path>]";
+
+enum Command {
+    Resume { resume: PathBuf },
+    Linkedin { dir: PathBuf },
 }
 
-fn parse_args() -> Args {
+fn usage_error(message: &str) -> ! {
+    eprintln!("{message}\n\n{USAGE}");
+    std::process::exit(1);
+}
+
+fn parse_args() -> Command {
     let cwd = env::current_dir().expect("cannot read current directory");
-    let mut dir = cwd.join(DEFAULT_EXPORT_DIR_RELATIVE);
-    let mut resume = None;
-    let mut out_dir = cwd.join(DEFAULT_OUT_DIR_RELATIVE);
-    for arg in env::args().skip(1) {
-        if let Some(v) = arg.strip_prefix("--dir=") {
-            dir = PathBuf::from(v);
-        } else if let Some(v) = arg.strip_prefix("--resume=") {
-            resume = Some(PathBuf::from(v));
-        } else if let Some(v) = arg.strip_prefix("--out-dir=") {
-            out_dir = PathBuf::from(v);
-        } else {
-            eprintln!("unknown argument: {arg}");
-            std::process::exit(1);
+    let mut args = env::args().skip(1);
+    match args.next().as_deref() {
+        Some("resume") => {
+            let mut resume = cwd.join(DEFAULT_RESUME_RELATIVE);
+            for arg in args {
+                match arg.strip_prefix("--resume=") {
+                    Some(v) => resume = PathBuf::from(v),
+                    None => usage_error(&format!("unknown argument: {arg}")),
+                }
+            }
+            Command::Resume { resume }
         }
+        Some("linkedin") => {
+            let mut dir = cwd.join(DEFAULT_EXPORT_DIR_RELATIVE);
+            for arg in args {
+                match arg.strip_prefix("--dir=") {
+                    Some(v) => dir = PathBuf::from(v),
+                    None => usage_error(&format!("unknown argument: {arg}")),
+                }
+            }
+            Command::Linkedin { dir }
+        }
+        Some(other) => usage_error(&format!("unknown command: {other}")),
+        None => usage_error("missing command"),
     }
-    Args { dir, resume, out_dir }
 }
 
 // Most string fields in resume.json are plain, but some (like `name` on
@@ -561,46 +579,26 @@ fn build_linkedin_out(dir: &Path) -> OutResume {
     OutResume { basics, education, skills, projects }
 }
 
-fn write_json(path: &Path, value: &OutResume) {
+fn print_json(value: &OutResume) {
     let json = serde_json::to_string_pretty(value).expect("failed to serialize JSON");
-    fs::write(path, json + "\n").unwrap_or_else(|e| panic!("failed to write {}: {e}", path.display()));
+    println!("{json}");
 }
 
 fn main() {
-    let args = parse_args();
+    let out = match parse_args() {
+        Command::Resume { resume } => {
+            if !resume.exists() {
+                eprintln!(
+                    "resume.json not found at {}. Pass --resume=<path>.",
+                    resume.display()
+                );
+                std::process::exit(1);
+            }
+            let resume_text = read_resume_text(&resume);
+            build_resume_out(serde_json::from_str(&resume_text).expect("failed to parse resume.json"))
+        }
+        Command::Linkedin { dir } => build_linkedin_out(&dir),
+    };
 
-    let resume_path = args
-        .resume
-        .clone()
-        .unwrap_or_else(|| args.dir.join(DEFAULT_RESUME_RELATIVE));
-
-    if !resume_path.exists() {
-        eprintln!(
-            "resume.json not found at {}. Pass --resume=<path>.",
-            resume_path.display()
-        );
-        std::process::exit(1);
-    }
-
-    let resume_text = read_resume_text(&resume_path);
-    let resume: ResumeFile = serde_json::from_str(&resume_text).expect("failed to parse resume.json");
-
-    let resume_out = build_resume_out(resume);
-    let linkedin_out = build_linkedin_out(&args.dir);
-
-    fs::create_dir_all(&args.out_dir)
-        .unwrap_or_else(|e| panic!("failed to create {}: {e}", args.out_dir.display()));
-
-    let resume_out_path = args.out_dir.join("resume.json");
-    let linkedin_out_path = args.out_dir.join("linkedin.json");
-    write_json(&resume_out_path, &resume_out);
-    write_json(&linkedin_out_path, &linkedin_out);
-
-    println!("wrote {}", resume_out_path.display());
-    println!("wrote {}", linkedin_out_path.display());
-    println!(
-        "\nCompare with: git diff --no-index {} {}",
-        resume_out_path.display(),
-        linkedin_out_path.display()
-    );
+    print_json(&out);
 }
