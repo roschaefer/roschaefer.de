@@ -1,0 +1,1022 @@
+{
+  "basics": {
+    "name": "Robert Schäfer",
+    "label": "Full Stack Developer",
+    "email": "hello@roschaefer.de",
+    "url": "https://roschaefer.de/",
+    "summary": "Freelance full stack developer working remotely across web applications, product engineering, and infrastructure, with additional investment in open source. Focus areas include maintainable software, strong test coverage, and modernizing fragile systems by simplifying delivery and operations while strengthening quality through reliable collaboration, code reviews, pair programming, and technical mentoring.",
+    "location": {
+      "city": "Cologne",
+      "region": "NRW",
+      "countryCode": "DE"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Robert Schäfer",
+        "url": "https://www.linkedin.com/in/roschaefer/"
+      },
+      {
+        "network": "Github",
+        "username": "roschaefer",
+        "url": "https://github.com/roschaefer"
+      },
+      {
+        "network": "YouTube",
+        "username": "Robert Schäfer",
+        "url": "https://www.youtube.com/channel/UCyrLYmvmLzWxnPHxt4n5aPw"
+      },
+      {
+        "network": "Twitter",
+        "username": "roschaeferDE",
+        "url": "https://twitter.com/roschaeferDE"
+      },
+      {
+        "network": "Mastodon",
+        "username": "roschaefer",
+        "url": "https://mastodon.social/@roschaefer"
+      },
+      {
+        "network": "CodeMentor",
+        "username": "roschaefer",
+        "url": "https://www.codementor.io/@roschaefer"
+      }
+    ]
+  },
+  "education": [
+    {
+      "id": "hpi-msc",
+      "institution": "Hasso Plattner Institute",
+      "url": "https://hpi.de/",
+      "area": "IT-Systems Engineering",
+      "studyType": "Master of Science",
+      "startDate": "2014-10-01",
+      "endDate": "2018-03-31",
+      "score": "1.6"
+    },
+    {
+      "id": "hpi-bsc",
+      "institution": "Hasso Plattner Institute",
+      "url": "https://hpi.de/",
+      "area": "IT-Systems Engineering",
+      "studyType": "Bachelor of Science",
+      "startDate": "2009-09-01",
+      "endDate": "2012-07-01",
+      "score": "1.7"
+    },
+    {
+      "id": "gymnasium-lohmar-abitur",
+      "institution": "Gymnasium Lohmar",
+      "area": "",
+      "studyType": "Abitur",
+      "startDate": "1999-08-01",
+      "endDate": "2008-06-30"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Ansible"
+    },
+    {
+      "name": "Apollo GraphQL"
+    },
+    {
+      "name": "Auth0"
+    },
+    {
+      "name": "Authentik"
+    },
+    {
+      "name": "AWS"
+    },
+    {
+      "name": "Better Auth"
+    },
+    {
+      "name": "Cucumber"
+    },
+    {
+      "name": "Cypress"
+    },
+    {
+      "name": "D3"
+    },
+    {
+      "name": "Digital Ocean"
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "Drizzle ORM"
+    },
+    {
+      "name": "ElevenLabs"
+    },
+    {
+      "name": "Ember"
+    },
+    {
+      "name": "Fly.io"
+    },
+    {
+      "name": "Google Cloud"
+    },
+    {
+      "name": "Hasura"
+    },
+    {
+      "name": "Helm"
+    },
+    {
+      "name": "Hetzner"
+    },
+    {
+      "name": "Highcharts"
+    },
+    {
+      "name": "hledger"
+    },
+    {
+      "name": "HyGraph"
+    },
+    {
+      "name": "Infisical"
+    },
+    {
+      "name": "Java"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "Jest"
+    },
+    {
+      "name": "Kubernetes"
+    },
+    {
+      "name": "MQTT"
+    },
+    {
+      "name": "Neo4J"
+    },
+    {
+      "name": "Neon DB"
+    },
+    {
+      "name": "Netlify"
+    },
+    {
+      "name": "NINA"
+    },
+    {
+      "name": "Nuxt"
+    },
+    {
+      "name": "Paraglide"
+    },
+    {
+      "name": "PHP"
+    },
+    {
+      "name": "Playwright"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "Postmark"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "RSpec"
+    },
+    {
+      "name": "Ruby"
+    },
+    {
+      "name": "Ruby on Rails"
+    },
+    {
+      "name": "Rust"
+    },
+    {
+      "name": "S3"
+    },
+    {
+      "name": "Sentry"
+    },
+    {
+      "name": "Serverless"
+    },
+    {
+      "name": "sops"
+    },
+    {
+      "name": "Stimulus"
+    },
+    {
+      "name": "Storybook"
+    },
+    {
+      "name": "Svelte"
+    },
+    {
+      "name": "SvelteKit"
+    },
+    {
+      "name": "Tailscale"
+    },
+    {
+      "name": "Tailwind"
+    },
+    {
+      "name": "Terraform"
+    },
+    {
+      "name": "Testing-Library"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Typst"
+    },
+    {
+      "name": "Uberspace"
+    },
+    {
+      "name": "Vercel"
+    },
+    {
+      "name": "Vike"
+    },
+    {
+      "name": "Vitest"
+    },
+    {
+      "name": "Vue"
+    },
+    {
+      "name": "Vuetify"
+    },
+    {
+      "name": "Wordpress"
+    }
+  ],
+  "projects": [
+    {
+      "id": "remote-telescope-platform",
+      "entity": "Bosse Consulting GmbH",
+      "name": "Remote observatory",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2026-03-25",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Nuxt",
+        "Vue",
+        "Fly.io",
+        "Docker",
+        "AWS",
+        "Terraform",
+        "Playwright",
+        "Cucumber",
+        "Tailwind",
+        "NINA",
+        "Tailscale"
+      ],
+      "description": "With this platform for remotely controlling telescopes through the astrophotography software NINA, deep-sky imaging gets accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline."
+    },
+    {
+      "id": "ai-interview-platform",
+      "entity": "tactile.news GmbH",
+      "name": "AI interview platform",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2026-03-23",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Svelte",
+        "SvelteKit",
+        "Tailwind",
+        "Better Auth",
+        "Drizzle ORM",
+        "Neon DB",
+        "PostgreSQL",
+        "Playwright",
+        "Vitest",
+        "Netlify",
+        "Sentry",
+        "Serverless",
+        "Infisical",
+        "ElevenLabs"
+      ],
+      "description": "This SvelteKit application for AI-assisted interviews and editorial publishing replaces brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. Using the built-in workflows of ElevenLabs AI Agents significantly reduces maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
+    },
+    {
+      "id": "hledger-document-check",
+      "entity": "Robert Schäfer",
+      "name": "hledger-document-check",
+      "roles": [
+        "Development"
+      ],
+      "startDate": "2026-03-19",
+      "type": "volunteering",
+      "url": "https://github.com/roschaefer/hledger-document-check",
+      "keywords": [
+        "Rust",
+        "hledger",
+        "Cucumber"
+      ],
+      "description": "A Plain Text Accounting command-line tool for checking documents with hledger. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, checks amount plausibility, and generates an enriched journal for Fava's document view."
+    },
+    {
+      "id": "hledger-elster",
+      "entity": "Robert Schäfer",
+      "name": "hledger-elster",
+      "roles": [
+        "Development"
+      ],
+      "startDate": "2026-03-19",
+      "type": "volunteering",
+      "url": "https://github.com/roschaefer/hledger-elster",
+      "keywords": [
+        "Rust",
+        "hledger",
+        "Cucumber"
+      ],
+      "description": "A Plain Text Accounting command-line tool for hledger that automates German tax filing. It reads transactions from the journal and generates traceable exports for the corresponding forms on ELSTER.de. The exports are available in CSV and XLSX format and include derivations that tax authorities can audit."
+    },
+    {
+      "id": "roschaefer-portfolio",
+      "entity": "Robert Schäfer",
+      "name": "roschaefer.de",
+      "roles": [
+        "Design and Development"
+      ],
+      "startDate": "2026-03-16",
+      "type": "volunteering",
+      "url": "https://roschaefer.de/",
+      "keywords": [
+        "TypeScript",
+        "Svelte",
+        "SvelteKit",
+        "Tailwind",
+        "Paraglide",
+        "Typst",
+        "Vitest",
+        "Playwright",
+        "Netlify"
+      ],
+      "description": "Personal portfolio website and print-optimized resume built from a shared content source. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, and standards-compliant `resume.json` into an accessible, privacy-conscious experience for web and print."
+    },
+    {
+      "id": "foss-social-network-infra-migration",
+      "entity": "busFaktor() e.V.",
+      "name": "FOSS social network",
+      "roles": [
+        "Infrastructure Engineer"
+      ],
+      "startDate": "2024-10-01",
+      "endDate": "2025-11-30",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Vue",
+        "Nuxt",
+        "Terraform",
+        "sops",
+        "Kubernetes",
+        "Hetzner",
+        "S3",
+        "Digital Ocean",
+        "Docker"
+      ],
+      "description": "Migrated assets from a Kubernetes volume to S3-compatible object storage to reduce deployment complexity and cost. Rebuilt the infrastructure with Terraform and sops, and moved from a managed Kubernetes cluster on Digital Ocean to a self-hosted Kubernetes cluster on Hetzner, cutting monthly costs by 80%."
+    },
+    {
+      "id": "entrepreneur-social-platform",
+      "entity": "IT4C",
+      "name": "Founder network",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2024-06-21",
+      "endDate": "2025-06-09",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Docker",
+        "Vue",
+        "Vike",
+        "Vuetify",
+        "Jest",
+        "Authentik",
+        "Apollo GraphQL",
+        "Terraform",
+        "Helm",
+        "Kubernetes",
+        "Hetzner",
+        "PostgreSQL"
+      ],
+      "description": "For this free and open-source social platform for entrepreneurs, the delivery and infrastructure architecture was fundamentally reworked after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. Moving the project to a self-managed Kubernetes setup on Hetzner with Terraform gave every developer production-like test environments for their own branches while keeping operating costs extremely low at under 20 euros per month."
+    },
+    {
+      "id": "holiday-apartment-booking-site",
+      "entity": "Johannes Schäfer",
+      "name": "Booking website for a holiday apartment",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2022-01-28",
+      "endDate": "2022-08-09",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Netlify",
+        "Svelte",
+        "SvelteKit",
+        "Tailwind"
+      ],
+      "description": "Built a booking website with calendar integration for a holiday apartment on Norderney. Day-by-day availability is maintained in Google Calendar and synchronized to the site via Google APIs."
+    },
+    {
+      "id": "retail-website-relaunch",
+      "entity": "Johannes Schäfer",
+      "name": "SvelteKit relaunch",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2021-12-09",
+      "endDate": "2023-06-28",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Svelte",
+        "SvelteKit",
+        "HyGraph",
+        "Netlify",
+        "Serverless"
+      ],
+      "description": "Rebuilt a retail client's website with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
+    },
+    {
+      "id": "automotive-price-comparison",
+      "entity": "auteon GmbH",
+      "name": "Auto parts price comparison",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2021-06-30",
+      "endDate": "2023-09-01",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Docker",
+        "Vue",
+        "Tailwind",
+        "Jest",
+        "Testing-Library",
+        "Auth0",
+        "Apollo GraphQL",
+        "Hasura",
+        "Google Cloud",
+        "Vercel"
+      ],
+      "description": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, an Electron desktop application was migrated to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240."
+    },
+    {
+      "id": "continuing-education-booking-system",
+      "entity": "Johannes Schäfer",
+      "name": "Booking system for continuing education providers",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2021-05-12",
+      "endDate": "2022-12-10",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Netlify",
+        "Svelte",
+        "SvelteKit",
+        "Tailwind"
+      ],
+      "description": "Built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
+    },
+    {
+      "id": "course-booking-system",
+      "entity": "Johannes Schäfer",
+      "name": "Booking system for course providers",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2020-08-11",
+      "endDate": "2023-05-02",
+      "type": "experience",
+      "keywords": [
+        "TypeScript",
+        "Netlify",
+        "Vue",
+        "Nuxt",
+        "HyGraph"
+      ],
+      "description": "Built a custom booking system for a course provider's sewing classes and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
+    },
+    {
+      "id": "audience-engagement-platform",
+      "entity": "tactile.news GmbH",
+      "name": "Newsroom dialog",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2020-03-30",
+      "endDate": "2025-04-16",
+      "type": "experience",
+      "keywords": [
+        "Ruby",
+        "TypeScript",
+        "Ruby on Rails",
+        "RSpec",
+        "Stimulus",
+        "Docker",
+        "Ansible",
+        "Digital Ocean",
+        "Sentry",
+        "Postmark"
+      ],
+      "description": "For this platform for audience engagement and crowd-based reporting in journalism, the Ruby on Rails application integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
+    },
+    {
+      "id": "find-open-source-contributors-vuejs-berlin",
+      "entity": "Vue.js Berlin Meetup",
+      "name": "Find open-source contributors in online learner communities",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2020-01-14",
+      "endDate": "2020-01-14",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=p5iMjfVCXBY"
+    },
+    {
+      "id": "systems-development-and-framework",
+      "entity": "Hochschule für Technik und Wirtschaft Berlin",
+      "name": "Systems-Development and Framework",
+      "roles": [
+        "University Lecturer"
+      ],
+      "startDate": "2019-10-31",
+      "endDate": "2021-03-31",
+      "type": "mentoring",
+      "url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
+      "keywords": [
+        "JavaScript",
+        "Vue",
+        "Apollo GraphQL",
+        "Neo4J",
+        "Nuxt",
+        "Vuetify",
+        "Tailwind"
+      ],
+      "description": "Owned a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
+    },
+    {
+      "id": "neo4j-graphql-human-connection",
+      "entity": "Neo4J Online Meetup",
+      "name": "Using Neo4J and GraphQL to build Human Connection",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2019-06-20",
+      "endDate": "2019-06-20",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=kGwGX6R70H4"
+    },
+    {
+      "id": "sensor-storytelling-bees",
+      "entity": "tactile.news GmbH",
+      "name": "Bee sensor stories",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2019-03-31",
+      "endDate": "2019-05-31",
+      "type": "experience",
+      "keywords": [
+        "Ruby",
+        "Ruby on Rails",
+        "RSpec",
+        "Cucumber"
+      ],
+      "description": "Building on an earlier journalistic sensor-data project, the platform was reused and extended for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
+    },
+    {
+      "id": "find-open-source-contributors-35c3",
+      "entity": "35th Chaos Communication Congress",
+      "name": "Find open-source contributors in online learner communities",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2018-12-30",
+      "endDate": "2018-12-30",
+      "type": "presentation",
+      "url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147"
+    },
+    {
+      "id": "human-connection-35c3",
+      "entity": "35th Chaos Communication Congress",
+      "name": "Human Connection",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2018-12-29",
+      "endDate": "2018-12-29",
+      "type": "presentation",
+      "url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180"
+    },
+    {
+      "id": "open-source-social-network",
+      "entity": "Human Connection gGmbH",
+      "name": "FOSS social network",
+      "roles": [
+        "Technical Lead"
+      ],
+      "startDate": "2018-11-30",
+      "endDate": "2020-04-30",
+      "type": "volunteering",
+      "keywords": [
+        "JavaScript",
+        "Jest",
+        "Vue",
+        "Nuxt",
+        "Storybook",
+        "Cypress",
+        "Apollo GraphQL",
+        "Neo4J",
+        "Docker",
+        "Digital Ocean",
+        "Kubernetes"
+      ],
+      "description": "Technical Lead work on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations for a community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. The project grew to around 80 code contributors on GitHub; newcomers were onboarded through GitHub, Discord, and online pair programming, mentored directly, and most contributions were reviewed. Neo4J ran in production as the primary database to model the network's social graph directly."
+    },
+    {
+      "id": "informatikradar-1",
+      "entity": "Gesellschaft für Informatik",
+      "name": "Informatikradar #1",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2018-05-04",
+      "endDate": "2018-05-04",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=fzTmJBo4R5A"
+    },
+    {
+      "id": "custom-cms-platform",
+      "entity": "Solutiance AG",
+      "name": "Custom CMS platform",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2018-04-30",
+      "endDate": "2018-06-30",
+      "type": "experience",
+      "keywords": [
+        "Wordpress",
+        "PHP",
+        "Docker"
+      ],
+      "description": "Custom CMS development for the company website with a focus on maintainability and search engine optimization."
+    },
+    {
+      "id": "story-trolley-ember-meets-iot",
+      "entity": "Ember.js Meetup Berlin",
+      "name": "Story-Trolley: Ember meets the IoT",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2018-01-19",
+      "endDate": "2018-01-19",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
+      "description": "How to use Ember to build a smart shopping cart."
+    },
+    {
+      "id": "smart-mirror-prototype",
+      "entity": "tactile.news GmbH",
+      "name": "Smart bathroom mirror",
+      "roles": [
+        "IoT Developer"
+      ],
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-31",
+      "type": "volunteering",
+      "keywords": [
+        "Python",
+        "JavaScript",
+        "MQTT"
+      ],
+      "description": "Rapid IoT prototype of a smart bathroom mirror and cabinet built with Raspberry Pis, Arduinos, and MQTT."
+    },
+    {
+      "id": "rundfunk-mitbestimmen-34c3",
+      "entity": "34th Chaos Communication Congress",
+      "name": "Rundfunk mitbestimmen",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-12-30",
+      "endDate": "2017-12-30",
+      "type": "presentation",
+      "url": "https://media.ccc.de/v/34c3-9258-lightning_talks_day_4#t=1352",
+      "description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+    },
+    {
+      "id": "gez-scrap-it-or-pay-it",
+      "entity": "University Meetup Group \"Bremer Gesellschaft\"",
+      "name": "GEZ - scrap it or pay it?",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-12-19",
+      "endDate": "2017-12-19",
+      "type": "presentation",
+      "url": "https://www.facebook.com/events/732304050294246/"
+    },
+    {
+      "id": "coding-in-the-woods",
+      "entity": "Codemotion Berlin 2017",
+      "name": "Coding In The Woods",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-10-12",
+      "endDate": "2017-10-12",
+      "type": "presentation",
+      "url": "https://berlin2017.codemotionworld.com/speaker/3623/",
+      "description": "Introduction to Coding with Rails."
+    },
+    {
+      "id": "how-to-enjoy-paying-for-public-broadcasting",
+      "entity": "Z2X Festival - Die Zeit",
+      "name": "How to enjoy paying for public broadcasting",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-09-04",
+      "endDate": "2017-09-04",
+      "type": "presentation",
+      "url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+      "description": "Ask-me-anything session at the festival for young visionaries."
+    },
+    {
+      "id": "rundfunk-mitbestimmen-nerd-nite-17",
+      "entity": "Nerd Nite Berlin #17",
+      "name": "Rundfunk mitbestimmen",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-06-16",
+      "endDate": "2017-06-16",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=3BmdDEuW-ZA",
+      "description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+    },
+    {
+      "id": "smart-shopping-cart-prototype",
+      "entity": "tactile.news GmbH",
+      "name": "Smart shopping cart",
+      "roles": [
+        "IoT Developer"
+      ],
+      "startDate": "2017-06-01",
+      "endDate": "2017-06-30",
+      "type": "volunteering",
+      "keywords": [
+        "Ember",
+        "Python"
+      ],
+      "description": "Rapid IoT prototype of a smart shopping cart."
+    },
+    {
+      "id": "why-do-i-have-to-pay-and-dont-get-a-say",
+      "entity": "OpenTechSummit 2017",
+      "name": "Why do I have to pay and don't get a say?",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-05-25",
+      "endDate": "2017-05-25",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
+      "description": "Democratize public broadcasting."
+    },
+    {
+      "id": "miz-rapid-fire-pitch",
+      "entity": "re:publica 2017 - Love Out Loud",
+      "name": "MIZ Rapid Fire Pitch",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-05-09",
+      "endDate": "2017-05-09",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
+      "description": "SensorStory (Best Practices)"
+    },
+    {
+      "id": "ember-rails-capybara",
+      "entity": "Ember.js Meetup Berlin",
+      "name": "Ember.js + Rails + Capybara = ♥️",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2017-03-10",
+      "endDate": "2017-03-10",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp"
+    },
+    {
+      "id": "rundfunk-mitbestimmen-swift-meetup",
+      "entity": "Swift Meetup Berlin",
+      "name": "Rundfunk mitbestimmen",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2016-11-14",
+      "endDate": "2016-11-14",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=8TyViNgmeSQ",
+      "description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+    },
+    {
+      "id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
+      "entity": "HPI Hack'n Tell",
+      "name": "Rundfunk mitbestimmen",
+      "roles": [
+        "Speaker"
+      ],
+      "startDate": "2016-10-26",
+      "endDate": "2016-10-26",
+      "type": "presentation",
+      "url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
+      "description": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+    },
+    {
+      "id": "protothon-podcast",
+      "entity": "MIZ Babelsberg",
+      "name": "Protothon",
+      "roles": [
+        "Hackathon Coach"
+      ],
+      "startDate": "2016-09-01",
+      "endDate": "2016-09-30",
+      "type": "volunteering",
+      "url": "https://www.miz-babelsberg.de/startseite.html",
+      "keywords": [
+        "JavaScript"
+      ],
+      "description": "Coached a team at MIZ Babelsberg's Protothon rapid-prototyping hackathon that built an interactive, decision-based podcast prototype."
+    },
+    {
+      "id": "rundfunk-mitbestimmen-project",
+      "entity": "Rundfunk mitbestimmen e.V.",
+      "name": "Rundfunk mitbestimmen",
+      "roles": [
+        "Founder"
+      ],
+      "startDate": "2016-08-31",
+      "endDate": "2019-03-31",
+      "type": "volunteering",
+      "keywords": [
+        "Ember",
+        "Ruby on Rails",
+        "Auth0",
+        "D3",
+        "Highcharts",
+        "Uberspace",
+        "PostgreSQL"
+      ],
+      "description": "\"Rundfunk mitbestimmen\" is a civic tech project that lets people symbolically influence how public broadcasting fees are allocated. Users can assign their contributions to individual programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk, and RBB."
+    },
+    {
+      "id": "protothon-music-player",
+      "entity": "MIZ Babelsberg",
+      "name": "Protothon",
+      "roles": [
+        "Hackathon Coach"
+      ],
+      "startDate": "2016-08-01",
+      "endDate": "2016-08-31",
+      "type": "volunteering",
+      "url": "https://www.miz-babelsberg.de/startseite.html",
+      "keywords": [
+        "JavaScript"
+      ],
+      "description": "Coached a team at MIZ Babelsberg's Protothon rapid-prototyping hackathon that built a location-aware music player prototype."
+    },
+    {
+      "id": "sensor-storytelling-dairy-cows",
+      "entity": "tactile.news GmbH",
+      "name": "Dairy cow sensor stories",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2016-05-31",
+      "endDate": "2017-10-31",
+      "type": "experience",
+      "keywords": [
+        "Ruby on Rails",
+        "Ruby",
+        "RSpec",
+        "Cucumber"
+      ],
+      "description": "For WDR and Spiegel Online, a journalistic format generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
+    },
+    {
+      "id": "rubies-in-the-woods",
+      "entity": "MIZ Babelsberg",
+      "name": "Rubies in the woods",
+      "roles": [
+        "Programming Mentor"
+      ],
+      "startDate": "2015-09-30",
+      "endDate": "2018-11-30",
+      "type": "mentoring",
+      "url": "https://www.facebook.com/watch?v=1342132595875337",
+      "keywords": [
+        "Ruby"
+      ],
+      "description": "Mentored a beginner-friendly programming group through weekly sessions focused on diversity and low-barrier access to learning how to code."
+    },
+    {
+      "id": "ursuppe",
+      "entity": "MIZ Babelsberg",
+      "name": "#ursuppe",
+      "roles": [
+        "Hackathon Coach"
+      ],
+      "startDate": "2015-08-01",
+      "endDate": "2015-08-31",
+      "type": "volunteering",
+      "url": "https://www.youtube.com/watch?v=-H9aFNUXvvA",
+      "description": "Coached the team behind #ursuppe, an IoT prototype that automatically generated a live journalism report from a biological experiment tracking brine shrimp. Winner of the MIZ Formatfestival 2015."
+    },
+    {
+      "id": "supply-chain-risk-research",
+      "entity": "SAP",
+      "name": "Automated Risk Analysis in Supply Chains",
+      "roles": [
+        "Research Intern"
+      ],
+      "startDate": "2013-10-01",
+      "endDate": "2013-11-30",
+      "type": "experience",
+      "description": "Built a tool for automated risk analysis in supply chains, working with an existing legacy codebase."
+    },
+    {
+      "id": "sports-association-webapp",
+      "entity": "OXON AG",
+      "name": "Web application for sports associations",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "startDate": "2013-04-01",
+      "endDate": "2013-09-30",
+      "type": "experience",
+      "keywords": [
+        "Ruby",
+        "Ruby on Rails",
+        "RSpec",
+        "Cucumber",
+        "PostgreSQL"
+      ],
+      "description": "First developer to introduce an automated test environment for this web application for officials, referees, and coaches."
+    },
+    {
+      "id": "enterprise-programming-models-in-memory-databases",
+      "entity": "Hasso Plattner Institute",
+      "name": "Enterprise programming models for in-memory databases",
+      "roles": [
+        "Researcher"
+      ],
+      "startDate": "2012-01-31",
+      "endDate": "2012-08-31",
+      "type": "experience",
+      "url": "https://hpi.de/",
+      "keywords": [
+        "Java"
+      ],
+      "description": "Implementation of a business process and web application as specified by SAP as a use case for the HANA in-memory database."
+    }
+  ]
+}
