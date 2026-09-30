@@ -1,0 +1,321 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import de from "../.generated/resume.de.json" with { type: "json" };
+import en from "../.generated/resume.en.json" with { type: "json" };
+import source from "../.generated/resume-source.json" with { type: "json" };
+import { siteUrl } from "../src/lib/config/site.ts";
+import { printLinkLabel } from "../src/lib/data/short-links.ts";
+import type {
+	Resume,
+	ResumeAward,
+	ResumeEducation,
+	ResumeLink,
+	ResumeProfile,
+	ResumeProject,
+} from "../src/lib/types/resume.ts";
+import {
+	createExperienceProjects,
+	createFeaturedEducation,
+	createFeaturedProjects,
+	getFeaturedConfig,
+	resolveFeaturedProjects,
+} from "../src/lib/utils/resume-featured.ts";
+import type { TechExperience } from "../src/lib/utils/tech-experience.ts";
+import { createTechExperience } from "../src/lib/utils/tech-experience.ts";
+
+type Locale = "de" | "en";
+type LocaleConfig = {
+	dateLocale: string;
+	labels: Record<string, string>;
+	redactedClientUrl: string;
+};
+
+const resumesByLocale: Record<Locale, Resume> = {
+	de: de as Resume,
+	en: en as Resume,
+};
+
+type DatedEntry = { startDate?: string; endDate?: string };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, "..");
+const outputDir = path.join(rootDir, "typst", "content");
+
+const localeConfigs: Record<Locale, LocaleConfig> = {
+	de: {
+		dateLocale: "de-DE",
+		labels: {
+			skills: "Technologien",
+			skillsRecent: "Aktuelle Technologien",
+			languages: "Sprachen",
+			education: "Ausbildung",
+			awards: "Auszeichnungen",
+			profiles: "Profile",
+			email: "E-Mail",
+			website: "Website",
+			present: "Heute",
+			selectedProjects: "Ausgewählte aktuelle Projekte",
+			experience: "Berufserfahrung",
+			mentoring: "Mentoring und Lehre",
+			volunteering: "Open Source und Civic Tech",
+			selectedTalks: "Ausgewählte Vorträge",
+			redactedClient: "Name auf Anfrage",
+			press: "Presse:",
+		},
+		redactedClientUrl: `${siteUrl}/de/auf-anfrage/`,
+	},
+	en: {
+		dateLocale: "en-US",
+		labels: {
+			skills: "Technologies",
+			skillsRecent: "Recent Technologies",
+			languages: "Languages",
+			education: "Education",
+			awards: "Awards",
+			profiles: "Profiles",
+			email: "Email",
+			website: "Website",
+			present: "Present",
+			selectedProjects: "Selected Recent Projects",
+			experience: "Experience",
+			mentoring: "Mentoring and Teaching",
+			volunteering: "Open Source and Civic Work",
+			selectedTalks: "Selected Talks",
+			redactedClient: "Name on request",
+			press: "Press:",
+		},
+		redactedClientUrl: `${siteUrl}/en/on-request/`,
+	},
+};
+
+const formatters = Object.fromEntries(
+	Object.entries(localeConfigs).map(([locale, config]) => [
+		locale,
+		new Intl.DateTimeFormat(config.dateLocale, { month: "short", year: "numeric" }),
+	]),
+);
+
+const stripMarkdownLinks = (value: string): string =>
+	value
+		.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+		.replace(/\s+/g, " ")
+		.trim();
+
+const formatDate = (value: string | undefined, locale: Locale): string => {
+	if (!value) {
+		return "";
+	}
+
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) {
+		return value;
+	}
+
+	return formatters[locale].format(date);
+};
+
+const formatDateRange = (
+	{ startDate, endDate }: DatedEntry,
+	locale: Locale,
+	presentLabel: string,
+): string => {
+	const start = formatDate(startDate, locale);
+	const end = endDate ? formatDate(endDate, locale) : presentLabel;
+	return [start, end].filter(Boolean).join(" - ");
+};
+
+const pickProfiles = (profiles: ResumeProfile[] = []): ResumeProfile[] =>
+	profiles.filter((profile) =>
+		["Github", "LinkedIn", "Mastodon", "YouTube"].includes(profile.network),
+	);
+
+const projectRole = (project: ResumeProject): string => project.roles?.join(", ") ?? "";
+
+// entity is already resolved (real or masked) by the time source is loaded -
+// this only adds PDF-specific display rules: a defensive label for the rare
+// case entity is somehow still empty, and swapping the link target to the
+// redacted-client explanation page (the website does the equivalent via a
+// hardcoded relative path in a component; this one needs a full URL since a
+// PDF has no notion of "relative to the current page"). Computed once per
+// project here rather than left to every call site that builds an output
+// shape, since the same project can appear in experience, experienceFull,
+// and one or more technologies[].projects.
+type DisplayProject = Omit<ResumeProject, "entity"> & {
+	entity: string;
+	linkUrl: string | null;
+};
+
+type DisplayTechExperience = TechExperience<DisplayProject>;
+
+const toDisplayProject = (project: ResumeProject, config: LocaleConfig): DisplayProject => ({
+	...project,
+	entity: project.redacted
+		? (project.entity ?? config.labels.redactedClient)
+		: (project.entity ?? ""),
+	// Redacted entries always link the entity heading to the redacted-client
+	// explanation page - any URL that could reveal the client (even
+	// indirectly, e.g. a demo video) is encrypted alongside the entity, so a
+	// redacted project never has its own url to show here.
+	linkUrl: project.redacted ? config.redactedClientUrl : (project.url ?? null),
+});
+
+const createLinkEntries = (links: ResumeLink[] = [], kind?: string) =>
+	links
+		.filter((link) => (kind ? link.kind === kind : true))
+		.map((link) => ({
+			label: link.label,
+			url: link.url,
+			printLabel: printLinkLabel(link.url),
+		}));
+
+const createProjectEntry = (project: DisplayProject, locale: Locale, config: LocaleConfig) => ({
+	name: project.name,
+	entity: project.entity,
+	role: projectRole(project),
+	period: formatDateRange(project, locale, config.labels.present),
+	description: stripMarkdownLinks(project.description ?? ""),
+	keywords: (project.keywords ?? []).slice(0, 6),
+	url: project.linkUrl,
+	printLabel: project.url ? printLinkLabel(project.url) : null,
+	pressLinks: createLinkEntries(project.links, "press"),
+});
+
+const createTalkEntry = (project: DisplayProject, locale: Locale) => ({
+	name: project.name,
+	entity: project.entity,
+	period: formatDate(project.startDate, locale),
+	url: project.url ?? null,
+	printLabel: project.url ? printLinkLabel(project.url) : null,
+});
+
+const createEducationEntry = (entry: ResumeEducation, locale: Locale, config: LocaleConfig) => ({
+	title: [entry.studyType, entry.area].filter(Boolean).join(", "),
+	institution: entry.institution,
+	period: formatDateRange(entry, locale, config.labels.present),
+	score: entry.score ?? "",
+});
+
+const createAwardEntry = (entry: ResumeAward, locale: Locale) => ({
+	title: entry.title,
+	awarder: entry.awarder ?? "",
+	period: formatDate(entry.date, locale),
+	summary: stripMarkdownLinks(entry.summary ?? ""),
+	url: entry.url ?? null,
+});
+
+// No manual curation for the print skills section: the curated PDF gets the
+// 15 most recently used technologies, and the ATS variant gets every
+// technology, both ordered by recency so "what's current" reads first.
+const sortByRecency = (entries: DisplayTechExperience[]): DisplayTechExperience[] =>
+	[...entries].sort(
+		(left, right) =>
+			right.lastUsedMonth - left.lastUsedMonth ||
+			right.totalMonths - left.totalMonths ||
+			right.projectCount - left.projectCount ||
+			left.name.localeCompare(right.name),
+	);
+
+const createTechnologyEntry = (entry: DisplayTechExperience) => ({
+	name: entry.name,
+	duration: entry.label,
+	projectCount: entry.projectCount,
+	lastUsedLabel: entry.lastUsedLabel,
+	projects: entry.projects.map((project) => ({
+		name: project.name,
+		entity: project.entity,
+		url: project.linkUrl,
+		printLabel: project.url ? printLinkLabel(project.url) : null,
+	})),
+});
+
+await fs.mkdir(outputDir, { recursive: true });
+const featured = getFeaturedConfig(source.featured);
+
+for (const [locale, config] of Object.entries(localeConfigs) as [Locale, LocaleConfig][]) {
+	const resume = resumesByLocale[locale];
+	const projects = [...(resume.projects ?? [])]
+		.sort((left, right) => right.startDate.localeCompare(left.startDate))
+		.map((project) => toDisplayProject(project, config));
+	const experienceProjects = createExperienceProjects(projects);
+	const resolvedFeaturedProjects = resolveFeaturedProjects(
+		experienceProjects,
+		featured.projectIds,
+		experienceProjects.slice(0, 6),
+	);
+	const mentoringProjects = projects.filter((project) => project.type === "mentoring");
+	const resolvedMentoringProjects = resolveFeaturedProjects(
+		mentoringProjects,
+		featured.mentoringIds,
+	);
+	const volunteeringProjects = projects.filter((project) => project.type === "volunteering");
+	const resolvedVolunteeringProjects = resolveFeaturedProjects(
+		volunteeringProjects,
+		featured.volunteeringIds,
+	);
+	const featuredTalks = createFeaturedProjects(projects, featured.talkIds).filter(
+		(project) => project.type === "presentation",
+	);
+	const featuredEducation = createFeaturedEducation(resume.education ?? [], featured.educationIds);
+	const techExperience: DisplayTechExperience[] = createTechExperience(projects, locale);
+	const techExperienceByRecency = sortByRecency(techExperience);
+	const curatedTechExperience = techExperienceByRecency.slice(0, 15);
+
+	const payload = {
+		locale,
+		labels: config.labels,
+		basics: {
+			name: resume.basics.name,
+			label: resume.basics.label,
+			summary: resume.basics.summary,
+			email: resume.basics.email,
+			websiteUrl: resume.basics.url,
+			websiteLabel: printLinkLabel(resume.basics.url),
+		},
+		profiles: pickProfiles(resume.basics.profiles).map((profile) => ({
+			network: profile.network,
+			url: profile.url,
+			printLabel: printLinkLabel(profile.url),
+		})),
+		skills: curatedTechExperience.map((entry) => entry.name),
+		technologies: curatedTechExperience.map((entry) => createTechnologyEntry(entry)),
+		technologiesFull: techExperienceByRecency.map((entry) => createTechnologyEntry(entry)),
+		languages: (resume.languages ?? []).map((language) => ({
+			name: language.language,
+			fluency: language.fluency,
+		})),
+		education: (featuredEducation.length > 0 ? featuredEducation : (resume.education ?? [])).map(
+			(entry) => createEducationEntry(entry, locale, config),
+		),
+		educationFull: (resume.education ?? []).map((entry) =>
+			createEducationEntry(entry, locale, config),
+		),
+		awards: (resume.awards ?? []).slice(0, 4).map((entry) => createAwardEntry(entry, locale)),
+		experience: resolvedFeaturedProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		experienceFull: experienceProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		mentoring: resolvedMentoringProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		mentoringFull: mentoringProjects.map((project) => createProjectEntry(project, locale, config)),
+		volunteering: resolvedVolunteeringProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		volunteeringFull: volunteeringProjects.map((project) =>
+			createProjectEntry(project, locale, config),
+		),
+		talks: (featuredTalks.length > 0
+			? featuredTalks.slice(0, 3)
+			: projects.filter((project) => project.type === "presentation").slice(0, 3)
+		).map((project) => createTalkEntry(project, locale)),
+	};
+
+	await fs.writeFile(
+		path.join(outputDir, `${locale}.typ.json`),
+		`${JSON.stringify(payload, null, "\t")}\n`,
+	);
+}

@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container:
+      # Keep this in sync with the @playwright/test version in pnpm-lock.yaml.
+      image: mcr.microsoft.com/playwright:v1.62.1-noble
+      options: --user 1001
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install tools with mise
+        uses: jdx/mise-action@v4
+        with:
+          cache: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # SOPS_AGE_KEY is attached only to steps that actually decrypt
+      # resume.i18n.json, not at job level, so checkout/mise/install never see it.
+      - name: Quick verification
+        run: pnpm check:quick
+        env:
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
+
+      # Builds and serves the full site (including PDFs) to run these tests -
+      # this is also the ./build the Lighthouse step below reuses, so it's
+      # never rebuilt a second time.
+      - name: E2E tests
+        run: pnpm test:e2e
+        env:
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
+
+      # This job runs inside the Playwright container, so Chrome isn't on the
+      # path Lighthouse's launcher checks. Resolve it via Playwright's own API
+      # instead of guessing the image's internal cache layout/revision.
+      - name: Resolve Chromium path for Lighthouse
+        id: chrome
+        run: echo "path=$(node -e "console.log(require('@playwright/test').chromium.executablePath())")" >> "$GITHUB_OUTPUT"
+
+      # No buildCommand/env here: lighthouserc.json's staticDistDir already
+      # points at ./build from the E2E step above, so this neither rebuilds
+      # nor needs the decryption key.
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.path }}

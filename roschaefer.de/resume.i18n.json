@@ -1,0 +1,1335 @@
+{
+	"featured": {
+		"projectIds": [
+			"remote-telescope-platform",
+			"ai-interview-platform",
+			"entrepreneur-social-platform",
+			"automotive-price-comparison",
+			"audience-engagement-platform",
+			"open-source-social-network"
+		],
+		"talkIds": [
+			"find-open-source-contributors-vuejs-berlin",
+			"neo4j-graphql-human-connection",
+			"find-open-source-contributors-35c3",
+			"story-trolley-ember-meets-iot",
+			"rundfunk-mitbestimmen-34c3",
+			"how-to-enjoy-paying-for-public-broadcasting"
+		],
+		"educationIds": [
+			"hpi-msc",
+			"hpi-bsc"
+		],
+		"mentoringIds": [
+			"systems-development-and-framework",
+			"rubies-in-the-woods"
+		],
+		"volunteeringIds": [
+			"roschaefer-portfolio",
+			"rundfunk-mitbestimmen-project"
+		]
+	},
+	"basics": {
+		"name": "Robert Schäfer",
+		"label": {
+			"de": "Full-Stack-Entwickler",
+			"en": "Full Stack Developer"
+		},
+		"image": "https://avatars.githubusercontent.com/u/2110676",
+		"email": "hello@roschaefer.de",
+		"url": "https://roschaefer.de/",
+		"signal": "https://signal.me/#eu/DI0Crg8ktbRKrFyKqMRVJeMO-ecjH3Xa9I6wu8QWkQRUUzGBm-lPwJh0xlrvFb00",
+		"summary": {
+			"de": "Freiberuflicher Full-Stack-Entwickler für remote umgesetzte Webanwendungen, Produktentwicklung und Infrastruktur. Schwerpunkte sind wartbare Software, hohe Testabdeckung und einfache Systeme. Teams profitieren von strukturierten Code Reviews, Pair Programming, technischem Mentoring und langjähriger Open-Source-Erfahrung.",
+			"en": "Freelance full stack developer working remotely across web applications, product engineering, and infrastructure, with additional investment in open source. Focus areas include maintainable software, strong test coverage, and modernizing fragile systems by simplifying delivery and operations while strengthening quality through reliable collaboration, code reviews, pair programming, and technical mentoring."
+		},
+		"location": {
+			"city": {
+				"de": "Köln",
+				"en": "Cologne"
+			},
+			"region": "NRW",
+			"countryCode": "DE"
+		},
+		"profiles": [
+			{
+				"network": "LinkedIn",
+				"username": "Robert Schäfer",
+				"url": "https://www.linkedin.com/in/roschaefer/"
+			},
+			{
+				"id": "11444f76-fbdb-4461-8f30-54bfbcf452df",
+				"url": "https://github.com/roschaefer",
+				"network": "Github",
+				"username": "roschaefer"
+			},
+			{
+				"id": "19f445bb-b77e-4a45-9be3-15d905a99e6e",
+				"url": "https://www.youtube.com/channel/UCyrLYmvmLzWxnPHxt4n5aPw",
+				"network": "YouTube",
+				"username": "Robert Schäfer"
+			},
+			{
+				"id": "eefa7b2c-5246-41d1-a344-5ee600f55d92",
+				"url": "https://twitter.com/roschaeferDE",
+				"network": "Twitter",
+				"username": "roschaeferDE"
+			},
+			{
+				"id": "mastodon-roschaefer",
+				"url": "https://mastodon.social/@roschaefer",
+				"network": "Mastodon",
+				"username": "roschaefer"
+			},
+			{
+				"id": "fcb53294-762d-4d77-881b-e379bf574407",
+				"url": "https://www.codementor.io/@roschaefer",
+				"network": "CodeMentor",
+				"username": "roschaefer"
+			}
+		]
+	},
+	"awards": [
+		{
+			"title": {
+				"de": "Grimme Online Award (nominiert)",
+				"en": "Grimme Online Award (nominated)"
+			},
+			"date": "2020-06-25",
+			"summary": {
+				"de": "Sensorstories: Bienen",
+				"en": "Bee sensor stories"
+			},
+			"awarder": "Grimme-Institut",
+			"url": "https://www.grimme-online-award.de/archiv/2020/nominierte/n/d/bienenlive-folge-den-koeniginnen"
+		},
+		{
+			"title": {
+				"de": "Deutscher Reporterpreis 2017 (nominiert)",
+				"en": "German Reporter Award 2017 (nominated)"
+			},
+			"date": "2017-12-11",
+			"summary": {
+				"de": "Sensorstories: Milchkühe",
+				"en": "Dairy cow sensor stories"
+			},
+			"awarder": "Reporter-Forum e. V.",
+			"url": "https://archiv.reporter-forum.de/index.php%3Fid=231.html#c2904"
+		},
+		{
+			"title": {
+				"de": "Deutscher Reporterpreis 2019",
+				"en": "German Reporter Award 2019"
+			},
+			"date": "2019-12-02",
+			"summary": {
+				"de": "Sensorstories: Bienen",
+				"en": "Bee sensor stories"
+			},
+			"awarder": "Reporter-Forum e. V.",
+			"url": "https://de.wikipedia.org/wiki/Deutscher_Reporter:innenpreis#Deutscher_Reporterpreis_2019"
+		},
+		{
+			"title": {
+				"de": "Gewinner des MIZ Formatfestivals 2015",
+				"en": "Winner of MIZ Formatfestival 2015"
+			},
+			"summary": "#ursuppe",
+			"date": "2015-11-12",
+			"awarder": "MIZ Babelsberg",
+			"url": "https://www.mabb.de/uber-die-mabb/aktuelles/veranstaltungen-details/miz-formatfestival-2015-preisverleihung-im-miz-babelsberg"
+		}
+	],
+	"languages": [
+		{
+			"language": {
+				"de": "Deutsch",
+				"en": "German"
+			},
+			"fluency": {
+				"de": "Muttersprache",
+				"en": "Native Speaker"
+			}
+		},
+		{
+			"language": {
+				"de": "Englisch",
+				"en": "English"
+			},
+			"fluency": {
+				"de": "Verhandlungssicher",
+				"en": "Business Fluent"
+			}
+		},
+		{
+			"language": {
+				"de": "Spanisch",
+				"en": "Spanish"
+			},
+			"fluency": {
+				"de": "Fließend",
+				"en": "Fluent"
+			}
+		}
+	],
+	"education": [
+		{
+			"id": "hpi-msc",
+			"institution": "Hasso Plattner Institute",
+			"url": "https://hpi.de/",
+			"area": "IT-Systems Engineering",
+			"studyType": "Master of Science",
+			"startDate": "2014-10-01",
+			"endDate": "2018-03-31",
+			"score": "1.6",
+			"courses": []
+		},
+		{
+			"id": "hpi-bsc",
+			"institution": "Hasso Plattner Institute",
+			"url": "https://hpi.de/",
+			"area": "IT-Systems Engineering",
+			"studyType": "Bachelor of Science",
+			"startDate": "2009-09-01",
+			"endDate": "2012-07-01",
+			"score": "1.7",
+			"courses": []
+		},
+		{
+			"id": "gymnasium-lohmar-abitur",
+			"institution": "Gymnasium Lohmar",
+			"area": "",
+			"studyType": "Abitur",
+			"startDate": "1999-08-01",
+			"endDate": "2008-06-30",
+			"courses": []
+		}
+	],
+	"projects": [
+		{
+			"id": "roschaefer-portfolio",
+			"name": "roschaefer.de",
+			"entity": "Robert Schäfer",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung und Design",
+					"en": "Design and Development"
+				}
+			],
+			"startDate": "2026-03-16",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind",
+				"Paraglide",
+				"Typst",
+				"Vitest",
+				"Playwright",
+				"Netlify"
+			],
+			"description": {
+				"de": "Persönliche Portfolio-Website und druckoptimierter Lebenslauf aus einer gemeinsamen Datenquelle. Das Projekt verbindet eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst und standardkonformes `resume.json` zu einer zugänglichen, datensparsamen Darstellung für Web und Druck.",
+				"en": "Personal portfolio website and print-optimized resume built from a shared content source. The project combines a bilingual SvelteKit frontend, PDF generation with Typst, and standards-compliant `resume.json` into an accessible, privacy-conscious experience for web and print."
+			},
+			"url": "https://roschaefer.de/",
+			"type": "volunteering"
+		},
+		{
+			"id": "hledger-document-check",
+			"name": "hledger-document-check",
+			"entity": "Robert Schäfer",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-03-19",
+			"keywords": [
+				"Rust",
+				"hledger",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für die Belegprüfung mit hledger. Es gleicht buchungspflichtige Transaktionen mit Belegen auf der Festplatte ab, erkennt fehlende oder ungebuchte Dokumente, prüft die Plausibilität von Beträgen und erzeugt ein abgeleitetes Journal für die Belegansicht in Fava.",
+				"en": "A Plain Text Accounting command-line tool for checking documents with hledger. It reconciles transactions that require documentation with files on disk, detects missing or unbooked documents, checks amount plausibility, and generates an enriched journal for Fava's document view."
+			},
+			"url": "https://github.com/roschaefer/hledger-document-check",
+			"type": "volunteering"
+		},
+		{
+			"id": "hledger-elster",
+			"name": "hledger-elster",
+			"entity": "Robert Schäfer",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-03-19",
+			"keywords": [
+				"Rust",
+				"hledger",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für hledger, um die deutsche Steuererklärung zu automatisieren. Es liest Umsätze aus dem Journal und erzeugt daraus nachvollziehbare Exporte für die entsprechenden Formulare auf ELSTER.de. Die Exporte liegen im CSV- und XLSX-Format vor und enthalten Herleitungen zur Nachprüfung durch die Steuerbehörden.",
+				"en": "A Plain Text Accounting command-line tool for hledger that automates German tax filing. It reads transactions from the journal and generates traceable exports for the corresponding forms on ELSTER.de. The exports are available in CSV and XLSX format and include derivations that tax authorities can audit."
+			},
+			"url": "https://github.com/roschaefer/hledger-elster",
+			"type": "volunteering"
+		},
+		{
+			"id": "ai-interview-platform",
+			"name": {
+				"de": "KI-Interviewplattform",
+				"en": "AI interview platform"
+			},
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2026-03-23",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind",
+				"Better Auth",
+				"Drizzle ORM",
+				"Neon DB",
+				"PostgreSQL",
+				"Playwright",
+				"Vitest",
+				"Netlify",
+				"Sentry",
+				"Serverless",
+				"Infisical",
+				"ElevenLabs"
+			],
+			"description": {
+				"de": "Diese SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung ersetzt eine fragile, auf Airtable, Voiceflow und weitere eigene Dienste verteilte Infrastruktur durch eine einheitliche serverlose Anwendung. Die Nutzung der integrierten Workflows von ElevenLabs AI Agents senkt Wartungsaufwand und Komplexität deutlich und verbessert die Antwortzeit des Telefonagenten um mehrere Sekunden, was für eine gute Nutzererfahrung entscheidend ist.",
+				"en": "This SvelteKit application for AI-assisted interviews and editorial publishing replaces brittle infrastructure spread across Airtable, Voiceflow, and additional custom services with a single serverless application. Using the built-in workflows of ElevenLabs AI Agents significantly reduces maintenance overhead and complexity while improving the phone agent's response time by several seconds, which is crucial for a good user experience."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:SNhET44YI9q9sSQcpNmjYEE=,iv:p+GggAMwCKDpubrs9Y7liBwHS2Jo0rlMvq/RvgeRgCA=,tag:XZ15Wu7xHzXPGumyE3Nf4g==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ypykDECVJtKwJ9iumPXaXg0XAfCW9Cho/VTjYZOv//CWKDP3i4CBHmFysYHebQ==,iv:3lMYJN/E3Fuma/JhyluNTq5c0lub3p3jlqEi0nGGLIc=,tag:Lhs6sn5dw/WhyLvE20RF/w==,type:str]"
+		},
+		{
+			"id": "remote-telescope-platform",
+			"name": {
+				"de": "Remote-Sternwarte",
+				"en": "Remote observatory"
+			},
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2026-03-25",
+			"keywords": [
+				"TypeScript",
+				"Nuxt",
+				"Vue",
+				"Fly.io",
+				"Docker",
+				"AWS",
+				"Terraform",
+				"Playwright",
+				"Cucumber",
+				"Tailwind",
+				"NINA",
+				"Tailscale"
+			],
+			"description": {
+				"de": "Mit dieser Plattform zur Fernsteuerung von Teleskopen über die Astrofotografie-Software NINA wird Astrofotografie für alle zugänglich, ohne eigenes Equipment oder Fachwissen. Nutzerinnen und Nutzer wählen ein Himmelsobjekt und buchen Beobachtungszeit; die Anwendung überträgt Aufnahmesequenzen per Tailscale an NINA, die diese in der Nacht autonom ausführt und die Ergebnisse bereitstellt. Die zentrale Herausforderung besteht darin, eine primär interaktive Windows-Software in eine vollständig autonome Pipeline zu überführen.",
+				"en": "With this platform for remotely controlling telescopes through the astrophotography software NINA, deep-sky imaging gets accessible without owning expensive hardware or the expertise to operate it. Users select an astronomical target and book observation time; the application sends imaging sequences to NINA via Tailscale, which executes them overnight and delivers the results. The core challenge is turning a Windows-only, inherently interactive application into a fully autonomous pipeline."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:1OjXKegxjXmE+jK7I1or2/SigDYf,iv:x7MCTpka06ed/DxgnmAGEzcLD1QdPNnGJ7CPd5wX68Y=,tag:HXMQiLZpkImz7fMjJSq8HA==,type:str]"
+		},
+		{
+			"id": "entrepreneur-social-platform",
+			"name": {
+				"de": "Gründungsnetzwerk",
+				"en": "Founder network"
+			},
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2024-06-21",
+			"endDate": "2025-06-09",
+			"keywords": [
+				"TypeScript",
+				"Docker",
+				"Vue",
+				"Vike",
+				"Vuetify",
+				"Jest",
+				"Authentik",
+				"Apollo GraphQL",
+				"Terraform",
+				"Helm",
+				"Kubernetes",
+				"Hetzner",
+				"PostgreSQL"
+			],
+			"description": {
+				"de": "Für diese freie und quelloffene Social-Media-Plattform für Unternehmerinnen und Unternehmer wurde die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform ermöglichte produktionsnahe Testumgebungen für eigene Branches aller Teammitglieder, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
+				"en": "For this free and open-source social platform for entrepreneurs, the delivery and infrastructure architecture was fundamentally reworked after deployments had previously been performed manually via a remote desktop on the target server, regularly causing downtime. Moving the project to a self-managed Kubernetes setup on Hetzner with Terraform gave every developer production-like test environments for their own branches while keeping operating costs extremely low at under 20 euros per month."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:RWsSPQ==,iv:FY0IQBeXQFaOHahgB4/w5DHKeg9f6v4ScNVpWGfva0E=,tag:l0h5g2P8WN385KpvBXqkDg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:9QwRC/6a//4m5wnuvmwTwWZ4uaRK8yHk,iv:C4f0ITLBXi80PlDpOH6P6ilTLCtVmfzYKX+gpobxGBU=,tag:Dcm0R0411BR7wwf5345iHw==,type:str]"
+		},
+		{
+			"id": "audience-engagement-platform",
+			"name": {
+				"de": "Newsroom-Dialog",
+				"en": "Newsroom dialog"
+			},
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2020-03-30",
+			"endDate": "2025-04-16",
+			"keywords": [
+				"Ruby",
+				"TypeScript",
+				"Ruby on Rails",
+				"RSpec",
+				"Stimulus",
+				"Docker",
+				"Ansible",
+				"Digital Ocean",
+				"Sentry",
+				"Postmark"
+			],
+			"description": {
+				"de": "Für diese Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus entstand eine Ruby-on-Rails-Anwendung, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
+				"en": "For this platform for audience engagement and crowd-based reporting in journalism, the Ruby on Rails application integrates messengers such as WhatsApp, Telegram, Signal, Threema, and email, allowing editorial teams to reach people through channels they already use. Its core differentiator is a direct 1:1 conversation between journalists and their audience, turning a newsroom's own community into a valuable asset for reporting and research."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:hsX6keEmzrEOprq56/g/7v4=,iv:l+T9KN0scUXvHpDbPCnavnOb8WI1TfrTXlIw+a8iAVg=,tag:rAUDS8UFwV9bYcGdzMqXNQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:1QMb0ZkLcr1SKVfqgQXC/7m9rf2kYiLmf4M8Q7rlbEfrY1db4388iac+sHhW2g==,iv:zAuuGpeIoqgPxtLRQ+Ar7CcutBzap01n/Viwlvbe83s=,tag:fBrqqRHBoLOxlSSgmS6nmg==,type:str]"
+		},
+		{
+			"id": "automotive-price-comparison",
+			"name": {
+				"de": "Kfz-Preisvergleich",
+				"en": "Auto parts price comparison"
+			},
+			"codeVisibility": "closed-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2021-06-30",
+			"endDate": "2023-09-01",
+			"keywords": [
+				"TypeScript",
+				"Docker",
+				"Vue",
+				"Tailwind",
+				"Jest",
+				"Testing-Library",
+				"Auth0",
+				"Apollo GraphQL",
+				"Hasura",
+				"Google Cloud",
+				"Vercel"
+			],
+			"description": {
+				"de": "Bei dieser Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können, wurde eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
+				"en": "For this software for the automotive aftermarket that helps repair shops compare prices across wholesalers, an Electron desktop application was migrated to a cloud-based platform on Google Cloud, Auth0, and Hasura. This significantly improved software quality and increased the number of connected wholesalers from 3 to 240."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:fFt0czt7OBqrKDU=,iv:FaqCWWNlK7VAQxXCcCEANX2R/Zf4ApS5N6iCgGnED5E=,tag:yZyU92PBf/dNsft2WKcXlw==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:WVrq5ARLlazLoR/SqlRz1cF+MWi60Q==,iv:FtKlv1XyOodRZnH4osFPcPzZ1IKiElWZcagPEYzCCL0=,tag:AwZlYpUFJbixZ3i1rJJzqg==,type:str]"
+		},
+		{
+			"id": "retail-website-relaunch",
+			"name": {
+				"de": "SvelteKit-Relaunch",
+				"en": "SvelteKit relaunch"
+			},
+			"codeVisibility": "closed-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2021-12-09",
+			"endDate": "2023-06-28",
+			"keywords": [
+				"TypeScript",
+				"Svelte",
+				"SvelteKit",
+				"HyGraph",
+				"Netlify",
+				"Serverless"
+			],
+			"description": {
+				"de": "Website-Relaunch für einen Einzelhandelskunden mit SvelteKit und Hygraph, statisch ausgerollt auf Netlify. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegbarkeit.",
+				"en": "Rebuilt a retail client's website with SvelteKit and Hygraph and deployed it statically on Netlify. Server-side logic runs in serverless functions, and content is loaded from the headless CMS via GraphQL. The relaunch improved performance, SEO, and maintainability."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:csm0wl6LCfeD2TMj+pYxKuw=,iv:X2F4zXQZXxcahWK17L32ebc4rIx+6wPcIQOICOEIfqg=,tag:a8nlnYGcyEp1qpjBz8HMXg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ihSnEzUfd/k4dKdGiuCOqSg2WNG6m/27ZGOgsZNcIw==,iv:I5WIU8qahF4fPM3UJIhDQtgjZJ1/dE+t+yis6IrFppE=,tag:foluaaTCYY/JBjbpszAFCw==,type:str]"
+		},
+		{
+			"id": "course-booking-system",
+			"name": {
+				"de": "Buchungssystem für Kursanbieter",
+				"en": "Booking system for course providers"
+			},
+			"codeVisibility": "closed-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2020-08-11",
+			"endDate": "2023-05-02",
+			"keywords": [
+				"TypeScript",
+				"Netlify",
+				"Vue",
+				"Nuxt",
+				"HyGraph"
+			],
+			"description": {
+				"de": "Individuelles Buchungssystem für die Nähkurse eines Kursanbieters, integriert in die bestehende Website. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
+				"en": "Built a custom booking system for a course provider's sewing classes and integrated it into their website. Courses for adults, teens, and children can be managed online, including registration and waiting lists."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:OOxaKclTmqJR2wbjHy7myro=,iv:+q9bhFHfhsEGVztGb9Cjq0KE0QtBGrBIIEtqhtj1jtU=,tag:m7gNzMVKuurppEAAiDwvbQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:SqGBgKHK3PO5hbbmcHTBmgBjqEjZyvXV3A==,iv:uOzR6xXVnSoLx+Pk0MehKj9v4THaawoNHxQZpcxWYXk=,tag:30KR0KuTBfrmq7EsPpnggg==,type:str]"
+		},
+		{
+			"id": "continuing-education-booking-system",
+			"name": {
+				"de": "Buchungssystem für Weiterbildungsanbieter",
+				"en": "Booking system for continuing education providers"
+			},
+			"codeVisibility": "closed-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2021-05-12",
+			"endDate": "2022-12-10",
+			"keywords": [
+				"TypeScript",
+				"Netlify",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind"
+			],
+			"description": {
+				"de": "Individuelles Buchungssystem für einen Anbieter berufsbegleitender Weiterbildungen. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
+				"en": "Built a custom booking system for a continuing education provider. The solution includes email confirmations, waiting lists, and an implementation based on SvelteKit with Hygraph as the headless CMS."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:d+vVNOX+vOfAE3xyEeHiVss=,iv:o0Zeg//XVyZishVc2Rhg5fRdfuNSr+t3/gS1chOlwY4=,tag:dYwypdxhY2Mg6f6oWWSjvw==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:8A9jLNLyQxpDC2yb53nNKMD66Vdginc=,iv:wTx3RBrQG6jfrnGcm+kj86B/xglhYs930kMNjcVyeGU=,tag:NXwLZ1GiK+6Piy9jh4NFvA==,type:str]"
+		},
+		{
+			"id": "holiday-apartment-booking-site",
+			"name": {
+				"de": "Buchungswebsite für eine Ferienwohnung",
+				"en": "Booking website for a holiday apartment"
+			},
+			"codeVisibility": "closed-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2022-01-28",
+			"endDate": "2022-08-09",
+			"keywords": [
+				"TypeScript",
+				"Netlify",
+				"Svelte",
+				"SvelteKit",
+				"Tailwind"
+			],
+			"description": {
+				"de": "Buchungswebsite mit Kalenderintegration für eine Ferienwohnung auf Norderney. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
+				"en": "Built a booking website with calendar integration for a holiday apartment on Norderney. Day-by-day availability is maintained in Google Calendar and synchronized to the site via Google APIs."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:56/AikTQVGtOqBFCfebeG38=,iv:8uwI4VfbDyhrJLapHKdm8+x/HjsXodQSXv2qqMzcgbw=,tag:/VidS6LHJvBOaxI9S97ksw==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:2N/nX7hi9MlbY/Y5Jdq1IBQcSQxRdbE7D4N1hjs=,iv:moi4cY2Os8/15MAzi9M1r17DIgDpO9ASXY/PL9rohtY=,tag:TRHCgOQsCFz6RWJOPLg+dw==,type:str]"
+		},
+		{
+			"id": "systems-development-and-framework",
+			"entity": "Hochschule für Technik und Wirtschaft Berlin",
+			"name": "Systems-Development and Framework",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Lehrbeauftragter",
+					"en": "University Lecturer"
+				}
+			],
+			"startDate": "2019-10-31",
+			"endDate": "2021-03-31",
+			"keywords": [
+				"JavaScript",
+				"Vue",
+				"Apollo GraphQL",
+				"Neo4J",
+				"Nuxt",
+				"Vuetify",
+				"Tailwind"
+			],
+			"description": {
+				"de": "Vollständige Leitung einer Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
+				"en": "Owned a master's course on full stack development with around 40 students, including curriculum, teaching, and grading. Topics included functional programming, advanced Git, test-driven development, and code reviews on GitHub. All lectures are publicly available on YouTube."
+			},
+			"url": "https://www.youtube.com/watch?v=-cuzwDjdowo&list=PL1CiawkXA01PO_39DnKSrxWw99mU7mwWs",
+			"location": "Berlin, Germany",
+			"type": "mentoring"
+		},
+		{
+			"id": "open-source-social-network",
+			"name": {
+				"de": "FOSS Soziales Netzwerk",
+				"en": "FOSS social network"
+			},
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Technischer Leiter",
+					"en": "Technical Lead"
+				}
+			],
+			"startDate": "2018-11-30",
+			"endDate": "2020-04-30",
+			"keywords": [
+				"JavaScript",
+				"Jest",
+				"Vue",
+				"Nuxt",
+				"Storybook",
+				"Cypress",
+				"Apollo GraphQL",
+				"Neo4J",
+				"Docker",
+				"Digital Ocean",
+				"Kubernetes"
+			],
+			"description": {
+				"de": "Technical-Lead-Arbeit an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb für ein gemeinschaftlich entwickeltes Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; neue Mitwirkende wurden über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und der Großteil der Beiträge reviewed. Neo4J lief produktiv als Primärdatenbank, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
+				"en": "Technical Lead work on product architecture, GraphQL APIs, production use of Neo4J, and Kubernetes-based operations for a community-built open-source social network that offers communities a privacy-friendly alternative to large platforms. The project grew to around 80 code contributors on GitHub; newcomers were onboarded through GitHub, Discord, and online pair programming, mentored directly, and most contributions were reviewed. Neo4J ran in production as the primary database to model the network's social graph directly."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:Nl4Ua1hbJXKVgqstCPL7+fObJfruwg==,iv:2zJAEKIMpF6QcYziEQ2/M5D5cPMywAwEFF20QAVT/3g=,tag:ZoPqOE3Y+2n1tL10rbjGSQ==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:Nm4Pux8pFbuepI2dnA4N6kx3/Kvf/4Yqmn1ZewDEPtRnC22+cqxsZhJu2TyDACZ85ZhJrI1tnaU=,iv:3ZFTkCMAQ647dBDEO3e4CKKG5Pnh016+WGtRniTyWdU=,tag:0Bh6j+4a7UqEkgxuOCLiFg==,type:str]"
+		},
+		{
+			"id": "foss-social-network-infra-migration",
+			"name": {
+				"de": "FOSS Soziales Netzwerk",
+				"en": "FOSS social network"
+			},
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Infrastruktur-Ingenieur",
+					"en": "Infrastructure Engineer"
+				}
+			],
+			"startDate": "2024-10-01",
+			"endDate": "2025-11-30",
+			"keywords": [
+				"TypeScript",
+				"Vue",
+				"Nuxt",
+				"Terraform",
+				"sops",
+				"Kubernetes",
+				"Hetzner",
+				"S3",
+				"Digital Ocean",
+				"Docker"
+			],
+			"description": {
+				"de": "Migration der Assets von einem Kubernetes-Volume zu S3-kompatiblem Object Storage, um Komplexität und Kosten des Deployments zu senken. Die Infrastruktur wurde mit Terraform und sops neu aufgesetzt; der Wechsel von einem verwalteten Kubernetes-Cluster auf Digital Ocean zu selbst betriebenem Kubernetes-Cluster auf Hetzner senkte die monatlichen Kosten um 80 %.",
+				"en": "Migrated assets from a Kubernetes volume to S3-compatible object storage to reduce deployment complexity and cost. Rebuilt the infrastructure with Terraform and sops, and moved from a managed Kubernetes cluster on Digital Ocean to a self-hosted Kubernetes cluster on Hetzner, cutting monthly costs by 80%."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:pqghmjTrA/o5bUyavo3eQA==,iv:rQ9Zoyr1shqrKEgCyInv6jzVflJponHoHIwVHS6+RZ4=,tag:UHuGaH+5ZbXm/Ge2P4nmQA==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:cUhlgJIne+kjoxbtjHmtNtzSNabMb6iARdQitNvI9LpbqpZl/O9TSB5AoIbwwNdo6NOQ6+kZZtY=,iv:rM1IFjzaU0fdH6qdKBEZex/OdVKY8ipRJ9Ky9veNIkk=,tag:I1dYt50Y00ZqP7D1HlclXA==,type:str]"
+		},
+		{
+			"id": "find-open-source-contributors-vuejs-berlin",
+			"name": "Find open-source contributors in online learner communities",
+			"entity": "Vue.js Berlin Meetup",
+			"startDate": "2020-01-14",
+			"endDate": "2020-01-14",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=p5iMjfVCXBY",
+			"type": "presentation"
+		},
+		{
+			"id": "neo4j-graphql-human-connection",
+			"name": "Using Neo4J and GraphQL to build Human Connection",
+			"entity": "Neo4J Online Meetup",
+			"startDate": "2019-06-20",
+			"endDate": "2019-06-20",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=kGwGX6R70H4",
+			"type": "presentation"
+		},
+		{
+			"id": "sensor-storytelling-bees",
+			"name": {
+				"de": "Sensorstories: Bienen",
+				"en": "Bee sensor stories"
+			},
+			"codeVisibility": "closed-source",
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2019-03-31",
+			"endDate": "2019-05-31",
+			"keywords": [
+				"Ruby",
+				"Ruby on Rails",
+				"RSpec",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Aufbauend auf einem früheren journalistischen Sensor-Projekt wurde die Plattform für ein neues Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
+				"en": "Building on an earlier journalistic sensor-data project, the platform was reused and extended for a new format. Reports were generated automatically from sensor data collected from three beehives. The project was nominated for the Grimme Online Award and won the German Reporter Award."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:qYQ7xnEqut0KeEl0l7rrdb4=,iv:y7/nTzAtB87visCUQR3w0iczssbVXkulmRedbl0NLas=,tag:fyiOCFQzBH1cDT0iaDcazg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:5TPCQC1YtjHswaVfUJ6VbherFRnU83/z5sCRb8f7fm/2HS+mWqDbEQCkWFvTPGP174mYRJ0zqMPJdVghzGU3K18T,iv:5uhIrxYhA00rJWXuvqQ4LeBEqN4M3UXve5zjws2V9Eo=,tag:d7rFeR+hq5t2DlqYVDiWPw==,type:str]"
+		},
+		{
+			"id": "rundfunk-mitbestimmen-project",
+			"name": "Rundfunk mitbestimmen",
+			"entity": "Rundfunk mitbestimmen e.V.",
+			"roles": [
+				{
+					"de": "Gründer",
+					"en": "Founder"
+				}
+			],
+			"startDate": "2016-08-31",
+			"endDate": "2019-03-31",
+			"keywords": [
+				"Ember",
+				"Ruby on Rails",
+				"Auth0",
+				"D3",
+				"Highcharts",
+				"Uberspace",
+				"PostgreSQL"
+			],
+			"description": {
+				"de": "\"Rundfunk mitbestimmen\" ist ein Civic-Tech-Projekt zur symbolischen Mitbestimmung über die Verwendung des Rundfunkbeitrags. Nutzerinnen und Nutzer können Beiträge einzelnen Programmen zuordnen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a civic tech project that lets people symbolically influence how public broadcasting fees are allocated. Users can assign their contributions to individual programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk, and RBB."
+			},
+			"links": [
+				{
+					"label": "Zeit Online",
+					"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+					"kind": "press"
+				},
+				{
+					"label": "Netzpolitik.org",
+					"url": "https://netzpolitik.org/2017/neues-aus-dem-fernsehrat-6-ein-gespraech-ueber-rundfunk-mitbestimmen-de/",
+					"kind": "press"
+				},
+				{
+					"label": "Deutschlandfunk",
+					"url": "https://www.deutschlandfunk.de/oeffentlich-rechtlicher-rundfunk-mehr-direkte-demokratie-100.html",
+					"kind": "press"
+				},
+				{
+					"label": "RBB",
+					"url": "https://www.wwwagner.tv/?p=36200",
+					"kind": "press"
+				}
+			],
+			"type": "volunteering"
+		},
+		{
+			"id": "find-open-source-contributors-35c3",
+			"name": "Find open-source contributors in online learner communities",
+			"entity": "35th Chaos Communication Congress",
+			"startDate": "2018-12-30",
+			"endDate": "2018-12-30",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://media.ccc.de/v/35c3-9568-lightning_talks_day_4#t=1147",
+			"type": "presentation"
+		},
+		{
+			"id": "human-connection-35c3",
+			"name": "Human Connection",
+			"entity": "35th Chaos Communication Congress",
+			"startDate": "2018-12-29",
+			"endDate": "2018-12-29",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://media.ccc.de/v/35c3-9567-lightning_talks_day_3#t=5180",
+			"type": "presentation"
+		},
+		{
+			"id": "rubies-in-the-woods",
+			"name": "Rubies in the woods",
+			"entity": "MIZ Babelsberg",
+			"roles": [
+				{
+					"de": "Programmier-Mentor",
+					"en": "Programming Mentor"
+				}
+			],
+			"startDate": "2015-09-30",
+			"endDate": "2018-11-30",
+			"keywords": [
+				"Ruby"
+			],
+			"description": {
+				"de": "Mentoring einer einsteigerfreundlichen Programmiergruppe mit wöchentlichen Treffen und Fokus auf Diversität und niedrigschwelligen Einstieg ins Programmieren.",
+				"en": "Mentored a beginner-friendly programming group through weekly sessions focused on diversity and low-barrier access to learning how to code."
+			},
+			"url": "https://www.facebook.com/watch?v=1342132595875337",
+			"location": "Potsdam, Brandenburg, Germany",
+			"type": "mentoring"
+		},
+		{
+			"id": "custom-cms-platform",
+			"name": {
+				"de": "Individuelle CMS-Entwicklung",
+				"en": "Custom CMS platform"
+			},
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2018-04-30",
+			"endDate": "2018-06-30",
+			"keywords": [
+				"Wordpress",
+				"PHP",
+				"Docker"
+			],
+			"description": {
+				"de": "Individuelle CMS-Entwicklung für die Unternehmenswebsite mit Schwerpunkt auf Pflegebarkeit und Suchmaschinenoptimierung.",
+				"en": "Custom CMS development for the company website with a focus on maintainability and search engine optimization."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:FdvT5n65RCXGzCkZXw==,iv:VUh3/Ap52Dtw8SCET1zZYJtWphpRdAsoMOKesswbPC8=,tag:w64nsGSzkncp+Qxi8aeXSg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:V/m+Xno2xmokkKG/krnjbKVahdM/YCk=,iv:zPoPoiX3YsVrXYJwGw56Acqu411Nwzc6IGRDQGM7FtQ=,tag:Prh1oLJrSba1S2enltYg9A==,type:str]"
+		},
+		{
+			"id": "informatikradar-1",
+			"name": "Informatikradar #1",
+			"entity": "Gesellschaft für Informatik",
+			"startDate": "2018-05-04",
+			"endDate": "2018-05-04",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=fzTmJBo4R5A",
+			"type": "presentation"
+		},
+		{
+			"id": "smart-mirror-prototype",
+			"name": {
+				"de": "Smarter Badezimmerspiegel",
+				"en": "Smart bathroom mirror"
+			},
+			"roles": [
+				{
+					"de": "IoT-Entwickler",
+					"en": "IoT Developer"
+				}
+			],
+			"startDate": "2018-01-01",
+			"endDate": "2018-01-31",
+			"keywords": [
+				"Python",
+				"JavaScript",
+				"MQTT"
+			],
+			"description": {
+				"de": "Schneller IoT-Prototyp eines smarten Badezimmerspiegels und Schranks auf Basis von Raspberry Pis, Arduinos und MQTT.",
+				"en": "Rapid IoT prototype of a smart bathroom mirror and cabinet built with Raspberry Pis, Arduinos, and MQTT."
+			},
+			"location": "Lunenburg, Lower Saxony, Germany",
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:tDPMg1mjr/hJ4MwLk5wfQwQ=,iv:JVJT/rbl9uHnj3f5mXkMY2wetCo3opm9o+AEJMtElwk=,tag:bWEos6mqzgPZROpTI2Rz8w==,type:str]"
+		},
+		{
+			"id": "story-trolley-ember-meets-iot",
+			"name": "Story-Trolley: Ember meets the IoT",
+			"description": {
+				"de": "Wie man mit Ember einen smarten Einkaufswagen baut.",
+				"en": "How to use Ember to build a smart shopping cart."
+			},
+			"entity": "Ember.js Meetup Berlin",
+			"startDate": "2018-01-19",
+			"endDate": "2018-01-19",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=oWNqLev23AQ&list=PL1CiawkXA01NeLHG2QNHmtACrb_brDodm",
+			"type": "presentation"
+		},
+		{
+			"id": "rundfunk-mitbestimmen-34c3",
+			"name": "Rundfunk mitbestimmen",
+			"entity": "34th Chaos Communication Congress",
+			"startDate": "2017-12-30",
+			"endDate": "2017-12-30",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://media.ccc.de/v/34c3-9258-lightning_talks_day_4#t=1352",
+			"type": "presentation",
+			"description": {
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			}
+		},
+		{
+			"id": "gez-scrap-it-or-pay-it",
+			"name": "GEZ - scrap it or pay it?",
+			"entity": "University Meetup Group \"Bremer Gesellschaft\"",
+			"startDate": "2017-12-19",
+			"endDate": "2017-12-19",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.facebook.com/events/732304050294246/",
+			"type": "presentation"
+		},
+		{
+			"id": "sensor-storytelling-dairy-cows",
+			"name": {
+				"de": "Sensorstories: Milchkühe",
+				"en": "Dairy cow sensor stories"
+			},
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2016-05-31",
+			"endDate": "2017-10-31",
+			"keywords": [
+				"Ruby on Rails",
+				"Ruby",
+				"RSpec",
+				"Cucumber"
+			],
+			"description": {
+				"de": "Für WDR und Spiegel Online entstand ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
+				"en": "For WDR and Spiegel Online, a journalistic format generated reports automatically from sensor data collected from three dairy cows. The project received broad media attention with more than 63 reports and features."
+			},
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:0/Gh7BX5va//9yhLjyLmbNY=,iv:U+6I34nYRvMTzLQ55nHBpiNnjuj6hPo54+gbkN2JkGA=,tag:Zq6ecU7CFTr4UZ069SxNzw==,type:str]",
+			"links": [
+				{
+					"label": "Spiegel Online",
+					"url": "https://www.spiegel.de/netzwelt/web/superkuehe-sensorjournalismus-mit-milchkuehen-a-1165241.html",
+					"kind": "press"
+				}
+			],
+			"type": "experience"
+		},
+		{
+			"id": "coding-in-the-woods",
+			"name": "Coding In The Woods",
+			"description": {
+				"de": "Einführung ins Programmieren mit Rails.",
+				"en": "Introduction to Coding with Rails."
+			},
+			"entity": "Codemotion Berlin 2017",
+			"startDate": "2017-10-12",
+			"endDate": "2017-10-12",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://berlin2017.codemotionworld.com/speaker/3623/",
+			"type": "presentation"
+		},
+		{
+			"id": "how-to-enjoy-paying-for-public-broadcasting",
+			"name": "How to enjoy paying for public broadcasting",
+			"description": {
+				"de": "Ask-me-anything-Session auf dem Festival für junge Visionäre.",
+				"en": "Ask-me-anything session at the festival for young visionaries."
+			},
+			"entity": "Z2X Festival - Die Zeit",
+			"startDate": "2017-09-04",
+			"endDate": "2017-09-04",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.zeit.de/campus/2017-09/z2x-festival-zehn-beste-projekte/seite-2",
+			"type": "presentation"
+		},
+		{
+			"id": "smart-shopping-cart-prototype",
+			"name": {
+				"de": "Smarter Einkaufswagen",
+				"en": "Smart shopping cart"
+			},
+			"roles": [
+				{
+					"de": "IoT-Entwickler",
+					"en": "IoT Developer"
+				}
+			],
+			"startDate": "2017-06-01",
+			"endDate": "2017-06-30",
+			"keywords": [
+				"Ember",
+				"Python"
+			],
+			"description": {
+				"de": "Schneller IoT-Prototyp eines smarten Einkaufswagens.",
+				"en": "Rapid IoT prototype of a smart shopping cart."
+			},
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:u40+rv5ntGoZYzKWR6o3FaA=,iv:YokTM8pqL2oFpMlZCwAra/7fRyDS5MQjsHWVi97TwUg=,tag:MGtKRVvrhFQbEoFRaYcDSA==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:ZXnbGvWtsGCISXy6YHGhEUGFtuXsSoH68lT5LPdWnYuleRSiEaURHDMOJiLmv8os,iv:VMgSJw/Z/HC6jUdMgi5FEvsTMPtMneK7Ks8lZk8pK70=,tag:qqCbohU7YAhyv/f3WGhpxg==,type:str]"
+		},
+		{
+			"id": "rundfunk-mitbestimmen-nerd-nite-17",
+			"name": "Rundfunk mitbestimmen",
+			"entity": "Nerd Nite Berlin #17",
+			"startDate": "2017-06-16",
+			"endDate": "2017-06-16",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=3BmdDEuW-ZA",
+			"type": "presentation",
+			"description": {
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			}
+		},
+		{
+			"id": "why-do-i-have-to-pay-and-dont-get-a-say",
+			"name": "Why do I have to pay and don't get a say?",
+			"description": {
+				"de": "Den öffentlich-rechtlichen Rundfunk demokratisieren.",
+				"en": "Democratize public broadcasting."
+			},
+			"entity": "OpenTechSummit 2017",
+			"startDate": "2017-05-25",
+			"endDate": "2017-05-25",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=mr_9iNma0pI&list=PL1CiawkXA01PaCTnImLLqbrcbJmf7Xssv",
+			"type": "presentation"
+		},
+		{
+			"id": "miz-rapid-fire-pitch",
+			"name": "MIZ Rapid Fire Pitch",
+			"description": "SensorStory (Best Practices)",
+			"entity": "re:publica 2017 - Love Out Loud",
+			"startDate": "2017-05-09",
+			"endDate": "2017-05-09",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=GKKaVHjxJII&t=358s",
+			"type": "presentation"
+		},
+		{
+			"id": "ember-rails-capybara",
+			"name": "Ember.js + Rails + Capybara = ♥️",
+			"entity": "Ember.js Meetup Berlin",
+			"startDate": "2017-03-10",
+			"endDate": "2017-03-10",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=xSukVhdX0DI&list=PL1CiawkXA01N8PRcrZ4UlFJRT8Bx9gDOp",
+			"type": "presentation"
+		},
+		{
+			"id": "rundfunk-mitbestimmen-swift-meetup",
+			"name": "Rundfunk mitbestimmen",
+			"entity": "Swift Meetup Berlin",
+			"startDate": "2016-11-14",
+			"endDate": "2016-11-14",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=8TyViNgmeSQ",
+			"type": "presentation",
+			"description": {
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			}
+		},
+		{
+			"id": "rundfunk-mitbestimmen-hpi-hack-and-tell",
+			"name": "Rundfunk mitbestimmen",
+			"entity": "HPI Hack'n Tell",
+			"startDate": "2016-10-26",
+			"endDate": "2016-10-26",
+			"roles": [
+				{
+					"de": "Referent",
+					"en": "Speaker"
+				}
+			],
+			"url": "https://www.youtube.com/watch?v=JxnWeyYFwUw",
+			"type": "presentation",
+			"description": {
+				"de": "\"Rundfunk mitbestimmen\" ist ein Werkzeug, das öffentliche Beteiligung an der Verwendung des Rundfunkbeitrags ermöglichen soll. Beitragszahlende können ihr Geld symbolisch einzelnen Programmen zuweisen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
+				"en": "\"Rundfunk mitbestimmen\" is a tool to encourage public participation in the expenditure of German broadcasting fees. Fee payers can symbolically allocate their monies to specific programs. The project was covered by Zeit Online, Netzpolitik.org, Deutschlandfunk and RBB."
+			}
+		},
+		{
+			"id": "protothon-podcast",
+			"name": "Protothon",
+			"entity": "MIZ Babelsberg",
+			"roles": [
+				{
+					"de": "Hackathon-Coach",
+					"en": "Hackathon Coach"
+				}
+			],
+			"startDate": "2016-09-01",
+			"endDate": "2016-09-30",
+			"keywords": [
+				"JavaScript"
+			],
+			"description": {
+				"de": "Coachte ein Team beim Protothon-Hackathon des MIZ Babelsberg, das einen interaktiven, entscheidungsbasierten Podcast-Prototyp entwickelte.",
+				"en": "Coached a team at MIZ Babelsberg's Protothon rapid-prototyping hackathon that built an interactive, decision-based podcast prototype."
+			},
+			"url": "https://www.miz-babelsberg.de/startseite.html",
+			"location": "Potsdam, Brandenburg, Germany",
+			"type": "mentoring"
+		},
+		{
+			"id": "protothon-music-player",
+			"name": "Protothon",
+			"entity": "MIZ Babelsberg",
+			"roles": [
+				{
+					"de": "Hackathon-Coach",
+					"en": "Hackathon Coach"
+				}
+			],
+			"startDate": "2016-08-01",
+			"endDate": "2016-08-31",
+			"keywords": [
+				"JavaScript"
+			],
+			"description": {
+				"de": "Coachte ein Team beim Protothon-Hackathon des MIZ Babelsberg, das einen ortsbewussten Musikplayer-Prototyp entwickelte.",
+				"en": "Coached a team at MIZ Babelsberg's Protothon rapid-prototyping hackathon that built a location-aware music player prototype."
+			},
+			"url": "https://www.miz-babelsberg.de/startseite.html",
+			"location": "Potsdam, Brandenburg, Germany",
+			"type": "mentoring"
+		},
+		{
+			"id": "ursuppe",
+			"name": "#ursuppe",
+			"entity": "MIZ Babelsberg",
+			"roles": [
+				{
+					"de": "Hackathon-Coach",
+					"en": "Hackathon Coach"
+				}
+			],
+			"startDate": "2015-08-01",
+			"endDate": "2015-08-31",
+			"description": {
+				"de": "Coachte das Team hinter #ursuppe, einem IoT-Prototyp, der automatisiert einen journalistischen Live-Bericht aus einem biologischen Experiment mit Urzeitkrebsen erzeugte. Gewinner des MIZ Formatfestivals 2015.",
+				"en": "Coached the team behind #ursuppe, an IoT prototype that automatically generated a live journalism report from a biological experiment tracking brine shrimp. Winner of the MIZ Formatfestival 2015."
+			},
+			"url": "https://www.youtube.com/watch?v=-H9aFNUXvvA",
+			"location": "Potsdam, Brandenburg, Germany",
+			"type": "mentoring"
+		},
+		{
+			"id": "sports-association-webapp",
+			"name": {
+				"de": "Webanwendung für Sportverbände",
+				"en": "Web application for sports associations"
+			},
+			"roles": [
+				{
+					"de": "Full-Stack-Entwickler",
+					"en": "Full Stack Developer"
+				}
+			],
+			"startDate": "2013-04-01",
+			"endDate": "2013-09-30",
+			"keywords": [
+				"Ruby",
+				"Ruby on Rails",
+				"RSpec",
+				"Cucumber",
+				"PostgreSQL"
+			],
+			"description": {
+				"de": "Erste Einführung einer automatisierten Testumgebung für diese Webanwendung für Funktionäre, Schiedsrichter und Trainer.",
+				"en": "First developer to introduce an automated test environment for this web application for officials, referees, and coaches."
+			},
+			"location": "Bern, Switzerland",
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:pQtkQjWGDw==,iv:ixA1FMd/4+Oq8ERXL0LAAONu8jT8/2aRFVdelNu4H10=,tag:SAV/EXX0NurmEX7iBHVwMA==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:MNha6GUwmyOQSw3D1SRYzkvgzMeHpA==,iv:3hnzro/H9+B1+yNq460s1638tv09kq7CRocOQwcjNWQ=,tag:e3ZggOOXP3oFUhxXuD1fow==,type:str]"
+		},
+		{
+			"id": "supply-chain-risk-research",
+			"name": "Automated Risk Analysis in Supply Chains",
+			"roles": [
+				{
+					"de": "Forschungspraktikant",
+					"en": "Research Intern"
+				}
+			],
+			"startDate": "2013-10-01",
+			"endDate": "2013-11-30",
+			"description": {
+				"de": "Werkzeugentwicklung zur automatisierten Risikoanalyse in Lieferketten auf Basis einer bestehenden Legacy-Codebasis.",
+				"en": "Built a tool for automated risk analysis in supply chains, working with an existing legacy codebase."
+			},
+			"location": "Belfast, United Kingdom",
+			"type": "experience",
+			"sopsEncryptedEntity": "ENC[AES256_GCM,data:PSDr,iv:ZWT4M+3BQkSZNYuuCvYU5RNrMsOmLYLqMA1Nb4Zt34s=,tag:Frw8Jc7SyFAo4EC7gImgBg==,type:str]",
+			"sopsEncryptedUrl": "ENC[AES256_GCM,data:BWbB2pW2yLSYTb3bE81UagOaBpg=,iv:g1hDMrFCQ0X4BFXE+63mTDZVdoCZPlQlOa+mxaFgFo8=,tag:O3nwrFhfpdgWe2eMYrVncQ==,type:str]"
+		},
+		{
+			"id": "enterprise-programming-models-in-memory-databases",
+			"name": "Enterprise programming models for in-memory databases",
+			"entity": "Hasso Plattner Institute",
+			"roles": [
+				{
+					"de": "Wissenschaftlicher Mitarbeiter",
+					"en": "Researcher"
+				}
+			],
+			"startDate": "2012-01-31",
+			"endDate": "2012-08-31",
+			"keywords": [
+				"Java"
+			],
+			"description": {
+				"de": "Implementierung eines Geschäftsprozesses und einer Webanwendung, die SAP als Use Case für die HANA-In-Memory-Datenbank spezifiziert hat.",
+				"en": "Implementation of a business process and web application as specified by SAP as a use case for the HANA in-memory database."
+			},
+			"url": "https://hpi.de/",
+			"type": "experience"
+		}
+	],
+	"sops": {
+		"age": [
+			{
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBkRDk5M0M5dlNtampVWWR6\nVy9Ba3MwcXhzai9CVUVCOUZudzJMOXZwOTBnCmc5ZlFpMkU4eUZscjZtNDN3M0Y5\nd3Y2OU9SNTI2RVUySHFRUnBFY2ZBQ3MKLS0tIEdVSDAvN2VlR21LbUpFN0Znd0xH\naFpGek9IUnFFa2FWcE9UaWM2WlZpNDgKbIrVESWTEd8F4NAC2grUuh6TBPQpcgEg\nURAeLk5yNbS7SLNA3XalVYFDChCWAVor/6wosIJINNh/uv/7BxO1Rw==\n-----END AGE ENCRYPTED FILE-----\n",
+				"recipient": "age1llp6k66265q3rzqemxpnq0x3562u20989vcjf65fl9s3hjhgcscq6mhnjw"
+			},
+			{
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB5UmR2TnZHUy9oQ2JzL0JF\nQXhqZERXcEdaelBVUFJldnMyTy9BeUt2OEJNCldkY2VBdHBDcmt3NmNVVmUzTkZ6\nVHFBaWxBNmdYS204UFRqQUJPditPTVUKLS0tIFQvYThSTzZidy9Pb29uVURmZmFG\nNVJjekJhZ0VjOWRteGV3RStBRWRXNncKU4u1TB0dn9PiijBGN1RpinibyhxBaUTa\nVizxYzu1G8F+278huhlfCAlB4uonXYIw0jtxjrazt/4x1AfRin+95w==\n-----END AGE ENCRYPTED FILE-----\n",
+				"recipient": "age1a20nvkuelszm2sxqrvt3h4jx7c97q6sanqr9te8k5v080ykq05lsl5g6gm"
+			}
+		],
+		"encrypted_regex": "^sopsEncrypted[A-Za-z]*$",
+		"lastmodified": "2026-08-16T17:05:51Z",
+		"mac": "ENC[AES256_GCM,data:XfgAEbunVrJ8DEZXp+1f8Dl/VNQu/09uQ9mh7LWXizzVdR2h6h5dpqKd1OUMmS3iAycehrNeAqlNwkmgQg1I7m2KV8uuBQY00l3/n6+pYfC0adzYaqYX5E7CoUhwfr2rWApP7+VYc9taOQF+2KzXmzKOLVdPVo3LmnNKtwn4X5Q=,iv:JH5k7fzJj+lw8j9Ek5eJFCb+KzXei+7HOmvrakEVo/g=,tag:WrQPsdI2MlnMlh/SEIHAqA==,type:str]",
+		"mac_only_encrypted": true,
+		"version": "3.13.3"
+	}
+}
