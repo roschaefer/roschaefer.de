@@ -142,15 +142,9 @@ Important deployment behavior:
 ## PDF Build And Deploy
 
 - Netlify builds the site, including the PDFs, from its own repository checkout.
-- `Typst`, `sops` and `age` are not part of Netlify's build image, so `scripts/netlify-build.sh` installs them with mise first. It does that only on Netlify's build servers (`NETLIFY=true`); local builds, e.g. with `netlify deploy`, need the tools on `PATH` already. `mise.toml` sets them to `latest`, so every build uses their newest release.
-- Netlify exposes `SOPS_AGE_KEY` to the whole build, including its automatic `pnpm install`. `scripts/netlify-build.sh` keeps the key away from mise and hands it only to `pnpm build`.
+- `Typst` is not part of Netlify's build image, so `scripts/netlify-build.sh` installs it with mise first. It does that only on Netlify's build servers (`NETLIFY=true`); local builds, e.g. with `netlify deploy`, need Typst on `PATH` already. `mise.toml` sets it to `latest`, so every build uses its newest release.
+- Builds need no secrets: they use the masked client names committed in `resume.i18n.json` (see "Redacted Clients" in `AGENTS.md`).
 - Vendored `ttf` or `otf` fonts under `typst/fonts/` are required for the PDF build. See [`typst/README.md`](/home/robert/Development/schaefer-development/roschaefer.de/typst/README.md).
-
-Required Netlify environment variable (mark it secret, scope it to builds):
-
-- `SOPS_AGE_KEY` (a dedicated age private key for decrypting `resume.i18n.json` - see "Redacted Clients" in `AGENTS.md`)
-
-GitHub Actions only runs checks. It needs `SOPS_AGE_KEY` as a repository secret too, but no Netlify credentials.
 
 ## SEO / Social Metadata
 
@@ -171,5 +165,5 @@ The current social preview image is:
 - Print output is optimized primarily for Firefox.
 - The web version and print version share the same content source.
 - Generated Paraglide files in `src/lib/paraglide` are never committed (the directory has its own nested `.gitignore`) and are recompiled on every `dev`/`build`/`check`/`test` run.
-- The decrypted, masked resume source (`.generated/resume-source.json`, `.generated/resume.de.json`, `.generated/resume.en.json`) is likewise gitignored and always regenerated fresh - see `AGENTS.md` for why.
-- CI needs a `SOPS_AGE_KEY` repository secret (a dedicated age private key, separate from any personal key) to decrypt `resume.i18n.json` during `pnpm build`/`pnpm check:quick`.
+- The masked resume source (`.generated/resume-source.json`, `.generated/resume.de.json`, `.generated/resume.en.json`) is likewise gitignored and always regenerated fresh - see `AGENTS.md` for why.
+- After editing the encrypted client fields with `sops resume.i18n.json`, run `pnpm mask-clients` to update the committed masked names.
