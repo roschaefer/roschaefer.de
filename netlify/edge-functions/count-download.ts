@@ -8,14 +8,6 @@ type Context = {
 	waitUntil: (promise: Promise<unknown>) => void;
 };
 
-// GoatCounter's API trusts the hits it receives and skips the bot checks its
-// own /count endpoint does, so crawlers, link previews and scripts are
-// filtered here by user agent.
-const botUserAgent =
-	/bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|curl|wget|python|go-http-client|okhttp|java\/|libwww|httpclient|axios|node-fetch|undici|headless|lighthouse|pingdom|uptime|monitor|scan/i;
-
-const isBot = (userAgent: string | null): boolean => !userAgent || botUserAgent.test(userAgent);
-
 const isPrefetch = (request: Request): boolean =>
 	/prefetch|prerender/i.test(
 		`${request.headers.get("sec-purpose") ?? ""} ${request.headers.get("purpose") ?? ""}`,
@@ -29,10 +21,7 @@ const isFollowUpRange = (request: Request): boolean => {
 };
 
 const shouldCount = (request: Request): boolean =>
-	request.method === "GET" &&
-	!isBot(request.headers.get("user-agent")) &&
-	!isPrefetch(request) &&
-	!isFollowUpRange(request);
+	request.method === "GET" && !isPrefetch(request) && !isFollowUpRange(request);
 
 export default async (request: Request, context: Context) => {
 	const response = await context.next();

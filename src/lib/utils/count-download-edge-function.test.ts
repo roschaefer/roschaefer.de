@@ -72,27 +72,17 @@ describe("count-download edge function", () => {
 		});
 	});
 
-	it.each([
-		[
-			"a search engine crawler",
-			"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-		],
-		["a chat link preview", "WhatsApp/2.23.20.0"],
-		["a social link preview", "facebookexternalhit/1.1"],
-		["a script", "curl/8.10.1"],
-		[
-			"a headless browser",
-			"Mozilla/5.0 (X11; Linux x86_64) HeadlessChrome/130.0.0.0 Safari/537.36",
-		],
-		["a client without user agent", ""],
-	])(
-		"does not count %s, because GoatCounter's API skips its own bot detection",
-		async (_, userAgent) => {
-			await run(download(pdfUrl, { "user-agent": userAgent }));
+	it("leaves bot detection to GoatCounter, whose API flags hits by the forwarded user agent", async () => {
+		const googlebot = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
 
-			expect(fetchMock).not.toHaveBeenCalled();
-		},
-	);
+		await run(download(pdfUrl, { "user-agent": googlebot }));
+
+		const [, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+		expect(JSON.parse(init.body as string).hits[0]).toMatchObject({
+			user_agent: googlebot,
+			bot: 0,
+		});
+	});
 
 	it("does not count speculative prefetches", async () => {
 		await run(download(pdfUrl, { "sec-purpose": "prefetch;prerender" }));
