@@ -16,7 +16,7 @@ const gifResponse = () =>
 		headers: { "content-type": "image/gif", "cache-control": "no-store" },
 	});
 
-const primaryLanguage = (acceptLanguage: string | null): string =>
+export const primaryLanguage = (acceptLanguage: string | null): string =>
 	acceptLanguage?.split(",")[0]?.split(";")[0]?.trim() ?? "";
 
 export const toApiHit = (request: Request, ip: string) => {
@@ -40,7 +40,9 @@ export const toApiHit = (request: Request, ip: string) => {
 	};
 };
 
-const send = async (hit: NonNullable<ReturnType<typeof toApiHit>>, token: string) => {
+export type ApiHit = NonNullable<ReturnType<typeof toApiHit>>;
+
+export const send = async (hit: ApiHit, token: string) => {
 	const response = await fetch(goatcounterApiUrl, {
 		method: "POST",
 		headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
