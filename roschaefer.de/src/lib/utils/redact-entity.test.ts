@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { maskEntity } from "./mask-entity.ts";
+import { redactEntity } from "./redact-entity.ts";
 
 // Synthetic fixtures covering the same edge cases the hand-authored
 // `maskedEntity` values this function replaces used to exercise: long ASCII
@@ -17,8 +17,8 @@ const fixtures: Array<[string, string]> = [
 	["ACME", "***"],
 ];
 
-describe("maskEntity", () => {
-	it.each(fixtures)("masks %s as %s", (realEntity, expected) => {
-		expect(maskEntity(realEntity)).toBe(expected);
+describe("redactEntity", () => {
+	it.each(fixtures)("redacts %s as %s", (realEntity, expected) => {
+		expect(redactEntity(realEntity)).toBe(expected);
 	});
 });
