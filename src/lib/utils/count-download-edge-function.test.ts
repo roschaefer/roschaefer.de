@@ -97,6 +97,16 @@ describe("count-download edge function", () => {
 		expect(fetchMock).toHaveBeenCalledOnce();
 	});
 
+	it("does not count downloads from deploy previews, so reviewing a PR does not pollute the production stats", async () => {
+		await run(
+			download(
+				"https://deploy-preview-145--roschaefer.netlify.app/en/robert-schaefer-resume.en.pdf",
+			),
+		);
+
+		expect(fetchMock).not.toHaveBeenCalled();
+	});
+
 	it("does not count speculative prefetches", async () => {
 		await run(download(pdfUrl, { "sec-purpose": "prefetch;prerender" }));
 

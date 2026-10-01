@@ -1,3 +1,4 @@
+import { siteUrl } from "../../src/lib/config/site.ts";
 import { primaryLanguage, send } from "./goatcounter.ts";
 
 declare const Netlify: { env: { get: (name: string) => string | undefined } };
@@ -7,6 +8,8 @@ type Context = {
 	next: (options?: { sendConditionalRequest?: boolean }) => Promise<Response>;
 	waitUntil: (promise: Promise<unknown>) => void;
 };
+
+const productionHostname = new URL(siteUrl).hostname;
 
 const isPrefetch = (request: Request): boolean =>
 	/prefetch|prerender/i.test(
@@ -21,7 +24,10 @@ const isFollowUpRange = (request: Request): boolean => {
 };
 
 const shouldCount = (request: Request): boolean =>
-	request.method === "GET" && !isPrefetch(request) && !isFollowUpRange(request);
+	new URL(request.url).hostname === productionHostname &&
+	request.method === "GET" &&
+	!isPrefetch(request) &&
+	!isFollowUpRange(request);
 
 export default async (request: Request, context: Context) => {
 	const response = await context.next({ sendConditionalRequest: true });
