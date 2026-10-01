@@ -4,7 +4,7 @@ declare const Netlify: { env: { get: (name: string) => string | undefined } };
 
 type Context = {
 	ip: string;
-	next: () => Promise<Response>;
+	next: (options?: { sendConditionalRequest?: boolean }) => Promise<Response>;
 	waitUntil: (promise: Promise<unknown>) => void;
 };
 
@@ -24,7 +24,7 @@ const shouldCount = (request: Request): boolean =>
 	request.method === "GET" && !isPrefetch(request) && !isFollowUpRange(request);
 
 export default async (request: Request, context: Context) => {
-	const response = await context.next();
+	const response = await context.next({ sendConditionalRequest: true });
 
 	if (!shouldCount(request) || response.status >= 400) {
 		return response;

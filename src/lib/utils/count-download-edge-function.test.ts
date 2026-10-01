@@ -22,12 +22,14 @@ const run = async (request: Request) => {
 	const pending: Promise<unknown>[] = [];
 	const response = await countDownload(request, {
 		ip: visitorIp,
-		next: async () => fileResponse,
+		next: nextMock,
 		waitUntil: (promise) => pending.push(promise),
 	});
 	await Promise.all(pending);
 	return response;
 };
+
+const nextMock = vi.fn(async (_options?: { sendConditionalRequest?: boolean }) => fileResponse);
 
 let token: string | undefined;
 const fetchMock = vi.fn(async () => new Response(null, { status: 202 }));
@@ -43,6 +45,7 @@ afterEach(() => {
 	vi.unstubAllGlobals();
 	vi.restoreAllMocks();
 	fetchMock.mockClear();
+	nextMock.mockClear();
 });
 
 describe("count-download edge function", () => {
@@ -82,6 +85,16 @@ describe("count-download edge function", () => {
 			user_agent: googlebot,
 			bot: 0,
 		});
+	});
+
+	it("lets the CDN answer revalidations with 304 instead of resending the whole file, and counts them as views", async () => {
+		fileResponse = new Response(null, { status: 304 });
+
+		const response = await run(download(pdfUrl, { "if-none-match": '"abc"' }));
+
+		expect(nextMock).toHaveBeenCalledWith({ sendConditionalRequest: true });
+		expect(response.status).toBe(304);
+		expect(fetchMock).toHaveBeenCalledOnce();
 	});
 
 	it("does not count speculative prefetches", async () => {
