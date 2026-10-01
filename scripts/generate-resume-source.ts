@@ -12,11 +12,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
-// "masked" (default) is what every normal build/dev/test run uses - it reads
-// the masked client names committed by `pnpm mask-clients` and needs no sops
+// "redacted" (default) is what every normal build/dev/test run uses - it reads
+// the redacted client names committed by `pnpm redact-clients` and needs no sops
 // key. "unredacted" decrypts the real values for local, personal use (e.g.
 // printing your own real CV); it must never be the mode CI runs in.
-const mode = process.env.RESUME_MODE === "unredacted" ? "unredacted" : "masked";
+const mode = process.env.RESUME_MODE === "unredacted" ? "unredacted" : "redacted";
 
 const resumePath = path.join(rootDir, "resume.i18n.json");
 const source = JSON.parse(

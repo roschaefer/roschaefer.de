@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { addMaskedSopsFields, resolveSopsEncryptedFields } from "./resolve-sops-fields.ts";
+import { addRedactedSopsFields, resolveSopsEncryptedFields } from "./resolve-sops-fields.ts";
 
 // Synthetic fixtures. Never use real client names here - this file is public.
 const decrypted = {
@@ -42,36 +42,36 @@ const committed = {
 	sops: { mac: "ENC[mac]" },
 };
 
-describe("addMaskedSopsFields", () => {
-	it("adds the masked name next to its encrypted field and flags the entry as redacted", () => {
-		expect(addMaskedSopsFields(encrypted, decrypted)).toEqual(committed);
+describe("addRedactedSopsFields", () => {
+	it("adds the redacted name next to its encrypted field and flags the entry as redacted", () => {
+		expect(addRedactedSopsFields(encrypted, decrypted)).toEqual(committed);
 	});
 
-	it("adds no plain field for URLs, since a masked URL points nowhere", () => {
-		const [project] = (addMaskedSopsFields(encrypted, decrypted) as typeof committed).projects;
+	it("adds no plain field for URLs, since a redacted URL points nowhere", () => {
+		const [project] = (addRedactedSopsFields(encrypted, decrypted) as typeof committed).projects;
 		expect(project).not.toHaveProperty("url");
 	});
 
-	it("replaces masked fields from an earlier run, so it can run repeatedly", () => {
+	it("replaces redacted fields from an earlier run, so it can run repeatedly", () => {
 		const renamed = structuredClone(decrypted);
 		renamed.projects[0].sopsEncryptedEntity = "Globex AG";
 
-		const [project] = (addMaskedSopsFields(committed, renamed) as typeof committed).projects;
+		const [project] = (addRedactedSopsFields(committed, renamed) as typeof committed).projects;
 		expect(project.entity).toBe("Gl***AG");
-		expect(addMaskedSopsFields(committed, decrypted)).toEqual(committed);
+		expect(addRedactedSopsFields(committed, decrypted)).toEqual(committed);
 	});
 });
 
 describe("resolveSopsEncryptedFields", () => {
-	it("uses the committed masked fields without decrypting in masked mode", () => {
-		expect(resolveSopsEncryptedFields(committed.projects, "masked")).toEqual([
+	it("uses the committed redacted fields without decrypting in redacted mode", () => {
+		expect(resolveSopsEncryptedFields(committed.projects, "redacted")).toEqual([
 			{ id: "client-project", name: "Client project", entity: "Ac***bH", redacted: true },
 			{ id: "public-project", entity: "Public Org" },
 		]);
 	});
 
 	it("restores the real values in unredacted mode", () => {
-		const decryptedCommitted = addMaskedSopsFields(decrypted, decrypted);
+		const decryptedCommitted = addRedactedSopsFields(decrypted, decrypted);
 
 		expect(resolveSopsEncryptedFields(decryptedCommitted, "unredacted")).toEqual({
 			projects: [
@@ -86,9 +86,9 @@ describe("resolveSopsEncryptedFields", () => {
 		});
 	});
 
-	it("fails in masked mode when encrypted fields were never masked, e.g. a new client", () => {
-		expect(() => resolveSopsEncryptedFields(encrypted.projects, "masked")).toThrow(
-			/"client-project".*pnpm mask-clients/,
+	it("fails in redacted mode when encrypted fields were never redacted, e.g. a new client", () => {
+		expect(() => resolveSopsEncryptedFields(encrypted.projects, "redacted")).toThrow(
+			/"client-project".*pnpm redact-clients/,
 		);
 	});
 });

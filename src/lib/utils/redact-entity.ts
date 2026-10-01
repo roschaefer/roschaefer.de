@@ -1,4 +1,4 @@
-export const maskEntity = (name: string): string => {
+export const redactEntity = (name: string): string => {
 	if (name.length <= 6) {
 		return "***";
 	}

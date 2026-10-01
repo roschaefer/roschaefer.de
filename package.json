@@ -7,7 +7,7 @@
 	"scripts": {
 		"build:paraglide": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide --emit-ts-declarations",
 		"build:json-resume": "node scripts/generate-resume-source.ts",
-		"mask-clients": "node scripts/mask-clients.ts",
+		"redact-clients": "node scripts/redact-clients.ts",
 		"build:typst-data": "pnpm build:json-resume && node scripts/build-typst-data.ts",
 		"build:pdf": "pnpm build:json-resume && node scripts/build-pdfs.ts",
 		"build:vite": "vite build",

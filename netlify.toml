@@ -5,7 +5,7 @@ command = "scripts/netlify-build.sh"
 publish = "build"
 
 # Netlify installs Node and pnpm itself and runs `pnpm install` before the
-# build command. sops and age are only needed locally (`pnpm mask-clients`).
+# build command. sops and age are only needed locally (`pnpm redact-clients`).
 [build.environment]
 NODE_VERSION = "26"
 MISE_DISABLE_TOOLS = "node,pnpm,sops,age"

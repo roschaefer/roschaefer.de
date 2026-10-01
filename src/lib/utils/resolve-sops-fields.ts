@@ -1,6 +1,6 @@
-import { maskEntity } from "./mask-entity.ts";
+import { redactEntity } from "./redact-entity.ts";
 
-export type SopsFieldMode = "masked" | "unredacted";
+export type SopsFieldMode = "redacted" | "unredacted";
 
 const isPlainObject = (value: unknown): value is Record<string, unknown> =>
 	Boolean(value) && typeof value === "object" && !Array.isArray(value);
@@ -19,13 +19,13 @@ const isUrl = (value: string): boolean => {
 	}
 };
 
-// A masked value only makes sense as a short, human-readable partial reveal
+// A redacted value only makes sense as a short, human-readable partial reveal
 // ("ta***bH") - that's only meaningful for a plain name. A URL has nowhere to
-// point once masked, and structured data (e.g. a links array) has no partial
+// point once redacted, and structured data (e.g. a links array) has no partial
 // form at all, so both are simply omitted rather than replaced with anything.
-const maskedValueFor = (value: unknown): unknown => {
+const redactedValueFor = (value: unknown): unknown => {
 	if (typeof value === "string" && !isUrl(value)) {
-		return maskEntity(value);
+		return redactEntity(value);
 	}
 
 	return undefined;
@@ -37,7 +37,7 @@ const sopsEncryptedFieldName = (key: string): string | undefined => {
 };
 
 // The plain fields that a sopsEncrypted* field stands in for, e.g. "entity"
-// for "sopsEncryptedEntity". Their committed values are masked.
+// for "sopsEncryptedEntity". Their committed values are redacted.
 const shadowedFieldNames = (value: Record<string, unknown>): Set<string> =>
 	new Set(
 		Object.keys(value)
@@ -46,17 +46,17 @@ const shadowedFieldNames = (value: Record<string, unknown>): Set<string> =>
 	);
 
 /**
- * Adds the masked form of every sopsEncrypted*-prefixed field to an encrypted
+ * Adds the redacted form of every sopsEncrypted*-prefixed field to an encrypted
  * resume.i18n.json tree, taking the real values from its decrypted
  * counterpart: e.g. sopsEncryptedEntity gets a plain `entity` ("ta***bH")
  * right before it, and the containing object is flagged `redacted: true`.
- * Values without a masked form (URLs, links) get no plain field. Plain fields
+ * Values without a redacted form (URLs, links) get no plain field. Plain fields
  * from an earlier run are replaced, so this is safe to run repeatedly.
  */
-export const addMaskedSopsFields = (encrypted: unknown, decrypted: unknown): unknown => {
+export const addRedactedSopsFields = (encrypted: unknown, decrypted: unknown): unknown => {
 	if (Array.isArray(encrypted)) {
 		const decryptedEntries = Array.isArray(decrypted) ? decrypted : [];
-		return encrypted.map((entry, index) => addMaskedSopsFields(entry, decryptedEntries[index]));
+		return encrypted.map((entry, index) => addRedactedSopsFields(entry, decryptedEntries[index]));
 	}
 
 	if (!isPlainObject(encrypted)) {
@@ -72,14 +72,14 @@ export const addMaskedSopsFields = (encrypted: unknown, decrypted: unknown): unk
 		.flatMap(([key, entry]) => {
 			const fieldName = sopsEncryptedFieldName(key);
 			if (fieldName === undefined) {
-				return [[key, addMaskedSopsFields(entry, decryptedObject[key])]] as const;
+				return [[key, addRedactedSopsFields(entry, decryptedObject[key])]] as const;
 			}
 
-			const masked = maskedValueFor(decryptedObject[key]);
-			return masked === undefined
+			const redactedValue = redactedValueFor(decryptedObject[key]);
+			return redactedValue === undefined
 				? ([[key, entry]] as const)
 				: ([
-						[fieldName, masked],
+						[fieldName, redactedValue],
 						[key, entry],
 					] as const);
 		});
@@ -92,11 +92,11 @@ export const addMaskedSopsFields = (encrypted: unknown, decrypted: unknown): unk
 
 /**
  * Resolves every sopsEncrypted*-prefixed field (e.g. sopsEncryptedEntity ->
- * entity) in a resume.i18n.json tree. In "masked" mode (the default, used by
+ * entity) in a resume.i18n.json tree. In "redacted" mode (the default, used by
  * every normal build), the input does not need to be decrypted: the encrypted
- * fields are dropped, leaving the masked plain fields and `redacted: true`
- * that `addMaskedSopsFields` committed next to them. In "unredacted" mode, the
- * input must be decrypted, and the real values replace the masked ones - only
+ * fields are dropped, leaving the redacted plain fields and `redacted: true`
+ * that `addRedactedSopsFields` committed next to them. In "unredacted" mode, the
+ * input must be decrypted, and the real values replace the redacted ones - only
  * ever for local, gitignored use. The field name being encrypted is what marks
  * it as sensitive, not any hardcoded knowledge of "entity" specifically.
  */
@@ -110,14 +110,14 @@ export const resolveSopsEncryptedFields = (value: unknown, mode: SopsFieldMode):
 	}
 
 	const shadowed = shadowedFieldNames(value);
-	if (shadowed.size > 0 && mode === "masked" && value.redacted !== true) {
+	if (shadowed.size > 0 && mode === "redacted" && value.redacted !== true) {
 		throw new Error(
-			`"${String(value.id ?? value.name)}" has encrypted fields but no masked ones. Run \`pnpm mask-clients\`.`,
+			`"${String(value.id ?? value.name)}" has encrypted fields but no redacted ones. Run \`pnpm redact-clients\`.`,
 		);
 	}
 
 	const resolvedEntries = Object.entries(value)
-		.filter(([key]) => mode === "masked" || (key !== "redacted" && !shadowed.has(key)))
+		.filter(([key]) => mode === "redacted" || (key !== "redacted" && !shadowed.has(key)))
 		.flatMap(([key, entry]) => {
 			const fieldName = sopsEncryptedFieldName(key);
 			if (fieldName === undefined) {
