@@ -133,7 +133,7 @@ const pickProfiles = (profiles: ResumeProfile[] = []): ResumeProfile[] =>
 
 const projectRole = (project: ResumeProject): string => project.roles?.join(", ") ?? "";
 
-// entity is already resolved (real or masked) by the time source is loaded -
+// entity is already resolved (real or redacted) by the time source is loaded -
 // this only adds PDF-specific display rules: a defensive label for the rare
 // case entity is somehow still empty, and swapping the link target to the
 // redacted-client explanation page (the website does the equivalent via a
