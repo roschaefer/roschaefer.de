@@ -285,6 +285,30 @@
 			"type": "volunteering"
 		},
 		{
+			"id": "git-subtrees",
+			"name": "git-subtrees",
+			"entity": "Robert Schäfer",
+			"codeVisibility": "open-source",
+			"roles": [
+				{
+					"de": "Entwicklung",
+					"en": "Development"
+				}
+			],
+			"startDate": "2026-09-11",
+			"keywords": [
+				"Bash",
+				"Bats",
+				"Nix"
+			],
+			"description": {
+				"de": "Eine Git-Erweiterung, die mehrere Git-Subtrees in einem Monorepo mit ihren eigenen Repositories synchron hält. Sie kommt ohne Konfigurationsdatei aus: Jedes Remote, das wie ein Ordnerpfad heißt, ist ein Subtree. Die Dokumentation besteht aus getesteten Beispielszenarien.",
+				"en": "A Git extension that keeps multiple git subtrees in a monorepo in sync with their own repositories. It needs no config file: every remote named after a folder path is a subtree. The documentation consists of tested example scenarios."
+			},
+			"url": "https://github.com/roschaefer/git-subtrees",
+			"type": "volunteering"
+		},
+		{
 			"id": "ai-interview-platform",
 			"name": {
 				"de": "KI-Interviewplattform",
