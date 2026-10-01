@@ -74,14 +74,14 @@ The authored resume source is:
 
 There are no generated `resume.de.json`/`resume.en.json` files committed to the repo — they're gitignored and regenerated fresh by `pnpm build:json-resume` (`scripts/generate-resume-source.ts`):
 
-1. Decrypt `resume.i18n.json` (`sops -d`) and mask redacted-client fields (see "Redacted Clients" below), writing the result to `.generated/resume-source.json` (locale-agnostic, never committed).
+1. Read `resume.i18n.json` and resolve redacted-client fields to their committed masked values (see "Redacted Clients" below), writing the result to `.generated/resume-source.json` (locale-agnostic, never committed).
 2. `deriveResume` (`src/lib/utils/derive-resume.ts`, a pure function) localizes that into a single locale's JSON Resume data, sorts dated sections, and computes skills. Written to `.generated/resume.de.json` / `.generated/resume.en.json`.
 
-This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed. `build:json-resume` is the only place `sops`/decryption is ever invoked — everything downstream (`src/lib/data/resume.ts`, `scripts/build-typst-data.ts`, tests) just reads the generated per-locale files as plain data, so none of it needs to be Node-only or server-only.
+This avoids keeping derived copies in sync, and avoids stale generated output (e.g. duration text computed from "now") ever getting committed. `build:json-resume` (in `RESUME_MODE=unredacted` only) and `pnpm mask-clients` are the only places `sops`/decryption is ever invoked — everything downstream (`src/lib/data/resume.ts`, `scripts/build-typst-data.ts`, tests) just reads the generated per-locale files as plain data, so none of it needs to be Node-only or server-only.
 
 The pipeline is:
 
-- `resume.i18n.json` -> (`pnpm build:json-resume`, decrypt + mask, one Node script) -> `.generated/resume-source.json`
+- `resume.i18n.json` -> (`pnpm build:json-resume`, resolve masked fields, one Node script) -> `.generated/resume-source.json`
 - `.generated/resume-source.json` -> (`deriveResume`, pure, once per locale) -> `.generated/resume.de.json` / `.generated/resume.en.json`
 - `.generated/resume.<locale>.json` -> web rendering (`src/lib/data/resume.ts` imports both generated files directly)
 - `.generated/resume.<locale>.json` -> Typst-ready data (`scripts/build-typst-data.ts` imports the same generated files directly)
@@ -105,7 +105,7 @@ Fields prefixed `sopsEncrypted` (`sopsEncryptedEntity`, `sopsEncryptedUrl`, `sop
 
 This is a scoped mitigation against low-effort CV/data farming (bots and scrapers reading the current tree or the deployed site), not a guarantee that these identities are unreachable in this public repo altogether. Earlier commits still contain the plaintext values in `resume.i18n.json` blobs from before they were encrypted, and that's an accepted tradeoff, not an oversight — a recruiter who goes digging through Git history is out of scope for this protection. **Do not rewrite Git history to purge old blobs** as a way to "fully" fix this, whether in response to review feedback or otherwise, without being explicitly asked; that's a judgment call for Robert, not something to do preemptively. If plaintext history turns out to be trivially discoverable by an AI agent in a way that matters, that's a reason to revisit later, not a bug to fix now.
 
-Edit with `sops resume.i18n.json` or view with `sops -d resume.i18n.json`; `biome.json` excludes this file so it never fights `sops`'s formatting. `.sops.yaml` lists two age recipients: a personal key for local interactive edits, and a CI-only key (its private half lives in the `SOPS_AGE_KEY` GitHub Actions secret, attached only to the individual CI steps that actually invoke `sops` — never at job level, to keep it out of reach of unrelated steps like checkout or dependency install; the same key is a Netlify build environment variable, which `scripts/netlify-build.sh` removes from the environment before installing tools and passes only to `pnpm build`) so `pnpm build`/`pnpm check:quick` can decrypt in CI without ever exposing the personal key.
+Edit with `sops resume.i18n.json` or view with `sops -d resume.i18n.json`; `biome.json` excludes this file so it never fights `sops`'s formatting. After changing an encrypted field, run `pnpm mask-clients`: it writes the masked value as a plain field next to each encrypted one (e.g. `entity: "ta***bH"` next to `sopsEncryptedEntity`) and flags the entry `redacted: true`. Builds read only these committed masked values, so CI and Netlify need no sops key. A build fails if an entry has encrypted fields but no masked ones, which catches a forgotten run for a new client; a changed name of an existing client is not detected, so don't skip the command.
 
 ## PDF And Print
 
@@ -329,7 +329,7 @@ Every `build:*` script does exactly one job and can be run standalone; `pnpm bui
 
 ```bash
 pnpm build:paraglide     # compile Paraglide UI messages
-pnpm build:json-resume   # decrypt + mask resume.i18n.json -> .generated/resume.{de,en}.json (gitignored, requires a sops key)
+pnpm build:json-resume   # resolve masked fields of resume.i18n.json -> .generated/resume.{de,en}.json (gitignored)
 pnpm build:typst-data    # -> typst/content/{de,en}.typ.json (implies build:json-resume)
 pnpm build:pdf           # -> static/{de,en}/*.pdf (implies build:json-resume; internally also runs build-typst-data.ts)
 pnpm build:vite          # vite build -> build/

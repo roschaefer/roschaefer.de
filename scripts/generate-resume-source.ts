@@ -12,16 +12,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
-// "masked" (default) is what every normal build/dev/test run uses - real
-// client identities never leave this script. "unredacted" restores real
-// values for local, personal use (e.g. printing your own real CV); it must
-// never be the mode CI runs in.
+// "masked" (default) is what every normal build/dev/test run uses - it reads
+// the masked client names committed by `pnpm mask-clients` and needs no sops
+// key. "unredacted" decrypts the real values for local, personal use (e.g.
+// printing your own real CV); it must never be the mode CI runs in.
 const mode = process.env.RESUME_MODE === "unredacted" ? "unredacted" : "masked";
 
-const decrypted = JSON.parse(
-	execFileSync("sops", ["-d", path.join(rootDir, "resume.i18n.json")], { encoding: "utf8" }),
+const resumePath = path.join(rootDir, "resume.i18n.json");
+const source = JSON.parse(
+	mode === "unredacted"
+		? execFileSync("sops", ["-d", resumePath], { encoding: "utf8" })
+		: await fs.readFile(resumePath, "utf8"),
 );
-const { sops: _sops, ...sourceWithoutSops } = decrypted;
+const { sops: _sops, ...sourceWithoutSops } = source;
 const resolved = resolveSopsEncryptedFields(sourceWithoutSops, mode);
 
 const outDir = path.join(rootDir, ".generated");

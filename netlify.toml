@@ -1,14 +1,14 @@
-# Typst, sops and age are not part of Netlify's build image, so the build
-# installs them with mise before running the site build.
+# Typst is not part of Netlify's build image, so the build installs it with
+# mise before running the site build.
 [build]
 command = "scripts/netlify-build.sh"
 publish = "build"
 
 # Netlify installs Node and pnpm itself and runs `pnpm install` before the
-# build command, so mise only has to provide the remaining tools.
+# build command. sops and age are only needed locally (`pnpm mask-clients`).
 [build.environment]
 NODE_VERSION = "26"
-MISE_DISABLE_TOOLS = "node,pnpm"
+MISE_DISABLE_TOOLS = "node,pnpm,sops,age"
 
 [[redirects]]
 from = "/linkedin"
