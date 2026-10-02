@@ -1,0 +1,51 @@
+---
+id: remote-boundary
+title: "A Git remote is the wrong boundary for one folder"
+description: "Guardrails can make a dangerous push less likely. Removing the misleading remote makes it impossible by construction."
+status: draft
+series: git-splice
+seriesOrder: 2
+topics: [git, safety, tool-design]
+---
+
+One issue in `git-subtrees` looked like a missing safety check: a remote representing one folder could receive the entire monorepo. The obvious repair was a pre-push guard. The deeper repair was to stop creating that remote.
+
+## What a remote promises
+
+Git treats a remote as another whole repository. Its fetch configuration, remote-tracking branches, and push commands all reinforce that model. When I add a remote named after `vendor/a`, Git does not know that only `vendor/a/` is meant to cross the boundary.
+
+That mismatch creates a dangerous command which looks completely normal:
+
+```sh
+git push vendor-a main
+```
+
+To Git, this means “send the `main` branch.” To the user, the remote name can suggest “send the folder.” A hook may intercept the mistake, but every additional way to push becomes another path the hook must recognize correctly.
+
+This is a leaky abstraction with an unusually expensive leak.
+
+## Fetching does not require a named remote
+
+Git can fetch directly from a URL into a private namespace:
+
+```sh
+git fetch <url> '+refs/heads/*:refs/splices/<path>/*'
+```
+
+The tool can store the URL in the folder's state file and perform that command itself. Incoming branches remain available for comparisons, logs, and merges, but no configured remote exists that a person can accidentally target with an ordinary push.
+
+For outgoing changes, the tool rebuilds the folder's history and pushes the resulting commit explicitly by URL and refspec. The monorepo branch is never used as the push source.
+
+## Guardrail or design constraint?
+
+A guardrail is still useful when the dangerous primitive must remain available. Here it did not. Removing the remote reduced both the user-facing risk and the implementation surface:
+
+- there is no remote configuration to create or update;
+- remote names cannot collide;
+- moving a folder does not require renaming a remote;
+- ordinary `git push` completion cannot suggest the folder target;
+- the monorepo cannot be sent through a remote that does not exist.
+
+The lesson is not that hooks are bad. It is that safety improves when an invalid state becomes unrepresentable. Before adding a check, ask whether the underlying capability belongs in the model at all.
+
+Git remotes are excellent at representing whole repositories. In the new design, two related whole projects can still be remotes of one local clone. A folder inside a monorepo is different. Giving it a URL and private refs describes that relationship more accurately—and makes the catastrophic operation much harder to express.

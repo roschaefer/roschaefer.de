@@ -196,6 +196,68 @@
 		background: var(--color-brand-button-secondary-hover-bg);
 		color: var(--color-brand-button-secondary-hover-text);
 	}
+
+	.writing-prose {
+		font-size: 1.08em;
+		line-height: 1.75;
+	}
+
+	.writing-prose > :first-child {
+		margin-top: 0;
+	}
+
+	.writing-prose :is(h2, h3, h4) {
+		margin-top: 2.5em;
+		margin-bottom: 0.75em;
+		color: var(--color-brand-heading);
+		text-transform: none;
+		letter-spacing: 0.015em;
+	}
+
+	.writing-prose :is(p, ul, ol, blockquote, pre, table) {
+		margin-top: 1.25em;
+		margin-bottom: 1.25em;
+	}
+
+	.writing-prose :is(ul, ol) {
+		padding-left: 1.5em;
+	}
+
+	.writing-prose blockquote {
+		border-left: 4px solid var(--color-brand-cyan);
+		padding-left: 1.25rem;
+		color: var(--color-brand-muted);
+	}
+
+	.writing-prose :not(pre) > code {
+		border: 1px solid var(--color-brand-line);
+		border-radius: 0.35rem;
+		background: var(--color-brand-panel-soft);
+		padding: 0.08em 0.35em;
+		font-size: 0.9em;
+	}
+
+	.writing-prose pre {
+		overflow-x: auto;
+		border: 1px solid var(--color-brand-line);
+		border-radius: 1rem;
+		background: #080b10;
+		padding: 1.25rem;
+		font-size: 0.88em;
+		line-height: 1.55;
+	}
+
+	.writing-prose table {
+		display: block;
+		overflow-x: auto;
+		border-collapse: collapse;
+	}
+
+	.writing-prose :is(th, td) {
+		border: 1px solid var(--color-brand-line);
+		padding: 0.65rem 0.8rem;
+		text-align: left;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

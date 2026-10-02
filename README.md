@@ -19,6 +19,7 @@ The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, a
 ## Content Model
 
 - `resume.i18n.json`
+- `src/content/writing/` for bilingual MDsveX articles
 
 The downloadable PDFs are generated from the same localized JSON sources through a dedicated `Typst` pipeline.
 
@@ -26,6 +27,23 @@ UI translations live in:
 
 - `messages/de.json`
 - `messages/en.json`
+
+### Writing
+
+Articles are stored as paired German and English `.svx` files below
+`src/content/writing/drafts/`. Draft routes are available with `pnpm dev`, but
+drafts are omitted from production pages, client assets, navigation, RSS, and
+the sitemap.
+
+To publish an article pair:
+
+1. Move both files from `drafts/<locale>/` to `published/<locale>/`.
+2. Change both `status` values to `published`.
+3. Add the same ISO `publishedAt` date to both files.
+
+The build validates translation pairs, stable IDs, localized slugs, series
+ordering, publication state, and dates. Published feeds are available at
+`/de/writing/rss.xml` and `/en/writing/rss.xml`.
 
 ## Local Development
 

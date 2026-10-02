@@ -1,0 +1,49 @@
+---
+id: pull-design
+title: "A one-commit pull without git subtree"
+description: "Re-rooting two temporary trees turns an upstream change into an ordinary cherry-pick, with normal conflicts and no imported ancestry."
+status: draft
+series: git-splice
+seriesOrder: 3
+topics: [git, implementation, merges]
+---
+
+I wanted a pull to satisfy two properties that existing tools made difficult to combine:
+
+1. upstream history must not become ancestry of the monorepo;
+2. conflicts must appear in the normal working tree and use Git's normal resolution workflow.
+
+The result is a pull built from two temporary commits and one ordinary cherry-pick.
+
+## Re-root the upstream change
+
+Assume a folder last matched upstream commit `U`, and the fetched branch now points to `U2`. Upstream trees are rooted at the repository root; the same files live below `vendor/a/` in the monorepo. Git cannot directly merge those differently rooted trees.
+
+The tool therefore constructs two throwaway commits:
+
+- **base** uses the current monorepo tree, but replaces `vendor/a/` with the tree from `U` plus the state file;
+- **target** has base as its parent and replaces that folder with the tree from `U2` plus updated state.
+
+Outside the folder, base and target are identical. Their difference is exactly the upstream change, shifted into the monorepo's directory layout.
+
+Now Git can apply it:
+
+```sh
+git cherry-pick <target>
+```
+
+The parent of target is the merge base, current `HEAD` is “ours,” and target is “theirs.” Git's merge machinery keeps local edits, applies upstream edits, detects renames, and reports conflicts in the working tree.
+
+## Why the result is one commit
+
+Only the cherry-pick result becomes part of monorepo history. Base and target are not referenced afterward and can be garbage-collected. The fetched upstream commits remain under private refs, but they are not ancestors of `HEAD`.
+
+That gives the acceptance test a simple form: a pull advances first-parent history by exactly one ordinary commit and adds no upstream ancestor.
+
+The commit also updates the state file to `U2`. Content and synchronization state move together; there is no second bookkeeping commit to lose in a later squash merge.
+
+## Dry runs use the same model
+
+`status` and `diff` should predict a pull without touching the worktree. They can construct the same base and target trees, then ask `git merge-tree` for the result. The production operation and its preview share one merge model rather than maintaining separate approximations.
+
+What I like most about this design is how little merge logic belongs to the tool. The plumbing code changes tree locations and creates commits. Git still decides how files merge and how conflicts look. Good tooling often comes from arranging inputs so a mature primitive can do its normal job.
