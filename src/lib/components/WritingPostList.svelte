@@ -31,7 +31,7 @@ markUsed(() => [locale, posts, showSeriesPosition, dateFormatter, writingPostPat
 				{#if post.publishedAt}<time datetime={post.publishedAt}>{dateFormatter.format(new Date(`${post.publishedAt}T00:00:00Z`))}</time>{/if}
 			</div>
 			<h2 class="theme-heading text-2xl normal-case tracking-normal">
-				<a class="no-underline" href={writingPostPath(locale, post.slug)}>{post.title}</a>
+				<a class="no-underline" href={writingPostPath(locale, post.series, post.slug)}>{post.title}</a>
 			</h2>
 			<p class="mt-3 text-[var(--color-brand-muted)]">{post.description}</p>
 		</li>

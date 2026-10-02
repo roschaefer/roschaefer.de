@@ -2,15 +2,17 @@
 import WritingShell from "$lib/components/WritingShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { markUsed } from "$lib/utils/mark-used";
-import { writingPostPath, writingSeriesPath } from "$lib/writing/paths";
+import { writingPostPath, writingTopicPath } from "$lib/writing/paths";
 import { getWritingPost } from "$lib/writing/posts";
 
 const { data } = $props();
 const post = $derived(getWritingPost(data.locale, data.post.slug));
 const PostComponent = $derived(post?.component);
-const pageUrl = $derived(`${siteUrl}${writingPostPath(data.locale, data.post.slug)}`);
+const pageUrl = $derived(
+	`${siteUrl}${writingPostPath(data.locale, data.post.series, data.post.slug)}`,
+);
 const alternateUrl = $derived(
-	`${siteUrl}${writingPostPath(data.translation.locale, data.translation.slug)}`,
+	`${siteUrl}${writingPostPath(data.translation.locale, data.translation.series, data.translation.slug)}`,
 );
 const dateFormatter = $derived(
 	new Intl.DateTimeFormat(data.locale === "de" ? "de-DE" : "en-US", { dateStyle: "long" }),
@@ -27,7 +29,7 @@ markUsed(() => [
 	alternateUrl,
 	dateFormatter,
 	writingPostPath,
-	writingSeriesPath,
+	writingTopicPath,
 ]);
 </script>
 
@@ -54,13 +56,13 @@ markUsed(() => [
 
 <WritingShell
 	locale={data.locale}
-	currentPath={writingPostPath(data.locale, data.post.slug)}
-	alternatePath={writingPostPath(data.translation.locale, data.translation.slug)}
+	currentPath={writingPostPath(data.locale, data.post.series, data.post.slug)}
+	alternatePath={writingPostPath(data.translation.locale, data.translation.series, data.translation.slug)}
 >
 	{#snippet children()}
 		<article>
 			<header class="mb-12 border-b border-[var(--color-brand-line)] pb-10">
-				<a class="text-sm font-bold uppercase tracking-[0.2em]" href={writingSeriesPath(data.locale, data.series.id)}>
+				<a class="text-sm font-bold uppercase tracking-[0.2em]" href={writingTopicPath(data.locale, data.series.id)}>
 					{data.series.title} · {data.locale === "de" ? "Teil" : "Part"} {data.post.seriesOrder}
 				</a>
 				{#if data.post.status === "draft"}
@@ -76,8 +78,8 @@ markUsed(() => [
 			</div>
 
 			<nav class="mt-16 grid gap-4 border-t border-[var(--color-brand-line)] pt-8 sm:grid-cols-2" aria-label={data.locale === "de" ? "Artikel der Serie" : "Articles in this series"}>
-				{#if data.previous}<a class="theme-card rounded-2xl p-5 no-underline" href={writingPostPath(data.locale, data.previous.slug)}><span class="block text-xs uppercase tracking-[0.2em]">← {data.locale === "de" ? "Vorheriger Teil" : "Previous part"}</span><strong class="theme-heading mt-2 block">{data.previous.title}</strong></a>{/if}
-				{#if data.next}<a class="theme-card rounded-2xl p-5 text-right no-underline sm:col-start-2" href={writingPostPath(data.locale, data.next.slug)}><span class="block text-xs uppercase tracking-[0.2em]">{data.locale === "de" ? "Nächster Teil" : "Next part"} →</span><strong class="theme-heading mt-2 block">{data.next.title}</strong></a>{/if}
+				{#if data.previous}<a class="theme-card rounded-2xl p-5 no-underline" href={writingPostPath(data.locale, data.previous.series, data.previous.slug)}><span class="block text-xs uppercase tracking-[0.2em]">← {data.locale === "de" ? "Vorheriger Teil" : "Previous part"}</span><strong class="theme-heading mt-2 block">{data.previous.title}</strong></a>{/if}
+				{#if data.next}<a class="theme-card rounded-2xl p-5 text-right no-underline sm:col-start-2" href={writingPostPath(data.locale, data.next.series, data.next.slug)}><span class="block text-xs uppercase tracking-[0.2em]">{data.locale === "de" ? "Nächster Teil" : "Next part"} →</span><strong class="theme-heading mt-2 block">{data.next.title}</strong></a>{/if}
 			</nav>
 		</article>
 	{/snippet}

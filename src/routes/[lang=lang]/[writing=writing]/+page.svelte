@@ -28,7 +28,7 @@ markUsed(() => [
 	<meta name="description" content={m.writing_page_description({}, { locale: data.locale })} />
 	<link rel="canonical" href={pageUrl} />
 	<link rel="alternate" hreflang="de" href={`${siteUrl}${writingPath("de")}`} />
-	<link rel="alternate" hreflang="en" href={`${siteUrl}/en/writing/`} />
+	<link rel="alternate" hreflang="en" href={`${siteUrl}${writingPath("en")}`} />
 	<link rel="alternate" hreflang="x-default" href={`${siteUrl}${writingPath("de")}`} />
 	<link rel="alternate" type="application/rss+xml" title="RSS" href={writingRssPath(data.locale)} />
 	<meta property="og:site_name" content={siteName} />

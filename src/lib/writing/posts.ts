@@ -195,4 +195,9 @@ export const getSeriesPosts = (
 export const getPublishedWritingEntries = () =>
 	allPosts
 		.filter((post) => post.status === "published")
-		.map(({ locale: lang, slug }) => ({ lang, writing: writingSegment(lang), slug }));
+		.map(({ locale: lang, series: topic, slug }) => ({
+			lang,
+			writing: writingSegment(lang),
+			topic,
+			slug,
+		}));

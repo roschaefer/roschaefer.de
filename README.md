@@ -43,7 +43,7 @@ To publish an article pair:
 
 The build validates translation pairs, stable IDs, localized slugs, series
 ordering, publication state, and dates. Published feeds are available at
-`/de/artikel/rss.xml` and `/en/writing/rss.xml`.
+`/de/log/rss.xml` and `/en/log/rss.xml`.
 
 ## Local Development
 

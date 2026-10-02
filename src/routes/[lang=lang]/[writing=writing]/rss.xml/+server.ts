@@ -28,7 +28,7 @@ export const GET = ({ params }) => {
 			: "Lessons from open source, software development, and building tools.";
 	const items = getPublishedWritingPosts(locale)
 		.map((post) => {
-			const url = `${siteUrl}${writingPostPath(locale, post.slug)}`;
+			const url = `${siteUrl}${writingPostPath(locale, post.series, post.slug)}`;
 			return `<item><title>${xml(post.title)}</title><link>${url}</link><guid>${url}</guid><description>${xml(post.description)}</description><pubDate>${new Date(`${post.publishedAt}T00:00:00Z`).toUTCString()}</pubDate></item>`;
 		})
 		.join("");

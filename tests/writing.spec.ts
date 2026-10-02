@@ -1,19 +1,19 @@
 import { expect, test } from "@playwright/test";
 
 test("production writing indexes do not expose drafts", async ({ page, request }) => {
-	await page.goto("/en/writing/");
-	await expect(page.getByRole("heading", { level: 1, name: "Writing" })).toBeVisible();
-	await expect(page.getByText("The first articles are being prepared.")).toBeVisible();
+	await page.goto("/en/log/");
+	await expect(page.getByRole("heading", { level: 1, name: "Log" })).toBeVisible();
+	await expect(page.getByText("The first entries are being prepared.")).toBeVisible();
 	await expect(page.getByText("Where sync state lives")).toHaveCount(0);
 
-	const draft = await request.get("/en/writing/where-sync-state-lives/");
+	const draft = await request.get("/en/log/git-splice/where-sync-state-lives/");
 	expect(draft.status()).toBe(404);
 });
 
 test("localized RSS feeds contain no draft entries", async ({ request }) => {
 	for (const [locale, path] of [
-		["de", "/de/artikel/rss.xml"],
-		["en", "/en/writing/rss.xml"],
+		["de", "/de/log/rss.xml"],
+		["en", "/en/log/rss.xml"],
 	] as const) {
 		const response = await request.get(path);
 		expect(response.ok()).toBe(true);
@@ -29,14 +29,19 @@ test("portfolio links to writing and shows the current focus before publication"
 }) => {
 	await page.goto("/en/");
 	await expect(
-		page.getByRole("navigation", { name: "Site navigation" }).getByText("Writing"),
-	).toHaveAttribute("href", "/en/writing/");
+		page.getByRole("navigation", { name: "Site navigation" }).getByText("Log"),
+	).toHaveAttribute("href", "/en/log/");
+	await expect(page.getByRole("heading", { name: "Learning, logged." })).toBeVisible();
+	await expect(
+		page.getByText("In this log, I write about what I learn along the way", { exact: false }),
+	).toBeVisible();
 	await expect(page.getByRole("heading", { name: "Building Git Splice" })).toBeVisible();
 	await expect(page.getByText("A five-part bilingual series is currently in draft.")).toBeVisible();
 
 	await page.goto("/de/");
 	await expect(
-		page.getByRole("navigation", { name: "Seitennavigation" }).getByText("Artikel"),
-	).toHaveAttribute("href", "/de/artikel/");
+		page.getByRole("navigation", { name: "Seitennavigation" }).getByText("Log"),
+	).toHaveAttribute("href", "/de/log/");
+	await expect(page.getByRole("heading", { name: "Gelernt. Geloggt." })).toBeVisible();
 	await expect(page.getByRole("heading", { name: "Git Splice entwickeln" })).toBeVisible();
 });

@@ -12,13 +12,55 @@ MISE_DISABLE_TOOLS = "node,pnpm,sops,age"
 
 [[redirects]]
 from = "/de/writing"
-to = "/de/artikel/"
+to = "/de/log/"
 status = 301
 force = true
 
 [[redirects]]
-from = "/de/writing/*"
-to = "/de/artikel/:splat"
+from = "/de/writing/series/*"
+to = "/de/log/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/de/writing/rss.xml"
+to = "/de/log/rss.xml"
+status = 301
+force = true
+
+[[redirects]]
+from = "/de/artikel"
+to = "/de/log/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/de/artikel/serien/*"
+to = "/de/log/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/de/artikel/rss.xml"
+to = "/de/log/rss.xml"
+status = 301
+force = true
+
+[[redirects]]
+from = "/en/writing"
+to = "/en/log/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/en/writing/series/*"
+to = "/en/log/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "/en/writing/rss.xml"
+to = "/en/log/rss.xml"
 status = 301
 force = true
 

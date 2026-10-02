@@ -1,1 +1,1 @@
-export const match = (value: string) => value === "artikel" || value === "writing";
+export const match = (value: string) => value === "log";

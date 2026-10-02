@@ -8,8 +8,8 @@ const routes = [
 	"/en/imprint/",
 	"/de/datenschutz/",
 	"/en/privacy/",
-	"/de/artikel/",
-	"/en/writing/",
+	"/de/log/",
+	"/en/log/",
 ];
 const colorSchemes = ["light", "dark"] as const;
 

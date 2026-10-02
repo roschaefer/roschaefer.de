@@ -444,6 +444,32 @@ markUsed(() => [
 			</aside>
 		</section>
 
+		<section id="writing" aria-labelledby="writing-title" class="theme-panel rounded-[2rem] p-6 sm:p-8">
+			<div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:items-start">
+				<div class="space-y-4">
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">Log</p>
+					<h2 id="writing-title" class="theme-heading">{t(m.writing_home_title)}</h2>
+					<p class="text-lg">{t(m.writing_home_intro)}</p>
+					<a class="inline-flex text-sm font-bold uppercase tracking-[0.2em]" href={writingPath(locale)}>{t(m.writing_all)} →</a>
+				</div>
+
+				{#if recentWriting[0]}
+					<article class="theme-card rounded-[1.5rem] p-6">
+						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_latest_entry)}</p>
+						<h3 class="theme-heading mt-3"><a href={writingPostPath(locale, recentWriting[0].series, recentWriting[0].slug)}>{recentWriting[0].title}</a></h3>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{recentWriting[0].description}</p>
+					</article>
+				{:else}
+					<div class="theme-card rounded-[1.5rem] p-6">
+						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_up_next)}</p>
+						<h3 class="theme-heading mt-3">{currentWritingSeries?.title[locale]}</h3>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentWritingSeries?.description[locale]}</p>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.writing_current_drafts)}</p>
+					</div>
+				{/if}
+			</div>
+		</section>
+
 		<section
 			aria-labelledby="experience-title"
 			id="experience"
@@ -747,31 +773,6 @@ markUsed(() => [
 				</ol>
 			</section>
 		{/if}
-
-		<section id="writing" aria-labelledby="writing-title" class="space-y-8">
-				<div class="space-y-3">
-					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">{t(m.writing_current_focus)}</p>
-					<h2 id="writing-title" class="theme-heading">{currentWritingSeries?.title[locale]}</h2>
-					<p>{t(m.writing_current_intro)}</p>
-				</div>
-				{#if recentWriting.length > 0}
-				<ol class="grid list-none gap-4 p-0 md:grid-cols-3">
-					{#each recentWriting as post}
-						<li class="theme-card rounded-[1.5rem] p-5">
-							<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-muted)]">{post.topics.slice(0, 2).join(" · ")}</p>
-							<h3 class="theme-heading mt-3"><a href={writingPostPath(locale, post.slug)}>{post.title}</a></h3>
-							<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{post.description}</p>
-						</li>
-					{/each}
-				</ol>
-				{:else}
-					<div class="theme-card rounded-[1.5rem] p-6">
-						<p>{currentWritingSeries?.description[locale]}</p>
-						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.writing_current_drafts)}</p>
-					</div>
-				{/if}
-				<a class="inline-flex text-sm font-bold uppercase tracking-[0.2em]" href={writingPath(locale)}>{t(m.writing_all)} →</a>
-		</section>
 
 		<section id="contact" aria-labelledby="contact-title" class="border-t border-[var(--color-brand-line)] pt-10">
 			<div class="flex flex-col gap-6">

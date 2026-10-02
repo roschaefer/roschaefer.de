@@ -16,7 +16,7 @@ export const load = ({ params }) => {
 	if (!isLocale(params.lang)) throw error(404, "Locale not found");
 	if (params.writing !== writingSegment(params.lang)) throw error(404, "Writing section not found");
 	const post = getWritingPost(params.lang, params.slug);
-	if (!post) throw error(404, "Article not found");
+	if (!post || post.series !== params.topic) throw error(404, "Article not found");
 	const translation = getWritingTranslation(post);
 	const series = getWritingSeries(post.series);
 	if (!translation || !series) throw error(500, "Invalid writing metadata");
