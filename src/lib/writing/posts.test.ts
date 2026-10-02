@@ -59,8 +59,8 @@ describe("writing metadata", () => {
 		const english = getSeriesPosts("en", "git-splice");
 		expect(english).toHaveLength(5);
 		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4, 5]);
-		const first = getWritingPost("en", "where-sync-state-lives");
+		const first = getWritingPost("en", "why-i-built-git-subtrees");
 		expect(first).toBeDefined();
-		expect(first && getWritingTranslation(first)?.slug).toBe("wo-synchronisationszustand-lebt");
+		expect(first && getWritingTranslation(first)?.slug).toBe("warum-ich-git-subtrees-gebaut-habe");
 	});
 });

@@ -1,0 +1,63 @@
+---
+id: motivation
+title: "Why I built git-subtrees"
+description: "I wanted one monorepo working tree while keeping its projects useful as independent repositories on matching branches. Existing tools made me choose one side."
+status: draft
+series: git-splice
+seriesOrder: 1
+topics: [git, monorepos, open-source]
+---
+
+I did not start `git-subtrees` because I wanted to invent another way to vendor a library. I started it because I wanted two ways of working at once.
+
+Inside my monorepo, I wanted every project to behave like an ordinary directory. One branch, one checkout and one atomic commit should be enough to change a command-line tool together with the library or configuration it depends on. Outside the monorepo, selected directories should remain useful as independent repositories.
+
+Most importantly, the branch names should travel across that boundary:
+
+```text
+monorepo: feature/better-imports
+             │
+             ├── tools/parser: feature/better-imports
+             └── libs/model:   feature/better-imports
+```
+
+If a directory changed, pushing the monorepo branch should create or update the same-named branch in its upstream repository. A directory that did not change should not gain a pointless branch.
+
+## Why not git-subrepo?
+
+[`git-subrepo`](https://github.com/ingydotnet/git-subrepo) solves a related problem: it puts a repository into a normal directory and supports changes in both directions. Its state file, however, records one upstream branch. Switching the monorepo from `main` to `feature/better-imports` does not make the embedded repository follow that branch. A command can override the configured branch, but the model remains “this directory tracks that branch.”
+
+My model was different: **the current monorepo branch determines the upstream branch**. The default branches correspond even when one repository still calls its default `master`; every other branch keeps its name.
+
+That difference reaches far beyond command syntax. A useful status command must answer, for every directory:
+
+- Does the same-named upstream branch exist?
+- Is the directory ahead, behind or diverged?
+- If the branch does not exist, did this directory actually change relative to the base branch?
+- Which repositories should a coordinated push touch?
+
+`git-subrepo` was not a poor tool. Its fixed branch mapping was a poor fit for the workflow I wanted.
+
+## Why not submodules?
+
+Submodules keep repository boundaries honest, but they also keep them visible during daily work. The parent repository stores a pointer; the directory is another checkout with its own branch state. After cloning or switching the parent branch, the submodule commonly ends up on a detached `HEAD`.
+
+Hooks can switch every submodule to the matching branch, and `push.recurseSubmodules` can coordinate pushes. But then the seamless monorepo workflow depends on hooks continually repairing the fact that I am operating several repositories.
+
+I wanted the opposite trade-off: **one working tree by default, repository boundaries only when synchronizing**.
+
+## The first design
+
+Git already had the hard transformation I needed. `git subtree split` can rebuild the history of one directory as though that directory had always been the repository root. `git subtree pull --squash` can bring an upstream version back without importing every upstream commit.
+
+So `git-subtrees` began as orchestration around `git subtree`:
+
+1. name each Git remote after its directory;
+2. map the current monorepo branch to the same upstream branch;
+3. inspect every directory and classify its state;
+4. pull or push only where necessary;
+5. create a missing upstream branch only for a directory that changed.
+
+That worked well enough to expose the next layer of problems. A remote named after a directory looked elegant, but it still represented a whole repository. Synchronization state hidden in merge history worked, until that history was rewritten. Splitting history on every status check was exact, but increasingly slow.
+
+Those were not unrelated bugs. They were signs that I had reused Git concepts at the wrong boundaries. The rest of this series is about following those signs until `git subtree` disappeared from the design—and `git-subtrees` became Git Splice.

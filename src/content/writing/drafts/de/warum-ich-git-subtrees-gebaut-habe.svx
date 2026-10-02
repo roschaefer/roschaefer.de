@@ -1,0 +1,63 @@
+---
+id: motivation
+title: "Warum ich git-subtrees gebaut habe"
+description: "Ich wollte in einem Monorepo arbeiten und seine Projekte trotzdem als eigenständige Repositories auf gleichnamigen Branches nutzen. Bestehende Werkzeuge zwangen mich, mich für eine Seite zu entscheiden."
+status: draft
+series: git-splice
+seriesOrder: 1
+topics: [git, monorepos, open-source]
+---
+
+Ich begann `git-subtrees` nicht, weil ich noch eine Methode zum Vendoring einer Bibliothek erfinden wollte. Ich wollte zwei Arbeitsweisen gleichzeitig haben.
+
+Im Monorepo sollte sich jedes Projekt wie ein gewöhnlicher Ordner verhalten. Ein Branch, ein Checkout und ein atomarer Commit sollten reichen, um ein Kommandozeilenwerkzeug gemeinsam mit seiner Bibliothek oder Konfiguration zu ändern. Außerhalb des Monorepos sollten ausgewählte Ordner weiterhin als eigenständige Repositories funktionieren.
+
+Vor allem sollten die Branch-Namen diese Grenze überschreiten:
+
+```text
+Monorepo: feature/better-imports
+             │
+             ├── tools/parser: feature/better-imports
+             └── libs/model:   feature/better-imports
+```
+
+Wenn sich ein Ordner geändert hatte, sollte ein Push des Monorepo-Branches den gleichnamigen Branch im Upstream anlegen oder aktualisieren. Ein unveränderter Ordner sollte keinen nutzlosen Branch bekommen.
+
+## Warum nicht git-subrepo?
+
+[`git-subrepo`](https://github.com/ingydotnet/git-subrepo) löst ein verwandtes Problem: Ein Repository liegt als normaler Ordner im Monorepo und Änderungen können in beide Richtungen fließen. Seine Zustandsdatei speichert jedoch einen festen Upstream-Branch. Wechselt das Monorepo von `main` auf `feature/better-imports`, folgt der eingebettete Ordner diesem Branch nicht automatisch.
+
+Mein Modell war anders: **Der aktuelle Monorepo-Branch bestimmt den Upstream-Branch.** Die Default-Branches entsprechen einander, selbst wenn einer noch `master` heißt; alle anderen Branches behalten ihren Namen.
+
+Dieser Unterschied betrifft mehr als die Kommandozeile. Ein hilfreicher Status muss für jeden Ordner beantworten:
+
+- Existiert der gleichnamige Upstream-Branch?
+- Ist der Ordner voraus, zurück oder divergiert?
+- Falls der Branch fehlt: Hat sich dieser Ordner gegenüber dem Base-Branch überhaupt geändert?
+- Welche Repositories muss ein koordinierter Push anfassen?
+
+`git-subrepo` war kein schlechtes Werkzeug. Sein festes Branch-Mapping passte nur schlecht zu meinem Workflow.
+
+## Warum nicht Submodule?
+
+Submodule bewahren Repository-Grenzen sauber, machen diese Grenzen aber auch in der täglichen Arbeit ständig sichtbar. Das übergeordnete Repository speichert einen Zeiger; der Ordner ist ein zweiter Checkout mit eigenem Branch-Zustand. Nach dem Klonen oder Branch-Wechsel landet das Submodul häufig auf einem detached `HEAD`.
+
+Hooks können alle Submodule auf passende Branches umschalten, und `push.recurseSubmodules` kann Pushes koordinieren. Dann hängt der nahtlose Monorepo-Workflow jedoch von Hooks ab, die fortlaufend reparieren, dass ich eigentlich mehrere Repositories bediene.
+
+Ich wollte den umgekehrten Kompromiss: **im Alltag ein Working Tree, Repository-Grenzen erst beim Synchronisieren**.
+
+## Der erste Entwurf
+
+Git beherrschte die schwierige Transformation bereits. `git subtree split` kann die Historie eines Ordners so rekonstruieren, als wäre dieser Ordner immer die Wurzel gewesen. `git subtree pull --squash` kann eine Upstream-Version übernehmen, ohne jeden Upstream-Commit zu importieren.
+
+So begann `git-subtrees` als Orchestrierung um `git subtree`:
+
+1. Jedes Git-Remote heißt wie sein Ordner.
+2. Der aktuelle Monorepo-Branch entspricht dem gleichnamigen Upstream-Branch.
+3. Das Werkzeug klassifiziert den Zustand jedes Ordners.
+4. Es pullt oder pusht nur, wo es nötig ist.
+5. Einen fehlenden Upstream-Branch legt es nur für veränderte Ordner an.
+
+Das funktionierte gut genug, um die nächste Problemschicht sichtbar zu machen. Ein nach einem Ordner benanntes Remote repräsentierte trotzdem ein ganzes Repository. Im Merge-Graph versteckter Synchronisationszustand funktionierte nur, bis die Historie umgeschrieben wurde. Und jeder Status-Aufruf baute zunehmend viel Historie neu auf.
+
+Das waren keine unabhängigen Fehler. Sie zeigten, dass ich Git-Konzepte an den falschen Grenzen wiederverwendet hatte. Der Rest dieser Serie folgt diesen Hinweisen bis zu dem Punkt, an dem `git subtree` aus dem Entwurf verschwand und aus `git-subtrees` Git Splice wurde.
