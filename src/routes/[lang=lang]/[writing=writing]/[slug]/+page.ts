@@ -1,5 +1,6 @@
 import { error } from "@sveltejs/kit";
 import { isLocale } from "$lib/i18n";
+import { writingSegment } from "$lib/writing/paths";
 import {
 	getPublishedWritingEntries,
 	getSeriesPosts,
@@ -13,6 +14,7 @@ export const entries = getPublishedWritingEntries;
 
 export const load = ({ params }) => {
 	if (!isLocale(params.lang)) throw error(404, "Locale not found");
+	if (params.writing !== writingSegment(params.lang)) throw error(404, "Writing section not found");
 	const post = getWritingPost(params.lang, params.slug);
 	if (!post) throw error(404, "Article not found");
 	const translation = getWritingTranslation(post);

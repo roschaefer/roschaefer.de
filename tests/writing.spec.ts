@@ -11,8 +11,11 @@ test("production writing indexes do not expose drafts", async ({ page, request }
 });
 
 test("localized RSS feeds contain no draft entries", async ({ request }) => {
-	for (const locale of ["de", "en"]) {
-		const response = await request.get(`/${locale}/writing/rss.xml`);
+	for (const [locale, path] of [
+		["de", "/de/artikel/rss.xml"],
+		["en", "/en/writing/rss.xml"],
+	] as const) {
+		const response = await request.get(path);
 		expect(response.ok()).toBe(true);
 		expect(response.headers()["content-type"]).toContain("xml");
 		const body = await response.text();
@@ -21,10 +24,19 @@ test("localized RSS feeds contain no draft entries", async ({ request }) => {
 	}
 });
 
-test("portfolio hides writing discovery until something is published", async ({ page }) => {
+test("portfolio links to writing and shows the current focus before publication", async ({
+	page,
+}) => {
 	await page.goto("/en/");
 	await expect(
 		page.getByRole("navigation", { name: "Site navigation" }).getByText("Writing"),
-	).toHaveCount(0);
-	await expect(page.getByRole("heading", { name: "Latest writing" })).toHaveCount(0);
+	).toHaveAttribute("href", "/en/writing/");
+	await expect(page.getByRole("heading", { name: "Building Git Splice" })).toBeVisible();
+	await expect(page.getByText("A five-part bilingual series is currently in draft.")).toBeVisible();
+
+	await page.goto("/de/");
+	await expect(
+		page.getByRole("navigation", { name: "Seitennavigation" }).getByText("Artikel"),
+	).toHaveAttribute("href", "/de/artikel/");
+	await expect(page.getByRole("heading", { name: "Git Splice entwickeln" })).toBeVisible();
 });

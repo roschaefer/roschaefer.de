@@ -4,6 +4,7 @@ import PageShell from "$lib/components/PageShell.svelte";
 import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
 import { markUsed } from "$lib/utils/mark-used";
+import { writingPath } from "$lib/writing/paths";
 
 interface Props {
 	locale: Locale;
@@ -19,7 +20,16 @@ const legalLinks = $derived(
 		: { imprint: "/en/imprint/", privacy: "/en/privacy/" },
 );
 
-markUsed(() => [PageShell, m, locale, currentPath, alternatePath, content, legalLinks]);
+markUsed(() => [
+	PageShell,
+	m,
+	locale,
+	currentPath,
+	alternatePath,
+	content,
+	legalLinks,
+	writingPath,
+]);
 </script>
 
 <PageShell
@@ -39,7 +49,7 @@ markUsed(() => [PageShell, m, locale, currentPath, alternatePath, content, legal
 		<nav aria-label={m.nav_site_label({}, { locale })}>
 			<ul class="flex list-none flex-wrap gap-6 p-0 text-sm uppercase tracking-[0.22em]">
 				<li><a href={`/${locale}/`}>{m.nav_cv({}, { locale })}</a></li>
-				<li><a aria-current="page" href={`/${locale}/writing/`}>{m.nav_writing({}, { locale })}</a></li>
+				<li><a aria-current="page" href={writingPath(locale)}>{m.nav_writing({}, { locale })}</a></li>
 			</ul>
 		</nav>
 	{/snippet}

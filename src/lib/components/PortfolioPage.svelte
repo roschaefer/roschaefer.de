@@ -13,7 +13,9 @@ import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
 import type { SiteContent } from "$lib/utils/content";
 import { markUsed } from "$lib/utils/mark-used";
+import { writingPath, writingPostPath } from "$lib/writing/paths";
 import type { WritingPostSummary } from "$lib/writing/posts";
+import { getWritingSeries } from "$lib/writing/series";
 
 interface Props {
 	content: SiteContent;
@@ -129,6 +131,7 @@ const primaryProfiles = $derived(
 );
 
 const otherLocale = $derived<Locale>(locale === "de" ? "en" : "de");
+const currentWritingSeries = $derived(getWritingSeries("git-splice"));
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
 const pageUrl = $derived(`${siteUrl}/${locale}/`);
@@ -183,6 +186,9 @@ markUsed(() => [
 	primaryProfiles,
 	otherLocale,
 	recentWriting,
+	currentWritingSeries,
+	writingPath,
+	writingPostPath,
 	t,
 	pageUrl,
 	ogLocale,
@@ -271,7 +277,7 @@ markUsed(() => [
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
 				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
-				{#if recentWriting.length > 0}<li><a href={`/${locale}/writing/`}>{t(m.nav_writing)}</a></li>{/if}
+				<li><a href={writingPath(locale)}>{t(m.nav_writing)}</a></li>
 			</ul>
 		</nav>
 	{/snippet}
@@ -742,25 +748,30 @@ markUsed(() => [
 			</section>
 		{/if}
 
-		{#if recentWriting.length > 0}
-			<section id="writing" aria-labelledby="writing-title" class="space-y-8">
+		<section id="writing" aria-labelledby="writing-title" class="space-y-8">
 				<div class="space-y-3">
-					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">{t(m.writing_kicker)}</p>
-					<h2 id="writing-title" class="theme-heading">{t(m.writing_latest)}</h2>
-					<p>{t(m.writing_page_description)}</p>
+					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">{t(m.writing_current_focus)}</p>
+					<h2 id="writing-title" class="theme-heading">{currentWritingSeries?.title[locale]}</h2>
+					<p>{t(m.writing_current_intro)}</p>
 				</div>
+				{#if recentWriting.length > 0}
 				<ol class="grid list-none gap-4 p-0 md:grid-cols-3">
 					{#each recentWriting as post}
 						<li class="theme-card rounded-[1.5rem] p-5">
 							<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-muted)]">{post.topics.slice(0, 2).join(" · ")}</p>
-							<h3 class="theme-heading mt-3"><a href={`/${locale}/writing/${post.slug}/`}>{post.title}</a></h3>
+							<h3 class="theme-heading mt-3"><a href={writingPostPath(locale, post.slug)}>{post.title}</a></h3>
 							<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{post.description}</p>
 						</li>
 					{/each}
 				</ol>
-				<a class="inline-flex text-sm font-bold uppercase tracking-[0.2em]" href={`/${locale}/writing/`}>{t(m.writing_all)} →</a>
-			</section>
-		{/if}
+				{:else}
+					<div class="theme-card rounded-[1.5rem] p-6">
+						<p>{currentWritingSeries?.description[locale]}</p>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.writing_current_drafts)}</p>
+					</div>
+				{/if}
+				<a class="inline-flex text-sm font-bold uppercase tracking-[0.2em]" href={writingPath(locale)}>{t(m.writing_all)} →</a>
+		</section>
 
 		<section id="contact" aria-labelledby="contact-title" class="border-t border-[var(--color-brand-line)] pt-10">
 			<div class="flex flex-col gap-6">

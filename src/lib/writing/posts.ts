@@ -1,6 +1,7 @@
 import { draftWritingModules } from "virtual:writing-drafts";
 import type { Component } from "svelte";
 import type { Locale } from "$lib/i18n";
+import { writingSegment } from "$lib/writing/paths";
 import { getWritingSeries, type WritingSeriesId } from "$lib/writing/series";
 
 export type WritingStatus = "draft" | "published";
@@ -194,4 +195,4 @@ export const getSeriesPosts = (
 export const getPublishedWritingEntries = () =>
 	allPosts
 		.filter((post) => post.status === "published")
-		.map(({ locale: lang, slug }) => ({ lang, slug }));
+		.map(({ locale: lang, slug }) => ({ lang, writing: writingSegment(lang), slug }));

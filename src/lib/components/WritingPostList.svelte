@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { Locale } from "$lib/i18n";
 import { markUsed } from "$lib/utils/mark-used";
+import { writingPostPath } from "$lib/writing/paths";
 import type { WritingPostSummary } from "$lib/writing/posts";
 
 interface Props {
@@ -18,7 +19,7 @@ const dateFormatter = $derived(
 	}),
 );
 
-markUsed(() => [locale, posts, showSeriesPosition, dateFormatter]);
+markUsed(() => [locale, posts, showSeriesPosition, dateFormatter, writingPostPath]);
 </script>
 
 <ol class="grid list-none gap-6 p-0">
@@ -30,7 +31,7 @@ markUsed(() => [locale, posts, showSeriesPosition, dateFormatter]);
 				{#if post.publishedAt}<time datetime={post.publishedAt}>{dateFormatter.format(new Date(`${post.publishedAt}T00:00:00Z`))}</time>{/if}
 			</div>
 			<h2 class="theme-heading text-2xl normal-case tracking-normal">
-				<a class="no-underline" href={`/${locale}/writing/${post.slug}/`}>{post.title}</a>
+				<a class="no-underline" href={writingPostPath(locale, post.slug)}>{post.title}</a>
 			</h2>
 			<p class="mt-3 text-[var(--color-brand-muted)]">{post.description}</p>
 		</li>

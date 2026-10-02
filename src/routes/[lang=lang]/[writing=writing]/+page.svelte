@@ -4,21 +4,33 @@ import WritingShell from "$lib/components/WritingShell.svelte";
 import { siteName, siteUrl } from "$lib/config/site";
 import * as m from "$lib/paraglide/messages";
 import { markUsed } from "$lib/utils/mark-used";
+import { writingPath, writingRssPath } from "$lib/writing/paths";
 
 const { data } = $props();
 const otherLocale = $derived(data.locale === "de" ? "en" : "de");
-const pageUrl = $derived(`${siteUrl}/${data.locale}/writing/`);
-markUsed(() => [WritingPostList, WritingShell, siteName, siteUrl, m, data, otherLocale, pageUrl]);
+const pageUrl = $derived(`${siteUrl}${writingPath(data.locale)}`);
+markUsed(() => [
+	WritingPostList,
+	WritingShell,
+	siteName,
+	siteUrl,
+	m,
+	data,
+	otherLocale,
+	pageUrl,
+	writingPath,
+	writingRssPath,
+]);
 </script>
 
 <svelte:head>
 	<title>{m.writing_page_title({}, { locale: data.locale })} | {siteName}</title>
 	<meta name="description" content={m.writing_page_description({}, { locale: data.locale })} />
 	<link rel="canonical" href={pageUrl} />
-	<link rel="alternate" hreflang="de" href={`${siteUrl}/de/writing/`} />
+	<link rel="alternate" hreflang="de" href={`${siteUrl}${writingPath("de")}`} />
 	<link rel="alternate" hreflang="en" href={`${siteUrl}/en/writing/`} />
-	<link rel="alternate" hreflang="x-default" href={`${siteUrl}/de/writing/`} />
-	<link rel="alternate" type="application/rss+xml" title="RSS" href={`/${data.locale}/writing/rss.xml`} />
+	<link rel="alternate" hreflang="x-default" href={`${siteUrl}${writingPath("de")}`} />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href={writingRssPath(data.locale)} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={m.writing_page_title({}, { locale: data.locale })} />
@@ -28,8 +40,8 @@ markUsed(() => [WritingPostList, WritingShell, siteName, siteUrl, m, data, other
 
 <WritingShell
 	locale={data.locale}
-	currentPath={`/${data.locale}/writing/`}
-	alternatePath={`/${otherLocale}/writing/`}
+	currentPath={writingPath(data.locale)}
+	alternatePath={writingPath(otherLocale)}
 >
 	{#snippet children()}
 		<header class="mb-12 border-b border-[var(--color-brand-line)] pb-10">

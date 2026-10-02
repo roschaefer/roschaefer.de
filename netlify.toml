@@ -11,6 +11,18 @@ NODE_VERSION = "26"
 MISE_DISABLE_TOOLS = "node,pnpm,sops,age"
 
 [[redirects]]
+from = "/de/writing"
+to = "/de/artikel/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/de/writing/*"
+to = "/de/artikel/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "/linkedin"
 to = "https://www.linkedin.com/in/roschaefer/"
 status = 302
