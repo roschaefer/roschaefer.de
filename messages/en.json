@@ -108,7 +108,7 @@
 	"privacy_hosting_title": "Hosting and server logs",
 	"privacy_hosting_body": "This website is hosted by Netlify. When you access the website, Netlify processes technical access data such as IP address, time, requested file, referrer, and browser information.",
 	"privacy_analytics_title": "Analytics with GoatCounter",
-	"privacy_analytics_body": "This website uses GoatCounter for privacy-friendly analytics. GoatCounter helps understand which pages are visited without using cookies, localStorage, or tracking IDs. According to GoatCounter, IP addresses and full user agent headers are not stored permanently; technical data may be processed in memory for up to eight hours to detect repeat visits.",
+	"privacy_analytics_body": "This website uses GoatCounter for privacy-friendly analytics. GoatCounter helps understand which content on this website is accessed without using cookies, localStorage, or tracking IDs. According to GoatCounter, IP addresses and full user agent headers are not stored permanently; technical data may be processed in memory for up to eight hours to detect repeat visits.",
 	"privacy_contact_title": "Contact",
 	"privacy_contact_body": "If you contact me by email or Signal, the data you provide is processed to handle your request.",
 	"privacy_external_title": "External links and embedded content",

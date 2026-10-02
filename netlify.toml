@@ -99,3 +99,27 @@ path = "/resume.json"
 [[edge_functions]]
 function = "goatcounter"
 path = "/gc/count"
+
+[[edge_functions]]
+function = "count-download"
+path = "/de/robert-schaefer-resume.de.pdf"
+
+[[edge_functions]]
+function = "count-download"
+path = "/en/robert-schaefer-resume.en.pdf"
+
+[[edge_functions]]
+function = "count-download"
+path = "/de/robert-schaefer-resume-ats.de.pdf"
+
+[[edge_functions]]
+function = "count-download"
+path = "/en/robert-schaefer-resume-ats.en.pdf"
+
+[[edge_functions]]
+function = "count-download"
+path = "/de/resume.json"
+
+[[edge_functions]]
+function = "count-download"
+path = "/en/resume.json"
