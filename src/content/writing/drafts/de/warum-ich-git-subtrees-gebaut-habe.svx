@@ -1,18 +1,28 @@
 ---
 id: motivation
-title: "Warum ich git-subtrees gebaut habe"
-description: "Ich wollte in einem Monorepo arbeiten und seine Projekte trotzdem als eigenständige Repositories auf gleichnamigen Branches nutzen. Bestehende Werkzeuge zwangen mich, mich für eine Seite zu entscheiden."
+title: "Teile eines Monorepos unabhängig veröffentlichen"
+description: "Ein Ordner soll im Monorepo entwickelt und zugleich als eigenständiges Repository veröffentlicht werden. Interessant wird das Problem, sobald Änderungen in beide Richtungen fließen müssen."
 status: draft
 series: git-splice
 seriesOrder: 1
 topics: [git, monorepos, open-source]
 ---
 
-Ich begann `git-subtrees` nicht, weil ich noch eine Methode zum Vendoring einer Bibliothek erfinden wollte. Ich wollte zwei Arbeitsweisen gleichzeitig haben.
+Ein Monorepo ist praktisch, solange alles darin gemeinsam entwickelt werden darf. Doch nicht alles darin soll auch gemeinsam veröffentlicht werden. Vielleicht enthält es mehrere Werkzeuge, von denen nur einige Open Source sind. Intuitiv liegt jedes öffentliche Projekt in einem Unterordner, der zusätzlich als eigenständiges Repository auf GitHub erscheint.
 
-Im Monorepo sollte sich jedes Projekt wie ein gewöhnlicher Ordner verhalten. Ein Branch, ein Checkout und ein atomarer Commit sollten reichen, um ein Kommandozeilenwerkzeug gemeinsam mit seiner Bibliothek oder Konfiguration zu ändern. Außerhalb des Monorepos sollten ausgewählte Ordner weiterhin als eigenständige Repositories funktionieren.
+Ein einmaliger Export dieses Ordners reicht nicht. Abhängigkeiten werden im öffentlichen Repository aktualisiert, andere Menschen tragen Änderungen bei, und diese Arbeit muss zurück ins Monorepo. Gleichzeitig entstehen neue Features weiterhin zusammen mit dem übrigen System und sollen von dort veröffentlicht werden. Der Ordner braucht keine Einbahnstraße, sondern eine bidirektionale Synchronisation.
 
-Vor allem sollten die Branch-Namen diese Grenze überschreiten:
+## Ein Patch zwischen Anwendung und Bibliothek
+
+Das gleiche Problem tritt beim Vendoring aus der anderen Richtung auf. Eine Anwendung braucht eine Änderung an einer Bibliothek, kann aber nicht auf deren nächste Veröffentlichung warten. Also landet der Quellcode der Bibliothek im Monorepo. Dort lässt sich der Patch auf einem Feature-Branch entwickeln und zusammen mit der Anwendung integrieren und testen.
+
+Danach soll der Patch zurück an das ursprüngliche Projekt. Dessen Repository gehört mir jedoch nicht. Ich muss die Änderung zunächst in einen Fork der Bibliothek bringen, bevor ich einen Pull Request öffnen kann. Einen Commit, der im Kontext des Monorepos entstanden ist, von Hand auf die Historie eines eigenständigen Forks zu übertragen, ist umständlich und fehleranfällig.
+
+Beide Fälle verlangen dieselbe Operation: **einen Ordner als normales Verzeichnis im Monorepo bearbeiten und seine Änderungen in beide Richtungen mit einem eigenständigen Repository austauschen**.
+
+Im Monorepo sollte ein Branch, ein Checkout und ein atomarer Commit reichen, um eine Anwendung gemeinsam mit einer eingebetteten Bibliothek oder Konfiguration zu ändern. Außerhalb des Monorepos sollten ausgewählte Ordner weiterhin als eigenständige Repositories funktionieren.
+
+Auch die Branch-Namen sollten diese Grenze überschreiten:
 
 ```text
 Monorepo: feature/better-imports

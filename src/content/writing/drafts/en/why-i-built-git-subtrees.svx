@@ -1,18 +1,28 @@
 ---
 id: motivation
-title: "Why I built git-subtrees"
-description: "I wanted one monorepo working tree while keeping its projects useful as independent repositories on matching branches. Existing tools made me choose one side."
+title: "Publishing parts of a monorepo independently"
+description: "A directory should be developed inside a monorepo while being published as a standalone repository. The interesting problem begins when changes need to flow both ways."
 status: draft
 series: git-splice
 seriesOrder: 1
 topics: [git, monorepos, open-source]
 ---
 
-I did not start `git-subtrees` because I wanted to invent another way to vendor a library. I started it because I wanted two ways of working at once.
+A monorepo is convenient as long as everything in it can be developed together. But that does not mean everything should be published together. It may contain several tools while only some of them are open source. The intuitive arrangement is to keep each public project in a subdirectory that also appears as a standalone repository on GitHub.
 
-Inside my monorepo, I wanted every project to behave like an ordinary directory. One branch, one checkout and one atomic commit should be enough to change a command-line tool together with the library or configuration it depends on. Outside the monorepo, selected directories should remain useful as independent repositories.
+Exporting that directory once is not enough. Dependencies get updated in the public repository, other people contribute changes, and that work needs to return to the monorepo. Meanwhile, new features are still developed together with the rest of the system and need to be published from there. The directory needs bidirectional synchronization, not a one-way export.
 
-Most importantly, the branch names should travel across that boundary:
+## Moving a patch between an application and a library
+
+The same problem appears from the other direction when vendoring. An application needs a change to a library but cannot wait for its next release, so the library's source is vendored into the monorepo. The patch can then be developed on a feature branch and integrated and tested together with the application.
+
+Afterwards, the patch should go back to the original project. I do not own its repository, though. Before I can open a pull request, I need to get the change into a fork of the library. Manually transferring a commit developed in the context of the monorepo onto the history of a standalone fork is cumbersome and error-prone.
+
+Both cases require the same operation: **work with a directory as an ordinary part of the monorepo while exchanging its changes in both directions with a standalone repository**.
+
+Inside the monorepo, one branch, one checkout and one atomic commit should be enough to change an application together with a vendored library or configuration. Outside the monorepo, selected directories should remain useful as independent repositories.
+
+The branch names should travel across that boundary too:
 
 ```text
 monorepo: feature/better-imports
