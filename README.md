@@ -97,10 +97,16 @@ Typecheck:
 pnpm check:types
 ```
 
-Quick pre-push check (paraglide + resume source + lint + typecheck + unit tests):
+Quick pre-push check (paraglide + resume source + executable writing + lint + typecheck + unit tests):
 
 ```bash
 pnpm check:quick
+```
+
+Run the executable code examples in the log posts with Scrut:
+
+```bash
+pnpm test:writing
 ```
 
 Full check, mirroring everything CI runs (slow - includes Playwright, PDFs, and a full build):

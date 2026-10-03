@@ -59,8 +59,10 @@ describe("writing metadata", () => {
 		const english = getSeriesPosts("en", "git-splice");
 		expect(english).toHaveLength(5);
 		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4, 5]);
-		const first = getWritingPost("en", "why-i-built-git-subtrees");
+		const first = getWritingPost("en", "publishing-parts-of-a-monorepo-independently");
 		expect(first).toBeDefined();
-		expect(first && getWritingTranslation(first)?.slug).toBe("warum-ich-git-subtrees-gebaut-habe");
+		expect(first && getWritingTranslation(first)?.slug).toBe(
+			"teile-eines-monorepos-unabhaengig-veroeffentlichen",
+		);
 	});
 });
