@@ -46,6 +46,12 @@ markUsed(() => [
 				{/if}
 				{#if showSeriesPosition}<span>{locale === "de" ? "Teil" : "Part"} {post.seriesOrder}</span>{/if}
 				{#if post.publishedAt}<time datetime={post.publishedAt}>{dateFormatter.format(new Date(`${post.publishedAt}T00:00:00Z`))}</time>{/if}
+				{#if post.updatedAt}
+					<span>
+						{locale === "de" ? "Bearbeitet" : "Edited"}
+						<time datetime={post.updatedAt}>{dateFormatter.format(new Date(`${post.updatedAt}T00:00:00Z`))}</time>
+					</span>
+				{/if}
 			</div>
 			<h2 class="theme-heading text-2xl normal-case tracking-normal">
 				<a class="no-underline" href={writingPostPath(locale, post.series, post.slug)}>{post.title}</a>

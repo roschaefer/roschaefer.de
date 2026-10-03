@@ -25,22 +25,39 @@ const post = (overrides: Partial<WritingPost>): WritingPost => ({
 });
 
 describe("writing metadata", () => {
-	it("rejects published content without a publication date", () => {
+	const metadata = (dates: { publishedAt?: string; updatedAt?: string } = {}) => ({
+		id: "article",
+		title: "Article",
+		description: "Description",
+		series: "git-splice",
+		seriesOrder: 1,
+		topics: ["git"],
+		...dates,
+	});
+
+	it("derives publication state from the dates", () => {
+		expect(validateWritingMetadata(metadata(), "article.svx").status).toBe("draft");
+		expect(
+			validateWritingMetadata(metadata({ publishedAt: "2026-10-03" }), "article.svx").status,
+		).toBe("published");
+	});
+
+	it("requires edits to follow publication", () => {
+		expect(() =>
+			validateWritingMetadata(metadata({ updatedAt: "2026-10-04" }), "article.svx"),
+		).toThrow("updatedAt requires publishedAt");
 		expect(() =>
 			validateWritingMetadata(
-				{
-					id: "article",
-					title: "Article",
-					description: "Description",
-					status: "published",
-					series: "git-splice",
-					seriesOrder: 1,
-					topics: ["git"],
-				},
+				metadata({ publishedAt: "2026-10-03", updatedAt: "2026-10-03" }),
 				"article.svx",
-				"published",
 			),
-		).toThrow("published articles require publishedAt");
+		).toThrow("updatedAt must be later than publishedAt");
+	});
+
+	it("rejects explicit status metadata", () => {
+		expect(() =>
+			validateWritingMetadata({ ...metadata(), status: "draft" }, "article.svx"),
+		).toThrow("status is derived from publishedAt");
 	});
 
 	it("requires matching bilingual pairs", () => {

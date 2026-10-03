@@ -2,7 +2,6 @@
 id: motivation
 title: "Teile eines Monorepos unabhängig veröffentlichen"
 description: "Ein Ordner soll im Monorepo entwickelt und zugleich als eigenständiges Repository veröffentlicht werden. Git bietet dafür Submodule und Subtrees – mit sehr unterschiedlichen Nachteilen."
-status: draft
 series: git-splice
 seriesOrder: 1
 topics: [git, monorepos, open-source]

@@ -1,4 +1,4 @@
-import { draftWritingModules } from "virtual:writing-drafts";
+import { logModules } from "virtual:log-modules";
 import type { Component } from "svelte";
 import type { Locale } from "$lib/i18n";
 import { writingSegment } from "$lib/writing/paths";
@@ -31,11 +31,6 @@ type WritingModule = {
 	metadata: unknown;
 };
 
-const publishedModules = import.meta.glob<WritingModule>(
-	"/src/content/writing/published/{de,en}/*.svx",
-	{ eager: true },
-);
-
 const isRecord = (value: unknown): value is Record<string, unknown> =>
 	typeof value === "object" && value !== null && !Array.isArray(value);
 
@@ -60,19 +55,10 @@ const optionalDate = (
 	return value;
 };
 
-export const validateWritingMetadata = (
-	value: unknown,
-	path: string,
-	expectedStatus: WritingStatus,
-): WritingMetadata => {
+export const validateWritingMetadata = (value: unknown, path: string): WritingMetadata => {
 	if (!isRecord(value)) throw new Error(`${path}: frontmatter must be an object`);
-
-	const status = requiredString(value, "status", path);
-	if (status !== "draft" && status !== "published") {
-		throw new Error(`${path}: status must be draft or published`);
-	}
-	if (status !== expectedStatus) {
-		throw new Error(`${path}: ${status} content must live in the ${status} directory`);
+	if (value.status !== undefined) {
+		throw new Error(`${path}: status is derived from publishedAt and must be omitted`);
 	}
 
 	const series = requiredString(value, "series", path);
@@ -93,17 +79,21 @@ export const validateWritingMetadata = (
 	}
 
 	const publishedAt = optionalDate(value, "publishedAt", path);
-	if (status === "published" && !publishedAt) {
-		throw new Error(`${path}: published articles require publishedAt`);
+	const updatedAt = optionalDate(value, "updatedAt", path);
+	if (updatedAt && !publishedAt) {
+		throw new Error(`${path}: updatedAt requires publishedAt`);
+	}
+	if (updatedAt && publishedAt && updatedAt <= publishedAt) {
+		throw new Error(`${path}: updatedAt must be later than publishedAt`);
 	}
 
 	return {
 		id: requiredString(value, "id", path),
 		title: requiredString(value, "title", path),
 		description: requiredString(value, "description", path),
-		status,
+		status: publishedAt ? "published" : "draft",
 		publishedAt,
-		updatedAt: optionalDate(value, "updatedAt", path),
+		updatedAt,
 		series: series as WritingSeriesId,
 		seriesOrder: seriesOrder as number,
 		topics: [...topics] as string[],
@@ -112,14 +102,10 @@ export const validateWritingMetadata = (
 
 const parseModules = (modules: Record<string, WritingModule>): WritingPost[] =>
 	Object.entries(modules).map(([path, module]) => {
-		const match = path.match(/\/writing\/(drafts|published)\/(de|en)\/([^/]+)\.svx$/);
+		const match = path.match(/\/log\/(de|en)\/([^/]+)\.svx$/);
 		if (!match) throw new Error(`Unexpected writing path: ${path}`);
-		const [, directory, locale, slug] = match;
-		const metadata = validateWritingMetadata(
-			module.metadata,
-			path,
-			directory === "drafts" ? "draft" : "published",
-		);
+		const [, locale, slug] = match;
+		const metadata = validateWritingMetadata(module.metadata, path);
 		return { ...metadata, locale: locale as Locale, slug, component: module.default };
 	});
 
@@ -149,7 +135,7 @@ export const validateWritingCollection = (posts: WritingPost[]): void => {
 	}
 };
 
-const allPosts = [...parseModules(publishedModules), ...parseModules(draftWritingModules)];
+const allPosts = parseModules(logModules);
 validateWritingCollection(allPosts);
 
 const bySeriesOrder = (left: WritingPost, right: WritingPost) =>

@@ -2,7 +2,6 @@
 id: sync-state
 title: "Synchronization state belongs in the worktree"
 description: "History can record a synchronization point, but ordinary history rewriting can erase it. A small committed state file survives and makes incremental work possible."
-status: draft
 series: git-splice
 seriesOrder: 3
 topics: [git, performance, reproducibility]

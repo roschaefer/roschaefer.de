@@ -14,12 +14,13 @@ The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, a
 - `Typst` for PDF generation
 - `Biome` for linting and formatting
 - `Vitest` for unit tests
+- `Scrut` for executable log examples
 - `Netlify` for hosting, edge locale redirects, and short-link redirects
 
 ## Content Model
 
 - `resume.i18n.json`
-- `src/content/writing/` for bilingual MDsveX articles
+- `src/content/log/` for bilingual MDsveX articles
 
 The downloadable PDFs are generated from the same localized JSON sources through a dedicated `Typst` pipeline.
 
@@ -28,21 +29,21 @@ UI translations live in:
 - `messages/de.json`
 - `messages/en.json`
 
-### Writing
+### Log
 
 Articles are stored as paired German and English `.svx` files below
-`src/content/writing/drafts/`. Draft routes are available with `pnpm dev`, but
-drafts are omitted from production pages, client assets, navigation, RSS, and
-the sitemap.
+`src/content/log/{de,en}/`. Articles without a publication date are available
+with `pnpm dev`, but are omitted from production pages, client assets,
+navigation, RSS, and the sitemap.
 
 To publish an article pair:
 
-1. Move both files from `drafts/<locale>/` to `published/<locale>/`.
-2. Change both `status` values to `published`.
-3. Add the same ISO `publishedAt` date to both files.
+1. Add the same ISO `publishedAt` date to both files.
+2. Add a locale-specific `updatedAt` date after a meaningful post-publication
+   edit. It must be later than `publishedAt`.
 
 The build validates translation pairs, stable IDs, localized slugs, series
-ordering, publication state, and dates. Published feeds are available at
+ordering, derived publication state, and dates. Published feeds are available at
 `/de/log/rss.xml` and `/en/log/rss.xml`.
 
 ## Local Development
@@ -52,6 +53,7 @@ Use the tool versions declared in `mise.toml`. It installs:
 - `node`
 - `pnpm`
 - `typst`
+- `scrut`
 
 Install dependencies:
 

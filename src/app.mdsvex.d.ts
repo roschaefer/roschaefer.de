@@ -6,8 +6,8 @@ declare module "*.svx" {
 	export default component;
 }
 
-declare module "virtual:writing-drafts" {
+declare module "virtual:log-modules" {
 	import type { Component } from "svelte";
 
-	export const draftWritingModules: Record<string, { default: Component; metadata: unknown }>;
+	export const logModules: Record<string, { default: Component; metadata: unknown }>;
 }

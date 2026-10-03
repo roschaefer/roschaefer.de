@@ -70,7 +70,16 @@ markUsed(() => [
 				{/if}
 				<h1 class="theme-heading mt-5 text-4xl normal-case tracking-normal sm:text-6xl">{data.post.title}</h1>
 				<p class="mt-6 text-xl text-[var(--color-brand-muted)]">{data.post.description}</p>
-				{#if data.post.publishedAt}<time class="mt-5 block text-sm text-[var(--color-brand-muted)]" datetime={data.post.publishedAt}>{dateFormatter.format(new Date(`${data.post.publishedAt}T00:00:00Z`))}</time>{/if}
+				{#if data.post.publishedAt}
+					<p class="mt-5 text-sm text-[var(--color-brand-muted)]">
+						{data.locale === "de" ? "Veröffentlicht" : "Published"}
+						<time datetime={data.post.publishedAt}>{dateFormatter.format(new Date(`${data.post.publishedAt}T00:00:00Z`))}</time>
+						{#if data.post.updatedAt}
+							· {data.locale === "de" ? "Bearbeitet" : "Edited"}
+							<time datetime={data.post.updatedAt}>{dateFormatter.format(new Date(`${data.post.updatedAt}T00:00:00Z`))}</time>
+						{/if}
+					</p>
+				{/if}
 			</header>
 
 			<div class="writing-prose">
