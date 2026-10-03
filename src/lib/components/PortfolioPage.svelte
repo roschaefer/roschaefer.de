@@ -13,7 +13,7 @@ import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
 import type { SiteContent } from "$lib/utils/content";
 import { markUsed } from "$lib/utils/mark-used";
-import { writingPath, writingPostPath } from "$lib/writing/paths";
+import { writingPath, writingPostPath, writingTopicPath } from "$lib/writing/paths";
 import type { WritingPostSummary } from "$lib/writing/posts";
 import { getWritingSeries } from "$lib/writing/series";
 
@@ -189,6 +189,7 @@ markUsed(() => [
 	currentWritingSeries,
 	writingPath,
 	writingPostPath,
+	writingTopicPath,
 	t,
 	pageUrl,
 	ogLocale,
@@ -453,20 +454,26 @@ markUsed(() => [
 					<a class="inline-flex text-sm font-bold uppercase tracking-[0.2em]" href={writingPath(locale)}>{t(m.writing_all)} →</a>
 				</div>
 
-				{#if recentWriting[0]}
-					<article class="theme-card rounded-[1.5rem] p-6">
-						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_latest_entry)}</p>
-						<h3 class="theme-heading mt-3"><a href={writingPostPath(locale, recentWriting[0].series, recentWriting[0].slug)}>{recentWriting[0].title}</a></h3>
-						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{recentWriting[0].description}</p>
-					</article>
-				{:else}
-					<div class="theme-card rounded-[1.5rem] p-6">
+				<div class="theme-card rounded-[1.5rem] p-6">
+					{#if !recentWriting[0]}
 						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_up_next)}</p>
-						<h3 class="theme-heading mt-3">{currentWritingSeries?.title[locale]}</h3>
-						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentWritingSeries?.description[locale]}</p>
+					{/if}
+					<h3 class:mt-3={!recentWriting[0]} class="theme-heading">
+						<a href={writingTopicPath(locale, "git-splice")}>{currentWritingSeries?.title[locale]}</a>
+					</h3>
+					<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentWritingSeries?.description[locale]}</p>
+					{#if recentWriting[0]}
+						<div class="mt-5 border-t border-[var(--color-brand-line)] pt-5">
+							<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_latest_entry)}</p>
+							<h4 class="theme-heading mt-3 text-xl normal-case tracking-normal">
+								<a href={writingPostPath(locale, recentWriting[0].series, recentWriting[0].slug)}>{recentWriting[0].title}</a>
+							</h4>
+							<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{recentWriting[0].description}</p>
+						</div>
+					{:else}
 						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.writing_current_drafts)}</p>
-					</div>
-				{/if}
+					{/if}
+				</div>
 			</div>
 		</section>
 

@@ -55,7 +55,7 @@ markUsed(() => [
 		</header>
 
 		{#if data.posts.length > 0}
-			<WritingPostList locale={data.locale} posts={data.posts} />
+			<WritingPostList locale={data.locale} posts={data.posts} showTopic />
 		{:else}
 			<p>{m.writing_empty({}, { locale: data.locale })}</p>
 		{/if}

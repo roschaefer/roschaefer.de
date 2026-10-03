@@ -35,7 +35,10 @@ test("portfolio links to writing and shows the current focus before publication"
 	await expect(
 		page.getByText("In this log, I write about what I learn along the way", { exact: false }),
 	).toBeVisible();
-	await expect(page.getByRole("heading", { name: "Building Git Splice" })).toBeVisible();
+	await expect(page.getByRole("link", { name: "Building Git Splice" })).toHaveAttribute(
+		"href",
+		"/en/log/git-splice/",
+	);
 	await expect(page.getByText("A five-part bilingual series is currently in draft.")).toBeVisible();
 
 	await page.goto("/de/");
@@ -43,5 +46,8 @@ test("portfolio links to writing and shows the current focus before publication"
 		page.getByRole("navigation", { name: "Seitennavigation" }).getByText("Log"),
 	).toHaveAttribute("href", "/de/log/");
 	await expect(page.getByRole("heading", { name: "Gelernt. Geloggt." })).toBeVisible();
-	await expect(page.getByRole("heading", { name: "Git Splice entwickeln" })).toBeVisible();
+	await expect(page.getByRole("link", { name: "Git Splice entwickeln" })).toHaveAttribute(
+		"href",
+		"/de/log/git-splice/",
+	);
 });

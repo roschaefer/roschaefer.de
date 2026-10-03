@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit";
 import { isLocale } from "$lib/i18n";
 import { createSiteContent } from "$lib/utils/content";
-import { getPublishedWritingPosts, writingPostSummary } from "$lib/writing/posts";
+import { getWritingPosts, writingPostSummary } from "$lib/writing/posts";
 
 export const entries = () => [{ lang: "de" }, { lang: "en" }];
 
@@ -13,6 +13,9 @@ export const load = ({ params }) => {
 	return {
 		content: createSiteContent(params.lang),
 		locale: params.lang,
-		recentWriting: getPublishedWritingPosts(params.lang).slice(0, 3).map(writingPostSummary),
+		recentWriting: getWritingPosts(params.lang)
+			.filter((post) => post.series === "git-splice")
+			.slice(0, 1)
+			.map(writingPostSummary),
 	};
 };
