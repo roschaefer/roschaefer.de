@@ -227,7 +227,8 @@
 				"Typst",
 				"Vitest",
 				"Playwright",
-				"Netlify"
+				"Netlify",
+				"Git"
 			],
 			"description": {
 				"de": "Persönliche Portfolio-Website und druckoptimierter Lebenslauf aus einer gemeinsamen Datenquelle. Das Projekt verbindet eine zweisprachige SvelteKit-Oberfläche, PDF-Erzeugung mit Typst und standardkonformes `resume.json` zu einer zugänglichen, datensparsamen Darstellung für Web und Druck.",
@@ -251,7 +252,8 @@
 			"keywords": [
 				"Rust",
 				"hledger",
-				"Cucumber"
+				"Cucumber",
+				"Git"
 			],
 			"description": {
 				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für die Belegprüfung mit hledger. Es gleicht buchungspflichtige Transaktionen mit Belegen auf der Festplatte ab, erkennt fehlende oder ungebuchte Dokumente, prüft die Plausibilität von Beträgen und erzeugt ein abgeleitetes Journal für die Belegansicht in Fava.",
@@ -275,7 +277,8 @@
 			"keywords": [
 				"Rust",
 				"hledger",
-				"Cucumber"
+				"Cucumber",
+				"Git"
 			],
 			"description": {
 				"de": "Ein Plain-Text-Accounting-Kommandozeilenwerkzeug für hledger, um die deutsche Steuererklärung zu automatisieren. Es liest Umsätze aus dem Journal und erzeugt daraus nachvollziehbare Exporte für die entsprechenden Formulare auf ELSTER.de. Die Exporte liegen im CSV- und XLSX-Format vor und enthalten Herleitungen zur Nachprüfung durch die Steuerbehörden.",
@@ -299,7 +302,8 @@
 			"keywords": [
 				"Bash",
 				"Bats",
-				"Nix"
+				"Nix",
+				"Git"
 			],
 			"description": {
 				"de": "Eine Git-Erweiterung, um aus einem Monorepo heraus zu anderen Repositories beizutragen: Man bearbeitet sie als Ordner, testet sie gemeinsam und synchronisiert in beide Richtungen mit einfachem Git. Monorepo und eingebundene Repositories teilen keine Commits, sodass alle anderen in jedem Repository wie gewohnt weiterarbeiten. Die Dokumentation besteht aus getesteten Beispielszenarien.",
@@ -337,7 +341,8 @@
 				"Sentry",
 				"Serverless",
 				"Infisical",
-				"ElevenLabs"
+				"ElevenLabs",
+				"Git"
 			],
 			"description": {
 				"de": "Diese SvelteKit-Anwendung für KI-gestützte Interviews und redaktionelle Veröffentlichung ersetzt eine fragile, auf Airtable, Voiceflow und weitere eigene Dienste verteilte Infrastruktur durch eine einheitliche serverlose Anwendung. Die Nutzung der integrierten Workflows von ElevenLabs AI Agents senkt Wartungsaufwand und Komplexität deutlich und verbessert die Antwortzeit des Telefonagenten um mehrere Sekunden, was für eine gute Nutzererfahrung entscheidend ist.",
@@ -374,7 +379,8 @@
 				"Cucumber",
 				"Tailwind",
 				"NINA",
-				"Tailscale"
+				"Tailscale",
+				"Git"
 			],
 			"description": {
 				"de": "Mit dieser Plattform zur Fernsteuerung von Teleskopen über die Astrofotografie-Software NINA wird Astrofotografie für alle zugänglich, ohne eigenes Equipment oder Fachwissen. Nutzerinnen und Nutzer wählen ein Himmelsobjekt und buchen Beobachtungszeit; die Anwendung überträgt Aufnahmesequenzen per Tailscale an NINA, die diese in der Nacht autonom ausführt und die Ergebnisse bereitstellt. Die zentrale Herausforderung besteht darin, eine primär interaktive Windows-Software in eine vollständig autonome Pipeline zu überführen.",
@@ -413,7 +419,8 @@
 				"Helm",
 				"Kubernetes",
 				"Hetzner",
-				"PostgreSQL"
+				"PostgreSQL",
+				"Git"
 			],
 			"description": {
 				"de": "Für diese freie und quelloffene Social-Media-Plattform für Unternehmerinnen und Unternehmer wurde die Auslieferungs- und Infrastrukturarchitektur grundlegend überarbeitet, nachdem Deployments zuvor manuell über einen Remote-Desktop auf dem Zielserver durchgeführt wurden und regelmäßig zu Ausfällen führten. Die Umstellung auf ein selbst betriebenes Kubernetes-Setup auf Hetzner mit Terraform ermöglichte produktionsnahe Testumgebungen für eigene Branches aller Teammitglieder, während die Betriebskosten mit unter 20 Euro pro Monat sehr niedrig blieben.",
@@ -450,7 +457,8 @@
 				"Ansible",
 				"Digital Ocean",
 				"Sentry",
-				"Postmark"
+				"Postmark",
+				"Git"
 			],
 			"description": {
 				"de": "Für diese Plattform für Publikumsdialog und crowd-basierte Recherche im Journalismus entstand eine Ruby-on-Rails-Anwendung, die Messenger wie WhatsApp, Telegram, Signal, Threema und E-Mail integriert, damit Redaktionen Menschen in den Kanälen erreichen können, die sie bereits nutzen. Das zentrale Alleinstellungsmerkmal ist die direkte 1:1-Kommunikation zwischen Journalistinnen oder Journalisten und ihrem Publikum, wodurch die eigene Community zu einer belastbaren Quelle für Recherche und Berichterstattung wird.",
@@ -488,7 +496,8 @@
 				"Apollo GraphQL",
 				"Hasura",
 				"Google Cloud",
-				"Vercel"
+				"Vercel",
+				"Git"
 			],
 			"description": {
 				"de": "Bei dieser Software für den Automotive Aftermarket, mit der Werkstätten Preise verschiedener Großhändler vergleichen können, wurde eine Electron-Desktop-Anwendung in eine cloudbasierte Plattform auf Google Cloud, Auth0 und Hasura überführt. Das verbesserte die Softwarequalität deutlich und erhöhte die Zahl angebundener Großhändler von drei auf 240.",
@@ -521,7 +530,8 @@
 				"SvelteKit",
 				"HyGraph",
 				"Netlify",
-				"Serverless"
+				"Serverless",
+				"Git"
 			],
 			"description": {
 				"de": "Website-Relaunch für einen Einzelhandelskunden mit SvelteKit und Hygraph, statisch ausgerollt auf Netlify. Serverseitige Logik läuft in Serverless Functions, Inhalte werden per GraphQL aus dem Headless CMS geladen. Der Relaunch verbesserte Performance, SEO und Pflegbarkeit.",
@@ -553,7 +563,8 @@
 				"Netlify",
 				"Vue",
 				"Nuxt",
-				"HyGraph"
+				"HyGraph",
+				"Git"
 			],
 			"description": {
 				"de": "Individuelles Buchungssystem für die Nähkurse eines Kursanbieters, integriert in die bestehende Website. Kurse für Erwachsene, Jugendliche und Kinder lassen sich online verwalten, inklusive Anmeldung und Warteliste.",
@@ -585,7 +596,8 @@
 				"Netlify",
 				"Svelte",
 				"SvelteKit",
-				"Tailwind"
+				"Tailwind",
+				"Git"
 			],
 			"description": {
 				"de": "Individuelles Buchungssystem für einen Anbieter berufsbegleitender Weiterbildungen. Die Lösung umfasst E-Mail-Bestätigungen, Wartelisten und eine Umsetzung mit SvelteKit und Hygraph als Headless CMS.",
@@ -617,7 +629,8 @@
 				"Netlify",
 				"Svelte",
 				"SvelteKit",
-				"Tailwind"
+				"Tailwind",
+				"Git"
 			],
 			"description": {
 				"de": "Buchungswebsite mit Kalenderintegration für eine Ferienwohnung auf Norderney. Die Verfügbarkeit einzelner Tage wird in Google Calendar gepflegt und per Google APIs auf der Website synchronisiert.",
@@ -649,7 +662,8 @@
 				"Neo4J",
 				"Nuxt",
 				"Vuetify",
-				"Tailwind"
+				"Tailwind",
+				"Git"
 			],
 			"description": {
 				"de": "Vollständige Leitung einer Master-Vorlesung zur Full-Stack-Entwicklung mit rund 40 Studierenden, inklusive Curriculum, Lehre und Benotung. Inhalte waren unter anderem funktionale Programmierung, fortgeschrittenes Git, testgetriebene Entwicklung und Code Reviews auf GitHub. Alle Vorlesungen sind öffentlich auf YouTube verfügbar.",
@@ -685,7 +699,8 @@
 				"Neo4J",
 				"Docker",
 				"Digital Ocean",
-				"Kubernetes"
+				"Kubernetes",
+				"Git"
 			],
 			"description": {
 				"de": "Technical-Lead-Arbeit an Produktarchitektur, GraphQL-APIs, produktivem Neo4J-Einsatz und Kubernetes-Betrieb für ein gemeinschaftlich entwickeltes Open-Source-Sozialnetzwerk, das Communities eine datenschutzfreundliche Alternative zu großen Plattformen bietet. Das Projekt wuchs auf rund 80 Code-Contributors auf GitHub; neue Mitwirkende wurden über GitHub, Discord und Online-Pair-Programming onboardet, direkt betreut und der Großteil der Beiträge reviewed. Neo4J lief produktiv als Primärdatenbank, um den sozialen Graphen des Netzwerks direkt im Datenmodell abzubilden.",
@@ -722,7 +737,8 @@
 				"Hetzner",
 				"S3",
 				"Digital Ocean",
-				"Docker"
+				"Docker",
+				"Git"
 			],
 			"description": {
 				"de": "Migration der Assets von einem Kubernetes-Volume zu S3-kompatiblem Object Storage, um Komplexität und Kosten des Deployments zu senken. Die Infrastruktur wurde mit Terraform und sops neu aufgesetzt; der Wechsel von einem verwalteten Kubernetes-Cluster auf Digital Ocean zu selbst betriebenem Kubernetes-Cluster auf Hetzner senkte die monatlichen Kosten um 80 %.",
@@ -783,7 +799,8 @@
 				"Ruby",
 				"Ruby on Rails",
 				"RSpec",
-				"Cucumber"
+				"Cucumber",
+				"Git"
 			],
 			"description": {
 				"de": "Aufbauend auf einem früheren journalistischen Sensor-Projekt wurde die Plattform für ein neues Format wiederverwendet und erweitert. Berichte wurden automatisiert aus Sensordaten von drei Bienenvölkern erzeugt. Das Projekt wurde für den Grimme Online Award nominiert und mit dem Deutschen Reporterpreis ausgezeichnet.",
@@ -814,7 +831,8 @@
 				"D3",
 				"Highcharts",
 				"Uberspace",
-				"PostgreSQL"
+				"PostgreSQL",
+				"Git"
 			],
 			"description": {
 				"de": "\"Rundfunk mitbestimmen\" ist ein Civic-Tech-Projekt zur symbolischen Mitbestimmung über die Verwendung des Rundfunkbeitrags. Nutzerinnen und Nutzer können Beiträge einzelnen Programmen zuordnen. Das Projekt wurde unter anderem von Zeit Online, Netzpolitik.org, Deutschlandfunk und RBB aufgegriffen.",
@@ -887,7 +905,8 @@
 			"startDate": "2015-09-30",
 			"endDate": "2018-11-30",
 			"keywords": [
-				"Ruby"
+				"Ruby",
+				"Git"
 			],
 			"description": {
 				"de": "Mentoring einer einsteigerfreundlichen Programmiergruppe mit wöchentlichen Treffen und Fokus auf Diversität und niedrigschwelligen Einstieg ins Programmieren.",
@@ -914,7 +933,8 @@
 			"keywords": [
 				"Wordpress",
 				"PHP",
-				"Docker"
+				"Docker",
+				"Git"
 			],
 			"description": {
 				"de": "Individuelle CMS-Entwicklung für die Unternehmenswebsite mit Schwerpunkt auf Pflegebarkeit und Suchmaschinenoptimierung.",
@@ -958,7 +978,8 @@
 			"keywords": [
 				"Python",
 				"JavaScript",
-				"MQTT"
+				"MQTT",
+				"Git"
 			],
 			"description": {
 				"de": "Schneller IoT-Prototyp eines smarten Badezimmerspiegels und Schranks auf Basis von Raspberry Pis, Arduinos und MQTT.",
@@ -1041,7 +1062,8 @@
 				"Ruby on Rails",
 				"Ruby",
 				"RSpec",
-				"Cucumber"
+				"Cucumber",
+				"Git"
 			],
 			"description": {
 				"de": "Für WDR und Spiegel Online entstand ein journalistisches Format, das Berichte automatisiert aus Sensordaten von drei Milchkühen erzeugte. Das Projekt erhielt große mediale Aufmerksamkeit mit mehr als 63 Berichten und Features.",
@@ -1113,7 +1135,8 @@
 			"endDate": "2017-06-30",
 			"keywords": [
 				"Ember",
-				"Python"
+				"Python",
+				"Git"
 			],
 			"description": {
 				"de": "Schneller IoT-Prototyp eines smarten Einkaufswagens.",
@@ -1245,7 +1268,8 @@
 			"startDate": "2016-09-01",
 			"endDate": "2016-09-30",
 			"keywords": [
-				"JavaScript"
+				"JavaScript",
+				"Git"
 			],
 			"description": {
 				"de": "Coachte ein Team beim Protothon-Hackathon des MIZ Babelsberg, das einen interaktiven, entscheidungsbasierten Podcast-Prototyp entwickelte.",
@@ -1268,7 +1292,8 @@
 			"startDate": "2016-08-01",
 			"endDate": "2016-08-31",
 			"keywords": [
-				"JavaScript"
+				"JavaScript",
+				"Git"
 			],
 			"description": {
 				"de": "Coachte ein Team beim Protothon-Hackathon des MIZ Babelsberg, das einen ortsbewussten Musikplayer-Prototyp entwickelte.",
@@ -1317,7 +1342,8 @@
 				"Ruby on Rails",
 				"RSpec",
 				"Cucumber",
-				"PostgreSQL"
+				"PostgreSQL",
+				"Git"
 			],
 			"description": {
 				"de": "Erste Einführung einer automatisierten Testumgebung für diese Webanwendung für Funktionäre, Schiedsrichter und Trainer.",
@@ -1365,7 +1391,8 @@
 			"startDate": "2012-01-31",
 			"endDate": "2012-08-31",
 			"keywords": [
-				"Java"
+				"Java",
+				"Git"
 			],
 			"description": {
 				"de": "Implementierung eines Geschäftsprozesses und einer Webanwendung, die SAP als Use Case für die HANA-In-Memory-Datenbank spezifiziert hat.",
