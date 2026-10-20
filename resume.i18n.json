@@ -285,8 +285,8 @@
 			"type": "volunteering"
 		},
 		{
-			"id": "git-subtrees",
-			"name": "git-subtrees",
+			"id": "git-splice",
+			"name": "git-splice",
 			"entity": "Robert Schäfer",
 			"codeVisibility": "open-source",
 			"roles": [
@@ -302,10 +302,10 @@
 				"Nix"
 			],
 			"description": {
-				"de": "Eine Git-Erweiterung, die mehrere Git-Subtrees in einem Monorepo mit ihren eigenen Repositories synchron hält. Sie kommt ohne Konfigurationsdatei aus: Jedes Remote, das wie ein Ordnerpfad heißt, ist ein Subtree. Die Dokumentation besteht aus getesteten Beispielszenarien.",
-				"en": "A Git extension that keeps multiple git subtrees in a monorepo in sync with their own repositories. It needs no config file: every remote named after a folder path is a subtree. The documentation consists of tested example scenarios."
+				"de": "Eine Git-Erweiterung, um aus einem Monorepo heraus zu anderen Repositories beizutragen: Man bearbeitet sie als Ordner, testet sie gemeinsam und synchronisiert in beide Richtungen mit einfachem Git. Monorepo und eingebundene Repositories teilen keine Commits, sodass alle anderen in jedem Repository wie gewohnt weiterarbeiten. Die Dokumentation besteht aus getesteten Beispielszenarien.",
+				"en": "A Git extension for contributing to other repositories from one monorepo: edit them as folders, test them together, and sync both ways with plain Git. The monorepo and the spliced repositories share no commits, so everyone else keeps working in each repository as before. The documentation consists of tested example scenarios."
 			},
-			"url": "https://github.com/roschaefer/git-subtrees",
+			"url": "https://github.com/roschaefer/git-splice",
 			"type": "volunteering"
 		},
 		{
