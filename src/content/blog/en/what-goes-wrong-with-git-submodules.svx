@@ -1,0 +1,13 @@
+---
+id: submodule-problems
+title: "What goes wrong with Git submodules"
+description: "Why does a change across the submodule boundary need two commits, and what does that cost every day?"
+series: why-splicing
+seriesOrder: 2
+topics: [git]
+---
+
+**Question:** Why does a change across the submodule boundary need two commits, and what does that cost every day?
+
+- Diagrams: `test/comparisons/git-submodule-fix.drawio.svg`, `git-submodule-splice-fix.drawio.svg`
+- Overlaps with recipe 1 of “Publishing parts of a monorepo independently”

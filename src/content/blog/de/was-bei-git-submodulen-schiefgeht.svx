@@ -1,0 +1,13 @@
+---
+id: submodule-problems
+title: "Was bei Git-Submodulen schiefgeht"
+description: "Warum braucht eine Änderung über die Submodul-Grenze zwei Commits, und was kostet das im Alltag?"
+series: why-splicing
+seriesOrder: 2
+topics: [git]
+---
+
+**Frage:** Warum braucht eine Änderung über die Submodul-Grenze zwei Commits, und was kostet das im Alltag?
+
+- Diagrams: `test/comparisons/git-submodule-fix.drawio.svg`, `git-submodule-splice-fix.drawio.svg`
+- Overlaps with recipe 1 of “Publishing parts of a monorepo independently”

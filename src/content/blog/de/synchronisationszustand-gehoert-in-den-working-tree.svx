@@ -2,8 +2,8 @@
 id: sync-state
 title: "Synchronisationszustand gehört in den Working Tree"
 description: "Historie kann einen Synchronisationspunkt markieren, doch gewöhnliches Umschreiben kann ihn löschen. Eine kleine eingecheckte Zustandsdatei überlebt und ermöglicht inkrementelle Arbeit."
-series: git-splice
-seriesOrder: 3
+series: splicing-concepts
+seriesOrder: 4
 topics: [git]
 ---
 

@@ -78,10 +78,9 @@ describe("blog metadata", () => {
 		).toThrow("collides with a blog route");
 	});
 
-	it("loads the five ordered draft pairs and resolves translated slugs", () => {
-		const english = getSeriesPosts("en", "git-splice");
-		expect(english).toHaveLength(5);
-		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4, 5]);
+	it("orders each series and resolves translated slugs", () => {
+		const english = getSeriesPosts("en", "why-splicing");
+		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4]);
 		const first = getBlogPost("en", "publishing-parts-of-a-monorepo-independently");
 		expect(first).toBeDefined();
 		expect(first && getBlogTranslation(first)?.slug).toBe(

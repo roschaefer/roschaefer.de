@@ -1,0 +1,12 @@
+---
+id: git-subrepo
+title: "git-subrepo"
+description: "Wie geht git-subrepo dasselbe Problem an, und wo unterscheidet es sich vom Splicing?"
+series: other-tools
+seriesOrder: 1
+topics: [git]
+---
+
+**Frage:** Wie geht git-subrepo dasselbe Problem an, und wo unterscheidet es sich vom Splicing?
+
+- Diagrams: `test/comparisons/third-party/git-subrepo-*.drawio.svg`

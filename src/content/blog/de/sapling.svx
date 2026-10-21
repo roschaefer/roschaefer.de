@@ -1,0 +1,10 @@
+---
+id: sapling
+title: "Sapling"
+description: "Was macht Sapling anders, und macht es Splicing überflüssig?"
+series: other-tools
+seriesOrder: 2
+topics: [git]
+---
+
+**Frage:** Was macht Sapling anders, und macht es Splicing überflüssig?

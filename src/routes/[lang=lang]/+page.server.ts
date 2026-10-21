@@ -13,9 +13,6 @@ export const load = ({ params }) => {
 	return {
 		content: createSiteContent(params.lang),
 		locale: params.lang,
-		recentPosts: getBlogPosts(params.lang)
-			.filter((post) => post.series === "git-splice")
-			.slice(0, 1)
-			.map(blogPostSummary),
+		recentPosts: getBlogPosts(params.lang).slice(0, 1).map(blogPostSummary),
 	};
 };

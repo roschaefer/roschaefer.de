@@ -1,0 +1,13 @@
+---
+id: subtree-problems
+title: "What goes wrong with git subtree"
+description: "Why do squash merges, rejoins and slow splits make git subtree hard to live with?"
+series: why-splicing
+seriesOrder: 3
+topics: [git]
+---
+
+**Question:** Why do squash merges, rejoins and slow splits make git subtree hard to live with?
+
+- Diagrams: `test/comparisons/git-subtree-*.drawio.svg`
+- Overlaps with recipe 2 of “Publishing parts of a monorepo independently”

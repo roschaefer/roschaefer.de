@@ -1,0 +1,13 @@
+---
+id: subtree-problems
+title: "Was bei git subtree schiefgeht"
+description: "Warum machen Squash-Merges, Rejoins und langsame Splits git subtree auf Dauer mühsam?"
+series: why-splicing
+seriesOrder: 3
+topics: [git]
+---
+
+**Frage:** Warum machen Squash-Merges, Rejoins und langsame Splits git subtree auf Dauer mühsam?
+
+- Diagrams: `test/comparisons/git-subtree-*.drawio.svg`
+- Overlaps with recipe 2 of “Publishing parts of a monorepo independently”

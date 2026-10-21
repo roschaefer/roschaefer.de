@@ -33,19 +33,21 @@ test("portfolio links to the blog and shows the current focus before publication
 	).toHaveAttribute("href", "/en/blog/");
 	await expect(page.getByRole("heading", { level: 2, name: "Blog" })).toBeVisible();
 	await expect(page.getByText("Current series")).toBeVisible();
-	await expect(page.getByRole("link", { name: "Building Git Splice" })).toHaveAttribute(
+	await expect(page.getByRole("link", { name: "Why splicing" })).toHaveAttribute(
 		"href",
-		"/en/blog/series/git-splice/",
+		"/en/blog/series/why-splicing/",
 	);
-	await expect(page.getByText("A five-part bilingual series is currently in draft.")).toBeVisible();
+	await expect(
+		page.getByText("A bilingual series about splicing is currently in draft."),
+	).toBeVisible();
 
 	await page.goto("/de/");
 	await expect(
 		page.getByRole("navigation", { name: "Seitennavigation" }).getByText("Blog"),
 	).toHaveAttribute("href", "/de/blog/");
 	await expect(page.getByText("Aktuelle Serie")).toBeVisible();
-	await expect(page.getByRole("link", { name: "Git Splice entwickeln" })).toHaveAttribute(
+	await expect(page.getByRole("link", { name: "Warum Splicing" })).toHaveAttribute(
 		"href",
-		"/de/blog/series/git-splice/",
+		"/de/blog/series/why-splicing/",
 	);
 });
