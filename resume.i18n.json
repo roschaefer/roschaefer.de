@@ -1367,6 +1367,10 @@
 			],
 			"startDate": "2013-10-01",
 			"endDate": "2013-11-30",
+			"keywords": [
+				"Java",
+				"Git"
+			],
 			"description": {
 				"de": "Werkzeugentwicklung zur automatisierten Risikoanalyse in Lieferketten auf Basis einer bestehenden Legacy-Codebasis.",
 				"en": "Built a tool for automated risk analysis in supply chains, working with an existing legacy codebase."
