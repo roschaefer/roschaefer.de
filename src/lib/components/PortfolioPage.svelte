@@ -1,5 +1,8 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
+import { blogPath, blogPostPath, blogSeriesPath } from "$lib/blog/paths";
+import type { BlogPostSummary } from "$lib/blog/posts";
+import { getBlogSeries } from "$lib/blog/series";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
 import NewspaperIcon from "$lib/components/NewspaperIcon.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
@@ -13,17 +16,14 @@ import type { Locale } from "$lib/i18n";
 import * as m from "$lib/paraglide/messages";
 import type { SiteContent } from "$lib/utils/content";
 import { markUsed } from "$lib/utils/mark-used";
-import { writingPath, writingPostPath, writingTopicPath } from "$lib/writing/paths";
-import type { WritingPostSummary } from "$lib/writing/posts";
-import { getWritingSeries } from "$lib/writing/series";
 
 interface Props {
 	content: SiteContent;
 	locale: Locale;
-	recentWriting: WritingPostSummary[];
+	recentPosts: BlogPostSummary[];
 }
 
-const { content, locale, recentWriting }: Props = $props();
+const { content, locale, recentPosts }: Props = $props();
 
 let activeAnchorTargetId = $state<string | null>(null);
 let projectsExpanded = $state(false);
@@ -131,7 +131,7 @@ const primaryProfiles = $derived(
 );
 
 const otherLocale = $derived<Locale>(locale === "de" ? "en" : "de");
-const currentWritingSeries = $derived(getWritingSeries("git-splice"));
+const currentBlogSeries = $derived(getBlogSeries("git-splice"));
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
 const pageUrl = $derived(`${siteUrl}/${locale}/`);
@@ -185,11 +185,11 @@ markUsed(() => [
 	m,
 	primaryProfiles,
 	otherLocale,
-	recentWriting,
-	currentWritingSeries,
-	writingPath,
-	writingPostPath,
-	writingTopicPath,
+	recentPosts,
+	currentBlogSeries,
+	blogPath,
+	blogPostPath,
+	blogSeriesPath,
 	t,
 	pageUrl,
 	ogLocale,
@@ -278,7 +278,7 @@ markUsed(() => [
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
 				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
-				<li><a href={writingPath(locale)}>{t(m.nav_writing)}</a></li>
+				<li><a href={blogPath(locale)}>{t(m.nav_blog)}</a></li>
 			</ul>
 		</nav>
 	{/snippet}
@@ -445,33 +445,31 @@ markUsed(() => [
 			</aside>
 		</section>
 
-		<section id="writing" aria-labelledby="writing-title" class="theme-panel rounded-[2rem] p-6 sm:p-8">
-			<div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.8fr)] lg:items-start">
-				<div class="space-y-4">
-					<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--color-brand-cyan)]">Log</p>
-					<h2 id="writing-title" class="theme-heading">{t(m.writing_home_title)}</h2>
-					<p class="text-lg">{t(m.writing_home_intro)}</p>
-					<a class="inline-flex text-sm font-bold uppercase tracking-[0.2em]" href={writingPath(locale)}>{t(m.writing_all)} →</a>
+		<section id="blog" aria-labelledby="blog-title" class="theme-panel rounded-[2rem] p-6 sm:p-8">
+			<div class="mb-6 flex flex-wrap items-baseline justify-between gap-4">
+				<h2 id="blog-title" class="theme-heading">{t(m.nav_blog)}</h2>
+				<a class="text-sm font-bold uppercase tracking-[0.2em]" href={blogPath(locale)}>{t(m.blog_all)} →</a>
+			</div>
+
+			<div class="grid gap-6 md:grid-cols-2">
+				<div class="theme-card rounded-[1.5rem] p-6">
+					<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_current_series)}</p>
+					<h3 class="theme-heading mt-3 text-xl normal-case tracking-normal">
+						<a href={blogSeriesPath(locale, "git-splice")}>{currentBlogSeries?.title[locale]}</a>
+					</h3>
+					<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentBlogSeries?.description[locale]}</p>
 				</div>
 
 				<div class="theme-card rounded-[1.5rem] p-6">
-					{#if !recentWriting[0]}
-						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_up_next)}</p>
-					{/if}
-					<h3 class:mt-3={!recentWriting[0]} class="theme-heading">
-						<a href={writingTopicPath(locale, "git-splice")}>{currentWritingSeries?.title[locale]}</a>
-					</h3>
-					<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentWritingSeries?.description[locale]}</p>
-					{#if recentWriting[0]}
-						<div class="mt-5 border-t border-[var(--color-brand-line)] pt-5">
-							<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.writing_latest_entry)}</p>
-							<h4 class="theme-heading mt-3 text-xl normal-case tracking-normal">
-								<a href={writingPostPath(locale, recentWriting[0].series, recentWriting[0].slug)}>{recentWriting[0].title}</a>
-							</h4>
-							<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{recentWriting[0].description}</p>
-						</div>
+					{#if recentPosts[0]}
+						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_latest_entry)}</p>
+						<h3 class="theme-heading mt-3 text-xl normal-case tracking-normal">
+							<a href={blogPostPath(locale, recentPosts[0].slug)}>{recentPosts[0].title}</a>
+						</h3>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{recentPosts[0].description}</p>
 					{:else}
-						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.writing_current_drafts)}</p>
+						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_up_next)}</p>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.blog_current_drafts)}</p>
 					{/if}
 				</div>
 			</div>

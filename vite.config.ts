@@ -5,9 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vitest/config";
 
 const workspaceRoot = new URL(".", import.meta.url).pathname;
-const logContentRoot = join(workspaceRoot, "src/content/log");
-const virtualLogModules = "virtual:log-modules";
-const resolvedVirtualLogModules = `\0${virtualLogModules}`;
+const blogContentRoot = join(workspaceRoot, "src/content/blog");
+const virtualBlogModules = "virtual:blog-modules";
+const resolvedVirtualBlogModules = `\0${virtualBlogModules}`;
 
 const hasPublicationDate = (path: string) => {
 	const source = readFileSync(path, "utf8");
@@ -16,19 +16,19 @@ const hasPublicationDate = (path: string) => {
 	return /^publishedAt:\s*["']?\d{4}-\d{2}-\d{2}["']?\s*$/m.test(frontmatter);
 };
 
-const logModulesPlugin = (includeDrafts: boolean) => ({
-	name: "log-modules",
+const blogModulesPlugin = (includeDrafts: boolean) => ({
+	name: "blog-modules",
 	resolveId(id: string) {
-		if (id === virtualLogModules) return resolvedVirtualLogModules;
+		if (id === virtualBlogModules) return resolvedVirtualBlogModules;
 	},
 	load(id: string) {
-		if (id !== resolvedVirtualLogModules) return;
+		if (id !== resolvedVirtualBlogModules) return;
 		const paths = (["de", "en"] as const).flatMap((locale) =>
-			readdirSync(join(logContentRoot, locale))
+			readdirSync(join(blogContentRoot, locale))
 				.filter((name) => name.endsWith(".svx"))
 				.map((name) => ({
-					filePath: join(logContentRoot, locale, name),
-					modulePath: `/src/content/log/${locale}/${name}`,
+					filePath: join(blogContentRoot, locale, name),
+					modulePath: `/src/content/blog/${locale}/${name}`,
 				})),
 		);
 		const included = includeDrafts
@@ -36,17 +36,17 @@ const logModulesPlugin = (includeDrafts: boolean) => ({
 			: paths.filter(({ filePath }) => hasPublicationDate(filePath));
 		const imports = included.map(
 			({ modulePath }, index) =>
-				`import * as logModule${index} from ${JSON.stringify(modulePath)};`,
+				`import * as blogModule${index} from ${JSON.stringify(modulePath)};`,
 		);
 		const entries = included.map(
-			({ modulePath }, index) => `${JSON.stringify(modulePath)}: logModule${index}`,
+			({ modulePath }, index) => `${JSON.stringify(modulePath)}: blogModule${index}`,
 		);
-		return `${imports.join("\n")}\nexport const logModules = {${entries.join(",")}};`;
+		return `${imports.join("\n")}\nexport const blogModules = {${entries.join(",")}};`;
 	},
 });
 
 export default defineConfig(({ command }) => ({
-	plugins: [logModulesPlugin(command !== "build"), tailwindcss(), sveltekit()],
+	plugins: [blogModulesPlugin(command !== "build"), tailwindcss(), sveltekit()],
 	server: {
 		fs: {
 			allow: [workspaceRoot],

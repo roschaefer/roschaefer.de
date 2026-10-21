@@ -6,4 +6,4 @@ const { data } = $props();
 markUsed(() => [PortfolioPage, data]);
 </script>
 
-<PortfolioPage content={data.content} locale={data.locale} recentWriting={data.recentWriting} />
+<PortfolioPage content={data.content} locale={data.locale} recentPosts={data.recentPosts} />

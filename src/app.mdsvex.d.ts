@@ -6,8 +6,8 @@ declare module "*.svx" {
 	export default component;
 }
 
-declare module "virtual:log-modules" {
+declare module "virtual:blog-modules" {
 	import type { Component } from "svelte";
 
-	export const logModules: Record<string, { default: Component; metadata: unknown }>;
+	export const blogModules: Record<string, { default: Component; metadata: unknown }>;
 }

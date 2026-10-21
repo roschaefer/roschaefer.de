@@ -14,13 +14,13 @@ The site is bilingual (`de`, `en`), privacy-conscious, screen-reader friendly, a
 - `Typst` for PDF generation
 - `Biome` for linting and formatting
 - `Vitest` for unit tests
-- `Scrut` for executable log examples
+- `Scrut` for executable blog examples
 - `Netlify` for hosting, edge locale redirects, and short-link redirects
 
 ## Content Model
 
 - `resume.i18n.json`
-- `src/content/log/` for bilingual MDsveX articles
+- `src/content/blog/` for bilingual MDsveX articles
 
 The downloadable PDFs are generated from the same localized JSON sources through a dedicated `Typst` pipeline.
 
@@ -29,10 +29,10 @@ UI translations live in:
 - `messages/de.json`
 - `messages/en.json`
 
-### Log
+### Blog
 
 Articles are stored as paired German and English `.svx` files below
-`src/content/log/{de,en}/`. Articles without a publication date are available
+`src/content/blog/{de,en}/`. Articles without a publication date are available
 with `pnpm dev`, but are omitted from production pages, client assets,
 navigation, RSS, and the sitemap.
 
@@ -44,7 +44,10 @@ To publish an article pair:
 
 The build validates translation pairs, stable IDs, localized slugs, series
 ordering, derived publication state, and dates. Published feeds are available at
-`/de/log/rss.xml` and `/en/log/rss.xml`.
+`/de/blog/rss.xml` and `/en/blog/rss.xml`. Articles live at flat URLs
+(`/{de,en}/blog/<slug>/`); series have overview pages at
+`/{de,en}/blog/series/<series>/`, and the index filters by topic with repeated
+`?topic=` parameters.
 
 ## Local Development
 
@@ -99,16 +102,16 @@ Typecheck:
 pnpm check:types
 ```
 
-Quick pre-push check (paraglide + resume source + executable writing + lint + typecheck + unit tests):
+Quick pre-push check (paraglide + resume source + executable blog examples + lint + typecheck + unit tests):
 
 ```bash
 pnpm check:quick
 ```
 
-Run the executable code examples in the log posts with Scrut:
+Run the executable code examples in the blog posts with Scrut:
 
 ```bash
-pnpm test:writing
+pnpm test:blog
 ```
 
 Full check, mirroring everything CI runs (slow - includes Playwright, PDFs, and a full build):

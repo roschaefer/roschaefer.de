@@ -197,16 +197,16 @@
 		color: var(--color-brand-button-secondary-hover-text);
 	}
 
-	.writing-prose {
+	.blog-prose {
 		font-size: 1.08em;
 		line-height: 1.75;
 	}
 
-	.writing-prose > :first-child {
+	.blog-prose > :first-child {
 		margin-top: 0;
 	}
 
-	.writing-prose :is(h2, h3, h4) {
+	.blog-prose :is(h2, h3, h4) {
 		margin-top: 2.5em;
 		margin-bottom: 0.75em;
 		color: var(--color-brand-heading);
@@ -214,22 +214,22 @@
 		letter-spacing: 0.015em;
 	}
 
-	.writing-prose :is(p, ul, ol, blockquote, pre, table) {
+	.blog-prose :is(p, ul, ol, blockquote, pre, table) {
 		margin-top: 1.25em;
 		margin-bottom: 1.25em;
 	}
 
-	.writing-prose :is(ul, ol) {
+	.blog-prose :is(ul, ol) {
 		padding-left: 1.5em;
 	}
 
-	.writing-prose blockquote {
+	.blog-prose blockquote {
 		border-left: 4px solid var(--color-brand-cyan);
 		padding-left: 1.25rem;
 		color: var(--color-brand-muted);
 	}
 
-	.writing-prose :not(pre) > code {
+	.blog-prose :not(pre) > code {
 		border: 1px solid var(--color-brand-line);
 		border-radius: 0.35rem;
 		background: var(--color-brand-panel-soft);
@@ -237,7 +237,7 @@
 		font-size: 0.9em;
 	}
 
-	.writing-prose pre {
+	.blog-prose pre {
 		overflow-x: auto;
 		border: 1px solid var(--color-brand-line);
 		border-radius: 1rem;
@@ -247,13 +247,13 @@
 		line-height: 1.55;
 	}
 
-	.writing-prose table {
+	.blog-prose table {
 		display: block;
 		overflow-x: auto;
 		border-collapse: collapse;
 	}
 
-	.writing-prose :is(th, td) {
+	.blog-prose :is(th, td) {
 		border: 1px solid var(--color-brand-line);
 		padding: 0.65rem 0.8rem;
 		text-align: left;
