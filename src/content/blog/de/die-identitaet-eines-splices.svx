@@ -8,3 +8,5 @@ topics: [git]
 ---
 
 **Frage:** Was macht einen Splice zum selben Splice, nachdem er verschoben, umbenannt oder neu geklont wurde?
+
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [Splice identity](https://github.com/roschaefer/git-splice/blob/main/test/concepts/splice-identity/README.md).

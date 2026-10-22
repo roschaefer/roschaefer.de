@@ -69,3 +69,5 @@ Das beseitigt mehr als ein Sicherheitsrisiko. Remote-Namen können nicht kollidi
 Remotes hatten den ersten Entwurf angenehm klein gemacht. Doch knappe Konfiguration ist nicht automatisch ein korrektes Modell. Die Beziehung zwischen Ordner und Repository braucht eine URL und Refs. Sie muss nicht so tun, als sei der Ordner selbst ein lokales Repository.
 
 Die sicherste ungültige Operation ist nicht die, die ein kluger Hook abfängt. Es ist die, die der Entwurf gar nicht ausdrücken kann.
+
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Accidentally pushing the monorepo to a subfolder's remote](https://github.com/roschaefer/git-splice/blob/main/docs/design/accidental-monorepo-push.md).

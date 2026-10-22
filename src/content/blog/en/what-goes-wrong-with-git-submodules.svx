@@ -63,4 +63,4 @@ Here *c* changes the library and the app in one commit. The library has no new c
 
 Submodules have real strengths. A clone without `--recurse-submodules` doesn't download the library at all. The monorepo commit pins an exact library commit. And the library can stay private while the monorepo is public, or the other way round. If those things matter most to you, submodules are a reasonable choice.
 
-Every command in this post is tested. The full walkthrough is in the git-splice docs: [`git submodule` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-submodule.md).
+More in the git-splice docs, where every command is tested: [`git submodule` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-submodule.md).

@@ -11,3 +11,5 @@ topics: [git]
 
 - Fundamentals episode
 - Could merge with “How to key an upstream”
+
+More in the git-splice docs, where every command is tested: [Upstreams](https://github.com/roschaefer/git-splice/blob/main/test/concepts/upstreams/README.md).

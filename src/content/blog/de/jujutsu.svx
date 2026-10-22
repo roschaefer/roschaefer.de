@@ -8,3 +8,5 @@ topics: [git]
 ---
 
 **Frage:** Wie sähe Splicing in jj aus, und was kann Git davon lernen?
+
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [Jujutsu compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/vcs/jj.md).

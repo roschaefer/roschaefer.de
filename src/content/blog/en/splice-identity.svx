@@ -8,3 +8,5 @@ topics: [git]
 ---
 
 **Question:** What makes a splice the same splice after it is moved, renamed or re-cloned?
+
+More in the git-splice docs, where every command is tested: [Splice identity](https://github.com/roschaefer/git-splice/blob/main/test/concepts/splice-identity/README.md).

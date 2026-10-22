@@ -8,3 +8,5 @@ topics: [git]
 ---
 
 **Question:** What happens when a spliced repository contains a splice itself?
+
+More in the git-splice docs: [Nesting](https://github.com/roschaefer/git-splice/blob/main/test/concepts/nesting/README.md).

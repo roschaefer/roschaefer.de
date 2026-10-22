@@ -8,3 +8,5 @@ topics: [git]
 ---
 
 **Frage:** In welchem Sinn ist der Ordner ein Spiegel des Upstreams, und wo endet die Analogie?
+
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Mirrors](https://github.com/roschaefer/git-splice/blob/main/docs/going-forward/mirrors.md).

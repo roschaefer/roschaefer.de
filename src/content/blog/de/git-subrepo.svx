@@ -10,3 +10,5 @@ topics: [git]
 **Frage:** Wie geht git-subrepo dasselbe Problem an, und wo unterscheidet es sich vom Splicing?
 
 - Diagrams: `test/comparisons/third-party/git-subrepo-*.drawio.svg`
+
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [git-subrepo compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/third-party/git-subrepo.md).

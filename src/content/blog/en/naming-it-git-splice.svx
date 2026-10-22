@@ -10,3 +10,5 @@ topics: [git]
 **Question:** Why “splice”, and why is git-splice the reference implementation rather than the point?
 
 - Image: `docs/images/rope-splices-nordisk-familjebok.png`
+
+More in the git-splice docs: [Why "splice"](https://github.com/roschaefer/git-splice/blob/main/docs/design/name.md).

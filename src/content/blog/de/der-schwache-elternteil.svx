@@ -10,3 +10,5 @@ topics: [git]
 **Frage:** Was ist ein schwacher Elternteil, und warum braucht Splicing eine Beziehung, die schwächer ist als Git-Abstammung?
 
 - Title is jargon: find a question-shaped title before publishing
+
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Weak parents](https://github.com/roschaefer/git-splice/blob/main/docs/going-forward/weak-parents.md).
