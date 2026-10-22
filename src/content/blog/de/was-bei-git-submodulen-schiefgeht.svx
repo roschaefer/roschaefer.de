@@ -25,7 +25,7 @@ $ git status --short
 
 Zum Committen brauche ich zwei Commits in zwei Repositories. Erst den Fix *f* in der Bibliothek, dann *b* im Monorepo, der nichts weiter speichert als den neuen Zeiger auf *f*:
 
-![Die Commits a und b des Monorepos in einer Reihe. Darunter die Commits l und f der Bibliothek, jeweils unter dem Monorepo-Commit, der sie speichert](/blog/diagrams/git-submodule-fix.drawio.svg)
+![Die Commits a und b des Monorepos in einer Reihe. Darunter die Commits l und f der Bibliothek, jeweils unter dem Monorepo-Commit, der sie speichert](/blog/episodes/git-submodule-fix.drawio.svg)
 
 Der Monorepo-Commit *b* enthält die Änderung nicht. Er enthält einen Verweis auf einen Commit, den es in diesem Moment nur auf meinem Rechner gibt. Das hat Folgen:
 
@@ -55,7 +55,7 @@ Ein Teil des Zustands gehört dem einzelnen Worktree, ein anderer Teil allen, un
 
 Die Dateien der Bibliothek sollen im Monorepo-Commit stehen, wie alle anderen Dateien auch. Dann sind der Fix und der Code, der ihn aufruft, ein Commit, `status` und `log` sehen jede Datei, und jeder Worktree hat die Bibliothek ohne weitere Einrichtung:
 
-![Die Commits s und c des Monorepos in einer Reihe. Darunter der Commit l der Bibliothek, main zeigt auf l](/blog/diagrams/git-submodule-splice-fix.drawio.svg)
+![Die Commits s und c des Monorepos in einer Reihe. Darunter der Commit l der Bibliothek, main zeigt auf l](/blog/episodes/git-submodule-splice-fix.drawio.svg)
 
 Hier ändert *c* Bibliothek und App in einem Commit. Die Bibliothek hat noch keinen neuen Commit. Ihr `main` bleibt bei *l*, bis ich mich entscheide, den Fix dorthin zu schicken. Wie das funktioniert, darum geht es in dieser Serie.
 

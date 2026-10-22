@@ -21,25 +21,25 @@ The monorepo uses the library. It doesn't develop the library's past. The change
 
 `--squash` keeps the library's history out. `add` creates a commit *q* with the library's files and no parents, and merges it as *s*:
 
-![The monorepo's a and s in a line, and q, a commit without parents, as the second parent of s](/blog/diagrams/git-subtree-squash-add.drawio.svg)
+![The monorepo's a and s in a line, and q, a commit without parents, as the second parent of s](/blog/episodes/git-subtree-squash-add.drawio.svg)
 
 Then I work. *c* and *e* fix the library, *b* and *d* change the app:
 
-![The monorepo's a, s, b, c, d and e in a line, and q as the second parent of s](/blog/diagrams/git-subtree-squashed.drawio.svg)
+![The monorepo's a, s, b, c, d and e in a line, and q as the second parent of s](/blog/episodes/git-subtree-squashed.drawio.svg)
 
 To push the two fixes, `split` has to find out which commits touched the library. With `--squash`, the monorepo contains no library commit it could start from. So `split` walks the whole monorepo history, on every push. In my setup that's 46 commits, although only two of them matter. In a monorepo with years of history, that gets slow.
 
 `split --rejoin` helps by merging the result back as a new starting point. That's one more merge *j* for every push, with another squashed commit *r* on top of *q*:
 
-![The monorepo's a, s, b, c, d, e and j in a line. Below it, q as the second parent of s, and r, on top of q, as the second parent of j](/blog/diagrams/git-subtree-rejoin.drawio.svg)
+![The monorepo's a, s, b, c, d, e and j in a line. Below it, q as the second parent of s, and r, on top of q, as the second parent of j](/blog/episodes/git-subtree-rejoin.drawio.svg)
 
 And it breaks as soon as pull requests are squash-merged, which is common. The squash merge keeps the fixes but drops *j* and *r*, so the next `split` walks everything again:
 
-![The monorepo's a, s and p in a line, and q as the second parent of s](/blog/diagrams/git-subtree-squash-merged.drawio.svg)
+![The monorepo's a, s and p in a line, and q as the second parent of s](/blog/episodes/git-subtree-squash-merged.drawio.svg)
 
 With one library, the graph is still readable. With three, every library adds its own squashed commits and its own merges, and their arrows cross:
 
-![The monorepo's history with merges for three libraries. Each library's squashed commits form their own line, and the arrows from libraries B and C to their merges cross the lines of the other libraries](/blog/diagrams/git-subtree-rejoin-three-libraries.drawio.svg)
+![The monorepo's history with merges for three libraries. Each library's squashed commits form their own line, and the arrows from libraries B and C to their merges cross the lines of the other libraries](/blog/episodes/git-subtree-rejoin-three-libraries.drawio.svg)
 
 None of these merges says anything about the app. They're there to make `split` fast.
 

@@ -25,7 +25,7 @@ $ git status --short
 
 To commit, I need two commits in two repositories. First the fix *f* in the library, then *b* in the monorepo, which records nothing but the new pointer to *f*:
 
-![The monorepo's a and b in a line. Below it, the library's l and f, each under the monorepo commit that records it](/blog/diagrams/git-submodule-fix.drawio.svg)
+![The monorepo's a and b in a line. Below it, the library's l and f, each under the monorepo commit that records it](/blog/episodes/git-submodule-fix.drawio.svg)
 
 The monorepo commit *b* doesn't carry the change. It carries a reference to a commit that, at this point, exists only on my machine. That has consequences:
 
@@ -55,7 +55,7 @@ Part of the state is per worktree and part of it is shared, and nothing tells me
 
 The library's files should be in the monorepo commit, like any other files. Then the fix and the code that calls it are one commit, `status` and `log` see every file, and every worktree has the library without any setup:
 
-![The monorepo's s and c in a line. Below it, the library's l, with main at l](/blog/diagrams/git-submodule-splice-fix.drawio.svg)
+![The monorepo's s and c in a line. Below it, the library's l, with main at l](/blog/episodes/git-submodule-splice-fix.drawio.svg)
 
 Here *c* changes the library and the app in one commit. The library has no new commit yet. Its `main` stays at *l* until I decide to send the fix there. How that works is what this series is about.
 

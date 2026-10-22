@@ -21,25 +21,25 @@ Das Monorepo nutzt die Bibliothek. Es entwickelt nicht ihre Vergangenheit weiter
 
 `--squash` hält die Historie der Bibliothek draußen. `add` erzeugt einen Commit *q* mit den Dateien der Bibliothek und ohne Eltern und merged ihn als *s*:
 
-![Die Commits a und s des Monorepos in einer Reihe, und q, ein Commit ohne Eltern, als zweiter Elternteil von s](/blog/diagrams/git-subtree-squash-add.drawio.svg)
+![Die Commits a und s des Monorepos in einer Reihe, und q, ein Commit ohne Eltern, als zweiter Elternteil von s](/blog/episodes/git-subtree-squash-add.drawio.svg)
 
 Dann arbeite ich. *c* und *e* fixen die Bibliothek, *b* und *d* ändern die App:
 
-![Die Commits a, s, b, c, d und e des Monorepos in einer Reihe, und q als zweiter Elternteil von s](/blog/diagrams/git-subtree-squashed.drawio.svg)
+![Die Commits a, s, b, c, d und e des Monorepos in einer Reihe, und q als zweiter Elternteil von s](/blog/episodes/git-subtree-squashed.drawio.svg)
 
 Um die beiden Fixes zu pushen, muss `split` herausfinden, welche Commits die Bibliothek geändert haben. Mit `--squash` enthält das Monorepo keinen Commit der Bibliothek, bei dem es anfangen könnte. Also durchläuft `split` die ganze Historie des Monorepos, bei jedem Push. In meinem Aufbau sind das 46 Commits, obwohl nur zwei davon zählen. In einem Monorepo mit Jahren an Historie wird das langsam.
 
 `split --rejoin` hilft, indem es das Ergebnis als neuen Startpunkt zurück merged. Das ist ein weiterer Merge *j* bei jedem Push, mit einem weiteren gesquashten Commit *r* auf *q*:
 
-![Die Commits a, s, b, c, d, e und j des Monorepos in einer Reihe. Darunter q als zweiter Elternteil von s, und r, auf q aufbauend, als zweiter Elternteil von j](/blog/diagrams/git-subtree-rejoin.drawio.svg)
+![Die Commits a, s, b, c, d, e und j des Monorepos in einer Reihe. Darunter q als zweiter Elternteil von s, und r, auf q aufbauend, als zweiter Elternteil von j](/blog/episodes/git-subtree-rejoin.drawio.svg)
 
 Und es geht kaputt, sobald Pull Requests per Squash gemerged werden, was verbreitet ist. Der Squash-Merge behält die Fixes, verwirft aber *j* und *r*. Der nächste `split` durchläuft also wieder alles:
 
-![Die Commits a, s und p des Monorepos in einer Reihe, und q als zweiter Elternteil von s](/blog/diagrams/git-subtree-squash-merged.drawio.svg)
+![Die Commits a, s und p des Monorepos in einer Reihe, und q als zweiter Elternteil von s](/blog/episodes/git-subtree-squash-merged.drawio.svg)
 
 Mit einer Bibliothek ist der Graph noch lesbar. Mit drei bringt jede Bibliothek ihre eigenen gesquashten Commits und ihre eigenen Merges mit, und ihre Pfeile kreuzen sich:
 
-![Die Historie des Monorepos mit Merges für drei Bibliotheken. Die gesquashten Commits jeder Bibliothek bilden eine eigene Reihe, und die Pfeile von Bibliothek B und C zu ihren Merges kreuzen die Reihen der anderen Bibliotheken](/blog/diagrams/git-subtree-rejoin-three-libraries.drawio.svg)
+![Die Historie des Monorepos mit Merges für drei Bibliotheken. Die gesquashten Commits jeder Bibliothek bilden eine eigene Reihe, und die Pfeile von Bibliothek B und C zu ihren Merges kreuzen die Reihen der anderen Bibliotheken](/blog/episodes/git-subtree-rejoin-three-libraries.drawio.svg)
 
 Keiner dieser Merges sagt etwas über die App. Sie sind nur da, damit `split` schnell ist.
 
