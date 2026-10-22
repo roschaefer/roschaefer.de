@@ -113,6 +113,11 @@ markUsed(() => [
 			</article>
 
 			<article class="space-y-3">
+				<h2 class="theme-heading">{m.privacy_comments_title({}, { locale })}</h2>
+				<p>{m.privacy_comments_body({}, { locale })}</p>
+			</article>
+
+			<article class="space-y-3">
 				<h2 class="theme-heading">{m.privacy_external_title({}, { locale })}</h2>
 				<p>{m.privacy_external_body({}, { locale })}</p>
 			</article>

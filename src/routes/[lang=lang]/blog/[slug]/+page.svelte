@@ -1,6 +1,7 @@
 <script lang="ts">
 import { blogPostPath, blogSeriesPath, blogTopicPath } from "$lib/blog/paths";
 import { getBlogPost } from "$lib/blog/posts";
+import BlogComments from "$lib/components/BlogComments.svelte";
 import BlogShell from "$lib/components/BlogShell.svelte";
 import { siteImage, siteName, siteUrl } from "$lib/config/site";
 import { markUsed } from "$lib/utils/mark-used";
@@ -16,6 +17,7 @@ const dateFormatter = $derived(
 	new Intl.DateTimeFormat(data.locale === "de" ? "de-DE" : "en-US", { dateStyle: "long" }),
 );
 markUsed(() => [
+	BlogComments,
 	BlogShell,
 	siteImage,
 	siteName,
@@ -94,6 +96,8 @@ markUsed(() => [
 				{#if data.previous}<a class="theme-card rounded-2xl p-5 no-underline" href={blogPostPath(data.locale, data.previous.slug)}><span class="block text-xs uppercase tracking-[0.2em]">← {data.locale === "de" ? "Vorheriger Teil" : "Previous part"}</span><strong class="theme-heading mt-2 block">{data.previous.title}</strong></a>{/if}
 				{#if data.next}<a class="theme-card rounded-2xl p-5 text-right no-underline sm:col-start-2" href={blogPostPath(data.locale, data.next.slug)}><span class="block text-xs uppercase tracking-[0.2em]">{data.locale === "de" ? "Nächster Teil" : "Next part"} →</span><strong class="theme-heading mt-2 block">{data.next.title}</strong></a>{/if}
 			</nav>
+
+			<BlogComments locale={data.locale} term={data.post.id} />
 		</article>
 	{/snippet}
 </BlogShell>
