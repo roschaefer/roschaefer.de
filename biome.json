@@ -34,7 +34,8 @@
 			"!**/typst/content",
 			"!**/typst/out",
 			"!**/static/de/robert-schaefer-resume.de.pdf",
-			"!**/static/en/robert-schaefer-resume.en.pdf"
+			"!**/static/en/robert-schaefer-resume.en.pdf",
+			"!**/*.drawio.svg"
 		]
 	}
 }
