@@ -1,10 +1,12 @@
 import type { Component } from "svelte";
 import { describe, expect, it } from "vitest";
 import { blogPostPath, blogSeriesPath, blogTopicPath } from "./paths";
+import { publicationPlan } from "./plan";
 import {
 	type BlogPost,
 	filterByTopics,
 	getBlogPost,
+	getBlogPosts,
 	getBlogTopics,
 	getBlogTranslation,
 	getSeriesPosts,
@@ -76,6 +78,19 @@ describe("blog metadata", () => {
 		expect(() =>
 			validateBlogCollection([post({ slug: "series" }), post({ locale: "de", slug: "serie" })]),
 		).toThrow("collides with a blog route");
+	});
+
+	it("plans every post exactly once", () => {
+		const ids = [...new Set(getBlogPosts("en", true).map(({ id }) => id))];
+		expect([...publicationPlan].sort()).toEqual(ids.sort());
+	});
+
+	it("lists drafts in planned order, starting with submodules and subtree", () => {
+		expect(
+			getBlogPosts("en", true)
+				.slice(0, 3)
+				.map(({ id }) => id),
+		).toEqual(["submodule-problems", "subtree-problems", "motivation"]);
 	});
 
 	it("orders each series and resolves translated slugs", () => {

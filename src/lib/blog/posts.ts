@@ -1,5 +1,6 @@
 import { blogModules } from "virtual:blog-modules";
 import type { Component } from "svelte";
+import { plannedPosition } from "$lib/blog/plan";
 import { type BlogSeriesId, getBlogSeries } from "$lib/blog/series";
 import type { Locale } from "$lib/i18n";
 
@@ -145,8 +146,10 @@ validateBlogCollection(allPosts);
 
 const bySeriesOrder = (left: BlogPost, right: BlogPost) =>
 	left.seriesOrder - right.seriesOrder || left.title.localeCompare(right.title);
+const byPlannedPosition = (left: BlogPost, right: BlogPost) =>
+	plannedPosition(left.id) - plannedPosition(right.id) || bySeriesOrder(left, right);
 const byPublishedDate = (left: BlogPost, right: BlogPost) =>
-	(right.publishedAt ?? "").localeCompare(left.publishedAt ?? "") || bySeriesOrder(left, right);
+	(right.publishedAt ?? "").localeCompare(left.publishedAt ?? "") || byPlannedPosition(left, right);
 
 export const blogPostSummary = ({ component: _component, ...summary }: BlogPost): BlogPostSummary =>
 	summary;
