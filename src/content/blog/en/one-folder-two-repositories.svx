@@ -31,4 +31,6 @@ But the library deserves its own pipeline. It tests the library on its own, for 
 
 In all three cases I want to work in the monorepo as if the folder were an ordinary folder. At the same time, the folder should exist as a repository of its own, and commits should go both ways.
 
-Git has two answers for this: submodules and subtrees. In the next two episodes I show what goes wrong with each of them.
+Git has two answers for this: submodules and subtrees. In the next episodes I show how each of them works, and what goes wrong.
+
+**Have you ever had to decide between a monorepo and separate repos?** Write it in the comments below.

@@ -31,4 +31,6 @@ Aber die Bibliothek verdient ihre eigene Pipeline. Sie testet die Bibliothek fü
 
 In allen drei Fällen will ich im Monorepo arbeiten, als wäre der Ordner ein gewöhnlicher Ordner. Gleichzeitig soll es den Ordner als eigenes Repository geben, und Commits sollen in beide Richtungen fließen.
 
-Git hat dafür zwei Antworten: Submodule und Subtrees. In den nächsten beiden Episoden zeige ich, was bei beiden schiefgeht.
+Git hat dafür zwei Antworten: Submodule und Subtrees. In den nächsten Episoden zeige ich, wie beide funktionieren und was dabei schiefgeht.
+
+**Mussten Sie sich schon einmal zwischen einem Monorepo und getrennten Repositories entscheiden?** Schreiben Sie es unten in die Kommentare.

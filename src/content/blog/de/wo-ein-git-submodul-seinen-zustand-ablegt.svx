@@ -62,3 +62,5 @@ Die sechs Stellen leben nicht einmal gleich lang. Gitlink und `.gitmodules` werd
 Und sie laufen auseinander. Ändert jemand im Team die URL in `.gitmodules`, fetcht mein Klon weiter von der alten, bis ich `git submodule sync` aufrufe. Hier fangen die Probleme aus der nächsten Episode an.
 
 Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [`git submodule` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-submodule.md).
+
+**Haben Sie schon einmal Git-Submodule benutzt, und wie war Ihre Erfahrung damit?** Schreiben Sie es unten in die Kommentare.

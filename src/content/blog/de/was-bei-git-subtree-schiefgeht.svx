@@ -58,3 +58,5 @@ Wer ein Repository endgültig in ein Monorepo umzieht und das alte stilllegt, is
 Ich wollte die Dateien der Bibliothek im Monorepo haben, ohne ihre Historie, ohne Merges, die nur dafür da sind, dass Pushen schnell geht, mit einem Push, der nur ansieht, was sich seit dem letzten Abgleich geändert hat, und ohne ein Git-Remote pro Bibliothek. Die nächsten Folgen zeigen, wie das zusammenpasst.
 
 Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [`git subtree` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-subtree.md).
+
+**Haben Sie schon einmal Git-Subtrees benutzt, um eine Bibliothek zu vendoren?** Schreiben Sie es unten in die Kommentare.

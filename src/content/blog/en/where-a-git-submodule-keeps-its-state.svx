@@ -62,3 +62,5 @@ The six places don't even live equally long. The gitlink and `.gitmodules` are c
 And they drift apart. If a colleague changes the URL in `.gitmodules`, my clone keeps fetching from the old one, until I run `git submodule sync`. The problems in the next episode start here.
 
 More in the git-splice docs, where every command is tested: [`git submodule` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-submodule.md).
+
+**Have you ever used Git submodules, and what was your developer experience?** Write it in the comments below.
