@@ -40,9 +40,9 @@ monorepo/
                                     pull request
 ```
 
-The other way round: my app uses a library that someone else maintains. I find a bug in it and want to fix it. So I copy the library's source into my monorepo, fix the bug there and test the fix together with my app.
+The other way round: my app uses a library that someone else maintains. I find a bug in it and want to fix it. So I copy the library's source into my monorepo, fix the bug there and test the bugfix together with my app.
 
-Then the fix should go upstream. I don't own the library's repository, so the fix first has to reach a branch in my fork, as a library commit without any of my app's code. From there I can open a pull request.
+Then the bugfix should go upstream. I don't own the library's repository, so the bugfix first has to reach a branch in my fork, as a library commit without any of my app's code. From there I can open a pull request.
 
 ## Separate CI pipelines
 
