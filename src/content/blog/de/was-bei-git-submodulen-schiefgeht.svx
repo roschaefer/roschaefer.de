@@ -7,9 +7,24 @@ seriesOrder: 2
 topics: [git]
 ---
 
-Ich arbeite an einer App, die eine Bibliothek aus einem anderen Repository nutzt. Dabei finde ich einen Fehler in der Bibliothek. Der Bugfix und der Code, der ihn aufruft, gehören zusammen. Also will ich sie in einem Rutsch ändern, zusammen testen und zusammen committen.
+Die älteste Implementierung von einem Repository, das in einem anderen steckt, heißt `git submodule`. Leider haben Submodule eine ausgesprochen schlechte Reputation. Wir schauen uns mal an, woran das liegt.
 
-Ist die Bibliothek ein Submodul, fängt genau hier der Ärger an. Um zu verstehen, warum, zeige ich zuerst, wie ein Submodul funktioniert. Ich füge meinem Monorepo die Bibliothek mit einem Befehl hinzu, `git submodule add`. Dieser eine Befehl schreibt an sechs Stellen.
+Wir nehmen ein Beispiel:
+
+```console
+$ ./example.sh
+$ export GIT_CONFIG_GLOBAL=$PWD/submodule-example/gitconfig
+$ cd submodule-example/monorepo
+```
+
+[`example.sh`](https://github.com/roschaefer/episodes/blob/HEAD/01-submodule-problems/example.sh) baut eine Bibliothek mit 30 Commits und ein Monorepo mit einer App. Ihr findet das Skript im Repository zu dieser Episode und könnt jeden Befehl selbst ausprobieren. Dann fügt es die Bibliothek als Submodul hinzu und committet sie:
+
+```console
+$ git submodule add https://git.example.com/lib.git vendor/lib
+$ git commit -m "add lib as a submodule"
+```
+
+Dieser eine Befehl, `git submodule add`, schreibt an sechs Stellen.
 
 ## Wo ein Submodul seinen Zustand ablegt
 
