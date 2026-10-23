@@ -1,6 +1,5 @@
 export const publicationPlan = [
 	"problem",
-	"submodule-state",
 	"submodule-problems",
 	"subtree-problems",
 	"motivation",
