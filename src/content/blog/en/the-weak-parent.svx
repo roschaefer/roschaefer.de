@@ -11,4 +11,4 @@ topics: [git]
 
 - Title is jargon: find a question-shaped title before publishing
 
-More in the git-splice docs: [Weak parents](https://github.com/roschaefer/git-splice/blob/main/docs/going-forward/weak-parents.md).
+More in the git-splice docs: [Weak parents](https://roschaefer.github.io/git-splice/docs/going-forward/weak-parents/).

@@ -11,7 +11,15 @@ Die älteste Implementierung von einem Repository, das in einem anderen steckt, 
 
 Wir nehmen ein Beispiel:
 
-Ihr könnt das Beispiel selbst ausführen: In einem Klon von git-splice öffnet [`just sandbox comparisons/git-submodule`](https://github.com/roschaefer/git-splice/blob/main/docs/sandbox.md#any-page-in-a-sandbox) eine Shell mit der Bibliothek und dem Monorepo, und jeder Befehl gibt dort aus, was ihr hier seht.
+```console
+# roschaefer.github.io/git-splice/docs/sandbox
+git clone https://github.com/roschaefer/git-splice.git
+cd git-splice
+nix develop
+just sandbox comparisons/git-submodule
+```
+
+Ihr könnt das Beispiel selbst ausführen: Diese Befehle öffnen eine Sandbox mit der Bibliothek und dem Monorepo, und jeder Befehl gibt dort aus, was ihr hier seht. Wie das geht, steht in der [Dokumentation von git-splice](https://roschaefer.github.io/git-splice/docs/sandbox/#any-page-in-a-sandbox).
 
 Das Beispiel baut eine Bibliothek mit 30 Commits und ein Monorepo mit einer App. Dann fügt es die Bibliothek als Submodul zum Monorepo hinzu:
 
@@ -90,6 +98,6 @@ Hier ändert *c* Bibliothek und App in einem Commit. Die Bibliothek hat noch kei
 
 Submodule haben echte Stärken. Ein Klon ohne `--recurse-submodules` lädt die Bibliothek gar nicht erst herunter. Der Monorepo-Commit legt einen exakten Commit der Bibliothek fest. Und die Bibliothek kann privat bleiben, während das Monorepo öffentlich ist, oder umgekehrt. Wenn diese Punkte am wichtigsten sind, sind Submodule eine vernünftige Wahl.
 
-Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [`git submodule` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-submodule.md).
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [`git submodule` compared](https://roschaefer.github.io/git-splice/test/comparisons/git-submodule/).
 
 **Habt ihr schon mal Git-Submodule benutzt, und wie war eure Erfahrung damit?** Schreibt es mir in die Kommentare.

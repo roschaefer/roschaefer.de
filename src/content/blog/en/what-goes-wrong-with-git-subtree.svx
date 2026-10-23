@@ -57,6 +57,6 @@ If you move a repository into a monorepo for good and retire its old home, `git 
 
 I wanted the library's files in the monorepo, without the library's history, without merges that only exist to make pushing fast, with a push that only looks at what changed since the last sync, and without a Git remote for each library. The next episodes show how that fits together.
 
-More in the git-splice docs, where every command is tested: [`git subtree` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-subtree.md).
+More in the git-splice docs, where every command is tested: [`git subtree` compared](https://roschaefer.github.io/git-splice/test/comparisons/git-subtree/).
 
 **Have you ever used Git subtrees in order to vendor a library?** Write it in the comments below.

@@ -11,4 +11,4 @@ topics: [git]
 
 - Image: `docs/images/rope-splices-nordisk-familjebok.png`
 
-Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Why "splice"](https://github.com/roschaefer/git-splice/blob/main/docs/design/name.md).
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Why "splice"](https://roschaefer.github.io/git-splice/docs/design/name/).

@@ -70,4 +70,4 @@ The lesson was uncomfortable because remotes had made the first implementation p
 
 The safest invalid operation is not one intercepted by a clever hook. It is one the design cannot express.
 
-More in the git-splice docs: [Accidentally pushing the monorepo to a subfolder's remote](https://github.com/roschaefer/git-splice/blob/main/docs/design/accidental-monorepo-push.md).
+More in the git-splice docs: [Accidentally pushing the monorepo to a subfolder's remote](https://roschaefer.github.io/git-splice/docs/design/accidental-monorepo-push/).

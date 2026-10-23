@@ -9,4 +9,4 @@ topics: [git]
 
 **Question:** In which sense is the folder a mirror of the upstream, and where does the analogy end?
 
-More in the git-splice docs: [Mirrors](https://github.com/roschaefer/git-splice/blob/main/docs/going-forward/mirrors.md).
+More in the git-splice docs: [Mirrors](https://roschaefer.github.io/git-splice/docs/going-forward/mirrors/).

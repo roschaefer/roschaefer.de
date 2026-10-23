@@ -70,4 +70,4 @@ Remotes hatten den ersten Entwurf angenehm klein gemacht. Doch knappe Konfigurat
 
 Die sicherste ungültige Operation ist nicht die, die ein kluger Hook abfängt. Es ist die, die der Entwurf gar nicht ausdrücken kann.
 
-Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Accidentally pushing the monorepo to a subfolder's remote](https://github.com/roschaefer/git-splice/blob/main/docs/design/accidental-monorepo-push.md).
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Accidentally pushing the monorepo to a subfolder's remote](https://roschaefer.github.io/git-splice/docs/design/accidental-monorepo-push/).

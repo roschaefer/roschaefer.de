@@ -9,4 +9,4 @@ topics: [git]
 
 **Frage:** Was passiert, wenn ein gesplictes Repository selbst einen Splice enthält?
 
-Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Nesting](https://github.com/roschaefer/git-splice/blob/main/test/concepts/nesting/README.md).
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Nesting](https://roschaefer.github.io/git-splice/test/concepts/nesting/).

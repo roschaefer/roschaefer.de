@@ -11,4 +11,4 @@ topics: [git]
 
 - Diagrams: `test/comparisons/third-party/git-subrepo-*.drawio.svg`
 
-Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [git-subrepo compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/third-party/git-subrepo.md).
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [git-subrepo compared](https://roschaefer.github.io/git-splice/test/comparisons/third-party/git-subrepo/).
