@@ -27,9 +27,9 @@ monorepo/                privat
 └── tools/        <-->   tools.git, öffentlich
 ```
 
-Ich mache zum Beispiel "Plain Text Accounting": Meine Buchhaltung liegt im selben Repository wie ihre Auswertung. Jetzt möchte ich den Quellcode meiner Auswertungen als Open-Source-Werkzeuge veröffentlichen. Nicht das ganze Monorepo, nur ihren Ordner.
+Ich mache zum Beispiel "Plain Text Accounting": Meine Buchhaltung liegt im selben Repository wie ihre Auswertung. Jetzt möchte ich den Quellcode von meinen Auswertungen als Open-Source-Werkzeuge veröffentlichen. Natürlich nicht das ganze Monorepo, nur die Ordner mit öffentlichem Quellcode.
 
-Einmal veröffentlichen reicht nicht. Leute eröffnen Issues und Pull Requests, ein Bot aktualisiert die Abhängigkeiten. Diese Commits müssen zurück ins Monorepo, wo ich weiter an den Werkzeugen arbeite, neben allem anderen.
+Den Quellcode einmalig auf GitHub zu veröffentlichen, reicht nicht. Leute eröffnen Issues und Pull Requests, ein Bot aktualisiert die Abhängigkeiten. Diese Commits müssen zurück ins Monorepo, wo ich weiter an den Werkzeugen arbeite, neben allem anderen.
 
 ## Eine Bibliothek vendoren
 
@@ -40,9 +40,9 @@ monorepo/
                                     Pull Request
 ```
 
-Andersherum: Meine App nutzt eine Bibliothek, die jemand anderes pflegt. Ich finde einen Fehler darin und will ihn beheben. Also kopiere ich den Quellcode der Bibliothek in mein Monorepo, behebe den Fehler dort und teste den Fix zusammen mit meiner App.
+Andersherum: Meine App nutzt eine Bibliothek, die jemand anderes pflegt. Ich finde einen Fehler darin und will ihn beheben. Also kopiere ich den Quellcode der Bibliothek in mein Monorepo, behebe den Fehler dort und teste den Bugfix zusammen mit meiner App.
 
-Dann soll der Fix upstream. Das Repository der Bibliothek gehört mir nicht, also muss der Fix zuerst auf einen Branch in meinem Fork, als Commit der Bibliothek ohne den Code meiner App. Von dort kann ich einen Pull Request eröffnen.
+Dann soll der Bugfix upstream. Das Repository der Bibliothek gehört mir nicht, also muss der Bugfix zuerst auf einen Branch in meinem Fork, als Commit der Bibliothek ohne den Code meiner App. Von dort kann ich einen Pull Request eröffnen.
 
 ## Getrennte CI-Pipelines
 
@@ -53,7 +53,7 @@ company/
 └── team-c/       <-->   team-c.git, eigene CI
 ```
 
-Einige Freunde von mir arbeiten in großen Unternehmen mit vielen Teams. Sie wollen nicht in einem Monorepo arbeiten, weil sie getrennte CI-Pipelines haben wollen. Würde das ganze Unternehmen in einem Monorepo arbeiten, gäbe das ein ziemliches Durcheinander, und die Teams würden sich in der CI gegenseitig blockieren.
+Einige Freunde von mir arbeiten in großen Unternehmen mit vielen Teams. Sie wollen nicht in einem Monorepo arbeiten, weil sie getrennte CI-Pipelines haben wollen. Würde das ganze Unternehmen in einem Monorepo arbeiten, gäbe das ein ziemliches Durcheinander, und die Teams würden sich auf CI gegenseitig blockieren.
 
 ## Dreimal dasselbe Problem
 

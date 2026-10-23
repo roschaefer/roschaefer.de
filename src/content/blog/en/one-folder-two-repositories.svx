@@ -27,9 +27,9 @@ monorepo/                private
 └── tools/        <-->   tools.git, public
 ```
 
-For example, I do "plain text accounting": my bookkeeping lives in the same repository as its reports. Now I want to publish the source code behind those reports as open source tools. Not the whole monorepo, only their folder.
+For example, I do "plain text accounting": my bookkeeping lives in the same repository as its reports. Now I want to publish the source code behind those reports as open source tools. Of course not the whole monorepo, only the folders with public source code.
 
-Publishing once isn't enough. People open issues and pull requests, a bot updates the dependencies. Those commits have to come back into the monorepo, where I keep working on the tools next to everything else.
+Publishing the source code on GitHub once isn't enough. People open issues and pull requests, a bot updates the dependencies. Those commits have to come back into the monorepo, where I keep working on the tools next to everything else.
 
 ## Vendoring a library
 
