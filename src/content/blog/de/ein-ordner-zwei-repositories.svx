@@ -1,0 +1,34 @@
+---
+id: problem
+title: "Ein Ordner, zwei Repositories"
+description: "Manchmal muss ein Ordner in einem Monorepo zugleich ein eigenes Repository sein: ein öffentliches Projekt in einem privaten Monorepo, eine vendorte Bibliothek, ein Teil mit eigener CI."
+series: why-splicing
+seriesOrder: 1
+topics: [git]
+---
+
+Ich mag Monorepos. Mein ganzer Code liegt an einem Ort, ein Commit kann mehrere Projekte auf einmal ändern, und ich teste sie zusammen. Aber immer wieder muss ein Ordner meines Monorepos zugleich ein eigenes Repository sein. Hier sind drei Situationen, in denen mir das passiert.
+
+## Ein öffentlicher Ordner in einem privaten Monorepo
+
+Mein Monorepo ist privat. Darin liegen meine Website, mein Lebenslauf und ein paar Werkzeuge. Eines der Werkzeuge will ich als Open Source veröffentlichen. Nicht das ganze Monorepo, nur diesen einen Ordner.
+
+Einmal veröffentlichen reicht nicht. Leute eröffnen Issues und Pull Requests, ein Bot aktualisiert die Abhängigkeiten. Diese Commits müssen zurück ins Monorepo, wo ich weiter am Werkzeug arbeite, neben allem anderen.
+
+## Eine Bibliothek vendoren
+
+Andersherum: Meine App nutzt eine Bibliothek, die jemand anderes pflegt. Ich finde einen Fehler darin und kann nicht auf das nächste Release warten. Also kopiere ich den Quellcode der Bibliothek in mein Monorepo, behebe den Fehler dort und teste den Fix zusammen mit meiner App.
+
+Dann soll der Fix upstream. Das Repository der Bibliothek gehört mir nicht, also muss der Fix zuerst auf einen Branch in meinem Fork, als Commit der Bibliothek ohne den Code meiner App. Von dort kann ich einen Pull Request eröffnen.
+
+## Getrennte CI-Pipelines
+
+Der dritte Fall ist weniger offensichtlich. GitHub Actions zum Beispiel führt nur die Workflows in `.github/workflows` im Wurzelverzeichnis eines Repositorys aus. Ein Workflow in einem Unterordner läuft nie.
+
+Aber die Bibliothek verdient ihre eigene Pipeline. Sie testet die Bibliothek für sich allein, für Leute, die beitragen und mein Monorepo nie sehen. Die Pipeline meines Monorepos testet alles zusammen. Ich will beides, und für die erste muss der Ordner ein Repository sein.
+
+## Dreimal dasselbe Problem
+
+In allen drei Fällen will ich im Monorepo arbeiten, als wäre der Ordner ein gewöhnlicher Ordner. Gleichzeitig soll es den Ordner als eigenes Repository geben, und Commits sollen in beide Richtungen fließen.
+
+Git hat dafür zwei Antworten: Submodule und Subtrees. In den nächsten beiden Episoden zeige ich, was bei beiden schiefgeht.

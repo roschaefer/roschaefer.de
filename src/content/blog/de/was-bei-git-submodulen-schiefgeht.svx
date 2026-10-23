@@ -3,7 +3,7 @@ id: submodule-problems
 title: "Was bei Git-Submodulen schiefgeht"
 description: "Ein Submodul-Commit speichert einen Zeiger, nicht die Änderung. Und Submodule legen ihre Einstellungen in einen Zustand, den sich alle Worktrees teilen. Darum gehen Worktrees kaputt."
 series: why-splicing
-seriesOrder: 1
+seriesOrder: 2
 topics: [git]
 ---
 
