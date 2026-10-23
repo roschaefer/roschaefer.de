@@ -9,14 +9,13 @@ topics: [git]
 
 Die älteste Implementierung von einem Repository, das in einem anderen steckt, heißt `git submodule`. Leider haben Submodule eine ausgesprochen schlechte Reputation. Wir schauen uns mal an, woran das liegt.
 
-Wir nehmen ein Beispiel:
+Wir bauen uns ein Beispiel.
 
 ```console
 # roschaefer.github.io/git-splice/docs/sandbox
 git clone https://github.com/roschaefer/git-splice.git
 cd git-splice
-nix develop
-just sandbox comparisons/git-submodule
+nix develop -c just sandbox comparisons/git-submodule
 ```
 
 Ihr könnt das Beispiel selbst ausführen: Diese Befehle öffnen eine Sandbox mit der Bibliothek und dem Monorepo, und jeder Befehl gibt dort aus, was ihr hier seht. Wie das geht, steht in der [Dokumentation von git-splice](https://roschaefer.github.io/git-splice/docs/sandbox/#any-page-in-a-sandbox).
