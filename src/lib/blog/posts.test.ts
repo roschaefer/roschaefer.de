@@ -85,17 +85,17 @@ describe("blog metadata", () => {
 		expect([...publicationPlan].sort()).toEqual(ids.sort());
 	});
 
-	it("lists drafts in planned order, starting with the problem, then submodules and subtree", () => {
+	it("lists drafts in planned order, starting with the problem, then submodules", () => {
 		expect(
 			getBlogPosts("en", true)
 				.slice(0, 3)
 				.map(({ id }) => id),
-		).toEqual(["problem", "submodule-problems", "subtree-problems"]);
+		).toEqual(["problem", "submodule-state", "submodule-problems"]);
 	});
 
 	it("orders each series and resolves translated slugs", () => {
 		const english = getSeriesPosts("en", "why-splicing");
-		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4, 5]);
+		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4, 5, 6]);
 		const first = getBlogPost("en", "publishing-parts-of-a-monorepo-independently");
 		expect(first).toBeDefined();
 		expect(first && getBlogTranslation(first)?.slug).toBe(

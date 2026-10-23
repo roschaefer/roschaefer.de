@@ -3,7 +3,7 @@ id: submodule-problems
 title: "What goes wrong with Git submodules"
 description: "A submodule commit records a pointer, not the change. And submodules keep their settings in state that every worktree shares, so worktrees break."
 series: why-splicing
-seriesOrder: 2
+seriesOrder: 3
 topics: [git]
 ---
 
