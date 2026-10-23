@@ -1,36 +1,67 @@
 ---
 id: problem
 title: "One folder, two repositories"
-description: "Sometimes a folder in a monorepo has to be a repository of its own as well: a public project in a private monorepo, a vendored library, a part with its own CI."
+description: "Sometimes a folder in a monorepo has to be a repository of its own as well: a public project in a private monorepo, a vendored library, teams with their own CI."
 series: why-splicing
 seriesOrder: 1
 topics: [git]
 ---
 
-I like monorepos. All my code is in one place, one commit can change several projects at once, and I test them together. But again and again, one folder of my monorepo also has to be a repository of its own. Here are three situations where that happens to me.
+I love monorepos. All my code is in one place, one commit can change several projects at once, and I test them all together.
+
+```text
+monorepo/
+├── accounting/
+├── app/
+├── tools/
+└── website/
+```
+
+If a monorepo is possible, it is almost always the best choice. It keeps complexity low, and many problems go away by themselves. Several projects live side by side in the same repository, and every team has access to every project. But there are situations where that doesn't work.
 
 ## A public folder in a private monorepo
 
-My monorepo is private. It has my website, my CV and a few tools. One of the tools I want to publish as open source. Not the whole monorepo, only that one folder.
+```text
+monorepo/                private
+├── accounting/
+└── tools/        <-->   tools.git, public
+```
 
-Publishing it once isn't enough. People open issues and pull requests, a bot updates the dependencies. Those commits have to come back into the monorepo, where I keep working on the tool next to everything else.
+For example, I do plain text accounting: my bookkeeping lives in the same repository as the source code of the tools I run on it. Now I want to publish the tools as open source. Not the whole monorepo, only their folder.
+
+Publishing once isn't enough. People open issues and pull requests, a bot updates the dependencies. Those commits have to come back into the monorepo, where I keep working on the tools next to everything else.
 
 ## Vendoring a library
 
-The other way round: my app uses a library that someone else maintains. I find a bug in it and I can't wait for the next release. So I copy the library's source into my monorepo, fix the bug there and test the fix together with my app.
+```text
+monorepo/
+├── app/
+└── vendor/lib/   --->   lib-fork.git   --->   lib.git
+                                    pull request
+```
+
+The other way round: my app uses a library that someone else maintains. I find a bug in it and want to fix it. So I copy the library's source into my monorepo, fix the bug there and test the fix together with my app.
 
 Then the fix should go upstream. I don't own the library's repository, so the fix first has to reach a branch in my fork, as a library commit without any of my app's code. From there I can open a pull request.
 
 ## Separate CI pipelines
 
-The third one is less obvious. GitHub Actions, for example, only runs the workflows in `.github/workflows` at the root of a repository. A workflow in a subfolder never runs.
+```text
+company/
+├── team-a/       <-->   team-a.git, own CI
+├── team-b/       <-->   team-b.git, own CI
+└── team-c/       <-->   team-c.git, own CI
+```
 
-But the library deserves its own pipeline. It tests the library on its own, for contributors who never see my monorepo. My monorepo's pipeline tests everything together. I want both, and for the first one the folder has to be a repository.
+Some friends of mine work at large companies with many teams. They don't want to work in one monorepo, because they want separate CI pipelines. If the whole company worked in one monorepo, it would get quite messy, and the teams would block each other in CI.
 
 ## The same problem three times
 
-In all three cases I want to work in the monorepo as if the folder were an ordinary folder. At the same time, the folder should exist as a repository of its own, and commits should go both ways.
+```text
+monorepo/
+└── project/      <-->   project.git
+```
 
-Git has two answers for this: submodules and subtrees. In the next episodes I show how each of them works, and what goes wrong.
+In all three cases I'd like the best of both worlds: I can work in the monorepo or in the project's own repository, and the changes flow both ways.
 
-**Have you ever had to decide between a monorepo and separate repos?** Write it in the comments below.
+**Have you ever been in a similar situation? Have you had to decide between a monorepo and separate repos?** Write it in the comments below.

@@ -59,4 +59,4 @@ Ich wollte die Dateien der Bibliothek im Monorepo haben, ohne ihre Historie, ohn
 
 Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [`git subtree` compared](https://github.com/roschaefer/git-splice/blob/main/test/comparisons/git-subtree.md).
 
-**Haben Sie schon einmal Git-Subtrees benutzt, um eine Bibliothek zu vendoren?** Schreiben Sie es unten in die Kommentare.
+**Habt ihr schon mal Git-Subtrees benutzt, um eine Bibliothek zu vendoren?** Schreibt es mir in die Kommentare.
