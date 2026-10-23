@@ -17,7 +17,7 @@ monorepo/
 └── website/
 ```
 
-Wenn ein Monorepo möglich ist, ist es fast immer die beste Wahl. Es hält die Komplexität gering, und viele Probleme verschwinden von selbst. Mehrere Projekte leben problemlos im selben Repository, und alle Teams haben Zugriff auf alle Projekte. Aber es gibt Situationen, in denen das nicht geht.
+Wenn ein Monorepo möglich ist, ist es fast immer die beste Wahl. Es hält die Komplexität gering, und viele Probleme verschwinden von selbst. Mehrere Projekte leben problemlos im selben Repository, und alle Teams haben Zugriff auf alle Projekte. Aber es gibt Situationen, in denen das leider nicht geht.
 
 ## Ein öffentlicher Ordner in einem privaten Monorepo
 
@@ -27,7 +27,7 @@ monorepo/                privat
 └── tools/        <-->   tools.git, öffentlich
 ```
 
-Ich mache zum Beispiel Plain Text Accounting: Meine Buchhaltung liegt im selben Repository wie der Quellcode der Werkzeuge, mit denen ich sie auswerte. Jetzt möchte ich die Werkzeuge als Open Source veröffentlichen. Nicht das ganze Monorepo, nur ihren Ordner.
+Ich mache zum Beispiel "Plain Text Accounting": Meine Buchhaltung liegt im selben Repository wie ihre Auswertung. Jetzt möchte ich den Quellcode meiner Auswertungen als Open-Source-Werkzeuge veröffentlichen. Nicht das ganze Monorepo, nur ihren Ordner.
 
 Einmal veröffentlichen reicht nicht. Leute eröffnen Issues und Pull Requests, ein Bot aktualisiert die Abhängigkeiten. Diese Commits müssen zurück ins Monorepo, wo ich weiter an den Werkzeugen arbeite, neben allem anderen.
 

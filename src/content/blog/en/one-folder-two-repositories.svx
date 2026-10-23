@@ -17,7 +17,7 @@ monorepo/
 └── website/
 ```
 
-If a monorepo is possible, it is almost always the best choice. It keeps complexity low, and many problems go away by themselves. Several projects live side by side in the same repository, and every team has access to every project. But there are situations where that doesn't work.
+If a monorepo is possible, it is almost always the best choice. It keeps complexity low, and many problems go away by themselves. Several projects live side by side in the same repository, and every team has access to every project. But there are situations where, unfortunately, that doesn't work.
 
 ## A public folder in a private monorepo
 
@@ -27,7 +27,7 @@ monorepo/                private
 └── tools/        <-->   tools.git, public
 ```
 
-For example, I do plain text accounting: my bookkeeping lives in the same repository as the source code of the tools I run on it. Now I want to publish the tools as open source. Not the whole monorepo, only their folder.
+For example, I do "plain text accounting": my bookkeeping lives in the same repository as its reports. Now I want to publish the source code behind those reports as open source tools. Not the whole monorepo, only their folder.
 
 Publishing once isn't enough. People open issues and pull requests, a bot updates the dependencies. Those commits have to come back into the monorepo, where I keep working on the tools next to everything else.
 
