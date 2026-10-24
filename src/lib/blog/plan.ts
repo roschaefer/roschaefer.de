@@ -1,4 +1,4 @@
-export const publicationPlan = [
+export const publicationPlan: string[] = [
 	"problem",
 	"submodule-problems",
 	"subtree-problems",
