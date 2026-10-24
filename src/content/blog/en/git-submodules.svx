@@ -20,8 +20,6 @@ DESCRIPTION
 
 "Submodule" – that sounds like the right concept. But unfortunately, using them is quite error-prone. Let's have a look at why. So let's build an example:
 
-[roschaefer.github.io/git-splice/docs/sandbox](https://roschaefer.github.io/git-splice/docs/sandbox)
-
 ```console
 git clone https://github.com/roschaefer/git-splice.git
 cd git-splice

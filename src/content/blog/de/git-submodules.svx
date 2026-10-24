@@ -20,8 +20,6 @@ DESCRIPTION
 
 „Submodul“ – das klingt nach dem richtigen Konzept. Aber leider ist die Anwendung ziemlich fehleranfällig. Wir schauen uns mal an, woran das liegt. Also bauen wir uns mal ein Beispiel:
 
-[roschaefer.github.io/git-splice/docs/sandbox](https://roschaefer.github.io/git-splice/docs/sandbox)
-
 ```console
 git clone https://github.com/roschaefer/git-splice.git
 cd git-splice
