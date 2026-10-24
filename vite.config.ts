@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
@@ -23,14 +23,16 @@ const blogModulesPlugin = (includeDrafts: boolean) => ({
 	},
 	load(id: string) {
 		if (id !== resolvedVirtualBlogModules) return;
-		const paths = (["de", "en"] as const).flatMap((locale) =>
-			readdirSync(join(blogContentRoot, locale))
-				.filter((name) => name.endsWith(".svx"))
-				.map((name) => ({
-					filePath: join(blogContentRoot, locale, name),
-					modulePath: `/src/content/blog/${locale}/${name}`,
-				})),
-		);
+		const paths = (["de", "en"] as const)
+			.filter((locale) => existsSync(join(blogContentRoot, locale)))
+			.flatMap((locale) =>
+				readdirSync(join(blogContentRoot, locale))
+					.filter((name) => name.endsWith(".svx"))
+					.map((name) => ({
+						filePath: join(blogContentRoot, locale, name),
+						modulePath: `/src/content/blog/${locale}/${name}`,
+					})),
+			);
 		const included = includeDrafts
 			? paths
 			: paths.filter(({ filePath }) => hasPublicationDate(filePath));
