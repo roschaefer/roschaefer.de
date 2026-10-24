@@ -1,0 +1,37 @@
+---
+id: motivation
+title: "Getrennte Historien, gemeinsame Dateien"
+description: "Getrennte Historien wie bei Submodulen, die Dateien im Monorepo wie bei git subtree, und dazwischen ein eingecheckter Synchronisationspunkt."
+series: why-splicing
+seriesOrder: 4
+topics: [git]
+---
+
+Weder Git-Submodule noch `git subtree` sind eine gute Lösung, um zwei Repositories kontinuierlich miteinander zu synchronisieren.
+
+Um das Beste aus beiden Welten zu kombinieren, brauchen wir getrennte Historien, wie bei Submodulen. Gleichzeitig soll das Monorepo die Dateien des Sub-Repos enthalten, wie bei `git subtree`. Dadurch funktionieren die Standardbefehle wie `git status` und `git log` weiterhin so, wie man es gewohnt ist.
+
+## Ein Synchronisationspunkt
+
+Damit das Neuberechnen der Commits skaliert, brauchen wir einen Synchronisationspunkt. Er ähnelt einem Gitlink, verspricht aber nicht, dass es sich um den ausgecheckten Commit handelt. Es reicht, wenn es der zuletzt *synchronisierte* Commit ist.
+
+In derselben Datei können wir auch die Konfiguration ablegen, die wir aus `.gitmodules` kennen, etwa die URL:
+
+```text
+[splice]
+	commit = 3f1c…
+[upstream "origin"]
+	url = git@github.com:x/a.git
+```
+
+Die Datei liegt im Ordner des Sub-Repos. So zieht sie immer mit dem Ordner mit, und weil sie im Worktree eingecheckt ist, funktioniert sie per Design mit mehreren Worktrees. Sie kann auch nicht durch Rewrites der Commits verloren gehen, anders als die Sync-Punkte von `git subtree` in den Commit-Nachrichten.
+
+## Ein Three-Way-Merge
+
+Um die geänderten Dateien abzugleichen, reicht ein ganz normaler Three-Way-Merge. Wir müssen nicht zwei Historien in Einklang bringen wie bei `git subtree`, es geht nur um Dateiänderungen.
+
+Synchronisieren verschiedene Branches zu verschiedenen Zeiten, kann es in dieser Datei zu Konflikten kommen. Das ist aber gewünscht, und wir lösen sie so, wie wir es von Git gewohnt sind.
+
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [The `.splice` file](https://roschaefer.github.io/git-splice/test/concepts/splice-file/).
+
+**Was bräuchtet ihr noch, um zwei Repositories dauerhaft zu synchronisieren?** Schreibt es mir in die Kommentare.
