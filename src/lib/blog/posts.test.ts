@@ -88,13 +88,13 @@ describe("blog metadata", () => {
 	const hasEpisodes = getBlogPosts("en", true).length > 0;
 
 	it.skipIf(!hasEpisodes)(
-		"lists drafts in planned order, starting with the problem, then submodules and subtree",
+		"lists drafts in planned order, starting with the motivation, then submodules and subtree",
 		() => {
 			expect(
 				getBlogPosts("en", true)
 					.slice(0, 3)
 					.map(({ id }) => id),
-			).toEqual(["problem", "submodule-problems", "subtree-problems"]);
+			).toEqual(["motivation", "submodule-problems", "subtree-problems"]);
 		},
 	);
 
