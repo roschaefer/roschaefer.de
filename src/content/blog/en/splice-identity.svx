@@ -1,9 +1,9 @@
 ---
 id: splice-identity
+series: git-splice
+seriesOrder: 20
 title: "Splice identity"
 description: "What makes a splice the same splice after it is moved, renamed or re-cloned?"
-series: splicing-concepts
-seriesOrder: 9
 topics: [git]
 ---
 

@@ -1,9 +1,9 @@
 ---
 id: subtree-problems
+series: git-splice
+seriesOrder: 3
 title: "Git Subtree"
 description: "git subtree adds needless merge commits to the Git history. It doesn't give you a linear history."
-series: why-splicing
-seriesOrder: 3
 topics: [git]
 ---
 

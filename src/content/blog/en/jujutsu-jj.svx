@@ -1,9 +1,9 @@
 ---
 id: jj
+series: git-splice
+seriesOrder: 27
 title: "Jujutsu (jj)"
 description: "What would splicing look like in jj, and what can Git learn from it?"
-series: other-tools
-seriesOrder: 3
 topics: [git]
 ---
 
