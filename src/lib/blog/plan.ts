@@ -3,7 +3,6 @@ export const publicationPlan: string[] = [
 	"submodule-problems",
 	"subtree-problems",
 	"lessons-learned",
-	"own-tool",
 	"naming",
 	"bdd-scrut",
 	"bdd-drawings",
