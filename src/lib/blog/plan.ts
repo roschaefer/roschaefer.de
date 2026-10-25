@@ -1,8 +1,8 @@
 export const publicationPlan: string[] = [
-	"problem",
+	"motivation",
 	"submodule-problems",
 	"subtree-problems",
-	"motivation",
+	"lessons-learned",
 	"own-tool",
 	"naming",
 	"bdd-scrut",

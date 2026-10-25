@@ -1,5 +1,5 @@
 ---
-id: motivation
+id: lessons-learned
 title: "Getrennte Historien, gemeinsame Dateien"
 description: "Getrennte Historien wie bei Submodulen, die Dateien im Monorepo wie bei git subtree, und dazwischen ein eingecheckter Synchronisationspunkt."
 series: why-splicing

@@ -1,5 +1,5 @@
 ---
-id: motivation
+id: lessons-learned
 title: "Separate histories, shared files"
 description: "Separate histories as with submodules, the files in the monorepo as with git subtree, and between them a committed sync point."
 series: why-splicing
