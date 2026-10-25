@@ -100,7 +100,7 @@ describe("blog metadata", () => {
 
 	it.skipIf(!hasEpisodes)("orders each series and resolves translated slugs", () => {
 		const english = getSeriesPosts("en", "why-splicing");
-		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4, 5]);
+		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4]);
 		const first = getBlogPost("en", "separate-histories-shared-files");
 		expect(first).toBeDefined();
 		expect(first && getBlogTranslation(first)?.slug).toBe(
