@@ -88,7 +88,7 @@ describe("blog metadata", () => {
 				getBlogPosts("en", true)
 					.slice(0, 3)
 					.map(({ id }) => id),
-			).toEqual(["motivation", "submodule-problems", "subtree-problems"]);
+			).toEqual(["motivation", "git-submodules", "git-subtree"]);
 		},
 	);
 
