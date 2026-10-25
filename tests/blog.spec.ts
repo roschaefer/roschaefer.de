@@ -6,7 +6,7 @@ test("production blog indexes do not expose drafts", async ({ page, request }) =
 	await expect(page.getByText("The first entries are being prepared.")).toBeVisible();
 	await expect(page.getByText("Where sync state lives")).toHaveCount(0);
 
-	const draft = await request.get("/en/blog/separate-histories-shared-files/");
+	const draft = await request.get("/en/blog/lessons-learned/");
 	expect(draft.status()).toBe(404);
 });
 
