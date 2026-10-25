@@ -131,7 +131,7 @@ const primaryProfiles = $derived(
 );
 
 const otherLocale = $derived<Locale>(locale === "de" ? "en" : "de");
-const currentBlogSeries = $derived(getBlogSeries("why-splicing"));
+const currentBlogSeries = $derived(getBlogSeries("git-splice"));
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
 const pageUrl = $derived(`${siteUrl}/${locale}/`);
@@ -455,7 +455,7 @@ markUsed(() => [
 				<div class="theme-card rounded-[1.5rem] p-6">
 					<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_current_series)}</p>
 					<h3 class="theme-heading mt-3 text-xl normal-case tracking-normal">
-						<a href={blogSeriesPath(locale, "why-splicing")}>{currentBlogSeries?.title[locale]}</a>
+						<a href={blogSeriesPath(locale, "git-splice")}>{currentBlogSeries?.title[locale]}</a>
 					</h3>
 					<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentBlogSeries?.description[locale]}</p>
 				</div>

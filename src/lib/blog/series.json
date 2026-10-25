@@ -1,0 +1,13 @@
+{
+	"git-splice": {
+		"id": "git-splice",
+		"title": {
+			"en": "git-splice",
+			"de": "git-splice"
+		},
+		"description": {
+			"en": "Keeping a folder of a monorepo in sync with its own repository: what goes wrong with submodules and subtrees, the idea of splicing, and git-splice, which implements it.",
+			"de": "Einen Ordner im Monorepo mit seinem eigenen Repository synchron halten: was bei Submodulen und Subtrees schiefgeht, die Idee des Splicings, und git-splice, das sie umsetzt."
+		}
+	}
+}

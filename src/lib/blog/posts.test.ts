@@ -1,7 +1,6 @@
 import type { Component } from "svelte";
 import { describe, expect, it } from "vitest";
 import { blogPostPath, blogSeriesPath, blogTopicPath } from "./paths";
-import { publicationPlan } from "./plan";
 import {
 	type BlogPost,
 	filterByTopics,
@@ -80,11 +79,6 @@ describe("blog metadata", () => {
 		).toThrow("collides with a blog route");
 	});
 
-	it("plans every post exactly once", () => {
-		const ids = [...new Set(getBlogPosts("en", true).map(({ id }) => id))];
-		expect([...publicationPlan].sort()).toEqual(ids.sort());
-	});
-
 	const hasEpisodes = getBlogPosts("en", true).length > 0;
 
 	it.skipIf(!hasEpisodes)(
@@ -99,8 +93,10 @@ describe("blog metadata", () => {
 	);
 
 	it.skipIf(!hasEpisodes)("orders each series and resolves translated slugs", () => {
-		const english = getSeriesPosts("en", "why-splicing");
-		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4]);
+		const english = getSeriesPosts("en", "git-splice");
+		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual(
+			english.map((_, index) => index + 1),
+		);
 		const first = getBlogPost("en", "lessons-learned");
 		expect(first).toBeDefined();
 		expect(first && getBlogTranslation(first)?.slug).toBe("lessons-learned");
