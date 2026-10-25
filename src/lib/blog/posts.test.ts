@@ -103,9 +103,7 @@ describe("blog metadata", () => {
 		expect(english.map(({ seriesOrder }) => seriesOrder)).toEqual([1, 2, 3, 4]);
 		const first = getBlogPost("en", "separate-histories-shared-files");
 		expect(first).toBeDefined();
-		expect(first && getBlogTranslation(first)?.slug).toBe(
-			"getrennte-historien-gemeinsame-dateien",
-		);
+		expect(first && getBlogTranslation(first)?.slug).toBe("getrennte-historien-gemeinsame-dateien");
 	});
 });
 
