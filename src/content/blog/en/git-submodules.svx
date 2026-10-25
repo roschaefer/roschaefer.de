@@ -1,5 +1,5 @@
 ---
-id: submodule-problems
+id: git-submodules
 series: git-splice
 seriesOrder: 2
 title: "Git Submodules"

@@ -1,7 +1,7 @@
 ---
-id: weak-parent
+id: the-weak-parent
 series: git-splice
-seriesOrder: 22
+seriesOrder: 21
 title: "Der schwache Elternteil"
 description: "Was ist ein schwacher Elternteil, und warum braucht Splicing eine Beziehung, die schwächer ist als Git-Abstammung?"
 topics: [git]

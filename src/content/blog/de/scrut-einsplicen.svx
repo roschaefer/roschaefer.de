@@ -1,7 +1,7 @@
 ---
-id: splicing-scrut
+id: splicing-in-scrut
 series: git-splice
-seriesOrder: 23
+seriesOrder: 22
 title: "Scrut einsplicen"
 description: "Wie sieht es aus, ein echtes Fremdprojekt in ein Monorepo einzusplicen?"
 topics: [git]

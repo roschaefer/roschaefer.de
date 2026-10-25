@@ -1,7 +1,7 @@
 ---
-id: upstream-worktree
+id: checking-out-an-upstream-commit-in-a-worktree
 series: git-splice
-seriesOrder: 16
+seriesOrder: 15
 title: "Checking out an upstream commit in a worktree"
 description: "How can one repository hold two unrelated histories and check out both side by side?"
 topics: [git]

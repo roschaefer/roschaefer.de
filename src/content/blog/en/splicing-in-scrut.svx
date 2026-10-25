@@ -1,7 +1,7 @@
 ---
-id: splicing-scrut
+id: splicing-in-scrut
 series: git-splice
-seriesOrder: 23
+seriesOrder: 22
 title: "Splicing in Scrut"
 description: "What does it look like to splice a real third-party project into a monorepo?"
 topics: [git]

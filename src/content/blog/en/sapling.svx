@@ -1,7 +1,7 @@
 ---
 id: sapling
 series: git-splice
-seriesOrder: 26
+seriesOrder: 25
 title: "Sapling"
 description: "What does Sapling do differently, and does it make splicing unnecessary?"
 topics: [git]

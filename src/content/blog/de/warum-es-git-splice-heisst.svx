@@ -1,5 +1,5 @@
 ---
-id: naming
+id: naming-it-git-splice
 series: git-splice
 seriesOrder: 5
 title: "Warum es git-splice heißt"

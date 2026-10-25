@@ -1,5 +1,5 @@
 ---
-id: subtree-problems
+id: git-subtree
 series: git-splice
 seriesOrder: 3
 title: "Git Subtree"

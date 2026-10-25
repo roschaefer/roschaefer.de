@@ -1,5 +1,5 @@
 ---
-id: bdd-scrut
+id: specification-by-example-with-scrut
 series: git-splice
 seriesOrder: 6
 title: "Specification by Example mit Scrut"

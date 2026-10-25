@@ -1,5 +1,5 @@
 ---
-id: bdd-ai
+id: how-i-work-with-ai-agents
 series: git-splice
 seriesOrder: 8
 title: "Wie ich mit KI-Agenten arbeite"
