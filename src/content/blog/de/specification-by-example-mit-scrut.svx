@@ -1,7 +1,7 @@
 ---
 id: specification-by-example-with-scrut
 series: git-splice
-seriesOrder: 6
+seriesOrder: 7
 title: "Specification by Example mit Scrut"
 description: "Die Dokumentation von git-splice ist ihre Testsuite: Scrut führt die Befehle im Markdown aus und vergleicht ihre Ausgabe."
 topics: [git, testing]

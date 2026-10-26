@@ -1,7 +1,7 @@
 ---
 id: nesting-splices
 series: git-splice
-seriesOrder: 18
+seriesOrder: 19
 title: "Splices verschachteln"
 description: "Was passiert, wenn ein gesplictes Repository selbst einen Splice enthält?"
 topics: [git]

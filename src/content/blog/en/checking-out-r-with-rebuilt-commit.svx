@@ -1,7 +1,7 @@
 ---
 id: checking-out-r-with-rebuilt-commit
 series: git-splice
-seriesOrder: 17
+seriesOrder: 18
 title: "Checking out R with --rebuilt-commit"
 description: "How do I inspect what a push would send before sending it?"
 topics: [git]

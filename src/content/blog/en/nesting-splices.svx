@@ -1,7 +1,7 @@
 ---
 id: nesting-splices
 series: git-splice
-seriesOrder: 18
+seriesOrder: 19
 title: "Nesting splices"
 description: "What happens when a spliced repository contains a splice itself?"
 topics: [git]

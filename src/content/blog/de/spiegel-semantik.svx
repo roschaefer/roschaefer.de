@@ -1,7 +1,7 @@
 ---
 id: mirror-semantics
 series: git-splice
-seriesOrder: 20
+seriesOrder: 21
 title: "Spiegel-Semantik"
 description: "In welchem Sinn ist der Ordner ein Spiegel des Upstreams, und wo endet die Analogie?"
 topics: [git]

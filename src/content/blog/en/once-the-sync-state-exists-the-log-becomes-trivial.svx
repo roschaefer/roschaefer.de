@@ -1,7 +1,7 @@
 ---
 id: once-the-sync-state-exists-the-log-becomes-trivial
 series: git-splice
-seriesOrder: 10
+seriesOrder: 11
 title: "Once the sync state exists, the log becomes trivial"
 description: "A committed boundary turns 'what will push?' and 'what will pull?' from bespoke subtree analysis into ordinary Git set operations."
 topics: [git]

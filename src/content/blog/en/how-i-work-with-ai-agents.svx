@@ -1,7 +1,7 @@
 ---
 id: how-i-work-with-ai-agents
 series: git-splice
-seriesOrder: 8
+seriesOrder: 9
 title: "How I work with AI agents"
 description: "Which parts did AI agents write, which decisions stayed mine, and how do the specs keep them honest?"
 topics: [git]

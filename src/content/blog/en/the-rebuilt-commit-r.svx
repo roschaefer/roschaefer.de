@@ -1,7 +1,7 @@
 ---
 id: the-rebuilt-commit-r
 series: git-splice
-seriesOrder: 16
+seriesOrder: 17
 title: "The rebuilt commit R"
 description: "How does git-splice turn monorepo commits into upstream commits?"
 topics: [git]
