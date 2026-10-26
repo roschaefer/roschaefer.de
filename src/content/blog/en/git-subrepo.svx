@@ -1,7 +1,7 @@
 ---
 id: git-subrepo
 series: git-splice
-seriesOrder: 25
+seriesOrder: 23
 title: "git-subrepo"
 description: "How does git-subrepo approach the same problem, and where does it differ from splicing?"
 topics: [git]

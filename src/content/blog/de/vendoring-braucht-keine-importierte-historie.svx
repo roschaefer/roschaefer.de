@@ -1,7 +1,7 @@
 ---
 id: vendoring-does-not-require-importing-history
 series: git-splice
-seriesOrder: 12
+seriesOrder: 10
 title: "Vendoring braucht keine importierte Historie"
 description: "Der Squash-Modus von git subtree versteckt Upstream-Commits, erzeugt aber weiterhin eine Seitenhistorie und einen Merge. Ein vendorter Baum braucht eine Referenz auf den Upstream – keine Upstream-Abstammung."
 topics: [git]

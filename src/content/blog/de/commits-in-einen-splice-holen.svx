@@ -1,7 +1,7 @@
 ---
 id: pulling-commits-into-a-splice
 series: git-splice
-seriesOrder: 13
+seriesOrder: 11
 title: "Commits in einen Splice holen"
 description: "Wie kommen Upstream-Commits als ein Monorepo-Commit an, und welche Basis nutzt der Merge?"
 topics: [git]

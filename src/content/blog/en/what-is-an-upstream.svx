@@ -1,7 +1,7 @@
 ---
 id: what-is-an-upstream
 series: git-splice
-seriesOrder: 14
+seriesOrder: 12
 title: "What is an upstream?"
 description: "What does “upstream” mean for a folder that is also a repository?"
 topics: [git]
