@@ -1,0 +1,12 @@
+---
+id: mirror-semantics
+series: git-splice
+seriesOrder: 19
+title: "Spiegel-Semantik"
+description: "In welchem Sinn ist der Ordner ein Spiegel des Upstreams, und wo endet die Analogie?"
+topics: [git]
+---
+
+**Frage:** In welchem Sinn ist der Ordner ein Spiegel des Upstreams, und wo endet die Analogie?
+
+Mehr dazu in der Dokumentation von git-splice (auf Englisch): [Mirrors](https://roschaefer.github.io/git-splice/docs/going-forward/mirrors/).

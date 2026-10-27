@@ -1,0 +1,12 @@
+---
+id: jujutsu-jj
+series: git-splice
+seriesOrder: 25
+title: "Jujutsu (jj)"
+description: "What would splicing look like in jj, and what can Git learn from it?"
+topics: [git]
+---
+
+**Question:** What would splicing look like in jj, and what can Git learn from it?
+
+More in the git-splice docs, where every command is tested: [Jujutsu compared](https://roschaefer.github.io/git-splice/test/comparisons/vcs/jj/).

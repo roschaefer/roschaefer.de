@@ -1,5 +1,8 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
+import { blogPath, blogPostPath, blogSeriesPath } from "$lib/blog/paths";
+import type { BlogPostSummary } from "$lib/blog/posts";
+import { getBlogSeries } from "$lib/blog/series";
 import ContactLinks from "$lib/components/ContactLinks.svelte";
 import NewspaperIcon from "$lib/components/NewspaperIcon.svelte";
 import PageShell from "$lib/components/PageShell.svelte";
@@ -17,9 +20,10 @@ import { markUsed } from "$lib/utils/mark-used";
 interface Props {
 	content: SiteContent;
 	locale: Locale;
+	recentPosts: BlogPostSummary[];
 }
 
-const { content, locale }: Props = $props();
+const { content, locale, recentPosts }: Props = $props();
 
 let activeAnchorTargetId = $state<string | null>(null);
 let projectsExpanded = $state(false);
@@ -127,6 +131,7 @@ const primaryProfiles = $derived(
 );
 
 const otherLocale = $derived<Locale>(locale === "de" ? "en" : "de");
+const currentBlogSeries = $derived(getBlogSeries("git-splice"));
 const t = (message: (inputs: Record<string, never>, options?: { locale?: Locale }) => string) =>
 	message({}, { locale });
 const pageUrl = $derived(`${siteUrl}/${locale}/`);
@@ -180,6 +185,11 @@ markUsed(() => [
 	m,
 	primaryProfiles,
 	otherLocale,
+	recentPosts,
+	currentBlogSeries,
+	blogPath,
+	blogPostPath,
+	blogSeriesPath,
 	t,
 	pageUrl,
 	ogLocale,
@@ -268,6 +278,7 @@ markUsed(() => [
 				<li><a href={`/${locale}/#projects`}>{t(m.nav_projects)}</a></li>
 				<li><a href={`/${locale}/#experience`}>{t(m.nav_experience)}</a></li>
 				<li><a href={`/${locale}/#contact`}>{t(m.nav_contact)}</a></li>
+				<li><a href={blogPath(locale)}>{t(m.nav_blog)}</a></li>
 			</ul>
 		</nav>
 	{/snippet}
@@ -432,6 +443,36 @@ markUsed(() => [
 					{t(m.resume_json_link_label)}
 				</a>
 			</aside>
+		</section>
+
+		<section id="blog" aria-labelledby="blog-title" class="theme-panel rounded-[2rem] p-6 sm:p-8">
+			<div class="mb-6 flex flex-wrap items-baseline justify-between gap-4">
+				<h2 id="blog-title" class="theme-heading">{t(m.nav_blog)}</h2>
+				<a class="text-sm font-bold uppercase tracking-[0.2em]" href={blogPath(locale)}>{t(m.blog_all)} →</a>
+			</div>
+
+			<div class="grid gap-6 md:grid-cols-2">
+				<div class="theme-card rounded-[1.5rem] p-6">
+					<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_current_series)}</p>
+					<h3 class="theme-heading mt-3 text-xl normal-case tracking-normal">
+						<a href={blogSeriesPath(locale, "git-splice")}>{currentBlogSeries?.title[locale]}</a>
+					</h3>
+					<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{currentBlogSeries?.description[locale]}</p>
+				</div>
+
+				<div class="theme-card rounded-[1.5rem] p-6">
+					{#if recentPosts[0]}
+						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_latest_entry)}</p>
+						<h3 class="theme-heading mt-3 text-xl normal-case tracking-normal">
+							<a href={blogPostPath(locale, recentPosts[0].slug)}>{recentPosts[0].title}</a>
+						</h3>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{recentPosts[0].description}</p>
+					{:else}
+						<p class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-brand-cyan)]">{t(m.blog_up_next)}</p>
+						<p class="mt-3 text-sm text-[var(--color-brand-muted)]">{t(m.blog_current_drafts)}</p>
+					{/if}
+				</div>
+			</div>
 		</section>
 
 		<section
