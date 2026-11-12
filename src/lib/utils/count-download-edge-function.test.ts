@@ -4,7 +4,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { resumePdfPath } from "$lib/data/resume-pdf";
 import countDownload from "../../../netlify/edge-functions/count-download.ts";
-import { goatcounterApiUrl } from "../../../netlify/edge-functions/goatcounter.ts";
 
 const visitorIp = "203.0.113.7";
 const firefox = "Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0";
@@ -37,7 +36,9 @@ const fetchMock = vi.fn(async () => new Response(null, { status: 202 }));
 beforeEach(() => {
 	token = "secret-token";
 	fileResponse = new Response("%PDF-1.7", { headers: { "content-type": "application/pdf" } });
-	vi.stubGlobal("Netlify", { env: { get: () => token } });
+	vi.stubGlobal("Netlify", {
+		env: { get: (name: string) => (name === "GOATCOUNTER_SITE" ? "roschaefer" : token) },
+	});
 	vi.stubGlobal("fetch", fetchMock);
 });
 
@@ -55,7 +56,7 @@ describe("count-download edge function", () => {
 		expect(response).toBe(fileResponse);
 		expect(fetchMock).toHaveBeenCalledOnce();
 		const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
-		expect(url).toBe(goatcounterApiUrl);
+		expect(url).toBe("https://roschaefer.goatcounter.com/api/v0/count");
 		expect(init.headers).toMatchObject({ authorization: "Bearer secret-token" });
 		expect(JSON.parse(init.body as string)).toEqual({
 			hits: [
