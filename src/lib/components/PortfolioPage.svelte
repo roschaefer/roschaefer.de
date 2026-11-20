@@ -285,7 +285,7 @@ markUsed(() => [
 					aria-label={`${t(m.hero_heading_line_1)} ${t(m.hero_heading_line_2)} ${t(m.hero_heading_line_3)} ${t(m.hero_heading_line_4)}`}
 				>
 					<span aria-hidden="true">
-						<span class="block">{t(m.hero_heading_line_1)}</span>
+						<span class="block">Hallo Felix!</span>
 						<span class="block">{t(m.hero_heading_line_2)}</span>
 						<span class="block text-[var(--color-brand-cyan)]">
 							{t(m.hero_heading_line_3)}
