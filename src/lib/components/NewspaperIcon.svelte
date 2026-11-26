@@ -1,5 +1,5 @@
 <script lang="ts">
-import { markUsed } from "$lib/utils/mark-used";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	class?: string;

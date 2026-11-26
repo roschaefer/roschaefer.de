@@ -1,10 +1,10 @@
 <script lang="ts">
-import ContactLinks from "$lib/components/ContactLinks.svelte";
-import PageShell from "$lib/components/PageShell.svelte";
-import { siteImage, siteName, siteUrl } from "$lib/config/site";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import { markUsed } from "$lib/utils/mark-used";
+import ContactLinks from "#lib/components/ContactLinks.svelte";
+import PageShell from "#lib/components/PageShell.svelte";
+import { siteImage, siteName, siteUrl } from "#lib/config/site.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	locale: Locale;

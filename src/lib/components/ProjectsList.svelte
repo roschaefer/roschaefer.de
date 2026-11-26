@@ -1,13 +1,13 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
-import NewspaperIcon from "$lib/components/NewspaperIcon.svelte";
-import ProjectKeywordPills from "$lib/components/ProjectKeywordPills.svelte";
-import { pressEntryId, projectEntryId } from "$lib/data/resume";
-import { printLinkLabel } from "$lib/data/short-links";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import type { SiteContent } from "$lib/utils/content";
-import { markUsed } from "$lib/utils/mark-used";
+import NewspaperIcon from "#lib/components/NewspaperIcon.svelte";
+import ProjectKeywordPills from "#lib/components/ProjectKeywordPills.svelte";
+import { pressEntryId, projectEntryId } from "#lib/data/resume.ts";
+import { printLinkLabel } from "#lib/data/short-links.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import type { SiteContent } from "#lib/utils/content.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	featured:

@@ -1,4 +1,4 @@
-import type { ResumeProject } from "$lib/types/resume";
+import type { ResumeProject } from "#lib/types/resume.ts";
 
 export type TechnologyAggregate<T extends ResumeProject = ResumeProject> = {
 	name: string;

@@ -1,8 +1,8 @@
 <script lang="ts">
-import ThemeToggle from "$lib/components/ThemeToggle.svelte";
-import { siteImage, siteName, siteUrl } from "$lib/config/site";
-import * as m from "$lib/paraglide/messages";
-import { markUsed } from "$lib/utils/mark-used";
+import ThemeToggle from "#lib/components/ThemeToggle.svelte";
+import { siteImage, siteName, siteUrl } from "#lib/config/site.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 markUsed(siteImage, siteName, siteUrl, m, ThemeToggle);
 </script>

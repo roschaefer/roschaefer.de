@@ -1,6 +1,6 @@
 <script lang="ts">
-import RedactedClientPage from "$lib/components/RedactedClientPage.svelte";
-import { markUsed } from "$lib/utils/mark-used";
+import RedactedClientPage from "#lib/components/RedactedClientPage.svelte";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 markUsed(RedactedClientPage);
 </script>

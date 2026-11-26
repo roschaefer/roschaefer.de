@@ -1,13 +1,13 @@
-import { getResume, getResumeFeatured } from "$lib/data/resume";
-import type { Locale } from "$lib/i18n";
+import { getResume, getResumeFeatured } from "#lib/data/resume.ts";
+import type { Locale } from "#lib/i18n.ts";
 import {
 	createFeaturedEducation,
 	createFeaturedProjects,
 	createRemainingProjects,
 	getFeaturedConfig,
 	resolveFeaturedProjects,
-} from "$lib/utils/resume-featured";
-import { createTechExperience } from "$lib/utils/tech-experience";
+} from "#lib/utils/resume-featured.ts";
+import { createTechExperience } from "#lib/utils/tech-experience.ts";
 
 export const createSiteContent = (locale: Locale) => {
 	const resume = getResume(locale);

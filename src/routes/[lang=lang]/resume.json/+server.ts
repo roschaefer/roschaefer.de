@@ -1,6 +1,6 @@
 import { error, json } from "@sveltejs/kit";
-import { getResume } from "$lib/data/resume";
-import { isLocale } from "$lib/i18n";
+import { getResume } from "#lib/data/resume.ts";
+import { isLocale } from "#lib/i18n.ts";
 
 export const prerender = true;
 

@@ -9,9 +9,9 @@ export const shouldCollapseKeywordPills = (
 
 <script lang="ts">
 import { onMount, tick } from "svelte";
-import { skillEntryId } from "$lib/data/resume";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
+import { skillEntryId } from "#lib/data/resume.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
 
 interface Props {
 	keywords: string[];
