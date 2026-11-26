@@ -1,4 +1,4 @@
-import { error, json } from "@sveltejs/kit";
+import { error } from "@sveltejs/kit";
 import { getResume } from "#lib/data/resume.ts";
 import { isLocale } from "#lib/i18n.ts";
 
@@ -11,5 +11,5 @@ export const GET = ({ params }) => {
 		throw error(404, "Locale not found");
 	}
 
-	return json(getResume(params.lang));
+	return Response.json(getResume(params.lang));
 };
