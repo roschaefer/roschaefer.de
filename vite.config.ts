@@ -1,13 +1,22 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import adapter from "@sveltejs/adapter-static";
 import { sveltekit } from "@sveltejs/kit/vite";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import tailwindcss from "@tailwindcss/vite";
+import { mdsvex } from "mdsvex";
 import { defineConfig } from "vitest/config";
+import { localDocsSite, rehypeDocsLinks } from "./src/lib/blog/docs-links.js";
 
 const workspaceRoot = new URL(".", import.meta.url).pathname;
 const blogContentRoot = join(workspaceRoot, "src/content/blog");
 const virtualBlogModules = "virtual:blog-modules";
 const resolvedVirtualBlogModules = `\0${virtualBlogModules}`;
+
+const markdownExtensions = [".svx"];
+// Posts link to the published git-splice docs; `pnpm dev` links to the docs served locally instead.
+const rehypePlugins =
+	process.env.npm_lifecycle_event === "dev" ? [[rehypeDocsLinks, { site: localDocsSite }]] : [];
 
 const hasPublicationDate = (path: string) => {
 	const source = readFileSync(path, "utf8");
@@ -48,7 +57,26 @@ const blogModulesPlugin = (includeDrafts: boolean) => ({
 });
 
 export default defineConfig(({ command }) => ({
-	plugins: [blogModulesPlugin(command !== "build"), tailwindcss(), sveltekit()],
+	plugins: [
+		blogModulesPlugin(command !== "build"),
+		tailwindcss(),
+		sveltekit({
+			extensions: [".svelte", ...markdownExtensions],
+			preprocess: [
+				mdsvex({
+					extensions: markdownExtensions,
+					layoutPropForwarding: "runes",
+					rehypePlugins,
+				}),
+				vitePreprocess(),
+			],
+			adapter: adapter(),
+			prerender: {
+				handleHttpError: "warn",
+				handleUnseenRoutes: "warn",
+			},
+		}),
+	],
 	server: {
 		fs: {
 			allow: [workspaceRoot],

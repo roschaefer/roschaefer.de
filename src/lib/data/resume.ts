@@ -1,5 +1,5 @@
-import type { Locale } from "$lib/i18n";
-import type { Resume, ResumeFeatured, ResumeProject } from "$lib/types/resume";
+import type { Locale } from "#lib/i18n.ts";
+import type { Resume, ResumeFeatured, ResumeProject } from "#lib/types/resume.ts";
 import de from "../../../.generated/resume.de.json";
 import en from "../../../.generated/resume.en.json";
 import source from "../../../.generated/resume-source.json";

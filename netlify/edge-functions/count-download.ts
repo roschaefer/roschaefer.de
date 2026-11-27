@@ -1,5 +1,5 @@
+import { primaryLanguage, send } from "../../integrations/goatcounter/goatcounter.ts";
 import { siteUrl } from "../../src/lib/config/site.ts";
-import { primaryLanguage, send } from "./goatcounter.ts";
 
 declare const Netlify: { env: { get: (name: string) => string | undefined } };
 
@@ -37,8 +37,9 @@ export default async (request: Request, context: Context) => {
 	}
 
 	const token = Netlify.env.get("GOATCOUNTER_API_TOKEN");
-	if (!token) {
-		console.error("GOATCOUNTER_API_TOKEN is not set, not counting");
+	const site = Netlify.env.get("GOATCOUNTER_SITE");
+	if (!token || !site) {
+		console.error("GOATCOUNTER_SITE or GOATCOUNTER_API_TOKEN is not set, not counting");
 		return response;
 	}
 
@@ -55,7 +56,7 @@ export default async (request: Request, context: Context) => {
 		language: primaryLanguage(request.headers.get("accept-language")),
 		ip: context.ip,
 	};
-	context.waitUntil(send(hit, token).catch((error) => console.error(error)));
+	context.waitUntil(send(hit, token, site).catch((error) => console.error(error)));
 
 	return response;
 };

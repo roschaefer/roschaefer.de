@@ -1,10 +1,10 @@
 <script lang="ts">
 import type { Snippet } from "svelte";
 
-import ThemeToggle from "$lib/components/ThemeToggle.svelte";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import { markUsed } from "$lib/utils/mark-used";
+import ThemeToggle from "#lib/components/ThemeToggle.svelte";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 type FooterLink = {
 	href: string;

@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { shortLinks } from "$lib/data/short-links";
+import { shortLinks } from "#lib/data/short-links.ts";
 
 const netlifyToml = readFileSync(resolve(process.cwd(), "netlify.toml"), "utf8");
 

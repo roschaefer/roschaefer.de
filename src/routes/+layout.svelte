@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
+import { siteUrl } from "#lib/config/site.ts";
 import { afterNavigate } from "$app/navigation";
-import { siteUrl } from "$lib/config/site";
 import "../app.css";
 
 type GoatCounter = { count: (opts: { path: string }) => void };

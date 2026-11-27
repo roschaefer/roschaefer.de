@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createTechnologyAggregates } from "$lib/utils/technology-aggregate";
+import { createTechnologyAggregates } from "#lib/utils/technology-aggregate.ts";
 
 describe("createTechnologyAggregates", () => {
 	it("keeps distinct project entries with the same display name separate", () => {

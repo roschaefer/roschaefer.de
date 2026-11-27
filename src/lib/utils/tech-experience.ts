@@ -1,5 +1,5 @@
-import type { Locale } from "$lib/i18n";
-import type { ResumeProject } from "$lib/types/resume";
+import type { Locale } from "#lib/i18n.ts";
+import type { ResumeProject } from "#lib/types/resume.ts";
 import { formatMonthDuration } from "./duration.ts";
 import { createTechnologyAggregates } from "./technology-aggregate.ts";
 

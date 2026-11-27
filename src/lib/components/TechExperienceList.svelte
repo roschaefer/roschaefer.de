@@ -1,11 +1,11 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
-import SkillProjectMentions from "$lib/components/SkillProjectMentions.svelte";
-import { projectEntryId, skillEntryId } from "$lib/data/resume";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import type { SiteContent } from "$lib/utils/content";
-import { markUsed } from "$lib/utils/mark-used";
+import SkillProjectMentions from "#lib/components/SkillProjectMentions.svelte";
+import { projectEntryId, skillEntryId } from "#lib/data/resume.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import type { SiteContent } from "#lib/utils/content.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 type Entry = SiteContent["techExperience"][number];
 type SortKey = "name" | "totalMonths" | "projectCount" | "lastUsedMonth";
