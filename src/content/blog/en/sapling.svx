@@ -1,0 +1,12 @@
+---
+id: sapling
+series: git-splice
+seriesOrder: 24
+title: "Sapling"
+description: "What does Sapling do differently, and does it make splicing unnecessary?"
+topics: [git]
+---
+
+**Question:** What does Sapling do differently, and does it make splicing unnecessary?
+
+More in the git-splice docs, where every command is tested: [Sapling compared](https://roschaefer.github.io/git-splice/test/comparisons/vcs/sapling/).

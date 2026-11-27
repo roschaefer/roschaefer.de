@@ -341,7 +341,7 @@ Verification, from fastest to slowest:
 
 ```bash
 pnpm check:types  # svelte-check only
-pnpm check:quick  # paraglide + resume source + lint + check:types + unit tests - what CI's "Quick verification" step runs
+pnpm check:quick  # paraglide + resume source + executable writing + lint + check:types + unit tests - what CI's "Quick verification" step runs
 pnpm check        # check:quick + test:e2e - test:e2e's own webServer already runs a full pnpm build (incl. build:pdf) to serve the site, so a working build is proven without a separate build step; slow, don't run this reflexively
 ```
 

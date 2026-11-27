@@ -1,0 +1,12 @@
+---
+id: mirror-semantics
+series: git-splice
+seriesOrder: 19
+title: "Mirror semantics"
+description: "In which sense is the folder a mirror of the upstream, and where does the analogy end?"
+topics: [git]
+---
+
+**Question:** In which sense is the folder a mirror of the upstream, and where does the analogy end?
+
+More in the git-splice docs: [Mirrors](https://roschaefer.github.io/git-splice/docs/going-forward/mirrors/).

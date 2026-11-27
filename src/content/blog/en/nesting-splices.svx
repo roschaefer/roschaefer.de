@@ -1,0 +1,12 @@
+---
+id: nesting-splices
+series: git-splice
+seriesOrder: 17
+title: "Nesting splices"
+description: "What happens when a spliced repository contains a splice itself?"
+topics: [git]
+---
+
+**Question:** What happens when a spliced repository contains a splice itself?
+
+More in the git-splice docs: [Nesting](https://roschaefer.github.io/git-splice/test/concepts/nesting/).

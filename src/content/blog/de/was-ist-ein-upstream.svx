@@ -1,0 +1,15 @@
+---
+id: what-is-an-upstream
+series: git-splice
+seriesOrder: 12
+title: "Was ist ein Upstream?"
+description: "Was bedeutet „Upstream“ für einen Ordner, der zugleich ein Repository ist?"
+topics: [git]
+---
+
+**Frage:** Was bedeutet „Upstream“ für einen Ordner, der zugleich ein Repository ist?
+
+- Fundamentals episode
+- Could merge with “How to key an upstream”
+
+Mehr dazu in der Dokumentation von git-splice, in der jeder Befehl getestet ist (auf Englisch): [Upstreams](https://roschaefer.github.io/git-splice/test/concepts/upstreams/).
