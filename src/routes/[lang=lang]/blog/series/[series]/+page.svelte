@@ -1,9 +1,9 @@
 <script lang="ts">
-import { blogSeriesPath } from "$lib/blog/paths";
-import BlogPostList from "$lib/components/BlogPostList.svelte";
-import BlogShell from "$lib/components/BlogShell.svelte";
-import { siteName, siteUrl } from "$lib/config/site";
-import { markUsed } from "$lib/utils/mark-used";
+import { blogSeriesPath } from "#lib/blog/paths.ts";
+import BlogPostList from "#lib/components/BlogPostList.svelte";
+import BlogShell from "#lib/components/BlogShell.svelte";
+import { siteName, siteUrl } from "#lib/config/site.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 const { data } = $props();
 const otherLocale = $derived(data.locale === "de" ? "en" : "de");

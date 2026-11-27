@@ -1,8 +1,8 @@
 import { error } from "@sveltejs/kit";
-import { blogPath, blogPostPath } from "$lib/blog/paths";
-import { getPublishedBlogPosts } from "$lib/blog/posts";
-import { siteName, siteUrl } from "$lib/config/site";
-import { isLocale } from "$lib/i18n";
+import { blogPath, blogPostPath } from "#lib/blog/paths.ts";
+import { getPublishedBlogPosts } from "#lib/blog/posts.ts";
+import { siteName, siteUrl } from "#lib/config/site.ts";
+import { isLocale } from "#lib/i18n.ts";
 
 export const prerender = true;
 export const entries = () => [{ lang: "de" }, { lang: "en" }];

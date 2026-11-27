@@ -1,5 +1,5 @@
-import { blogPostSummary, getBlogPosts } from "$lib/blog/posts";
-import { createSiteContent } from "$lib/utils/content";
+import { blogPostSummary, getBlogPosts } from "#lib/blog/posts.ts";
+import { createSiteContent } from "#lib/utils/content.ts";
 
 export const entries = () => [{ lang: "de" }, { lang: "en" }];
 

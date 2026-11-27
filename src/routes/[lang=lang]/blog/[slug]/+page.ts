@@ -5,9 +5,9 @@ import {
 	getBlogTranslation,
 	getPublishedBlogEntries,
 	getSeriesPosts,
-} from "$lib/blog/posts";
-import { getBlogSeries } from "$lib/blog/series";
-import { isLocale } from "$lib/i18n";
+} from "#lib/blog/posts.ts";
+import { getBlogSeries } from "#lib/blog/series.ts";
+import { isLocale } from "#lib/i18n.ts";
 
 export const entries = getPublishedBlogEntries;
 

@@ -1,10 +1,10 @@
 <script lang="ts">
 import type { Snippet } from "svelte";
-import { blogPath } from "$lib/blog/paths";
-import PageShell from "$lib/components/PageShell.svelte";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import { markUsed } from "$lib/utils/mark-used";
+import { blogPath } from "#lib/blog/paths.ts";
+import PageShell from "#lib/components/PageShell.svelte";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	locale: Locale;

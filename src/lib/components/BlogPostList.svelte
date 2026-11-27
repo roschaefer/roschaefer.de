@@ -1,9 +1,9 @@
 <script lang="ts">
-import { blogPostPath, blogSeriesPath, blogTopicPath } from "$lib/blog/paths";
-import type { BlogPostSummary } from "$lib/blog/posts";
-import { getBlogSeries } from "$lib/blog/series";
-import type { Locale } from "$lib/i18n";
-import { markUsed } from "$lib/utils/mark-used";
+import { blogPostPath, blogSeriesPath, blogTopicPath } from "#lib/blog/paths.ts";
+import type { BlogPostSummary } from "#lib/blog/posts.ts";
+import { getBlogSeries } from "#lib/blog/series.ts";
+import type { Locale } from "#lib/i18n.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	locale: Locale;

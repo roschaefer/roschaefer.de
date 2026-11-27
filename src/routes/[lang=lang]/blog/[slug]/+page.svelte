@@ -1,10 +1,10 @@
 <script lang="ts">
-import { blogPostPath, blogSeriesPath, blogTopicPath } from "$lib/blog/paths";
-import { getBlogPost } from "$lib/blog/posts";
-import BlogComments from "$lib/components/BlogComments.svelte";
-import BlogShell from "$lib/components/BlogShell.svelte";
-import { siteImage, siteName, siteUrl } from "$lib/config/site";
-import { markUsed } from "$lib/utils/mark-used";
+import { blogPostPath, blogSeriesPath, blogTopicPath } from "#lib/blog/paths.ts";
+import { getBlogPost } from "#lib/blog/posts.ts";
+import BlogComments from "#lib/components/BlogComments.svelte";
+import BlogShell from "#lib/components/BlogShell.svelte";
+import { siteImage, siteName, siteUrl } from "#lib/config/site.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 const { data } = $props();
 const post = $derived(getBlogPost(data.locale, data.post.slug));

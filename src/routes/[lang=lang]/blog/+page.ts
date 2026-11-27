@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
-import { blogPostSummary, getBlogPosts } from "$lib/blog/posts";
-import { isLocale } from "$lib/i18n";
+import { blogPostSummary, getBlogPosts } from "#lib/blog/posts.ts";
+import { isLocale } from "#lib/i18n.ts";
 
 export const entries = () => [{ lang: "de" }, { lang: "en" }];
 

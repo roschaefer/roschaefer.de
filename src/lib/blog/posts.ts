@@ -1,7 +1,7 @@
 import { blogModules } from "virtual:blog-modules";
 import type { Component } from "svelte";
-import { type BlogSeriesId, getBlogSeries } from "$lib/blog/series";
-import type { Locale } from "$lib/i18n";
+import { type BlogSeriesId, getBlogSeries } from "#lib/blog/series.ts";
+import type { Locale } from "#lib/i18n.ts";
 
 export type BlogStatus = "draft" | "published";
 

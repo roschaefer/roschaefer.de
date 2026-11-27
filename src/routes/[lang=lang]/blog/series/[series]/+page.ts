@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit";
-import { blogPostSummary, getPublishedBlogPosts, getSeriesPosts } from "$lib/blog/posts";
-import { blogSeries, getBlogSeries } from "$lib/blog/series";
-import { isLocale } from "$lib/i18n";
+import { blogPostSummary, getPublishedBlogPosts, getSeriesPosts } from "#lib/blog/posts.ts";
+import { blogSeries, getBlogSeries } from "#lib/blog/series.ts";
+import { isLocale } from "#lib/i18n.ts";
 
 export const entries = () =>
 	Object.keys(blogSeries).flatMap((series) =>

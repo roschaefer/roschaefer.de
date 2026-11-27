@@ -1,4 +1,4 @@
-import type { Locale } from "$lib/i18n";
+import type { Locale } from "#lib/i18n.ts";
 import generatedSeries from "./series.json";
 
 export type BlogSeries = {

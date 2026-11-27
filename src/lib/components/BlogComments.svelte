@@ -1,5 +1,5 @@
 <script module lang="ts">
-import type { Theme } from "$lib/theme";
+import type { Theme } from "#lib/theme.ts";
 
 export type GiscusConfig = {
 	repo: string;
@@ -36,11 +36,11 @@ export const giscusAttributes = (
 
 <script lang="ts">
 import { onDestroy } from "svelte";
-import { giscus } from "$lib/config/site";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import { getPreferredTheme, type Theme as CurrentTheme } from "$lib/theme";
-import { markUsed } from "$lib/utils/mark-used";
+import { giscus } from "#lib/config/site.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { getPreferredTheme, type Theme as CurrentTheme } from "#lib/theme.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	locale: Locale;

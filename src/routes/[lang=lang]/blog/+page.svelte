@@ -1,12 +1,12 @@
 <script lang="ts">
+import { blogPath, blogRssPath, blogTopicPath, topicParam } from "#lib/blog/paths.ts";
+import { filterByTopics, getBlogTopics } from "#lib/blog/posts.ts";
+import BlogPostList from "#lib/components/BlogPostList.svelte";
+import BlogShell from "#lib/components/BlogShell.svelte";
+import { siteName, siteUrl } from "#lib/config/site.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { markUsed } from "#lib/utils/mark-used.ts";
 import { page } from "$app/state";
-import { blogPath, blogRssPath, blogTopicPath, topicParam } from "$lib/blog/paths";
-import { filterByTopics, getBlogTopics } from "$lib/blog/posts";
-import BlogPostList from "$lib/components/BlogPostList.svelte";
-import BlogShell from "$lib/components/BlogShell.svelte";
-import { siteName, siteUrl } from "$lib/config/site";
-import * as m from "$lib/paraglide/messages";
-import { markUsed } from "$lib/utils/mark-used";
 
 const { data } = $props();
 const otherLocale = $derived(data.locale === "de" ? "en" : "de");

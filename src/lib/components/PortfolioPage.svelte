@@ -1,21 +1,21 @@
 <script lang="ts">
 import { onMount, tick } from "svelte";
-import { blogPath, blogPostPath, blogSeriesPath } from "$lib/blog/paths";
-import type { BlogPostSummary } from "$lib/blog/posts";
-import { getBlogSeries } from "$lib/blog/series";
-import ContactLinks from "$lib/components/ContactLinks.svelte";
-import NewspaperIcon from "$lib/components/NewspaperIcon.svelte";
-import PageShell from "$lib/components/PageShell.svelte";
-import ProjectsList from "$lib/components/ProjectsList.svelte";
-import TechExperienceList from "$lib/components/TechExperienceList.svelte";
-import { siteImage, siteName, siteUrl } from "$lib/config/site";
-import { pressEntryId, projectEntryId, skillEntryId } from "$lib/data/resume";
-import { resumePdfFilename, resumePdfPath } from "$lib/data/resume-pdf";
-import { printLinkLabel } from "$lib/data/short-links";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import type { SiteContent } from "$lib/utils/content";
-import { markUsed } from "$lib/utils/mark-used";
+import { blogPath, blogPostPath, blogSeriesPath } from "#lib/blog/paths.ts";
+import type { BlogPostSummary } from "#lib/blog/posts.ts";
+import { getBlogSeries } from "#lib/blog/series.ts";
+import ContactLinks from "#lib/components/ContactLinks.svelte";
+import NewspaperIcon from "#lib/components/NewspaperIcon.svelte";
+import PageShell from "#lib/components/PageShell.svelte";
+import ProjectsList from "#lib/components/ProjectsList.svelte";
+import TechExperienceList from "#lib/components/TechExperienceList.svelte";
+import { siteImage, siteName, siteUrl } from "#lib/config/site.ts";
+import { pressEntryId, projectEntryId, skillEntryId } from "#lib/data/resume.ts";
+import { resumePdfFilename, resumePdfPath } from "#lib/data/resume-pdf.ts";
+import { printLinkLabel } from "#lib/data/short-links.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import type { SiteContent } from "#lib/utils/content.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	content: SiteContent;
