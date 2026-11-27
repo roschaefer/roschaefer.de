@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getResume } from "$lib/data/resume";
+import { getResume } from "#lib/data/resume.ts";
 import { createResumeSkills, formatSkillDuration, resumeSkillsAreInSync } from "./resume-skills";
 
 describe("resume skills", () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validateResumeParity } from "$lib/utils/resume-parity";
+import { validateResumeParity } from "#lib/utils/resume-parity.ts";
 
 describe("resume source", () => {
 	it("keeps resume.i18n.json valid for generation", () => {

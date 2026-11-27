@@ -1,5 +1,5 @@
-import type { Locale } from "$lib/i18n";
-import type { Resume } from "$lib/types/resume";
+import type { Locale } from "#lib/i18n.ts";
+import type { Resume } from "#lib/types/resume.ts";
 import { sortResumeDatedSections } from "./resume-order.ts";
 import { createResumeSkills } from "./resume-skills.ts";
 

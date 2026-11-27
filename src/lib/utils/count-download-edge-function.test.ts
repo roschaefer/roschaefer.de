@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { resumePdfPath } from "$lib/data/resume-pdf";
+import { resumePdfPath } from "#lib/data/resume-pdf.ts";
 import countDownload from "../../../netlify/edge-functions/count-download.ts";
 
 const visitorIp = "203.0.113.7";

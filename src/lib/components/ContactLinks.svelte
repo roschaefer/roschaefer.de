@@ -1,8 +1,8 @@
 <script lang="ts">
-import { getResume } from "$lib/data/resume";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import { markUsed } from "$lib/utils/mark-used";
+import { getResume } from "#lib/data/resume.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	locale: Locale;

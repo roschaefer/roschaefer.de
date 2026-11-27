@@ -1,16 +1,11 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
+	"extends": "$app/tsconfig",
 	"compilerOptions": {
 		"allowJs": false,
-		"allowImportingTsExtensions": true,
 		"checkJs": false,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"types": ["node"],
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"moduleResolution": "bundler"
+		"types": ["$app/types", "node"],
+		"strict": true
 	},
-	"exclude": ["node_modules", "integrations/goatcounter"]
+	"exclude": ["node_modules", "integrations/goatcounter"],
+	"include": ["src", "scripts", "vite.config.ts", "playwright.config.ts", "tests"]
 }

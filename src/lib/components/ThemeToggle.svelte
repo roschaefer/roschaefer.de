@@ -11,8 +11,8 @@ import {
 	setThemePreference,
 	THEME_STORAGE_KEY,
 	type ThemePreference,
-} from "$lib/theme";
-import { markUsed } from "$lib/utils/mark-used";
+} from "#lib/theme.ts";
+import { markUsed } from "#lib/utils/mark-used.ts";
 
 interface Props {
 	label: string;

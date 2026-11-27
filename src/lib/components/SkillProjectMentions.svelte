@@ -9,10 +9,10 @@ export const shouldCollapseSkillProjects = (
 
 <script lang="ts">
 import { onMount, tick } from "svelte";
-import { projectEntryId } from "$lib/data/resume";
-import type { Locale } from "$lib/i18n";
-import * as m from "$lib/paraglide/messages";
-import type { SiteContent } from "$lib/utils/content";
+import { projectEntryId } from "#lib/data/resume.ts";
+import type { Locale } from "#lib/i18n.ts";
+import * as m from "#lib/paraglide/messages.js";
+import type { SiteContent } from "#lib/utils/content.ts";
 
 interface Props {
 	projects: SiteContent["techExperience"][number]["projects"];

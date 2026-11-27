@@ -1,4 +1,4 @@
-import type { ResumeEducation, ResumeFeatured, ResumeProject } from "$lib/types/resume";
+import type { ResumeEducation, ResumeFeatured, ResumeProject } from "#lib/types/resume.ts";
 
 const unique = <T>(values: T[]): T[] => [...new Set(values)];
 const pickByKey = <T, K>(entries: T[], keys: K[], getKey: (entry: T) => K): T[] => {
